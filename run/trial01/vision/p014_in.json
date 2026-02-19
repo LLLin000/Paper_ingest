@@ -1,0 +1,2134 @@
+{
+  "page": 14,
+  "image_path": "run\\trial01\\pages\\p014.png",
+  "blocks": [
+    {
+      "block_id": "p14_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b1",
+      "text": "14",
+      "bbox_pt": [
+        552.2968139648438,
+        760.43701171875,
+        561.2008056640625,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2301,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b4",
+      "text": "imaging, indicating that the repaired tendons never completely heal ",
+      "bbox_pt": [
+        39.685001373291016,
+        112.09562683105469,
+        296.2682800292969,
+        122.276123046875
+      ],
+      "bbox_px": [
+        165,
+        467,
+        1234,
+        509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b5",
+      "text": "despite improvements in pain, motion, function and quality of life 261 . ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.50740051269531,
+        296.2552185058594,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        510,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b6",
+      "text": "Several long-term studies suggest that healing is important and, if ",
+      "bbox_pt": [
+        39.685001373291016,
+        133.5956268310547,
+        296.1273193359375,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        556,
+        1233,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b7",
+      "text": "repair integrity is intact, the outcomes at 10–15 years after surgery ",
+      "bbox_pt": [
+        39.685001373291016,
+        144.3456268310547,
+        296.2183837890625,
+        154.526123046875
+      ],
+      "bbox_px": [
+        165,
+        601,
+        1234,
+        643
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b8",
+      "text": "are excellent 276 , 277 .",
+      "bbox_pt": [
+        39.685001373291016,
+        154.7574005126953,
+        106.09180450439453,
+        165.276123046875
+      ],
+      "bbox_px": [
+        165,
+        644,
+        442,
+        688
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b9",
+      "text": "Reverse shoulder arthroplasty .  Reverse shoulder arthroplasty pro-",
+      "bbox_pt": [
+        39.68755340576172,
+        175.20913696289062,
+        294.8022766113281,
+        186.775634765625
+      ],
+      "bbox_px": [
+        165,
+        730,
+        1228,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b10",
+      "text": "vides substantial improvements in pain, function and quality of life in ",
+      "bbox_pt": [
+        39.68754577636719,
+        187.3448944091797,
+        296.26251220703125,
+        197.525390625
+      ],
+      "bbox_px": [
+        165,
+        780,
+        1234,
+        823
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b11",
+      "text": "many individuals with an irreparable cuff tear, particularly cuff tear ",
+      "bbox_pt": [
+        39.685001373291016,
+        198.0956268310547,
+        296.303955078125,
+        208.276123046875
+      ],
+      "bbox_px": [
+        165,
+        825,
+        1234,
+        867
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b12",
+      "text": "arthropathy 278 , 279 . Reverse shoulder arthroplasty is particularly useful ",
+      "bbox_pt": [
+        39.685001373291016,
+        208.5074005126953,
+        296.3145751953125,
+        219.026123046875
+      ],
+      "bbox_px": [
+        165,
+        868,
+        1234,
+        912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b13",
+      "text": "when the subscapularis and the posterosuperior cuff are irreparable, ",
+      "bbox_pt": [
+        39.685001373291016,
+        219.5956268310547,
+        296.2592468261719,
+        229.776123046875
+      ],
+      "bbox_px": [
+        165,
+        914,
+        1234,
+        957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b14",
+      "text": "as well as in the presence of associated arthritis. However, a subset ",
+      "bbox_pt": [
+        39.685001373291016,
+        230.3456268310547,
+        296.3626403808594,
+        240.526123046875
+      ],
+      "bbox_px": [
+        165,
+        959,
+        1234,
+        1002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b15",
+      "text": "of patients — individuals with an irreparable cuff tear, no arthritis ",
+      "bbox_pt": [
+        39.685001373291016,
+        241.0956268310547,
+        296.2541198730469,
+        251.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1004,
+        1234,
+        1046
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b16",
+      "text": "and good preoperative active motion — are particularly at risk of ",
+      "bbox_pt": [
+        39.685001373291016,
+        251.8453826904297,
+        296.24322509765625,
+        262.02587890625
+      ],
+      "bbox_px": [
+        165,
+        1049,
+        1234,
+        1091
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b17",
+      "text": "­dissatisfaction after reverse arthroplasty 280 .",
+      "bbox_pt": [
+        39.685001373291016,
+        262.25738525390625,
+        202.58029174804688,
+        272.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1092,
+        844,
+        1136
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b18",
+      "text": "Outlook",
+      "bbox_pt": [
+        39.685001373291016,
+        279.8896179199219,
+        81.15850830078125,
+        294.7246398925781
+      ],
+      "bbox_px": [
+        165,
+        1166,
+        338,
+        1228
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b19",
+      "text": "Several important unmet needs remain in the field of rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.8456115722656,
+        296.1888427734375,
+        305.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1228,
+        1234,
+        1270
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b20",
+      "text": "degeneration and repair (Box  3 ). Much of the focus of ongoing research ",
+      "bbox_pt": [
+        39.685001373291016,
+        305.5956115722656,
+        296.2330017089844,
+        315.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1273,
+        1234,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b21",
+      "text": "revolves around using orthobiologics such as PRP, growth factors, ",
+      "bbox_pt": [
+        39.68510055541992,
+        316.3456115722656,
+        296.28326416015625,
+        326.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1318,
+        1234,
+        1360
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b22",
+      "text": "MSCs and bone marrow aspirate concentrate, to improve tendon–bone ",
+      "bbox_pt": [
+        306.1416931152344,
+        112.09562683105469,
+        562.6275634765625,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2344,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b23",
+      "text": "healing and tendinopathy. Preliminary findings from experimental ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.84562683105469,
+        562.6431884765625,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        511,
+        2344,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b24",
+      "text": "models and clinical studies are encouraging but are in the early stages ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.5956268310547,
+        562.878662109375,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        556,
+        2345,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b25",
+      "text": "of research 281 , 282 .",
+      "bbox_pt": [
+        306.1416931152344,
+        144.0074005126953,
+        367.3030090332031,
+        154.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        600,
+        1530,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b26",
+      "text": "A population of MSCs reside in the subacromial bursa, which are ",
+      "bbox_pt": [
+        323.14898681640625,
+        155.0953826904297,
+        562.6793823242188,
+        165.27587890625
+      ],
+      "bbox_px": [
+        1346,
+        646,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b27",
+      "text": "responsive to inflammatory stimuli, indicating an as-yet-unexplored ",
+      "bbox_pt": [
+        306.1374816894531,
+        165.8451385498047,
+        562.7125244140625,
+        176.025634765625
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b28",
+      "text": "biological role in the context of rotator cuff disease 283 . Bursa–tendon ",
+      "bbox_pt": [
+        306.1374816894531,
+        176.2574005126953,
+        562.7122802734375,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        734,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b29",
+      "text": "crosstalk has an interesting clinical relevance and could be a novel ",
+      "bbox_pt": [
+        306.1416931152344,
+        187.3456268310547,
+        562.7540283203125,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        780,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b30",
+      "text": "target in the management of shoulder disorders. Indeed, using a rat ",
+      "bbox_pt": [
+        306.1416931152344,
+        198.0956268310547,
+        562.7960205078125,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        825,
+        2344,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b31",
+      "text": "model of rotator cuff injury and repair, proteomic profiling of the ",
+      "bbox_pt": [
+        306.1416931152344,
+        208.8456268310547,
+        562.8035278320312,
+        219.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2345,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b32",
+      "text": "bursa demonstrated increased cytokine expression and MSC pro-",
+      "bbox_pt": [
+        306.1416931152344,
+        219.5956268310547,
+        561.2598266601562,
+        229.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        914,
+        2338,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b33",
+      "text": "liferation after rotator cuff tears, probably to protect the adjacent ",
+      "bbox_pt": [
+        306.1416931152344,
+        230.3456268310547,
+        562.5911865234375,
+        240.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        959,
+        2344,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b34",
+      "text": "intact tissue and to maintain the morphology of the underlying bone 65 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        240.7574005126953,
+        562.6942749023438,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1003,
+        2344,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b35",
+      "text": "The bursa, therefore, may have an initiating and essential role in heal-",
+      "bbox_pt": [
+        306.1416931152344,
+        251.8456268310547,
+        561.28125,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2338,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b36",
+      "text": "ing by acting as a potential cellular source to promote healing after ",
+      "bbox_pt": [
+        306.1416931152344,
+        262.5956115722656,
+        562.8858032226562,
+        272.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1094,
+        2345,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b37",
+      "text": "repair 81 .",
+      "bbox_pt": [
+        306.1416931152344,
+        273.00738525390625,
+        336.11529541015625,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1137,
+        1400,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b38",
+      "text": "Collagen injections have been used to treat rotator cuff tendi-",
+      "bbox_pt": [
+        323.14959716796875,
+        284.095703125,
+        561.2598266601562,
+        294.2762145996094
+      ],
+      "bbox_px": [
+        1346,
+        1183,
+        2338,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b39",
+      "text": "nopathy and to support arthroscopic repair. Their mechanism of action ",
+      "bbox_pt": [
+        306.1416931152344,
+        294.845703125,
+        562.5169677734375,
+        305.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2343,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b40",
+      "text": "is not completely understood, but they have been hypothesized to ",
+      "bbox_pt": [
+        306.1416931152344,
+        305.595703125,
+        562.8944702148438,
+        315.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2345,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b41",
+      "text": "induce regenerative pathways, to stimulate tenocyte proliferation and ",
+      "bbox_pt": [
+        306.1416931152344,
+        316.345703125,
+        562.6016845703125,
+        326.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1318,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b42",
+      "text": "migration, and to increase endogenous collagen synthesis to restore ",
+      "bbox_pt": [
+        306.1416931152344,
+        327.095703125,
+        562.7249755859375,
+        337.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1362,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b43",
+      "text": "collagen fibres in damaged tendons 284 – 287 . Integrin receptors in fibro-",
+      "bbox_pt": [
+        306.1417236328125,
+        337.5074157714844,
+        561.2561645507812,
+        348.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1406,
+        2338,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b44",
+      "text": "blasts are activated and, consequently, the growth factor cascade ",
+      "bbox_pt": [
+        306.1416931152344,
+        348.595703125,
+        562.7167358398438,
+        358.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1452,
+        2344,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b45",
+      "text": "initiates the synthesis of endogenous collagen, healing the damaged ",
+      "bbox_pt": [
+        306.1416931152344,
+        359.345703125,
+        562.7415161132812,
+        369.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1497,
+        2344,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b46",
+      "text": "collagen fibres and leading to proper alignment 288 – 292 . Despite the use ",
+      "bbox_pt": [
+        306.1416931152344,
+        369.7574157714844,
+        562.717041015625,
+        380.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1540,
+        2344,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b47",
+      "text": "of different types of collagens and injection protocols, or applying ",
+      "bbox_pt": [
+        306.1416931152344,
+        380.845703125,
+        562.88232421875,
+        391.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        2345,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b48",
+      "text": "different PROs, studies have shown clinically and functionally relevant ",
+      "bbox_pt": [
+        306.1416931152344,
+        391.595703125,
+        562.6875610351562,
+        401.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1631,
+        2344,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b49",
+      "text": "improvements.",
+      "bbox_pt": [
+        306.1416931152344,
+        402.345703125,
+        363.7019348144531,
+        412.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        1515,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b50",
+      "text": "Novel surgical procedures to improve outcomes of rotator cuff ",
+      "bbox_pt": [
+        323.14959716796875,
+        413.095703125,
+        562.65478515625,
+        423.2762145996094
+      ],
+      "bbox_px": [
+        1346,
+        1721,
+        2344,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b51",
+      "text": "repair are consistently being attempted, but management of large ",
+      "bbox_pt": [
+        306.1416931152344,
+        423.845703125,
+        562.6913452148438,
+        434.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b52",
+      "text": "and massive tears remains a considerable challenge. In patients with ",
+      "bbox_pt": [
+        306.1416931152344,
+        434.595703125,
+        562.6835327148438,
+        444.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2344,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b53",
+      "text": "massive rotator cuff tears (>5 cm), repair of the superior capsule as well ",
+      "bbox_pt": [
+        306.1416931152344,
+        445.345703125,
+        562.6791381835938,
+        455.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2344,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b54",
+      "text": "as the rotator cuff has been reported to improve retear rates at early ",
+      "bbox_pt": [
+        306.1416931152344,
+        456.095703125,
+        562.732177734375,
+        466.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b55",
+      "text": "follow up 293 , 294 . The superior capsule defect has been defined as the ",
+      "bbox_pt": [
+        306.1416931152344,
+        466.5074157714844,
+        562.8119506835938,
+        477.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1943,
+        2345,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b56",
+      "text": "essential lesion of rotator cuff tears 295 , and several researchers recom-",
+      "bbox_pt": [
+        306.1416931152344,
+        477.2574157714844,
+        561.259765625,
+        487.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1988,
+        2338,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b57",
+      "text": "mend its repair to restore shoulder biomechanics, preventing the rise ",
+      "bbox_pt": [
+        306.1416931152344,
+        488.345703125,
+        562.7994384765625,
+        498.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        2034,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b58",
+      "text": "of the humeral head in the postoperative period 296 , 297 . It is also thought ",
+      "bbox_pt": [
+        306.1416931152344,
+        498.7574157714844,
+        562.7445068359375,
+        509.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        2078,
+        2344,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b59",
+      "text": "to provide an additional source of autologous tenocytes, which may ",
+      "bbox_pt": [
+        306.1416931152344,
+        509.8457336425781,
+        562.7086181640625,
+        520.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b60",
+      "text": "improve the biology of the repair.",
+      "bbox_pt": [
+        306.1416931152344,
+        520.5957641601562,
+        430.49798583984375,
+        530.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        1793,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b61",
+      "text": "The long head of the biceps tendon, that is rich in tenocytes and ",
+      "bbox_pt": [
+        323.1531982421875,
+        531.3455200195312,
+        562.7176513671875,
+        541.5260009765625
+      ],
+      "bbox_px": [
+        1346,
+        2213,
+        2344,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b62",
+      "text": "fibroblasts, is a major stabilizer of the humeral head preventing supe-",
+      "bbox_pt": [
+        306.1416931152344,
+        542.0952758789062,
+        561.239990234375,
+        552.2757568359375
+      ],
+      "bbox_px": [
+        1275,
+        2258,
+        2338,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b63",
+      "text": "rior migration and reinforcing repair 298 – 300 . Its use for cuff repair may ",
+      "bbox_pt": [
+        306.1416931152344,
+        552.5073852539062,
+        562.7069091796875,
+        563.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2302,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b64",
+      "text": "provide a local autologous source of collagen, and can be incorporated ",
+      "bbox_pt": [
+        306.1416931152344,
+        563.5957641601562,
+        562.5590209960938,
+        573.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2343,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b65",
+      "text": "in the repair arthroscopically with no further surgical exposure or ",
+      "bbox_pt": [
+        306.1416931152344,
+        574.3457641601562,
+        562.80322265625,
+        584.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2345,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b66",
+      "text": "donor site morbidity 298 .",
+      "bbox_pt": [
+        306.1416931152344,
+        584.7573852539062,
+        394.36590576171875,
+        595.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2436,
+        1643,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b67",
+      "text": "Optimal management of shoulder disability may be influenced ",
+      "bbox_pt": [
+        323.14959716796875,
+        595.8457641601562,
+        562.5850830078125,
+        606.0262451171875
+      ],
+      "bbox_px": [
+        1346,
+        2482,
+        2344,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b68",
+      "text": "by the more detailed understanding of the natural history of disease ",
+      "bbox_pt": [
+        306.1416931152344,
+        606.5957641601562,
+        562.7094116210938,
+        616.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b69",
+      "text": "and the anticipated operative outcomes. Machine learning employs ",
+      "bbox_pt": [
+        306.1416931152344,
+        617.3457641601562,
+        562.7279052734375,
+        627.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2344,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b70",
+      "text": "computer algorithms and statistical analysis to determine complex ",
+      "bbox_pt": [
+        306.1416931152344,
+        628.0957641601562,
+        562.6287231445312,
+        638.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2344,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b71",
+      "text": "trends and patterns, which can be difficult to perform in a clinical set-",
+      "bbox_pt": [
+        306.1416931152344,
+        638.8457641601562,
+        561.2236328125,
+        649.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2661,
+        2338,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b72",
+      "text": "ting. Studies have shown promising results in accurately predicting ",
+      "bbox_pt": [
+        306.1416931152344,
+        649.5957641601562,
+        562.7614135742188,
+        659.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b73",
+      "text": "postoperative scores. This methodology may be improved to support ",
+      "bbox_pt": [
+        306.1416931152344,
+        660.3457641601562,
+        562.7632446289062,
+        670.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b74",
+      "text": "preoperative counselling, planning and resource allocation 301 .",
+      "bbox_pt": [
+        306.1416931152344,
+        670.7573852539062,
+        536.7816772460938,
+        681.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2794,
+        2236,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b75",
+      "text": "Overall, rotator cuff pathology is a substantial clinical problem ",
+      "bbox_pt": [
+        323.1495056152344,
+        681.8457641601562,
+        562.7252197265625,
+        692.0262451171875
+      ],
+      "bbox_px": [
+        1346,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b76",
+      "text": "with room for improvements in our understanding of pathophysiology, ",
+      "bbox_pt": [
+        306.1416931152344,
+        692.5957641601562,
+        562.6099853515625,
+        702.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b77",
+      "text": "and future research should focus on methods to optimize outcomes ",
+      "bbox_pt": [
+        306.1416931152344,
+        703.3457641601562,
+        562.7332153320312,
+        713.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b78",
+      "text": "of treatment.",
+      "bbox_pt": [
+        306.1416931152344,
+        714.0955200195312,
+        355.7572021484375,
+        724.2760009765625
+      ],
+      "bbox_px": [
+        1275,
+        2975,
+        1482,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b79",
+      "text": "Published online: xx xx xxxx",
+      "bbox_pt": [
+        306.1416931152344,
+        734.4527587890625,
+        411.6487731933594,
+        746.2787475585938
+      ],
+      "bbox_px": [
+        1275,
+        3060,
+        1715,
+        3109
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b80",
+      "text": "Box 3",
+      "bbox_pt": [
+        45.35430145263672,
+        344.7236328125,
+        81.83830261230469,
+        364.04364013671875
+      ],
+      "bbox_px": [
+        188,
+        1436,
+        340,
+        1516
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b81",
+      "text": "Unmet needs in the treatment ",
+      "bbox_pt": [
+        45.35430145263672,
+        371.53961181640625,
+        276.8522644042969,
+        393.6976318359375
+      ],
+      "bbox_px": [
+        188,
+        1548,
+        1153,
+        1640
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b82",
+      "text": "of rotator cuff pathology",
+      "bbox_pt": [
+        45.35430145263672,
+        392.0416259765625,
+        233.7045135498047,
+        414.19964599609375
+      ],
+      "bbox_px": [
+        188,
+        1633,
+        973,
+        1725
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b83",
+      "text": "Basic science",
+      "bbox_pt": [
+        45.35430145263672,
+        421.8956298828125,
+        101.18805694580078,
+        433.9706115722656
+      ],
+      "bbox_px": [
+        188,
+        1757,
+        421,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b84",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        433.61163330078125,
+        54.94089889526367,
+        444.5316162109375
+      ],
+      "bbox_px": [
+        220,
+        1806,
+        228,
+        1852
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b85",
+      "text": "•  Determine the pathophysiology of rotator cuff pain",
+      "bbox_pt": [
+        48.188899993896484,
+        433.61163330078125,
+        238.54244995117188,
+        444.5316162109375
+      ],
+      "bbox_px": [
+        200,
+        1806,
+        993,
+        1852
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b86",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        444.3636474609375,
+        54.94089889526367,
+        455.28363037109375
+      ],
+      "bbox_px": [
+        220,
+        1851,
+        228,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b87",
+      "text": "•  Understand the molecular pathways responsible for tendon ",
+      "bbox_pt": [
+        48.188899993896484,
+        444.3636474609375,
+        271.9584655761719,
+        455.28363037109375
+      ],
+      "bbox_px": [
+        200,
+        1851,
+        1133,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b88",
+      "text": "degeneration",
+      "bbox_pt": [
+        56.692901611328125,
+        455.11566162109375,
+        105.3441162109375,
+        466.03564453125
+      ],
+      "bbox_px": [
+        236,
+        1896,
+        438,
+        1941
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b89",
+      "text": "•",
+      "bbox_pt": [
+        52.740901947021484,
+        465.86767578125,
+        54.86090087890625,
+        476.78765869140625
+      ],
+      "bbox_px": [
+        219,
+        1941,
+        228,
+        1986
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b90",
+      "text": "•  Develop strategies to improve the biological basis of tendon–bone ",
+      "bbox_pt": [
+        48.18890380859375,
+        465.86767578125,
+        291.1201171875,
+        476.78765869140625
+      ],
+      "bbox_px": [
+        200,
+        1941,
+        1213,
+        1986
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b91",
+      "text": "healing",
+      "bbox_pt": [
+        56.692901611328125,
+        476.61968994140625,
+        83.7041015625,
+        487.5396728515625
+      ],
+      "bbox_px": [
+        236,
+        1985,
+        348,
+        2031
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b92",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        487.3717041015625,
+        54.94089889526367,
+        498.29168701171875
+      ],
+      "bbox_px": [
+        220,
+        2030,
+        228,
+        2076
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b93",
+      "text": "•  Understand the relationship and pathophysiology of muscle ",
+      "bbox_pt": [
+        48.188899993896484,
+        487.3717041015625,
+        273.612060546875,
+        498.29168701171875
+      ],
+      "bbox_px": [
+        200,
+        2030,
+        1140,
+        2076
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b94",
+      "text": "degeneration",
+      "bbox_pt": [
+        56.692901611328125,
+        498.12371826171875,
+        105.3441162109375,
+        509.043701171875
+      ],
+      "bbox_px": [
+        236,
+        2075,
+        438,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b95",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        508.875732421875,
+        54.94089889526367,
+        519.7957153320312
+      ],
+      "bbox_px": [
+        220,
+        2120,
+        228,
+        2165
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b96",
+      "text": "•  Develop pharmacological strategies to enhance muscle quality ",
+      "bbox_pt": [
+        48.188899993896484,
+        508.875732421875,
+        285.39691162109375,
+        519.7957153320312
+      ],
+      "bbox_px": [
+        200,
+        2120,
+        1189,
+        2165
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b97",
+      "text": "after rotator cuff repair",
+      "bbox_pt": [
+        56.692901611328125,
+        519.6277465820312,
+        138.13690185546875,
+        530.5477294921875
+      ],
+      "bbox_px": [
+        236,
+        2165,
+        575,
+        2210
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b98",
+      "text": "Diagnosis and management",
+      "bbox_pt": [
+        45.35430145263672,
+        540.1456298828125,
+        159.78680419921875,
+        552.2206420898438
+      ],
+      "bbox_px": [
+        188,
+        2250,
+        665,
+        2300
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b99",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        551.8616333007812,
+        54.94089889526367,
+        562.7816162109375
+      ],
+      "bbox_px": [
+        220,
+        2299,
+        228,
+        2344
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b100",
+      "text": "•  Evaluate genetics of rotator cuff disease — is it preventable at all?",
+      "bbox_pt": [
+        48.188899993896484,
+        551.8616333007812,
+        289.03692626953125,
+        562.7816162109375
+      ],
+      "bbox_px": [
+        200,
+        2299,
+        1204,
+        2344
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b101",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        562.6136474609375,
+        54.94089889526367,
+        573.5336303710938
+      ],
+      "bbox_px": [
+        220,
+        2344,
+        228,
+        2389
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b102",
+      "text": "•  Predictive modelling of who will benefit from surgery versus ",
+      "bbox_pt": [
+        48.188899993896484,
+        562.6136474609375,
+        273.51934814453125,
+        573.5336303710938
+      ],
+      "bbox_px": [
+        200,
+        2344,
+        1139,
+        2389
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b103",
+      "text": "non-operative management",
+      "bbox_pt": [
+        56.692901611328125,
+        573.3656616210938,
+        157.2344970703125,
+        584.28564453125
+      ],
+      "bbox_px": [
+        236,
+        2389,
+        655,
+        2434
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b104",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        584.1176147460938,
+        54.94089889526367,
+        595.03759765625
+      ],
+      "bbox_px": [
+        220,
+        2433,
+        228,
+        2479
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b105",
+      "text": "•  Predictive modelling of tear onset and progression",
+      "bbox_pt": [
+        48.188899993896484,
+        584.1176147460938,
+        237.84487915039062,
+        595.03759765625
+      ],
+      "bbox_px": [
+        200,
+        2433,
+        991,
+        2479
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b106",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        594.86962890625,
+        54.94089889526367,
+        605.7896118164062
+      ],
+      "bbox_px": [
+        220,
+        2478,
+        228,
+        2524
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b107",
+      "text": "•  Determine pathophysiology of tendon degeneration in specific ",
+      "bbox_pt": [
+        48.188899993896484,
+        594.86962890625,
+        283.8664245605469,
+        605.7896118164062
+      ],
+      "bbox_px": [
+        200,
+        2478,
+        1182,
+        2524
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b108",
+      "text": "disease states (for example, diabetes mellitus)",
+      "bbox_pt": [
+        56.692901611328125,
+        605.6216430664062,
+        221.72804260253906,
+        616.5416259765625
+      ],
+      "bbox_px": [
+        236,
+        2523,
+        923,
+        2568
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b109",
+      "text": "Perioperative and postoperative",
+      "bbox_pt": [
+        45.35430145263672,
+        626.1456298828125,
+        177.51258850097656,
+        638.2206420898438
+      ],
+      "bbox_px": [
+        188,
+        2608,
+        739,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b110",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        637.8616333007812,
+        54.94089889526367,
+        648.7816162109375
+      ],
+      "bbox_px": [
+        220,
+        2657,
+        228,
+        2703
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b111",
+      "text": "•  Predictive modelling of surgical outcomes",
+      "bbox_pt": [
+        48.188899993896484,
+        637.8616333007812,
+        208.52890014648438,
+        648.7816162109375
+      ],
+      "bbox_px": [
+        200,
+        2657,
+        868,
+        2703
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b112",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        648.6136474609375,
+        54.94089889526367,
+        659.5336303710938
+      ],
+      "bbox_px": [
+        220,
+        2702,
+        228,
+        2748
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b113",
+      "text": "•  Develop strategies to choose optimal repair configuration  ",
+      "bbox_pt": [
+        48.188899993896484,
+        648.6136474609375,
+        266.99688720703125,
+        659.5336303710938
+      ],
+      "bbox_px": [
+        200,
+        2702,
+        1112,
+        2748
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b114",
+      "text": "or biological augmentation",
+      "bbox_pt": [
+        56.69288635253906,
+        659.3656616210938,
+        154.2873077392578,
+        670.28564453125
+      ],
+      "bbox_px": [
+        236,
+        2747,
+        642,
+        2792
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b115",
+      "text": "•",
+      "bbox_pt": [
+        52.820884704589844,
+        670.1176147460938,
+        54.94088363647461,
+        681.03759765625
+      ],
+      "bbox_px": [
+        220,
+        2792,
+        228,
+        2837
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b116",
+      "text": "•  Optimize salvage options (tendon transfer, reverse, etc.)  ",
+      "bbox_pt": [
+        48.18888473510742,
+        670.1176147460938,
+        260.48486328125,
+        681.03759765625
+      ],
+      "bbox_px": [
+        200,
+        2792,
+        1085,
+        2837
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b117",
+      "text": "for irreparable tears",
+      "bbox_pt": [
+        56.69287109375,
+        680.86962890625,
+        127.40728759765625,
+        691.7896118164062
+      ],
+      "bbox_px": [
+        236,
+        2836,
+        530,
+        2882
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b118",
+      "text": "•",
+      "bbox_pt": [
+        52.82086944580078,
+        691.6216430664062,
+        54.94086837768555,
+        702.5416259765625
+      ],
+      "bbox_px": [
+        220,
+        2881,
+        228,
+        2927
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b119",
+      "text": "•  Improve muscle quality after repair with physical therapy ",
+      "bbox_pt": [
+        48.18886947631836,
+        691.6216430664062,
+        262.09039306640625,
+        702.5416259765625
+      ],
+      "bbox_px": [
+        200,
+        2881,
+        1092,
+        2927
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b120",
+      "text": "modalities",
+      "bbox_pt": [
+        56.69287109375,
+        702.3735961914062,
+        94.5352783203125,
+        713.2935791015625
+      ],
+      "bbox_px": [
+        236,
+        2926,
+        393,
+        2972
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b121",
+      "text": "•",
+      "bbox_pt": [
+        52.82086944580078,
+        713.1256103515625,
+        54.94086837768555,
+        724.0455932617188
+      ],
+      "bbox_px": [
+        220,
+        2971,
+        228,
+        3016
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b122",
+      "text": "•  Accelerate recovery after surgery",
+      "bbox_pt": [
+        48.18886947631836,
+        713.1256103515625,
+        176.55123901367188,
+        724.0455932617188
+      ],
+      "bbox_px": [
+        200,
+        2971,
+        735,
+        3016
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b123",
+      "text": "•",
+      "bbox_pt": [
+        52.82086944580078,
+        723.8776245117188,
+        54.94086837768555,
+        734.797607421875
+      ],
+      "bbox_px": [
+        220,
+        3016,
+        228,
+        3061
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b124",
+      "text": "•  Improve sleep after surgery",
+      "bbox_pt": [
+        48.18886947631836,
+        723.8776245117188,
+        155.32406616210938,
+        734.797607421875
+      ],
+      "bbox_px": [
+        200,
+        3016,
+        647,
+        3061
+      ],
+      "column_guess": 1
+    }
+  ],
+  "constraints": {
+    "total_blocks": 125
+  }
+}

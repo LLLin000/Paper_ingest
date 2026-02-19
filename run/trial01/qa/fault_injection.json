@@ -1,0 +1,30 @@
+[
+  {
+    "stage": "reading",
+    "fault": "profile-parse-failure",
+    "retry_attempts": 0,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "reading",
+    "fault": "logic-parse-failure",
+    "retry_attempts": 0,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "reading",
+    "fault": "themes-parse-failure",
+    "retry_attempts": 0,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "reading",
+    "fault": "synthesis-parse-failure",
+    "retry_attempts": 0,
+    "fallback_used": true,
+    "status": "degraded"
+  }
+]

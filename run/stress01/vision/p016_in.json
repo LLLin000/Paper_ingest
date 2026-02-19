@@ -1,0 +1,2015 @@
+{
+  "page": 16,
+  "image_path": "run\\stress01\\pages\\p016.png",
+  "blocks": [
+    {
+      "block_id": "p16_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b2",
+      "text": "Therefore, as an external intervention, electrical stimulation is",
+      "bbox_pt": [
+        47.97600173950195,
+        75.97752380371094,
+        288.8834533691406,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        199,
+        316,
+        1203,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b3",
+      "text": "expected to accelerate the regeneration process of bone and carti-",
+      "bbox_pt": [
+        47.97600173950195,
+        86.93986511230469,
+        288.9067077636719,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        199,
+        362,
+        1203,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b4",
+      "text": "lage by integrating electrical, biochemical, and mechanical sig-",
+      "bbox_pt": [
+        47.97600173950195,
+        97.90214538574219,
+        288.9013366699219,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        199,
+        407,
+        1203,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b5",
+      "text": "nals. Future studies could further optimize electrical stimula-",
+      "bbox_pt": [
+        47.97600173950195,
+        108.85551452636719,
+        288.9085693359375,
+        117.9026107788086
+      ],
+      "bbox_px": [
+        199,
+        453,
+        1203,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b6",
+      "text": "tion techniques and materials to improve therapeutic eﬃcacy and",
+      "bbox_pt": [
+        47.97600173950195,
+        119.81785583496094,
+        288.921142578125,
+        128.86495971679688
+      ],
+      "bbox_px": [
+        199,
+        499,
+        1203,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b7",
+      "text": "safety. The applications of electrical biomaterials for bone regen-",
+      "bbox_pt": [
+        47.97600173950195,
+        130.7801971435547,
+        288.9390563964844,
+        139.82730102539062
+      ],
+      "bbox_px": [
+        199,
+        544,
+        1203,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b8",
+      "text": "eration are summarized, as shown in  Table  2 .",
+      "bbox_pt": [
+        47.97600173950195,
+        141.73350524902344,
+        219.00381469726562,
+        150.78060913085938
+      ],
+      "bbox_px": [
+        199,
+        590,
+        912,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b9",
+      "text": "3.2. Electric Stimulation for Cartilage Regeneration",
+      "bbox_pt": [
+        47.97600173950195,
+        174.79978942871094,
+        234.65286254882812,
+        183.76620483398438
+      ],
+      "bbox_px": [
+        199,
+        728,
+        977,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b10",
+      "text": "The piezoelectric properties of articular cartilage arising from the",
+      "bbox_pt": [
+        47.97600173950195,
+        196.73252868652344,
+        288.9193115234375,
+        205.77963256835938
+      ],
+      "bbox_px": [
+        199,
+        819,
+        1203,
+        857
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b11",
+      "text": "presence of collagen molecules suggest that the incorporation of",
+      "bbox_pt": [
+        47.97600173950195,
+        207.68589782714844,
+        288.9157409667969,
+        216.73300170898438
+      ],
+      "bbox_px": [
+        199,
+        865,
+        1203,
+        903
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b12",
+      "text": "piezoelectric materials could be beneﬁcial in engineered carti-",
+      "bbox_pt": [
+        47.97600173950195,
+        218.64817810058594,
+        288.8914794921875,
+        227.69528198242188
+      ],
+      "bbox_px": [
+        199,
+        911,
+        1203,
+        948
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b13",
+      "text": "lage constructs. Previous studies have demonstrated the inﬂu-",
+      "bbox_pt": [
+        47.97600173950195,
+        229.6105194091797,
+        288.93817138671875,
+        238.65762329101562
+      ],
+      "bbox_px": [
+        199,
+        956,
+        1203,
+        994
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b14",
+      "text": "ence of mechanical stress and electromagnetic stimuli on chon-",
+      "bbox_pt": [
+        47.97600173950195,
+        240.5638885498047,
+        288.8978271484375,
+        249.61099243164062
+      ],
+      "bbox_px": [
+        199,
+        1002,
+        1203,
+        1040
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b15",
+      "text": "drocyte behavior. However, the potential role of piezoelectric ma-",
+      "bbox_pt": [
+        47.97600173950195,
+        251.52622985839844,
+        288.91656494140625,
+        260.5733337402344
+      ],
+      "bbox_px": [
+        199,
+        1048,
+        1203,
+        1085
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b16",
+      "text": "terials in promoting cartilage regeneration remains relatively un-",
+      "bbox_pt": [
+        47.97600173950195,
+        262.488525390625,
+        288.9255676269531,
+        271.5356140136719
+      ],
+      "bbox_px": [
+        199,
+        1093,
+        1203,
+        1131
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b17",
+      "text": "explored. Mitani et al. used a piezoelectric PVDF membrane to",
+      "bbox_pt": [
+        47.97600173950195,
+        273.44189453125,
+        288.9408874511719,
+        282.4889831542969
+      ],
+      "bbox_px": [
+        199,
+        1139,
+        1203,
+        1177
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b18",
+      "text": "culture multi-layered chondrocyte sheets. The cells adhered well",
+      "bbox_pt": [
+        47.97600173950195,
+        284.4042053222656,
+        288.887939453125,
+        293.4512939453125
+      ],
+      "bbox_px": [
+        199,
+        1185,
+        1203,
+        1222
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b19",
+      "text": "to the PVDF membrane, with increased gene expression of ﬁ-",
+      "bbox_pt": [
+        47.97600173950195,
+        295.36651611328125,
+        288.9363708496094,
+        304.4136047363281
+      ],
+      "bbox_px": [
+        199,
+        1230,
+        1203,
+        1268
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b20",
+      "text": "bronectin and integrin  𝛼 10, and maintained a phenotype similar",
+      "bbox_pt": [
+        47.97600173950195,
+        305.8625793457031,
+        288.92828369140625,
+        315.3669738769531
+      ],
+      "bbox_px": [
+        199,
+        1274,
+        1203,
+        1314
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b21",
+      "text": "to regular chondrocytes, with increased SOX9, Col X, and Col VII",
+      "bbox_pt": [
+        47.97600173950195,
+        317.2821960449219,
+        288.9346008300781,
+        326.32928466796875
+      ],
+      "bbox_px": [
+        199,
+        1322,
+        1203,
+        1359
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b22",
+      "text": "expression. [ 185 ] Recently, Jacob et al. developed piezoelectric BT",
+      "bbox_pt": [
+        47.97600173950195,
+        325.09716796875,
+        288.9298095703125,
+        337.2916259765625
+      ],
+      "bbox_px": [
+        199,
+        1354,
+        1203,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b23",
+      "text": "nanoparticle-reinforced PHBV nanohybrid electrospun scaﬀolds",
+      "bbox_pt": [
+        47.97576141357422,
+        339.1915283203125,
+        288.91998291015625,
+        348.2386169433594
+      ],
+      "bbox_px": [
+        199,
+        1413,
+        1203,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b24",
+      "text": "that enhanced mechanical strength and stimulated cartilage re-",
+      "bbox_pt": [
+        47.97576141357422,
+        350.1538391113281,
+        288.90203857421875,
+        359.200927734375
+      ],
+      "bbox_px": [
+        199,
+        1458,
+        1203,
+        1496
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b25",
+      "text": "generation without additional chemical factors. These ﬁndings",
+      "bbox_pt": [
+        47.97576141357422,
+        361.1161804199219,
+        288.9414367675781,
+        370.16326904296875
+      ],
+      "bbox_px": [
+        199,
+        1504,
+        1203,
+        1542
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b26",
+      "text": "indicate that piezoelectric scaﬀolds promote cartilage regenera-",
+      "bbox_pt": [
+        47.97576141357422,
+        372.06951904296875,
+        288.9316101074219,
+        381.1166076660156
+      ],
+      "bbox_px": [
+        199,
+        1550,
+        1203,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b27",
+      "text": "tion and can be used as bilayer scaﬀolds for osteochondral heal-",
+      "bbox_pt": [
+        47.97576141357422,
+        383.0318603515625,
+        288.91632080078125,
+        392.0789489746094
+      ],
+      "bbox_px": [
+        199,
+        1595,
+        1203,
+        1633
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b28",
+      "text": "ing, providing simultaneous stimulation of cartilage and bone-",
+      "bbox_pt": [
+        47.97576141357422,
+        393.9851989746094,
+        288.91815185546875,
+        403.03228759765625
+      ],
+      "bbox_px": [
+        199,
+        1641,
+        1203,
+        1679
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b29",
+      "text": "forming cells. [ 167 ]",
+      "bbox_pt": [
+        47.97576141357422,
+        404.0427551269531,
+        112.96562957763672,
+        413.99462890625
+      ],
+      "bbox_px": [
+        199,
+        1683,
+        470,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b30",
+      "text": "You et al. proposed a friction electric stent without encapsu-",
+      "bbox_pt": [
+        57.435001373291016,
+        415.90716552734375,
+        288.9205017089844,
+        424.9542541503906
+      ],
+      "bbox_px": [
+        239,
+        1732,
+        1203,
+        1770
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b31",
+      "text": "lation using a polyglycerol ester (PGS) that successfully com-",
+      "bbox_pt": [
+        47.976341247558594,
+        426.86053466796875,
+        288.9097595214844,
+        435.9076232910156
+      ],
+      "bbox_px": [
+        199,
+        1778,
+        1203,
+        1816
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b32",
+      "text": "bined electrotherapy with traditional tissue-engineering scaﬀolds",
+      "bbox_pt": [
+        47.976341247558594,
+        437.8228454589844,
+        288.881103515625,
+        446.86993408203125
+      ],
+      "bbox_px": [
+        199,
+        1824,
+        1203,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b33",
+      "text": "to form a single bioabsorbable device ( Figure  6 c ). [ 10 ] This scaf-",
+      "bbox_pt": [
+        47.976341247558594,
+        445.6431884765625,
+        288.916015625,
+        457.832275390625
+      ],
+      "bbox_px": [
+        199,
+        1856,
+        1203,
+        1907
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b34",
+      "text": "fold performs excellently in promoting cartilage regeneration,",
+      "bbox_pt": [
+        47.97541046142578,
+        459.7375183105469,
+        288.9097595214844,
+        468.78460693359375
+      ],
+      "bbox_px": [
+        199,
+        1915,
+        1203,
+        1953
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b35",
+      "text": "generating pulsed ES similar to natural electrical signals in the",
+      "bbox_pt": [
+        47.97541046142578,
+        470.6998596191406,
+        288.8927001953125,
+        479.7469482421875
+      ],
+      "bbox_px": [
+        199,
+        1961,
+        1203,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b36",
+      "text": "body, and eﬀectively promoting the regeneration and repair of",
+      "bbox_pt": [
+        47.97541046142578,
+        481.66217041015625,
+        288.9223327636719,
+        490.7092590332031
+      ],
+      "bbox_px": [
+        199,
+        2006,
+        1203,
+        2044
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b37",
+      "text": "the cartilage and subchondral bone. [ 10 ] Ouyang et al. reported",
+      "bbox_pt": [
+        47.97541046142578,
+        489.482177734375,
+        288.9227600097656,
+        501.6626281738281
+      ],
+      "bbox_px": [
+        199,
+        2039,
+        1203,
+        2090
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b38",
+      "text": "a smart “tissue battery” based on friction nanogenerators for",
+      "bbox_pt": [
+        47.97589111328125,
+        503.5765075683594,
+        288.9326477050781,
+        512.6235961914062
+      ],
+      "bbox_px": [
+        199,
+        2098,
+        1203,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b39",
+      "text": "cartilage repair therapy and real-time monitoring of the repair",
+      "bbox_pt": [
+        47.97589111328125,
+        514.538818359375,
+        288.919189453125,
+        523.5858764648438
+      ],
+      "bbox_px": [
+        199,
+        2143,
+        1203,
+        2181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b40",
+      "text": "process. They Utilized self-generated microcurrents to stimu-",
+      "bbox_pt": [
+        47.97589111328125,
+        525.4921875,
+        288.8932189941406,
+        534.5392456054688
+      ],
+      "bbox_px": [
+        199,
+        2189,
+        1203,
+        2227
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b41",
+      "text": "late rapid cartilage repair and achieved real-time visualization",
+      "bbox_pt": [
+        47.97589111328125,
+        536.4544677734375,
+        288.8886413574219,
+        545.5015258789062
+      ],
+      "bbox_px": [
+        199,
+        2235,
+        1203,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b42",
+      "text": "of the “black box” during the cartilage repair process, achieving",
+      "bbox_pt": [
+        47.97589111328125,
+        547.4168090820312,
+        288.9048767089844,
+        556.4638671875
+      ],
+      "bbox_px": [
+        199,
+        2280,
+        1203,
+        2318
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b43",
+      "text": "the goal of “inducing tissue regeneration – real-time monitoring",
+      "bbox_pt": [
+        47.97589111328125,
+        558.3701782226562,
+        288.9263610839844,
+        567.417236328125
+      ],
+      "bbox_px": [
+        199,
+        2326,
+        1203,
+        2364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b44",
+      "text": "of repair” integration. [ 186 ] Therefore, this frictional electric stent",
+      "bbox_pt": [
+        47.97589111328125,
+        566.189208984375,
+        288.90771484375,
+        578.3795776367188
+      ],
+      "bbox_px": [
+        199,
+        2359,
+        1203,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b45",
+      "text": "shows great potential for clinical translation and can be used to",
+      "bbox_pt": [
+        47.976070404052734,
+        580.29248046875,
+        288.9247131347656,
+        589.3395385742188
+      ],
+      "bbox_px": [
+        199,
+        2417,
+        1203,
+        2455
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b46",
+      "text": "repair cartilage and other tissues.",
+      "bbox_pt": [
+        47.976070404052734,
+        591.245849609375,
+        172.89328002929688,
+        600.2929077148438
+      ],
+      "bbox_px": [
+        199,
+        2463,
+        720,
+        2501
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b47",
+      "text": "Researchers have demonstrated that biodegradable PLLA",
+      "bbox_pt": [
+        57.434730529785156,
+        602.2081909179688,
+        288.9040832519531,
+        611.2552490234375
+      ],
+      "bbox_px": [
+        239,
+        2509,
+        1203,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b48",
+      "text": "nanoﬁber scaﬀolds can function as battery-free electrical stim-",
+      "bbox_pt": [
+        47.976070404052734,
+        613.1705322265625,
+        288.9032287597656,
+        622.2175903320312
+      ],
+      "bbox_px": [
+        199,
+        2554,
+        1203,
+        2592
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b49",
+      "text": "ulators to facilitate cartilage formation and regeneration un-",
+      "bbox_pt": [
+        47.976070404052734,
+        624.1238403320312,
+        288.9202575683594,
+        633.1708984375
+      ],
+      "bbox_px": [
+        199,
+        2600,
+        1203,
+        2638
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b50",
+      "text": "der applied forces or joint loads. They created a three-layer",
+      "bbox_pt": [
+        47.976070404052734,
+        635.086181640625,
+        288.9032897949219,
+        644.1332397460938
+      ],
+      "bbox_px": [
+        199,
+        2646,
+        1203,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b51",
+      "text": "biodegradable piezoelectric PLLA nanoﬁber scaﬀold that acti-",
+      "bbox_pt": [
+        47.976070404052734,
+        646.0484619140625,
+        288.8996276855469,
+        655.0955200195312
+      ],
+      "bbox_px": [
+        199,
+        2691,
+        1203,
+        2729
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b52",
+      "text": "vates the calcium signaling pathway under external force or joint",
+      "bbox_pt": [
+        47.976070404052734,
+        657.0018310546875,
+        288.90509033203125,
+        666.0488891601562
+      ],
+      "bbox_px": [
+        199,
+        2737,
+        1203,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b53",
+      "text": "load, enhances TGF- 𝛽 secretion, and promotes extracellular pro-",
+      "bbox_pt": [
+        47.976070404052734,
+        667.5068969726562,
+        288.9337463378906,
+        677.01123046875
+      ],
+      "bbox_px": [
+        199,
+        2781,
+        1203,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b54",
+      "text": "tein adsorption, cell migration, and recruitment, thereby pro-",
+      "bbox_pt": [
+        47.976070404052734,
+        678.926513671875,
+        288.92205810546875,
+        687.9735717773438
+      ],
+      "bbox_px": [
+        199,
+        2828,
+        1203,
+        2866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b55",
+      "text": "moting cartilage formation and regeneration in vitro and in vivo",
+      "bbox_pt": [
+        47.976070404052734,
+        689.8798217773438,
+        288.9112854003906,
+        698.9268798828125
+      ],
+      "bbox_px": [
+        199,
+        2874,
+        1203,
+        2912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b56",
+      "text": "(Figure  6a ). [ 187–189 ] Following the administration of piezoelec-",
+      "bbox_pt": [
+        47.976070404052734,
+        697.6972045898438,
+        288.9190368652344,
+        709.8892211914062
+      ],
+      "bbox_px": [
+        199,
+        2907,
+        1203,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b57",
+      "text": "tric scaﬀolds and exercise therapy, rabbits with extensive bone",
+      "bbox_pt": [
+        47.97576141357422,
+        711.8004760742188,
+        288.9011535644531,
+        720.8475341796875
+      ],
+      "bbox_px": [
+        199,
+        2965,
+        1203,
+        3003
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b58",
+      "text": "and cartilage defects exhibited transparent cartilage regenera-",
+      "bbox_pt": [
+        303.0904541015625,
+        75.97599792480469,
+        544.0101928710938,
+        85.0230941772461
+      ],
+      "bbox_px": [
+        1262,
+        316,
+        2266,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b59",
+      "text": "tion within 1–2 months (2–3 months post-surgery, including a",
+      "bbox_pt": [
+        303.0904541015625,
+        86.93833923339844,
+        544.0347290039062,
+        95.98543548583984
+      ],
+      "bbox_px": [
+        1262,
+        362,
+        2266,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b60",
+      "text": "one-month recovery period prior to exercise). Subsequently, com-",
+      "bbox_pt": [
+        303.0904541015625,
+        97.90068054199219,
+        544.0183715820312,
+        106.9477767944336
+      ],
+      "bbox_px": [
+        1262,
+        407,
+        2266,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b61",
+      "text": "plete cartilage healing was observed along with abundant lev-",
+      "bbox_pt": [
+        303.0904541015625,
+        108.85404968261719,
+        544.0166015625,
+        117.9011459350586
+      ],
+      "bbox_px": [
+        1262,
+        453,
+        2266,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b62",
+      "text": "els of chondrocytes and Col II. Conversely, rabbits treated with",
+      "bbox_pt": [
+        303.0904541015625,
+        119.81632995605469,
+        544.0517578125,
+        128.86343383789062
+      ],
+      "bbox_px": [
+        1262,
+        499,
+        2266,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b63",
+      "text": "nonpiezoelectric scaﬀolds and exercise therapy exhibited unﬁlled",
+      "bbox_pt": [
+        303.0904541015625,
+        130.77867126464844,
+        544.0227661132812,
+        139.82577514648438
+      ],
+      "bbox_px": [
+        1262,
+        544,
+        2266,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b64",
+      "text": "defects and limited healing. Consequently, the combination of",
+      "bbox_pt": [
+        303.0904541015625,
+        141.73204040527344,
+        544.0455322265625,
+        150.77914428710938
+      ],
+      "bbox_px": [
+        1262,
+        590,
+        2266,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b65",
+      "text": "biodegradable piezoelectric tissue scaﬀolds with controlled me-",
+      "bbox_pt": [
+        303.0904541015625,
+        152.69432067871094,
+        544.0281982421875,
+        161.74142456054688
+      ],
+      "bbox_px": [
+        1262,
+        636,
+        2266,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b66",
+      "text": "chanical activation (via physical exercise) holds promise for os-",
+      "bbox_pt": [
+        303.0904541015625,
+        163.6566619873047,
+        544.0336303710938,
+        172.70376586914062
+      ],
+      "bbox_px": [
+        1262,
+        681,
+        2266,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b67",
+      "text": "teoarthritis treatment and regeneration of other injured tissues",
+      "bbox_pt": [
+        303.0904541015625,
+        174.6100311279297,
+        544.0347290039062,
+        183.65713500976562
+      ],
+      "bbox_px": [
+        1262,
+        727,
+        2266,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b68",
+      "text": "(Figure  6b ). [ 190 ] These ﬁndings demonstrate that under con-",
+      "bbox_pt": [
+        303.0904541015625,
+        182.42918395996094,
+        544.0408935546875,
+        194.61941528320312
+      ],
+      "bbox_px": [
+        1262,
+        760,
+        2266,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b69",
+      "text": "trolled mechanical stimulation, piezoelectric scaﬀolds can gen-",
+      "bbox_pt": [
+        303.08966064453125,
+        196.53245544433594,
+        544.0245971679688,
+        205.57955932617188
+      ],
+      "bbox_px": [
+        1262,
+        818,
+        2266,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b70",
+      "text": "erate surface charges conducive to cartilage growth, thereby en-",
+      "bbox_pt": [
+        303.08966064453125,
+        207.48582458496094,
+        544.0095825195312,
+        216.53292846679688
+      ],
+      "bbox_px": [
+        1262,
+        864,
+        2266,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b71",
+      "text": "hancing the in vitro diﬀerentiation of stem cells and promoting",
+      "bbox_pt": [
+        303.08966064453125,
+        218.4481658935547,
+        544.0374755859375,
+        227.49526977539062
+      ],
+      "bbox_px": [
+        1262,
+        910,
+        2266,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b72",
+      "text": "cartilage regeneration (Figure  6d ). [ 5 ] The applications of electri-",
+      "bbox_pt": [
+        303.08966064453125,
+        226.26805114746094,
+        544.0421142578125,
+        238.45761108398438
+      ],
+      "bbox_px": [
+        1262,
+        942,
+        2266,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b73",
+      "text": "cal biomaterials for cartilage regeneration are summarized, as",
+      "bbox_pt": [
+        303.0898742675781,
+        240.36241149902344,
+        544.0423583984375,
+        249.40951538085938
+      ],
+      "bbox_px": [
+        1262,
+        1001,
+        2266,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b74",
+      "text": "shown in  Table  3 .",
+      "bbox_pt": [
+        303.0898742675781,
+        251.3247528076172,
+        369.0431213378906,
+        260.3718566894531
+      ],
+      "bbox_px": [
+        1262,
+        1047,
+        1537,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b75",
+      "text": "3.3. Clinical Translatability of Electrical Biomaterials",
+      "bbox_pt": [
+        303.09075927734375,
+        284.39105224609375,
+        493.7262878417969,
+        293.3574523925781
+      ],
+      "bbox_px": [
+        1262,
+        1184,
+        2057,
+        1222
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b76",
+      "text": "Electroactive biomaterials are progressively demonstrating im-",
+      "bbox_pt": [
+        303.09075927734375,
+        306.3147888183594,
+        544.0503540039062,
+        315.36187744140625
+      ],
+      "bbox_px": [
+        1262,
+        1276,
+        2266,
+        1314
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b77",
+      "text": "mense potential in the clinical application of bone and cartilage",
+      "bbox_pt": [
+        303.09075927734375,
+        317.277099609375,
+        544.0150146484375,
+        326.3241882324219
+      ],
+      "bbox_px": [
+        1262,
+        1321,
+        2266,
+        1359
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b78",
+      "text": "regeneration. These materials exhibit a high degree of design",
+      "bbox_pt": [
+        303.09075927734375,
+        328.23944091796875,
+        544.009765625,
+        337.2865295410156
+      ],
+      "bbox_px": [
+        1262,
+        1367,
+        2266,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b79",
+      "text": "ﬂexibility, enabling diverse processing needs such as injectability,",
+      "bbox_pt": [
+        303.09075927734375,
+        339.1927795410156,
+        544.01513671875,
+        348.2398681640625
+      ],
+      "bbox_px": [
+        1262,
+        1413,
+        2266,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b80",
+      "text": "minimal invasiveness, and biodegradability, which facilitate their",
+      "bbox_pt": [
+        303.09075927734375,
+        350.1551208496094,
+        544.022216796875,
+        359.20220947265625
+      ],
+      "bbox_px": [
+        1262,
+        1458,
+        2266,
+        1496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b81",
+      "text": "practical and safe application in clinical settings. More impor-",
+      "bbox_pt": [
+        303.09075927734375,
+        361.117431640625,
+        544.023193359375,
+        370.1645202636719
+      ],
+      "bbox_px": [
+        1262,
+        1504,
+        2266,
+        1542
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b82",
+      "text": "tantly, electroactive biomaterials can seamlessly synergize with",
+      "bbox_pt": [
+        303.09075927734375,
+        372.0707702636719,
+        544.033203125,
+        381.11785888671875
+      ],
+      "bbox_px": [
+        1262,
+        1550,
+        2266,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b83",
+      "text": "various bioactive factors or established scaﬀolds, jointly acting",
+      "bbox_pt": [
+        303.09075927734375,
+        383.0331115722656,
+        544.0311279296875,
+        392.0802001953125
+      ],
+      "bbox_px": [
+        1262,
+        1595,
+        2266,
+        1633
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b84",
+      "text": "on damaged bone and cartilage tissues to promote cell prolifer-",
+      "bbox_pt": [
+        303.09075927734375,
+        393.9864501953125,
+        544.0582885742188,
+        403.0335388183594
+      ],
+      "bbox_px": [
+        1262,
+        1641,
+        2266,
+        1679
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b85",
+      "text": "ation, diﬀerentiation, and migration, thereby accelerating tissue",
+      "bbox_pt": [
+        303.09075927734375,
+        404.94879150390625,
+        544.04150390625,
+        413.9958801269531
+      ],
+      "bbox_px": [
+        1262,
+        1687,
+        2266,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b86",
+      "text": "repair and regeneration processes. [ 167 ] In multiple disease mod-",
+      "bbox_pt": [
+        303.09075927734375,
+        412.76617431640625,
+        544.041748046875,
+        424.95819091796875
+      ],
+      "bbox_px": [
+        1262,
+        1719,
+        2266,
+        1770
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b87",
+      "text": "els, including fracture healing, bone defect repair, cartilage in-",
+      "bbox_pt": [
+        303.0894775390625,
+        426.86053466796875,
+        544.0499267578125,
+        435.9076232910156
+      ],
+      "bbox_px": [
+        1262,
+        1778,
+        2266,
+        1816
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b88",
+      "text": "jury repair, and neural regeneration, electroactive biomaterials",
+      "bbox_pt": [
+        303.0894775390625,
+        437.8228454589844,
+        544.0357055664062,
+        446.86993408203125
+      ],
+      "bbox_px": [
+        1262,
+        1824,
+        2266,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b89",
+      "text": "have achieved signiﬁcant therapeutic eﬀects, oﬀering patients",
+      "bbox_pt": [
+        303.0894775390625,
+        448.7851867675781,
+        544.0137329101562,
+        457.832275390625
+      ],
+      "bbox_px": [
+        1262,
+        1869,
+        2266,
+        1907
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b90",
+      "text": "new treatment options and hope. [ 191,192 ] However, despite the",
+      "bbox_pt": [
+        303.0894775390625,
+        456.6051940917969,
+        544.0442504882812,
+        468.7856140136719
+      ],
+      "bbox_px": [
+        1262,
+        1902,
+        2266,
+        1953
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b91",
+      "text": "substantial potential of electroactive biomaterials in bone and",
+      "bbox_pt": [
+        303.0893249511719,
+        470.6994934082031,
+        544.0199584960938,
+        479.74658203125
+      ],
+      "bbox_px": [
+        1262,
+        1961,
+        2266,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b92",
+      "text": "cartilage regeneration, numerous challenges and diﬃculties re-",
+      "bbox_pt": [
+        303.0893249511719,
+        481.66180419921875,
+        544.0470581054688,
+        490.7088928222656
+      ],
+      "bbox_px": [
+        1262,
+        2006,
+        2266,
+        2044
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b93",
+      "text": "main in their clinical translation. Firstly, the long-term biosafety",
+      "bbox_pt": [
+        303.0893249511719,
+        492.61517333984375,
+        544.0399169921875,
+        501.6622619628906
+      ],
+      "bbox_px": [
+        1262,
+        2052,
+        2266,
+        2090
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b94",
+      "text": "of these materials cannot be overlooked. Although some studies",
+      "bbox_pt": [
+        303.0893249511719,
+        503.5774841308594,
+        544.0128173828125,
+        512.6245727539062
+      ],
+      "bbox_px": [
+        1262,
+        2098,
+        2266,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b95",
+      "text": "have reported the promotive eﬀects of electroactive biomaterials",
+      "bbox_pt": [
+        303.0893249511719,
+        514.539794921875,
+        544.0010375976562,
+        523.5868530273438
+      ],
+      "bbox_px": [
+        1262,
+        2143,
+        2266,
+        2181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b96",
+      "text": "on bone and cartilage regeneration, the understanding of their",
+      "bbox_pt": [
+        303.0893249511719,
+        525.4931640625,
+        544.0325927734375,
+        534.5402221679688
+      ],
+      "bbox_px": [
+        1262,
+        2189,
+        2266,
+        2227
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b97",
+      "text": "long-term eﬃcacy and mechanisms is still relatively limited. In",
+      "bbox_pt": [
+        303.0893249511719,
+        536.4555053710938,
+        544.0570068359375,
+        545.5025634765625
+      ],
+      "bbox_px": [
+        1262,
+        2235,
+        2266,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b98",
+      "text": "particular, further in-depth research is required into the biocom-",
+      "bbox_pt": [
+        303.0893249511719,
+        547.4178466796875,
+        544.0390625,
+        556.4649047851562
+      ],
+      "bbox_px": [
+        1262,
+        2280,
+        2266,
+        2318
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b99",
+      "text": "patibility and metabolic pathways of the degradation products of",
+      "bbox_pt": [
+        303.0893249511719,
+        558.3711547851562,
+        544.0462646484375,
+        567.418212890625
+      ],
+      "bbox_px": [
+        1262,
+        2326,
+        2266,
+        2364
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b100",
+      "text": "biodegradable polymer materials, as well as those of nanoparti-",
+      "bbox_pt": [
+        303.0893249511719,
+        569.33349609375,
+        544.0199584960938,
+        578.3805541992188
+      ],
+      "bbox_px": [
+        1262,
+        2372,
+        2266,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b101",
+      "text": "cle materials. [ 166 ] Secondly, the stability of material performance",
+      "bbox_pt": [
+        303.0893249511719,
+        577.1510620117188,
+        544.0421142578125,
+        589.3428344726562
+      ],
+      "bbox_px": [
+        1262,
+        2404,
+        2266,
+        2455
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b102",
+      "text": "in complex in vivo environments poses an urgent problem to",
+      "bbox_pt": [
+        303.0898132324219,
+        591.2455444335938,
+        544.0447998046875,
+        600.2926025390625
+      ],
+      "bbox_px": [
+        1262,
+        2463,
+        2266,
+        2501
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b103",
+      "text": "be solved. Ensuring the materials’ continuous and stable electri-",
+      "bbox_pt": [
+        303.0898132324219,
+        602.2078857421875,
+        544.0455932617188,
+        611.2549438476562
+      ],
+      "bbox_px": [
+        1262,
+        2509,
+        2266,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b104",
+      "text": "cal signal output in vivo and eﬀectively monitoring their perfor-",
+      "bbox_pt": [
+        303.0898132324219,
+        613.170166015625,
+        544.0465087890625,
+        622.2172241210938
+      ],
+      "bbox_px": [
+        1262,
+        2554,
+        2266,
+        2592
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b105",
+      "text": "mance changes is a major challenge in current research. This",
+      "bbox_pt": [
+        303.0898132324219,
+        624.12353515625,
+        544.0546264648438,
+        633.1705932617188
+      ],
+      "bbox_px": [
+        1262,
+        2600,
+        2266,
+        2638
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b106",
+      "text": "not only necessitates more innovations and optimizations in ma-",
+      "bbox_pt": [
+        303.0898132324219,
+        635.0858154296875,
+        544.0521240234375,
+        644.1328735351562
+      ],
+      "bbox_px": [
+        1262,
+        2646,
+        2266,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b107",
+      "text": "terial design but also requires the establishment of stricter and",
+      "bbox_pt": [
+        303.0898132324219,
+        646.0481567382812,
+        544.0538940429688,
+        655.09521484375
+      ],
+      "bbox_px": [
+        1262,
+        2691,
+        2266,
+        2729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b108",
+      "text": "more standardized monitoring systems in clinical trials. More-",
+      "bbox_pt": [
+        303.0898132324219,
+        657.0015258789062,
+        544.0438842773438,
+        666.048583984375
+      ],
+      "bbox_px": [
+        1262,
+        2737,
+        2266,
+        2775
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b109",
+      "text": "over, achieving a balanced performance in electrical, mechani-",
+      "bbox_pt": [
+        303.0898132324219,
+        667.9638671875,
+        544.0328979492188,
+        677.0109252929688
+      ],
+      "bbox_px": [
+        1262,
+        2783,
+        2266,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b110",
+      "text": "cal properties, lubricity, and micro-morphology of electroactive",
+      "bbox_pt": [
+        303.0898132324219,
+        678.9261474609375,
+        543.9945068359375,
+        687.9732055664062
+      ],
+      "bbox_px": [
+        1262,
+        2828,
+        2266,
+        2866
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b111",
+      "text": "materials demands further resolution. Such balance is crucial to",
+      "bbox_pt": [
+        303.0898132324219,
+        689.8795166015625,
+        544.0510864257812,
+        698.9265747070312
+      ],
+      "bbox_px": [
+        1262,
+        2874,
+        2266,
+        2912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b112",
+      "text": "fulﬁlling the diverse needs of clinical implants, thereby enhanc-",
+      "bbox_pt": [
+        303.0898132324219,
+        700.8418579101562,
+        544.0457763671875,
+        709.888916015625
+      ],
+      "bbox_px": [
+        1262,
+        2920,
+        2266,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b113",
+      "text": "ing therapeutic outcomes and patient rehabilitation experiences.",
+      "bbox_pt": [
+        303.0898132324219,
+        711.8041381835938,
+        544.0357666015625,
+        720.8511962890625
+      ],
+      "bbox_px": [
+        1262,
+        2965,
+        2266,
+        3003
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b114",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b115",
+      "text": "2411209 (16 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b116",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b117",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 118
+  }
+}

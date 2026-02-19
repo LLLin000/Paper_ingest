@@ -1,0 +1,2049 @@
+{
+  "page": 2,
+  "image_path": "run\\zhtrial02\\pages\\p002.png",
+  "blocks": [
+    {
+      "block_id": "p2_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b1",
+      "text": "2",
+      "bbox_pt": [
+        556.2808837890625,
+        760.43701171875,
+        561.2008666992188,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2317,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b4",
+      "text": "Epidemiology",
+      "bbox_pt": [
+        306.1416931152344,
+        107.8897476196289,
+        377.0057067871094,
+        122.72474670410156
+      ],
+      "bbox_px": [
+        1275,
+        449,
+        1570,
+        511
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b5",
+      "text": "Prevalence",
+      "bbox_pt": [
+        306.1416931152344,
+        122.3219985961914,
+        351.69415283203125,
+        133.1632537841797
+      ],
+      "bbox_px": [
+        1275,
+        509,
+        1465,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b6",
+      "text": "Patients can develop shoulder pain at any point along the spectrum ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.5957489013672,
+        562.5327758789062,
+        143.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        556,
+        2343,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b7",
+      "text": "of rotator cuff tears. Most patients with a rotator cuff tear do not have ",
+      "bbox_pt": [
+        306.1416931152344,
+        144.3457489013672,
+        562.700927734375,
+        154.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        601,
+        2344,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b8",
+      "text": "symptoms of pain or weakness and do not seek medical care. Hence, ",
+      "bbox_pt": [
+        306.1416931152344,
+        155.0957489013672,
+        562.5294189453125,
+        165.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        646,
+        2343,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b9",
+      "text": "the exact prevalence of rotator cuff disease is unknown. Although the ",
+      "bbox_pt": [
+        306.1416931152344,
+        165.8457489013672,
+        562.6828002929688,
+        176.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b10",
+      "text": "incidence of symptomatic rotator cuff disease is probably steady, rota-",
+      "bbox_pt": [
+        306.1416931152344,
+        176.5957489013672,
+        561.2598876953125,
+        186.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2338,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b11",
+      "text": "tor cuff repair surgery is more common than 20 years ago, probably ",
+      "bbox_pt": [
+        306.1416931152344,
+        187.3457489013672,
+        562.683837890625,
+        197.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        780,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b12",
+      "text": "due to the increased use of arthroscopic techniques and transition ",
+      "bbox_pt": [
+        306.1416931152344,
+        198.0957489013672,
+        562.8189697265625,
+        208.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        825,
+        2345,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b13",
+      "text": "to outpatient surgery. One study showed an annual increase in rota-",
+      "bbox_pt": [
+        306.1416931152344,
+        208.8457489013672,
+        561.2599487304688,
+        219.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2338,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b14",
+      "text": "tor cuff surgery of 1.6% per year in the USA between 2007 and 2016 ",
+      "bbox_pt": [
+        306.1416931152344,
+        219.5957489013672,
+        562.8012084960938,
+        229.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        914,
+        2345,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b15",
+      "text": "(165 repairs per 100,000 person-years 10 ). In the absence of pain, indi-",
+      "bbox_pt": [
+        306.1416931152344,
+        230.0074005126953,
+        561.2662353515625,
+        240.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        958,
+        2338,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b16",
+      "text": "viduals with rotator cuff tears have been shown to maintain nearly nor-",
+      "bbox_pt": [
+        306.1416931152344,
+        241.0957489013672,
+        561.0887451171875,
+        251.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        1004,
+        2337,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b17",
+      "text": "mal shoulder function 11 . Population screening studies using shoulder ",
+      "bbox_pt": [
+        306.1416931152344,
+        251.5074005126953,
+        562.7247314453125,
+        262.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        1047,
+        2344,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b18",
+      "text": "ultrasonography have better defined the prevalence of rotator cuff ",
+      "bbox_pt": [
+        306.1416931152344,
+        262.5957336425781,
+        562.7625732421875,
+        272.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        1094,
+        2344,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b19",
+      "text": "tear 12 . A cross-sectional study involving 1,000 women in the UK demon-",
+      "bbox_pt": [
+        306.1416931152344,
+        273.00738525390625,
+        561.2598266601562,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1137,
+        2338,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b20",
+      "text": "strated that 22.2% had a full-thickness rotator cuff tear. Advancing age ",
+      "bbox_pt": [
+        306.1416931152344,
+        284.0956115722656,
+        562.6190795898438,
+        294.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b21",
+      "text": "and dominant shoulder involvement were positively correlated with ",
+      "bbox_pt": [
+        306.1416931152344,
+        294.8456115722656,
+        562.5381469726562,
+        305.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2343,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b22",
+      "text": "the presence of a tear. Similarly, two different observational studies ",
+      "bbox_pt": [
+        306.1416931152344,
+        305.5956115722656,
+        562.6586303710938,
+        315.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2344,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b23",
+      "text": "in Asian populations showed a prevalence of full-thickness cuff tears ",
+      "bbox_pt": [
+        306.1416931152344,
+        316.3456115722656,
+        562.6787109375,
+        326.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1318,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b24",
+      "text": "of 20.7% (1,366 individuals) and 22.1% (664 individuals), with higher ",
+      "bbox_pt": [
+        306.1416931152344,
+        327.0956115722656,
+        562.6768798828125,
+        337.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1362,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b25",
+      "text": "prevalence in individuals ≥57 years of age than in younger individuals ",
+      "bbox_pt": [
+        306.1416931152344,
+        337.8456115722656,
+        562.6928100585938,
+        348.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b26",
+      "text": "and in men than in women 13 , 14 .",
+      "bbox_pt": [
+        306.1416931152344,
+        348.2574157714844,
+        416.548095703125,
+        358.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1451,
+        1735,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b27",
+      "text": "Risk factors",
+      "bbox_pt": [
+        306.1416931152344,
+        369.5718688964844,
+        354.95355224609375,
+        380.4131164550781
+      ],
+      "bbox_px": [
+        1275,
+        1539,
+        1478,
+        1585
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b28",
+      "text": "Age .  The overwhelming clinical evidence suggests that the primary ",
+      "bbox_pt": [
+        306.1416931152344,
+        379.4596252441406,
+        562.7005004882812,
+        391.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1581,
+        2344,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b29",
+      "text": "risk factor for the development of rotator cuff degeneration is age 4 , 5 , 15 , 16 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        391.2574157714844,
+        562.6830444335938,
+        401.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1630,
+        2344,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b30",
+      "text": "Multiple clinical studies have shown that patients with a painful rotator ",
+      "bbox_pt": [
+        306.1416931152344,
+        402.3456115722656,
+        562.709228515625,
+        412.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        2344,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b31",
+      "text": "cuff tear often have an asymptomatic degenerative tear in the opposite ",
+      "bbox_pt": [
+        306.1416931152344,
+        413.0956115722656,
+        562.6395874023438,
+        423.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2344,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b32",
+      "text": "shoulder 5 , 11 , 17 , 18 . One study performed bilateral shoulder ultrasonog-",
+      "bbox_pt": [
+        306.1416931152344,
+        423.5074157714844,
+        561.259765625,
+        434.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1764,
+        2338,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b33",
+      "text": "raphy on patients presenting with unilateral shoulder pain, and dem-",
+      "bbox_pt": [
+        306.1416931152344,
+        434.5956115722656,
+        561.2731323242188,
+        444.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2338,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b34",
+      "text": "onstrated a strong association between cuff disease and ageing 19 . The ",
+      "bbox_pt": [
+        306.1416931152344,
+        445.0074157714844,
+        562.7084350585938,
+        455.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1854,
+        2344,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b35",
+      "text": "presence of a full-thickness tear in the painful shoulder was associated ",
+      "bbox_pt": [
+        306.1416931152344,
+        456.0956115722656,
+        562.7359008789062,
+        466.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b36",
+      "text": "with a 21% risk of a partial-thickness tear and 36% risk of a full-thickness ",
+      "bbox_pt": [
+        306.1416931152344,
+        466.8456115722656,
+        562.8178100585938,
+        477.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2345,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b37",
+      "text": "tear in the contralateral shoulder. The average age of those with an ",
+      "bbox_pt": [
+        306.1416931152344,
+        477.5956115722656,
+        562.6403198242188,
+        487.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2344,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b38",
+      "text": "intact cuff, a unilateral cuff tear and bilateral partial-thickness or ",
+      "bbox_pt": [
+        306.1416931152344,
+        488.3456115722656,
+        562.6621704101562,
+        498.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2034,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b39",
+      "text": "full-thickness cuff tears demonstrated a nearly perfect 10-year distri-",
+      "bbox_pt": [
+        306.1416931152344,
+        499.0956115722656,
+        561.2631225585938,
+        509.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        2338,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b40",
+      "text": "bution (48.7, 58.7 and 67.8 years of age, respectively) 17 . Patients with a ",
+      "bbox_pt": [
+        306.1416931152344,
+        509.50738525390625,
+        562.72265625,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2122,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b41",
+      "text": "full-thickness cuff tear on the symptomatic side had a 50% chance of ",
+      "bbox_pt": [
+        306.1394958496094,
+        520.5953979492188,
+        562.6979370117188,
+        530.77587890625
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b42",
+      "text": "having a concomitant cuff tear on the asymptomatic side at ≥66 years ",
+      "bbox_pt": [
+        306.1416931152344,
+        531.3456420898438,
+        562.7158813476562,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2344,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b43",
+      "text": "of age. One study involving pooled data from 30 separate studies and ",
+      "bbox_pt": [
+        306.1416931152344,
+        542.0956420898438,
+        562.6746826171875,
+        552.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2258,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b44",
+      "text": ">6,000 shoulders demonstrated a strong correlation between the pres-",
+      "bbox_pt": [
+        306.1416931152344,
+        552.8456420898438,
+        561.2598876953125,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2338,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b45",
+      "text": "ence of a tear and increasing age stratified by decade, with a prevalence ",
+      "bbox_pt": [
+        306.1416931152344,
+        563.5956420898438,
+        562.738525390625,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b46",
+      "text": "of 9.7% in those <20 years of age compared with a prevalence of 62% in ",
+      "bbox_pt": [
+        306.1416931152344,
+        574.3456420898438,
+        562.7644653320312,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2344,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b47",
+      "text": "those >80 years of age 20 .",
+      "bbox_pt": [
+        306.1416931152344,
+        584.7573852539062,
+        396.4980163574219,
+        595.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2436,
+        1652,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b48",
+      "text": "Genetics .  Genetics may play a role in the development of rotator cuff ",
+      "bbox_pt": [
+        306.1440124511719,
+        605.2091064453125,
+        562.7356567382812,
+        616.775634765625
+      ],
+      "bbox_px": [
+        1275,
+        2521,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b49",
+      "text": "disease (Box  2 ). One study demonstrated a familial association of ",
+      "bbox_pt": [
+        306.1416931152344,
+        617.3457641601562,
+        562.8355102539062,
+        627.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2345,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b50",
+      "text": "rotator cuff disease, noting that siblings were twice as likely as spouses ",
+      "bbox_pt": [
+        306.1416931152344,
+        628.0957641601562,
+        562.60400390625,
+        638.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2344,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b51",
+      "text": "to develop a full-thickness cuff tear, regardless of symptoms, and ",
+      "bbox_pt": [
+        306.1416931152344,
+        638.8457641601562,
+        562.6350708007812,
+        649.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2661,
+        2344,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b52",
+      "text": "more than four times as likely to develop a painful full-thickness tear ",
+      "bbox_pt": [
+        306.1416931152344,
+        649.5957641601562,
+        562.7133178710938,
+        659.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b53",
+      "text": "compared with the general population 21 , 22 . Additionally, progression ",
+      "bbox_pt": [
+        306.1416931152344,
+        660.0073852539062,
+        562.71728515625,
+        670.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2750,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b54",
+      "text": "of tear size at 5-year follow-up was greater in siblings than controls 23 . ",
+      "bbox_pt": [
+        306.1429443359375,
+        670.7573852539062,
+        562.7119140625,
+        681.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2794,
+        2344,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b55",
+      "text": "Studies have shown an association between variants in genes related to ",
+      "bbox_pt": [
+        306.1416931152344,
+        681.8457641601562,
+        562.588134765625,
+        692.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b56",
+      "text": "cellular apoptosis on chromosome 6 and chromosome 17 and rotator ",
+      "bbox_pt": [
+        306.1416931152344,
+        692.5957641601562,
+        562.70751953125,
+        702.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b57",
+      "text": "cuff disease 24 . Indeed, genome-wide association studies have shown ",
+      "bbox_pt": [
+        306.1416931152344,
+        703.0073852539062,
+        562.8234252929688,
+        713.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2929,
+        2345,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b58",
+      "text": "variants in multiple candidate genes using large population-based ",
+      "bbox_pt": [
+        306.1416931152344,
+        714.0957641601562,
+        562.8201293945312,
+        724.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2975,
+        2345,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b59",
+      "text": "genetic databases 25 , 26 . RNA sequencing of the UK Biobank showed an ",
+      "bbox_pt": [
+        306.1416931152344,
+        724.5073852539062,
+        562.7064819335938,
+        735.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        3018,
+        2344,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b60",
+      "text": "increased expression of  STK24  and a decreased expression of  SAT1",
+      "bbox_pt": [
+        306.1416931152344,
+        735.562744140625,
+        562.7339477539062,
+        745.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        3064,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b61",
+      "text": "Introduction",
+      "bbox_pt": [
+        39.685001373291016,
+        107.8896255493164,
+        103.51851654052734,
+        122.72462463378906
+      ],
+      "bbox_px": [
+        165,
+        449,
+        431,
+        511
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b62",
+      "text": "The rotator cuff is a group of muscles and tendons that maintains the ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.84562683105469,
+        296.2764587402344,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        511,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b63",
+      "text": "shoulder in place and provides dynamic motion and stability to ",
+      "bbox_pt": [
+        39.685001373291016,
+        133.5956268310547,
+        296.1626281738281,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        556,
+        1234,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b64",
+      "text": "the joint. It is composed of four separate muscles, namely the supraspi-",
+      "bbox_pt": [
+        39.685001373291016,
+        144.3456268310547,
+        294.80316162109375,
+        154.526123046875
+      ],
+      "bbox_px": [
+        165,
+        601,
+        1228,
+        643
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b65",
+      "text": "natus, infraspinatus, subscapularis and teres minor. The tendons from ",
+      "bbox_pt": [
+        39.685001373291016,
+        155.0956268310547,
+        296.37884521484375,
+        165.276123046875
+      ],
+      "bbox_px": [
+        165,
+        646,
+        1234,
+        688
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b66",
+      "text": "these four muscles coalesce at their attachments on the humeral head ",
+      "bbox_pt": [
+        39.685001373291016,
+        165.8456268310547,
+        296.1165466308594,
+        176.026123046875
+      ],
+      "bbox_px": [
+        165,
+        691,
+        1233,
+        733
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b67",
+      "text": "(Fig.  1 ). The glenohumeral joint has the greatest range of motion of ",
+      "bbox_pt": [
+        39.685001373291016,
+        176.5956268310547,
+        296.17529296875,
+        186.776123046875
+      ],
+      "bbox_px": [
+        165,
+        735,
+        1234,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b68",
+      "text": "any joint in the human body, and inherently relies upon the rotator ",
+      "bbox_pt": [
+        39.685001373291016,
+        187.3456268310547,
+        296.0980224609375,
+        197.526123046875
+      ],
+      "bbox_px": [
+        165,
+        780,
+        1233,
+        823
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b69",
+      "text": "cuff to provide dynamic stabilization as well as function to position ",
+      "bbox_pt": [
+        39.685001373291016,
+        198.0956268310547,
+        296.38385009765625,
+        208.276123046875
+      ],
+      "bbox_px": [
+        165,
+        825,
+        1234,
+        867
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b70",
+      "text": "the arm and hand.",
+      "bbox_pt": [
+        39.685001373291016,
+        208.8456268310547,
+        106.947265625,
+        219.026123046875
+      ],
+      "bbox_px": [
+        165,
+        870,
+        445,
+        912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b71",
+      "text": "Rotator cuff tears are the most common upper extremity con-",
+      "bbox_pt": [
+        56.692901611328125,
+        219.5956268310547,
+        294.80316162109375,
+        229.776123046875
+      ],
+      "bbox_px": [
+        236,
+        914,
+        1228,
+        957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b72",
+      "text": "dition seen by primary care physicians, physiatrists and orthopae-",
+      "bbox_pt": [
+        39.685001373291016,
+        230.3456268310547,
+        294.8031921386719,
+        240.526123046875
+      ],
+      "bbox_px": [
+        165,
+        959,
+        1228,
+        1002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b73",
+      "text": "dic surgeons 1 . Rotator cuff injuries present as a spectrum of disease ",
+      "bbox_pt": [
+        39.685001373291016,
+        240.7574005126953,
+        296.2320556640625,
+        251.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1003,
+        1234,
+        1046
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b74",
+      "text": "ranging from tendinopathy and partial-thickness tears, extending to ",
+      "bbox_pt": [
+        39.685001373291016,
+        251.8456268310547,
+        296.2525634765625,
+        262.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1049,
+        1234,
+        1091
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b75",
+      "text": "full-thickness tears with progressive cartilage degeneration (cuff tear ",
+      "bbox_pt": [
+        39.685001373291016,
+        262.5956115722656,
+        296.43017578125,
+        272.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1094,
+        1235,
+        1136
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b76",
+      "text": "arthropathy) 2  (Box  1  and Fig.  2 ). Symptoms of rotator cuff injuries are ",
+      "bbox_pt": [
+        39.685001373291016,
+        273.00738525390625,
+        296.2443542480469,
+        283.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1137,
+        1234,
+        1181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b77",
+      "text": "broad and can range from minimal symptoms including difficulty ",
+      "bbox_pt": [
+        39.685001373291016,
+        284.095703125,
+        296.1708068847656,
+        294.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        1183,
+        1234,
+        1226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b78",
+      "text": "sleeping and pain during overhead reaching to loss of active and passive ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.845703125,
+        296.3304748535156,
+        305.0262145996094
+      ],
+      "bbox_px": [
+        165,
+        1228,
+        1234,
+        1270
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b79",
+      "text": "motion with progressive shoulder girdle weakness and dysfunction.",
+      "bbox_pt": [
+        39.685001373291016,
+        305.595703125,
+        291.3843078613281,
+        315.7762145996094
+      ],
+      "bbox_px": [
+        165,
+        1273,
+        1214,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b80",
+      "text": "Although some tears are traumatic, most rotator cuff problems ",
+      "bbox_pt": [
+        56.692901611328125,
+        316.345703125,
+        296.2854309082031,
+        326.5262145996094
+      ],
+      "bbox_px": [
+        236,
+        1318,
+        1234,
+        1360
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b81",
+      "text": "are degenerative in nature due, in part, to age-related changes to the ",
+      "bbox_pt": [
+        39.685001373291016,
+        327.095703125,
+        296.21710205078125,
+        337.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        1362,
+        1234,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b82",
+      "text": "­tendon structure. The leading hypothesis is that tears progress from ",
+      "bbox_pt": [
+        39.685001373291016,
+        337.845458984375,
+        296.2837829589844,
+        348.0259704589844
+      ],
+      "bbox_px": [
+        165,
+        1407,
+        1234,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b83",
+      "text": "tendinopathic changes in a watershed area that lacks blood supply ",
+      "bbox_pt": [
+        39.685001373291016,
+        348.595703125,
+        296.3891906738281,
+        358.7762145996094
+      ],
+      "bbox_px": [
+        165,
+        1452,
+        1234,
+        1494
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b84",
+      "text": "in the supraspinatus to partial-thickness tears and eventually full- ",
+      "bbox_pt": [
+        39.685001373291016,
+        359.345703125,
+        296.2841491699219,
+        369.5262145996094
+      ],
+      "bbox_px": [
+        165,
+        1497,
+        1234,
+        1539
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b85",
+      "text": "thickness tears 3 , which are accompanied by progressive muscle and ",
+      "bbox_pt": [
+        39.685001373291016,
+        369.7574157714844,
+        296.266357421875,
+        380.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        1540,
+        1234,
+        1584
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b86",
+      "text": "tendon degeneration. Confounding the natural history is that not all ",
+      "bbox_pt": [
+        39.685001373291016,
+        380.845703125,
+        296.2847595214844,
+        391.0262145996094
+      ],
+      "bbox_px": [
+        165,
+        1586,
+        1234,
+        1629
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b87",
+      "text": "tears progress and/or worsen, and in many patients who present with a ",
+      "bbox_pt": [
+        39.685001373291016,
+        391.595703125,
+        296.33990478515625,
+        401.7762145996094
+      ],
+      "bbox_px": [
+        165,
+        1631,
+        1234,
+        1674
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b88",
+      "text": "progressive increase in the tear size, symptoms do not worsen, making ",
+      "bbox_pt": [
+        39.685001373291016,
+        402.345703125,
+        296.19873046875,
+        412.5262145996094
+      ],
+      "bbox_px": [
+        165,
+        1676,
+        1234,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b89",
+      "text": "a standard algorithm for treatment challenging 4 , 5 .",
+      "bbox_pt": [
+        39.685001373291016,
+        412.7574157714844,
+        224.20298767089844,
+        423.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        1719,
+        934,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b90",
+      "text": "The pathophysiology of rotator cuff tears is complex, as it involves ",
+      "bbox_pt": [
+        56.692901611328125,
+        423.845703125,
+        296.216552734375,
+        434.0262145996094
+      ],
+      "bbox_px": [
+        236,
+        1766,
+        1234,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b91",
+      "text": "the interplay between the tendon, bone and muscle. A key to under -",
+      "bbox_pt": [
+        39.685001373291016,
+        434.595703125,
+        294.8031005859375,
+        444.7762145996094
+      ],
+      "bbox_px": [
+        165,
+        1810,
+        1228,
+        1853
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b92",
+      "text": "standing rotator cuff pathology and tearing is delineating the role of ",
+      "bbox_pt": [
+        39.685001373291016,
+        445.345703125,
+        296.2566833496094,
+        455.5262145996094
+      ],
+      "bbox_px": [
+        165,
+        1855,
+        1234,
+        1898
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b93",
+      "text": "tendon and muscle degeneration. Increasing evidence suggests that ",
+      "bbox_pt": [
+        39.685001373291016,
+        456.095703125,
+        296.22589111328125,
+        466.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        1900,
+        1234,
+        1942
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b94",
+      "text": "the mTOR pathway might have an important role in the regulation of ",
+      "bbox_pt": [
+        39.685001373291016,
+        466.845703125,
+        296.28472900390625,
+        477.0262145996094
+      ],
+      "bbox_px": [
+        165,
+        1945,
+        1234,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b95",
+      "text": "tendon degeneration over time 6 . Muscle quality, as evidenced by the ",
+      "bbox_pt": [
+        39.685001373291016,
+        477.2574157714844,
+        296.23724365234375,
+        487.7762145996094
+      ],
+      "bbox_px": [
+        165,
+        1988,
+        1234,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b96",
+      "text": "overall size of the muscle, as well as intramuscular fat deposition (fatty ",
+      "bbox_pt": [
+        39.685001373291016,
+        488.345703125,
+        296.2911376953125,
+        498.5262145996094
+      ],
+      "bbox_px": [
+        165,
+        2034,
+        1234,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b97",
+      "text": "infiltration) also influences shoulder strength, tear progression and ",
+      "bbox_pt": [
+        39.685001373291016,
+        499.095703125,
+        296.41485595703125,
+        509.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        2079,
+        1235,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b98",
+      "text": "the outcome of surgery 7 . Studies also highlight the role of fibroadipo-",
+      "bbox_pt": [
+        39.685001373291016,
+        509.50738525390625,
+        294.8031311035156,
+        520.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2122,
+        1228,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b99",
+      "text": "progenitor cells (FAPs) (muscle-resident multipotent mesenchymal ",
+      "bbox_pt": [
+        39.685001373291016,
+        520.5957641601562,
+        296.1067199707031,
+        530.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1233,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b100",
+      "text": "stem cells (MSCs)) as a central mediator of muscle degeneration 8 , 9 .",
+      "bbox_pt": [
+        39.685001373291016,
+        531.0073852539062,
+        285.5483093261719,
+        541.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2212,
+        1189,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b101",
+      "text": "The management of rotator cuff tears is generally based on ",
+      "bbox_pt": [
+        56.692901611328125,
+        542.0957641601562,
+        296.1812744140625,
+        552.2762451171875
+      ],
+      "bbox_px": [
+        236,
+        2258,
+        1234,
+        2301
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b102",
+      "text": "symptoms. Indeed, most patients with rotator cuff tears diagnosed ",
+      "bbox_pt": [
+        39.685001373291016,
+        552.8457641601562,
+        296.3011474609375,
+        563.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2303,
+        1234,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b103",
+      "text": "on advanced imaging (for example, MRI or ultrasonography) do not ",
+      "bbox_pt": [
+        39.685001373291016,
+        563.5957641601562,
+        296.2533874511719,
+        573.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1234,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b104",
+      "text": "require surgery. Observation, physical therapy and corticosteroid ",
+      "bbox_pt": [
+        39.685001373291016,
+        574.3457641601562,
+        296.3745422363281,
+        584.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2393,
+        1234,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b105",
+      "text": "injections, as well as surgical repair and reconstruction of the rotator ",
+      "bbox_pt": [
+        39.685001373291016,
+        585.0957641601562,
+        296.2567443847656,
+        595.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2437,
+        1234,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b106",
+      "text": "cuff, all play a role in patient recovery, which depends on many patient- ",
+      "bbox_pt": [
+        39.685001373291016,
+        595.8457641601562,
+        296.2373962402344,
+        606.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2482,
+        1234,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b107",
+      "text": "specific factors such as age, activity level and hand dominance, and ",
+      "bbox_pt": [
+        39.685001373291016,
+        606.5957641601562,
+        296.393310546875,
+        616.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2527,
+        1234,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b108",
+      "text": "intrinsic factors of the rotator cuff.",
+      "bbox_pt": [
+        39.685001373291016,
+        617.3457641601562,
+        168.85528564453125,
+        627.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2572,
+        703,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b109",
+      "text": "Of note, the terminology of rotator cuff disease in the literature ",
+      "bbox_pt": [
+        56.692901611328125,
+        628.0957641601562,
+        296.2517395019531,
+        638.2762451171875
+      ],
+      "bbox_px": [
+        236,
+        2617,
+        1234,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b110",
+      "text": "varies: a rotator cuff problem is described as a tendinopathy, a tear, ",
+      "bbox_pt": [
+        39.685001373291016,
+        638.8457641601562,
+        296.2809143066406,
+        649.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2661,
+        1234,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b111",
+      "text": "an injury or rotator cuff disease. Thus, the nomenclature leads to ",
+      "bbox_pt": [
+        39.685001373291016,
+        649.5957641601562,
+        296.2618408203125,
+        659.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2706,
+        1234,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b112",
+      "text": "­confusion for the patient and the provider.",
+      "bbox_pt": [
+        39.685001373291016,
+        660.3457641601562,
+        197.8383331298828,
+        670.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        824,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b113",
+      "text": "In this Primer, we present the current knowledge of the basic and ",
+      "bbox_pt": [
+        56.696502685546875,
+        671.0955200195312,
+        296.2592468261719,
+        681.2760009765625
+      ],
+      "bbox_px": [
+        236,
+        2796,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b114",
+      "text": "clinical science of rotator cuff disease, highlighting the clinical pres-",
+      "bbox_pt": [
+        39.68500518798828,
+        681.84521484375,
+        294.7989196777344,
+        692.0256958007812
+      ],
+      "bbox_px": [
+        165,
+        2841,
+        1228,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b115",
+      "text": "entation, natural history, risk factors and current treatment options. ",
+      "bbox_pt": [
+        39.68500518798828,
+        692.594970703125,
+        296.260009765625,
+        702.7754516601562
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1234,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b116",
+      "text": "Furthermore, we provide an evidence-based treatment algorithm and ",
+      "bbox_pt": [
+        39.685001373291016,
+        703.3457641601562,
+        296.2950134277344,
+        713.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2930,
+        1234,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b117",
+      "text": "consolidate the unmet needs in the field as well as outline the barriers ",
+      "bbox_pt": [
+        39.685001373291016,
+        714.0957641601562,
+        296.22686767578125,
+        724.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2975,
+        1234,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b118",
+      "text": "necessary to overcome the modest improvements in outcomes of ",
+      "bbox_pt": [
+        39.685001373291016,
+        724.8457641601562,
+        296.27606201171875,
+        735.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1234,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b119",
+      "text": "surgery over the past 20 years.",
+      "bbox_pt": [
+        39.685001373291016,
+        735.5957641601562,
+        152.41302490234375,
+        745.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        3064,
+        635,
+        3107
+      ],
+      "column_guess": 1
+    }
+  ],
+  "constraints": {
+    "total_blocks": 120
+  }
+}

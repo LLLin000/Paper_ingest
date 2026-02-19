@@ -1,0 +1,2083 @@
+{
+  "page": 23,
+  "image_path": "run\\stress01\\pages\\p023.png",
+  "blocks": [
+    {
+      "block_id": "p23_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b2",
+      "text": "materials contributes to their exceptional antibacterial properties",
+      "bbox_pt": [
+        50.81093978881836,
+        75.97752380371094,
+        291.7623291015625,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        211,
+        316,
+        1215,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b3",
+      "text": "by potentially increasing superoxide production, particularly on",
+      "bbox_pt": [
+        50.81093978881836,
+        86.93986511230469,
+        291.7650451660156,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        211,
+        362,
+        1215,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b4",
+      "text": "positively charged surfaces. Furthermore, the application of a po-",
+      "bbox_pt": [
+        50.81093978881836,
+        97.90214538574219,
+        291.7247009277344,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        211,
+        407,
+        1215,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b5",
+      "text": "larized electric ﬁeld can disrupt Fe-S clusters found in proteins,",
+      "bbox_pt": [
+        50.81093978881836,
+        108.85551452636719,
+        291.7615051269531,
+        117.9026107788086
+      ],
+      "bbox_px": [
+        211,
+        453,
+        1215,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b6",
+      "text": "leading to Fe 2 + reacting with H 2 O 2  to generate free radicals that",
+      "bbox_pt": [
+        50.81093978881836,
+        116.67503356933594,
+        291.7618408203125,
+        131.10427856445312
+      ],
+      "bbox_px": [
+        211,
+        486,
+        1215,
+        546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b7",
+      "text": "damage bacterial membranes. By harnessing its electrical activ-",
+      "bbox_pt": [
+        50.810447692871094,
+        130.7784881591797,
+        291.74029541015625,
+        139.82559204101562
+      ],
+      "bbox_px": [
+        211,
+        544,
+        1215,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b8",
+      "text": "ity, this composite scaﬀold facilitates the controlled release of the",
+      "bbox_pt": [
+        50.810447692871094,
+        141.7318572998047,
+        291.7304382324219,
+        150.77896118164062
+      ],
+      "bbox_px": [
+        211,
+        590,
+        1215,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b9",
+      "text": "human bone morphogenetic protein-4 (hBMP-4) gene and en-",
+      "bbox_pt": [
+        50.810447692871094,
+        152.6941375732422,
+        291.7654724121094,
+        161.74124145507812
+      ],
+      "bbox_px": [
+        211,
+        636,
+        1215,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b10",
+      "text": "hances osteogenic diﬀerentiation. [ 211 ]",
+      "bbox_pt": [
+        50.810447692871094,
+        162.7527618408203,
+        190.635009765625,
+        172.70358276367188
+      ],
+      "bbox_px": [
+        211,
+        678,
+        794,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b11",
+      "text": "Surfaces with positive charges tend to attract negatively",
+      "bbox_pt": [
+        60.26993942260742,
+        174.60813903808594,
+        291.737548828125,
+        183.65524291992188
+      ],
+      "bbox_px": [
+        251,
+        727,
+        1215,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b12",
+      "text": "charged ions such as Cl – or HPO 4– , which can hinder cell",
+      "bbox_pt": [
+        50.811279296875,
+        182.42918395996094,
+        291.7409362792969,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        211,
+        760,
+        1215,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b13",
+      "text": "adhesion. In physiological conditions, N-GaN/AlGaN and Ga-",
+      "bbox_pt": [
+        50.8101692199707,
+        196.53245544433594,
+        291.7498779296875,
+        205.57955932617188
+      ],
+      "bbox_px": [
+        211,
+        818,
+        1215,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b14",
+      "text": "GaN/AlGaN materials have surface potentials of  − 34.07 and",
+      "bbox_pt": [
+        50.8101692199707,
+        207.40090942382812,
+        291.74627685546875,
+        216.53292846679688
+      ],
+      "bbox_px": [
+        211,
+        864,
+        1215,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b15",
+      "text": "− 74.07 mV, respectively. Dexamethasone, which negatively",
+      "bbox_pt": [
+        50.8101692199707,
+        218.36325073242188,
+        291.7498779296875,
+        227.49526977539062
+      ],
+      "bbox_px": [
+        211,
+        909,
+        1215,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b16",
+      "text": "charges osteogenic induction media, can boost the diﬀerentia-",
+      "bbox_pt": [
+        50.8101692199707,
+        229.41050720214844,
+        291.7408447265625,
+        238.45761108398438
+      ],
+      "bbox_px": [
+        211,
+        955,
+        1215,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b17",
+      "text": "tion of MSCs into bone cells. An electric ﬁeld can be generated",
+      "bbox_pt": [
+        50.8101692199707,
+        240.3638153076172,
+        291.75885009765625,
+        249.41091918945312
+      ],
+      "bbox_px": [
+        211,
+        1001,
+        1215,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b18",
+      "text": "between a BiFeO3 ﬁlm, having a  + 75 mV surface potential, and",
+      "bbox_pt": [
+        50.8101692199707,
+        251.24124145507812,
+        291.7499084472656,
+        260.3732604980469
+      ],
+      "bbox_px": [
+        211,
+        1046,
+        1215,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b19",
+      "text": "a negatively charged area within a bone defect, which can help in",
+      "bbox_pt": [
+        50.8101692199707,
+        262.279541015625,
+        291.7508239746094,
+        271.3266296386719
+      ],
+      "bbox_px": [
+        211,
+        1092,
+        1215,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b20",
+      "text": "binding Fn molecules and enhance in vivo bone integration by",
+      "bbox_pt": [
+        50.8101692199707,
+        273.2418518066406,
+        291.73193359375,
+        282.2889404296875
+      ],
+      "bbox_px": [
+        211,
+        1138,
+        1215,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b21",
+      "text": "promoting cell diﬀusion, adhesion, and migration. [ 212 ]",
+      "bbox_pt": [
+        50.8101692199707,
+        283.29876708984375,
+        254.34603881835938,
+        293.2512512207031
+      ],
+      "bbox_px": [
+        211,
+        1180,
+        1059,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b22",
+      "text": "EnEFs, an essential element in living organisms, play crucial",
+      "bbox_pt": [
+        60.26993942260742,
+        295.1541748046875,
+        291.7357482910156,
+        304.2012634277344
+      ],
+      "bbox_px": [
+        251,
+        1229,
+        1215,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b23",
+      "text": "roles in the regulation of growth, development, and signal trans-",
+      "bbox_pt": [
+        50.811279296875,
+        306.1164855957031,
+        291.7581787109375,
+        315.16357421875
+      ],
+      "bbox_px": [
+        211,
+        1275,
+        1215,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b24",
+      "text": "mission. Unlike neurons and cardiomyocytes, bone cells lack the",
+      "bbox_pt": [
+        50.811279296875,
+        317.0788269042969,
+        291.7366638183594,
+        326.12591552734375
+      ],
+      "bbox_px": [
+        211,
+        1321,
+        1215,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b25",
+      "text": "ability to generate action potentials; however, they are inﬂuenced",
+      "bbox_pt": [
+        50.811279296875,
+        328.03216552734375,
+        291.7339782714844,
+        337.0792541503906
+      ],
+      "bbox_px": [
+        211,
+        1366,
+        1215,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b26",
+      "text": "by the piezoelectric properties of bone’s collagenous structure.",
+      "bbox_pt": [
+        50.811279296875,
+        338.9945068359375,
+        291.7752380371094,
+        348.0415954589844
+      ],
+      "bbox_px": [
+        211,
+        1412,
+        1215,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b27",
+      "text": "This structure creates an internal potential of  − 60 to  − 100 mV",
+      "bbox_pt": [
+        50.811279296875,
+        349.87188720703125,
+        291.7536926269531,
+        359.00390625
+      ],
+      "bbox_px": [
+        211,
+        1457,
+        1215,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b28",
+      "text": "under physiological load, which is crucial for bone homeostasis",
+      "bbox_pt": [
+        50.81039047241211,
+        360.91015625,
+        291.7420654296875,
+        369.9572448730469
+      ],
+      "bbox_px": [
+        211,
+        1503,
+        1215,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b29",
+      "text": "and healing. This review examined the eﬀects of ES on cell be-",
+      "bbox_pt": [
+        50.81039047241211,
+        371.87249755859375,
+        291.73846435546875,
+        380.9195861816406
+      ],
+      "bbox_px": [
+        211,
+        1549,
+        1215,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b30",
+      "text": "havior including proliferation, adhesion, alignment, migration,",
+      "bbox_pt": [
+        50.81039047241211,
+        382.8348083496094,
+        291.7555236816406,
+        391.88189697265625
+      ],
+      "bbox_px": [
+        211,
+        1595,
+        1215,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b31",
+      "text": "and diﬀerentiation. It also examined the role of ES in bone tissue",
+      "bbox_pt": [
+        50.81039047241211,
+        393.7881774902344,
+        291.75543212890625,
+        402.83526611328125
+      ],
+      "bbox_px": [
+        211,
+        1640,
+        1215,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b32",
+      "text": "repair, emphasizing its eﬀects on osteogenesis, chondrogenesis,",
+      "bbox_pt": [
+        50.81039047241211,
+        404.75048828125,
+        291.73309326171875,
+        413.7975769042969
+      ],
+      "bbox_px": [
+        211,
+        1686,
+        1215,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b33",
+      "text": "and angiogenesis, as well as its antibacterial properties and drug",
+      "bbox_pt": [
+        50.81039047241211,
+        415.7127990722656,
+        291.7393493652344,
+        424.7598876953125
+      ],
+      "bbox_px": [
+        211,
+        1732,
+        1215,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b34",
+      "text": "delivery eﬃcacy. This study also analyzed potential mechanisms,",
+      "bbox_pt": [
+        50.81039047241211,
+        426.6661682128906,
+        291.74737548828125,
+        435.7132568359375
+      ],
+      "bbox_px": [
+        211,
+        1777,
+        1215,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b35",
+      "text": "suggesting that alterations in calcium channels, G-proteins, ATP,",
+      "bbox_pt": [
+        50.81039047241211,
+        437.62847900390625,
+        291.76531982421875,
+        446.6755676269531
+      ],
+      "bbox_px": [
+        211,
+        1823,
+        1215,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b36",
+      "text": "and ROS play crucial roles in signaling pathways regulated by",
+      "bbox_pt": [
+        50.81039047241211,
+        448.5907897949219,
+        291.7393798828125,
+        457.63787841796875
+      ],
+      "bbox_px": [
+        211,
+        1869,
+        1215,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b37",
+      "text": "MAPK and PI3K/Akt. [ 213 ]",
+      "bbox_pt": [
+        50.81039047241211,
+        458.645751953125,
+        145.6800079345703,
+        468.59124755859375
+      ],
+      "bbox_px": [
+        211,
+        1911,
+        607,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b38",
+      "text": "The piezoelectric characteristics of bones have been recog-",
+      "bbox_pt": [
+        60.26993942260742,
+        470.5011901855469,
+        291.7456359863281,
+        479.54827880859375
+      ],
+      "bbox_px": [
+        251,
+        1960,
+        1215,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b39",
+      "text": "nized as crucial for maintaining the physiological functional-",
+      "bbox_pt": [
+        50.811279296875,
+        481.4635009765625,
+        291.737548828125,
+        490.5105895996094
+      ],
+      "bbox_px": [
+        211,
+        2006,
+        1215,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b40",
+      "text": "ity of bones. Bones possess the ability to autonomously gener-",
+      "bbox_pt": [
+        50.811279296875,
+        492.4168395996094,
+        291.7420349121094,
+        501.46392822265625
+      ],
+      "bbox_px": [
+        211,
+        2051,
+        1215,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b41",
+      "text": "ate internal electrical signals that arise from polarization result-",
+      "bbox_pt": [
+        50.811279296875,
+        503.3791809082031,
+        291.7608642578125,
+        512.42626953125
+      ],
+      "bbox_px": [
+        211,
+        2097,
+        1215,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b42",
+      "text": "ing from the displacement of collagen ﬁbrils when subjected to",
+      "bbox_pt": [
+        50.811279296875,
+        514.3414916992188,
+        291.7411193847656,
+        523.3885498046875
+      ],
+      "bbox_px": [
+        211,
+        2143,
+        1215,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b43",
+      "text": "shear force. These subtle electrical signals play a pivotal role in",
+      "bbox_pt": [
+        50.811279296875,
+        525.2948608398438,
+        291.74462890625,
+        534.3419189453125
+      ],
+      "bbox_px": [
+        211,
+        2188,
+        1215,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b44",
+      "text": "directing stem cell diﬀerentiation and tissue regeneration, en-",
+      "bbox_pt": [
+        50.811279296875,
+        536.2572021484375,
+        291.7689208984375,
+        545.3042602539062
+      ],
+      "bbox_px": [
+        211,
+        2234,
+        1215,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b45",
+      "text": "hancing calcium inﬂux, triggering the Ca 2 + signaling pathway,",
+      "bbox_pt": [
+        50.811279296875,
+        544.076171875,
+        291.7391357421875,
+        556.2665405273438
+      ],
+      "bbox_px": [
+        211,
+        2266,
+        1215,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b46",
+      "text": "boosting osteogenic diﬀerentiation of stem cells, stimulating cel-",
+      "bbox_pt": [
+        50.8101692199707,
+        558.1705322265625,
+        291.76605224609375,
+        567.2175903320312
+      ],
+      "bbox_px": [
+        211,
+        2325,
+        1215,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b47",
+      "text": "lular metabolism, and inﬂuencing membrane-related cellular be-",
+      "bbox_pt": [
+        50.8101692199707,
+        569.1328125,
+        291.7651672363281,
+        578.1798706054688
+      ],
+      "bbox_px": [
+        211,
+        2371,
+        1215,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b48",
+      "text": "havior. Furthermore, electric stimulation has been demonstrated",
+      "bbox_pt": [
+        50.8101692199707,
+        580.086181640625,
+        291.7157897949219,
+        589.1332397460938
+      ],
+      "bbox_px": [
+        211,
+        2417,
+        1215,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b49",
+      "text": "to facilitate the attachment and proliferation of osteoblasts while",
+      "bbox_pt": [
+        50.8101692199707,
+        591.0485229492188,
+        291.7642517089844,
+        600.0955810546875
+      ],
+      "bbox_px": [
+        211,
+        2462,
+        1215,
+        2500
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b50",
+      "text": "impeding bacterial activity ( Figure  8 ).",
+      "bbox_pt": [
+        50.8101692199707,
+        602.0108642578125,
+        191.23834228515625,
+        611.0579223632812
+      ],
+      "bbox_px": [
+        211,
+        2508,
+        796,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b51",
+      "text": "5. Conclusion and Outlook",
+      "bbox_pt": [
+        50.81093978881836,
+        626.2322387695312,
+        177.21714782714844,
+        637.6892700195312
+      ],
+      "bbox_px": [
+        211,
+        2609,
+        738,
+        2657
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b52",
+      "text": "EnEFs are integral to biological systems and play crucial roles",
+      "bbox_pt": [
+        50.81093978881836,
+        646.0460815429688,
+        291.7650451660156,
+        655.0931396484375
+      ],
+      "bbox_px": [
+        211,
+        2691,
+        1215,
+        2729
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b53",
+      "text": "in growth regulation and signal transduction. Unlike neurons",
+      "bbox_pt": [
+        50.81093978881836,
+        656.9994506835938,
+        291.765869140625,
+        666.0465087890625
+      ],
+      "bbox_px": [
+        211,
+        2737,
+        1215,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b54",
+      "text": "and cardiomyocytes, bone cells are incapable of generating spon-",
+      "bbox_pt": [
+        50.81093978881836,
+        667.9617309570312,
+        291.7381286621094,
+        677.0087890625
+      ],
+      "bbox_px": [
+        211,
+        2783,
+        1215,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b55",
+      "text": "taneous action potential generation. However, the piezoelectric",
+      "bbox_pt": [
+        50.81093978881836,
+        678.924072265625,
+        291.73004150390625,
+        687.9711303710938
+      ],
+      "bbox_px": [
+        211,
+        2828,
+        1215,
+        2866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b56",
+      "text": "properties of bone, attributed to its collagen content, produce an",
+      "bbox_pt": [
+        50.81093978881836,
+        689.87744140625,
+        291.75244140625,
+        698.9244995117188
+      ],
+      "bbox_px": [
+        211,
+        2874,
+        1215,
+        2912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b57",
+      "text": "electric ﬁeld of 60–100 mV under physiological loads, which is",
+      "bbox_pt": [
+        50.81093978881836,
+        700.8397216796875,
+        291.74786376953125,
+        709.8867797851562
+      ],
+      "bbox_px": [
+        211,
+        2920,
+        1215,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b58",
+      "text": "essential for bone regeneration. We investigated the regulatory",
+      "bbox_pt": [
+        50.81093978881836,
+        711.8020629882812,
+        291.77398681640625,
+        720.84912109375
+      ],
+      "bbox_px": [
+        211,
+        2965,
+        1215,
+        3003
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b59",
+      "text": "eﬀects of electrical stimulation at the molecular, cellular, and tis-",
+      "bbox_pt": [
+        305.9256286621094,
+        75.97758483886719,
+        546.8607177734375,
+        85.0246810913086
+      ],
+      "bbox_px": [
+        1274,
+        316,
+        2278,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b60",
+      "text": "sue levels, such as cell proliferation, diﬀerentiation, migration,",
+      "bbox_pt": [
+        305.9256286621094,
+        86.93992614746094,
+        546.8896484375,
+        95.98702239990234
+      ],
+      "bbox_px": [
+        1274,
+        362,
+        2278,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b61",
+      "text": "adhesion, upregulation or downregulation of related pathway ac-",
+      "bbox_pt": [
+        305.9256286621094,
+        97.90220642089844,
+        546.85546875,
+        106.94930267333984
+      ],
+      "bbox_px": [
+        1274,
+        407,
+        2278,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b62",
+      "text": "tivity, and tissue shaping and remodeling. The underlying mech-",
+      "bbox_pt": [
+        305.9256286621094,
+        108.85557556152344,
+        546.87158203125,
+        117.90267181396484
+      ],
+      "bbox_px": [
+        1274,
+        453,
+        2278,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b63",
+      "text": "anisms, potentially involving calcium channels, G-proteins, ATP,",
+      "bbox_pt": [
+        305.9256286621094,
+        119.81791687011719,
+        546.8948974609375,
+        128.86502075195312
+      ],
+      "bbox_px": [
+        1274,
+        499,
+        2278,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b64",
+      "text": "and ROS, which are regulated by the MAPK and PI3K-Akt path-",
+      "bbox_pt": [
+        305.9256286621094,
+        130.78025817871094,
+        546.8799438476562,
+        139.82736206054688
+      ],
+      "bbox_px": [
+        1274,
+        544,
+        2278,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b65",
+      "text": "ways, were discussed. This review highlights the need for rigor-",
+      "bbox_pt": [
+        305.9256286621094,
+        141.7335662841797,
+        546.8643188476562,
+        150.78067016601562
+      ],
+      "bbox_px": [
+        1274,
+        590,
+        2278,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b66",
+      "text": "ous application of ES in vitro and advocates the use of clinically",
+      "bbox_pt": [
+        305.9256286621094,
+        152.69590759277344,
+        546.851806640625,
+        161.74301147460938
+      ],
+      "bbox_px": [
+        1274,
+        636,
+        2278,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b67",
+      "text": "approved bone stimulators as electrical signal sources.",
+      "bbox_pt": [
+        305.9256286621094,
+        163.6582489013672,
+        510.0025634765625,
+        172.70535278320312
+      ],
+      "bbox_px": [
+        1274,
+        681,
+        2125,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b68",
+      "text": "Clinical implications: direct current (DC) stimulation, with an",
+      "bbox_pt": [
+        315.39324951171875,
+        174.61155700683594,
+        546.870849609375,
+        183.65866088867188
+      ],
+      "bbox_px": [
+        1314,
+        727,
+        2278,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b69",
+      "text": "optimal intensity range of 5–20  μ A, presents a risk of osteonecro-",
+      "bbox_pt": [
+        305.9256286621094,
+        185.48898315429688,
+        546.865478515625,
+        194.62100219726562
+      ],
+      "bbox_px": [
+        1274,
+        772,
+        2278,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b70",
+      "text": "sis at higher currents. The Faraday reaction induced by ES en-",
+      "bbox_pt": [
+        305.9256286621094,
+        196.53623962402344,
+        546.880615234375,
+        205.58334350585938
+      ],
+      "bbox_px": [
+        1274,
+        818,
+        2278,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b71",
+      "text": "hances osteoblast activity and promotes angiogenesis. Despite",
+      "bbox_pt": [
+        305.9256286621094,
+        207.4895477294922,
+        546.867919921875,
+        216.53665161132812
+      ],
+      "bbox_px": [
+        1274,
+        864,
+        2278,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b72",
+      "text": "the improved safety of noninvasive stimulators, their eﬃcacy is",
+      "bbox_pt": [
+        305.9256286621094,
+        218.45188903808594,
+        546.8553466796875,
+        227.49899291992188
+      ],
+      "bbox_px": [
+        1274,
+        910,
+        2278,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b73",
+      "text": "time-dependent, potentially aﬀecting patient adherence to treat-",
+      "bbox_pt": [
+        305.9256286621094,
+        229.4142303466797,
+        546.8825073242188,
+        238.46133422851562
+      ],
+      "bbox_px": [
+        1274,
+        955,
+        2278,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b74",
+      "text": "ment protocols. The speciﬁcations for safe operation of contin-",
+      "bbox_pt": [
+        305.9256286621094,
+        240.3675994873047,
+        546.8842163085938,
+        249.41470336914062
+      ],
+      "bbox_px": [
+        1274,
+        1001,
+        2278,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b75",
+      "text": "uous current (CC) and integrated circuit (IC) equipment are de-",
+      "bbox_pt": [
+        305.9256286621094,
+        251.3298797607422,
+        546.88330078125,
+        260.3769836425781
+      ],
+      "bbox_px": [
+        1274,
+        1047,
+        2278,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b76",
+      "text": "tailed, emphasizing the need for self-powered ES devices owing",
+      "bbox_pt": [
+        305.9256286621094,
+        262.28326416015625,
+        546.8653564453125,
+        271.3303527832031
+      ],
+      "bbox_px": [
+        1274,
+        1092,
+        2278,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b77",
+      "text": "to their safety and potential for improved patient compliance.",
+      "bbox_pt": [
+        305.9256286621094,
+        273.2455749511719,
+        536.1512451171875,
+        282.29266357421875
+      ],
+      "bbox_px": [
+        1274,
+        1138,
+        2233,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b78",
+      "text": "Material considerations: Piezoelectric materials oﬀer safer al-",
+      "bbox_pt": [
+        315.39324951171875,
+        284.2078857421875,
+        546.8571166992188,
+        293.2549743652344
+      ],
+      "bbox_px": [
+        1314,
+        1184,
+        2278,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b79",
+      "text": "ternatives to traditional ES devices by eliminating the need for",
+      "bbox_pt": [
+        305.9256286621094,
+        295.1612548828125,
+        546.8787841796875,
+        304.2083435058594
+      ],
+      "bbox_px": [
+        1274,
+        1229,
+        2278,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b80",
+      "text": "implanted electrodes and wires. However, the contradictory ﬁnd-",
+      "bbox_pt": [
+        305.9256286621094,
+        306.1235656738281,
+        546.8507690429688,
+        315.170654296875
+      ],
+      "bbox_px": [
+        1274,
+        1275,
+        2278,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b81",
+      "text": "ings regarding the inﬂuence of surface charge on cellular pro-",
+      "bbox_pt": [
+        305.9256286621094,
+        317.0859069824219,
+        546.8698120117188,
+        326.13299560546875
+      ],
+      "bbox_px": [
+        1274,
+        1321,
+        2278,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b82",
+      "text": "cesses require further investigation. This review also examined",
+      "bbox_pt": [
+        305.9256286621094,
+        328.03924560546875,
+        546.8553466796875,
+        337.0863342285156
+      ],
+      "bbox_px": [
+        1274,
+        1366,
+        2278,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b83",
+      "text": "the challenges of integrating piezoelectric materials with TENGs",
+      "bbox_pt": [
+        305.9256286621094,
+        339.0015869140625,
+        546.87890625,
+        348.0486755371094
+      ],
+      "bbox_px": [
+        1274,
+        1412,
+        2278,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b84",
+      "text": "and the limitations of photovoltaic cells in bone repair applica-",
+      "bbox_pt": [
+        305.9256286621094,
+        349.9638977050781,
+        546.8781127929688,
+        359.010986328125
+      ],
+      "bbox_px": [
+        1274,
+        1458,
+        2278,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b85",
+      "text": "tions. The development of implantable EABMs has been pro-",
+      "bbox_pt": [
+        305.9256286621094,
+        360.917236328125,
+        546.8805541992188,
+        369.9643249511719
+      ],
+      "bbox_px": [
+        1274,
+        1503,
+        2278,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b86",
+      "text": "posed as a solution to address the high cost and lengthy treatment",
+      "bbox_pt": [
+        305.9256286621094,
+        371.87957763671875,
+        546.8545532226562,
+        380.9266662597656
+      ],
+      "bbox_px": [
+        1274,
+        1549,
+        2278,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b87",
+      "text": "cycles associated with ES therapy, with a focus on mimicking the",
+      "bbox_pt": [
+        305.9256286621094,
+        382.8418884277344,
+        546.8660888671875,
+        391.88897705078125
+      ],
+      "bbox_px": [
+        1274,
+        1595,
+        2278,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b88",
+      "text": "bone structure and optimizing mechanical properties, degrada-",
+      "bbox_pt": [
+        305.9256286621094,
+        393.7952575683594,
+        546.870849609375,
+        402.84234619140625
+      ],
+      "bbox_px": [
+        1274,
+        1640,
+        2278,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b89",
+      "text": "tion rates, and electrical signal delivery.",
+      "bbox_pt": [
+        305.9256286621094,
+        404.757568359375,
+        453.25689697265625,
+        413.8046569824219
+      ],
+      "bbox_px": [
+        1274,
+        1686,
+        1888,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b90",
+      "text": "Future directions: Electrical stimulation is acknowledged for",
+      "bbox_pt": [
+        315.39324951171875,
+        415.7198791503906,
+        546.8462524414062,
+        424.7669677734375
+      ],
+      "bbox_px": [
+        1314,
+        1732,
+        2278,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b91",
+      "text": "its capacity to promote cell proliferation and directed diﬀerenti-",
+      "bbox_pt": [
+        305.9256286621094,
+        426.6732482910156,
+        546.8824462890625,
+        435.7203369140625
+      ],
+      "bbox_px": [
+        1274,
+        1777,
+        2278,
+        1815
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b92",
+      "text": "ation, particularly in the activation of osteoblasts and chondro-",
+      "bbox_pt": [
+        305.9256286621094,
+        437.63555908203125,
+        546.8923950195312,
+        446.6826477050781
+      ],
+      "bbox_px": [
+        1274,
+        1823,
+        2278,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b93",
+      "text": "cytes. Studies have demonstrated that an electric ﬁeld can inﬂu-",
+      "bbox_pt": [
+        305.9256286621094,
+        448.5978698730469,
+        546.8587646484375,
+        457.64495849609375
+      ],
+      "bbox_px": [
+        1274,
+        1869,
+        2278,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b94",
+      "text": "ence the polarization state of cellular membranes, enhance cal-",
+      "bbox_pt": [
+        305.9256286621094,
+        459.5512390136719,
+        546.8553466796875,
+        468.59832763671875
+      ],
+      "bbox_px": [
+        1274,
+        1914,
+        2278,
+        1952
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b95",
+      "text": "cium ion channel activity, and increase intracellular calcium ion",
+      "bbox_pt": [
+        305.9256286621094,
+        470.5135498046875,
+        546.8553466796875,
+        479.5606384277344
+      ],
+      "bbox_px": [
+        1274,
+        1960,
+        2278,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b96",
+      "text": "levels—factors that are essential for the diﬀerentiation of spe-",
+      "bbox_pt": [
+        305.9256286621094,
+        481.47589111328125,
+        546.886962890625,
+        490.5229797363281
+      ],
+      "bbox_px": [
+        1274,
+        2006,
+        2278,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b97",
+      "text": "ciﬁc cells within bone and cartilage tissues. When mechanical",
+      "bbox_pt": [
+        305.9256286621094,
+        492.4292297363281,
+        546.8634643554688,
+        501.476318359375
+      ],
+      "bbox_px": [
+        1274,
+        2051,
+        2278,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b98",
+      "text": "pressure is applied to nanogenerators and piezoelectric mate-",
+      "bbox_pt": [
+        305.9256286621094,
+        503.39154052734375,
+        546.8914184570312,
+        512.4385986328125
+      ],
+      "bbox_px": [
+        1274,
+        2097,
+        2278,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b99",
+      "text": "rials, they generate microcurrents that directly stimulate stem",
+      "bbox_pt": [
+        305.9256286621094,
+        514.3538818359375,
+        546.87451171875,
+        523.4009399414062
+      ],
+      "bbox_px": [
+        1274,
+        2143,
+        2278,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b100",
+      "text": "cells to diﬀerentiate into osteoblasts or chondrocytes, thereby",
+      "bbox_pt": [
+        305.9256286621094,
+        525.3072509765625,
+        546.8941040039062,
+        534.3543090820312
+      ],
+      "bbox_px": [
+        1274,
+        2188,
+        2278,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b101",
+      "text": "aiding in the regeneration of bone and cartilage tissues. More-",
+      "bbox_pt": [
+        305.9256286621094,
+        536.26953125,
+        546.8878173828125,
+        545.3165893554688
+      ],
+      "bbox_px": [
+        1274,
+        2234,
+        2278,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b102",
+      "text": "over, electrical stimulation can trigger directed cell migration—",
+      "bbox_pt": [
+        305.9256286621094,
+        547.2318725585938,
+        546.8560791015625,
+        556.2789306640625
+      ],
+      "bbox_px": [
+        1274,
+        2280,
+        2278,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b103",
+      "text": "a process known as “electrotaxis.” This phenomenon is crucial",
+      "bbox_pt": [
+        305.9256286621094,
+        558.1852416992188,
+        546.85009765625,
+        567.2322998046875
+      ],
+      "bbox_px": [
+        1274,
+        2325,
+        2278,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b104",
+      "text": "for rapid tissue repair processes, especially in healing bone and",
+      "bbox_pt": [
+        305.9256286621094,
+        569.1475219726562,
+        546.879638671875,
+        578.194580078125
+      ],
+      "bbox_px": [
+        1274,
+        2371,
+        2278,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b105",
+      "text": "cartilage; under an electric ﬁeld’s inﬂuence, cells move toward",
+      "bbox_pt": [
+        305.9256286621094,
+        580.1008911132812,
+        546.8590698242188,
+        589.14794921875
+      ],
+      "bbox_px": [
+        1274,
+        2417,
+        2278,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b106",
+      "text": "damaged regions, thus facilitating regeneration in these aﬀected",
+      "bbox_pt": [
+        305.9256286621094,
+        591.063232421875,
+        546.8500366210938,
+        600.1102905273438
+      ],
+      "bbox_px": [
+        1274,
+        2462,
+        2278,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b107",
+      "text": "areas. Additionally, triboelectric scaﬀolds can accelerate tissue re-",
+      "bbox_pt": [
+        305.9256286621094,
+        602.0255126953125,
+        546.86962890625,
+        611.0725708007812
+      ],
+      "bbox_px": [
+        1274,
+        2508,
+        2278,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b108",
+      "text": "pair by promoting surrounding cell migration toward injury sites",
+      "bbox_pt": [
+        305.9256286621094,
+        612.9788818359375,
+        546.84912109375,
+        622.0259399414062
+      ],
+      "bbox_px": [
+        1274,
+        2554,
+        2278,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b109",
+      "text": "through microcurrents generated by triboelectric eﬀects. Electri-",
+      "bbox_pt": [
+        305.9256286621094,
+        623.9412231445312,
+        546.8734741210938,
+        632.98828125
+      ],
+      "bbox_px": [
+        1274,
+        2599,
+        2278,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b110",
+      "text": "cal stimulation also modulates both the synthesis and degrada-",
+      "bbox_pt": [
+        305.9256286621094,
+        634.903564453125,
+        546.8490600585938,
+        643.9506225585938
+      ],
+      "bbox_px": [
+        1274,
+        2645,
+        2278,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b111",
+      "text": "tion of extracellular matrix (ECM), creating optimal conditions",
+      "bbox_pt": [
+        305.9256286621094,
+        645.8568725585938,
+        546.8637084960938,
+        654.9039306640625
+      ],
+      "bbox_px": [
+        1274,
+        2691,
+        2278,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b112",
+      "text": "for regeneration. The electric ﬁeld stimulates collagen produc-",
+      "bbox_pt": [
+        305.9256286621094,
+        656.8192138671875,
+        546.8834838867188,
+        665.8662719726562
+      ],
+      "bbox_px": [
+        1274,
+        2736,
+        2278,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b113",
+      "text": "tion along with cartilage matrix proteins such as chondroitin sul-",
+      "bbox_pt": [
+        305.9256286621094,
+        667.7815551757812,
+        546.8707885742188,
+        676.82861328125
+      ],
+      "bbox_px": [
+        1274,
+        2782,
+        2278,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b114",
+      "text": "fate while enhancing matrix metalloproteinase (MMP) activity—",
+      "bbox_pt": [
+        305.9256286621094,
+        678.73486328125,
+        546.87451171875,
+        687.7819213867188
+      ],
+      "bbox_px": [
+        1274,
+        2828,
+        2278,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b115",
+      "text": "thereby eﬀectively maintaining a dynamic balance within the",
+      "bbox_pt": [
+        305.9256286621094,
+        689.6972045898438,
+        546.8869018554688,
+        698.7442626953125
+      ],
+      "bbox_px": [
+        1274,
+        2873,
+        2278,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b116",
+      "text": "ECM. Zwitterionic hydrogels act as electroactive biomaterials that",
+      "bbox_pt": [
+        305.9256286621094,
+        700.6595458984375,
+        546.8789672851562,
+        709.7066040039062
+      ],
+      "bbox_px": [
+        1274,
+        2919,
+        2278,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b117",
+      "text": "not only demonstrate excellent electrical conductivity but also",
+      "bbox_pt": [
+        305.9256286621094,
+        711.6128540039062,
+        546.8544311523438,
+        720.659912109375
+      ],
+      "bbox_px": [
+        1274,
+        2965,
+        2278,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b118",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b119",
+      "text": "2411209 (23 of 29)",
+      "bbox_pt": [
+        191.2935333251953,
+        743.669189453125,
+        260.0792236328125,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        797,
+        3098,
+        1083,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p23_b120",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0694274902344,
+        745.216064453125,
+        546.88330078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p23_b121",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 122
+  }
+}

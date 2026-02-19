@@ -1,0 +1,6 @@
+{
+  "network_deny_mode": true,
+  "egress_attempt_count": 0,
+  "egress_attempt_targets": [],
+  "stage": "verify"
+}

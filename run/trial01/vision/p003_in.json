@@ -1,0 +1,1403 @@
+{
+  "page": 3,
+  "image_path": "run\\trial01\\pages\\p003.png",
+  "blocks": [
+    {
+      "block_id": "p3_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b1",
+      "text": "3",
+      "bbox_pt": [
+        556.0438842773438,
+        760.4366455078125,
+        561.2598876953125,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2316,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b4",
+      "text": "and  UBE2D3  following rotator cuff tear 27 . These genes have suspected ",
+      "bbox_pt": [
+        39.685001373291016,
+        498.7574157714844,
+        296.26171875,
+        509.2762145996094
+      ],
+      "bbox_px": [
+        165,
+        2078,
+        1234,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b5",
+      "text": "roles in inflammation and angiogenesis. Additional genes identified ",
+      "bbox_pt": [
+        39.685001373291016,
+        509.8457336425781,
+        296.166015625,
+        520.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2124,
+        1234,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b6",
+      "text": "have known roles in mediating cytokine expression, neutrophil and ",
+      "bbox_pt": [
+        39.685001373291016,
+        520.5957641601562,
+        296.302734375,
+        530.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1234,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b7",
+      "text": "macrophage activation, and response to oxidative stress 28 ; however, ",
+      "bbox_pt": [
+        39.685001373291016,
+        531.0073852539062,
+        296.25311279296875,
+        541.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2212,
+        1234,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b8",
+      "text": "none is specific to the tendon injury and remodelling. Currently, the ",
+      "bbox_pt": [
+        39.685001373291016,
+        542.0957641601562,
+        296.211181640625,
+        552.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2258,
+        1234,
+        2301
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b9",
+      "text": "exact role of genetics in the development of degenerative rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        552.8457641601562,
+        296.10675048828125,
+        563.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2303,
+        1233,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b10",
+      "text": "disease is unknown. Nevertheless, an increasing body of evidence sup-",
+      "bbox_pt": [
+        39.685001373291016,
+        563.5957641601562,
+        294.80316162109375,
+        573.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1228,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b11",
+      "text": "ports a genetic predisposition in some patients. In addition, sex and ",
+      "bbox_pt": [
+        39.685001373291016,
+        574.3457641601562,
+        296.2882995605469,
+        584.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2393,
+        1234,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b12",
+      "text": "ethnicity are not consistently identified as risk factors for developing ",
+      "bbox_pt": [
+        39.685001373291016,
+        585.0957641601562,
+        296.275634765625,
+        595.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2437,
+        1234,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b13",
+      "text": "degenerative rotator cuff disease.",
+      "bbox_pt": [
+        39.685001373291016,
+        595.8455200195312,
+        165.2994842529297,
+        606.0260009765625
+      ],
+      "bbox_px": [
+        165,
+        2482,
+        688,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b14",
+      "text": "Comorbidities .  Several disease conditions have been postulated to ",
+      "bbox_pt": [
+        39.685001373291016,
+        615.959716796875,
+        296.2834167480469,
+        627.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2566,
+        1234,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b15",
+      "text": "have a role in the development and progression of rotator cuff disease, ",
+      "bbox_pt": [
+        39.685001373291016,
+        628.0957641601562,
+        296.3077087402344,
+        638.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2617,
+        1234,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b16",
+      "text": "and subsequently, may influence healing rates following surgical repair. ",
+      "bbox_pt": [
+        39.685001373291016,
+        638.8457641601562,
+        296.1173095703125,
+        649.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2661,
+        1233,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b17",
+      "text": "These conditions include type 2 diabetes mellitus, hyperlipidaemia, sex ",
+      "bbox_pt": [
+        39.685001373291016,
+        649.5957641601562,
+        296.354736328125,
+        659.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2706,
+        1234,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b18",
+      "text": "hormone deficiency, obesity, smoking, hypertension, gout, connective ",
+      "bbox_pt": [
+        39.685001373291016,
+        660.3457641601562,
+        296.1341552734375,
+        670.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1233,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b19",
+      "text": "tissue diseases and depression 23 , 29 – 33 . Diabetes mellitus promotes the ",
+      "bbox_pt": [
+        39.685001373291016,
+        670.7573852539062,
+        296.2514343261719,
+        681.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2794,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b20",
+      "text": "development of tendinopathy in several areas, including the rotator ",
+      "bbox_pt": [
+        39.685001373291016,
+        681.8457641601562,
+        296.3864440917969,
+        692.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        2841,
+        1234,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b21",
+      "text": "cuff and Achilles tendon, perhaps owing to altered neural, vascular and ",
+      "bbox_pt": [
+        39.685001373291016,
+        692.5957641601562,
+        296.2489929199219,
+        702.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1234,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b22",
+      "text": "immune responses to tissue remodelling 3 . Samples of torn rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        703.0073852539062,
+        296.2310485839844,
+        713.5262451171875
+      ],
+      "bbox_px": [
+        165,
+        2929,
+        1234,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b23",
+      "text": "tendons from patients with diabetes mellitus show higher expression ",
+      "bbox_pt": [
+        39.685001373291016,
+        714.0957641601562,
+        296.2846984863281,
+        724.2762451171875
+      ],
+      "bbox_px": [
+        165,
+        2975,
+        1234,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b24",
+      "text": "of matrix metalloproteinases, such as MMP2, and higher expression of ",
+      "bbox_pt": [
+        39.685001373291016,
+        724.8457641601562,
+        296.3887634277344,
+        735.0262451171875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1234,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b25",
+      "text": "inflammatory proteins (IL-6) than samples from individuals without ",
+      "bbox_pt": [
+        39.685001373291016,
+        735.5957641601562,
+        296.1697082519531,
+        745.7762451171875
+      ],
+      "bbox_px": [
+        165,
+        3064,
+        1234,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b26",
+      "text": "diabetes 34 . Studies have demonstrated that diabetes mellitus is a definite ",
+      "bbox_pt": [
+        306.1416931152344,
+        498.7574157714844,
+        562.6118774414062,
+        509.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        2078,
+        2344,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b27",
+      "text": "risk factor for impaired healing after rotator cuff surgery, and those ",
+      "bbox_pt": [
+        306.1416931152344,
+        509.8457336425781,
+        562.7626342773438,
+        520.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b28",
+      "text": "patients with a lower HbA 1c  (<7%) in the postoperative period have ",
+      "bbox_pt": [
+        306.1416931152344,
+        520.5957641601562,
+        562.7711181640625,
+        531.5220947265625
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b29",
+      "text": "lower retear rates than patients with higher HbA 1c  (>7%), suggesting ",
+      "bbox_pt": [
+        306.1416931152344,
+        531.3457641601562,
+        562.6953735351562,
+        542.2720336914062
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2344,
+        2259
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b30",
+      "text": "an important role of diabetes mellitus in controlling tendon to bone ",
+      "bbox_pt": [
+        306.1416931152344,
+        542.0957641601562,
+        562.5703125,
+        552.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2258,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b31",
+      "text": "healing 35 , 36 . Evidence also shows that there is an association between ",
+      "bbox_pt": [
+        306.1416931152344,
+        552.5073852539062,
+        562.64990234375,
+        563.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2302,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b32",
+      "text": "oestrogen deficiency in women and testosterone deficiency in men and ",
+      "bbox_pt": [
+        306.1416931152344,
+        563.5957641601562,
+        562.65576171875,
+        573.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b33",
+      "text": "outcomes following surgery for a rotator cuff tear 37 . Similarly, in an insur-",
+      "bbox_pt": [
+        306.1416931152344,
+        574.0073852539062,
+        561.2598876953125,
+        584.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2391,
+        2338,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b34",
+      "text": "ance database study, women with oestrogen deficiency were 48% more ",
+      "bbox_pt": [
+        306.1416931152344,
+        585.0957641601562,
+        562.572509765625,
+        595.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2437,
+        2344,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b35",
+      "text": "likely and men with testosterone deficiency were 89% more likely than ",
+      "bbox_pt": [
+        306.1416931152344,
+        595.8457641601562,
+        562.716064453125,
+        606.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2482,
+        2344,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b36",
+      "text": "age-matched controls to undergo rotator cuff repair surgery 38 . The exact ",
+      "bbox_pt": [
+        306.1416931152344,
+        606.2573852539062,
+        562.6824340820312,
+        616.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2526,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b37",
+      "text": "mechanism of hormone deficiencies and their contribution to rotator ",
+      "bbox_pt": [
+        306.1416931152344,
+        617.3457641601562,
+        562.699462890625,
+        627.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2344,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b38",
+      "text": "cuff tears, at the cellular level, have not been elucidated at this point.",
+      "bbox_pt": [
+        306.1416931152344,
+        628.0955200195312,
+        555.7371826171875,
+        638.2760009765625
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2315,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b39",
+      "text": "Physical activity and occupation .  The role of physical activity in ",
+      "bbox_pt": [
+        306.1416931152344,
+        648.209716796875,
+        562.7799682617188,
+        659.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2700,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b40",
+      "text": "the development of rotator cuff disease is debated. Studies in rats ",
+      "bbox_pt": [
+        306.1416931152344,
+        660.3455200195312,
+        562.742919921875,
+        670.5260009765625
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b41",
+      "text": "have shown that excessive physical activity promotes supraspinatus ",
+      "bbox_pt": [
+        306.1416931152344,
+        671.0957641601562,
+        562.8146362304688,
+        681.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2345,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b42",
+      "text": "tendinopathy. The changes induced in the tendon include increased ",
+      "bbox_pt": [
+        306.1416931152344,
+        681.8457641601562,
+        562.7816162109375,
+        692.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b43",
+      "text": "tendon hypertrophy and decreased elasticity and were associated ",
+      "bbox_pt": [
+        306.1416931152344,
+        692.5957641601562,
+        562.7369995117188,
+        702.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b44",
+      "text": "with a combination of intrinsic and extrinsic factors (compression ",
+      "bbox_pt": [
+        306.1416931152344,
+        703.3455200195312,
+        562.6862182617188,
+        713.5260009765625
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b45",
+      "text": "from the coracoacromial arch) 39 , 40 . By contrast, one study failed to ",
+      "bbox_pt": [
+        306.1416931152344,
+        713.7573852539062,
+        562.675537109375,
+        724.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2973,
+        2344,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b46",
+      "text": "show an association between the level of overhead physical activity or ",
+      "bbox_pt": [
+        306.1416931152344,
+        724.8457641601562,
+        562.6828002929688,
+        735.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        3020,
+        2344,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b47",
+      "text": "occupational demands with tear progression in a cohort of patients with ",
+      "bbox_pt": [
+        306.1416931152344,
+        735.5957641601562,
+        562.7332153320312,
+        745.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        3064,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b48",
+      "text": "Anterior view",
+      "bbox_pt": [
+        41.4817008972168,
+        110.85832214355469,
+        87.14900970458984,
+        120.5813217163086
+      ],
+      "bbox_px": [
+        172,
+        461,
+        363,
+        502
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b49",
+      "text": "Posterior view",
+      "bbox_pt": [
+        303.3096923828125,
+        111.05430603027344,
+        351.7286376953125,
+        120.77730560302734
+      ],
+      "bbox_px": [
+        1263,
+        462,
+        1465,
+        503
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b50",
+      "text": "Supraspinatus",
+      "bbox_pt": [
+        41.4817008972168,
+        177.126708984375,
+        84.14120483398438,
+        185.99920654296875
+      ],
+      "bbox_px": [
+        172,
+        738,
+        350,
+        774
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b51",
+      "text": "attachment",
+      "bbox_pt": [
+        41.4817008972168,
+        184.627685546875,
+        75.95770263671875,
+        193.50018310546875
+      ],
+      "bbox_px": [
+        172,
+        769,
+        316,
+        806
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b52",
+      "text": "Long head of",
+      "bbox_pt": [
+        45.47920227050781,
+        241.15167236328125,
+        84.88220977783203,
+        250.024169921875
+      ],
+      "bbox_px": [
+        189,
+        1004,
+        353,
+        1041
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b53",
+      "text": "biceps tendon",
+      "bbox_pt": [
+        45.47920227050781,
+        248.65264892578125,
+        88.52220153808594,
+        257.525146484375
+      ],
+      "bbox_px": [
+        189,
+        1036,
+        368,
+        1073
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b54",
+      "text": "Subscapularis",
+      "bbox_pt": [
+        154.59469604492188,
+        296.5446472167969,
+        196.7017059326172,
+        305.4171447753906
+      ],
+      "bbox_px": [
+        644,
+        1235,
+        819,
+        1272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b55",
+      "text": "Subacromial bursa",
+      "bbox_pt": [
+        66.60419464111328,
+        133.64813232421875,
+        122.71802520751953,
+        142.5206298828125
+      ],
+      "bbox_px": [
+        277,
+        556,
+        511,
+        593
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b56",
+      "text": "Supraspinatus",
+      "bbox_pt": [
+        391.78680419921875,
+        119.772216796875,
+        434.4462585449219,
+        128.64471435546875
+      ],
+      "bbox_px": [
+        1632,
+        499,
+        1810,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b57",
+      "text": "Infraspinatus",
+      "bbox_pt": [
+        393.5028076171875,
+        344.3277282714844,
+        432.1199035644531,
+        353.2002258300781
+      ],
+      "bbox_px": [
+        1639,
+        1434,
+        1800,
+        1471
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b58",
+      "text": "Teres minor",
+      "bbox_pt": [
+        431.2418212890625,
+        321.23321533203125,
+        466.18585205078125,
+        330.105712890625
+      ],
+      "bbox_px": [
+        1796,
+        1338,
+        1942,
+        1375
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b59",
+      "text": "Acromion",
+      "bbox_pt": [
+        473.789794921875,
+        119.772216796875,
+        502.9800109863281,
+        128.64471435546875
+      ],
+      "bbox_px": [
+        1974,
+        499,
+        2095,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b60",
+      "text": "Humeral",
+      "bbox_pt": [
+        533.8043212890625,
+        192.90374755859375,
+        559.453369140625,
+        201.7762451171875
+      ],
+      "bbox_px": [
+        2224,
+        803,
+        2331,
+        840
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b61",
+      "text": "head",
+      "bbox_pt": [
+        533.8043212890625,
+        200.40472412109375,
+        548.8063354492188,
+        209.2772216796875
+      ],
+      "bbox_px": [
+        2224,
+        835,
+        2286,
+        871
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b62",
+      "text": "Acromion",
+      "bbox_pt": [
+        137.42059326171875,
+        119.772216796875,
+        166.61080932617188,
+        128.64471435546875
+      ],
+      "bbox_px": [
+        572,
+        499,
+        694,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b63",
+      "text": "Humeral head",
+      "bbox_pt": [
+        41.4805908203125,
+        209.88824462890625,
+        83.7240982055664,
+        218.7607421875
+      ],
+      "bbox_px": [
+        172,
+        874,
+        348,
+        911
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b64",
+      "text": "Fig. 1 | Structural anatomy of the rotator cuff when viewed from the anterior ",
+      "bbox_pt": [
+        39.68510055541992,
+        371.21282958984375,
+        290.87872314453125,
+        379.9698181152344
+      ],
+      "bbox_px": [
+        165,
+        1546,
+        1211,
+        1583
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b65",
+      "text": "and posterior aspects.  The tendons of the teres minor, infraspinatus and ",
+      "bbox_pt": [
+        39.68510055541992,
+        381.2158203125,
+        271.0224914550781,
+        389.9728088378906
+      ],
+      "bbox_px": [
+        165,
+        1588,
+        1129,
+        1624
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b66",
+      "text": "supraspinatus are continuous on the humeral head. The supraspinatus muscle ",
+      "bbox_pt": [
+        39.68510055541992,
+        391.330810546875,
+        285.90167236328125,
+        399.96881103515625
+      ],
+      "bbox_px": [
+        165,
+        1630,
+        1191,
+        1666
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b67",
+      "text": "lies on the superior portion of the scapula and inserts on the anterior aspect ",
+      "bbox_pt": [
+        39.68510055541992,
+        401.33380126953125,
+        277.50872802734375,
+        409.9718017578125
+      ],
+      "bbox_px": [
+        165,
+        1672,
+        1156,
+        1708
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b68",
+      "text": "of the greater tuberosity of the humeral head. The primary function of the ",
+      "bbox_pt": [
+        39.68510055541992,
+        411.3367919921875,
+        271.7554016113281,
+        419.97479248046875
+      ],
+      "bbox_px": [
+        165,
+        1713,
+        1132,
+        1749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b69",
+      "text": "supraspinatus is forward and lateral elevation of the shoulder, and it assists in ",
+      "bbox_pt": [
+        39.68510055541992,
+        421.33978271484375,
+        282.66217041015625,
+        429.977783203125
+      ],
+      "bbox_px": [
+        165,
+        1755,
+        1177,
+        1791
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b70",
+      "text": "rotation of the arm. It is the most commonly torn rotator cuff tendon, involved ",
+      "bbox_pt": [
+        39.68510055541992,
+        431.3427734375,
+        286.0241394042969,
+        439.98077392578125
+      ],
+      "bbox_px": [
+        165,
+        1797,
+        1191,
+        1833
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b71",
+      "text": "in 70–85% of rotator cuff tears 13 . The infraspinatus lies below the scapular spine ",
+      "bbox_pt": [
+        39.68510055541992,
+        441.0378112792969,
+        288.3164978027344,
+        449.9837646484375
+      ],
+      "bbox_px": [
+        165,
+        1837,
+        1201,
+        1874
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b72",
+      "text": "and attaches posterior to the supraspinatus on the rotator cuff. It functions to ",
+      "bbox_pt": [
+        39.68628692626953,
+        451.32781982421875,
+        283.8952941894531,
+        459.9658203125
+      ],
+      "bbox_px": [
+        165,
+        1880,
+        1182,
+        1916
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b73",
+      "text": "stabilize the shoulder against posterior subluxation and is the primary muscle ",
+      "bbox_pt": [
+        306.14208984375,
+        371.3248291015625,
+        551.3344116210938,
+        379.96282958984375
+      ],
+      "bbox_px": [
+        1275,
+        1547,
+        2297,
+        1583
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b74",
+      "text": "responsible for external rotation of the shoulder. The teres minor lies below the ",
+      "bbox_pt": [
+        306.14208984375,
+        381.32781982421875,
+        555.490966796875,
+        389.9658203125
+      ],
+      "bbox_px": [
+        1275,
+        1588,
+        2314,
+        1624
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b75",
+      "text": "infraspinatus, with a common origin along the medial border of the scapula.  ",
+      "bbox_pt": [
+        306.14208984375,
+        391.330810546875,
+        546.0321044921875,
+        399.96881103515625
+      ],
+      "bbox_px": [
+        1275,
+        1630,
+        2275,
+        1666
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b76",
+      "text": "It provides up to 45% of the external rotation force. The subscapularis lies on the ",
+      "bbox_pt": [
+        306.14208984375,
+        401.33380126953125,
+        556.916748046875,
+        409.9718017578125
+      ],
+      "bbox_px": [
+        1275,
+        1672,
+        2320,
+        1708
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b77",
+      "text": "anterior portion of the scapula and attaches to the lesser tuberosity. Its primary ",
+      "bbox_pt": [
+        306.14208984375,
+        411.3367919921875,
+        555.7582397460938,
+        419.97479248046875
+      ],
+      "bbox_px": [
+        1275,
+        1713,
+        2315,
+        1749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b78",
+      "text": "function is internal rotation of the shoulder and it also acts as a force couple ",
+      "bbox_pt": [
+        306.14208984375,
+        421.33978271484375,
+        543.657470703125,
+        429.977783203125
+      ],
+      "bbox_px": [
+        1275,
+        1755,
+        2265,
+        1791
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b79",
+      "text": "(along with the infraspinatus) against the deltoid, keeping the shoulder stabilized ",
+      "bbox_pt": [
+        306.14208984375,
+        431.3427734375,
+        562.3818359375,
+        439.98077392578125
+      ],
+      "bbox_px": [
+        1275,
+        1797,
+        2343,
+        1833
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b80",
+      "text": "within the joint against the pull of the deltoid 302 . The long head of the biceps ",
+      "bbox_pt": [
+        306.14208984375,
+        441.0378112792969,
+        544.069580078125,
+        449.9837646484375
+      ],
+      "bbox_px": [
+        1275,
+        1837,
+        2266,
+        1874
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b81",
+      "text": "tendon runs between the supraspinatus and subscapularis in the rotator interval.",
+      "bbox_pt": [
+        306.1424865722656,
+        451.32781982421875,
+        559.63671875,
+        459.9658203125
+      ],
+      "bbox_px": [
+        1275,
+        1880,
+        2331,
+        1916
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 82
+  }
+}

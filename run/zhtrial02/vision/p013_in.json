@@ -1,0 +1,1828 @@
+{
+  "page": 13,
+  "image_path": "run\\zhtrial02\\pages\\p013.png",
+  "blocks": [
+    {
+      "block_id": "p13_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b1",
+      "text": "13",
+      "bbox_pt": [
+        552.52392578125,
+        760.4366455078125,
+        561.2599487304688,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2302,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b4",
+      "text": "considered. To predict healing potential, utilization of the aforemen-",
+      "bbox_pt": [
+        39.685001373291016,
+        456.0956115722656,
+        294.8327331542969,
+        466.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1900,
+        1228,
+        1942
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b5",
+      "text": "tioned 15-point scoring system including age, bone mineral density, ",
+      "bbox_pt": [
+        39.685001373291016,
+        466.8456115722656,
+        296.4006652832031,
+        477.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1945,
+        1235,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b6",
+      "text": "level of work activity, tear size and fatty infiltration of the infraspinatus ",
+      "bbox_pt": [
+        39.685001373291016,
+        477.5956115722656,
+        296.3446350097656,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1989,
+        1234,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b7",
+      "text": "might be helpful 170 , 259  (Table  2 ). In patients with rotator cuff tear with a ",
+      "bbox_pt": [
+        39.685001373291016,
+        488.00732421875,
+        296.182373046875,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2033,
+        1234,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b8",
+      "text": "score of ≤4, repair should be considered. In patients with a score of >4, ",
+      "bbox_pt": [
+        39.68510055541992,
+        499.0956115722656,
+        296.2970275878906,
+        509.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2079,
+        1234,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b9",
+      "text": "X-ray can evaluate whether there is fixed humeral head elevation 260 . ",
+      "bbox_pt": [
+        39.68510055541992,
+        509.50732421875,
+        296.26263427734375,
+        520.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2122,
+        1234,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b10",
+      "text": "If the acromiohumeral elevation is fixed and not reversible, reverse ",
+      "bbox_pt": [
+        39.68510055541992,
+        520.5956420898438,
+        296.31256103515625,
+        530.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1234,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b11",
+      "text": "shoulder arthroplasty should be considered as the treatment option.",
+      "bbox_pt": [
+        39.68510055541992,
+        531.3456420898438,
+        294.82379150390625,
+        541.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2213,
+        1228,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b12",
+      "text": "Quality of life",
+      "bbox_pt": [
+        39.68510055541992,
+        548.6396484375,
+        107.54987335205078,
+        563.474609375
+      ],
+      "bbox_px": [
+        165,
+        2285,
+        448,
+        2347
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b13",
+      "text": "Rotator cuff tears of all sizes and cuff tear arthropathy can be painful ",
+      "bbox_pt": [
+        39.68510055541992,
+        563.5956420898438,
+        296.2601013183594,
+        573.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1234,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b14",
+      "text": "with the potential to compromise motion, strength and function 261 , 262 . ",
+      "bbox_pt": [
+        39.68510055541992,
+        574.00732421875,
+        296.24591064453125,
+        584.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2391,
+        1234,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b15",
+      "text": "By contrast, structural change to the rotator cuff can be identified in a ",
+      "bbox_pt": [
+        39.68510055541992,
+        585.0956420898438,
+        296.4185791015625,
+        595.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2437,
+        1235,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b16",
+      "text": "large proportion of individuals (~60 years of age) who never complain ",
+      "bbox_pt": [
+        39.68510055541992,
+        595.8456420898438,
+        296.3880920410156,
+        606.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2482,
+        1234,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b17",
+      "text": "of shoulder pain or loss of function 263 . Hence, the effect of rotator cuff ",
+      "bbox_pt": [
+        39.68510055541992,
+        606.25732421875,
+        296.2965393066406,
+        616.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2526,
+        1234,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b18",
+      "text": "disease on well-being remains difficult to analyse.",
+      "bbox_pt": [
+        39.68510055541992,
+        617.3456420898438,
+        223.8729705810547,
+        627.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2572,
+        932,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b19",
+      "text": "Psychosocial and mental health problems are associated with ",
+      "bbox_pt": [
+        56.692901611328125,
+        628.0956420898438,
+        296.20330810546875,
+        638.276123046875
+      ],
+      "bbox_px": [
+        236,
+        2617,
+        1234,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b20",
+      "text": "greater symptoms and worse function in patients with symptomatic ",
+      "bbox_pt": [
+        39.68510055541992,
+        638.8456420898438,
+        296.18206787109375,
+        649.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2661,
+        1234,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b21",
+      "text": "rotator cuff disease than in patients without mental health issues 33 , 264 , 265 . ",
+      "bbox_pt": [
+        39.68510055541992,
+        649.25732421875,
+        296.226318359375,
+        659.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2705,
+        1234,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b22",
+      "text": "Whether the rotator cuff disease is further disabling because of worse ",
+      "bbox_pt": [
+        39.68510055541992,
+        660.3456420898438,
+        296.08697509765625,
+        670.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1233,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b23",
+      "text": "mental coping mechanisms or if the chronicity of rotator cuff disease ",
+      "bbox_pt": [
+        39.68510055541992,
+        671.0956420898438,
+        296.2353515625,
+        681.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2796,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b24",
+      "text": "leads to psychological and mental dysfunction in these individuals ",
+      "bbox_pt": [
+        39.68510055541992,
+        681.8456420898438,
+        296.15911865234375,
+        692.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2841,
+        1233,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b25",
+      "text": "remains unclear. Regardless of causation, anxiety, depression and ",
+      "bbox_pt": [
+        39.68510055541992,
+        692.5956420898438,
+        296.30255126953125,
+        702.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1234,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b26",
+      "text": "similar disorders seem to negatively impact non-operative and surgi-",
+      "bbox_pt": [
+        39.68510055541992,
+        703.3456420898438,
+        294.80645751953125,
+        713.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2930,
+        1228,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b27",
+      "text": "cal outcomes. In addition, rotator cuff disease is associated with sleep ",
+      "bbox_pt": [
+        39.68510055541992,
+        714.0956420898438,
+        296.2231140136719,
+        724.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2975,
+        1234,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b28",
+      "text": "disturbance 266 – 268 , which is common even more than a year after rotator ",
+      "bbox_pt": [
+        39.68510055541992,
+        724.50732421875,
+        296.2170715332031,
+        735.026123046875
+      ],
+      "bbox_px": [
+        165,
+        3018,
+        1234,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b29",
+      "text": "cuff repair 269 .",
+      "bbox_pt": [
+        39.68510055541992,
+        735.25732421875,
+        89.03770446777344,
+        745.776123046875
+      ],
+      "bbox_px": [
+        165,
+        3063,
+        370,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b30",
+      "text": "Long-term outcomes",
+      "bbox_pt": [
+        306.1416931152344,
+        455.5718688964844,
+        392.8226318359375,
+        466.4131164550781
+      ],
+      "bbox_px": [
+        1275,
+        1898,
+        1636,
+        1943
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b31",
+      "text": "Non-surgical management .  Relatively few studies have investigated ",
+      "bbox_pt": [
+        306.1416931152344,
+        465.4596252441406,
+        562.845458984375,
+        477.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1939,
+        2345,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b32",
+      "text": "the long-term quality of life and overall outcomes in patients treated ",
+      "bbox_pt": [
+        306.1416931152344,
+        477.5956115722656,
+        562.7141723632812,
+        487.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2344,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b33",
+      "text": "non-operatively for full-thickness rotator cuff tear. For example, in ",
+      "bbox_pt": [
+        306.1416931152344,
+        488.3456115722656,
+        562.7720336914062,
+        498.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2034,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b34",
+      "text": "one study that followed 93 patients for five or more years, 25 patients ",
+      "bbox_pt": [
+        306.1416931152344,
+        499.0956115722656,
+        562.7068481445312,
+        509.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        2344,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b35",
+      "text": "(27%) had undergone surgery at the latest follow-up. Of 63 patients ",
+      "bbox_pt": [
+        306.1416931152344,
+        509.8456115722656,
+        562.7507934570312,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b36",
+      "text": "who completed the rotator cuff quality of life (RC-QOL) questionnaire, ",
+      "bbox_pt": [
+        306.1416931152344,
+        520.5956420898438,
+        562.625732421875,
+        530.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b37",
+      "text": "those treated non-operatively scored 83 out of 100 points and those ",
+      "bbox_pt": [
+        306.1416931152344,
+        531.3456420898438,
+        562.651611328125,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2344,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b38",
+      "text": "treated surgically scored 89 out of 100 (ref.  270 ). Isolated full-thickness ",
+      "bbox_pt": [
+        306.1416931152344,
+        542.0956420898438,
+        562.7188720703125,
+        552.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2258,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b39",
+      "text": "supraspinatus tears seem to respond well to non-operative manage-",
+      "bbox_pt": [
+        306.1416931152344,
+        552.8456420898438,
+        561.2598266601562,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2338,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b40",
+      "text": "ment in the long term, with reasonable overall outcomes and lim-",
+      "bbox_pt": [
+        306.1416931152344,
+        563.5956420898438,
+        561.2598266601562,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2338,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b41",
+      "text": "ited progression of fatty infltration 271 . Tear progression seems to be ",
+      "bbox_pt": [
+        306.1416931152344,
+        574.00732421875,
+        562.7731323242188,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2391,
+        2344,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b42",
+      "text": "associated with recurrent or deteriorating symptoms and, therefore, ",
+      "bbox_pt": [
+        306.1416931152344,
+        585.0956420898438,
+        562.7340087890625,
+        595.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2437,
+        2344,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b43",
+      "text": "some patients who initially respond well to non-surgical treatment ",
+      "bbox_pt": [
+        306.1416931152344,
+        595.8456420898438,
+        562.6611938476562,
+        606.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2482,
+        2344,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b44",
+      "text": "may undergo surgery in the future. In a long-term randomized con-",
+      "bbox_pt": [
+        306.1416931152344,
+        606.5956420898438,
+        561.2598266601562,
+        616.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2338,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b45",
+      "text": "trolled trial, the non-operative group did not do as well as the surgically ",
+      "bbox_pt": [
+        306.1416931152344,
+        617.3456420898438,
+        562.7955322265625,
+        627.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2344,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b46",
+      "text": "repaired group at 10 years, suggesting that, in younger or more active ",
+      "bbox_pt": [
+        306.1416931152344,
+        628.0956420898438,
+        562.7176513671875,
+        638.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2344,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b47",
+      "text": "patients, repair may be preferred 190 , a concept that was supported in ",
+      "bbox_pt": [
+        306.1416931152344,
+        638.50732421875,
+        562.7291259765625,
+        649.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2660,
+        2344,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b48",
+      "text": "a propensity-matched study 272 .",
+      "bbox_pt": [
+        306.14178466796875,
+        649.25732421875,
+        421.52471923828125,
+        659.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2705,
+        1756,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b49",
+      "text": "Surgical rotator cuff repair .  Several studies have shown substantial ",
+      "bbox_pt": [
+        306.14019775390625,
+        669.7091064453125,
+        562.7192993164062,
+        681.275634765625
+      ],
+      "bbox_px": [
+        1275,
+        2790,
+        2344,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b50",
+      "text": "improvements in pain, function and quality of life following rotator cuff ",
+      "bbox_pt": [
+        306.1416931152344,
+        681.8456420898438,
+        562.7182006835938,
+        692.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b51",
+      "text": "repair 261 , 273 , 274 . Improvements in quality of life after surgery seem to be ",
+      "bbox_pt": [
+        306.1416931152344,
+        692.25732421875,
+        562.7783813476562,
+        702.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2884,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b52",
+      "text": "maintained in the long term 261 , 275 . Interestingly, and rather perplexing, ",
+      "bbox_pt": [
+        306.1416931152344,
+        703.00732421875,
+        562.7999877929688,
+        713.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2929,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b53",
+      "text": "a large number of patients who became and remained asymptomatic ",
+      "bbox_pt": [
+        306.1416931152344,
+        714.0956420898438,
+        562.7076416015625,
+        724.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2975,
+        2344,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b54",
+      "text": "after rotator cuff repair showed evidence of persistent thinning of ",
+      "bbox_pt": [
+        306.1416931152344,
+        724.8456420898438,
+        562.7230224609375,
+        735.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        3020,
+        2344,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b55",
+      "text": "the repaired site or even structural failure of the rotator cuff repair on ",
+      "bbox_pt": [
+        306.1416931152344,
+        735.5956420898438,
+        562.7350463867188,
+        745.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        3064,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b56",
+      "text": "Modified Mason–Allen technique",
+      "bbox_pt": [
+        43.32360076904297,
+        405.0451354980469,
+        141.44760131835938,
+        413.9176330566406
+      ],
+      "bbox_px": [
+        180,
+        1687,
+        589,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b57",
+      "text": "GT coverage without ",
+      "bbox_pt": [
+        156.9197998046875,
+        364.6399230957031,
+        220.74917602539062,
+        373.5124206542969
+      ],
+      "bbox_px": [
+        653,
+        1519,
+        919,
+        1556
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b58",
+      "text": "excessive tension ≥50%",
+      "bbox_pt": [
+        156.9197998046875,
+        372.14093017578125,
+        227.3147735595703,
+        381.013427734375
+      ],
+      "bbox_px": [
+        653,
+        1550,
+        947,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b59",
+      "text": "Double row suture ",
+      "bbox_pt": [
+        156.9197998046875,
+        397.1018371582031,
+        213.52182006835938,
+        405.9743347167969
+      ],
+      "bbox_px": [
+        653,
+        1654,
+        889,
+        1691
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b60",
+      "text": "bridge technique",
+      "bbox_pt": [
+        156.9197998046875,
+        404.60284423828125,
+        208.45181274414062,
+        413.475341796875
+      ],
+      "bbox_px": [
+        653,
+        1685,
+        868,
+        1722
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b61",
+      "text": "GT coverage without ",
+      "bbox_pt": [
+        243.1571044921875,
+        363.718017578125,
+        306.9864501953125,
+        372.59051513671875
+      ],
+      "bbox_px": [
+        1013,
+        1515,
+        1279,
+        1552
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b62",
+      "text": "excessive tension <50%",
+      "bbox_pt": [
+        243.1571044921875,
+        371.2190246582031,
+        313.5520935058594,
+        380.0915222167969
+      ],
+      "bbox_px": [
+        1013,
+        1546,
+        1306,
+        1583
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b63",
+      "text": "Tension-free single row repair with or without ",
+      "bbox_pt": [
+        243.1575927734375,
+        397.100830078125,
+        379.6237487792969,
+        405.97332763671875
+      ],
+      "bbox_px": [
+        1013,
+        1654,
+        1581,
+        1691
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b64",
+      "text": "medialization",
+      "bbox_pt": [
+        243.1575927734375,
+        404.6018371582031,
+        283.2496032714844,
+        413.4743347167969
+      ],
+      "bbox_px": [
+        1013,
+        1685,
+        1180,
+        1722
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b65",
+      "text": "Massive tear",
+      "bbox_pt": [
+        336.1272888183594,
+        333.271728515625,
+        373.158447265625,
+        342.14422607421875
+      ],
+      "bbox_px": [
+        1400,
+        1388,
+        1554,
+        1425
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b66",
+      "text": "Medium-to-large sized tear",
+      "bbox_pt": [
+        195.50180053710938,
+        333.2707214355469,
+        275.82818603515625,
+        342.1432189941406
+      ],
+      "bbox_px": [
+        814,
+        1388,
+        1149,
+        1425
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b67",
+      "text": "Small sized tear",
+      "bbox_pt": [
+        70.78350067138672,
+        333.2707214355469,
+        118.20034790039062,
+        342.1432189941406
+      ],
+      "bbox_px": [
+        294,
+        1388,
+        492,
+        1425
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b68",
+      "text": "Evaluation of arthritis using radiography",
+      "bbox_pt": [
+        154.55409240722656,
+        114.91131591796875,
+        273.549560546875,
+        123.7838134765625
+      ],
+      "bbox_px": [
+        643,
+        478,
+        1139,
+        515
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b69",
+      "text": "  S-P grade 1",
+      "bbox_pt": [
+        86.8582992553711,
+        145.312744140625,
+        123.34994506835938,
+        154.18524169921875
+      ],
+      "bbox_px": [
+        361,
+        605,
+        513,
+        642
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b70",
+      "text": " S-P grade ≥2",
+      "bbox_pt": [
+        298.85430908203125,
+        145.312744140625,
+        337.90631103515625,
+        154.18524169921875
+      ],
+      "bbox_px": [
+        1245,
+        605,
+        1407,
+        642
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b71",
+      "text": "RSA",
+      "bbox_pt": [
+        276.86700439453125,
+        276.9309387207031,
+        289.0480041503906,
+        285.8034362792969
+      ],
+      "bbox_px": [
+        1153,
+        1153,
+        1204,
+        1190
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b72",
+      "text": "Failed",
+      "bbox_pt": [
+        273.7679138183594,
+        231.40740966796875,
+        291.7014465332031,
+        240.2799072265625
+      ],
+      "bbox_px": [
+        1140,
+        964,
+        1215,
+        1001
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b73",
+      "text": "Rotator cuﬀ repair",
+      "bbox_pt": [
+        79.5457992553711,
+        276.9309387207031,
+        133.7356414794922,
+        285.8034362792969
+      ],
+      "bbox_px": [
+        331,
+        1153,
+        557,
+        1190
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b74",
+      "text": "Intraoperatively measure the tear size and repair tension",
+      "bbox_pt": [
+        79.5457992553711,
+        302.7873229980469,
+        248.6868133544922,
+        311.6598205566406
+      ],
+      "bbox_px": [
+        331,
+        1261,
+        1036,
+        1298
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b75",
+      "text": " RoHI ≤4/15",
+      "bbox_pt": [
+        43.67559814453125,
+        176.666259765625,
+        77.17659759521484,
+        185.53875732421875
+      ],
+      "bbox_px": [
+        181,
+        736,
+        321,
+        773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b76",
+      "text": " RoHI >4/15",
+      "bbox_pt": [
+        137.8802032470703,
+        176.666259765625,
+        171.38121032714844,
+        185.53875732421875
+      ],
+      "bbox_px": [
+        574,
+        736,
+        714,
+        773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b77",
+      "text": "Age <65 years",
+      "bbox_pt": [
+        262.8689880371094,
+        176.666259765625,
+        304.8395080566406,
+        185.53875732421875
+      ],
+      "bbox_px": [
+        1095,
+        736,
+        1270,
+        773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b78",
+      "text": "Age ≥65 years",
+      "bbox_pt": [
+        336.0852966308594,
+        176.666259765625,
+        378.0558166503906,
+        185.53875732421875
+      ],
+      "bbox_px": [
+        1400,
+        736,
+        1575,
+        773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b79",
+      "text": " AHD diﬀerence ≥3.2 mm",
+      "bbox_pt": [
+        74.3280029296875,
+        231.40740966796875,
+        148.545654296875,
+        240.2799072265625
+      ],
+      "bbox_px": [
+        309,
+        964,
+        618,
+        1001
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b80",
+      "text": " AHD diﬀerence <3.2 mm",
+      "bbox_pt": [
+        161.85240173339844,
+        231.40740966796875,
+        236.0693817138672,
+        240.2799072265625
+      ],
+      "bbox_px": [
+        674,
+        964,
+        983,
+        1001
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b81",
+      "text": "Measure AHD using radiography with and without load",
+      "bbox_pt": [
+        73.86750030517578,
+        201.59405517578125,
+        236.7639923095703,
+        210.466552734375
+      ],
+      "bbox_px": [
+        307,
+        839,
+        986,
+        876
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b82",
+      "text": "Conservative treatment",
+      "bbox_pt": [
+        247.8529052734375,
+        201.554931640625,
+        318.0334167480469,
+        210.42742919921875
+      ],
+      "bbox_px": [
+        1032,
+        839,
+        1325,
+        876
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b83",
+      "text": "Fig. 5 | Algorithm for rotator cuff tear treatment.",
+      "bbox_pt": [
+        396.0888977050781,
+        112.05191040039062,
+        557.7609252929688,
+        120.80891418457031
+      ],
+      "bbox_px": [
+        1650,
+        466,
+        2324,
+        503
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b84",
+      "text": "Patients with a known rotator cuff tear are evaluated ",
+      "bbox_pt": [
+        396.08892822265625,
+        122.16690063476562,
+        560.6813354492188,
+        130.80490112304688
+      ],
+      "bbox_px": [
+        1650,
+        509,
+        2336,
+        545
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b85",
+      "text": "with radiographs. Patients with advanced arthritis ",
+      "bbox_pt": [
+        396.08892822265625,
+        132.16989135742188,
+        554.4525756835938,
+        140.80789184570312
+      ],
+      "bbox_px": [
+        1650,
+        550,
+        2310,
+        586
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b86",
+      "text": "(Samilson–Prieto (S-P) grade 2–4) are treated ",
+      "bbox_pt": [
+        396.08892822265625,
+        142.17288208007812,
+        539.3375854492188,
+        150.81088256835938
+      ],
+      "bbox_px": [
+        1650,
+        592,
+        2247,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b87",
+      "text": "with either conservative management (physical ",
+      "bbox_pt": [
+        396.08892822265625,
+        152.17587280273438,
+        546.7841186523438,
+        160.81387329101562
+      ],
+      "bbox_px": [
+        1650,
+        634,
+        2278,
+        670
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b88",
+      "text": "therapy or steroid injections) or reverse shoulder ",
+      "bbox_pt": [
+        396.08892822265625,
+        162.17886352539062,
+        551.602294921875,
+        170.81686401367188
+      ],
+      "bbox_px": [
+        1650,
+        675,
+        2298,
+        711
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b89",
+      "text": "arthroplasty (RSA). In patients with minimal arthritis ",
+      "bbox_pt": [
+        396.08892822265625,
+        172.18185424804688,
+        562.3030395507812,
+        180.81985473632812
+      ],
+      "bbox_px": [
+        1650,
+        717,
+        2342,
+        753
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b90",
+      "text": "(S-P grade 1), treatment is determined by the rotator ",
+      "bbox_pt": [
+        396.08892822265625,
+        182.18484497070312,
+        560.6070556640625,
+        190.82284545898438
+      ],
+      "bbox_px": [
+        1650,
+        759,
+        2335,
+        795
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b91",
+      "text": "cuff healing index (RoHI) 170 . A score of >5/15 suggests ",
+      "bbox_pt": [
+        396.08892822265625,
+        191.87705993652344,
+        562.4749755859375,
+        200.82583618164062
+      ],
+      "bbox_px": [
+        1650,
+        799,
+        2343,
+        836
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b92",
+      "text": "a lower likelihood of healing, and the acromial ",
+      "bbox_pt": [
+        396.0885009765625,
+        202.16690063476562,
+        541.342529296875,
+        210.80490112304688
+      ],
+      "bbox_px": [
+        1650,
+        842,
+        2255,
+        878
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b93",
+      "text": "humeral distance (AHD) is measured as a sign of ",
+      "bbox_pt": [
+        396.0885009765625,
+        212.16989135742188,
+        546.6289672851562,
+        220.80789184570312
+      ],
+      "bbox_px": [
+        1650,
+        884,
+        2277,
+        920
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b94",
+      "text": "chronic superior humeral head migration. If the AHD ",
+      "bbox_pt": [
+        396.0885009765625,
+        222.17288208007812,
+        562.4385375976562,
+        230.81088256835938
+      ],
+      "bbox_px": [
+        1650,
+        925,
+        2343,
+        961
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b95",
+      "text": "is <3.2 mm, then surgical treatment should be an ",
+      "bbox_pt": [
+        396.0885009765625,
+        232.17587280273438,
+        549.0028076171875,
+        240.81387329101562
+      ],
+      "bbox_px": [
+        1650,
+        967,
+        2287,
+        1003
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b96",
+      "text": "RSA. In patients with a RoHI score of <5/15, or an AHD ",
+      "bbox_pt": [
+        396.0885009765625,
+        242.17886352539062,
+        561.9541625976562,
+        250.81686401367188
+      ],
+      "bbox_px": [
+        1650,
+        1009,
+        2341,
+        1045
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b97",
+      "text": "of >3.2 mm, a rotator cuff repair is recommended. ",
+      "bbox_pt": [
+        396.0885009765625,
+        252.18185424804688,
+        553.0787353515625,
+        260.8198547363281
+      ],
+      "bbox_px": [
+        1650,
+        1050,
+        2304,
+        1086
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b98",
+      "text": "Small tears can be treated with several options ",
+      "bbox_pt": [
+        396.0885009765625,
+        262.1848449707031,
+        542.2188110351562,
+        270.8228454589844
+      ],
+      "bbox_px": [
+        1650,
+        1092,
+        2259,
+        1128
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b99",
+      "text": "including simple sutures or a modified Mason–",
+      "bbox_pt": [
+        396.0885009765625,
+        272.1878356933594,
+        543.549072265625,
+        280.8258361816406
+      ],
+      "bbox_px": [
+        1650,
+        1134,
+        2264,
+        1170
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b100",
+      "text": "Allen repair. For larger tears and massive tears, ",
+      "bbox_pt": [
+        396.0885009765625,
+        282.1908264160156,
+        542.9295043945312,
+        290.8288269042969
+      ],
+      "bbox_px": [
+        1650,
+        1175,
+        2262,
+        1211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b101",
+      "text": "greater tuberosity (GT) coverage dictates either ",
+      "bbox_pt": [
+        396.0885009765625,
+        292.1938171386719,
+        547.178466796875,
+        300.8318176269531
+      ],
+      "bbox_px": [
+        1650,
+        1217,
+        2279,
+        1253
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b102",
+      "text": "a double row suture bridge or single row repair to ",
+      "bbox_pt": [
+        396.0885009765625,
+        302.1968078613281,
+        551.14111328125,
+        310.8348083496094
+      ],
+      "bbox_px": [
+        1650,
+        1259,
+        2296,
+        1295
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b103",
+      "text": "reduce tension on the repair. Irreparable tears can ",
+      "bbox_pt": [
+        396.0885009765625,
+        312.1997985839844,
+        553.6486206054688,
+        320.8377990722656
+      ],
+      "bbox_px": [
+        1650,
+        1300,
+        2306,
+        1336
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b104",
+      "text": "be treated with RSA, tendon transfers or another ",
+      "bbox_pt": [
+        396.0885009765625,
+        322.2027893066406,
+        549.2392578125,
+        330.8407897949219
+      ],
+      "bbox_px": [
+        1650,
+        1342,
+        2288,
+        1378
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b105",
+      "text": "procedure such as a biceps transfer or balloon ",
+      "bbox_pt": [
+        396.0885009765625,
+        332.2057800292969,
+        541.3447265625,
+        340.8437805175781
+      ],
+      "bbox_px": [
+        1650,
+        1384,
+        2255,
+        1420
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b106",
+      "text": "arthroplasty.",
+      "bbox_pt": [
+        396.0885009765625,
+        342.2087707519531,
+        437.48651123046875,
+        350.8467712402344
+      ],
+      "bbox_px": [
+        1650,
+        1425,
+        1822,
+        1461
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 107
+  }
+}

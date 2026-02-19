@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schemas/_index.json",
+  "title": "Schema Index",
+  "description": "Index of all JSON schemas for PDF ingest pipeline artifacts",
+  "schemas": {
+    "manifest": "manifest.schema.json",
+    "blocks_raw": "blocks_raw.schema.json",
+    "blocks_norm": "blocks_norm.schema.json",
+    "vision_in": "vision_in.schema.json",
+    "vision_out": "vision_out.schema.json",
+    "figure_table_index": "figure_table_index.schema.json",
+    "figure_table_links": "figure_table_links.schema.json",
+    "paragraph": "paragraph.schema.json",
+    "cite_anchor": "cite_anchor.schema.json",
+    "cite_map": "cite_map.schema.json",
+    "paper_profile": "paper_profile.schema.json",
+    "logic_graph": "logic_graph.schema.json",
+    "fact": "fact.schema.json",
+    "theme": "theme.schema.json",
+    "synthesis": "synthesis.schema.json",
+    "qa_report": "qa_report.schema.json"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "executive_summary": "Unable to generate summary due to processing failure. See individual facts for details.",
+  "key_evidence_lines": [],
+  "figure_table_slots": [
+    {
+      "slot_id": "slot_tbl_001",
+      "position_hint": "end_of_summary",
+      "asset_ids": [
+        "tbl_001"
+      ],
+      "render_mode": "content_only"
+    },
+    {
+      "slot_id": "slot_fig_001",
+      "position_hint": "end_of_summary",
+      "asset_ids": [
+        "fig_001"
+      ],
+      "render_mode": "content_only"
+    },
+    {
+      "slot_id": "slot_fig_002",
+      "position_hint": "end_of_summary",
+      "asset_ids": [
+        "fig_002"
+      ],
+      "render_mode": "content_only"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# PDF Ingest dependency lockfile
+# Generated: 2026-02-18
+# Python: >=3.11 (tested on 3.14.0)
+# Purpose: Deterministic dependency resolution for T0 bootstrap
+#
+# Usage:
+#   pip install -r requirements.lock
+#
+# To regenerate after pyproject.toml changes:
+#   pip install -e . && pip freeze | grep -E "^(package1|package2)==" > requirements.lock
+
+# Direct dependencies (from pyproject.toml)
+PyMuPDF==1.26.7
+pydantic==2.12.5
+typer==0.21.1
+
+# Transitive dependencies (pydantic)
+annotated-types==0.7.0
+pydantic_core==2.41.5
+typing_extensions==4.15.0
+typing-inspection==0.4.2
+
+# Transitive dependencies (typer)
+click==8.3.1
+rich==14.3.2
+shellingham==1.5.4
+
+# Transitive dependencies (rich)
+markdown-it-py==4.0.0
+Pygments==2.19.2
+
+# Transitive dependencies (markdown-it-py)
+mdurl==0.1.2
+
+# Transitive dependencies (click on Windows)
+colorama==0.4.6

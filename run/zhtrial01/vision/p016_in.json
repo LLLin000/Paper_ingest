@@ -1,0 +1,2899 @@
+{
+  "page": 16,
+  "image_path": "run\\zhtrial01\\pages\\p016.png",
+  "blocks": [
+    {
+      "block_id": "p16_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b1",
+      "text": "16",
+      "bbox_pt": [
+        552.288818359375,
+        760.43701171875,
+        561.2008666992188,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2301,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b4",
+      "text": "60.\t Safran, O., Schroeder, J., Bloom, R., Weil, Y. & Milgrom, C. Natural history of ",
+      "bbox_pt": [
+        39.685001373291016,
+        111.2298355102539,
+        256.98876953125,
+        119.41983795166016
+      ],
+      "bbox_px": [
+        165,
+        463,
+        1070,
+        497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b5",
+      "text": "nonoperatively treated symptomatic rotator cuff tears in patients 60 years old  ",
+      "bbox_pt": [
+        53.85700225830078,
+        119.22782135009766,
+        267.0610046386719,
+        127.4178237915039
+      ],
+      "bbox_px": [
+        224,
+        496,
+        1112,
+        530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b6",
+      "text": "or younger.  Am. J. Sports Med. 39 , 710–714 (2011).",
+      "bbox_pt": [
+        53.85699462890625,
+        127.13581085205078,
+        187.3599853515625,
+        135.41580200195312
+      ],
+      "bbox_px": [
+        224,
+        529,
+        780,
+        564
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b7",
+      "text": "61.\t",
+      "bbox_pt": [
+        39.68499755859375,
+        135.2238006591797,
+        48.7234001159668,
+        143.41378784179688
+      ],
+      "bbox_px": [
+        165,
+        563,
+        203,
+        597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b8",
+      "text": "Hebert-Davies, J. et al. Progression of fatty muscle degeneration in atraumatic rotator ",
+      "bbox_pt": [
+        53.856998443603516,
+        135.2238006591797,
+        285.5799865722656,
+        143.41378784179688
+      ],
+      "bbox_px": [
+        224,
+        563,
+        1189,
+        597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b9",
+      "text": "cuff tears.  J. Bone Joint Surg. Am. 99 , 832–839 (2017).",
+      "bbox_pt": [
+        53.856998443603516,
+        143.13177490234375,
+        198.3843994140625,
+        151.41177368164062
+      ],
+      "bbox_px": [
+        224,
+        596,
+        826,
+        630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b10",
+      "text": "62.\t Neer, C. S.2nd Anterior acromioplasty for the chronic impingement syndrome  ",
+      "bbox_pt": [
+        39.68499755859375,
+        151.2197723388672,
+        266.593017578125,
+        159.40975952148438
+      ],
+      "bbox_px": [
+        165,
+        630,
+        1110,
+        664
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b11",
+      "text": "in the shoulder: a preliminary report.  J. Bone Joint Surg. Am. 54 , 41–50 (1972).",
+      "bbox_pt": [
+        53.85700988769531,
+        159.12774658203125,
+        261.54937744140625,
+        167.40774536132812
+      ],
+      "bbox_px": [
+        224,
+        663,
+        1089,
+        697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b12",
+      "text": "63.\t Overbeek, C. L. et al. Altered cocontraction patterns of humeral head depressors in ",
+      "bbox_pt": [
+        39.68501281738281,
+        167.2157440185547,
+        280.27423095703125,
+        175.40573120117188
+      ],
+      "bbox_px": [
+        165,
+        696,
+        1167,
+        730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b13",
+      "text": "patients with subacromial pain syndrome: a cross-sectional electromyography analysis. ",
+      "bbox_pt": [
+        53.85701370239258,
+        175.21372985839844,
+        292.3870544433594,
+        183.40371704101562
+      ],
+      "bbox_px": [
+        224,
+        730,
+        1218,
+        764
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b14",
+      "text": "Clin. Orthop. Relat. Res. 477 , 1862–1868 (2019).",
+      "bbox_pt": [
+        53.85701370239258,
+        183.1217041015625,
+        180.773193359375,
+        191.40170288085938
+      ],
+      "bbox_px": [
+        224,
+        763,
+        753,
+        797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b15",
+      "text": "64.\t Overbeek, C. L. et al. Increased co-contraction of arm adductors is associated with a ",
+      "bbox_pt": [
+        39.68500518798828,
+        191.20970153808594,
+        282.891357421875,
+        199.39968872070312
+      ],
+      "bbox_px": [
+        165,
+        796,
+        1178,
+        830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b16",
+      "text": "favorable course in subacromial pain syndrome.  J. Shoulder Elbow Surg. 27 , 1925–1931 ",
+      "bbox_pt": [
+        53.85700607299805,
+        199.11767578125,
+        288.69586181640625,
+        207.39767456054688
+      ],
+      "bbox_px": [
+        224,
+        829,
+        1202,
+        864
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b17",
+      "text": "(2018).",
+      "bbox_pt": [
+        53.857025146484375,
+        207.20567321777344,
+        72.36703491210938,
+        215.39566040039062
+      ],
+      "bbox_px": [
+        224,
+        863,
+        301,
+        897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b18",
+      "text": "65.\t Levy, B. J. et al. Subacromial bursal tissue and surrounding matrix of patients  ",
+      "bbox_pt": [
+        39.68502426147461,
+        215.2036590576172,
+        263.1790466308594,
+        223.39364624023438
+      ],
+      "bbox_px": [
+        165,
+        896,
+        1096,
+        930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b19",
+      "text": "undergoing rotator cuff repair contains progenitor cells.  Arthroscopy 38 , 1115–1123 ",
+      "bbox_pt": [
+        53.85704040527344,
+        223.11163330078125,
+        278.1394348144531,
+        231.39163208007812
+      ],
+      "bbox_px": [
+        224,
+        929,
+        1158,
+        964
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b20",
+      "text": "(2022).",
+      "bbox_pt": [
+        53.85704040527344,
+        231.1996307373047,
+        73.03724670410156,
+        239.38961791992188
+      ],
+      "bbox_px": [
+        224,
+        963,
+        304,
+        997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b21",
+      "text": "66.\t Kriscenski, D. E. et al. Characterization of murine subacromial bursal-derived cells. ",
+      "bbox_pt": [
+        39.68503952026367,
+        239.19761657714844,
+        277.5880126953125,
+        247.38760375976562
+      ],
+      "bbox_px": [
+        165,
+        996,
+        1156,
+        1030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b22",
+      "text": "Connect. Tissue Res. 63 , 287–297 (2022).",
+      "bbox_pt": [
+        53.85704040527344,
+        247.1055908203125,
+        163.90545654296875,
+        255.38558959960938
+      ],
+      "bbox_px": [
+        224,
+        1029,
+        682,
+        1064
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b23",
+      "text": "67.\t",
+      "bbox_pt": [
+        39.68504333496094,
+        255.19358825683594,
+        48.88124084472656,
+        263.3835754394531
+      ],
+      "bbox_px": [
+        165,
+        1063,
+        203,
+        1097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b24",
+      "text": "Morikawa, D. et al. Analysis of patient factors affecting in vitro characteristics of ",
+      "bbox_pt": [
+        53.8570442199707,
+        255.19358825683594,
+        269.0470275878906,
+        263.3835754394531
+      ],
+      "bbox_px": [
+        224,
+        1063,
+        1121,
+        1097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b25",
+      "text": "subacromial bursal connective tissue progenitor cells during rotator cuff repair.  J. Clin. ",
+      "bbox_pt": [
+        53.8570442199707,
+        263.1915588378906,
+        289.3617858886719,
+        271.3815612792969
+      ],
+      "bbox_px": [
+        224,
+        1096,
+        1205,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b26",
+      "text": "Med. 10 , 4006 (2021).",
+      "bbox_pt": [
+        53.8570442199707,
+        271.09954833984375,
+        113.09506225585938,
+        279.3795471191406
+      ],
+      "bbox_px": [
+        224,
+        1129,
+        471,
+        1164
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b27",
+      "text": "68.\t Marshall, B. P. et al. The subacromial bursa is a key regulator of the rotator cuff and  ",
+      "bbox_pt": [
+        39.6850471496582,
+        279.1875305175781,
+        278.6710510253906,
+        287.3775329589844
+      ],
+      "bbox_px": [
+        165,
+        1163,
+        1161,
+        1197
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b28",
+      "text": "a new therapeutic target for improving repair. Preprint at  bioRxiv https://doi.org/10.1101/ ",
+      "bbox_pt": [
+        53.8570556640625,
+        287.1855163574219,
+        291.9190368652344,
+        295.3755187988281
+      ],
+      "bbox_px": [
+        224,
+        1196,
+        1216,
+        1230
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b29",
+      "text": "2023.07.01.547347  (2023).",
+      "bbox_pt": [
+        53.8570556640625,
+        295.1835021972656,
+        125.07525634765625,
+        303.3735046386719
+      ],
+      "bbox_px": [
+        224,
+        1229,
+        521,
+        1264
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b30",
+      "text": "69.\t McFarland, E. G. et al. Impingement is not impingement: the case for calling it “rotator ",
+      "bbox_pt": [
+        39.68505096435547,
+        303.1814880371094,
+        287.3092041015625,
+        311.3714904785156
+      ],
+      "bbox_px": [
+        165,
+        1263,
+        1197,
+        1297
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b31",
+      "text": "cuff disease”.  Muscles Ligaments Tendons J. 3 , 196–200 (2013).",
+      "bbox_pt": [
+        53.857051849365234,
+        311.0894775390625,
+        224.2102508544922,
+        319.3694763183594
+      ],
+      "bbox_px": [
+        224,
+        1296,
+        934,
+        1330
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b32",
+      "text": "70.\t Maffulli, N., Khan, K. M. & Puddu, G. Overuse tendon conditions: time to change  ",
+      "bbox_pt": [
+        39.68507385253906,
+        319.1774597167969,
+        270.85308837890625,
+        327.3674621582031
+      ],
+      "bbox_px": [
+        165,
+        1329,
+        1128,
+        1364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b33",
+      "text": "a confusing terminology.  Arthroscopy 14 , 840–843 (1998).",
+      "bbox_pt": [
+        53.857086181640625,
+        327.08544921875,
+        210.9706573486328,
+        335.3654479980469
+      ],
+      "bbox_px": [
+        224,
+        1362,
+        879,
+        1397
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b34",
+      "text": "71.\t",
+      "bbox_pt": [
+        39.69108581542969,
+        335.1734313964844,
+        48.16548538208008,
+        343.3634338378906
+      ],
+      "bbox_px": [
+        165,
+        1396,
+        200,
+        1430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b35",
+      "text": "Sharma, P. & Maffulli, N. Tendon injury and tendinopathy: healing and repair.  J. Bone Joint ",
+      "bbox_pt": [
+        53.86308670043945,
+        335.1734313964844,
+        294.6676025390625,
+        343.3634338378906
+      ],
+      "bbox_px": [
+        224,
+        1396,
+        1227,
+        1430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b36",
+      "text": "Surg. Am. 87 , 187–202 (2005).",
+      "bbox_pt": [
+        53.86308670043945,
+        343.0814208984375,
+        134.881103515625,
+        351.3614196777344
+      ],
+      "bbox_px": [
+        224,
+        1429,
+        562,
+        1464
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b37",
+      "text": "72.\t D’Addona, A., Maffulli, N., Formisano, S. & Rosa, D. Inflammation in tendinopathy. ",
+      "bbox_pt": [
+        39.69108581542969,
+        351.1694030761719,
+        272.3105163574219,
+        359.3594055175781
+      ],
+      "bbox_px": [
+        165,
+        1463,
+        1134,
+        1497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b38",
+      "text": "Surgeon 15 , 297–302 (2017).",
+      "bbox_pt": [
+        53.86308670043945,
+        359.077392578125,
+        129.93768310546875,
+        367.3573913574219
+      ],
+      "bbox_px": [
+        224,
+        1496,
+        541,
+        1530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b39",
+      "text": "73.\t Dakin, S. G. et al. Inflammation activation and resolution in human tendon disease.  ",
+      "bbox_pt": [
+        39.69108581542969,
+        367.1653747558594,
+        278.68310546875,
+        375.3553771972656
+      ],
+      "bbox_px": [
+        165,
+        1529,
+        1161,
+        1563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b40",
+      "text": "Sci. Transl. Med. 7 , 311ra173 (2015).",
+      "bbox_pt": [
+        53.86309814453125,
+        375.0733642578125,
+        147.38389587402344,
+        383.3533630371094
+      ],
+      "bbox_px": [
+        224,
+        1562,
+        614,
+        1597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b41",
+      "text": "74.\t Akbar, M. et al. Single cell and spatial transcriptomics in human tendon disease  ",
+      "bbox_pt": [
+        39.69109344482422,
+        383.1613464355469,
+        270.81109619140625,
+        391.3513488769531
+      ],
+      "bbox_px": [
+        165,
+        1596,
+        1128,
+        1630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b42",
+      "text": "indicate dysregulated immune homeostasis.  Ann. Rheum. Dis. 80 , 1494–1497  ",
+      "bbox_pt": [
+        53.86309814453125,
+        391.0693359375,
+        264.6611022949219,
+        399.3493347167969
+      ],
+      "bbox_px": [
+        224,
+        1629,
+        1102,
+        1663
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b43",
+      "text": "(2021).",
+      "bbox_pt": [
+        53.869110107421875,
+        399.1573181152344,
+        72.11930847167969,
+        407.3473205566406
+      ],
+      "bbox_px": [
+        224,
+        1663,
+        300,
+        1697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b44",
+      "text": "75.\t Millar, N. L. et al. IL-17A mediates inflammatory and tissue remodelling events in early ",
+      "bbox_pt": [
+        39.69710922241211,
+        407.1553039550781,
+        284.7035217285156,
+        415.3453063964844
+      ],
+      "bbox_px": [
+        165,
+        1696,
+        1186,
+        1730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b45",
+      "text": "human tendinopathy.  Sci. Rep. 6 , 27149 (2016).",
+      "bbox_pt": [
+        53.869110107421875,
+        415.06329345703125,
+        180.256103515625,
+        423.3432922363281
+      ],
+      "bbox_px": [
+        224,
+        1729,
+        751,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b46",
+      "text": "76.\t Franklin, S. L. et al. Up-regulation of glutamate in painful human supraspinatus tendon ",
+      "bbox_pt": [
+        39.697113037109375,
+        423.1512756347656,
+        287.9932556152344,
+        431.3412780761719
+      ],
+      "bbox_px": [
+        165,
+        1763,
+        1199,
+        1797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b47",
+      "text": "tears.  Am. J. Sports Med. 42 , 1955–1962 (2014).",
+      "bbox_pt": [
+        53.86911392211914,
+        431.05926513671875,
+        179.97772216796875,
+        439.3392639160156
+      ],
+      "bbox_px": [
+        224,
+        1796,
+        749,
+        1830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b48",
+      "text": "77.\t",
+      "bbox_pt": [
+        39.70310974121094,
+        439.1472473144531,
+        48.45350646972656,
+        447.3372497558594
+      ],
+      "bbox_px": [
+        165,
+        1829,
+        201,
+        1863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b49",
+      "text": "Dean, B. J., Snelling, S. J., Dakin, S. G., Javaid, M. K. & Carr, A. J. In vitro effects of ",
+      "bbox_pt": [
+        53.8751106262207,
+        439.1472473144531,
+        268.97802734375,
+        447.3372497558594
+      ],
+      "bbox_px": [
+        224,
+        1829,
+        1120,
+        1863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b50",
+      "text": "glutamate and N-methyl-D-aspartate receptor (NMDAR) antagonism on human tendon ",
+      "bbox_pt": [
+        53.8751106262207,
+        447.1452331542969,
+        289.0301208496094,
+        455.3352355957031
+      ],
+      "bbox_px": [
+        224,
+        1863,
+        1204,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b51",
+      "text": "derived cells.  J. Orthop. Res. 33 , 1515–1522 (2015).",
+      "bbox_pt": [
+        53.8751106262207,
+        455.05322265625,
+        188.6591033935547,
+        463.3332214355469
+      ],
+      "bbox_px": [
+        224,
+        1896,
+        786,
+        1930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b52",
+      "text": "78.\t Abate, M. et al. Oxidative stress and abnormal tendon sonographic features in elite ",
+      "bbox_pt": [
+        39.70310974121094,
+        463.1412048339844,
+        278.69146728515625,
+        471.3312072753906
+      ],
+      "bbox_px": [
+        165,
+        1929,
+        1161,
+        1963
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b53",
+      "text": "soccer players (a pilot study).  Rev. Bras. Ortop. 56 , 432–437 (2021).",
+      "bbox_pt": [
+        53.8751106262207,
+        471.0491943359375,
+        233.86192321777344,
+        479.3291931152344
+      ],
+      "bbox_px": [
+        224,
+        1962,
+        974,
+        1997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b54",
+      "text": "79.\t Zapp, C. et al. Mechanoradicals in tensed tendon collagen as a source of oxidative stress. ",
+      "bbox_pt": [
+        39.703125,
+        479.1371765136719,
+        296.10595703125,
+        487.3271789550781
+      ],
+      "bbox_px": [
+        165,
+        1996,
+        1233,
+        2030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b55",
+      "text": "Nat. Commun. 11 , 2315 (2020).",
+      "bbox_pt": [
+        53.875125885009766,
+        487.045166015625,
+        135.9869384765625,
+        495.3251647949219
+      ],
+      "bbox_px": [
+        224,
+        2029,
+        566,
+        2063
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b56",
+      "text": "80.\t Liang, Y. et al. Quercetin reduces tendon adhesion in rat through suppression  ",
+      "bbox_pt": [
+        39.703125,
+        495.1331481933594,
+        265.2491149902344,
+        503.3231506347656
+      ],
+      "bbox_px": [
+        165,
+        2063,
+        1105,
+        2097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b57",
+      "text": "of oxidative stress.  BMC Musculoskelet. Disord. 21 , 608 (2020).",
+      "bbox_pt": [
+        53.8751220703125,
+        503.0411376953125,
+        223.1093292236328,
+        511.3211364746094
+      ],
+      "bbox_px": [
+        224,
+        2096,
+        929,
+        2130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b58",
+      "text": "81.\t",
+      "bbox_pt": [
+        39.70310974121094,
+        511.1291198730469,
+        48.66950607299805,
+        519.3191528320312
+      ],
+      "bbox_px": [
+        165,
+        2129,
+        202,
+        2163
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b59",
+      "text": "Yuan, T. et al. Proteomic analysis reveals rotator cuff injury caused by oxidative stress. ",
+      "bbox_pt": [
+        53.8751106262207,
+        511.1291198730469,
+        285.56988525390625,
+        519.3191528320312
+      ],
+      "bbox_px": [
+        224,
+        2129,
+        1189,
+        2163
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b60",
+      "text": "Ther. Adv. Chronic Dis. 12 , 2040622320987057 (2021).",
+      "bbox_pt": [
+        53.8751106262207,
+        519.037109375,
+        200.01651000976562,
+        527.317138671875
+      ],
+      "bbox_px": [
+        224,
+        2162,
+        833,
+        2197
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b61",
+      "text": "82.\t Lui, P. P. Y., Zhang, X., Yao, S., Sun, H. & Huang, C. Roles of oxidative stress in acute ",
+      "bbox_pt": [
+        39.70310974121094,
+        527.1251220703125,
+        276.2296447753906,
+        535.3151245117188
+      ],
+      "bbox_px": [
+        165,
+        2196,
+        1150,
+        2230
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b62",
+      "text": "tendon injury and degenerative tendinopathy – a target for intervention.  Int. J. Mol. Sci.",
+      "bbox_pt": [
+        53.8751106262207,
+        535.1231079101562,
+        289.1111145019531,
+        543.3131103515625
+      ],
+      "bbox_px": [
+        224,
+        2229,
+        1204,
+        2263
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b63",
+      "text": "23 , 3571 (2022).",
+      "bbox_pt": [
+        53.87510681152344,
+        543.0310668945312,
+        96.61972045898438,
+        551.3110961914062
+      ],
+      "bbox_px": [
+        224,
+        2262,
+        402,
+        2297
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b64",
+      "text": "83.\t Wunderli, S. L. et al. Tendon response to matrix unloading is determined by the ",
+      "bbox_pt": [
+        39.70310592651367,
+        551.119140625,
+        268.26409912109375,
+        559.3091430664062
+      ],
+      "bbox_px": [
+        165,
+        2296,
+        1117,
+        2330
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b65",
+      "text": "patho-physiological niche.  Matrix Biol. 89 , 11–26 (2020).",
+      "bbox_pt": [
+        53.87510681152344,
+        559.027099609375,
+        204.70730590820312,
+        567.30712890625
+      ],
+      "bbox_px": [
+        224,
+        2329,
+        852,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b66",
+      "text": "84.\t Joshi, S. K. et al. mTOR regulates fatty infiltration through SREBP-1 and PPARγ after a ",
+      "bbox_pt": [
+        39.70310974121094,
+        567.1151123046875,
+        280.9990234375,
+        575.3051147460938
+      ],
+      "bbox_px": [
+        165,
+        2362,
+        1170,
+        2397
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b67",
+      "text": "combined massive rotator cuff tear and suprascapular nerve injury in rats.  J. Orthop. Res.",
+      "bbox_pt": [
+        53.8751106262207,
+        575.1131591796875,
+        295.04510498046875,
+        583.3031616210938
+      ],
+      "bbox_px": [
+        224,
+        2396,
+        1229,
+        2430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b68",
+      "text": "31 , 724–730 (2013).",
+      "bbox_pt": [
+        53.87510681152344,
+        583.0211181640625,
+        105.74931335449219,
+        591.3011474609375
+      ],
+      "bbox_px": [
+        224,
+        2429,
+        440,
+        2463
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b69",
+      "text": "85.\t Lui, P. P. Y. Tendinopathy in diabetes mellitus patients – epidemiology, pathogenesis,  ",
+      "bbox_pt": [
+        39.70310974121094,
+        591.109130859375,
+        284.005126953125,
+        599.2991333007812
+      ],
+      "bbox_px": [
+        165,
+        2462,
+        1183,
+        2497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b70",
+      "text": "and management.  Scand. J. Med. Sci. Sports 27 , 776–787 (2017).",
+      "bbox_pt": [
+        53.8751220703125,
+        599.01708984375,
+        226.31333923339844,
+        607.297119140625
+      ],
+      "bbox_px": [
+        224,
+        2495,
+        942,
+        2530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b71",
+      "text": "86.\t Pouzaud, F. et al. In vitro discrimination of fluoroquinolones toxicity on tendon cells: ",
+      "bbox_pt": [
+        39.70912170410156,
+        607.1051025390625,
+        281.9878845214844,
+        615.2951049804688
+      ],
+      "bbox_px": [
+        165,
+        2529,
+        1174,
+        2563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b72",
+      "text": "involvement of oxidative stress.  J. Pharmacol. Exp. Ther. 308 , 394–402 (2004).",
+      "bbox_pt": [
+        53.88112258911133,
+        615.0131225585938,
+        265.65948486328125,
+        623.2931518554688
+      ],
+      "bbox_px": [
+        224,
+        2562,
+        1106,
+        2597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b73",
+      "text": "87.\t",
+      "bbox_pt": [
+        39.70310974121094,
+        623.1011352539062,
+        48.767303466796875,
+        631.2911376953125
+      ],
+      "bbox_px": [
+        165,
+        2596,
+        203,
+        2630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b74",
+      "text": "Lehner, C. et al. Bupivacaine induces short-term alterations and impairment in rat ",
+      "bbox_pt": [
+        53.8751106262207,
+        623.1011352539062,
+        274.4855041503906,
+        631.2911376953125
+      ],
+      "bbox_px": [
+        224,
+        2596,
+        1143,
+        2630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b75",
+      "text": "tendons.  Am. J. Sports Med. 41 , 1411–1418 (2013).",
+      "bbox_pt": [
+        53.8751106262207,
+        631.0090942382812,
+        184.40147399902344,
+        639.2891235351562
+      ],
+      "bbox_px": [
+        224,
+        2629,
+        768,
+        2663
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b76",
+      "text": "88.\t Sajithlal, G. B., Chithra, P. & Chandrakasan, G. Effect of curcumin on the advanced ",
+      "bbox_pt": [
+        39.70310974121094,
+        639.09716796875,
+        275.2132568359375,
+        647.2871704101562
+      ],
+      "bbox_px": [
+        165,
+        2662,
+        1146,
+        2697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b77",
+      "text": "glycation and cross-linking of collagen in diabetic rats.  Biochem. Pharmacol. 56 , ",
+      "bbox_pt": [
+        53.8751106262207,
+        647.005126953125,
+        272.4610900878906,
+        655.28515625
+      ],
+      "bbox_px": [
+        224,
+        2695,
+        1135,
+        2730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b78",
+      "text": "1607–1614 (1998).",
+      "bbox_pt": [
+        53.8751220703125,
+        655.0931396484375,
+        100.74774169921875,
+        663.2831420898438
+      ],
+      "bbox_px": [
+        224,
+        2729,
+        419,
+        2763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b79",
+      "text": "89.\t Lansdown, D. A. et al. Preoperative IDEAL (Iterative Decomposition of Echoes of ",
+      "bbox_pt": [
+        39.703121185302734,
+        663.0911254882812,
+        269.4071350097656,
+        671.2811279296875
+      ],
+      "bbox_px": [
+        165,
+        2762,
+        1122,
+        2797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b80",
+      "text": "Asymmetrical Length) magnetic resonance imaging rotator cuff muscle fat fractions ",
+      "bbox_pt": [
+        53.8751220703125,
+        671.089111328125,
+        283.1225280761719,
+        679.2791137695312
+      ],
+      "bbox_px": [
+        224,
+        2796,
+        1179,
+        2830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b81",
+      "text": "are associated with rotator cuff repair outcomes.  J. Shoulder Elbow Surg. 28 , 1936–1941 ",
+      "bbox_pt": [
+        53.8751220703125,
+        678.9971313476562,
+        290.9740905761719,
+        687.2771606445312
+      ],
+      "bbox_px": [
+        224,
+        2829,
+        1212,
+        2863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b82",
+      "text": "(2019).",
+      "bbox_pt": [
+        53.881103515625,
+        687.0851440429688,
+        72.46969604492188,
+        695.275146484375
+      ],
+      "bbox_px": [
+        224,
+        2862,
+        301,
+        2896
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b83",
+      "text": "90.\t Meyer, G. A., Thomopoulos, S., Abu-Amer, Y. & Shen, K. C. Tenotomy-induced muscle ",
+      "bbox_pt": [
+        39.709102630615234,
+        695.0831298828125,
+        284.0674133300781,
+        703.2731323242188
+      ],
+      "bbox_px": [
+        165,
+        2896,
+        1183,
+        2930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b84",
+      "text": "atrophy is sex-specific and independent of NFκB.  Elife 11 , e82016 (2022).",
+      "bbox_pt": [
+        53.881103515625,
+        702.9911499023438,
+        248.39151000976562,
+        711.2711791992188
+      ],
+      "bbox_px": [
+        224,
+        2929,
+        1034,
+        2963
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b85",
+      "text": "91.\t",
+      "bbox_pt": [
+        39.70912170410156,
+        711.0791625976562,
+        48.75352096557617,
+        719.2691650390625
+      ],
+      "bbox_px": [
+        165,
+        2962,
+        203,
+        2996
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b86",
+      "text": "Liu, X. et al. Evaluation of Akt/mTOR activity in muscle atrophy after rotator cuff tears  ",
+      "bbox_pt": [
+        53.88112258911133,
+        711.0791625976562,
+        284.8751220703125,
+        719.2691650390625
+      ],
+      "bbox_px": [
+        224,
+        2962,
+        1186,
+        2996
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b87",
+      "text": "in a rat model.  J. Orthop. Res. 30 , 1440–1446 (2012).",
+      "bbox_pt": [
+        53.88111877441406,
+        718.9871215820312,
+        193.83108520507812,
+        727.2671508789062
+      ],
+      "bbox_px": [
+        224,
+        2995,
+        807,
+        3030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b88",
+      "text": "92.\t Davies, M. R. et al. Rat rotator cuff muscle responds differently from hindlimb muscle  ",
+      "bbox_pt": [
+        39.70911407470703,
+        727.0751342773438,
+        285.5531005859375,
+        735.26513671875
+      ],
+      "bbox_px": [
+        165,
+        3029,
+        1189,
+        3063
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b89",
+      "text": "to a combined tendon-nerve injury.  J. Orthop. Res. 33 , 1046–1053 (2015).",
+      "bbox_pt": [
+        53.881103515625,
+        734.9830932617188,
+        250.39669799804688,
+        743.2631225585938
+      ],
+      "bbox_px": [
+        224,
+        3062,
+        1043,
+        3096
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p16_b90",
+      "text": "93.\t Zheng, R. et al. Leucine attenuates muscle atrophy and autophagosome formation by ",
+      "bbox_pt": [
+        306.1690979003906,
+        111.07315826416016,
+        552.5067138671875,
+        119.2631607055664
+      ],
+      "bbox_px": [
+        1275,
+        462,
+        2302,
+        496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b91",
+      "text": "activating PI3K/AKT/mTOR signaling pathway in rotator cuff tears.  Cell Tissue Res. 378 , ",
+      "bbox_pt": [
+        320.3410949707031,
+        118.98114776611328,
+        555.2651977539062,
+        127.26114654541016
+      ],
+      "bbox_px": [
+        1334,
+        495,
+        2313,
+        530
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b92",
+      "text": "113–125 (2019).",
+      "bbox_pt": [
+        320.3411560058594,
+        127.06912994384766,
+        360.3521728515625,
+        135.25912475585938
+      ],
+      "bbox_px": [
+        1334,
+        529,
+        1501,
+        563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b93",
+      "text": "94.\t Valencia, A. P., Iyer, S. R., Spangenburg, E. E., Gilotra, M. N. & Lovering, R. M. Impaired ",
+      "bbox_pt": [
+        306.1691589355469,
+        135.06712341308594,
+        551.5380249023438,
+        143.25711059570312
+      ],
+      "bbox_px": [
+        1275,
+        562,
+        2298,
+        596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b94",
+      "text": "contractile function of the supraspinatus in the acute period following a rotator cuff tear. ",
+      "bbox_pt": [
+        320.3411560058594,
+        143.0651092529297,
+        560.8605346679688,
+        151.25509643554688
+      ],
+      "bbox_px": [
+        1334,
+        596,
+        2336,
+        630
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b95",
+      "text": "BMC Musculoskelet. Disord. 18 , 436 (2017).",
+      "bbox_pt": [
+        320.3411560058594,
+        150.97308349609375,
+        436.1771240234375,
+        159.25308227539062
+      ],
+      "bbox_px": [
+        1334,
+        629,
+        1817,
+        663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b96",
+      "text": "95.\t Jackman, R. W., Cornwell, E. W., Wu, C. L. & Kandarian, S. C. Nuclear factor-κB signalling ",
+      "bbox_pt": [
+        306.169189453125,
+        159.0610809326172,
+        557.8458251953125,
+        167.25106811523438
+      ],
+      "bbox_px": [
+        1275,
+        662,
+        2324,
+        696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b97",
+      "text": "and transcriptional regulation in skeletal muscle atrophy.  Exp. Physiol. 98 , 19–24 (2013).",
+      "bbox_pt": [
+        320.3411865234375,
+        166.96905517578125,
+        556.2594604492188,
+        175.24905395507812
+      ],
+      "bbox_px": [
+        1334,
+        695,
+        2317,
+        730
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b98",
+      "text": "96.\t Davies, M. R. et al. Muscle stem cell activation in a mouse model of rotator cuff injury.  ",
+      "bbox_pt": [
+        306.169189453125,
+        175.0570526123047,
+        552.6072387695312,
+        183.24703979492188
+      ],
+      "bbox_px": [
+        1275,
+        729,
+        2302,
+        763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b99",
+      "text": "J. Orthop. Res. 36 , 1370–1376 (2018).",
+      "bbox_pt": [
+        320.3412170410156,
+        182.96502685546875,
+        418.87738037109375,
+        191.24502563476562
+      ],
+      "bbox_px": [
+        1334,
+        762,
+        1745,
+        796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b100",
+      "text": "97.\t",
+      "bbox_pt": [
+        306.1692199707031,
+        191.0530242919922,
+        315.2814025878906,
+        199.24301147460938
+      ],
+      "bbox_px": [
+        1275,
+        796,
+        1313,
+        830
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b101",
+      "text": "Brack, A. S. & Munoz-Canoves, P. The ins and outs of muscle stem cell aging.  Skelet. ",
+      "bbox_pt": [
+        320.3412170410156,
+        191.0530242919922,
+        547.4699096679688,
+        199.24301147460938
+      ],
+      "bbox_px": [
+        1334,
+        796,
+        2281,
+        830
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b102",
+      "text": "Muscle 6 , 1 (2016).",
+      "bbox_pt": [
+        320.3412170410156,
+        198.96099853515625,
+        370.0194091796875,
+        207.24099731445312
+      ],
+      "bbox_px": [
+        1334,
+        829,
+        1541,
+        863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b103",
+      "text": "98.\t Barruet, E. et al. Functionally heterogeneous human satellite cells identified by single ",
+      "bbox_pt": [
+        306.1692199707031,
+        207.0489959716797,
+        552.2123413085938,
+        215.23898315429688
+      ],
+      "bbox_px": [
+        1275,
+        862,
+        2300,
+        896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b104",
+      "text": "cell RNA sequencing.  Elife 9 , e51576 (2020).",
+      "bbox_pt": [
+        320.3412170410156,
+        214.95697021484375,
+        439.6440124511719,
+        223.23696899414062
+      ],
+      "bbox_px": [
+        1334,
+        895,
+        1831,
+        930
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b105",
+      "text": "99.\t Hwang, A. B. & Brack, A. S. Muscle stem cells and aging.  Curr. Top. Dev. Biol. 126 , ",
+      "bbox_pt": [
+        306.1692199707031,
+        222.9549560546875,
+        539.365234375,
+        231.23495483398438
+      ],
+      "bbox_px": [
+        1275,
+        928,
+        2247,
+        963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b106",
+      "text": "299–322 (2018).",
+      "bbox_pt": [
+        320.335205078125,
+        231.04295349121094,
+        363.593994140625,
+        239.23294067382812
+      ],
+      "bbox_px": [
+        1334,
+        962,
+        1514,
+        996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b107",
+      "text": "100.\t Brack, A. S. et al. Increased Wnt signaling during aging alters muscle stem cell fate  ",
+      "bbox_pt": [
+        306.1632080078125,
+        239.0409393310547,
+        546.2291870117188,
+        247.23092651367188
+      ],
+      "bbox_px": [
+        1275,
+        996,
+        2275,
+        1030
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b108",
+      "text": "and increases fibrosis.  Science 317 , 807–810 (2007).",
+      "bbox_pt": [
+        320.3351745605469,
+        246.94891357421875,
+        460.96014404296875,
+        255.22891235351562
+      ],
+      "bbox_px": [
+        1334,
+        1028,
+        1920,
+        1063
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b109",
+      "text": "101.\t Brack, A. S. & Rando, T. A. Intrinsic changes and extrinsic influences of myogenic stem ",
+      "bbox_pt": [
+        306.1571960449219,
+        255.0369110107422,
+        553.90087890625,
+        263.2268981933594
+      ],
+      "bbox_px": [
+        1275,
+        1062,
+        2307,
+        1096
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b110",
+      "text": "cell function during aging.  Stem Cell Rev. 3 , 226–237 (2007).",
+      "bbox_pt": [
+        320.3291931152344,
+        262.94488525390625,
+        483.7373962402344,
+        271.2248840332031
+      ],
+      "bbox_px": [
+        1334,
+        1095,
+        2015,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b111",
+      "text": "102.\t Gerber, C., Meyer, D. C., Schneeberger, A. G., Hoppeler, H. & von Rechenberg, B. Effect  ",
+      "bbox_pt": [
+        306.1572265625,
+        271.0328674316406,
+        556.1472778320312,
+        279.2228698730469
+      ],
+      "bbox_px": [
+        1275,
+        1129,
+        2317,
+        1163
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b112",
+      "text": "of tendon release and delayed repair on the structure of the muscles of the rotator cuff: ",
+      "bbox_pt": [
+        320.3292541503906,
+        279.0308532714844,
+        557.4046020507812,
+        287.2208557128906
+      ],
+      "bbox_px": [
+        1334,
+        1162,
+        2322,
+        1196
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b113",
+      "text": "an experimental study in sheep.  J. Bone Joint Surg. Am. 86 , 1973–1982 (2004).",
+      "bbox_pt": [
+        320.3292541503906,
+        286.9388427734375,
+        529.6669311523438,
+        295.2188415527344
+      ],
+      "bbox_px": [
+        1334,
+        1195,
+        2206,
+        1230
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b114",
+      "text": "103.\t Chung, S. W. et al. Effect of hypercholesterolemia on fatty infiltration and quality ",
+      "bbox_pt": [
+        306.1572265625,
+        295.0268249511719,
+        538.3264770507812,
+        303.2168273925781
+      ],
+      "bbox_px": [
+        1275,
+        1229,
+        2243,
+        1263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b115",
+      "text": "of tendon-to-bone healing in a rabbit model of a chronic rotator cuff tear: ",
+      "bbox_pt": [
+        320.3292236328125,
+        303.0248107910156,
+        519.3992919921875,
+        311.2148132324219
+      ],
+      "bbox_px": [
+        1334,
+        1262,
+        2164,
+        1296
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b116",
+      "text": "electrophysiological, biomechanical, and histological analyses.  Am. J. Sports Med. 44 , ",
+      "bbox_pt": [
+        320.3292236328125,
+        310.93280029296875,
+        556.165283203125,
+        319.2127990722656
+      ],
+      "bbox_px": [
+        1334,
+        1295,
+        2317,
+        1330
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b117",
+      "text": "1153–1164 (2016).",
+      "bbox_pt": [
+        320.3292236328125,
+        319.0207824707031,
+        366.66302490234375,
+        327.2107849121094
+      ],
+      "bbox_px": [
+        1334,
+        1329,
+        1527,
+        1363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b118",
+      "text": "104.\t Joe, A. W. et al. Muscle injury activates resident fibro/adipogenic progenitors that ",
+      "bbox_pt": [
+        306.1572265625,
+        327.0187683105469,
+        540.867431640625,
+        335.2087707519531
+      ],
+      "bbox_px": [
+        1275,
+        1362,
+        2253,
+        1396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b119",
+      "text": "facilitate myogenesis.  Nat. Cell Biol. 12 , 153–163 (2010).",
+      "bbox_pt": [
+        320.3292236328125,
+        334.9267578125,
+        469.393798828125,
+        343.2067565917969
+      ],
+      "bbox_px": [
+        1334,
+        1395,
+        1955,
+        1430
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b120",
+      "text": "105.\t Uezumi, A. et al. Fibrosis and adipogenesis originate from a common mesenchymal ",
+      "bbox_pt": [
+        306.1572265625,
+        343.0147399902344,
+        547.1775512695312,
+        351.2047424316406
+      ],
+      "bbox_px": [
+        1275,
+        1429,
+        2279,
+        1463
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b121",
+      "text": "progenitor in skeletal muscle.  J. Cell Sci. 124 , 3654–3664 (2011).",
+      "bbox_pt": [
+        320.3292236328125,
+        350.9227294921875,
+        493.3343811035156,
+        359.2027282714844
+      ],
+      "bbox_px": [
+        1334,
+        1462,
+        2055,
+        1496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b122",
+      "text": "106.\t Uezumi, A., Fukada, S., Yamamoto, N., Takeda, S. & Tsuchida, K. Mesenchymal progenitors ",
+      "bbox_pt": [
+        306.1572265625,
+        359.0107116699219,
+        562.602783203125,
+        367.2007141113281
+      ],
+      "bbox_px": [
+        1275,
+        1495,
+        2344,
+        1530
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b123",
+      "text": "distinct from satellite cells contribute to ectopic fat cell formation in skeletal muscle. ",
+      "bbox_pt": [
+        320.3292236328125,
+        367.0086975097656,
+        551.4495239257812,
+        375.1986999511719
+      ],
+      "bbox_px": [
+        1334,
+        1529,
+        2297,
+        1563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b124",
+      "text": "Nat. Cell Biol. 12 , 143–152 (2010).",
+      "bbox_pt": [
+        320.3292236328125,
+        374.91668701171875,
+        408.31561279296875,
+        383.1966857910156
+      ],
+      "bbox_px": [
+        1334,
+        1562,
+        1701,
+        1596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b125",
+      "text": "107.\t Wosczyna, M. N. et al. Targeting microRNA-mediated gene repression limits adipogenic ",
+      "bbox_pt": [
+        306.1572265625,
+        383.0046691894531,
+        557.9262084960938,
+        391.1946716308594
+      ],
+      "bbox_px": [
+        1275,
+        1595,
+        2324,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b126",
+      "text": "conversion of skeletal muscle mesenchymal stromal cells.  Cell Stem Cell 28 , 1323–1334.",
+      "bbox_pt": [
+        320.3292236328125,
+        390.91265869140625,
+        559.76708984375,
+        399.1926574707031
+      ],
+      "bbox_px": [
+        1334,
+        1628,
+        2332,
+        1663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b127",
+      "text": "e8 (2021).",
+      "bbox_pt": [
+        320.32928466796875,
+        399.0006408691406,
+        346.75146484375,
+        407.1906433105469
+      ],
+      "bbox_px": [
+        1334,
+        1662,
+        1444,
+        1696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b128",
+      "text": "108.\t Wang, X. et al. Diverse effector and regulatory functions of fibro/adipogenic progenitors ",
+      "bbox_pt": [
+        306.15728759765625,
+        406.9986267089844,
+        559.4993896484375,
+        415.1886291503906
+      ],
+      "bbox_px": [
+        1275,
+        1695,
+        2331,
+        1729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b129",
+      "text": "during skeletal muscle fibrosis in muscular dystrophy.  iScience 26 , 105775 (2023).",
+      "bbox_pt": [
+        320.32928466796875,
+        414.9066162109375,
+        541.6458740234375,
+        423.1866149902344
+      ],
+      "bbox_px": [
+        1334,
+        1728,
+        2256,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b130",
+      "text": "109.\t Consalvi, S. et al. Determinants of epigenetic resistance to HDAC inhibitors in dystrophic ",
+      "bbox_pt": [
+        306.15728759765625,
+        422.9945983886719,
+        560.6111450195312,
+        431.1846008300781
+      ],
+      "bbox_px": [
+        1275,
+        1762,
+        2335,
+        1796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b131",
+      "text": "fibro-adipogenic progenitors.  EMBO Rep. 23 , e54721 (2022).",
+      "bbox_pt": [
+        320.32928466796875,
+        430.902587890625,
+        482.7156677246094,
+        439.1825866699219
+      ],
+      "bbox_px": [
+        1334,
+        1795,
+        2011,
+        1829
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b132",
+      "text": "110.\t Theret, M., Rossi, F. M. V. & Contreras, O. Evolving roles of muscle-resident fibro- ",
+      "bbox_pt": [
+        306.15728759765625,
+        438.9905700683594,
+        537.4993286132812,
+        447.1805725097656
+      ],
+      "bbox_px": [
+        1275,
+        1829,
+        2239,
+        1863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b133",
+      "text": "adipogenic progenitors in health, regeneration, neuromuscular disorders, and aging. ",
+      "bbox_pt": [
+        320.32928466796875,
+        446.9885559082031,
+        551.6220703125,
+        455.1785583496094
+      ],
+      "bbox_px": [
+        1334,
+        1862,
+        2298,
+        1896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b134",
+      "text": "Front. Physiol. 12 , 673404 (2021).",
+      "bbox_pt": [
+        320.32928466796875,
+        454.89654541015625,
+        408.8196716308594,
+        463.1765441894531
+      ],
+      "bbox_px": [
+        1334,
+        1895,
+        1703,
+        1929
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b135",
+      "text": "111.\t Moratal, C., Arrighi, N., Dechesne, C. A. & Dani, C. Control of muscle fibro-adipogenic ",
+      "bbox_pt": [
+        306.15728759765625,
+        462.9845275878906,
+        551.5531616210938,
+        471.1745300292969
+      ],
+      "bbox_px": [
+        1275,
+        1929,
+        2298,
+        1963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b136",
+      "text": "progenitors by myogenic lineage is altered in aging and Duchenne muscular dystrophy. ",
+      "bbox_pt": [
+        320.32928466796875,
+        470.9825134277344,
+        558.6640625,
+        479.1725158691406
+      ],
+      "bbox_px": [
+        1334,
+        1962,
+        2327,
+        1996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b137",
+      "text": "Cell Physiol. Biochem. 53 , 1029–1045 (2019).",
+      "bbox_pt": [
+        320.32928466796875,
+        478.8905029296875,
+        440.7294921875,
+        487.1705017089844
+      ],
+      "bbox_px": [
+        1334,
+        1995,
+        1836,
+        2029
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b138",
+      "text": "112.\t Lee, C. et al. Rotator cuff fibro-adipogenic progenitors demonstrate highest ",
+      "bbox_pt": [
+        306.15728759765625,
+        486.9784851074219,
+        525.7852783203125,
+        495.1684875488281
+      ],
+      "bbox_px": [
+        1275,
+        2029,
+        2190,
+        2063
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b139",
+      "text": "concentration, proliferative capacity, and adipogenic potential across muscle groups.  ",
+      "bbox_pt": [
+        320.32928466796875,
+        494.9764709472656,
+        555.3073120117188,
+        503.1664733886719
+      ],
+      "bbox_px": [
+        1334,
+        2062,
+        2313,
+        2096
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b140",
+      "text": "J. Orthop. Res. 38 , 1113–1121 (2020).",
+      "bbox_pt": [
+        320.32928466796875,
+        502.88446044921875,
+        415.82769775390625,
+        511.1644592285156
+      ],
+      "bbox_px": [
+        1334,
+        2095,
+        1732,
+        2129
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b141",
+      "text": "113.\t Davies, M. R. et al. TGF-β small molecule inhibitor SB431542 reduces rotator cuff  ",
+      "bbox_pt": [
+        306.15728759765625,
+        510.9724426269531,
+        539.6773071289062,
+        519.1624755859375
+      ],
+      "bbox_px": [
+        1275,
+        2129,
+        2248,
+        2163
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b142",
+      "text": "muscle fibrosis and fatty infiltration by promoting fibro/adipogenic progenitor apoptosis. ",
+      "bbox_pt": [
+        320.32928466796875,
+        518.970458984375,
+        562.43701171875,
+        527.1604614257812
+      ],
+      "bbox_px": [
+        1334,
+        2162,
+        2343,
+        2196
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b143",
+      "text": "PLoS ONE 11 , e0155486 (2016).",
+      "bbox_pt": [
+        320.32928466796875,
+        526.87841796875,
+        403.8060607910156,
+        535.158447265625
+      ],
+      "bbox_px": [
+        1334,
+        2195,
+        1682,
+        2229
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b144",
+      "text": "114.\t Shirasawa, H. et al. Retinoic acid receptor agonists suppress muscle fatty infiltration  ",
+      "bbox_pt": [
+        306.16326904296875,
+        534.9664306640625,
+        549.84130859375,
+        543.1564331054688
+      ],
+      "bbox_px": [
+        1275,
+        2229,
+        2291,
+        2263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b145",
+      "text": "in mice.  Am. J. Sports Med. 49 , 332–339 (2021).",
+      "bbox_pt": [
+        320.33526611328125,
+        542.8744506835938,
+        448.1892395019531,
+        551.1544799804688
+      ],
+      "bbox_px": [
+        1334,
+        2261,
+        1867,
+        2296
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b146",
+      "text": "115.\t Itoigawa, Y., Kishimoto, K. N., Sano, H., Kaneko, K. & Itoi, E. Molecular mechanism of fatty ",
+      "bbox_pt": [
+        306.16326904296875,
+        550.9624633789062,
+        559.7508544921875,
+        559.1524658203125
+      ],
+      "bbox_px": [
+        1275,
+        2295,
+        2332,
+        2329
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b147",
+      "text": "degeneration in rotator cuff muscle with tendon rupture.  J. Orthop. Res. 29 , 861–866 ",
+      "bbox_pt": [
+        320.33526611328125,
+        558.8704223632812,
+        550.1287231445312,
+        567.1504516601562
+      ],
+      "bbox_px": [
+        1334,
+        2328,
+        2292,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b148",
+      "text": "(2011).",
+      "bbox_pt": [
+        320.33526611328125,
+        566.9584350585938,
+        337.6554870605469,
+        575.1484375
+      ],
+      "bbox_px": [
+        1334,
+        2362,
+        1406,
+        2396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b149",
+      "text": "116.\t Davis, M. E. et al. Simvastatin reduces fibrosis and protects against muscle weakness ",
+      "bbox_pt": [
+        306.16326904296875,
+        574.9564208984375,
+        550.4296264648438,
+        583.1464233398438
+      ],
+      "bbox_px": [
+        1275,
+        2395,
+        2293,
+        2429
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b150",
+      "text": "after massive rotator cuff tear.  J. Shoulder Elbow Surg. 24 , 280–287 (2015).",
+      "bbox_pt": [
+        320.33526611328125,
+        582.8644409179688,
+        520.7010498046875,
+        591.1444702148438
+      ],
+      "bbox_px": [
+        1334,
+        2428,
+        2169,
+        2463
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b151",
+      "text": "117.\t Contreras, O., Rossi, F. M. V. & Theret, M. Origins, potency, and heterogeneity of skeletal ",
+      "bbox_pt": [
+        306.16925048828125,
+        590.9524536132812,
+        557.9641723632812,
+        599.1424560546875
+      ],
+      "bbox_px": [
+        1275,
+        2462,
+        2324,
+        2496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b152",
+      "text": "muscle fibro-adipogenic progenitors – time for new definitions.  Skelet. Muscle 11 , 16 (2021).",
+      "bbox_pt": [
+        320.34124755859375,
+        598.8604125976562,
+        561.281494140625,
+        607.1404418945312
+      ],
+      "bbox_px": [
+        1334,
+        2495,
+        2338,
+        2529
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b153",
+      "text": "118.\t Biferali, B., Proietti, D., Mozzetta, C. & Madaro, L. Fibro-adipogenic progenitors cross-talk ",
+      "bbox_pt": [
+        306.17529296875,
+        606.948486328125,
+        559.5198364257812,
+        615.1384887695312
+      ],
+      "bbox_px": [
+        1275,
+        2528,
+        2331,
+        2563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b154",
+      "text": "in skeletal muscle: the social network.  Front. Physiol. 10 , 1074 (2019).",
+      "bbox_pt": [
+        320.3472900390625,
+        614.8564453125,
+        505.2540588378906,
+        623.136474609375
+      ],
+      "bbox_px": [
+        1334,
+        2561,
+        2105,
+        2596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b155",
+      "text": "119.\t Malecova, B. et al. Dynamics of cellular states of fibro-adipogenic progenitors during ",
+      "bbox_pt": [
+        306.1692810058594,
+        622.9444580078125,
+        551.103515625,
+        631.1344604492188
+      ],
+      "bbox_px": [
+        1275,
+        2595,
+        2296,
+        2629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b156",
+      "text": "myogenesis and muscular dystrophy.  Nat. Commun. 9 , 3670 (2018).",
+      "bbox_pt": [
+        320.3412780761719,
+        630.8524169921875,
+        503.9280700683594,
+        639.1324462890625
+      ],
+      "bbox_px": [
+        1334,
+        2628,
+        2099,
+        2663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b157",
+      "text": "120.\t Garcia, S. M. et al. Distinct human stem cell subpopulations drive adipogenesis  ",
+      "bbox_pt": [
+        306.1692810058594,
+        638.9404296875,
+        536.4852905273438,
+        647.1304321289062
+      ],
+      "bbox_px": [
+        1275,
+        2662,
+        2235,
+        2696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b158",
+      "text": "and fibrosis in musculoskeletal injury. Preprint at  bioRxiv https://doi.org/10.1101/ ",
+      "bbox_pt": [
+        320.3412780761719,
+        646.9384765625,
+        536.8212890625,
+        655.1284790039062
+      ],
+      "bbox_px": [
+        1334,
+        2695,
+        2236,
+        2729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b159",
+      "text": "2023.07.28.551038  (2023).",
+      "bbox_pt": [
+        320.3412780761719,
+        654.9364624023438,
+        392.56805419921875,
+        663.12646484375
+      ],
+      "bbox_px": [
+        1334,
+        2728,
+        1635,
+        2763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b160",
+      "text": "121.\t Davies, M. R. et al. Muscle-derived beige adipose precursors secrete promyogenic ",
+      "bbox_pt": [
+        306.1692810058594,
+        662.9344482421875,
+        543.677978515625,
+        671.1244506835938
+      ],
+      "bbox_px": [
+        1275,
+        2762,
+        2265,
+        2796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b161",
+      "text": "exosomes that treat rotator cuff muscle degeneration in mice and are identified in ",
+      "bbox_pt": [
+        320.3150939941406,
+        671.2298583984375,
+        542.6336059570312,
+        679.4198608398438
+      ],
+      "bbox_px": [
+        1334,
+        2796,
+        2260,
+        2830
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b162",
+      "text": "humans by single-cell RNA sequencing.  Am. J. Sports Med. 50 , 2247–2257 (2022).",
+      "bbox_pt": [
+        320.3150939941406,
+        679.1378173828125,
+        540.15087890625,
+        687.4178466796875
+      ],
+      "bbox_px": [
+        1334,
+        2829,
+        2250,
+        2864
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b163",
+      "text": "122.\t Wang, Z. et al. β 3 -Adrenergic receptor agonist treats rotator cuff fatty infiltration by ",
+      "bbox_pt": [
+        306.14306640625,
+        687.225830078125,
+        544.8770141601562,
+        696.0150756835938
+      ],
+      "bbox_px": [
+        1275,
+        2863,
+        2270,
+        2900
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b164",
+      "text": "activating beige fat in mice.  J. Shoulder Elbow Surg. 30 , 373–386 (2021).",
+      "bbox_pt": [
+        320.3132019042969,
+        695.1378173828125,
+        515.1463623046875,
+        703.4178466796875
+      ],
+      "bbox_px": [
+        1334,
+        2896,
+        2146,
+        2930
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b165",
+      "text": "123.\t Wang, Z. et al. Intramuscular brown fat activation decreases muscle atrophy and fatty ",
+      "bbox_pt": [
+        306.1412048339844,
+        703.225830078125,
+        552.6270751953125,
+        711.4158325195312
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2302,
+        2964
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b166",
+      "text": "infiltration and improves gait after delayed rotator cuff repair in mice.  Am. J. Sports Med.",
+      "bbox_pt": [
+        320.3132019042969,
+        711.223876953125,
+        559.6172485351562,
+        719.4138793945312
+      ],
+      "bbox_px": [
+        1334,
+        2963,
+        2331,
+        2997
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b167",
+      "text": "48 , 1590–1600 (2020).",
+      "bbox_pt": [
+        320.313232421875,
+        719.1318359375,
+        382.2764587402344,
+        727.411865234375
+      ],
+      "bbox_px": [
+        1334,
+        2996,
+        1592,
+        3030
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b168",
+      "text": "124.\t Lee, C. et al. Beige FAPs transplantation improves muscle quality and shoulder function ",
+      "bbox_pt": [
+        306.1412353515625,
+        727.2198486328125,
+        557.594482421875,
+        735.4098510742188
+      ],
+      "bbox_px": [
+        1275,
+        3030,
+        2323,
+        3064
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p16_b169",
+      "text": "after massive rotator cuff tears.  J. Orthop. Res. 38 , 1159–1166 (2020).",
+      "bbox_pt": [
+        320.313232421875,
+        735.1278076171875,
+        504.0980224609375,
+        743.4078369140625
+      ],
+      "bbox_px": [
+        1334,
+        3063,
+        2100,
+        3097
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 170
+  }
+}

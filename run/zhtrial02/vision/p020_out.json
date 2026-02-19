@@ -1,0 +1,99 @@
+{
+  "page": 20,
+  "reading_order": [
+    "p20_b3",
+    "p20_b4",
+    "p20_b5",
+    "p20_b6",
+    "p20_b7",
+    "p20_b8",
+    "p20_b9",
+    "p20_b10",
+    "p20_b11",
+    "p20_b12",
+    "p20_b13",
+    "p20_b14",
+    "p20_b15",
+    "p20_b16",
+    "p20_b17",
+    "p20_b18",
+    "p20_b19",
+    "p20_b0",
+    "p20_b2",
+    "p20_b20",
+    "p20_b21",
+    "p20_b22",
+    "p20_b23",
+    "p20_b24",
+    "p20_b25",
+    "p20_b26",
+    "p20_b27",
+    "p20_b28",
+    "p20_b29",
+    "p20_b30",
+    "p20_b31",
+    "p20_b32",
+    "p20_b1"
+  ],
+  "merge_groups": [
+    {
+      "group_id": "mg_0",
+      "block_ids": [
+        "p20_b25",
+        "p20_b26"
+      ]
+    },
+    {
+      "group_id": "mg_1",
+      "block_ids": [
+        "p20_b27",
+        "p20_b28"
+      ]
+    },
+    {
+      "group_id": "mg_2",
+      "block_ids": [
+        "p20_b31",
+        "p20_b32"
+      ]
+    }
+  ],
+  "role_labels": {
+    "p20_b0": "HeaderFooter",
+    "p20_b1": "Heading",
+    "p20_b2": "HeaderFooter",
+    "p20_b3": "Heading",
+    "p20_b4": "Body",
+    "p20_b5": "Body",
+    "p20_b6": "ReferenceList",
+    "p20_b7": "Body",
+    "p20_b8": "Body",
+    "p20_b9": "ReferenceList",
+    "p20_b10": "Body",
+    "p20_b11": "Body",
+    "p20_b12": "ReferenceList",
+    "p20_b13": "Body",
+    "p20_b14": "Heading",
+    "p20_b15": "Body",
+    "p20_b16": "Heading",
+    "p20_b17": "Body",
+    "p20_b18": "Body",
+    "p20_b19": "Body",
+    "p20_b20": "Heading",
+    "p20_b21": "Body",
+    "p20_b22": "Heading",
+    "p20_b23": "Body",
+    "p20_b24": "Body",
+    "p20_b25": "Body",
+    "p20_b26": "Body",
+    "p20_b27": "Body",
+    "p20_b28": "Body",
+    "p20_b29": "Body",
+    "p20_b30": "Body",
+    "p20_b31": "Body",
+    "p20_b32": "Body"
+  },
+  "confidence": 0.5,
+  "fallback_used": true,
+  "source": "fallback"
+}

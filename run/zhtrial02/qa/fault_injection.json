@@ -1,0 +1,162 @@
+[
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 1,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 2,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 3,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 4,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 5,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 6,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 7,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 8,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 9,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 10,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 11,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 12,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 13,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 14,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 15,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 16,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 17,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 18,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 19,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  },
+  {
+    "stage": "vision",
+    "fault": "parse-failure",
+    "page": 20,
+    "retry_attempts": 1,
+    "fallback_used": true,
+    "status": "degraded"
+  }
+]

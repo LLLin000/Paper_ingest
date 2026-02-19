@@ -1,0 +1,1981 @@
+{
+  "page": 8,
+  "image_path": "run\\trial01\\pages\\p008.png",
+  "blocks": [
+    {
+      "block_id": "p8_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b1",
+      "text": "8",
+      "bbox_pt": [
+        555.94482421875,
+        760.43701171875,
+        561.2008056640625,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2316,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b4",
+      "text": "Similarly, in human studies, satellite cell numbers are not diminished, ",
+      "bbox_pt": [
+        39.685001373291016,
+        112.09562683105469,
+        296.29669189453125,
+        122.276123046875
+      ],
+      "bbox_px": [
+        165,
+        467,
+        1234,
+        509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b5",
+      "text": "but their ability to contribute to muscle size and regeneration may be ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.84562683105469,
+        296.2186584472656,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        511,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b6",
+      "text": "limited in the setting of aged rotator cuff tissue 97 – 101 .",
+      "bbox_pt": [
+        39.685001373291016,
+        133.2574005126953,
+        231.25428771972656,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        555,
+        963,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b7",
+      "text": "Fatty infiltration .  Fatty infiltration (that is, infiltration of fat from the ",
+      "bbox_pt": [
+        39.68104553222656,
+        153.70913696289062,
+        296.2337951660156,
+        165.275634765625
+      ],
+      "bbox_px": [
+        165,
+        640,
+        1234,
+        688
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b8",
+      "text": "surrounding tissue 102 ) has emerged as an important biological concept ",
+      "bbox_pt": [
+        39.685001373291016,
+        165.5074005126953,
+        296.1290283203125,
+        176.026123046875
+      ],
+      "bbox_px": [
+        165,
+        689,
+        1233,
+        733
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b9",
+      "text": "involved in muscle degeneration across many conditions, including ",
+      "bbox_pt": [
+        39.685001373291016,
+        176.5956268310547,
+        296.2190856933594,
+        186.776123046875
+      ],
+      "bbox_px": [
+        165,
+        735,
+        1234,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b10",
+      "text": "ageing, low back pain and muscular dystrophy. The presence of fatty ",
+      "bbox_pt": [
+        39.685001373291016,
+        187.3456268310547,
+        296.2508544921875,
+        197.526123046875
+      ],
+      "bbox_px": [
+        165,
+        780,
+        1234,
+        823
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b11",
+      "text": "infiltration worsens the quality of muscle, as the amount of tissue ",
+      "bbox_pt": [
+        39.685001373291016,
+        198.0956268310547,
+        296.23065185546875,
+        208.276123046875
+      ],
+      "bbox_px": [
+        165,
+        825,
+        1234,
+        867
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b12",
+      "text": "that can develop force decreases with a concomitant alteration in ",
+      "bbox_pt": [
+        39.685001373291016,
+        208.8453826904297,
+        296.1884460449219,
+        219.02587890625
+      ],
+      "bbox_px": [
+        165,
+        870,
+        1234,
+        912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b13",
+      "text": "the biomechanical properties of the tissue 103 . Several animal studies ",
+      "bbox_pt": [
+        39.685001373291016,
+        219.2574005126953,
+        296.2811279296875,
+        229.776123046875
+      ],
+      "bbox_px": [
+        165,
+        913,
+        1234,
+        957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b14",
+      "text": "and human studies have demonstrated the importance of FAPs in ",
+      "bbox_pt": [
+        39.685001373291016,
+        230.3456268310547,
+        296.4014892578125,
+        240.526123046875
+      ],
+      "bbox_px": [
+        165,
+        959,
+        1235,
+        1002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b15",
+      "text": "the development of fatty infiltration 9 . These cells have a central role ",
+      "bbox_pt": [
+        39.685001373291016,
+        240.7574005126953,
+        296.25555419921875,
+        251.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1003,
+        1234,
+        1046
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b16",
+      "text": "in the regulation of muscle degeneration; for example, in muscular ",
+      "bbox_pt": [
+        39.685001373291016,
+        251.8456268310547,
+        296.15875244140625,
+        262.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1049,
+        1233,
+        1091
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b17",
+      "text": "dystrophy, amyotrophic lateral sclerosis and ageing 104 – 111 . In animal ",
+      "bbox_pt": [
+        39.685001373291016,
+        262.25738525390625,
+        296.2954406738281,
+        272.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1092,
+        1234,
+        1136
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b18",
+      "text": "models, FAPs have been shown to proliferate at the time of rotator ",
+      "bbox_pt": [
+        39.685001373291016,
+        273.3456115722656,
+        296.340576171875,
+        283.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1138,
+        1234,
+        1181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b19",
+      "text": "cuff injury and directly contribute to the development of fatty infil-",
+      "bbox_pt": [
+        39.685001373291016,
+        284.0956115722656,
+        294.87738037109375,
+        294.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1183,
+        1228,
+        1226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b20",
+      "text": "tration through expression of white fat-associated genes including ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.8456115722656,
+        296.2845458984375,
+        305.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1228,
+        1234,
+        1270
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b21",
+      "text": "PPARG ,  CREBP  and other fat-related genes 84 , 96 , 112 . Fatty infiltration can ",
+      "bbox_pt": [
+        39.685001373291016,
+        305.25732421875,
+        296.2456970214844,
+        315.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1271,
+        1234,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b22",
+      "text": "be decreased through inhibition signalling molecules, such as TGFβ, ",
+      "bbox_pt": [
+        39.68800354003906,
+        316.3453674316406,
+        296.2621765136719,
+        326.52587890625
+      ],
+      "bbox_px": [
+        165,
+        1318,
+        1234,
+        1360
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b23",
+      "text": "retinoic acid and PPARγ, which probably work through modulating ",
+      "bbox_pt": [
+        39.685001373291016,
+        327.0956115722656,
+        296.339599609375,
+        337.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1362,
+        1234,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b24",
+      "text": "the response of FAPs to injury 113 – 116 . In human studies, FAPs prolifer-",
+      "bbox_pt": [
+        39.685001373291016,
+        337.50732421875,
+        294.80316162109375,
+        348.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1406,
+        1228,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b25",
+      "text": "ate at the time of rotator cuff injury, and increase in number as tear ",
+      "bbox_pt": [
+        39.685001373291016,
+        348.5956115722656,
+        296.3955383300781,
+        358.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1452,
+        1234,
+        1494
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b26",
+      "text": "size progresses 8  and express several fat-related and fibrosis-related ",
+      "bbox_pt": [
+        39.685001373291016,
+        359.00732421875,
+        296.2499694824219,
+        369.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1495,
+        1234,
+        1539
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b27",
+      "text": "genes 117 – 119 . Non-biased transcriptomic studies have shown that FAPs ",
+      "bbox_pt": [
+        39.685001373291016,
+        369.75732421875,
+        296.3659973144531,
+        380.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1540,
+        1234,
+        1584
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b28",
+      "text": "isolated from partial-thickness tears are less likely to express mark-",
+      "bbox_pt": [
+        39.685001373291016,
+        380.8456115722656,
+        294.8031921386719,
+        391.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1586,
+        1228,
+        1629
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b29",
+      "text": "ers of adipogenesis and fibrosis than FAPs from full-thickness tears. ",
+      "bbox_pt": [
+        39.685001373291016,
+        391.5956115722656,
+        296.22406005859375,
+        401.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1631,
+        1234,
+        1674
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b30",
+      "text": "Adipogenic commitment is driven by downregulation of DLK1, which ",
+      "bbox_pt": [
+        39.685001373291016,
+        402.3456115722656,
+        296.28472900390625,
+        412.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1676,
+        1234,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b31",
+      "text": "is seen in FAPs from patients with full-thickness tears 120 . Importantly, ",
+      "bbox_pt": [
+        39.685001373291016,
+        412.75732421875,
+        296.2588195800781,
+        423.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1719,
+        1234,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b32",
+      "text": "FAPs also seem to have pro-regenerative capabilities in vitro when ",
+      "bbox_pt": [
+        39.685001373291016,
+        423.8456115722656,
+        296.4040222167969,
+        434.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1766,
+        1235,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b33",
+      "text": "stimulated with pharmacological agents, which may be utilized to ",
+      "bbox_pt": [
+        39.685001373291016,
+        434.5956115722656,
+        296.3631896972656,
+        444.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1810,
+        1234,
+        1853
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b34",
+      "text": "improve muscle quality at the time of and after rotator cuff repair 121 – 124 .",
+      "bbox_pt": [
+        39.685001373291016,
+        445.00732421875,
+        294.8031921386719,
+        455.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1854,
+        1228,
+        1898
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b35",
+      "text": "Tendon healing after repair",
+      "bbox_pt": [
+        39.68510055541992,
+        466.3218688964844,
+        151.84613037109375,
+        477.1631164550781
+      ],
+      "bbox_px": [
+        165,
+        1943,
+        632,
+        1988
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b36",
+      "text": "Tendon–bone healing, a highly complex process, is crucial to the suc-",
+      "bbox_pt": [
+        39.68510055541992,
+        477.5956115722656,
+        294.84100341796875,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1989,
+        1228,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b37",
+      "text": "cess of rotator cuff repair; yet, the mechanism underlying this process ",
+      "bbox_pt": [
+        39.68510055541992,
+        488.3456115722656,
+        296.20953369140625,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2034,
+        1234,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b38",
+      "text": "remains a critical unmet need in this field. The native enthesis is a highly ",
+      "bbox_pt": [
+        39.68510055541992,
+        499.0956115722656,
+        296.1479797363281,
+        509.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2079,
+        1233,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b39",
+      "text": "organized structure with remarkable architecture designed to transmit ",
+      "bbox_pt": [
+        39.68510055541992,
+        509.8456115722656,
+        296.1760559082031,
+        520.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2124,
+        1234,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b40",
+      "text": "loads from muscle through unmineralized and mineralized fibrocarti-",
+      "bbox_pt": [
+        39.68510055541992,
+        520.5956420898438,
+        294.80322265625,
+        530.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1228,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b41",
+      "text": "lage to bone 125 , 126 . Re-establishment of the rotator cuff tendon to bone ",
+      "bbox_pt": [
+        39.68510055541992,
+        531.00732421875,
+        296.3399658203125,
+        541.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2212,
+        1234,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b42",
+      "text": "interface does not recapitulate the organized anatomy or structure of ",
+      "bbox_pt": [
+        39.68510055541992,
+        542.0956420898438,
+        296.2203369140625,
+        552.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2258,
+        1234,
+        2301
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b43",
+      "text": "the native enthesis. Lineage tracing studies suggest that even in acute ",
+      "bbox_pt": [
+        39.68510055541992,
+        552.8456420898438,
+        296.3024597167969,
+        563.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2303,
+        1234,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b44",
+      "text": "reattachment, the native enthesis is replaced with scar-forming cells ",
+      "bbox_pt": [
+        39.68510055541992,
+        563.5956420898438,
+        296.2122802734375,
+        573.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1234,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b45",
+      "text": "leading rather to a mechanically inferior attachment 127 .",
+      "bbox_pt": [
+        39.68510055541992,
+        574.00732421875,
+        243.53768920898438,
+        584.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2391,
+        1014,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b46",
+      "text": "Healing at the enthesis follows the typical reparative cascade of ",
+      "bbox_pt": [
+        56.692901611328125,
+        585.0956420898438,
+        296.2505798339844,
+        595.276123046875
+      ],
+      "bbox_px": [
+        236,
+        2437,
+        1234,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b47",
+      "text": "inflammation, proliferation and remodelling 128 . Pro-inflammatory ",
+      "bbox_pt": [
+        39.68510055541992,
+        595.50732421875,
+        296.2857360839844,
+        606.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2481,
+        1234,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b48",
+      "text": "cytokines released by platelets from the clot recruit macrophages, ",
+      "bbox_pt": [
+        39.68510055541992,
+        606.5956420898438,
+        296.3835144042969,
+        616.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2527,
+        1234,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b49",
+      "text": "neutrophils and tendon-derived cells to initiate the repair response. ",
+      "bbox_pt": [
+        39.68510055541992,
+        617.3456420898438,
+        296.2766418457031,
+        627.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2572,
+        1234,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b50",
+      "text": "The proliferative phase of collagen and extracellular matrix deposition ",
+      "bbox_pt": [
+        39.68510055541992,
+        628.0956420898438,
+        296.13250732421875,
+        638.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2617,
+        1233,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b51",
+      "text": "by recruited fibroblasts results in an increase in cellularity and collagen ",
+      "bbox_pt": [
+        39.68510055541992,
+        638.8456420898438,
+        296.3154296875,
+        649.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2661,
+        1234,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b52",
+      "text": "deposition. During this time, there is also an increase in vascularity. This ",
+      "bbox_pt": [
+        39.68510055541992,
+        649.5956420898438,
+        296.34906005859375,
+        659.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2706,
+        1234,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b53",
+      "text": "is followed by remodelling, in which there is a subsequent reduction of ",
+      "bbox_pt": [
+        39.68510055541992,
+        660.3456420898438,
+        296.0457458496094,
+        670.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1233,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b54",
+      "text": "cellularity and vascularity that is accompanied by a shift from type III ",
+      "bbox_pt": [
+        39.68510055541992,
+        671.0956420898438,
+        296.2682800292969,
+        681.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2796,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b55",
+      "text": "collagen to type I collagen, and morphological reorganization and ",
+      "bbox_pt": [
+        39.68510055541992,
+        681.8456420898438,
+        296.4425354003906,
+        692.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2841,
+        1235,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b56",
+      "text": "realignment of the collagen to respond to mechanical loads.",
+      "bbox_pt": [
+        39.68510055541992,
+        692.5956420898438,
+        262.1958923339844,
+        702.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1092,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b57",
+      "text": "Molecular mediators .  A myriad of cytokines, including IGFs, VEGF, ",
+      "bbox_pt": [
+        39.68510055541992,
+        712.7095947265625,
+        296.2769470214844,
+        724.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2969,
+        1234,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b58",
+      "text": "PDGF and members of the TGFβ family, regulate the production of col-",
+      "bbox_pt": [
+        39.68510055541992,
+        724.8456420898438,
+        294.80316162109375,
+        735.026123046875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1228,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b59",
+      "text": "lagen and extracellular matrix during the reparative and remodelling ",
+      "bbox_pt": [
+        39.68510055541992,
+        735.5956420898438,
+        296.2766418457031,
+        745.776123046875
+      ],
+      "bbox_px": [
+        165,
+        3064,
+        1234,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b60",
+      "text": "phases 129 , 130 . These cytokines induce paracrine and autocrine responses ",
+      "bbox_pt": [
+        306.1416931152344,
+        111.75740051269531,
+        562.7208251953125,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        465,
+        2344,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b61",
+      "text": "that affect fibroblast migration, angiogenesis, collagen production ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.84562683105469,
+        562.86328125,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        511,
+        2345,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b62",
+      "text": "and matrix metalloproteinase activity 131 . Variations in both the quan-",
+      "bbox_pt": [
+        306.1416931152344,
+        133.2574005126953,
+        561.2764892578125,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        555,
+        2338,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b63",
+      "text": "tity and temporal expression of these cytokines markedly affect the ",
+      "bbox_pt": [
+        306.1416931152344,
+        144.3456268310547,
+        562.7216796875,
+        154.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        601,
+        2344,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b64",
+      "text": "healing response at the enthesis, including the potential to shift from ",
+      "bbox_pt": [
+        306.1416931152344,
+        155.0956268310547,
+        562.7252197265625,
+        165.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        646,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b65",
+      "text": "fibrosis and scar formation to tissue regeneration. Accordingly, there ",
+      "bbox_pt": [
+        306.1416931152344,
+        165.8456268310547,
+        562.7437744140625,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b66",
+      "text": "is a tremendous focus on augmenting tendon–bone healing through ",
+      "bbox_pt": [
+        306.1416931152344,
+        176.5956268310547,
+        562.7242431640625,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b67",
+      "text": "modulation of these growth factors or through a paracrine effect of ",
+      "bbox_pt": [
+        306.1416931152344,
+        187.3456268310547,
+        562.6972045898438,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        780,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b68",
+      "text": "secretomes associated with local stem cell recruitment or delivery 131 – 133 .",
+      "bbox_pt": [
+        306.1416931152344,
+        197.7574005126953,
+        561.260009765625,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        823,
+        2338,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b69",
+      "text": "Diagnosis, screening and prevention",
+      "bbox_pt": [
+        306.1418151855469,
+        215.38961791992188,
+        490.0732421875,
+        230.22462463378906
+      ],
+      "bbox_px": [
+        1275,
+        897,
+        2041,
+        959
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b70",
+      "text": "Clinical presentation",
+      "bbox_pt": [
+        306.1418151855469,
+        229.82186889648438,
+        392.9102783203125,
+        240.6631317138672
+      ],
+      "bbox_px": [
+        1275,
+        957,
+        1637,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b71",
+      "text": "Patients with a symptomatic rotator cuff tear typically present at ",
+      "bbox_pt": [
+        306.1418151855469,
+        241.0956268310547,
+        562.8701782226562,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1004,
+        2345,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b72",
+      "text": "~50–70 years of age, with pain at night that keeps them from sleeping, ",
+      "bbox_pt": [
+        306.1418151855469,
+        251.8456268310547,
+        562.725341796875,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2344,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b73",
+      "text": "pain with overhead activity such has reaching a high shelf, or a subjec-",
+      "bbox_pt": [
+        306.1418151855469,
+        262.5956115722656,
+        561.2598876953125,
+        272.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1094,
+        2338,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b74",
+      "text": "tive feeling of shoulder girdle weakness. Despite a clear pathophysi-",
+      "bbox_pt": [
+        306.1418151855469,
+        273.3456115722656,
+        561.2598876953125,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1138,
+        2338,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b75",
+      "text": "ological progression from tendinopathy to partial-thickness tears to ",
+      "bbox_pt": [
+        306.1418151855469,
+        284.0956115722656,
+        562.648681640625,
+        294.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b76",
+      "text": "full-thickness tears, symptom severity does not necessarily correlate ",
+      "bbox_pt": [
+        306.1418151855469,
+        294.8456115722656,
+        562.72509765625,
+        305.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2344,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b77",
+      "text": "with histopathological severity (Fig.  4 ).",
+      "bbox_pt": [
+        306.1418151855469,
+        305.5953674316406,
+        451.6800842285156,
+        315.77587890625
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        1882,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b78",
+      "text": "Diagnosis",
+      "bbox_pt": [
+        306.1418151855469,
+        326.5718688964844,
+        347.039306640625,
+        337.4131164550781
+      ],
+      "bbox_px": [
+        1275,
+        1360,
+        1445,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b79",
+      "text": "The diagnosis of a rotator cuff tear is based on the location of pain ",
+      "bbox_pt": [
+        306.1418151855469,
+        337.8456115722656,
+        562.6161499023438,
+        348.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b80",
+      "text": "(typically along the lateral shoulder), timing of pain (nocturnal ",
+      "bbox_pt": [
+        306.1418151855469,
+        348.5956115722656,
+        562.8827514648438,
+        358.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1452,
+        2345,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b81",
+      "text": "pain and pain with overhead activities) and key physical examination ",
+      "bbox_pt": [
+        306.1418151855469,
+        359.3456115722656,
+        562.6929321289062,
+        369.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1497,
+        2344,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b82",
+      "text": "findings. However, the location and type of pain described by patients ",
+      "bbox_pt": [
+        306.1418151855469,
+        370.0956115722656,
+        562.5924682617188,
+        380.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1542,
+        2344,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b83",
+      "text": "are often non-specific and only beneficial to a certain extent. Under-",
+      "bbox_pt": [
+        306.1418151855469,
+        380.8456115722656,
+        561.2598876953125,
+        391.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        2338,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b84",
+      "text": "standing the symptoms of rotator cuff pathology in comparison with ",
+      "bbox_pt": [
+        306.1418151855469,
+        391.5956115722656,
+        562.7085571289062,
+        401.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1631,
+        2344,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b85",
+      "text": "other common shoulder ailments, especially frozen shoulder and gle-",
+      "bbox_pt": [
+        306.1418151855469,
+        402.3456115722656,
+        561.2598876953125,
+        412.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        2338,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b86",
+      "text": "nohumeral arthritis, is important. The differential diagnosis of rotator ",
+      "bbox_pt": [
+        306.1418151855469,
+        413.0956115722656,
+        562.8365478515625,
+        423.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2345,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b87",
+      "text": "cuff tears is broad and should include degenerative conditions of the ",
+      "bbox_pt": [
+        306.1418151855469,
+        423.8456115722656,
+        562.7003784179688,
+        434.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b88",
+      "text": "shoulder girdle and the cervical spine (Table  1 ). Physical examination ",
+      "bbox_pt": [
+        306.1418151855469,
+        434.5953674316406,
+        562.716796875,
+        444.77587890625
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2344,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b89",
+      "text": "of the patients suspected to have rotator cuff pathology should focus ",
+      "bbox_pt": [
+        306.1418151855469,
+        445.3451232910156,
+        562.6815795898438,
+        455.525634765625
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2344,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b90",
+      "text": "on the integrity and functioning of the rotator cuff and periscapular ",
+      "bbox_pt": [
+        306.1418151855469,
+        456.0956115722656,
+        562.8704833984375,
+        466.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2345,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b91",
+      "text": "muscles. Despite advances in imaging techniques, history and physical ",
+      "bbox_pt": [
+        306.1418151855469,
+        466.8456115722656,
+        562.6947021484375,
+        477.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2344,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b92",
+      "text": "examination remain the primary diagnostic tools and determinants ",
+      "bbox_pt": [
+        306.1418151855469,
+        477.5956115722656,
+        562.6480102539062,
+        487.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2344,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b93",
+      "text": "of management.",
+      "bbox_pt": [
+        306.1418151855469,
+        488.3456115722656,
+        367.5053405761719,
+        498.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2034,
+        1531,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b94",
+      "text": "Physical examination .  Physical examination must begin by expos-",
+      "bbox_pt": [
+        306.1418151855469,
+        508.4596252441406,
+        561.260009765625,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2118,
+        2338,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b95",
+      "text": "ing both shoulder girdles to assess their symmetry. Muscle atrophy, ",
+      "bbox_pt": [
+        306.1418151855469,
+        520.5956420898438,
+        562.724853515625,
+        530.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b96",
+      "text": "in the infraspinatus or supraspinatus fossae, is common in patients ",
+      "bbox_pt": [
+        306.1418151855469,
+        531.3456420898438,
+        562.828857421875,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2345,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b97",
+      "text": "with chronic, larger rotator cuff tears 134 . The acromioclavicular joint, ",
+      "bbox_pt": [
+        306.1418151855469,
+        541.75732421875,
+        562.7047729492188,
+        552.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2257,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b98",
+      "text": "anterior capsule, coracoid process, posterior capsule, bicipital groove ",
+      "bbox_pt": [
+        306.1418151855469,
+        552.8456420898438,
+        562.5224609375,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2343,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b99",
+      "text": "and acromion are palpated for tenderness 135 . Most patients with rotator ",
+      "bbox_pt": [
+        306.1418151855469,
+        563.25732421875,
+        562.7107543945312,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2346,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b100",
+      "text": "cuff tears will not report tenderness in these areas, but they should be ",
+      "bbox_pt": [
+        306.1418151855469,
+        574.3456420898438,
+        562.7401123046875,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2344,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b101",
+      "text": "assessed for concomitant pathology.",
+      "bbox_pt": [
+        306.1418151855469,
+        585.0956420898438,
+        443.4383544921875,
+        595.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2437,
+        1847,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b102",
+      "text": "A comprehensive assessment of shoulder range of motion is per-",
+      "bbox_pt": [
+        323.1533203125,
+        595.8453979492188,
+        561.256591796875,
+        606.02587890625
+      ],
+      "bbox_px": [
+        1346,
+        2482,
+        2338,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b103",
+      "text": "formed. The cervical spine should be examined to rule out pain coming ",
+      "bbox_pt": [
+        306.1418151855469,
+        606.5956420898438,
+        562.7752685546875,
+        616.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b104",
+      "text": "primarily from a spine condition. Cervical spine pathology typically ",
+      "bbox_pt": [
+        306.1418151855469,
+        617.3456420898438,
+        562.6160888671875,
+        627.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2344,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b105",
+      "text": "presents with a history of radiating pain down past the shoulder and ",
+      "bbox_pt": [
+        306.1418151855469,
+        628.0956420898438,
+        562.72802734375,
+        638.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2344,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b106",
+      "text": "into the hand, or associated numbness and tingling in a neurological ",
+      "bbox_pt": [
+        306.1418151855469,
+        638.8456420898438,
+        562.7251586914062,
+        649.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2661,
+        2344,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b107",
+      "text": "distribution. During examination of the shoulder, forward flexion, ",
+      "bbox_pt": [
+        306.1418151855469,
+        649.5956420898438,
+        562.7921752929688,
+        659.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b108",
+      "text": "abduction, internal rotation and external rotation are evaluated from ",
+      "bbox_pt": [
+        306.1418151855469,
+        660.3456420898438,
+        562.724365234375,
+        670.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b109",
+      "text": "the adducted position (that is, with the patient’s arm at the side). Inter-",
+      "bbox_pt": [
+        306.1418151855469,
+        671.0956420898438,
+        561.2598876953125,
+        681.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2338,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b110",
+      "text": "nal and external rotation should also be performed with the shoulder ",
+      "bbox_pt": [
+        306.1418151855469,
+        681.8456420898438,
+        562.7005004882812,
+        692.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b111",
+      "text": "abducted to 90° with the elbow flexed to 90° to check for early arthritis ",
+      "bbox_pt": [
+        306.1418151855469,
+        692.5956420898438,
+        562.565673828125,
+        702.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b112",
+      "text": "and frozen shoulder — both conditions cause loss of active and passive ",
+      "bbox_pt": [
+        306.1418151855469,
+        703.3456420898438,
+        562.7088012695312,
+        713.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b113",
+      "text": "motion 136 .",
+      "bbox_pt": [
+        306.1418151855469,
+        713.75732421875,
+        343.9197998046875,
+        724.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2973,
+        1432,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b114",
+      "text": "The strength of the rotator cuff muscle is also assessed at this step. ",
+      "bbox_pt": [
+        323.1496887207031,
+        724.8456420898438,
+        562.658203125,
+        735.026123046875
+      ],
+      "bbox_px": [
+        1346,
+        3020,
+        2344,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b115",
+      "text": "Abduction strength is tested with the patient’s arms abducted at 90° ",
+      "bbox_pt": [
+        306.1418151855469,
+        735.5956420898438,
+        562.7334594726562,
+        745.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        3064,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 116
+  }
+}

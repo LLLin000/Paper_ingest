@@ -1,0 +1,2032 @@
+{
+  "page": 10,
+  "image_path": "run\\stress01\\pages\\p010.png",
+  "blocks": [
+    {
+      "block_id": "p10_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b2",
+      "text": "The extraction of nanocellulose from diverse raw plant mate-",
+      "bbox_pt": [
+        57.434661865234375,
+        75.97752380371094,
+        288.8941650390625,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        239,
+        316,
+        1203,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b3",
+      "text": "rials is a top-down process. Mechanical grinding and homoge-",
+      "bbox_pt": [
+        47.97600173950195,
+        86.93986511230469,
+        288.89605712890625,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        199,
+        362,
+        1203,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b4",
+      "text": "nization are the most widely used physical methods. The com-",
+      "bbox_pt": [
+        47.97600173950195,
+        97.90214538574219,
+        288.90582275390625,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        199,
+        407,
+        1203,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b5",
+      "text": "bination of chemical or biological approaches, such as acid and",
+      "bbox_pt": [
+        47.97600173950195,
+        108.85551452636719,
+        288.9084777832031,
+        117.9026107788086
+      ],
+      "bbox_px": [
+        199,
+        453,
+        1203,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b6",
+      "text": "enzymatic hydrolysis, can further disintegrate the intertwined",
+      "bbox_pt": [
+        47.97600173950195,
+        119.81785583496094,
+        288.937255859375,
+        128.86495971679688
+      ],
+      "bbox_px": [
+        199,
+        499,
+        1203,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b7",
+      "text": "regions within nanocellulose, thereby enhancing the speciﬁc",
+      "bbox_pt": [
+        47.97600173950195,
+        130.7801971435547,
+        288.9273681640625,
+        139.82730102539062
+      ],
+      "bbox_px": [
+        199,
+        544,
+        1203,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b8",
+      "text": "surface area or relative crystallinity of the material. [ 124–126 ] Ad-",
+      "bbox_pt": [
+        47.97600173950195,
+        138.5991668701172,
+        288.91461181640625,
+        150.78060913085938
+      ],
+      "bbox_px": [
+        199,
+        577,
+        1203,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b9",
+      "text": "ditionally, techniques such as chemical modiﬁcation or ultra-",
+      "bbox_pt": [
+        47.97576904296875,
+        152.69346618652344,
+        288.901123046875,
+        161.74057006835938
+      ],
+      "bbox_px": [
+        199,
+        636,
+        1203,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b10",
+      "text": "sound can regulate the surface charge of nanocellulose and",
+      "bbox_pt": [
+        47.97576904296875,
+        163.6558074951172,
+        288.9002685546875,
+        172.70291137695312
+      ],
+      "bbox_px": [
+        199,
+        681,
+        1203,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b11",
+      "text": "subsequently control ion transport. [ 127 ] Theoretically, this indi-",
+      "bbox_pt": [
+        47.97576904296875,
+        171.47618103027344,
+        288.922607421875,
+        183.65628051757812
+      ],
+      "bbox_px": [
+        199,
+        714,
+        1203,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b12",
+      "text": "cates that nanocellulose-based ﬂexible electrical materials facil-",
+      "bbox_pt": [
+        47.9757194519043,
+        185.5704803466797,
+        288.9225769042969,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        199,
+        773,
+        1203,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b13",
+      "text": "itate energy collection and storage, thereby presenting exten-",
+      "bbox_pt": [
+        47.9757194519043,
+        196.53282165527344,
+        288.9297790527344,
+        205.57992553710938
+      ],
+      "bbox_px": [
+        199,
+        818,
+        1203,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b14",
+      "text": "sive application prospects. In contrast to the aforementioned",
+      "bbox_pt": [
+        47.9757194519043,
+        207.48619079589844,
+        288.9082946777344,
+        216.53329467773438
+      ],
+      "bbox_px": [
+        199,
+        864,
+        1203,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b15",
+      "text": "processes, the synthesis of cellulose materials from nanocellu-",
+      "bbox_pt": [
+        47.9757194519043,
+        218.44847106933594,
+        288.9100036621094,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        199,
+        910,
+        1203,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b16",
+      "text": "lose is a bottom-up process and constitutes a preparation ap-",
+      "bbox_pt": [
+        47.9757194519043,
+        229.4108123779297,
+        288.9244689941406,
+        238.45791625976562
+      ],
+      "bbox_px": [
+        199,
+        955,
+        1203,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b17",
+      "text": "proach for cellulose-based triboelectric materials. Additionally,",
+      "bbox_pt": [
+        47.9757194519043,
+        240.3641815185547,
+        288.88494873046875,
+        249.41128540039062
+      ],
+      "bbox_px": [
+        199,
+        1001,
+        1203,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b18",
+      "text": "carbonizing nanocellulose into graphene improves its electrical",
+      "bbox_pt": [
+        47.9757194519043,
+        251.3264617919922,
+        288.9217834472656,
+        260.3735656738281
+      ],
+      "bbox_px": [
+        199,
+        1047,
+        1203,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b19",
+      "text": "properties, while the porous network structure of cellulose aids",
+      "bbox_pt": [
+        47.9757194519043,
+        262.27984619140625,
+        288.91278076171875,
+        271.3269348144531
+      ],
+      "bbox_px": [
+        199,
+        1092,
+        1203,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b20",
+      "text": "electron and ion transmission, providing a solid foundation for",
+      "bbox_pt": [
+        47.9757194519043,
+        273.2421569824219,
+        288.9297790527344,
+        282.28924560546875
+      ],
+      "bbox_px": [
+        199,
+        1138,
+        1203,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b21",
+      "text": "energy transmission and storage. [ 128 ] For cellulose composite tri-",
+      "bbox_pt": [
+        47.9757194519043,
+        281.0601806640625,
+        288.91632080078125,
+        293.2515869140625
+      ],
+      "bbox_px": [
+        199,
+        1171,
+        1203,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b22",
+      "text": "boelectric materials, the degree of dispersion among nanoﬁbers",
+      "bbox_pt": [
+        47.97576141357422,
+        295.154541015625,
+        288.9289245605469,
+        304.2016296386719
+      ],
+      "bbox_px": [
+        199,
+        1229,
+        1203,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b23",
+      "text": "has a decisive inﬂuence on the performance and service life",
+      "bbox_pt": [
+        47.97576141357422,
+        306.1168518066406,
+        288.9046936035156,
+        315.1639404296875
+      ],
+      "bbox_px": [
+        199,
+        1275,
+        1203,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b24",
+      "text": "of the materials. Moreover, in water, the degree of dispersion",
+      "bbox_pt": [
+        47.97576141357422,
+        317.0791931152344,
+        288.8984375,
+        326.12628173828125
+      ],
+      "bbox_px": [
+        199,
+        1321,
+        1203,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b25",
+      "text": "of nanoﬁbers can be accomplished by regulating the surface",
+      "bbox_pt": [
+        47.97576141357422,
+        328.03253173828125,
+        288.9011535644531,
+        337.0796203613281
+      ],
+      "bbox_px": [
+        199,
+        1366,
+        1203,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b26",
+      "text": "charge of the ﬁbers. Therefore, the appropriate introduction of",
+      "bbox_pt": [
+        47.97576141357422,
+        338.9948425292969,
+        288.9137268066406,
+        348.04193115234375
+      ],
+      "bbox_px": [
+        199,
+        1412,
+        1203,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b27",
+      "text": "charges during the preparation of cellulose composite materi-",
+      "bbox_pt": [
+        47.97576141357422,
+        349.9571838378906,
+        288.9307556152344,
+        359.0042724609375
+      ],
+      "bbox_px": [
+        199,
+        1458,
+        1203,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b28",
+      "text": "als can increase the electrostatic repulsion between nanocellu-",
+      "bbox_pt": [
+        47.97576141357422,
+        360.9105224609375,
+        288.9118957519531,
+        369.9576110839844
+      ],
+      "bbox_px": [
+        199,
+        1503,
+        1203,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b29",
+      "text": "lose molecules, thereby fabricating a uniformly dispersed ﬁber",
+      "bbox_pt": [
+        47.97576141357422,
+        371.87286376953125,
+        288.8921813964844,
+        380.9199523925781
+      ],
+      "bbox_px": [
+        199,
+        1549,
+        1203,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b30",
+      "text": "membrane. [ 129 ]",
+      "bbox_pt": [
+        47.97576141357422,
+        381.9297790527344,
+        104.67607116699219,
+        391.88226318359375
+      ],
+      "bbox_px": [
+        199,
+        1591,
+        436,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b31",
+      "text": "With advancements in the manufacturing process and perfor-",
+      "bbox_pt": [
+        57.435001373291016,
+        393.7851867675781,
+        288.9286193847656,
+        402.832275390625
+      ],
+      "bbox_px": [
+        239,
+        1640,
+        1203,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b32",
+      "text": "mance optimization of triboelectric materials, more electronic",
+      "bbox_pt": [
+        47.976341247558594,
+        404.74749755859375,
+        288.92242431640625,
+        413.7945861816406
+      ],
+      "bbox_px": [
+        199,
+        1686,
+        1203,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b33",
+      "text": "products are being applied in healthcare. Wearable garments",
+      "bbox_pt": [
+        47.976341247558594,
+        415.7098083496094,
+        288.9312744140625,
+        424.75689697265625
+      ],
+      "bbox_px": [
+        199,
+        1732,
+        1203,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b34",
+      "text": "made from triboelectric materials can harness kinetic energy",
+      "bbox_pt": [
+        47.976341247558594,
+        426.6631774902344,
+        288.9187316894531,
+        435.71026611328125
+      ],
+      "bbox_px": [
+        199,
+        1777,
+        1203,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b35",
+      "text": "from joint and muscle movements during daily activities, con-",
+      "bbox_pt": [
+        47.976341247558594,
+        437.62548828125,
+        288.9223327636719,
+        446.6725769042969
+      ],
+      "bbox_px": [
+        199,
+        1823,
+        1203,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b36",
+      "text": "verting and storing it as electrical energy. [ 130 ] For example, a mi-",
+      "bbox_pt": [
+        47.976341247558594,
+        445.4451904296875,
+        288.9193115234375,
+        457.6349182128906
+      ],
+      "bbox_px": [
+        199,
+        1856,
+        1203,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b37",
+      "text": "crosensor based on a composite triboelectric material of micro-",
+      "bbox_pt": [
+        47.975181579589844,
+        459.5395202636719,
+        288.9050598144531,
+        468.58660888671875
+      ],
+      "bbox_px": [
+        199,
+        1914,
+        1203,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b38",
+      "text": "crystalline cellulose and polyvinyl alcohol could eﬀectively har-",
+      "bbox_pt": [
+        47.975181579589844,
+        470.5018615722656,
+        288.921142578125,
+        479.5489501953125
+      ],
+      "bbox_px": [
+        199,
+        1960,
+        1203,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b39",
+      "text": "vest energy during human movement when adhered to the sole of",
+      "bbox_pt": [
+        47.975181579589844,
+        481.46417236328125,
+        288.899658203125,
+        490.5112609863281
+      ],
+      "bbox_px": [
+        199,
+        2006,
+        1203,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b40",
+      "text": "the foot. [ 131 ] Electrospun nanoﬁber-based electronic skin adheres",
+      "bbox_pt": [
+        47.975181579589844,
+        489.2841796875,
+        288.89874267578125,
+        501.4646301269531
+      ],
+      "bbox_px": [
+        199,
+        2038,
+        1203,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b41",
+      "text": "comfortably to human skin, even during extended wear, enabling",
+      "bbox_pt": [
+        47.97610092163086,
+        503.3785095214844,
+        288.9239196777344,
+        512.4255981445312
+      ],
+      "bbox_px": [
+        199,
+        2097,
+        1203,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b42",
+      "text": "real-time monitoring of human health indicators such as breath-",
+      "bbox_pt": [
+        47.97610092163086,
+        514.3408203125,
+        288.9239196777344,
+        523.3878784179688
+      ],
+      "bbox_px": [
+        199,
+        2143,
+        1203,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b43",
+      "text": "ing and heartbeat by sensing skin expansion and contraction. [ 132 ]",
+      "bbox_pt": [
+        47.97610092163086,
+        524.3997802734375,
+        288.4200439453125,
+        534.3412475585938
+      ],
+      "bbox_px": [
+        199,
+        2184,
+        1201,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b44",
+      "text": "2.5. Zwitterionic Hydrogels",
+      "bbox_pt": [
+        47.97600173950195,
+        557.1621704101562,
+        148.1504364013672,
+        566.1285400390625
+      ],
+      "bbox_px": [
+        199,
+        2321,
+        617,
+        2358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b45",
+      "text": "Zwitterionic hydrogels are gel materials formed by cross-linking",
+      "bbox_pt": [
+        47.97600173950195,
+        579.0949096679688,
+        288.9139404296875,
+        588.1419677734375
+      ],
+      "bbox_px": [
+        199,
+        2412,
+        1203,
+        2450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b46",
+      "text": "zwitterionic polymers. They exhibit unique ionic conductivity, fa-",
+      "bbox_pt": [
+        47.97600173950195,
+        590.0482788085938,
+        288.9193115234375,
+        599.0953369140625
+      ],
+      "bbox_px": [
+        199,
+        2458,
+        1203,
+        2496
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b47",
+      "text": "vorable biocompatibility, and high hydrophilicity, eﬀectively pre-",
+      "bbox_pt": [
+        47.97600173950195,
+        601.0106201171875,
+        288.89434814453125,
+        610.0576782226562
+      ],
+      "bbox_px": [
+        199,
+        2504,
+        1203,
+        2541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b48",
+      "text": "venting nonspeciﬁc adsorption of proteins and adhesion of mi-",
+      "bbox_pt": [
+        47.97600173950195,
+        611.972900390625,
+        288.9346008300781,
+        621.0199584960938
+      ],
+      "bbox_px": [
+        199,
+        2549,
+        1203,
+        2587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b49",
+      "text": "croorganisms, such as bacteria. [ 133–135 ] Given these properties,",
+      "bbox_pt": [
+        47.97600173950195,
+        619.793212890625,
+        288.91162109375,
+        631.9733276367188
+      ],
+      "bbox_px": [
+        199,
+        2582,
+        1203,
+        2633
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b50",
+      "text": "zwitterionic hydrogels, as ﬂexible materials with electrical char-",
+      "bbox_pt": [
+        47.97549819946289,
+        633.8875122070312,
+        288.8927307128906,
+        642.9345703125
+      ],
+      "bbox_px": [
+        199,
+        2641,
+        1203,
+        2678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b51",
+      "text": "acteristics, have broad application prospects in biomedicine.",
+      "bbox_pt": [
+        47.97549819946289,
+        644.849853515625,
+        273.8955993652344,
+        653.8969116210938
+      ],
+      "bbox_px": [
+        199,
+        2686,
+        1141,
+        2724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b52",
+      "text": "Zwitterionic hydrogels can be classiﬁed into four types based",
+      "bbox_pt": [
+        57.43415069580078,
+        655.8031616210938,
+        288.8981628417969,
+        664.8502197265625
+      ],
+      "bbox_px": [
+        239,
+        2732,
+        1203,
+        2770
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b53",
+      "text": "on chemical components and preparation methods. [ 136,137 ] (I)",
+      "bbox_pt": [
+        47.97549819946289,
+        663.6231689453125,
+        288.9231262207031,
+        675.8125610351562
+      ],
+      "bbox_px": [
+        199,
+        2765,
+        1203,
+        2815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b54",
+      "text": "Single-network pure zwitterionic hydrogels are single-network",
+      "bbox_pt": [
+        47.9753303527832,
+        677.7265014648438,
+        288.9169006347656,
+        686.7735595703125
+      ],
+      "bbox_px": [
+        199,
+        2823,
+        1203,
+        2861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b55",
+      "text": "polymer hydrogels formed by cross-linking cationic and anionic",
+      "bbox_pt": [
+        47.9753303527832,
+        688.6798706054688,
+        288.92938232421875,
+        697.7269287109375
+      ],
+      "bbox_px": [
+        199,
+        2869,
+        1203,
+        2907
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b56",
+      "text": "monomers. While they have excellent biocompatibility, their",
+      "bbox_pt": [
+        47.9753303527832,
+        699.6422119140625,
+        288.93389892578125,
+        708.6892700195312
+      ],
+      "bbox_px": [
+        199,
+        2915,
+        1203,
+        2952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b57",
+      "text": "low cross-linking and lack of mechanical dissipation result in",
+      "bbox_pt": [
+        303.09002685546875,
+        75.97703552246094,
+        544.031494140625,
+        85.02413177490234
+      ],
+      "bbox_px": [
+        1262,
+        316,
+        2266,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b58",
+      "text": "poor mechanical performance, limiting their independent use in",
+      "bbox_pt": [
+        303.09002685546875,
+        86.93937683105469,
+        544.0451049804688,
+        95.9864730834961
+      ],
+      "bbox_px": [
+        1262,
+        362,
+        2266,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b59",
+      "text": "practical applications. (II) Zwitterionic copolymer hydrogels in-",
+      "bbox_pt": [
+        303.09002685546875,
+        97.90165710449219,
+        544.0497436523438,
+        106.9487533569336
+      ],
+      "bbox_px": [
+        1262,
+        407,
+        2266,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b60",
+      "text": "clude supramolecular copolymer zwitterionic hydrogels and in",
+      "bbox_pt": [
+        303.09002685546875,
+        108.85502624511719,
+        544.0125732421875,
+        117.9021224975586
+      ],
+      "bbox_px": [
+        1262,
+        453,
+        2266,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b61",
+      "text": "situ crosslinked zwitterionic hydrogels. Supramolecular hydro-",
+      "bbox_pt": [
+        303.09002685546875,
+        119.81736755371094,
+        544.0162353515625,
+        128.86447143554688
+      ],
+      "bbox_px": [
+        1262,
+        499,
+        2266,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b62",
+      "text": "gels are created by copolymerizing zwitterionic monomers with",
+      "bbox_pt": [
+        303.09002685546875,
+        130.77964782714844,
+        544.0423583984375,
+        139.82675170898438
+      ],
+      "bbox_px": [
+        1262,
+        544,
+        2266,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b63",
+      "text": "oppositely charged polymers in a 1:1 ratio, resulting in a uni-",
+      "bbox_pt": [
+        303.09002685546875,
+        141.73301696777344,
+        544.0432739257812,
+        150.78012084960938
+      ],
+      "bbox_px": [
+        1262,
+        590,
+        2266,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b64",
+      "text": "form charge distribution and electrically neutral material. In situ",
+      "bbox_pt": [
+        303.09002685546875,
+        152.6953582763672,
+        544.0361938476562,
+        161.74246215820312
+      ],
+      "bbox_px": [
+        1262,
+        636,
+        2266,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b65",
+      "text": "crosslinked hydrogels, on the other hand, are formed by grafting",
+      "bbox_pt": [
+        303.09002685546875,
+        163.6576385498047,
+        544.049560546875,
+        172.70474243164062
+      ],
+      "bbox_px": [
+        1262,
+        681,
+        2266,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b66",
+      "text": "zwitterionic side chains onto alkenyl polymer main chains. These",
+      "bbox_pt": [
+        303.09002685546875,
+        174.6110076904297,
+        544.0198364257812,
+        183.65811157226562
+      ],
+      "bbox_px": [
+        1262,
+        727,
+        2266,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b67",
+      "text": "hydrogels are rich in functional groups, allowing for further mod-",
+      "bbox_pt": [
+        303.09002685546875,
+        185.57334899902344,
+        544.0433959960938,
+        194.62045288085938
+      ],
+      "bbox_px": [
+        1262,
+        773,
+        2266,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b68",
+      "text": "iﬁcations to introduce additional properties tailored to diverse",
+      "bbox_pt": [
+        303.09002685546875,
+        196.5356903076172,
+        544.037841796875,
+        205.58279418945312
+      ],
+      "bbox_px": [
+        1262,
+        818,
+        2266,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b69",
+      "text": "application requirements. (III) Zwitterionic hydrogels modiﬁed",
+      "bbox_pt": [
+        303.09002685546875,
+        207.48899841308594,
+        544.0317993164062,
+        216.53610229492188
+      ],
+      "bbox_px": [
+        1262,
+        864,
+        2266,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b70",
+      "text": "with natural polymers are obtained by introducing zwitterionic",
+      "bbox_pt": [
+        303.09002685546875,
+        218.4513397216797,
+        544.037841796875,
+        227.49844360351562
+      ],
+      "bbox_px": [
+        1262,
+        910,
+        2266,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b71",
+      "text": "monomers into natural polysaccharides via chemical reactions.",
+      "bbox_pt": [
+        303.09002685546875,
+        229.41368103027344,
+        544.0071411132812,
+        238.46078491210938
+      ],
+      "bbox_px": [
+        1262,
+        955,
+        2266,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b72",
+      "text": "They exhibit good biocompatibility and degradability and are ap-",
+      "bbox_pt": [
+        303.09002685546875,
+        240.3669891357422,
+        544.0460815429688,
+        249.41409301757812
+      ],
+      "bbox_px": [
+        1262,
+        1001,
+        2266,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b73",
+      "text": "plicable in biomedical ﬁelds such as in vivo implantation and",
+      "bbox_pt": [
+        303.09002685546875,
+        251.32933044433594,
+        544.025146484375,
+        260.3764343261719
+      ],
+      "bbox_px": [
+        1262,
+        1047,
+        2266,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b74",
+      "text": "drug delivery. (IV) Multinetwork zwitterionic hydrogels are fab-",
+      "bbox_pt": [
+        303.09002685546875,
+        262.28271484375,
+        544.0307006835938,
+        271.3298034667969
+      ],
+      "bbox_px": [
+        1262,
+        1092,
+        2266,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b75",
+      "text": "ricated by adopting double- or triple-network strategies. Their",
+      "bbox_pt": [
+        303.09002685546875,
+        273.2450256347656,
+        544.0565185546875,
+        282.2921142578125
+      ],
+      "bbox_px": [
+        1262,
+        1138,
+        2266,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b76",
+      "text": "multinetwork structures endow them with outstanding mechan-",
+      "bbox_pt": [
+        303.09002685546875,
+        284.20733642578125,
+        544.0369873046875,
+        293.2544250488281
+      ],
+      "bbox_px": [
+        1262,
+        1184,
+        2266,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b77",
+      "text": "ical properties.",
+      "bbox_pt": [
+        303.09002685546875,
+        295.16070556640625,
+        358.63323974609375,
+        304.2077941894531
+      ],
+      "bbox_px": [
+        1262,
+        1229,
+        1494,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b78",
+      "text": "Driven by an external electric ﬁeld, the cations and anions",
+      "bbox_pt": [
+        312.5576477050781,
+        306.1230163574219,
+        544.0223999023438,
+        315.17010498046875
+      ],
+      "bbox_px": [
+        1302,
+        1275,
+        2266,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b79",
+      "text": "within zwitterionic hydrogels tend to separate and undergo di-",
+      "bbox_pt": [
+        303.09002685546875,
+        317.0853271484375,
+        544.0449829101562,
+        326.1324157714844
+      ],
+      "bbox_px": [
+        1262,
+        1321,
+        2266,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b80",
+      "text": "rectional movement, thereby giving rise to charge transfer and",
+      "bbox_pt": [
+        303.09002685546875,
+        328.0386962890625,
+        544.0504760742188,
+        337.0857849121094
+      ],
+      "bbox_px": [
+        1262,
+        1366,
+        2266,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b81",
+      "text": "the formation of an electric current. [ 138–140 ] Consequently, zwit-",
+      "bbox_pt": [
+        303.09002685546875,
+        335.8521728515625,
+        544.0431518554688,
+        348.048095703125
+      ],
+      "bbox_px": [
+        1262,
+        1399,
+        2266,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b82",
+      "text": "terionic hydrogels exhibit excellent electrical conductivity. Si-",
+      "bbox_pt": [
+        303.08990478515625,
+        349.95550537109375,
+        544.023193359375,
+        359.0025939941406
+      ],
+      "bbox_px": [
+        1262,
+        1458,
+        2266,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b83",
+      "text": "multaneously, cationic and anionic groups interact with water",
+      "bbox_pt": [
+        303.08990478515625,
+        360.9088439941406,
+        544.0350952148438,
+        369.9559326171875
+      ],
+      "bbox_px": [
+        1262,
+        1503,
+        2266,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b84",
+      "text": "molecules to form robust hydrogen bonds and establish a dense",
+      "bbox_pt": [
+        303.08990478515625,
+        371.8711853027344,
+        544.024169921875,
+        380.91827392578125
+      ],
+      "bbox_px": [
+        1262,
+        1549,
+        2266,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b85",
+      "text": "hydration layer on the surface of the material. This electrostat-",
+      "bbox_pt": [
+        303.08990478515625,
+        382.83349609375,
+        544.0043334960938,
+        391.8805847167969
+      ],
+      "bbox_px": [
+        1262,
+        1595,
+        2266,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b86",
+      "text": "ically induced hydration confers zwitterionic hydrogels with fa-",
+      "bbox_pt": [
+        303.08990478515625,
+        393.7868347167969,
+        544.0548095703125,
+        402.83392333984375
+      ],
+      "bbox_px": [
+        1262,
+        1640,
+        2266,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b87",
+      "text": "vorable antifouling properties and enables them to eﬀectively re-",
+      "bbox_pt": [
+        303.08990478515625,
+        404.7491760253906,
+        544.047607421875,
+        413.7962646484375
+      ],
+      "bbox_px": [
+        1262,
+        1686,
+        2266,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b88",
+      "text": "sist the nonspeciﬁc adsorption of proteins and adhesion of mi-",
+      "bbox_pt": [
+        303.08990478515625,
+        415.71148681640625,
+        544.0574340820312,
+        424.7585754394531
+      ],
+      "bbox_px": [
+        1262,
+        1732,
+        2266,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b89",
+      "text": "croorganisms, such as bacteria. [ 141,142 ] This feature provides a fa-",
+      "bbox_pt": [
+        303.08990478515625,
+        423.53009033203125,
+        544.035400390625,
+        435.7119445800781
+      ],
+      "bbox_px": [
+        1262,
+        1764,
+        2266,
+        1815
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b90",
+      "text": "vorable material foundation for the antifouling performance of",
+      "bbox_pt": [
+        303.08935546875,
+        437.62451171875,
+        544.0274658203125,
+        446.6716003417969
+      ],
+      "bbox_px": [
+        1262,
+        1823,
+        2266,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b91",
+      "text": "wearable devices. In addition, zwitterionic hydrogels with vari-",
+      "bbox_pt": [
+        303.08935546875,
+        448.5868225097656,
+        544.0191040039062,
+        457.6339111328125
+      ],
+      "bbox_px": [
+        1262,
+        1869,
+        2266,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b92",
+      "text": "ous response properties can be fabricated by introducing diverse",
+      "bbox_pt": [
+        303.08935546875,
+        459.5401916503906,
+        544.0039672851562,
+        468.5872802734375
+      ],
+      "bbox_px": [
+        1262,
+        1914,
+        2266,
+        1952
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b93",
+      "text": "functional groups into the hydrogel network.",
+      "bbox_pt": [
+        303.08935546875,
+        470.50250244140625,
+        471.70263671875,
+        479.5495910644531
+      ],
+      "bbox_px": [
+        1262,
+        1960,
+        1965,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b94",
+      "text": "Owing to their remarkable electrical properties and interfa-",
+      "bbox_pt": [
+        312.5569763183594,
+        481.4648132324219,
+        544.0435791015625,
+        490.51190185546875
+      ],
+      "bbox_px": [
+        1302,
+        2006,
+        2266,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b95",
+      "text": "cial characteristics, zwitterionic hydrogels have broad applica-",
+      "bbox_pt": [
+        303.08935546875,
+        492.4181823730469,
+        544.0171508789062,
+        501.46527099609375
+      ],
+      "bbox_px": [
+        1262,
+        2051,
+        2266,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b96",
+      "text": "tion prospects in the biomedical ﬁeld. Xu et al. constructed a",
+      "bbox_pt": [
+        303.08935546875,
+        503.3804931640625,
+        544.0235595703125,
+        512.4275512695312
+      ],
+      "bbox_px": [
+        1262,
+        2097,
+        2266,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b97",
+      "text": "tumor marker sensor based on polydopamine (PDA) and poly",
+      "bbox_pt": [
+        303.08935546875,
+        514.3427734375,
+        544.0316162109375,
+        523.3898315429688
+      ],
+      "bbox_px": [
+        1262,
+        2143,
+        2266,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b98",
+      "text": "(sulfobetaine methacrylate) to detect tumor marker content in",
+      "bbox_pt": [
+        303.08935546875,
+        525.296142578125,
+        544.0146484375,
+        534.3432006835938
+      ],
+      "bbox_px": [
+        1262,
+        2188,
+        2266,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b99",
+      "text": "serum samples. [ 143 ] Xie et al. developed a sensor with a zwit-",
+      "bbox_pt": [
+        303.08935546875,
+        533.1141967773438,
+        544.0364990234375,
+        545.3055419921875
+      ],
+      "bbox_px": [
+        1262,
+        2221,
+        2266,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b100",
+      "text": "terionic polymer coating to eliminate interference signals ini-",
+      "bbox_pt": [
+        303.0896911621094,
+        547.217529296875,
+        544.0331420898438,
+        556.2645874023438
+      ],
+      "bbox_px": [
+        1262,
+        2280,
+        2266,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b101",
+      "text": "tially generated during the implantation of a continuous glu-",
+      "bbox_pt": [
+        303.0896911621094,
+        558.1708374023438,
+        544.0321655273438,
+        567.2178955078125
+      ],
+      "bbox_px": [
+        1262,
+        2325,
+        2266,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b102",
+      "text": "cose monitor. The results indicated that this sensor eﬀectively",
+      "bbox_pt": [
+        303.0896911621094,
+        569.1331787109375,
+        544.0194702148438,
+        578.1802368164062
+      ],
+      "bbox_px": [
+        1262,
+        2371,
+        2266,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b103",
+      "text": "reduced signal noise and enhanced the accuracy of blood glu-",
+      "bbox_pt": [
+        303.0896911621094,
+        580.0865478515625,
+        544.0311279296875,
+        589.1336059570312
+      ],
+      "bbox_px": [
+        1262,
+        2417,
+        2266,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b104",
+      "text": "cose detection. [ 144 ] Moreover, researchers prepared reusable zwit-",
+      "bbox_pt": [
+        303.0896911621094,
+        587.9060668945312,
+        544.0370483398438,
+        600.0958862304688
+      ],
+      "bbox_px": [
+        1262,
+        2449,
+        2266,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b105",
+      "text": "terionic polymer hydrogels with outstanding mechanical prop-",
+      "bbox_pt": [
+        303.0893859863281,
+        602.009521484375,
+        544.0515747070312,
+        611.0565795898438
+      ],
+      "bbox_px": [
+        1262,
+        2508,
+        2266,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b106",
+      "text": "erties based on acrylic acid, octadecyl methacrylate, and sulfo-",
+      "bbox_pt": [
+        303.0893859863281,
+        612.9628295898438,
+        544.0379028320312,
+        622.0098876953125
+      ],
+      "bbox_px": [
+        1262,
+        2554,
+        2266,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b107",
+      "text": "betaine methacrylate (SBMA). Beneﬁting from the remarkable",
+      "bbox_pt": [
+        303.0893859863281,
+        623.9251708984375,
+        544.0337524414062,
+        632.9722290039062
+      ],
+      "bbox_px": [
+        1262,
+        2599,
+        2266,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b108",
+      "text": "strain sensitivity of this material, it can be employed not only to",
+      "bbox_pt": [
+        303.0893859863281,
+        634.8875122070312,
+        544.0217895507812,
+        643.9345703125
+      ],
+      "bbox_px": [
+        1262,
+        2645,
+        2266,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b109",
+      "text": "monitor limb movements but also to monitor subtle movements",
+      "bbox_pt": [
+        303.0893859863281,
+        645.8408203125,
+        544.0328369140625,
+        654.8878784179688
+      ],
+      "bbox_px": [
+        1262,
+        2691,
+        2266,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b110",
+      "text": "related to pulse and breathing. [ 145 ] Although current research on",
+      "bbox_pt": [
+        303.0893859863281,
+        653.66015625,
+        544.0408325195312,
+        665.8502197265625
+      ],
+      "bbox_px": [
+        1262,
+        2723,
+        2266,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b111",
+      "text": "zwitterionic hydrogels is burgeoning, there is still a considerable",
+      "bbox_pt": [
+        303.0894470214844,
+        667.763427734375,
+        544.0338134765625,
+        676.8104858398438
+      ],
+      "bbox_px": [
+        1262,
+        2782,
+        2266,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b112",
+      "text": "gap in their industrial mass production. Numerous challenges,",
+      "bbox_pt": [
+        303.0894470214844,
+        678.7167358398438,
+        544.0282592773438,
+        687.7637939453125
+      ],
+      "bbox_px": [
+        1262,
+        2827,
+        2266,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b113",
+      "text": "such as limited polymer availability, poor chemical stability, and",
+      "bbox_pt": [
+        303.0894470214844,
+        689.6790771484375,
+        544.0234985351562,
+        698.7261352539062
+      ],
+      "bbox_px": [
+        1262,
+        2873,
+        2266,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b114",
+      "text": "insuﬃcient mechanical strength, still need to be addressed.",
+      "bbox_pt": [
+        303.0894470214844,
+        700.6414184570312,
+        526.6099853515625,
+        709.6884765625
+      ],
+      "bbox_px": [
+        1262,
+        2919,
+        2194,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b115",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b116",
+      "text": "2411209 (10 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b117",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b118",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 119
+  }
+}

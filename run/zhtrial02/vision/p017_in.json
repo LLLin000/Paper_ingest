@@ -1,0 +1,2763 @@
+{
+  "page": 17,
+  "image_path": "run\\zhtrial02\\pages\\p017.png",
+  "blocks": [
+    {
+      "block_id": "p17_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b1",
+      "text": "17",
+      "bbox_pt": [
+        553.1320190429688,
+        760.4366455078125,
+        561.260009765625,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2304,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b4",
+      "text": "125.\t Bunker, D. L., Ilie, V., Ilie, V. & Nicklin, S. Tendon to bone healing and its implications for ",
+      "bbox_pt": [
+        39.685001373291016,
+        111.2298355102539,
+        287.5419616699219,
+        119.41983795166016
+      ],
+      "bbox_px": [
+        165,
+        463,
+        1198,
+        497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b5",
+      "text": "surgery.  Muscles Ligaments Tendons J. 4 , 343–350 (2014).",
+      "bbox_pt": [
+        53.85700225830078,
+        119.13782501220703,
+        210.60101318359375,
+        127.4178237915039
+      ],
+      "bbox_px": [
+        224,
+        496,
+        877,
+        530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b6",
+      "text": "126.\t Tresoldi, I. et al. Tendon’s ultrastructure.  Muscles Ligaments Tendons J. 3 , 2–6 (2013).",
+      "bbox_pt": [
+        39.68501281738281,
+        127.13581085205078,
+        281.6355895996094,
+        135.41580200195312
+      ],
+      "bbox_px": [
+        165,
+        529,
+        1173,
+        564
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b7",
+      "text": "127.\t Moser, H. L. et al. Cell lineage tracing and functional assessment of supraspinatus ",
+      "bbox_pt": [
+        39.68501281738281,
+        135.2238006591797,
+        276.08502197265625,
+        143.41378784179688
+      ],
+      "bbox_px": [
+        165,
+        563,
+        1150,
+        597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b8",
+      "text": "tendon healing in an acute repair murine model.  J. Orthop. Res. 39 , 1789–1799 (2021).",
+      "bbox_pt": [
+        53.85701370239258,
+        143.13177490234375,
+        283.857421875,
+        151.41177368164062
+      ],
+      "bbox_px": [
+        224,
+        596,
+        1182,
+        630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b9",
+      "text": "128.\t Rodeo, S. A., Arnoczky, S. P., Torzilli, P. A., Hidaka, C. & Warren, R. F. Tendon-healing in a ",
+      "bbox_pt": [
+        39.68501281738281,
+        151.2197723388672,
+        289.1385192871094,
+        159.40975952148438
+      ],
+      "bbox_px": [
+        165,
+        630,
+        1204,
+        664
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b10",
+      "text": "bone tunnel. A biomechanical and histological study in the dog.  J. Bone Joint Surg. Am.",
+      "bbox_pt": [
+        53.85701370239258,
+        159.21775817871094,
+        290.8270263671875,
+        167.40774536132812
+      ],
+      "bbox_px": [
+        224,
+        663,
+        1211,
+        697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b11",
+      "text": "75 , 1795–1803 (1993).",
+      "bbox_pt": [
+        53.857025146484375,
+        167.125732421875,
+        112.04563903808594,
+        175.40573120117188
+      ],
+      "bbox_px": [
+        224,
+        696,
+        466,
+        730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b12",
+      "text": "129.\t Rodeo, S. A., Suzuki, K., Deng, X. H., Wozney, J. & Warren, R. F. Use of recombinant human ",
+      "bbox_pt": [
+        39.68502426147461,
+        175.21372985839844,
+        295.5435791015625,
+        183.40371704101562
+      ],
+      "bbox_px": [
+        165,
+        730,
+        1231,
+        764
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b13",
+      "text": "bone morphogenetic protein-2 to enhance tendon healing in a bone tunnel.  Am. J. ",
+      "bbox_pt": [
+        53.857025146484375,
+        183.2117156982422,
+        277.50335693359375,
+        191.40170288085938
+      ],
+      "bbox_px": [
+        224,
+        763,
+        1156,
+        797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b14",
+      "text": "Sports Med. 27 , 476–488 (1999).",
+      "bbox_pt": [
+        53.857025146484375,
+        191.11968994140625,
+        140.98182678222656,
+        199.39968872070312
+      ],
+      "bbox_px": [
+        224,
+        796,
+        587,
+        830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b15",
+      "text": "130.\t Hashimoto, Y., Yoshida, G., Toyoda, H. & Takaoka, K. Generation of tendon-to-bone ",
+      "bbox_pt": [
+        39.6910285949707,
+        199.2076873779297,
+        276.4258117675781,
+        207.39767456054688
+      ],
+      "bbox_px": [
+        165,
+        830,
+        1151,
+        864
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b16",
+      "text": "interface “enthesis” with use of recombinant BMP-2 in a rabbit model.  J. Orthop. Res.",
+      "bbox_pt": [
+        53.86302947998047,
+        207.20567321777344,
+        283.9870300292969,
+        215.39566040039062
+      ],
+      "bbox_px": [
+        224,
+        863,
+        1183,
+        897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b17",
+      "text": "25 , 1415–1424 (2007).",
+      "bbox_pt": [
+        53.863037109375,
+        215.1136474609375,
+        111.69703674316406,
+        223.39364624023438
+      ],
+      "bbox_px": [
+        224,
+        896,
+        465,
+        930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b18",
+      "text": "131.\t Bedi, A. et al. The effect of matrix metalloproteinase inhibition on tendon-to-bone ",
+      "bbox_pt": [
+        39.691036224365234,
+        223.20164489746094,
+        275.0740051269531,
+        231.39163208007812
+      ],
+      "bbox_px": [
+        165,
+        930,
+        1146,
+        964
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b19",
+      "text": "healing in a rotator cuff repair model.  J. Shoulder Elbow Surg. 19 , 384–391 (2010).",
+      "bbox_pt": [
+        53.863037109375,
+        231.109619140625,
+        273.1522521972656,
+        239.38961791992188
+      ],
+      "bbox_px": [
+        224,
+        962,
+        1138,
+        997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b20",
+      "text": "132.\t Kovacevic, D. & Rodeo, S. A. Biological augmentation of rotator cuff tendon repair.  ",
+      "bbox_pt": [
+        39.6910400390625,
+        239.19761657714844,
+        277.85504150390625,
+        247.38760375976562
+      ],
+      "bbox_px": [
+        165,
+        996,
+        1157,
+        1030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b21",
+      "text": "Clin. Orthop. Relat. Res. 466 , 622–633 (2008).",
+      "bbox_pt": [
+        53.863037109375,
+        247.1055908203125,
+        178.82623291015625,
+        255.38558959960938
+      ],
+      "bbox_px": [
+        224,
+        1029,
+        745,
+        1064
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b22",
+      "text": "133.\t Lim, J. K. et al. Enhancement of tendon graft osteointegration using mesenchymal stem ",
+      "bbox_pt": [
+        39.69102478027344,
+        255.19358825683594,
+        291.7474365234375,
+        263.3835754394531
+      ],
+      "bbox_px": [
+        165,
+        1063,
+        1215,
+        1097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b23",
+      "text": "cells in a rabbit model of anterior cruciate ligament reconstruction.  Arthroscopy 20 , ",
+      "bbox_pt": [
+        53.8630256652832,
+        263.1015625,
+        282.2590026855469,
+        271.3815612792969
+      ],
+      "bbox_px": [
+        224,
+        1096,
+        1176,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b24",
+      "text": "899–910 (2004).",
+      "bbox_pt": [
+        53.863006591796875,
+        271.1895446777344,
+        99.03102111816406,
+        279.3795471191406
+      ],
+      "bbox_px": [
+        224,
+        1129,
+        412,
+        1164
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b25",
+      "text": "134.\t Pill, S. G., Phillips, J., Kissenberth, M. J. & Hawkins, R. J. Decision making in massive ",
+      "bbox_pt": [
+        39.69100570678711,
+        279.1875305175781,
+        276.6669921875,
+        287.3775329589844
+      ],
+      "bbox_px": [
+        165,
+        1163,
+        1152,
+        1197
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b26",
+      "text": "rotator cuff tears.  Instr. Course Lect. 61 , 97–111 (2012).",
+      "bbox_pt": [
+        53.863006591796875,
+        287.09552001953125,
+        196.75180053710938,
+        295.3755187988281
+      ],
+      "bbox_px": [
+        224,
+        1196,
+        819,
+        1230
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b27",
+      "text": "135.\t Carter, A. N. & Erickson, S. M. Proximal biceps tendon rupture: primarily an injury  ",
+      "bbox_pt": [
+        39.691001892089844,
+        295.1835021972656,
+        273.7690124511719,
+        303.3735046386719
+      ],
+      "bbox_px": [
+        165,
+        1229,
+        1140,
+        1264
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b28",
+      "text": "of middle age.  Phys. Sportsmed. 27 , 95–101 (1999).",
+      "bbox_pt": [
+        53.863006591796875,
+        303.09149169921875,
+        190.73138427734375,
+        311.3714904785156
+      ],
+      "bbox_px": [
+        224,
+        1262,
+        794,
+        1297
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b29",
+      "text": "136.\t Millar, N. L. et al. Frozen shoulder.  Nat. Rev. Dis. Primers 8 , 59 (2022).",
+      "bbox_pt": [
+        39.691001892089844,
+        311.0894775390625,
+        237.50559997558594,
+        319.3694763183594
+      ],
+      "bbox_px": [
+        165,
+        1296,
+        989,
+        1330
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b30",
+      "text": "137.\t Hegedus, E. J. et al. Which physical examination tests provide clinicians with the most ",
+      "bbox_pt": [
+        39.69099426269531,
+        319.1774597167969,
+        286.62213134765625,
+        327.3674621582031
+      ],
+      "bbox_px": [
+        165,
+        1329,
+        1194,
+        1364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b31",
+      "text": "value when examining the shoulder? Update of a systematic review with meta-analysis  ",
+      "bbox_pt": [
+        53.86299514770508,
+        327.1754455566406,
+        290.50299072265625,
+        335.3654479980469
+      ],
+      "bbox_px": [
+        224,
+        1363,
+        1210,
+        1397
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b32",
+      "text": "of individual tests.  Br. J. Sports Med. 46 , 964–978 (2012).",
+      "bbox_pt": [
+        53.863006591796875,
+        335.08343505859375,
+        206.1082000732422,
+        343.3634338378906
+      ],
+      "bbox_px": [
+        224,
+        1396,
+        858,
+        1430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b33",
+      "text": "138.\t Hermans, J. et al. Does this patient with shoulder pain have rotator cuff disease?  ",
+      "bbox_pt": [
+        39.691001892089844,
+        343.1714172363281,
+        271.5790100097656,
+        351.3614196777344
+      ],
+      "bbox_px": [
+        165,
+        1429,
+        1131,
+        1464
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b34",
+      "text": "The rational clinical examination systematic review.  JAMA 310 , 837–847 (2013).",
+      "bbox_pt": [
+        53.863006591796875,
+        351.07940673828125,
+        266.6296081542969,
+        359.3594055175781
+      ],
+      "bbox_px": [
+        224,
+        1462,
+        1110,
+        1497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b35",
+      "text": "139.\t Alqunaee, M., Galvin, R. & Fahey, T. Diagnostic accuracy of clinical tests for subacromial ",
+      "bbox_pt": [
+        39.691009521484375,
+        359.1673889160156,
+        291.79888916015625,
+        367.3573913574219
+      ],
+      "bbox_px": [
+        165,
+        1496,
+        1215,
+        1530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b36",
+      "text": "impingement syndrome: a systematic review and meta-analysis.  Arch. Phys. Med. ",
+      "bbox_pt": [
+        53.86301040649414,
+        367.1653747558594,
+        274.9648132324219,
+        375.3553771972656
+      ],
+      "bbox_px": [
+        224,
+        1529,
+        1145,
+        1563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b37",
+      "text": "Rehabil. 93 , 229–236 (2012).",
+      "bbox_pt": [
+        53.86301040649414,
+        375.0733642578125,
+        130.48902893066406,
+        383.3533630371094
+      ],
+      "bbox_px": [
+        224,
+        1562,
+        543,
+        1597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b38",
+      "text": "140.\t Micheroli, R. et al. Correlation of findings in clinical and high resolution ultrasonography ",
+      "bbox_pt": [
+        39.69101333618164,
+        383.1613464355469,
+        293.1717834472656,
+        391.3513488769531
+      ],
+      "bbox_px": [
+        165,
+        1596,
+        1221,
+        1630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b39",
+      "text": "examinations of the painful shoulder.  J. Ultrason. 15 , 29–44 (2015).",
+      "bbox_pt": [
+        53.863014221191406,
+        391.0693359375,
+        232.1649932861328,
+        399.3493347167969
+      ],
+      "bbox_px": [
+        224,
+        1629,
+        967,
+        1663
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b40",
+      "text": "141.\t Silva, L. et al. Accuracy of physical examination in subacromial impingement syndrome. ",
+      "bbox_pt": [
+        39.68499755859375,
+        399.1573181152344,
+        293.0110168457031,
+        407.3473205566406
+      ],
+      "bbox_px": [
+        165,
+        1663,
+        1220,
+        1697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b41",
+      "text": "Rheumatology 47 , 679–683 (2008).",
+      "bbox_pt": [
+        53.856998443603516,
+        407.0653076171875,
+        149.79998779296875,
+        415.3453063964844
+      ],
+      "bbox_px": [
+        224,
+        1696,
+        624,
+        1730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b42",
+      "text": "142.\t Jain, N. B. et al. The diagnostic accuracy of special tests for rotator cuff tear: the ROW ",
+      "bbox_pt": [
+        39.69099426269531,
+        415.1532897949219,
+        284.8905334472656,
+        423.3432922363281
+      ],
+      "bbox_px": [
+        165,
+        1729,
+        1187,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b43",
+      "text": "cohort study.  Am. J. Phys. Med. Rehabil. 96 , 176–183 (2017).",
+      "bbox_pt": [
+        53.86299514770508,
+        423.061279296875,
+        212.8936004638672,
+        431.3412780761719
+      ],
+      "bbox_px": [
+        224,
+        1762,
+        887,
+        1797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b44",
+      "text": "143.\t Schiefer, M. et al. Clinical diagnosis of subscapularis tendon tear using the bear hug ",
+      "bbox_pt": [
+        39.69099426269531,
+        431.1492614746094,
+        281.805419921875,
+        439.3392639160156
+      ],
+      "bbox_px": [
+        165,
+        1796,
+        1174,
+        1830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b45",
+      "text": "semiological maneuver.  Rev. Bras. Ortop. 47 , 588–592 (2012).",
+      "bbox_pt": [
+        53.86299514770508,
+        439.0572509765625,
+        219.43118286132812,
+        447.3372497558594
+      ],
+      "bbox_px": [
+        224,
+        1829,
+        914,
+        1863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b46",
+      "text": "144.\t Ernstbrunner, L. et al. Chronic pseudoparalysis needs to be distinguished from ",
+      "bbox_pt": [
+        39.69097900390625,
+        447.1452331542969,
+        267.4966125488281,
+        455.3352355957031
+      ],
+      "bbox_px": [
+        165,
+        1863,
+        1114,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b47",
+      "text": "pseudoparesis: a structural and biomechanical analysis.  Am. J. Sports Med. 49 , 291–297 ",
+      "bbox_pt": [
+        53.862979888916016,
+        455.05322265625,
+        292.318603515625,
+        463.3332214355469
+      ],
+      "bbox_px": [
+        224,
+        1896,
+        1217,
+        1930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b48",
+      "text": "(2021).",
+      "bbox_pt": [
+        53.86297607421875,
+        463.1412048339844,
+        72.11317443847656,
+        471.3312072753906
+      ],
+      "bbox_px": [
+        224,
+        1929,
+        300,
+        1963
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b49",
+      "text": "145.\t Hamada, K., Yamanaka, K., Uchiyama, Y., Mikasa, T. & Mikasa, M. A radiographic ",
+      "bbox_pt": [
+        39.690975189208984,
+        471.1391906738281,
+        267.453369140625,
+        479.3291931152344
+      ],
+      "bbox_px": [
+        165,
+        1963,
+        1114,
+        1997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b50",
+      "text": "classification of massive rotator cuff tear arthritis.  Clin. Orthop. Relat. Res. 469 , 2452 ",
+      "bbox_pt": [
+        53.86297607421875,
+        479.04718017578125,
+        283.2513427734375,
+        487.3271789550781
+      ],
+      "bbox_px": [
+        224,
+        1996,
+        1180,
+        2030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b51",
+      "text": "(2011).",
+      "bbox_pt": [
+        53.85694885253906,
+        487.1351623535156,
+        71.17715454101562,
+        495.3251647949219
+      ],
+      "bbox_px": [
+        224,
+        2029,
+        296,
+        2063
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b52",
+      "text": "146.\t van der Reijden, J. J. et al. The value of radiographic markers in the diagnostic work-up  ",
+      "bbox_pt": [
+        39.6849479675293,
+        495.1331481933594,
+        288.6549377441406,
+        503.3231506347656
+      ],
+      "bbox_px": [
+        165,
+        2063,
+        1202,
+        2097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b53",
+      "text": "of rotator cuff tears, an arthroscopic correlated study.  Skelet. Radiol. 49 , 55–64 (2020).",
+      "bbox_pt": [
+        53.85693359375,
+        503.0411376953125,
+        288.5277099609375,
+        511.3211364746094
+      ],
+      "bbox_px": [
+        224,
+        2096,
+        1202,
+        2130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b54",
+      "text": "147.\t Pearsall, A. W. et al. Radiographic findings associated with symptomatic rotator cuff ",
+      "bbox_pt": [
+        39.6849365234375,
+        511.1291198730469,
+        281.27972412109375,
+        519.3191528320312
+      ],
+      "bbox_px": [
+        165,
+        2129,
+        1171,
+        2163
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b55",
+      "text": "tears.  J. Shoulder Elbow Surg. 12 , 122–127 (2003).",
+      "bbox_pt": [
+        53.856937408447266,
+        519.037109375,
+        185.79454040527344,
+        527.317138671875
+      ],
+      "bbox_px": [
+        224,
+        2162,
+        774,
+        2197
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b56",
+      "text": "148.\t Samilson, R. L. & Prieto, V. Dislocation arthropathy of the shoulder.  J. Bone. Joint Surg. ",
+      "bbox_pt": [
+        39.68492126464844,
+        527.1251220703125,
+        285.84332275390625,
+        535.3151245117188
+      ],
+      "bbox_px": [
+        165,
+        2196,
+        1191,
+        2230
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b57",
+      "text": "Am. 65 , 456–460 (1983).",
+      "bbox_pt": [
+        53.8569221496582,
+        535.0330810546875,
+        120.72152709960938,
+        543.3131103515625
+      ],
+      "bbox_px": [
+        224,
+        2229,
+        503,
+        2263
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b58",
+      "text": "149.\t Brox, J., Lereim, P., Merckoll, E. & Finnanger, A. M. Radiographic classification  ",
+      "bbox_pt": [
+        39.68492126464844,
+        543.12109375,
+        264.0189208984375,
+        551.3110961914062
+      ],
+      "bbox_px": [
+        165,
+        2263,
+        1100,
+        2297
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b59",
+      "text": "of glenohumeral arthrosis.  Acta Orthop. Scand. 74 , 186–189 (2003).",
+      "bbox_pt": [
+        53.85691833496094,
+        551.0291137695312,
+        236.05291748046875,
+        559.3091430664062
+      ],
+      "bbox_px": [
+        224,
+        2295,
+        983,
+        2330
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b60",
+      "text": "150.\t Goutallier, D. et al. Acromio humeral distance less than six millimeter: its meaning  ",
+      "bbox_pt": [
+        39.69091796875,
+        559.1171264648438,
+        277.1649169921875,
+        567.30712890625
+      ],
+      "bbox_px": [
+        165,
+        2329,
+        1154,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b61",
+      "text": "in full-thickness rotator cuff tear.  Orthop. Traumatol. Surg. Res. 97 , 246–251 (2011).",
+      "bbox_pt": [
+        53.8629150390625,
+        567.0250854492188,
+        274.8297119140625,
+        575.3051147460938
+      ],
+      "bbox_px": [
+        224,
+        2362,
+        1145,
+        2397
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b62",
+      "text": "151.\t Bahrs, C., Lingenfelter, E., Fischer, F., Walters, E. M. & Schnabel, M. Mechanism of injury ",
+      "bbox_pt": [
+        39.69091796875,
+        575.1131591796875,
+        289.8794250488281,
+        583.3031616210938
+      ],
+      "bbox_px": [
+        165,
+        2396,
+        1207,
+        2430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b63",
+      "text": "and morphology of the greater tuberosity fracture.  J. Shoulder Elbow Surg. 15 , 140–147 ",
+      "bbox_pt": [
+        53.862918853759766,
+        583.0211181640625,
+        289.2021484375,
+        591.3011474609375
+      ],
+      "bbox_px": [
+        224,
+        2429,
+        1205,
+        2463
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b64",
+      "text": "(2006).",
+      "bbox_pt": [
+        53.8629150390625,
+        591.109130859375,
+        74.19511413574219,
+        599.2991333007812
+      ],
+      "bbox_px": [
+        224,
+        2462,
+        309,
+        2497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b65",
+      "text": "152.\t Speed, C. A. & Hazleman, B. L. Calcific tendinitis of the shoulder.  N. Engl. J. Med. 340 , ",
+      "bbox_pt": [
+        39.690914154052734,
+        599.01708984375,
+        286.27288818359375,
+        607.297119140625
+      ],
+      "bbox_px": [
+        165,
+        2495,
+        1192,
+        2530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b66",
+      "text": "1582–1584 (1999).",
+      "bbox_pt": [
+        53.856903076171875,
+        607.1051025390625,
+        101.88151550292969,
+        615.2951049804688
+      ],
+      "bbox_px": [
+        224,
+        2529,
+        424,
+        2563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b67",
+      "text": "153.\t Elsharkawi, M., Cakir, B., Reichel, H. & Kappe, T. Reliability of radiologic glenohumeral ",
+      "bbox_pt": [
+        39.68490219116211,
+        615.1031494140625,
+        285.35302734375,
+        623.2931518554688
+      ],
+      "bbox_px": [
+        165,
+        2562,
+        1188,
+        2597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b68",
+      "text": "osteoarthritis classifications.  J. Shoulder Elbow Surg. 22 , 1063–1067 (2013).",
+      "bbox_pt": [
+        53.856903076171875,
+        623.0111083984375,
+        256.6112976074219,
+        631.2911376953125
+      ],
+      "bbox_px": [
+        224,
+        2595,
+        1069,
+        2630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b69",
+      "text": "154.\t Smith, T. O., Daniell, H., Geere, J.-A., Toms, A. P. & Hing, C. B. The diagnostic accuracy  ",
+      "bbox_pt": [
+        39.68489074707031,
+        631.09912109375,
+        285.5888977050781,
+        639.2891235351562
+      ],
+      "bbox_px": [
+        165,
+        2629,
+        1189,
+        2663
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b70",
+      "text": "of MRI for the detection of partial- and full-thickness rotator cuff tears in adults.  ",
+      "bbox_pt": [
+        53.856903076171875,
+        639.09716796875,
+        270.1089172363281,
+        647.2871704101562
+      ],
+      "bbox_px": [
+        224,
+        2662,
+        1125,
+        2697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b71",
+      "text": "Magn. Reson. Imaging 30 , 336–346 (2012).",
+      "bbox_pt": [
+        53.85691833496094,
+        647.005126953125,
+        169.9329376220703,
+        655.28515625
+      ],
+      "bbox_px": [
+        224,
+        2695,
+        708,
+        2730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b72",
+      "text": "155.\t Roy, J.-S. et al. Diagnostic accuracy of ultrasonography, MRI and MR arthrography  ",
+      "bbox_pt": [
+        39.68492126464844,
+        655.0931396484375,
+        276.15093994140625,
+        663.2831420898438
+      ],
+      "bbox_px": [
+        165,
+        2729,
+        1150,
+        2763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b73",
+      "text": "in the characterisation of rotator cuff disorders: a systematic review and meta-analysis. ",
+      "bbox_pt": [
+        53.85693359375,
+        663.0911254882812,
+        289.66595458984375,
+        671.2811279296875
+      ],
+      "bbox_px": [
+        224,
+        2762,
+        1206,
+        2797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b74",
+      "text": "Br. J. Sports Med. 49 , 1316–1328 (2015).",
+      "bbox_pt": [
+        53.85693359375,
+        670.9990844726562,
+        159.0435333251953,
+        679.2791137695312
+      ],
+      "bbox_px": [
+        224,
+        2795,
+        662,
+        2830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b75",
+      "text": "156.\t Cofield, R. H. et al. Surgical repair of chronic rotator cuff tears. A prospective long-term ",
+      "bbox_pt": [
+        39.684932708740234,
+        679.087158203125,
+        290.6708984375,
+        687.2771606445312
+      ],
+      "bbox_px": [
+        165,
+        2829,
+        1211,
+        2863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b76",
+      "text": "study.  J. Bone Joint Surg. Am. 83 , 71–77 (2001).",
+      "bbox_pt": [
+        53.85693359375,
+        686.9951171875,
+        178.51295471191406,
+        695.275146484375
+      ],
+      "bbox_px": [
+        224,
+        2862,
+        743,
+        2896
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b77",
+      "text": "157.\t Meyer, D. C., Wieser, K., Farshad, M. & Gerber, C. Retraction of supraspinatus muscle and ",
+      "bbox_pt": [
+        39.690948486328125,
+        695.0831298828125,
+        293.3648681640625,
+        703.2731323242188
+      ],
+      "bbox_px": [
+        165,
+        2896,
+        1222,
+        2930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b78",
+      "text": "tendon as predictors of success of rotator cuff repair.  Am. J. Sports Med. 40 , 2242–2247 ",
+      "bbox_pt": [
+        53.86294937133789,
+        702.9911499023438,
+        291.2685546875,
+        711.2711791992188
+      ],
+      "bbox_px": [
+        224,
+        2929,
+        1213,
+        2963
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b79",
+      "text": "(2012).",
+      "bbox_pt": [
+        53.86895751953125,
+        711.0791625976562,
+        72.11915588378906,
+        719.2691650390625
+      ],
+      "bbox_px": [
+        224,
+        2962,
+        300,
+        2996
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b80",
+      "text": "158.\t Jungmann, P. M. et al. Reliable semiquantitative whole ‐ joint MRI score for the shoulder ",
+      "bbox_pt": [
+        39.696956634521484,
+        719.0771484375,
+        288.2804870605469,
+        728.485107421875
+      ],
+      "bbox_px": [
+        165,
+        2996,
+        1201,
+        3035
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b81",
+      "text": "joint: the Shoulder Osteoarthritis Severity (SOAS) score.  J. Magn. Reson. Imaging 49 , ",
+      "bbox_pt": [
+        53.86895751953125,
+        726.985107421875,
+        283.7469482421875,
+        735.26513671875
+      ],
+      "bbox_px": [
+        224,
+        3029,
+        1182,
+        3063
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b82",
+      "text": "e152–e163 (2019).",
+      "bbox_pt": [
+        53.86895751953125,
+        735.0731201171875,
+        101.91877746582031,
+        743.2631225585938
+      ],
+      "bbox_px": [
+        224,
+        3062,
+        424,
+        3096
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p17_b83",
+      "text": "159.\t Fuchs, B., Weishaupt, D., Zanetti, M., Hodler, J. & Gerber, C. Fatty degeneration of the ",
+      "bbox_pt": [
+        306.1509704589844,
+        111.07315826416016,
+        549.5901489257812,
+        119.2631607055664
+      ],
+      "bbox_px": [
+        1275,
+        462,
+        2289,
+        496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b84",
+      "text": "muscles of the rotator cuff: assessment by computed tomography versus magnetic ",
+      "bbox_pt": [
+        320.3229675292969,
+        119.0711441040039,
+        547.3131103515625,
+        127.26114654541016
+      ],
+      "bbox_px": [
+        1334,
+        496,
+        2280,
+        530
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b85",
+      "text": "resonance imaging.  J. Shoulder Elbow Surg. 8 , 599–605 (1999).",
+      "bbox_pt": [
+        320.3229675292969,
+        126.97913360595703,
+        491.4621887207031,
+        135.25912475585938
+      ],
+      "bbox_px": [
+        1334,
+        529,
+        2047,
+        563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b86",
+      "text": "160.\t Burkhart, S. S., Barth, J. R., Richards, D. P., Zlatkin, M. B. & Larsen, M. Arthroscopic repair ",
+      "bbox_pt": [
+        306.1509704589844,
+        135.06712341308594,
+        556.5598754882812,
+        143.25711059570312
+      ],
+      "bbox_px": [
+        1275,
+        562,
+        2318,
+        596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b87",
+      "text": "of massive rotator cuff tears with stage 3 and 4 fatty degeneration.  Arthroscopy 23 , ",
+      "bbox_pt": [
+        320.3229675292969,
+        142.97509765625,
+        545.8450317382812,
+        151.25509643554688
+      ],
+      "bbox_px": [
+        1334,
+        595,
+        2274,
+        630
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b88",
+      "text": "347–354 (2007).",
+      "bbox_pt": [
+        320.322998046875,
+        151.06309509277344,
+        364.50811767578125,
+        159.25308227539062
+      ],
+      "bbox_px": [
+        1334,
+        629,
+        1518,
+        663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b89",
+      "text": "161.\t Goutallier, D., Postel, J.-M., Bernageau, J., Lavau, L. & Voisin, M.-C. Fatty muscle ",
+      "bbox_pt": [
+        306.1510009765625,
+        159.0610809326172,
+        533.90673828125,
+        167.25106811523438
+      ],
+      "bbox_px": [
+        1275,
+        662,
+        2224,
+        696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b90",
+      "text": "degeneration in cuff ruptures: pre- and postoperative evaluation by CT scan.  ",
+      "bbox_pt": [
+        320.322998046875,
+        167.05906677246094,
+        529.47705078125,
+        175.24905395507812
+      ],
+      "bbox_px": [
+        1334,
+        696,
+        2206,
+        730
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b91",
+      "text": "Clin. Orthop. Relat. Res. 304 , 78–83 (1994).",
+      "bbox_pt": [
+        320.322998046875,
+        174.967041015625,
+        436.6299743652344,
+        183.24703979492188
+      ],
+      "bbox_px": [
+        1334,
+        729,
+        1819,
+        763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b92",
+      "text": "162.\t Goutallier, D., Postel, J.-M., Gleyze, P., Leguilloux, P. & Van Driessche, S. Influence of cuff ",
+      "bbox_pt": [
+        306.1510009765625,
+        183.05503845214844,
+        558.1431884765625,
+        191.24502563476562
+      ],
+      "bbox_px": [
+        1275,
+        762,
+        2325,
+        796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b93",
+      "text": "muscle fatty degeneration on anatomic and functional outcomes after simple suture of ",
+      "bbox_pt": [
+        320.322998046875,
+        191.0530242919922,
+        557.2604370117188,
+        199.24301147460938
+      ],
+      "bbox_px": [
+        1334,
+        796,
+        2321,
+        830
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b94",
+      "text": "full-thickness tears.  J. Shoulder Elbow Surg. 12 , 550–554 (2003).",
+      "bbox_pt": [
+        320.322998046875,
+        198.96099853515625,
+        494.14959716796875,
+        207.24099731445312
+      ],
+      "bbox_px": [
+        1334,
+        829,
+        2058,
+        863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b95",
+      "text": "163.\t Lippe, J. et al. Inter-rater agreement of the Goutallier, Patte, and Warner classification ",
+      "bbox_pt": [
+        306.14501953125,
+        207.0489959716797,
+        551.2027587890625,
+        215.23898315429688
+      ],
+      "bbox_px": [
+        1275,
+        862,
+        2296,
+        896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b96",
+      "text": "scores using preoperative magnetic resonance imaging in patients with rotator cuff ",
+      "bbox_pt": [
+        320.3170166015625,
+        215.04698181152344,
+        547.3004760742188,
+        223.23696899414062
+      ],
+      "bbox_px": [
+        1334,
+        896,
+        2280,
+        930
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b97",
+      "text": "tears.  Arthroscopy 28 , 154–159 (2012).",
+      "bbox_pt": [
+        320.3170166015625,
+        222.9549560546875,
+        422.39263916015625,
+        231.23495483398438
+      ],
+      "bbox_px": [
+        1334,
+        928,
+        1759,
+        963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b98",
+      "text": "164.\t Schiefer, M. et al. Intraobserver and interobserver agreement of Goutallier classification ",
+      "bbox_pt": [
+        306.14501953125,
+        231.04295349121094,
+        558.8919067382812,
+        239.23294067382812
+      ],
+      "bbox_px": [
+        1275,
+        962,
+        2328,
+        996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b99",
+      "text": "applied to magnetic resonance images.  J. Shoulder Elbow Surg. 24 , 1314–1321 (2015).",
+      "bbox_pt": [
+        320.3170166015625,
+        238.950927734375,
+        549.76171875,
+        247.23092651367188
+      ],
+      "bbox_px": [
+        1334,
+        995,
+        2290,
+        1030
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b100",
+      "text": "165.\t Slabaugh, M. A. et al. Interobserver and intraobserver reliability of the Goutallier ",
+      "bbox_pt": [
+        306.1510314941406,
+        247.03892517089844,
+        538.0388793945312,
+        255.22891235351562
+      ],
+      "bbox_px": [
+        1275,
+        1029,
+        2241,
+        1063
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b101",
+      "text": "classification using magnetic resonance imaging: proposal of a simplified classification ",
+      "bbox_pt": [
+        320.3230285644531,
+        255.0369110107422,
+        558.048828125,
+        263.2268981933594
+      ],
+      "bbox_px": [
+        1334,
+        1062,
+        2325,
+        1096
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b102",
+      "text": "system to increase reliability.  Am. J. Sports Med. 40 , 1728–1734 (2012).",
+      "bbox_pt": [
+        320.3230285644531,
+        262.94488525390625,
+        509.0362243652344,
+        271.2248840332031
+      ],
+      "bbox_px": [
+        1334,
+        1095,
+        2120,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b103",
+      "text": "166.\t Agten, C. A., Rosskopf, A. B., Gerber, C. & Pfirrmann, C. W. Quantification of early fatty ",
+      "bbox_pt": [
+        306.15704345703125,
+        271.0328674316406,
+        552.1257934570312,
+        279.2228698730469
+      ],
+      "bbox_px": [
+        1275,
+        1129,
+        2300,
+        1163
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b104",
+      "text": "infiltration of the rotator cuff muscles: comparison of multi-echo Dixon with single-voxel ",
+      "bbox_pt": [
+        320.32904052734375,
+        279.0308532714844,
+        559.9161376953125,
+        287.2208557128906
+      ],
+      "bbox_px": [
+        1334,
+        1162,
+        2332,
+        1196
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b105",
+      "text": "MR spectroscopy.  Eur. Radiol. 26 , 3719–3727 (2016).",
+      "bbox_pt": [
+        320.32904052734375,
+        286.9388427734375,
+        459.67901611328125,
+        295.2188415527344
+      ],
+      "bbox_px": [
+        1334,
+        1195,
+        1915,
+        1230
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b106",
+      "text": "167.\t Lansdown, D. A. et al. A prospective, quantitative evaluation of fatty infiltration before ",
+      "bbox_pt": [
+        306.1570739746094,
+        295.0268249511719,
+        552.1749877929688,
+        303.2168273925781
+      ],
+      "bbox_px": [
+        1275,
+        1229,
+        2300,
+        1263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b107",
+      "text": "and after rotator cuff repair.  Orthop. J. Sports Med. 5 , 2325967117718537 (2017).",
+      "bbox_pt": [
+        320.3290710449219,
+        302.934814453125,
+        534.0382690429688,
+        311.2148132324219
+      ],
+      "bbox_px": [
+        1334,
+        1262,
+        2225,
+        1296
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b108",
+      "text": "168.\t Lee, S. et al. Magnetic resonance rotator cuff fat fraction and its relationship with  ",
+      "bbox_pt": [
+        306.1570739746094,
+        311.0227966308594,
+        540.6370849609375,
+        319.2127990722656
+      ],
+      "bbox_px": [
+        1275,
+        1295,
+        2252,
+        1330
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b109",
+      "text": "tendon tear severity and subject characteristics.  J. Shoulder Elbow Surg. 24 , 1442–1451 ",
+      "bbox_pt": [
+        320.3290710449219,
+        318.9307861328125,
+        555.728759765625,
+        327.2107849121094
+      ],
+      "bbox_px": [
+        1334,
+        1328,
+        2315,
+        1363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b110",
+      "text": "(2015).",
+      "bbox_pt": [
+        320.32904052734375,
+        327.0187683105469,
+        338.7772521972656,
+        335.2087707519531
+      ],
+      "bbox_px": [
+        1334,
+        1362,
+        1411,
+        1396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b111",
+      "text": "169.\t Nardo, L. et al. Quantitative assessment of fat infiltration in the rotator cuff muscles using ",
+      "bbox_pt": [
+        306.15704345703125,
+        335.0167541503906,
+        561.8907470703125,
+        343.2067565917969
+      ],
+      "bbox_px": [
+        1275,
+        1395,
+        2341,
+        1430
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b112",
+      "text": "water–fat MRI.  J. Magn. Reson. Imaging 39 , 1178–1185 (2014).",
+      "bbox_pt": [
+        320.32904052734375,
+        342.92474365234375,
+        482.8552551269531,
+        351.2047424316406
+      ],
+      "bbox_px": [
+        1334,
+        1428,
+        2011,
+        1463
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b113",
+      "text": "170.\t Kwon, J., Kim, S. H., Lee, Y. H., Kim, T. I. & Oh, J. H. The rotator cuff healing index: a new ",
+      "bbox_pt": [
+        306.15704345703125,
+        351.0127258300781,
+        553.2101440429688,
+        359.2027282714844
+      ],
+      "bbox_px": [
+        1275,
+        1462,
+        2305,
+        1496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b114",
+      "text": "scoring system to predict rotator cuff healing after surgical repair.  Am. J. Sports Med. 47 , ",
+      "bbox_pt": [
+        320.32904052734375,
+        358.92071533203125,
+        560.9951171875,
+        367.2007141113281
+      ],
+      "bbox_px": [
+        1334,
+        1495,
+        2337,
+        1530
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b115",
+      "text": "173–180 (2019).",
+      "bbox_pt": [
+        320.3350830078125,
+        367.0086975097656,
+        361.868896484375,
+        375.1986999511719
+      ],
+      "bbox_px": [
+        1334,
+        1529,
+        1507,
+        1563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b116",
+      "text": "171.\t Lenza, M. et al. Magnetic resonance imaging, magnetic resonance arthrography  ",
+      "bbox_pt": [
+        306.1630859375,
+        375.0066833496094,
+        539.3711547851562,
+        383.1966857910156
+      ],
+      "bbox_px": [
+        1275,
+        1562,
+        2247,
+        1596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b117",
+      "text": "and ultrasonography for assessing rotator cuff tears in people with shoulder pain for ",
+      "bbox_pt": [
+        320.3351135253906,
+        383.0046691894531,
+        549.0303955078125,
+        391.1946716308594
+      ],
+      "bbox_px": [
+        1334,
+        1595,
+        2287,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b118",
+      "text": "whom surgery is being considered.  Cochrane Database Syst. Rev. 2013 , CD009020 ",
+      "bbox_pt": [
+        320.3351135253906,
+        390.91265869140625,
+        547.5821533203125,
+        399.1926574707031
+      ],
+      "bbox_px": [
+        1334,
+        1628,
+        2281,
+        1663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b119",
+      "text": "(2013).",
+      "bbox_pt": [
+        320.3350830078125,
+        399.0006408691406,
+        338.8852844238281,
+        407.1906433105469
+      ],
+      "bbox_px": [
+        1334,
+        1662,
+        1412,
+        1696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b120",
+      "text": "172.\t Lecouvet, F. E. et al. Multidetector spiral CT arthrography of the shoulder: clinical ",
+      "bbox_pt": [
+        306.1630859375,
+        406.9986267089844,
+        540.6782836914062,
+        415.1886291503906
+      ],
+      "bbox_px": [
+        1275,
+        1695,
+        2252,
+        1729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b121",
+      "text": "applications and limits, with MR arthrography and arthroscopic correlations.  Eur. J. ",
+      "bbox_pt": [
+        320.3350830078125,
+        414.9966125488281,
+        544.79150390625,
+        423.1866149902344
+      ],
+      "bbox_px": [
+        1334,
+        1729,
+        2269,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b122",
+      "text": "Radiol. 68 , 120–136 (2008).",
+      "bbox_pt": [
+        320.3350830078125,
+        422.90460205078125,
+        394.1224670410156,
+        431.1846008300781
+      ],
+      "bbox_px": [
+        1334,
+        1762,
+        1642,
+        1796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b123",
+      "text": "173.\t Nazarian, L. N. et al. Imaging algorithms for evaluating suspected rotator cuff disease: ",
+      "bbox_pt": [
+        306.1630859375,
+        430.9925842285156,
+        553.3731079101562,
+        439.1825866699219
+      ],
+      "bbox_px": [
+        1275,
+        1795,
+        2305,
+        1829
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b124",
+      "text": "Society of Radiologists in Ultrasound consensus conference statement.  Radiology 267 , ",
+      "bbox_pt": [
+        320.3350830078125,
+        438.90057373046875,
+        557.1671142578125,
+        447.1805725097656
+      ],
+      "bbox_px": [
+        1334,
+        1828,
+        2321,
+        1863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b125",
+      "text": "589–595 (2013).",
+      "bbox_pt": [
+        320.3350830078125,
+        446.9885559082031,
+        364.27728271484375,
+        455.1785583496094
+      ],
+      "bbox_px": [
+        1334,
+        1862,
+        1517,
+        1896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b126",
+      "text": "174.\t Middleton, W. D. et al. Sonography and MRI of the shoulder: comparison of patient ",
+      "bbox_pt": [
+        306.1630859375,
+        454.9865417480469,
+        543.8757934570312,
+        463.1765441894531
+      ],
+      "bbox_px": [
+        1275,
+        1895,
+        2266,
+        1929
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b127",
+      "text": "satisfaction.  AJR Am. J. Roentgenol. 183 , 1449–1452 (2004).",
+      "bbox_pt": [
+        320.3350830078125,
+        462.89453125,
+        479.9566345214844,
+        471.1745300292969
+      ],
+      "bbox_px": [
+        1334,
+        1928,
+        1999,
+        1963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b128",
+      "text": "175.\t Parker, L. et al. Musculoskeletal imaging: Medicare use, costs, and potential for cost ",
+      "bbox_pt": [
+        306.1630554199219,
+        470.9825134277344,
+        547.7763061523438,
+        479.1725158691406
+      ],
+      "bbox_px": [
+        1275,
+        1962,
+        2282,
+        1996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b129",
+      "text": "substitution.  J. Am. Coll. Radiol. 5 , 182–188 (2008).",
+      "bbox_pt": [
+        320.3350524902344,
+        478.8905029296875,
+        456.0052795410156,
+        487.1705017089844
+      ],
+      "bbox_px": [
+        1334,
+        1995,
+        1900,
+        2029
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b130",
+      "text": "176.\t Iannotti, J. P. et al. Accuracy of office-based ultrasonography of the shoulder for the ",
+      "bbox_pt": [
+        306.1630554199219,
+        486.9784851074219,
+        546.6357421875,
+        495.1684875488281
+      ],
+      "bbox_px": [
+        1275,
+        2029,
+        2277,
+        2063
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b131",
+      "text": "diagnosis of rotator cuff tears.  J. Bone Joint Surg. Am. 87 , 1305–1311 (2005).",
+      "bbox_pt": [
+        320.3350524902344,
+        494.886474609375,
+        522.8674926757812,
+        503.1664733886719
+      ],
+      "bbox_px": [
+        1334,
+        2062,
+        2178,
+        2096
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b132",
+      "text": "177.\t Farooqi, A. S. et al. Diagnostic accuracy of ultrasonography for rotator cuff tears:  ",
+      "bbox_pt": [
+        306.1630859375,
+        502.9744567871094,
+        540.2171020507812,
+        511.1644592285156
+      ],
+      "bbox_px": [
+        1275,
+        2095,
+        2250,
+        2129
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b133",
+      "text": "a systematic review and meta-analysis.  Orthop. J. Sports Med. 9 , 23259671211035106 ",
+      "bbox_pt": [
+        320.3350830078125,
+        510.8824462890625,
+        551.7225341796875,
+        519.1624755859375
+      ],
+      "bbox_px": [
+        1334,
+        2128,
+        2298,
+        2163
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b134",
+      "text": "(2021).",
+      "bbox_pt": [
+        320.341064453125,
+        518.970458984375,
+        338.5912780761719,
+        527.1604614257812
+      ],
+      "bbox_px": [
+        1334,
+        2162,
+        1410,
+        2196
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b135",
+      "text": "178.\t Khoury, V., Cardinal, É. & Brassard, P. Atrophy and fatty infiltration of the supraspinatus ",
+      "bbox_pt": [
+        306.1690673828125,
+        526.9684448242188,
+        554.0159301757812,
+        535.158447265625
+      ],
+      "bbox_px": [
+        1275,
+        2195,
+        2308,
+        2229
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b136",
+      "text": "muscle: sonography versus MRI.  AJR Am. J. Roentgenol. 190 , 1105–1111 (2008).",
+      "bbox_pt": [
+        320.341064453125,
+        534.8764038085938,
+        531.0304565429688,
+        543.1564331054688
+      ],
+      "bbox_px": [
+        1334,
+        2228,
+        2212,
+        2263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b137",
+      "text": "179.\t Aranha, L., Eapen, C., Patel, V. D., Prabhakar, A. J. & Hariharan, K. Muscle fatigue response ",
+      "bbox_pt": [
+        306.1690673828125,
+        542.9644775390625,
+        561.2747802734375,
+        551.1544799804688
+      ],
+      "bbox_px": [
+        1275,
+        2262,
+        2338,
+        2296
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b138",
+      "text": "of rotator cuff muscles in different postures.  Arch. Orthop. Trauma. Surg. 143 , 3191–3199 ",
+      "bbox_pt": [
+        320.341064453125,
+        550.8724365234375,
+        559.7110595703125,
+        559.1524658203125
+      ],
+      "bbox_px": [
+        1334,
+        2295,
+        2332,
+        2329
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b139",
+      "text": "(2023).",
+      "bbox_pt": [
+        320.341064453125,
+        558.96044921875,
+        339.8212585449219,
+        567.1504516601562
+      ],
+      "bbox_px": [
+        1334,
+        2329,
+        1415,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b140",
+      "text": "180.\t Griffith, K. M. et al. Review of human supraspinatus tendon mechanics. Part I: fatigue ",
+      "bbox_pt": [
+        306.1690673828125,
+        566.9584350585938,
+        549.3250122070312,
+        575.1484375
+      ],
+      "bbox_px": [
+        1275,
+        2362,
+        2288,
+        2396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b141",
+      "text": "damage accumulation and failure.  J. Shoulder Elbow Surg. 31 , 2671–2677 (2022).",
+      "bbox_pt": [
+        320.341064453125,
+        574.8663940429688,
+        536.8779907226562,
+        583.1464233398438
+      ],
+      "bbox_px": [
+        1334,
+        2395,
+        2236,
+        2429
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b142",
+      "text": "181.\t Ranger, T. A., Wong, A. M., Cook, J. L. & Gaida, J. E. Is there an association between ",
+      "bbox_pt": [
+        306.175048828125,
+        582.9544677734375,
+        542.9571533203125,
+        591.1444702148438
+      ],
+      "bbox_px": [
+        1275,
+        2428,
+        2262,
+        2463
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b143",
+      "text": "tendinopathy and diabetes mellitus? A systematic review with meta-analysis.  Br. J. Sports ",
+      "bbox_pt": [
+        320.3470458984375,
+        590.9524536132812,
+        562.080322265625,
+        599.1424560546875
+      ],
+      "bbox_px": [
+        1334,
+        2462,
+        2342,
+        2496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b144",
+      "text": "Med. 50 , 982–989 (2016).",
+      "bbox_pt": [
+        320.3470458984375,
+        598.8604125976562,
+        389.86187744140625,
+        607.1404418945312
+      ],
+      "bbox_px": [
+        1334,
+        2495,
+        1624,
+        2529
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b145",
+      "text": "182.\t Lewis, J. S. & Sandford, F. M. Rotator cuff tendinopathy: is there a role for polyunsaturated ",
+      "bbox_pt": [
+        306.175048828125,
+        606.948486328125,
+        562.53271484375,
+        615.1384887695312
+      ],
+      "bbox_px": [
+        1275,
+        2528,
+        2343,
+        2563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b146",
+      "text": "fatty acids and antioxidants?  J. Hand Ther. 22 , 49–55 (2009).",
+      "bbox_pt": [
+        320.3470458984375,
+        614.8564453125,
+        483.0448303222656,
+        623.136474609375
+      ],
+      "bbox_px": [
+        1334,
+        2561,
+        2012,
+        2596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b147",
+      "text": "183.\t Angeline, M. E. et al. Effect of diet-induced vitamin D deficiency on rotator cuff healing  ",
+      "bbox_pt": [
+        306.175048828125,
+        622.9444580078125,
+        556.2250366210938,
+        631.1344604492188
+      ],
+      "bbox_px": [
+        1275,
+        2595,
+        2317,
+        2629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b148",
+      "text": "in a rat model.  Am. J. Sports Med. 42 , 27–34 (2014).",
+      "bbox_pt": [
+        320.3470153808594,
+        630.8524169921875,
+        457.49798583984375,
+        639.1324462890625
+      ],
+      "bbox_px": [
+        1334,
+        2628,
+        1906,
+        2663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b149",
+      "text": "184.\t Kuo, L. T. et al. Depression increases the risk of rotator cuff tear and rotator cuff repair ",
+      "bbox_pt": [
+        306.1750183105469,
+        638.9404296875,
+        551.2244873046875,
+        647.1304321289062
+      ],
+      "bbox_px": [
+        1275,
+        2662,
+        2296,
+        2696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b150",
+      "text": "surgery: a nationwide population-based study.  PLoS ONE 14 , e0225778 (2019).",
+      "bbox_pt": [
+        320.3470153808594,
+        646.8484497070312,
+        531.5156860351562,
+        655.1284790039062
+      ],
+      "bbox_px": [
+        1334,
+        2695,
+        2214,
+        2729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b151",
+      "text": "185.\t Song, A. et al. Comparative time to improvement in nonoperative and operative ",
+      "bbox_pt": [
+        306.1810302734375,
+        654.9364624023438,
+        536.75244140625,
+        663.12646484375
+      ],
+      "bbox_px": [
+        1275,
+        2728,
+        2236,
+        2763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b152",
+      "text": "treatment of rotator cuff tears.  J. Bone Joint Surg. Am. 102 , 1142–1150 (2020).",
+      "bbox_pt": [
+        320.35302734375,
+        662.9344482421875,
+        526.4337768554688,
+        671.4198608398438
+      ],
+      "bbox_px": [
+        1334,
+        2762,
+        2193,
+        2797
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b153",
+      "text": "186.\t Kuhn, J. E. et al. Effectiveness of physical therapy in treating atraumatic full-thickness ",
+      "bbox_pt": [
+        306.1443176269531,
+        671.2278442382812,
+        551.0552368164062,
+        679.4178466796875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2296,
+        2830
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b154",
+      "text": "rotator cuff tears: a multicenter prospective cohort study.  J. Shoulder Elbow Surg. 22 , ",
+      "bbox_pt": [
+        320.3163146972656,
+        679.1358032226562,
+        551.952392578125,
+        687.4158325195312
+      ],
+      "bbox_px": [
+        1334,
+        2829,
+        2299,
+        2864
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b155",
+      "text": "1371–1379 (2013).",
+      "bbox_pt": [
+        320.3223571777344,
+        687.223876953125,
+        366.6129150390625,
+        695.4138793945312
+      ],
+      "bbox_px": [
+        1334,
+        2863,
+        1527,
+        2897
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b156",
+      "text": "187.\t Dunn, W. R. et al. 2013 Neer Award: predictors of failure of nonoperative treatment  ",
+      "bbox_pt": [
+        306.1503601074219,
+        695.2218627929688,
+        544.6683959960938,
+        703.411865234375
+      ],
+      "bbox_px": [
+        1275,
+        2896,
+        2269,
+        2930
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b157",
+      "text": "of chronic, symptomatic, full-thickness rotator cuff tears.  J. Shoulder Elbow Surg. 25 , ",
+      "bbox_pt": [
+        320.3223876953125,
+        703.1298217773438,
+        550.8544311523438,
+        711.4098510742188
+      ],
+      "bbox_px": [
+        1334,
+        2929,
+        2295,
+        2964
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b158",
+      "text": "1303–1311 (2016).",
+      "bbox_pt": [
+        320.3223876953125,
+        711.2178344726562,
+        367.0821838378906,
+        719.4078369140625
+      ],
+      "bbox_px": [
+        1334,
+        2963,
+        1529,
+        2997
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b159",
+      "text": "188.\t Moosmayer, S. et al. Tendon repair compared with physiotherapy in the treatment of ",
+      "bbox_pt": [
+        306.150390625,
+        719.2158813476562,
+        549.0200805664062,
+        727.4058837890625
+      ],
+      "bbox_px": [
+        1275,
+        2996,
+        2287,
+        3030
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b160",
+      "text": "rotator cuff tears: a randomized controlled study in 103 cases with a five-year follow-up. ",
+      "bbox_pt": [
+        320.3223876953125,
+        727.2138671875,
+        558.2636108398438,
+        735.4038696289062
+      ],
+      "bbox_px": [
+        1334,
+        3030,
+        2326,
+        3064
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p17_b161",
+      "text": "J. Bone Joint Surg. Am. 96 , 1504–1514 (2014).",
+      "bbox_pt": [
+        320.3223876953125,
+        735.121826171875,
+        440.6488037109375,
+        743.40185546875
+      ],
+      "bbox_px": [
+        1334,
+        3063,
+        1836,
+        3097
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 162
+  }
+}

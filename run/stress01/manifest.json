@@ -1,0 +1,24 @@
+{
+  "doc_id": "stress01",
+  "input_pdf_path": "D:\\L\\AI\\Paper_ingest\\example_pdf\\Yao 等 - 2025 - Advances in Electrical Materials for Bone and Cartilage Regeneration Developments, Challenges, and.pdf",
+  "input_pdf_sha256": "725149f2a0d8ec919c65c68e44df842c03764a5b5812e495c147385379a84984",
+  "started_at_utc": "2026-02-18T17:37:36.316685+00:00",
+  "toolchain": {
+    "python_version": "3.14.0",
+    "package_lock_hash": "35b9001de330d23a"
+  },
+  "model_config": {
+    "text_model": "",
+    "vision_model": "",
+    "vision_provider": "",
+    "reading_provider": "",
+    "reading_model": "",
+    "temperature": 0.0,
+    "prompt_bundle_version": "v1"
+  },
+  "render_config": {
+    "dpi": 150,
+    "scale": 2.0
+  },
+  "pipeline_version": "0.1.0"
+}

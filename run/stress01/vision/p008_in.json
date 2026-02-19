@@ -1,0 +1,2117 @@
+{
+  "page": 8,
+  "image_path": "run\\stress01\\pages\\p008.png",
+  "blocks": [
+    {
+      "block_id": "p8_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b2",
+      "text": "incorporating ZnO nanoparticles increases roughness, improv-",
+      "bbox_pt": [
+        47.97600173950195,
+        75.97752380371094,
+        288.9336242675781,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        199,
+        316,
+        1203,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b3",
+      "text": "ing cell adhesion and enhancing piezoelectric performance. [ 75 ]",
+      "bbox_pt": [
+        47.97600173950195,
+        86.03675842285156,
+        282.31787109375,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        199,
+        358,
+        1176,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b4",
+      "text": "Through continuous research, many new piezoelectric mate-",
+      "bbox_pt": [
+        57.435001373291016,
+        97.90116882324219,
+        288.9242248535156,
+        106.9482650756836
+      ],
+      "bbox_px": [
+        239,
+        407,
+        1203,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b5",
+      "text": "rials have been developed and widely applied in medicine. [ 76,77 ]",
+      "bbox_pt": [
+        47.976341247558594,
+        107.96076965332031,
+        288.4200439453125,
+        117.9016342163086
+      ],
+      "bbox_px": [
+        199,
+        449,
+        1201,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b6",
+      "text": "Since their introduction in 1962, biosensors have steadily evolved",
+      "bbox_pt": [
+        47.97600173950195,
+        119.81614685058594,
+        288.8968200683594,
+        128.86325073242188
+      ],
+      "bbox_px": [
+        199,
+        499,
+        1203,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b7",
+      "text": "toward miniaturization, with bio-piezoelectric materials provid-",
+      "bbox_pt": [
+        47.97600173950195,
+        130.7784881591797,
+        288.9309387207031,
+        139.82559204101562
+      ],
+      "bbox_px": [
+        199,
+        544,
+        1203,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b8",
+      "text": "ing crucial support. Traditional biosensors struggle with porta-",
+      "bbox_pt": [
+        47.97600173950195,
+        141.7318572998047,
+        288.92108154296875,
+        150.77896118164062
+      ],
+      "bbox_px": [
+        199,
+        590,
+        1203,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b9",
+      "text": "bility and wearability due to their large size and reliance on ex-",
+      "bbox_pt": [
+        47.97600173950195,
+        152.6941375732422,
+        288.9211120605469,
+        161.74124145507812
+      ],
+      "bbox_px": [
+        199,
+        636,
+        1203,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b10",
+      "text": "ternal power. In contrast, piezoelectric biomaterials, with their",
+      "bbox_pt": [
+        47.97600173950195,
+        163.65647888183594,
+        288.89776611328125,
+        172.70358276367188
+      ],
+      "bbox_px": [
+        199,
+        681,
+        1203,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b11",
+      "text": "excellent piezoelectric properties, biocompatibility, and micro-",
+      "bbox_pt": [
+        47.97600173950195,
+        174.60984802246094,
+        288.904052734375,
+        183.65695190429688
+      ],
+      "bbox_px": [
+        199,
+        727,
+        1203,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b12",
+      "text": "nano-scale, enable biosensors to be implantable, highly sensi-",
+      "bbox_pt": [
+        47.97600173950195,
+        185.57212829589844,
+        288.9049987792969,
+        194.61923217773438
+      ],
+      "bbox_px": [
+        199,
+        773,
+        1203,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b13",
+      "text": "tive, and self-powered. Additionally, polymer piezoelectric ma-",
+      "bbox_pt": [
+        47.97600173950195,
+        196.5344696044922,
+        288.90765380859375,
+        205.58157348632812
+      ],
+      "bbox_px": [
+        199,
+        818,
+        1203,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b14",
+      "text": "terials endow biosensors with outstanding ﬂexibility, allowing",
+      "bbox_pt": [
+        47.97600173950195,
+        207.4878387451172,
+        288.92828369140625,
+        216.53494262695312
+      ],
+      "bbox_px": [
+        199,
+        864,
+        1203,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b15",
+      "text": "them to adhere impeccably to tissues and organs, thereby en-",
+      "bbox_pt": [
+        47.97600173950195,
+        218.45018005371094,
+        288.8987121582031,
+        227.49728393554688
+      ],
+      "bbox_px": [
+        199,
+        910,
+        1203,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b16",
+      "text": "hancing the accuracy of monitoring results. In recent years, a",
+      "bbox_pt": [
+        47.97600173950195,
+        229.41246032714844,
+        288.9327392578125,
+        238.45956420898438
+      ],
+      "bbox_px": [
+        199,
+        955,
+        1203,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b17",
+      "text": "series of wearable, health-monitoring platforms based on ﬂexi-",
+      "bbox_pt": [
+        47.97600173950195,
+        240.36582946777344,
+        288.9327697753906,
+        249.41293334960938
+      ],
+      "bbox_px": [
+        199,
+        1001,
+        1203,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b18",
+      "text": "ble bio-piezoelectric materials have attracted considerable atten-",
+      "bbox_pt": [
+        47.97600173950195,
+        251.3281707763672,
+        288.8915100097656,
+        260.3752746582031
+      ],
+      "bbox_px": [
+        199,
+        1047,
+        1203,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b19",
+      "text": "tion. For instance, based on the exceptional piezoelectric proper-",
+      "bbox_pt": [
+        47.97600173950195,
+        262.281494140625,
+        288.9175109863281,
+        271.3285827636719
+      ],
+      "bbox_px": [
+        199,
+        1092,
+        1203,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b20",
+      "text": "ties and ﬂexibility of PVDF nanoﬁber membranes, Liu et al. de-",
+      "bbox_pt": [
+        47.97600173950195,
+        273.24383544921875,
+        288.90313720703125,
+        282.2909240722656
+      ],
+      "bbox_px": [
+        199,
+        1138,
+        1203,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b21",
+      "text": "signed a wearable respiratory detector that continuously outputs",
+      "bbox_pt": [
+        47.97600173950195,
+        284.2061462402344,
+        288.92730712890625,
+        293.25323486328125
+      ],
+      "bbox_px": [
+        199,
+        1184,
+        1203,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b22",
+      "text": "electrical signals through the deformation of a PVDF piezoelec-",
+      "bbox_pt": [
+        47.97600173950195,
+        295.1595153808594,
+        288.8816223144531,
+        304.20660400390625
+      ],
+      "bbox_px": [
+        199,
+        1229,
+        1203,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b23",
+      "text": "tric ﬁlm during breathing. Simultaneously, the high piezoelectric",
+      "bbox_pt": [
+        47.97600173950195,
+        306.121826171875,
+        288.9014587402344,
+        315.1689147949219
+      ],
+      "bbox_px": [
+        199,
+        1275,
+        1203,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b24",
+      "text": "coeﬃcient of the PVDF ﬁber membrane ensures the high sensi-",
+      "bbox_pt": [
+        47.97600173950195,
+        317.0841369628906,
+        288.9184265136719,
+        326.1312255859375
+      ],
+      "bbox_px": [
+        199,
+        1321,
+        1203,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b25",
+      "text": "tivity of the respiratory detector. [ 78 ] Mao et al. integrated T-ZnO",
+      "bbox_pt": [
+        47.97600173950195,
+        324.899169921875,
+        288.91796875,
+        337.0845947265625
+      ],
+      "bbox_px": [
+        199,
+        1353,
+        1203,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b26",
+      "text": "nanowires into textiles and developed a dynamic monitoring sen-",
+      "bbox_pt": [
+        47.97555160522461,
+        338.993408203125,
+        288.9268798828125,
+        348.0404968261719
+      ],
+      "bbox_px": [
+        199,
+        1412,
+        1203,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b27",
+      "text": "sor for various body parts. Through stretching of the textile by",
+      "bbox_pt": [
+        47.97555160522461,
+        349.9557189941406,
+        288.9278869628906,
+        359.0028076171875
+      ],
+      "bbox_px": [
+        199,
+        1458,
+        1203,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b28",
+      "text": "skin tissue during daily activities, T-ZnO nanowires can convert",
+      "bbox_pt": [
+        47.97555160522461,
+        360.9090881347656,
+        288.89373779296875,
+        369.9561767578125
+      ],
+      "bbox_px": [
+        199,
+        1503,
+        1203,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b29",
+      "text": "mechanical energy into electrical signals to continuously moni-",
+      "bbox_pt": [
+        47.97555160522461,
+        371.87139892578125,
+        288.90277099609375,
+        380.9184875488281
+      ],
+      "bbox_px": [
+        199,
+        1549,
+        1203,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b30",
+      "text": "tor and sense physiological activities. [ 79 ] Beyond sensing dynamic",
+      "bbox_pt": [
+        47.97555160522461,
+        379.6911926269531,
+        288.91326904296875,
+        391.88079833984375
+      ],
+      "bbox_px": [
+        199,
+        1582,
+        1203,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b31",
+      "text": "signals on the body surface, bio-piezoelectric materials oﬀer an",
+      "bbox_pt": [
+        47.9753303527832,
+        393.7855224609375,
+        288.89263916015625,
+        402.8326110839844
+      ],
+      "bbox_px": [
+        199,
+        1640,
+        1203,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b32",
+      "text": "optimal solution for disease diagnosis. Liu et al. developed a mi-",
+      "bbox_pt": [
+        47.9753303527832,
+        404.74786376953125,
+        288.9222717285156,
+        413.7949523925781
+      ],
+      "bbox_px": [
+        199,
+        1686,
+        1203,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b33",
+      "text": "crodetector using ZnO piezoelectric ﬁber membranes to detect",
+      "bbox_pt": [
+        47.9753303527832,
+        415.7101745605469,
+        288.89349365234375,
+        424.75726318359375
+      ],
+      "bbox_px": [
+        199,
+        1732,
+        1203,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b34",
+      "text": "myocardial necrosis markers, such as cardiac troponin, for the",
+      "bbox_pt": [
+        47.9753303527832,
+        426.6635437011719,
+        288.92852783203125,
+        435.71063232421875
+      ],
+      "bbox_px": [
+        199,
+        1777,
+        1203,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b35",
+      "text": "early prevention of acute cardiomyopathy. The device’s high sen-",
+      "bbox_pt": [
+        47.9753303527832,
+        437.6258544921875,
+        288.8998107910156,
+        446.6729431152344
+      ],
+      "bbox_px": [
+        199,
+        1823,
+        1203,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b36",
+      "text": "sitivity is attributed to the excellent piezoelectric properties of the",
+      "bbox_pt": [
+        47.9753303527832,
+        448.5881652832031,
+        288.93121337890625,
+        457.63525390625
+      ],
+      "bbox_px": [
+        199,
+        1869,
+        1203,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b37",
+      "text": "ZnO ﬁbers [ 80 ] (Figure  3d ). Furthermore, bio-piezoelectric probes",
+      "bbox_pt": [
+        47.9753303527832,
+        456.40716552734375,
+        288.9171142578125,
+        468.588623046875
+      ],
+      "bbox_px": [
+        199,
+        1901,
+        1203,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b38",
+      "text": "based on piezoelectric materials have considerable application",
+      "bbox_pt": [
+        47.97554016113281,
+        470.5014953613281,
+        288.9080505371094,
+        479.548583984375
+      ],
+      "bbox_px": [
+        199,
+        1960,
+        1203,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b39",
+      "text": "prospects in tumor diagnosis. For example, the bioprobe devel-",
+      "bbox_pt": [
+        47.97554016113281,
+        481.46380615234375,
+        288.90087890625,
+        490.5108947753906
+      ],
+      "bbox_px": [
+        199,
+        2006,
+        1203,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b40",
+      "text": "oped by Su et al. based on PZT ceramics can realize the quan-",
+      "bbox_pt": [
+        47.97554016113281,
+        492.41717529296875,
+        288.9125671386719,
+        501.4642639160156
+      ],
+      "bbox_px": [
+        199,
+        2051,
+        1203,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b41",
+      "text": "titative detection of tumor markers in serum by responding to",
+      "bbox_pt": [
+        47.97554016113281,
+        503.3794860839844,
+        288.92425537109375,
+        512.4265747070312
+      ],
+      "bbox_px": [
+        199,
+        2097,
+        1203,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b42",
+      "text": "the interaction between antigens and antibodies. [ 74 ] In addition",
+      "bbox_pt": [
+        47.97554016113281,
+        511.1990966796875,
+        288.9189758300781,
+        523.3888549804688
+      ],
+      "bbox_px": [
+        199,
+        2129,
+        1203,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b43",
+      "text": "to monitoring tumor molecular signals, bio-piezoelectric probes",
+      "bbox_pt": [
+        47.97565841674805,
+        525.2935180664062,
+        288.92523193359375,
+        534.340576171875
+      ],
+      "bbox_px": [
+        199,
+        2188,
+        1203,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b44",
+      "text": "can diagnose tissue lesions through changes in mechanical prop-",
+      "bbox_pt": [
+        47.97565841674805,
+        536.255859375,
+        288.9207763671875,
+        545.3029174804688
+      ],
+      "bbox_px": [
+        199,
+        2234,
+        1203,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b45",
+      "text": "erties such as tissue texture and density. [ 81 ]",
+      "bbox_pt": [
+        47.97565841674805,
+        546.3147583007812,
+        208.4374237060547,
+        556.2652587890625
+      ],
+      "bbox_px": [
+        199,
+        2276,
+        868,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b46",
+      "text": "Bio-piezoelectric materials are also playing an increasingly",
+      "bbox_pt": [
+        57.435001373291016,
+        558.170166015625,
+        288.90264892578125,
+        567.2172241210938
+      ],
+      "bbox_px": [
+        239,
+        2325,
+        1203,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b47",
+      "text": "signiﬁcant role in disease treatment. Bio-piezoelectric materials",
+      "bbox_pt": [
+        47.976341247558594,
+        569.1325073242188,
+        288.9403381347656,
+        578.1795654296875
+      ],
+      "bbox_px": [
+        199,
+        2371,
+        1203,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b48",
+      "text": "generate considerable quantities of reactive oxygen species (ROS)",
+      "bbox_pt": [
+        47.976341247558594,
+        580.0858154296875,
+        288.9178771972656,
+        589.1328735351562
+      ],
+      "bbox_px": [
+        199,
+        2417,
+        1203,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b49",
+      "text": "by electrically stimulating tumor cells. Simultaneously, electrical",
+      "bbox_pt": [
+        47.976341247558594,
+        591.0481567382812,
+        288.8837890625,
+        600.09521484375
+      ],
+      "bbox_px": [
+        199,
+        2462,
+        1203,
+        2500
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b50",
+      "text": "signals regulate the proliferation and metabolism of tumor cells,",
+      "bbox_pt": [
+        47.976341247558594,
+        602.010498046875,
+        288.9205627441406,
+        611.0575561523438
+      ],
+      "bbox_px": [
+        199,
+        2508,
+        1203,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b51",
+      "text": "ultimately achieving the goal of killing tumor cells. Li et al. de-",
+      "bbox_pt": [
+        47.976341247558594,
+        612.9638671875,
+        288.8953857421875,
+        622.0109252929688
+      ],
+      "bbox_px": [
+        199,
+        2554,
+        1203,
+        2591
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b52",
+      "text": "veloped an acoustic dynamic tumor treatment sensitizer based",
+      "bbox_pt": [
+        47.976341247558594,
+        623.9261474609375,
+        288.8990173339844,
+        632.9732055664062
+      ],
+      "bbox_px": [
+        199,
+        2599,
+        1203,
+        2637
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b53",
+      "text": "on piezoelectric BP nanosheets. Both in vitro and in vivo ex-",
+      "bbox_pt": [
+        47.976341247558594,
+        634.8884887695312,
+        288.90081787109375,
+        643.935546875
+      ],
+      "bbox_px": [
+        199,
+        2645,
+        1203,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b54",
+      "text": "periments demonstrated that this material could induce tumor",
+      "bbox_pt": [
+        47.976341247558594,
+        645.8418579101562,
+        288.9151916503906,
+        654.888916015625
+      ],
+      "bbox_px": [
+        199,
+        2691,
+        1203,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b55",
+      "text": "cells to produce ROS and eﬀectively inhibit their proliferation",
+      "bbox_pt": [
+        47.976341247558594,
+        656.80419921875,
+        288.92864990234375,
+        665.8512573242188
+      ],
+      "bbox_px": [
+        199,
+        2736,
+        1203,
+        2774
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b56",
+      "text": "of tumor cells [ 82 ] (Figure  2e,f ). Feng et al. exerted mechanical",
+      "bbox_pt": [
+        47.976341247558594,
+        664.6221923828125,
+        288.91253662109375,
+        676.8135375976562
+      ],
+      "bbox_px": [
+        199,
+        2769,
+        1203,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b57",
+      "text": "stress on nano/micrometer tetragonal-BaTiO 3 , which caused the",
+      "bbox_pt": [
+        47.97554016113281,
+        678.716064453125,
+        288.9103088378906,
+        689.2271728515625
+      ],
+      "bbox_px": [
+        199,
+        2827,
+        1203,
+        2871
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b58",
+      "text": "nanoparticles to generate unbalanced charges and further stimu-",
+      "bbox_pt": [
+        47.97591018676758,
+        689.6784057617188,
+        288.929931640625,
+        698.7254638671875
+      ],
+      "bbox_px": [
+        199,
+        2873,
+        1203,
+        2911
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b59",
+      "text": "lated cells or bacterium to produce a large amount of ROS, lead-",
+      "bbox_pt": [
+        47.97591018676758,
+        700.6407470703125,
+        288.9255065917969,
+        709.6878051757812
+      ],
+      "bbox_px": [
+        199,
+        2919,
+        1203,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b60",
+      "text": "ing to death. [ 83 ] Furthermore, piezoelectric biomaterials, charac-",
+      "bbox_pt": [
+        47.97591018676758,
+        708.4610595703125,
+        288.8899230957031,
+        720.64111328125
+      ],
+      "bbox_px": [
+        199,
+        2951,
+        1203,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b61",
+      "text": "terized by their ability to convert mechanical energy into electrical",
+      "bbox_pt": [
+        303.0900573730469,
+        75.97581481933594,
+        544.0062866210938,
+        85.02291107177734
+      ],
+      "bbox_px": [
+        1262,
+        316,
+        2266,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b62",
+      "text": "energy, have shown great promise in non-invasive electrical stim-",
+      "bbox_pt": [
+        303.0900573730469,
+        86.93815612792969,
+        544.0261840820312,
+        95.9852523803711
+      ],
+      "bbox_px": [
+        1262,
+        362,
+        2266,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b63",
+      "text": "ulation therapies, particularly in the ﬁelds of nerve repair, bone",
+      "bbox_pt": [
+        303.0900573730469,
+        97.90043640136719,
+        544.0496215820312,
+        106.9475326538086
+      ],
+      "bbox_px": [
+        1262,
+        407,
+        2266,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b64",
+      "text": "tissue regeneration, wound healing, and cardiovascular disease",
+      "bbox_pt": [
+        303.0900573730469,
+        108.85380554199219,
+        544.0225219726562,
+        117.9009017944336
+      ],
+      "bbox_px": [
+        1262,
+        453,
+        2266,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b65",
+      "text": "treatment. [ 84 ] The core mechanism lies in the generation of lo-",
+      "bbox_pt": [
+        303.0900573730469,
+        116.67503356933594,
+        544.018798828125,
+        128.86325073242188
+      ],
+      "bbox_px": [
+        1262,
+        486,
+        2266,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b66",
+      "text": "calized electric ﬁelds by these materials, which can signiﬁcantly",
+      "bbox_pt": [
+        303.08990478515625,
+        130.7784881591797,
+        544.0239868164062,
+        139.82559204101562
+      ],
+      "bbox_px": [
+        1262,
+        544,
+        2266,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b67",
+      "text": "regulate cell proliferation, diﬀerentiation, migration, and func-",
+      "bbox_pt": [
+        303.08990478515625,
+        141.7318572998047,
+        544.02978515625,
+        150.77896118164062
+      ],
+      "bbox_px": [
+        1262,
+        590,
+        2266,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b68",
+      "text": "tionality, thereby supporting tissue repair and regeneration. [ 85 ]",
+      "bbox_pt": [
+        303.08990478515625,
+        151.79078674316406,
+        543.54345703125,
+        161.74124145507812
+      ],
+      "bbox_px": [
+        1262,
+        632,
+        2264,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b69",
+      "text": "In nerve repair, piezoelectric materials generate electrical poten-",
+      "bbox_pt": [
+        303.0899963378906,
+        163.65513610839844,
+        544.0586547851562,
+        172.70223999023438
+      ],
+      "bbox_px": [
+        1262,
+        681,
+        2266,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b70",
+      "text": "tials in response to mechanical stimuli, modulating the mem-",
+      "bbox_pt": [
+        303.0899963378906,
+        174.60850524902344,
+        544.0450439453125,
+        183.65560913085938
+      ],
+      "bbox_px": [
+        1262,
+        727,
+        2266,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b71",
+      "text": "brane potential of nerve cells and activating voltage-gated sodium",
+      "bbox_pt": [
+        303.0899963378906,
+        185.5708465576172,
+        544.0180053710938,
+        194.61795043945312
+      ],
+      "bbox_px": [
+        1262,
+        773,
+        2266,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b72",
+      "text": "(Nav) and potassium (Kv) channels to facilitate the generation",
+      "bbox_pt": [
+        303.0899963378906,
+        196.53318786621094,
+        544.0576171875,
+        205.58029174804688
+      ],
+      "bbox_px": [
+        1262,
+        818,
+        2266,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b73",
+      "text": "and transmission of action potentials. This eﬀect not only guides",
+      "bbox_pt": [
+        303.0899963378906,
+        207.4864959716797,
+        544.01611328125,
+        216.53359985351562
+      ],
+      "bbox_px": [
+        1262,
+        864,
+        2266,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b74",
+      "text": "synaptic formation but also induces the secretion of neurotrophic",
+      "bbox_pt": [
+        303.0899963378906,
+        218.44883728027344,
+        544.059326171875,
+        227.49594116210938
+      ],
+      "bbox_px": [
+        1262,
+        910,
+        2266,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b75",
+      "text": "factors, such as brain-derived neurotrophic factor (BDNF), fur-",
+      "bbox_pt": [
+        303.0899963378906,
+        229.4111785888672,
+        544.0160522460938,
+        238.45828247070312
+      ],
+      "bbox_px": [
+        1262,
+        955,
+        2266,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b76",
+      "text": "ther supporting nerve network reconstruction. [ 86,87 ] For instance,",
+      "bbox_pt": [
+        303.0899963378906,
+        237.22117614746094,
+        544.025390625,
+        249.41159057617188
+      ],
+      "bbox_px": [
+        1262,
+        988,
+        2266,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b77",
+      "text": "PVDF ﬁber conduits generate sustained electrical stimulation",
+      "bbox_pt": [
+        303.0893249511719,
+        251.3243865966797,
+        544.0488891601562,
+        260.3714904785156
+      ],
+      "bbox_px": [
+        1262,
+        1047,
+        2266,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b78",
+      "text": "from micro-movements, accelerating sciatic nerve repair in an-",
+      "bbox_pt": [
+        303.0893249511719,
+        262.27777099609375,
+        544.0173950195312,
+        271.3248596191406
+      ],
+      "bbox_px": [
+        1262,
+        1092,
+        2266,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b79",
+      "text": "imal models and improving nerve conduction velocity. Simi-",
+      "bbox_pt": [
+        303.0893249511719,
+        273.2400817871094,
+        544.0380249023438,
+        282.28717041015625
+      ],
+      "bbox_px": [
+        1262,
+        1138,
+        2266,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b80",
+      "text": "larly, nanocomposites containing barium titanate have demon-",
+      "bbox_pt": [
+        303.0893249511719,
+        284.202392578125,
+        544.0462646484375,
+        293.2494812011719
+      ],
+      "bbox_px": [
+        1262,
+        1184,
+        2266,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b81",
+      "text": "strated enhanced synaptogenesis and electrical signal transmis-",
+      "bbox_pt": [
+        303.0893249511719,
+        295.15576171875,
+        544.032470703125,
+        304.2028503417969
+      ],
+      "bbox_px": [
+        1262,
+        1229,
+        2266,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b82",
+      "text": "sion in vitro. [ 88,89 ] In bone tissue regeneration, piezoelectric ma-",
+      "bbox_pt": [
+        303.0893249511719,
+        302.9751892089844,
+        544.051025390625,
+        315.1651611328125
+      ],
+      "bbox_px": [
+        1262,
+        1262,
+        2266,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b83",
+      "text": "terials mimic the natural piezoelectric eﬀect of bones, playing",
+      "bbox_pt": [
+        303.0897216796875,
+        317.0784912109375,
+        544.044921875,
+        326.1255798339844
+      ],
+      "bbox_px": [
+        1262,
+        1321,
+        2266,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b84",
+      "text": "a pivotal role in bone repair. Mechanical loading-induced elec-",
+      "bbox_pt": [
+        303.0897216796875,
+        328.0318603515625,
+        544.0177001953125,
+        337.0789489746094
+      ],
+      "bbox_px": [
+        1262,
+        1366,
+        2266,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b85",
+      "text": "tric ﬁelds activate calcium ion channels, such as TRPV4, and",
+      "bbox_pt": [
+        303.0897216796875,
+        338.9941711425781,
+        544.0520629882812,
+        348.041259765625
+      ],
+      "bbox_px": [
+        1262,
+        1412,
+        2266,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b86",
+      "text": "the bone morphogenetic protein (BMP) signaling pathway, pro-",
+      "bbox_pt": [
+        303.0897216796875,
+        349.9565124511719,
+        544.0233154296875,
+        359.00360107421875
+      ],
+      "bbox_px": [
+        1262,
+        1458,
+        2266,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b87",
+      "text": "moting the proliferation and diﬀerentiation of osteoblasts. [ 76,90 ]",
+      "bbox_pt": [
+        303.0897216796875,
+        360.0146789550781,
+        543.54296875,
+        369.9569396972656
+      ],
+      "bbox_px": [
+        1262,
+        1500,
+        2264,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b88",
+      "text": "Furthermore, these ﬁelds enhance extracellular matrix (ECM)",
+      "bbox_pt": [
+        303.0899963378906,
+        371.87017822265625,
+        544.0398559570312,
+        380.9172668457031
+      ],
+      "bbox_px": [
+        1262,
+        1549,
+        2266,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b89",
+      "text": "mineralization and regulate the expression of adhesion proteins",
+      "bbox_pt": [
+        303.0899963378906,
+        382.8324890136719,
+        544.0574951171875,
+        391.87957763671875
+      ],
+      "bbox_px": [
+        1262,
+        1595,
+        2266,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b90",
+      "text": "like integrin  𝛼 5 𝛽 1, accelerating bone tissue remodeling. [ 91 ] Re-",
+      "bbox_pt": [
+        303.0899963378906,
+        390.6531677246094,
+        544.037109375,
+        402.83294677734375
+      ],
+      "bbox_px": [
+        1262,
+        1627,
+        2266,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b91",
+      "text": "search on PZT nanoparticles has shown signiﬁcant improve-",
+      "bbox_pt": [
+        303.08929443359375,
+        404.74749755859375,
+        544.01904296875,
+        413.7945861816406
+      ],
+      "bbox_px": [
+        1262,
+        1686,
+        2266,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b92",
+      "text": "ments in mineralization eﬃciency in bone marrow-derived mes-",
+      "bbox_pt": [
+        303.08929443359375,
+        415.7098083496094,
+        544.0164184570312,
+        424.75689697265625
+      ],
+      "bbox_px": [
+        1262,
+        1732,
+        2266,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b93",
+      "text": "enchymal stem cells (BMSCs), while PLLA piezoelectric scaﬀolds",
+      "bbox_pt": [
+        303.08929443359375,
+        426.6631774902344,
+        544.0137329101562,
+        435.71026611328125
+      ],
+      "bbox_px": [
+        1262,
+        1777,
+        2266,
+        1815
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b94",
+      "text": "have demonstrated increased bone density and angiogenesis in",
+      "bbox_pt": [
+        303.08929443359375,
+        437.62548828125,
+        544.0263671875,
+        446.6725769042969
+      ],
+      "bbox_px": [
+        1262,
+        1823,
+        2266,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b95",
+      "text": "fracture models. These dual functions make piezoelectric mate-",
+      "bbox_pt": [
+        303.08929443359375,
+        448.58782958984375,
+        544.0155639648438,
+        457.6349182128906
+      ],
+      "bbox_px": [
+        1262,
+        1869,
+        2266,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b96",
+      "text": "rials uniquely suited for bone repair applications. [ 92 ] In wound",
+      "bbox_pt": [
+        303.08929443359375,
+        456.40716552734375,
+        544.0404663085938,
+        468.5882568359375
+      ],
+      "bbox_px": [
+        1262,
+        1901,
+        2266,
+        1952
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b97",
+      "text": "healing, piezoelectric materials create micro-electric ﬁelds that",
+      "bbox_pt": [
+        303.08905029296875,
+        470.5014953613281,
+        544.0107421875,
+        479.548583984375
+      ],
+      "bbox_px": [
+        1262,
+        1960,
+        2266,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b98",
+      "text": "act on keratinocytes and ﬁbroblasts, activating the PI3K/AKT sig-",
+      "bbox_pt": [
+        303.08905029296875,
+        481.46380615234375,
+        544.02685546875,
+        490.5108947753906
+      ],
+      "bbox_px": [
+        1262,
+        2006,
+        2266,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b99",
+      "text": "naling pathway to enhance cell proliferation and migration. [ 93 ]",
+      "bbox_pt": [
+        303.08905029296875,
+        491.52276611328125,
+        543.54345703125,
+        501.4642639160156
+      ],
+      "bbox_px": [
+        1262,
+        2048,
+        2264,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b100",
+      "text": "Additionally, the electric currents induced by piezoelectric ef-",
+      "bbox_pt": [
+        303.0899963378906,
+        503.378173828125,
+        544.0484619140625,
+        512.4252319335938
+      ],
+      "bbox_px": [
+        1262,
+        2097,
+        2266,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b101",
+      "text": "fects stimulate the secretion of vascular endothelial growth fac-",
+      "bbox_pt": [
+        303.0899963378906,
+        514.3404541015625,
+        544.0260620117188,
+        523.3875122070312
+      ],
+      "bbox_px": [
+        1262,
+        2143,
+        2266,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b102",
+      "text": "tor (VEGF), promoting angiogenesis to improve the microenvi-",
+      "bbox_pt": [
+        303.0899963378906,
+        525.2938232421875,
+        544.0270385742188,
+        534.3408813476562
+      ],
+      "bbox_px": [
+        1262,
+        2188,
+        2266,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b103",
+      "text": "ronment with better oxygen and nutrient supply. Piezoelectric",
+      "bbox_pt": [
+        303.0899963378906,
+        536.2561645507812,
+        544.044921875,
+        545.30322265625
+      ],
+      "bbox_px": [
+        1262,
+        2234,
+        2266,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b104",
+      "text": "stimulation also modulates macrophage polarization around the",
+      "bbox_pt": [
+        303.0899963378906,
+        547.218505859375,
+        544.0496215820312,
+        556.2655639648438
+      ],
+      "bbox_px": [
+        1262,
+        2280,
+        2266,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b105",
+      "text": "wound, suppressing excessive inﬂammation and accelerating tis-",
+      "bbox_pt": [
+        303.0899963378906,
+        558.171875,
+        544.0323486328125,
+        567.2189331054688
+      ],
+      "bbox_px": [
+        1262,
+        2325,
+        2266,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b106",
+      "text": "sue reconstruction. [ 90 ] For example, ﬂexible PVDF sensors that",
+      "bbox_pt": [
+        303.0899963378906,
+        565.9910888671875,
+        544.0309448242188,
+        578.1812133789062
+      ],
+      "bbox_px": [
+        1262,
+        2358,
+        2266,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b107",
+      "text": "generate weak electric ﬁelds from dynamic movements have sig-",
+      "bbox_pt": [
+        303.0893249511719,
+        580.0855102539062,
+        544.023681640625,
+        589.132568359375
+      ],
+      "bbox_px": [
+        1262,
+        2417,
+        2266,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b108",
+      "text": "niﬁcantly reduced healing time in skin wound models. [ 94 ] Piezo-",
+      "bbox_pt": [
+        303.0893249511719,
+        587.9060668945312,
+        544.0371704101562,
+        600.0949096679688
+      ],
+      "bbox_px": [
+        1262,
+        2449,
+        2266,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b109",
+      "text": "electric antibacterial dressings incorporating silver ions further",
+      "bbox_pt": [
+        303.08941650390625,
+        602.009521484375,
+        544.0552368164062,
+        611.0565795898438
+      ],
+      "bbox_px": [
+        1262,
+        2508,
+        2266,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b110",
+      "text": "reduce infection risks while expediting wound closure. [ 95 ] In car-",
+      "bbox_pt": [
+        303.08941650390625,
+        609.8302001953125,
+        544.0399780273438,
+        622.0098876953125
+      ],
+      "bbox_px": [
+        1262,
+        2540,
+        2266,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b111",
+      "text": "diovascular disease treatment, piezoelectric materials provide in-",
+      "bbox_pt": [
+        303.08953857421875,
+        623.9244995117188,
+        544.0228881835938,
+        632.9715576171875
+      ],
+      "bbox_px": [
+        1262,
+        2599,
+        2266,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b112",
+      "text": "novative solutions by generating dynamic electric ﬁelds to reg-",
+      "bbox_pt": [
+        303.08953857421875,
+        634.8868408203125,
+        544.05078125,
+        643.9338989257812
+      ],
+      "bbox_px": [
+        1262,
+        2645,
+        2266,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b113",
+      "text": "ulate cardiomyocyte and endothelial cell behavior. These ﬁelds",
+      "bbox_pt": [
+        303.08953857421875,
+        645.8402099609375,
+        544.0217895507812,
+        654.8872680664062
+      ],
+      "bbox_px": [
+        1262,
+        2691,
+        2266,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b114",
+      "text": "stabilize calcium ion ﬂux and activate relevant signaling path-",
+      "bbox_pt": [
+        303.08953857421875,
+        656.802490234375,
+        544.0281372070312,
+        665.8495483398438
+      ],
+      "bbox_px": [
+        1262,
+        2736,
+        2266,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b115",
+      "text": "ways, improving the synchronized contraction and electrical con-",
+      "bbox_pt": [
+        303.08953857421875,
+        667.7648315429688,
+        544.0228881835938,
+        676.8118896484375
+      ],
+      "bbox_px": [
+        1262,
+        2782,
+        2266,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b116",
+      "text": "ductivity of cardiomyocytes, thereby enhancing heart function.",
+      "bbox_pt": [
+        303.08953857421875,
+        678.7181396484375,
+        544.05615234375,
+        687.7651977539062
+      ],
+      "bbox_px": [
+        1262,
+        2827,
+        2266,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b117",
+      "text": "Moreover, dynamic electric stimulation promotes VEGF secre-",
+      "bbox_pt": [
+        303.08953857421875,
+        689.6804809570312,
+        544.0067749023438,
+        698.7275390625
+      ],
+      "bbox_px": [
+        1262,
+        2873,
+        2266,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b118",
+      "text": "tion, facilitating vascular repair and neovascularization, particu-",
+      "bbox_pt": [
+        303.08953857421875,
+        700.642822265625,
+        544.0236206054688,
+        709.6898803710938
+      ],
+      "bbox_px": [
+        1262,
+        2919,
+        2266,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b119",
+      "text": "larly in ischemic tissues. [ 90 ] Flexible piezoelectric ﬁlms applied",
+      "bbox_pt": [
+        303.08953857421875,
+        708.4610595703125,
+        544.01953125,
+        720.6432495117188
+      ],
+      "bbox_px": [
+        1262,
+        2951,
+        2266,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b120",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b121",
+      "text": "2411209 (8 of 29)",
+      "bbox_pt": [
+        190.69960021972656,
+        743.669189453125,
+        255.0029754638672,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        794,
+        3098,
+        1062,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p8_b122",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2345886230469,
+        745.216064453125,
+        544.045654296875,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p8_b123",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 124
+  }
+}

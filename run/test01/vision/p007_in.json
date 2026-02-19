@@ -1,0 +1,1743 @@
+{
+  "page": 7,
+  "image_path": "run\\test01\\pages\\p007.png",
+  "blocks": [
+    {
+      "block_id": "p7_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b1",
+      "text": "7",
+      "bbox_pt": [
+        556.6519165039062,
+        760.4366455078125,
+        561.2598876953125,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2319,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b4",
+      "text": "and  ATROGIN1  (refs.  91 – 93 ). These findings have highlighted the shift ",
+      "bbox_pt": [
+        39.685001373291016,
+        112.0626220703125,
+        296.2591552734375,
+        122.276123046875
+      ],
+      "bbox_px": [
+        165,
+        466,
+        1234,
+        509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b5",
+      "text": "from protein synthesis to autophagy, as well as increased proteasomal ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.84562683105469,
+        296.3746643066406,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        511,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b6",
+      "text": "activity and atrophy of individual muscle fibres 84 , 94 . The central regu-",
+      "bbox_pt": [
+        39.685001373291016,
+        133.2574005126953,
+        294.80322265625,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        555,
+        1228,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b7",
+      "text": "lators of atrophy are yet to be defined. NF-κB is a transcription factor ",
+      "bbox_pt": [
+        39.68846130371094,
+        144.3453826904297,
+        296.22381591796875,
+        154.52587890625
+      ],
+      "bbox_px": [
+        165,
+        601,
+        1234,
+        643
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b8",
+      "text": "thought to be a key mediator of muscle atrophy in several pathologi-",
+      "bbox_pt": [
+        39.68846130371094,
+        155.0951385498047,
+        294.7702331542969,
+        165.275634765625
+      ],
+      "bbox_px": [
+        165,
+        646,
+        1228,
+        688
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b9",
+      "text": "cal states, including cancer cachexia and ageing 95 . However, the role ",
+      "bbox_pt": [
+        39.685001373291016,
+        165.5074005126953,
+        296.273193359375,
+        176.026123046875
+      ],
+      "bbox_px": [
+        165,
+        689,
+        1234,
+        733
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b10",
+      "text": "of NF-κB in rotator cuff tear-induced atrophy seems to be minimal, as ",
+      "bbox_pt": [
+        39.685001373291016,
+        176.5956268310547,
+        296.236083984375,
+        186.776123046875
+      ],
+      "bbox_px": [
+        165,
+        735,
+        1234,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b11",
+      "text": "gain-of-function and loss-of-function studies have shown little dif-",
+      "bbox_pt": [
+        306.1416931152344,
+        112.09562683105469,
+        561.2598266601562,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2338,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b12",
+      "text": "ference in muscle size in a mouse model of full thickness rotator cuff ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.84562683105469,
+        562.7249755859375,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        511,
+        2344,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b13",
+      "text": "tears 90 . Relatively few studies have evaluated the role of the primary ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.2574005126953,
+        562.7388305664062,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        555,
+        2344,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b14",
+      "text": "muscle stem cell, the satellite cell, in the maintenance of muscle size. ",
+      "bbox_pt": [
+        306.1416931152344,
+        144.3456268310547,
+        562.6837768554688,
+        154.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        601,
+        2344,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b15",
+      "text": "In animal models of full-thickness rotator cuff tears, the number of ",
+      "bbox_pt": [
+        306.1416931152344,
+        155.0956268310547,
+        562.7554321289062,
+        165.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        646,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b16",
+      "text": "satellite cells remained constant 96 , suggesting that the presence ",
+      "bbox_pt": [
+        306.1416931152344,
+        165.5074005126953,
+        562.6968383789062,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        689,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b17",
+      "text": "of a tear does not cause depletion of this important muscle stem cell. ",
+      "bbox_pt": [
+        306.1416931152344,
+        176.5956268310547,
+        562.69921875,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b18",
+      "text": "Muscle quality",
+      "bbox_pt": [
+        461.5954895019531,
+        224.81704711914062,
+        506.88092041015625,
+        233.78704833984375
+      ],
+      "bbox_px": [
+        1923,
+        936,
+        2112,
+        974
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b19",
+      "text": "•  Altered load, denervation",
+      "bbox_pt": [
+        461.5954895019531,
+        232.41552734375,
+        543.234375,
+        241.28802490234375
+      ],
+      "bbox_px": [
+        1923,
+        968,
+        2263,
+        1005
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b20",
+      "text": "•  Atrophy",
+      "bbox_pt": [
+        461.5954895019531,
+        239.91650390625,
+        490.96246337890625,
+        248.78900146484375
+      ],
+      "bbox_px": [
+        1923,
+        999,
+        2045,
+        1036
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b21",
+      "text": "•  FOXO1, AKT, mTOR",
+      "bbox_pt": [
+        461.5954895019531,
+        247.41748046875,
+        523.339599609375,
+        256.28997802734375
+      ],
+      "bbox_px": [
+        1923,
+        1030,
+        2180,
+        1067
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b22",
+      "text": "•  Fatty infiltration",
+      "bbox_pt": [
+        461.5954895019531,
+        254.91845703125,
+        514.0186157226562,
+        263.79095458984375
+      ],
+      "bbox_px": [
+        1923,
+        1062,
+        2141,
+        1099
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b23",
+      "text": "•  FAP stem cells",
+      "bbox_pt": [
+        461.5954895019531,
+        262.41943359375,
+        510.4625244140625,
+        271.29193115234375
+      ],
+      "bbox_px": [
+        1923,
+        1093,
+        2126,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b24",
+      "text": "•  PPARγ, CREBP, DLK1",
+      "bbox_pt": [
+        461.5954895019531,
+        269.92041015625,
+        526.0546875,
+        278.79290771484375
+      ],
+      "bbox_px": [
+        1923,
+        1124,
+        2191,
+        1161
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b25",
+      "text": "a",
+      "bbox_pt": [
+        41.39179992675781,
+        204.13519287109375,
+        46.832298278808594,
+        217.09939575195312
+      ],
+      "bbox_px": [
+        172,
+        850,
+        195,
+        904
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b26",
+      "text": "b",
+      "bbox_pt": [
+        40.99190139770508,
+        376.15728759765625,
+        46.99970245361328,
+        389.1214904785156
+      ],
+      "bbox_px": [
+        170,
+        1567,
+        195,
+        1621
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b27",
+      "text": "Rotator cuﬀ ",
+      "bbox_pt": [
+        43.98849868774414,
+        500.6451416015625,
+        81.85750579833984,
+        509.6151428222656
+      ],
+      "bbox_px": [
+        183,
+        2086,
+        341,
+        2123
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b28",
+      "text": "tendinopathy",
+      "bbox_pt": [
+        43.98849868774414,
+        508.1461486816406,
+        85.34735107421875,
+        517.1161499023438
+      ],
+      "bbox_px": [
+        183,
+        2117,
+        355,
+        2154
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b29",
+      "text": "Extrinsic mechanisms",
+      "bbox_pt": [
+        112.77320098876953,
+        421.91943359375,
+        179.94354248046875,
+        430.8894348144531
+      ],
+      "bbox_px": [
+        469,
+        1757,
+        749,
+        1795
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b30",
+      "text": "•  Originates external ",
+      "bbox_pt": [
+        112.77320098876953,
+        429.5179443359375,
+        176.9672393798828,
+        438.39044189453125
+      ],
+      "bbox_px": [
+        469,
+        1789,
+        737,
+        1826
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b31",
+      "text": " to tendon ",
+      "bbox_pt": [
+        112.77320098876953,
+        437.0189514160156,
+        149.31103515625,
+        445.8914489746094
+      ],
+      "bbox_px": [
+        469,
+        1820,
+        622,
+        1857
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b32",
+      "text": "•  Compression or shear",
+      "bbox_pt": [
+        112.77320098876953,
+        444.51995849609375,
+        184.03794860839844,
+        453.3924560546875
+      ],
+      "bbox_px": [
+        469,
+        1852,
+        766,
+        1889
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b33",
+      "text": "Subacromial ",
+      "bbox_pt": [
+        212.30050659179688,
+        403.3421325683594,
+        251.7620391845703,
+        412.2146301269531
+      ],
+      "bbox_px": [
+        884,
+        1680,
+        1049,
+        1717
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b34",
+      "text": "impingement",
+      "bbox_pt": [
+        212.30050659179688,
+        410.8431396484375,
+        252.41201782226562,
+        419.71563720703125
+      ],
+      "bbox_px": [
+        884,
+        1711,
+        1051,
+        1748
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b35",
+      "text": "Internal ",
+      "bbox_pt": [
+        212.3000030517578,
+        456.0228271484375,
+        236.9350128173828,
+        464.89532470703125
+      ],
+      "bbox_px": [
+        884,
+        1900,
+        987,
+        1937
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b36",
+      "text": "impingement",
+      "bbox_pt": [
+        212.3000030517578,
+        463.5238342285156,
+        252.41151428222656,
+        472.3963317871094
+      ],
+      "bbox_px": [
+        884,
+        1931,
+        1051,
+        1968
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b37",
+      "text": "Anatomical and ",
+      "bbox_pt": [
+        281.0846862792969,
+        429.89874267578125,
+        329.79571533203125,
+        438.771240234375
+      ],
+      "bbox_px": [
+        1171,
+        1791,
+        1374,
+        1828
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b38",
+      "text": "biomechanical",
+      "bbox_pt": [
+        281.0846862792969,
+        437.3997497558594,
+        325.33673095703125,
+        446.2722473144531
+      ],
+      "bbox_px": [
+        1171,
+        1822,
+        1355,
+        1859
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b39",
+      "text": "Pectoralis muscle ",
+      "bbox_pt": [
+        487.5451965332031,
+        381.2025451660156,
+        541.9949951171875,
+        390.0750427246094
+      ],
+      "bbox_px": [
+        2031,
+        1588,
+        2258,
+        1625
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b40",
+      "text": "length",
+      "bbox_pt": [
+        487.5451965332031,
+        388.70355224609375,
+        506.97369384765625,
+        397.5760498046875
+      ],
+      "bbox_px": [
+        2031,
+        1619,
+        2112,
+        1656
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b41",
+      "text": "Scapular muscle ",
+      "bbox_pt": [
+        487.5451965332031,
+        409.80804443359375,
+        539.2981567382812,
+        418.6805419921875
+      ],
+      "bbox_px": [
+        2031,
+        1707,
+        2247,
+        1744
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b42",
+      "text": "performance",
+      "bbox_pt": [
+        487.5451965332031,
+        417.3090515136719,
+        526.3372192382812,
+        426.1815490722656
+      ],
+      "bbox_px": [
+        2031,
+        1738,
+        2193,
+        1775
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b43",
+      "text": "Thoracic spine posture ",
+      "bbox_pt": [
+        487.5451965332031,
+        438.4144287109375,
+        557.4917602539062,
+        447.28692626953125
+      ],
+      "bbox_px": [
+        2031,
+        1826,
+        2322,
+        1863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b44",
+      "text": "and mobility",
+      "bbox_pt": [
+        487.5451965332031,
+        445.9154357910156,
+        524.9072265625,
+        454.7879333496094
+      ],
+      "bbox_px": [
+        2031,
+        1857,
+        2187,
+        1894
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b45",
+      "text": "Glenohumeral capsule ",
+      "bbox_pt": [
+        487.5451965332031,
+        467.01983642578125,
+        557.1342163085938,
+        475.892333984375
+      ],
+      "bbox_px": [
+        2031,
+        1945,
+        2321,
+        1982
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b46",
+      "text": "length and extensibility",
+      "bbox_pt": [
+        487.5451965332031,
+        474.5208435058594,
+        557.4520874023438,
+        483.3933410644531
+      ],
+      "bbox_px": [
+        2031,
+        1977,
+        2322,
+        2014
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b47",
+      "text": "Rotator cuﬀ muscle ",
+      "bbox_pt": [
+        487.5451965332031,
+        496.6253356933594,
+        547.8651733398438,
+        505.4978332519531
+      ],
+      "bbox_px": [
+        2031,
+        2069,
+        2282,
+        2106
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b48",
+      "text": "performance",
+      "bbox_pt": [
+        487.5451965332031,
+        504.1263427734375,
+        526.3372192382812,
+        512.9988403320312
+      ],
+      "bbox_px": [
+        2031,
+        2100,
+        2193,
+        2137
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b49",
+      "text": "Subacromial spur",
+      "bbox_pt": [
+        369.1693115234375,
+        381.2025451660156,
+        421.8713073730469,
+        390.0750427246094
+      ],
+      "bbox_px": [
+        1538,
+        1588,
+        1757,
+        1625
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b50",
+      "text": "Acromion shape",
+      "bbox_pt": [
+        369.1693115234375,
+        407.2610168457031,
+        417.9771423339844,
+        416.1335144042969
+      ],
+      "bbox_px": [
+        1538,
+        1696,
+        1741,
+        1733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b51",
+      "text": "Acromioclavicular spur",
+      "bbox_pt": [
+        369.1693115234375,
+        433.31964111328125,
+        438.3612060546875,
+        442.192138671875
+      ],
+      "bbox_px": [
+        1538,
+        1805,
+        1826,
+        1842
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b52",
+      "text": "Scapular kinematics",
+      "bbox_pt": [
+        369.1693115234375,
+        459.37823486328125,
+        429.61285400390625,
+        468.250732421875
+      ],
+      "bbox_px": [
+        1538,
+        1914,
+        1790,
+        1951
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b53",
+      "text": "Humeral kinematics",
+      "bbox_pt": [
+        369.1693115234375,
+        485.43682861328125,
+        428.6307067871094,
+        494.309326171875
+      ],
+      "bbox_px": [
+        1538,
+        2022,
+        1785,
+        2059
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b54",
+      "text": "Intrinsic mechanisms",
+      "bbox_pt": [
+        112.77320098876953,
+        554.3296508789062,
+        178.4556884765625,
+        563.2996215820312
+      ],
+      "bbox_px": [
+        469,
+        2309,
+        743,
+        2347
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b55",
+      "text": "•  Originates within   ",
+      "bbox_pt": [
+        112.77320098876953,
+        561.9281005859375,
+        174.61683654785156,
+        570.8005981445312
+      ],
+      "bbox_px": [
+        469,
+        2341,
+        727,
+        2378
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b56",
+      "text": " tendon",
+      "bbox_pt": [
+        112.77320098876953,
+        569.4291381835938,
+        139.89120483398438,
+        578.3016357421875
+      ],
+      "bbox_px": [
+        469,
+        2372,
+        582,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b57",
+      "text": "•  Degenerative  ",
+      "bbox_pt": [
+        112.77320098876953,
+        576.93017578125,
+        161.44520568847656,
+        585.8026733398438
+      ],
+      "bbox_px": [
+        469,
+        2403,
+        672,
+        2440
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b58",
+      "text": " processes",
+      "bbox_pt": [
+        112.77320098876953,
+        584.43115234375,
+        148.78189086914062,
+        593.3036499023438
+      ],
+      "bbox_px": [
+        469,
+        2435,
+        619,
+        2472
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b59",
+      "text": "•  Potentially associated  ",
+      "bbox_pt": [
+        112.77320098876953,
+        591.93212890625,
+        186.8400421142578,
+        600.8046264648438
+      ],
+      "bbox_px": [
+        469,
+        2466,
+        778,
+        2503
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b60",
+      "text": " with ageing",
+      "bbox_pt": [
+        112.77320098876953,
+        599.4331665039062,
+        153.42552185058594,
+        608.3056640625
+      ],
+      "bbox_px": [
+        469,
+        2497,
+        639,
+        2534
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b61",
+      "text": "Tendon vascularity",
+      "bbox_pt": [
+        281.0846862792969,
+        518.5775146484375,
+        337.2252197265625,
+        527.4500122070312
+      ],
+      "bbox_px": [
+        1171,
+        2160,
+        1405,
+        2197
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b62",
+      "text": "Tendon biology",
+      "bbox_pt": [
+        281.0846862792969,
+        548.0735473632812,
+        327.5921936035156,
+        556.946044921875
+      ],
+      "bbox_px": [
+        1171,
+        2283,
+        1364,
+        2320
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b63",
+      "text": "PG, GAG and collagen content",
+      "bbox_pt": [
+        369.1693115234375,
+        548.0735473632812,
+        460.1946716308594,
+        556.946044921875
+      ],
+      "bbox_px": [
+        1538,
+        2283,
+        1917,
+        2320
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b64",
+      "text": "Tendon mechanical ",
+      "bbox_pt": [
+        281.0846862792969,
+        573.8196411132812,
+        341.42425537109375,
+        582.692138671875
+      ],
+      "bbox_px": [
+        1171,
+        2390,
+        1422,
+        2427
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b65",
+      "text": "properties",
+      "bbox_pt": [
+        281.0846862792969,
+        581.3206176757812,
+        311.9005432128906,
+        590.193115234375
+      ],
+      "bbox_px": [
+        1171,
+        2422,
+        1299,
+        2459
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b66",
+      "text": "Tendon, strain and stiﬀness",
+      "bbox_pt": [
+        369.1693115234375,
+        577.5696411132812,
+        450.5291442871094,
+        586.442138671875
+      ],
+      "bbox_px": [
+        1538,
+        2406,
+        1877,
+        2443
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b67",
+      "text": "Tendon morphology",
+      "bbox_pt": [
+        281.0846862792969,
+        607.0667114257812,
+        341.91168212890625,
+        615.939208984375
+      ],
+      "bbox_px": [
+        1171,
+        2529,
+        1424,
+        2566
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b68",
+      "text": "Thickness, irregularity",
+      "bbox_pt": [
+        369.1693115234375,
+        607.0657348632812,
+        434.7348327636719,
+        615.938232421875
+      ],
+      "bbox_px": [
+        1538,
+        2529,
+        1811,
+        2566
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b69",
+      "text": "Genetic ",
+      "bbox_pt": [
+        281.0846862792969,
+        632.8128662109375,
+        306.2787170410156,
+        641.6853637695312
+      ],
+      "bbox_px": [
+        1171,
+        2636,
+        1276,
+        2673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b70",
+      "text": "predisposition",
+      "bbox_pt": [
+        281.0846862792969,
+        640.3138427734375,
+        323.7636413574219,
+        649.1863403320312
+      ],
+      "bbox_px": [
+        1171,
+        2667,
+        1349,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b71",
+      "text": "Polymorphism of collagen, ",
+      "bbox_pt": [
+        369.1693115234375,
+        632.8118286132812,
+        451.211669921875,
+        641.684326171875
+      ],
+      "bbox_px": [
+        1538,
+        2636,
+        1880,
+        2673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b72",
+      "text": "other factors",
+      "bbox_pt": [
+        369.1693115234375,
+        640.3128662109375,
+        407.53228759765625,
+        649.1853637695312
+      ],
+      "bbox_px": [
+        1538,
+        2667,
+        1698,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b73",
+      "text": "Tendinopathy",
+      "bbox_pt": [
+        43.84199905395508,
+        225.70474243164062,
+        86.14399719238281,
+        234.67474365234375
+      ],
+      "bbox_px": [
+        182,
+        940,
+        358,
+        977
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b74",
+      "text": "•  Altered mechanical load",
+      "bbox_pt": [
+        43.84199905395508,
+        233.30322265625,
+        122.60184478759766,
+        242.17572021484375
+      ],
+      "bbox_px": [
+        182,
+        972,
+        510,
+        1009
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b75",
+      "text": "•  Altered vascularity",
+      "bbox_pt": [
+        43.84199905395508,
+        240.80419921875,
+        105.24748992919922,
+        249.67669677734375
+      ],
+      "bbox_px": [
+        182,
+        1003,
+        438,
+        1040
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b76",
+      "text": "•  Key proteins: mTOR, AKT, MMPs",
+      "bbox_pt": [
+        43.84199905395508,
+        248.30517578125,
+        143.8516387939453,
+        257.17767333984375
+      ],
+      "bbox_px": [
+        182,
+        1034,
+        599,
+        1071
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b77",
+      "text": "Tendon–bone healing",
+      "bbox_pt": [
+        101.66230010986328,
+        284.31591796875,
+        168.3068084716797,
+        293.2859191894531
+      ],
+      "bbox_px": [
+        423,
+        1184,
+        701,
+        1222
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b78",
+      "text": "•  Biomechanical ",
+      "bbox_pt": [
+        101.66230010986328,
+        291.9144287109375,
+        153.09681701660156,
+        300.78692626953125
+      ],
+      "bbox_px": [
+        423,
+        1216,
+        637,
+        1253
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b79",
+      "text": " fixation",
+      "bbox_pt": [
+        101.66230010986328,
+        299.4154357910156,
+        129.404296875,
+        308.2879333496094
+      ],
+      "bbox_px": [
+        423,
+        1247,
+        539,
+        1284
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b80",
+      "text": "•  PRP, MSC ",
+      "bbox_pt": [
+        101.66230010986328,
+        306.91644287109375,
+        137.24981689453125,
+        315.7889404296875
+      ],
+      "bbox_px": [
+        423,
+        1278,
+        571,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b81",
+      "text": " augmentation",
+      "bbox_pt": [
+        101.66230010986328,
+        314.4174499511719,
+        149.1837921142578,
+        323.2899475097656
+      ],
+      "bbox_px": [
+        423,
+        1310,
+        621,
+        1347
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b82",
+      "text": "•  Growth factors: ",
+      "bbox_pt": [
+        101.66230010986328,
+        321.91845703125,
+        155.33218383789062,
+        330.79095458984375
+      ],
+      "bbox_px": [
+        423,
+        1341,
+        647,
+        1378
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b83",
+      "text": " VEGF, TGFβ, IGF",
+      "bbox_pt": [
+        101.66230010986328,
+        329.4194641113281,
+        155.4628143310547,
+        338.2919616699219
+      ],
+      "bbox_px": [
+        423,
+        1372,
+        647,
+        1409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b84",
+      "text": "Fig. 3 | Muscle and tendon biology of the rotator cuff. a , Tendinopathy is ",
+      "bbox_pt": [
+        39.68510055541992,
+        656.6841430664062,
+        273.69927978515625,
+        665.4411010742188
+      ],
+      "bbox_px": [
+        165,
+        2736,
+        1140,
+        2772
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b85",
+      "text": "caused by a variety of factors including overuse, mechanical load alterations and ",
+      "bbox_pt": [
+        39.68510437011719,
+        666.7991333007812,
+        292.6301574707031,
+        675.4371337890625
+      ],
+      "bbox_px": [
+        165,
+        2778,
+        1219,
+        2814
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b86",
+      "text": "changes in vascularity. Muscle degeneration, which is due to muscle atrophy ",
+      "bbox_pt": [
+        39.68510437011719,
+        676.8021240234375,
+        279.53662109375,
+        685.4401245117188
+      ],
+      "bbox_px": [
+        165,
+        2820,
+        1164,
+        2856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b87",
+      "text": "and fatty infiltration, is typically seen in the setting of a large rotator cuff tear. ",
+      "bbox_pt": [
+        39.68510437011719,
+        686.80517578125,
+        282.2854919433594,
+        695.4431762695312
+      ],
+      "bbox_px": [
+        165,
+        2861,
+        1176,
+        2897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b88",
+      "text": "Tendon–bone healing is primarily influenced by the biomechanical repair ",
+      "bbox_pt": [
+        39.68510437011719,
+        696.8081665039062,
+        271.193359375,
+        705.4461669921875
+      ],
+      "bbox_px": [
+        165,
+        2903,
+        1129,
+        2939
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b89",
+      "text": "strategy, and treatments such as platelet-rich plasma (PRP) and mesenchymal ",
+      "bbox_pt": [
+        39.68510437011719,
+        706.8111572265625,
+        283.889892578125,
+        715.4491577148438
+      ],
+      "bbox_px": [
+        165,
+        2945,
+        1182,
+        2981
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b90",
+      "text": "stem cell (MSC) delivery have been shown to improve retear rates, but not to ",
+      "bbox_pt": [
+        39.68510437011719,
+        716.8141479492188,
+        278.7476806640625,
+        725.4521484375
+      ],
+      "bbox_px": [
+        165,
+        2986,
+        1161,
+        3022
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b91",
+      "text": "affect clinical outcomes.  b , The pathogenesis of rotator cuff is complicated, ",
+      "bbox_pt": [
+        39.68510437011719,
+        726.7051391601562,
+        277.4596862792969,
+        735.4620971679688
+      ],
+      "bbox_px": [
+        165,
+        3027,
+        1156,
+        3064
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b92",
+      "text": "with both extrinsic and intrinsic factors contributing to tendon degeneration. ",
+      "bbox_pt": [
+        39.68510437011719,
+        736.8201293945312,
+        284.3421325683594,
+        745.4581298828125
+      ],
+      "bbox_px": [
+        165,
+        3070,
+        1184,
+        3106
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b93",
+      "text": "Extrinsic factors, including anatomical changes such as acromial bone spurs ",
+      "bbox_pt": [
+        306.14007568359375,
+        656.817138671875,
+        545.64990234375,
+        665.4551391601562
+      ],
+      "bbox_px": [
+        1275,
+        2736,
+        2273,
+        2772
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b94",
+      "text": "and degeneration of the acromioclavicular joint, cause impingement on the ",
+      "bbox_pt": [
+        306.14007568359375,
+        666.8201293945312,
+        544.0531005859375,
+        675.4581298828125
+      ],
+      "bbox_px": [
+        1275,
+        2778,
+        2266,
+        2814
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b95",
+      "text": "rotator cuff tendon. Alterations in shoulder kinematics similarly cause extrinsic ",
+      "bbox_pt": [
+        306.14007568359375,
+        676.8231201171875,
+        556.386474609375,
+        685.4611206054688
+      ],
+      "bbox_px": [
+        1275,
+        2820,
+        2318,
+        2856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b96",
+      "text": "load alterations as well as changes in muscle forces across the shoulder joint. ",
+      "bbox_pt": [
+        306.14007568359375,
+        686.826171875,
+        546.510009765625,
+        695.4641723632812
+      ],
+      "bbox_px": [
+        1275,
+        2861,
+        2277,
+        2897
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b97",
+      "text": "Intrinsic degeneration is due, in part, to alterations in collagen structure ",
+      "bbox_pt": [
+        306.14007568359375,
+        696.8291625976562,
+        532.706787109375,
+        705.4671630859375
+      ],
+      "bbox_px": [
+        1275,
+        2903,
+        2219,
+        2939
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b98",
+      "text": "and orientation, changes in vascularity, and probably genetic factors that ",
+      "bbox_pt": [
+        306.14007568359375,
+        706.8321533203125,
+        536.5042724609375,
+        715.4701538085938
+      ],
+      "bbox_px": [
+        1275,
+        2945,
+        2235,
+        2981
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b99",
+      "text": "predispose some patients towards tendinopathy. These changes result in ",
+      "bbox_pt": [
+        306.14007568359375,
+        716.8351440429688,
+        535.6692504882812,
+        725.47314453125
+      ],
+      "bbox_px": [
+        1275,
+        2986,
+        2231,
+        3022
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b100",
+      "text": "increased tendon stiffness and loss of the intrinsic structure of the tendon. FAP, ",
+      "bbox_pt": [
+        306.14007568359375,
+        726.838134765625,
+        554.71630859375,
+        735.4761352539062
+      ],
+      "bbox_px": [
+        1275,
+        3028,
+        2311,
+        3064
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b101",
+      "text": "fibroadipoprogenitor.",
+      "bbox_pt": [
+        306.14007568359375,
+        736.8411254882812,
+        376.84503173828125,
+        745.4791259765625
+      ],
+      "bbox_px": [
+        1275,
+        3070,
+        1570,
+        3106
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 102
+  }
+}

@@ -1,0 +1,1896 @@
+{
+  "page": 5,
+  "image_path": "run\\stress01\\pages\\p005.png",
+  "blocks": [
+    {
+      "block_id": "p5_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b2",
+      "text": "variation, four fundamental working modalities of TENGs have",
+      "bbox_pt": [
+        50.81093978881836,
+        75.97752380371094,
+        291.7541809082031,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        211,
+        316,
+        1215,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b3",
+      "text": "been proposed and can be categorized into two types: contact sep-",
+      "bbox_pt": [
+        50.81093978881836,
+        86.93986511230469,
+        291.7569274902344,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        211,
+        362,
+        1215,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b4",
+      "text": "aration (Figure  2d,e ) and sliding (Figure  2f,g ). [ 47,48 ] The potential",
+      "bbox_pt": [
+        50.81093978881836,
+        94.76017761230469,
+        291.7488098144531,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        211,
+        394,
+        1215,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b5",
+      "text": "diﬀerence between the two materials was determined using an",
+      "bbox_pt": [
+        50.810020446777344,
+        108.85453796386719,
+        291.7344665527344,
+        117.9016342163086
+      ],
+      "bbox_px": [
+        211,
+        453,
+        1215,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b6",
+      "text": "external circuit for electrical energy-harvesting. When the mate-",
+      "bbox_pt": [
+        50.810020446777344,
+        119.81681823730469,
+        291.7344970703125,
+        128.86392211914062
+      ],
+      "bbox_px": [
+        211,
+        499,
+        1215,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b7",
+      "text": "rials are in contact and then separated repeatedly (through me-",
+      "bbox_pt": [
+        50.810020446777344,
+        130.77915954589844,
+        291.7623291015625,
+        139.82626342773438
+      ],
+      "bbox_px": [
+        211,
+        544,
+        1215,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b8",
+      "text": "chanical movements such as tapping or rubbing), the processes",
+      "bbox_pt": [
+        50.810020446777344,
+        141.73252868652344,
+        291.73089599609375,
+        150.77963256835938
+      ],
+      "bbox_px": [
+        211,
+        590,
+        1215,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b9",
+      "text": "of contact electriﬁcation and electrostatic induction recur, thereby",
+      "bbox_pt": [
+        50.810020446777344,
+        152.69480895996094,
+        291.7290954589844,
+        161.74191284179688
+      ],
+      "bbox_px": [
+        211,
+        636,
+        1215,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b10",
+      "text": "generating an alternating current. [ 49 ] The electrical output pro-",
+      "bbox_pt": [
+        50.810020446777344,
+        160.51414489746094,
+        291.7565002441406,
+        172.70425415039062
+      ],
+      "bbox_px": [
+        211,
+        668,
+        1215,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b11",
+      "text": "duced by the TENG exhibits a high voltage and low current;",
+      "bbox_pt": [
+        50.81049728393555,
+        174.60850524902344,
+        291.7582702636719,
+        183.65560913085938
+      ],
+      "bbox_px": [
+        211,
+        727,
+        1215,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b12",
+      "text": "however, its triboelectric characteristics are readily inﬂuenced by",
+      "bbox_pt": [
+        50.81049728393555,
+        185.5708465576172,
+        291.7725830078125,
+        194.61795043945312
+      ],
+      "bbox_px": [
+        211,
+        773,
+        1215,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b13",
+      "text": "the surface properties of the materials. This issue can be tack-",
+      "bbox_pt": [
+        50.81049728393555,
+        196.53318786621094,
+        291.7601013183594,
+        205.58029174804688
+      ],
+      "bbox_px": [
+        211,
+        818,
+        1215,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b14",
+      "text": "led through surface modiﬁcation approaches, such as injecting",
+      "bbox_pt": [
+        50.81049728393555,
+        207.4864959716797,
+        291.7331848144531,
+        216.53359985351562
+      ],
+      "bbox_px": [
+        211,
+        864,
+        1215,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b15",
+      "text": "charged particles and controlling defects, or it can be mitigated",
+      "bbox_pt": [
+        50.81049728393555,
+        218.44883728027344,
+        291.7278137207031,
+        227.49594116210938
+      ],
+      "bbox_px": [
+        211,
+        910,
+        1215,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b16",
+      "text": "by physical methods, such as material surface plasma treatment.",
+      "bbox_pt": [
+        50.81049728393555,
+        229.4111785888672,
+        291.74664306640625,
+        238.45828247070312
+      ],
+      "bbox_px": [
+        211,
+        955,
+        1215,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b17",
+      "text": "Additionally, the output performance of a TENG can be enhanced",
+      "bbox_pt": [
+        50.81049728393555,
+        240.36448669433594,
+        291.7492980957031,
+        249.41159057617188
+      ],
+      "bbox_px": [
+        211,
+        1001,
+        1215,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b18",
+      "text": "by augmenting the friction area, for instance, by modifying the",
+      "bbox_pt": [
+        50.81049728393555,
+        251.3268280029297,
+        291.74835205078125,
+        260.3739318847656
+      ],
+      "bbox_px": [
+        211,
+        1047,
+        1215,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b19",
+      "text": "simple graphene structure into a wrinkled graphene structure.",
+      "bbox_pt": [
+        50.81049728393555,
+        262.28021240234375,
+        291.7511291503906,
+        271.3273010253906
+      ],
+      "bbox_px": [
+        211,
+        1092,
+        1215,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b20",
+      "text": "TENGs can be fabricated on ﬂexible substrates with curved or",
+      "bbox_pt": [
+        50.81049728393555,
+        273.2425231933594,
+        291.7528991699219,
+        282.28961181640625
+      ],
+      "bbox_px": [
+        211,
+        1138,
+        1215,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b21",
+      "text": "irregular surfaces. This high ﬂexibility is beneﬁcial for applica-",
+      "bbox_pt": [
+        50.81049728393555,
+        284.204833984375,
+        291.7215576171875,
+        293.2519226074219
+      ],
+      "bbox_px": [
+        211,
+        1184,
+        1215,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b22",
+      "text": "tions that require conformal energy collection or integration into",
+      "bbox_pt": [
+        50.81049728393555,
+        295.158203125,
+        291.7610168457031,
+        304.2052917480469
+      ],
+      "bbox_px": [
+        211,
+        1229,
+        1215,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b23",
+      "text": "wearable or ﬂexible electronic devices. [ 46 ]",
+      "bbox_pt": [
+        50.81049728393555,
+        305.2137756347656,
+        204.0723419189453,
+        315.1676025390625
+      ],
+      "bbox_px": [
+        211,
+        1271,
+        850,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b24",
+      "text": "The application of nanogenerators has extensive applications.",
+      "bbox_pt": [
+        60.26993942260742,
+        317.07818603515625,
+        291.726806640625,
+        326.1252746582031
+      ],
+      "bbox_px": [
+        251,
+        1321,
+        1215,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b25",
+      "text": "In the medical ﬁeld, nanogenerators tailored for diverse applica-",
+      "bbox_pt": [
+        50.811279296875,
+        328.0315246582031,
+        291.7671203613281,
+        337.07861328125
+      ],
+      "bbox_px": [
+        211,
+        1366,
+        1215,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b26",
+      "text": "tion scenarios and diagnostic and therapeutic requirements have",
+      "bbox_pt": [
+        50.811279296875,
+        338.99383544921875,
+        291.76715087890625,
+        348.0409240722656
+      ],
+      "bbox_px": [
+        211,
+        1412,
+        1215,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b27",
+      "text": "demonstrated remarkable performance in treating neuromotor",
+      "bbox_pt": [
+        50.811279296875,
+        349.9561767578125,
+        291.74920654296875,
+        359.0032653808594
+      ],
+      "bbox_px": [
+        211,
+        1458,
+        1215,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b28",
+      "text": "system disorders, expediting skin wound healing, and moni-",
+      "bbox_pt": [
+        50.811279296875,
+        360.9095153808594,
+        291.7510681152344,
+        369.95660400390625
+      ],
+      "bbox_px": [
+        211,
+        1503,
+        1215,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b29",
+      "text": "toring physiological indicators. [ 50–52 ] Gonzalo et al. developed a",
+      "bbox_pt": [
+        50.811279296875,
+        368.72918701171875,
+        291.75531005859375,
+        380.9189453125
+      ],
+      "bbox_px": [
+        211,
+        1536,
+        1215,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b30",
+      "text": "PENG based on 2D ZnO nanosheets (Figure  2h ). This nanogen-",
+      "bbox_pt": [
+        50.810218811035156,
+        382.8324890136719,
+        291.74725341796875,
+        391.87957763671875
+      ],
+      "bbox_px": [
+        211,
+        1595,
+        1215,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b31",
+      "text": "erator can interact with living cells to form a local electric ﬁeld.",
+      "bbox_pt": [
+        50.810218811035156,
+        393.7858581542969,
+        291.7652282714844,
+        402.83294677734375
+      ],
+      "bbox_px": [
+        211,
+        1640,
+        1215,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b32",
+      "text": "Moreover, it can self-stimulate and regulate cell activities with-",
+      "bbox_pt": [
+        50.810218811035156,
+        404.7481689453125,
+        291.73822021484375,
+        413.7952575683594
+      ],
+      "bbox_px": [
+        211,
+        1686,
+        1215,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b33",
+      "text": "out the assistance of any external chemical or physical stimuli.",
+      "bbox_pt": [
+        50.810218811035156,
+        415.71051025390625,
+        291.7508544921875,
+        424.7575988769531
+      ],
+      "bbox_px": [
+        211,
+        1732,
+        1215,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b34",
+      "text": "In their study, the nanogenerator stimulated the movement of",
+      "bbox_pt": [
+        50.810218811035156,
+        426.6638488769531,
+        291.7571105957031,
+        435.7109375
+      ],
+      "bbox_px": [
+        211,
+        1777,
+        1215,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b35",
+      "text": "macrophages through interactions with cells and triggered the",
+      "bbox_pt": [
+        50.810218811035156,
+        437.62615966796875,
+        291.757080078125,
+        446.6732482910156
+      ],
+      "bbox_px": [
+        211,
+        1823,
+        1215,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b36",
+      "text": "Saos-2 ion channel in the plasma membrane of osteoblast-like",
+      "bbox_pt": [
+        50.810218811035156,
+        448.5885009765625,
+        291.72662353515625,
+        457.6355895996094
+      ],
+      "bbox_px": [
+        211,
+        1869,
+        1215,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b37",
+      "text": "cells, inducing intracellular calcium transients. Additionally, this",
+      "bbox_pt": [
+        50.810218811035156,
+        459.5418395996094,
+        291.77056884765625,
+        468.58892822265625
+      ],
+      "bbox_px": [
+        211,
+        1914,
+        1215,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b38",
+      "text": "in situ ES of cells can be applied to other excitable cells (such as",
+      "bbox_pt": [
+        50.810218811035156,
+        470.5041809082031,
+        291.75799560546875,
+        479.55126953125
+      ],
+      "bbox_px": [
+        211,
+        1960,
+        1215,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b39",
+      "text": "neurons or muscle cells). [ 53 ] To address emergency hemostasis",
+      "bbox_pt": [
+        50.810218811035156,
+        478.3221740722656,
+        291.74017333984375,
+        490.5135803222656
+      ],
+      "bbox_px": [
+        211,
+        1993,
+        1215,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b40",
+      "text": "in skin wounds resulting from trauma, Meng et al. designed a",
+      "bbox_pt": [
+        50.810359954833984,
+        492.4165344238281,
+        291.76080322265625,
+        501.463623046875
+      ],
+      "bbox_px": [
+        211,
+        2051,
+        1215,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b41",
+      "text": "bioadhesive triboelectric nanogenerator (BA-TENG) (Figure  2i ).",
+      "bbox_pt": [
+        50.810359954833984,
+        503.37884521484375,
+        291.7500915527344,
+        512.4259033203125
+      ],
+      "bbox_px": [
+        211,
+        2097,
+        1215,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b42",
+      "text": "This device uses polycaprolactone-based polyurethane (PCL-r-",
+      "bbox_pt": [
+        50.810359954833984,
+        514.3411865234375,
+        291.7474060058594,
+        523.3882446289062
+      ],
+      "bbox_px": [
+        211,
+        2143,
+        1215,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b43",
+      "text": "PU) as a ﬂexible top layer, with a bottom layer made of poly-",
+      "bbox_pt": [
+        50.810359954833984,
+        525.2945556640625,
+        291.7438659667969,
+        534.3416137695312
+      ],
+      "bbox_px": [
+        211,
+        2188,
+        1215,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b44",
+      "text": "acrylic acid-hydroxysuccinimide ester (PAA-NHS) and polyvinyl",
+      "bbox_pt": [
+        50.810359954833984,
+        536.2568359375,
+        291.7509765625,
+        545.3038940429688
+      ],
+      "bbox_px": [
+        211,
+        2234,
+        1215,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b45",
+      "text": "alcohol (PVA), providing strong adhesion to wet tissues and an",
+      "bbox_pt": [
+        50.810359954833984,
+        547.2191772460938,
+        291.73309326171875,
+        556.2662353515625
+      ],
+      "bbox_px": [
+        211,
+        2280,
+        1215,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b46",
+      "text": "eﬀective self-powering capability. Simultaneously, the BA-TENG",
+      "bbox_pt": [
+        50.810359954833984,
+        558.1725463867188,
+        291.7276916503906,
+        567.2196044921875
+      ],
+      "bbox_px": [
+        211,
+        2325,
+        1215,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b47",
+      "text": "also possesses ultrasound responsiveness and a strong electric",
+      "bbox_pt": [
+        50.810359954833984,
+        569.1348266601562,
+        291.75634765625,
+        578.181884765625
+      ],
+      "bbox_px": [
+        211,
+        2371,
+        1215,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b48",
+      "text": "ﬁeld can be generated under ultrasound stimulation to acceler-",
+      "bbox_pt": [
+        50.810359954833984,
+        580.0881958007812,
+        291.7267761230469,
+        589.13525390625
+      ],
+      "bbox_px": [
+        211,
+        2417,
+        1215,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b49",
+      "text": "ate skin wound healing, which is attributed to the enhancement",
+      "bbox_pt": [
+        50.810359954833984,
+        591.050537109375,
+        291.753662109375,
+        600.0975952148438
+      ],
+      "bbox_px": [
+        211,
+        2462,
+        1215,
+        2500
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b50",
+      "text": "of cell activity by the local electric ﬁeld. [ 54 ] In addition, Iman",
+      "bbox_pt": [
+        50.810359954833984,
+        598.8681640625,
+        291.7610778808594,
+        611.0598754882812
+      ],
+      "bbox_px": [
+        211,
+        2495,
+        1215,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b51",
+      "text": "et al. designed an ultrasound-driven triboelectric nanogenerator",
+      "bbox_pt": [
+        305.9252624511719,
+        75.97557067871094,
+        546.846923828125,
+        85.02266693115234
+      ],
+      "bbox_px": [
+        1274,
+        316,
+        2278,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b52",
+      "text": "(IBV-TENG) with subcutaneous antibacterial activity against in-",
+      "bbox_pt": [
+        305.9252624511719,
+        86.93791198730469,
+        546.8804321289062,
+        95.9850082397461
+      ],
+      "bbox_px": [
+        1274,
+        362,
+        2278,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b53",
+      "text": "fectious skin wounds. This nanogenerator utilizes triboelectri-",
+      "bbox_pt": [
+        305.9252624511719,
+        97.90025329589844,
+        546.8470458984375,
+        106.94734954833984
+      ],
+      "bbox_px": [
+        1274,
+        407,
+        2278,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b54",
+      "text": "cally positive poly-3-hydroxybutyric acid-co-3-hydroxyvaleric acid",
+      "bbox_pt": [
+        305.9252624511719,
+        108.85356140136719,
+        546.8560180664062,
+        117.9006576538086
+      ],
+      "bbox_px": [
+        1274,
+        453,
+        2278,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b55",
+      "text": "(PHBV) as the encapsulation and active layers and polyvinyl alco-",
+      "bbox_pt": [
+        305.9252624511719,
+        119.81590270996094,
+        546.849609375,
+        128.86300659179688
+      ],
+      "bbox_px": [
+        1274,
+        499,
+        2278,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b56",
+      "text": "hol (PVA) as the anti-friction layer. It can respond to diﬀerent ul-",
+      "bbox_pt": [
+        305.9252624511719,
+        130.7782440185547,
+        546.846923828125,
+        139.82534790039062
+      ],
+      "bbox_px": [
+        1274,
+        544,
+        2278,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b57",
+      "text": "trasound intensities to generate the corresponding electric ﬁelds",
+      "bbox_pt": [
+        305.9252624511719,
+        141.73155212402344,
+        546.8748168945312,
+        150.77865600585938
+      ],
+      "bbox_px": [
+        1274,
+        590,
+        2278,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b58",
+      "text": "and eliminate infectious microorganisms in subcutaneous tis-",
+      "bbox_pt": [
+        305.9252624511719,
+        152.6938934326172,
+        546.875732421875,
+        161.74099731445312
+      ],
+      "bbox_px": [
+        1274,
+        636,
+        2278,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b59",
+      "text": "sues through ES. In both in vitro and in vivo experiments, the",
+      "bbox_pt": [
+        305.9252624511719,
+        163.65623474121094,
+        546.869384765625,
+        172.70333862304688
+      ],
+      "bbox_px": [
+        1274,
+        681,
+        2278,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b60",
+      "text": "IBV-TENG demonstrated excellent antibacterial properties. Be-",
+      "bbox_pt": [
+        305.9252624511719,
+        174.6095428466797,
+        546.8828735351562,
+        183.65664672851562
+      ],
+      "bbox_px": [
+        1274,
+        727,
+        2278,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b61",
+      "text": "yond tissue repair and regeneration, nanogenerators hold sig-",
+      "bbox_pt": [
+        305.9252624511719,
+        185.57188415527344,
+        546.882080078125,
+        194.61898803710938
+      ],
+      "bbox_px": [
+        1274,
+        773,
+        2278,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b62",
+      "text": "niﬁcant potential in health-monitoring applications. [ 55 ] To alle-",
+      "bbox_pt": [
+        305.9252624511719,
+        193.3911590576172,
+        546.8614501953125,
+        205.58132934570312
+      ],
+      "bbox_px": [
+        1274,
+        805,
+        2278,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b63",
+      "text": "viate the risk of diseases caused by long-term abnormal postu-",
+      "bbox_pt": [
+        305.92449951171875,
+        207.4855194091797,
+        546.8623657226562,
+        216.53262329101562
+      ],
+      "bbox_px": [
+        1274,
+        864,
+        2278,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b64",
+      "text": "ral habits, Li et al. developed a badge-scroll-shaped tensile sen-",
+      "bbox_pt": [
+        305.92449951171875,
+        218.44786071777344,
+        546.8729858398438,
+        227.49496459960938
+      ],
+      "bbox_px": [
+        1274,
+        910,
+        2278,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b65",
+      "text": "sor based on a grating-structure TENG for real-time monitoring",
+      "bbox_pt": [
+        305.92449951171875,
+        229.41014099121094,
+        546.8804321289062,
+        238.45724487304688
+      ],
+      "bbox_px": [
+        1274,
+        955,
+        2278,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b66",
+      "text": "and recording of joint movements. The seamless integration of",
+      "bbox_pt": [
+        305.92449951171875,
+        240.36351013183594,
+        546.8462524414062,
+        249.41061401367188
+      ],
+      "bbox_px": [
+        1274,
+        1001,
+        2278,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b67",
+      "text": "ﬂexible materials and TENGs endows this vector tensile sensor",
+      "bbox_pt": [
+        305.92449951171875,
+        251.3258514404297,
+        546.8480834960938,
+        260.3729553222656
+      ],
+      "bbox_px": [
+        1274,
+        1047,
+        2278,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b68",
+      "text": "with numerous advantages such as wearability, conformality, and",
+      "bbox_pt": [
+        305.92449951171875,
+        262.2791748046875,
+        546.8505249023438,
+        271.3262634277344
+      ],
+      "bbox_px": [
+        1274,
+        1092,
+        2278,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b69",
+      "text": "real-time wireless monitoring, as well as excellent performance",
+      "bbox_pt": [
+        305.92449951171875,
+        273.24151611328125,
+        546.8497314453125,
+        282.2886047363281
+      ],
+      "bbox_px": [
+        1274,
+        1138,
+        2278,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b70",
+      "text": "in spinal posture monitoring, contributing to a reduction in the",
+      "bbox_pt": [
+        305.92449951171875,
+        284.203857421875,
+        546.8660278320312,
+        293.2509460449219
+      ],
+      "bbox_px": [
+        1274,
+        1184,
+        2278,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b71",
+      "text": "risk of spinal diseases. In addition, this device has broad appli-",
+      "bbox_pt": [
+        305.92449951171875,
+        295.1571960449219,
+        546.86572265625,
+        304.20428466796875
+      ],
+      "bbox_px": [
+        1274,
+        1229,
+        2278,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b72",
+      "text": "cation prospects in other joint activity regions such as shoulders",
+      "bbox_pt": [
+        305.92449951171875,
+        306.1195068359375,
+        546.8831787109375,
+        315.1665954589844
+      ],
+      "bbox_px": [
+        1274,
+        1275,
+        2278,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b73",
+      "text": "and ankles, oﬀering a practical and feasible strategy for health",
+      "bbox_pt": [
+        305.92449951171875,
+        317.08184814453125,
+        546.8541259765625,
+        326.1289367675781
+      ],
+      "bbox_px": [
+        1274,
+        1321,
+        2278,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b74",
+      "text": "detection and disease prevention. [ 56 ]",
+      "bbox_pt": [
+        305.92449951171875,
+        327.13775634765625,
+        441.2578125,
+        337.082275390625
+      ],
+      "bbox_px": [
+        1274,
+        1363,
+        1838,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b75",
+      "text": "2.3. Piezoelectric Biomaterials",
+      "bbox_pt": [
+        305.9249267578125,
+        350.73822021484375,
+        416.75140380859375,
+        359.7046203613281
+      ],
+      "bbox_px": [
+        1274,
+        1461,
+        1736,
+        1498
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b76",
+      "text": "In recent years, piezoelectric biomaterials have attracted con-",
+      "bbox_pt": [
+        305.9249267578125,
+        372.6619567871094,
+        546.8562622070312,
+        381.70904541015625
+      ],
+      "bbox_px": [
+        1274,
+        1552,
+        2278,
+        1590
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b77",
+      "text": "siderable attention in bioengineering because of their unique",
+      "bbox_pt": [
+        305.9249267578125,
+        383.624267578125,
+        546.8906860351562,
+        392.6713562011719
+      ],
+      "bbox_px": [
+        1274,
+        1598,
+        2278,
+        1636
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b78",
+      "text": "electricity-generation properties and highly ﬂexible material",
+      "bbox_pt": [
+        305.9249267578125,
+        394.57763671875,
+        546.8449096679688,
+        403.6247253417969
+      ],
+      "bbox_px": [
+        1274,
+        1644,
+        2278,
+        1681
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b79",
+      "text": "structures. These biomaterials provide a wide material plat-",
+      "bbox_pt": [
+        305.9249267578125,
+        405.5399475097656,
+        546.8809204101562,
+        414.5870361328125
+      ],
+      "bbox_px": [
+        1274,
+        1689,
+        2278,
+        1727
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b80",
+      "text": "form for the miniaturization and automation of bioelectronic",
+      "bbox_pt": [
+        305.9249267578125,
+        416.50225830078125,
+        546.8602905273438,
+        425.5493469238281
+      ],
+      "bbox_px": [
+        1274,
+        1735,
+        2278,
+        1773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b81",
+      "text": "components and show extensive application prospects in so-",
+      "bbox_pt": [
+        305.9249267578125,
+        427.45562744140625,
+        546.8583374023438,
+        436.5027160644531
+      ],
+      "bbox_px": [
+        1274,
+        1781,
+        2278,
+        1818
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b82",
+      "text": "phisticated functional devices, such as ﬂexible electronics and",
+      "bbox_pt": [
+        305.9249267578125,
+        438.4179382324219,
+        546.8734741210938,
+        447.46502685546875
+      ],
+      "bbox_px": [
+        1274,
+        1826,
+        2278,
+        1864
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b83",
+      "text": "nanosensors. [ 32,57,58 ] Therefore, this section summarizes and dis-",
+      "bbox_pt": [
+        305.9249267578125,
+        446.2371826171875,
+        546.8765258789062,
+        458.4273681640625
+      ],
+      "bbox_px": [
+        1274,
+        1859,
+        2278,
+        1910
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b84",
+      "text": "cusses the intrinsic and extrinsic piezoelectric characteristics of",
+      "bbox_pt": [
+        305.925048828125,
+        460.33154296875,
+        546.8521118164062,
+        469.3786315917969
+      ],
+      "bbox_px": [
+        1274,
+        1918,
+        2278,
+        1955
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b85",
+      "text": "piezoelectric biomaterials and their applications in the biomedi-",
+      "bbox_pt": [
+        305.925048828125,
+        471.2938537597656,
+        546.8837280273438,
+        480.3409423828125
+      ],
+      "bbox_px": [
+        1274,
+        1963,
+        2278,
+        2001
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b86",
+      "text": "cal ﬁeld, and envisions the development prospects of these ma-",
+      "bbox_pt": [
+        305.925048828125,
+        482.25616455078125,
+        546.866455078125,
+        491.3032531738281
+      ],
+      "bbox_px": [
+        1274,
+        2009,
+        2278,
+        2047
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b87",
+      "text": "terials.",
+      "bbox_pt": [
+        305.925048828125,
+        493.20953369140625,
+        331.15020751953125,
+        502.2566223144531
+      ],
+      "bbox_px": [
+        1274,
+        2055,
+        1379,
+        2092
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b88",
+      "text": "Piezoelectric biomaterials can spontaneously generate polar-",
+      "bbox_pt": [
+        315.3926696777344,
+        504.1718444824219,
+        546.8593139648438,
+        513.2189331054688
+      ],
+      "bbox_px": [
+        1314,
+        2100,
+        2278,
+        2138
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b89",
+      "text": "ization, indicating that in certain speciﬁc application environ-",
+      "bbox_pt": [
+        305.925048828125,
+        515.1341552734375,
+        546.8854370117188,
+        524.1812133789062
+      ],
+      "bbox_px": [
+        1274,
+        2146,
+        2278,
+        2184
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b90",
+      "text": "ments, suﬃcient electrical energy can be locally generated with-",
+      "bbox_pt": [
+        305.925048828125,
+        526.0875244140625,
+        546.8638916015625,
+        535.1345825195312
+      ],
+      "bbox_px": [
+        1274,
+        2192,
+        2278,
+        2229
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b91",
+      "text": "out an external power supply to sustain or modify the biologi-",
+      "bbox_pt": [
+        305.925048828125,
+        537.0498657226562,
+        546.8565673828125,
+        546.096923828125
+      ],
+      "bbox_px": [
+        1274,
+        2237,
+        2278,
+        2275
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b92",
+      "text": "cal behaviors of tissues and cells, or to power microelectronic",
+      "bbox_pt": [
+        305.925048828125,
+        548.01220703125,
+        546.8645629882812,
+        557.0592651367188
+      ],
+      "bbox_px": [
+        1274,
+        2283,
+        2278,
+        2321
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b93",
+      "text": "components. [ 59 ] However, the miniaturization of piezoelectric",
+      "bbox_pt": [
+        305.925048828125,
+        555.8302001953125,
+        546.8514404296875,
+        568.0125732421875
+      ],
+      "bbox_px": [
+        1274,
+        2315,
+        2278,
+        2366
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b94",
+      "text": "components is diﬃcult. Because of the reduction in size, the elec-",
+      "bbox_pt": [
+        305.9252014160156,
+        569.9244995117188,
+        546.847900390625,
+        578.9715576171875
+      ],
+      "bbox_px": [
+        1274,
+        2374,
+        2278,
+        2412
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b95",
+      "text": "tric ﬁeld generated by the piezoelectric eﬀect is also weakened.",
+      "bbox_pt": [
+        305.9252014160156,
+        580.8868408203125,
+        546.8440551757812,
+        589.9338989257812
+      ],
+      "bbox_px": [
+        1274,
+        2420,
+        2278,
+        2458
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b96",
+      "text": "Achieving an eﬀective depolarization ﬁeld at the micro-nano-",
+      "bbox_pt": [
+        305.9252014160156,
+        591.8402099609375,
+        546.884765625,
+        600.8872680664062
+      ],
+      "bbox_px": [
+        1274,
+        2466,
+        2278,
+        2503
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b97",
+      "text": "scale is extremely challenging. In recent years, the emergence of",
+      "bbox_pt": [
+        305.9252014160156,
+        602.802490234375,
+        546.8567504882812,
+        611.8495483398438
+      ],
+      "bbox_px": [
+        1274,
+        2511,
+        2278,
+        2549
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b98",
+      "text": "Figure 2.  a) Direct and converse piezoelectric eﬀect. Reproduced with permission. [ 30 ] Copyright 2018, Wiley-VCH. b) “ d 31 ” mode means that the force",
+      "bbox_pt": [
+        50.81093978881836,
+        633.5691528320312,
+        546.8739013671875,
+        645.8052368164062
+      ],
+      "bbox_px": [
+        211,
+        2639,
+        2278,
+        2690
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b99",
+      "text": "direction is perpendicular to poling voltage direction. In contrast, the force direction is parallel to poling voltage direction in “ d 33 ” mode. Reproduced with",
+      "bbox_pt": [
+        50.81168746948242,
+        645.7741088867188,
+        546.8793334960938,
+        655.2731323242188
+      ],
+      "bbox_px": [
+        211,
+        2690,
+        2278,
+        2730
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b100",
+      "text": "permission. [ 29 ] Copyright 2021, Wiley-VCH. c) ZnO ﬁber-zinc ore structural model, piezoelectric potential in compression and tensile mode. Reproduced",
+      "bbox_pt": [
+        50.811527252197266,
+        652.4961547851562,
+        546.851806640625,
+        663.2562866210938
+      ],
+      "bbox_px": [
+        211,
+        2718,
+        2278,
+        2763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b101",
+      "text": "with permission. [ 32 ] Copyright 2022, Wiley-VCH. Theoretical models for d) dielectric-to-dielectric contact-mode TENG and e) conductor-to-dielectric",
+      "bbox_pt": [
+        50.81098937988281,
+        661.9552612304688,
+        546.8756713867188,
+        672.7153930664062
+      ],
+      "bbox_px": [
+        211,
+        2758,
+        2278,
+        2802
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b102",
+      "text": "contact-mode TENG. [ 49 ] Theoretical models for f) dielectric-to-dielectric sliding-mode TENG and g) conductor-to-dielectric sliding-mode TENG. Repro-",
+      "bbox_pt": [
+        50.81084060668945,
+        671.4232788085938,
+        546.83251953125,
+        682.183349609375
+      ],
+      "bbox_px": [
+        211,
+        2797,
+        2278,
+        2842
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b103",
+      "text": "duced with permission. [ 48 ] Copyright 2013, Wiley-VCH. h) Piezoelectric nanogenerator (PENG), based on ZnO nanosheets (NSs), interacts with living",
+      "bbox_pt": [
+        50.8112907409668,
+        680.8912963867188,
+        546.9022827148438,
+        691.6512451171875
+      ],
+      "bbox_px": [
+        211,
+        2837,
+        2278,
+        2881
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b104",
+      "text": "cells to induce a local electric ﬁeld that self-stimulates and modulates cell activity. Reproduced with permission. [ 53 ] Copyright 2017, Wiley-VCH. i) A bioad-",
+      "bbox_pt": [
+        50.81142044067383,
+        690.3502807617188,
+        546.873046875,
+        701.1103515625
+      ],
+      "bbox_px": [
+        211,
+        2876,
+        2278,
+        2921
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b105",
+      "text": "hesive triboelectric nanogenerator (BA-TENG) for instant and robust wound sealing and ultrasound-driven accelerated wound healing. Reproduced with",
+      "bbox_pt": [
+        50.8117790222168,
+        702.6079711914062,
+        546.88037109375,
+        710.5780639648438
+      ],
+      "bbox_px": [
+        211,
+        2927,
+        2278,
+        2960
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b106",
+      "text": "permission. [ 54 ] Copyright 2023, Wiley-VCH.",
+      "bbox_pt": [
+        50.8117790222168,
+        709.2861938476562,
+        193.75027465820312,
+        720.04638671875
+      ],
+      "bbox_px": [
+        211,
+        2955,
+        807,
+        3000
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b107",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.16357421875,
+        118.2817611694336,
+        752.2001342773438
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b108",
+      "text": "2411209 (5 of 29)",
+      "bbox_pt": [
+        193.5345458984375,
+        743.6691284179688,
+        257.8379211425781,
+        752.635498046875
+      ],
+      "bbox_px": [
+        806,
+        3098,
+        1074,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b109",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0695495605469,
+        745.2160034179688,
+        546.8819580078125,
+        752.1897583007812
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b110",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 111
+  }
+}

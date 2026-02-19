@@ -1,0 +1,1607 @@
+{
+  "page": 9,
+  "image_path": "run\\test01\\pages\\p009.png",
+  "blocks": [
+    {
+      "block_id": "p9_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b1",
+      "text": "9",
+      "bbox_pt": [
+        555.8599243164062,
+        760.4366455078125,
+        561.2599487304688,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2316,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b4",
+      "text": "and forward-flexed at 30° to be in the plane of the supraspinatus 137 . ",
+      "bbox_pt": [
+        39.685001373291016,
+        359.00732421875,
+        296.2694396972656,
+        369.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1495,
+        1234,
+        1539
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b5",
+      "text": "Weakness in this position (measured manually with applied downward ",
+      "bbox_pt": [
+        39.685001373291016,
+        370.0956115722656,
+        296.23272705078125,
+        380.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1542,
+        1234,
+        1584
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b6",
+      "text": "pressure) can be indicative of a supraspinatus tear. External rotation ",
+      "bbox_pt": [
+        39.685001373291016,
+        380.8456115722656,
+        296.2690124511719,
+        391.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1586,
+        1234,
+        1629
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b7",
+      "text": "strength is tested with the patient’s arm adducted and the elbow flexed ",
+      "bbox_pt": [
+        39.685001373291016,
+        391.5956115722656,
+        296.3074951171875,
+        401.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1631,
+        1234,
+        1674
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b8",
+      "text": "to 90°. Weakness with external rotation can be indicative of a tear of the ",
+      "bbox_pt": [
+        39.685001373291016,
+        402.3456115722656,
+        296.1135559082031,
+        412.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1676,
+        1233,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b9",
+      "text": "infraspinatus and/or teres minor, which is almost always accompanied ",
+      "bbox_pt": [
+        39.685001373291016,
+        413.0956115722656,
+        296.0842590332031,
+        423.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1721,
+        1233,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b10",
+      "text": "by a supraspinatus tear that has extended posteriorly. The patient can ",
+      "bbox_pt": [
+        39.685001373291016,
+        423.8456115722656,
+        296.2072448730469,
+        434.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1766,
+        1234,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b11",
+      "text": "also be assessed for a painful arc — the patient must raise the arms above ",
+      "bbox_pt": [
+        39.685001373291016,
+        434.5956115722656,
+        296.19384765625,
+        444.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1810,
+        1234,
+        1853
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b12",
+      "text": "the head and bring the arms down slowly to the sides. In a positive ",
+      "bbox_pt": [
+        39.685001373291016,
+        445.3456115722656,
+        296.19525146484375,
+        455.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1855,
+        1234,
+        1898
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b13",
+      "text": "test, the patient reports pain during the 120° movement down to the ",
+      "bbox_pt": [
+        39.685001373291016,
+        456.0956115722656,
+        296.2847595214844,
+        466.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1900,
+        1234,
+        1942
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b14",
+      "text": "40° angle. This test is the most sensitive in patients with a rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        466.8453674316406,
+        296.28460693359375,
+        477.02587890625
+      ],
+      "bbox_px": [
+        165,
+        1945,
+        1234,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b15",
+      "text": "problem; however, the test cannot differentiate between tendinopathy, ",
+      "bbox_pt": [
+        39.685001373291016,
+        477.5956115722656,
+        296.3464050292969,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1989,
+        1234,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b16",
+      "text": "partial-thickness tear and full-thickness tear 138 .",
+      "bbox_pt": [
+        39.685001373291016,
+        488.00732421875,
+        213.4915008544922,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2033,
+        889,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b17",
+      "text": "Physical examination tests .  Although several well-described tests ",
+      "bbox_pt": [
+        39.685001373291016,
+        508.4596252441406,
+        296.25238037109375,
+        520.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2118,
+        1234,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b18",
+      "text": "can aid the examiner in diagnosing rotator cuff pathology. These ",
+      "bbox_pt": [
+        39.685001373291016,
+        520.5956420898438,
+        296.3257141113281,
+        530.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1234,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b19",
+      "text": "tests lack high sensitivity and specificity and, therefore, must be used ",
+      "bbox_pt": [
+        39.685001373291016,
+        531.3456420898438,
+        296.26824951171875,
+        541.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2213,
+        1234,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b20",
+      "text": "in conjunction with history and imaging to establish an accurate diag-",
+      "bbox_pt": [
+        39.685001373291016,
+        542.0956420898438,
+        294.8031005859375,
+        552.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2258,
+        1228,
+        2301
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b21",
+      "text": "nosis. The Neer test is performed with the examiner standing behind ",
+      "bbox_pt": [
+        39.685001373291016,
+        552.8456420898438,
+        296.22705078125,
+        563.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2303,
+        1234,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b22",
+      "text": "the patient with the affected arm passively elevated with the examiner’s ",
+      "bbox_pt": [
+        39.685001373291016,
+        563.5956420898438,
+        296.206298828125,
+        573.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1234,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b23",
+      "text": "hand stabilizing the scapula. Pain at maximal forward flexion is often ",
+      "bbox_pt": [
+        39.685001373291016,
+        574.3456420898438,
+        296.27978515625,
+        584.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2393,
+        1234,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b24",
+      "text": "indicative of rotator cuff pathology 137 , 139 . In the Hawkins–Kennedy test, ",
+      "bbox_pt": [
+        39.685001373291016,
+        584.75732421875,
+        296.19219970703125,
+        595.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2436,
+        1234,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b25",
+      "text": "the affected arm is passively elevated to 90° of forward flexion and the ",
+      "bbox_pt": [
+        39.685001373291016,
+        595.8456420898438,
+        296.1424865722656,
+        606.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2482,
+        1233,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b26",
+      "text": "elbow is placed at 90° of flexion in the neutral position. The forearm is ",
+      "bbox_pt": [
+        39.685001373291016,
+        606.5956420898438,
+        296.1318054199219,
+        616.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2527,
+        1233,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b27",
+      "text": "then turned into internal rotation, which brings the greater tuberosity ",
+      "bbox_pt": [
+        39.685001373291016,
+        617.3456420898438,
+        296.19134521484375,
+        627.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2572,
+        1234,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b28",
+      "text": "into contact with the undersurface of the acromion. Pain with internal ",
+      "bbox_pt": [
+        39.685001373291016,
+        628.0956420898438,
+        296.3023681640625,
+        638.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2617,
+        1234,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b29",
+      "text": "rotation is suggestive of rotator cuff pathology 137 , 140 . The Jobe test is ",
+      "bbox_pt": [
+        39.685001373291016,
+        638.50732421875,
+        296.25079345703125,
+        649.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2660,
+        1234,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b30",
+      "text": "performed to assess the strength of the supraspinatus. The patient ",
+      "bbox_pt": [
+        39.685001373291016,
+        649.5956420898438,
+        296.4041748046875,
+        659.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2706,
+        1235,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b31",
+      "text": "places the arm at 90° of abduction and 30° of flexion in the plane of ",
+      "bbox_pt": [
+        39.685001373291016,
+        660.3456420898438,
+        296.2870788574219,
+        670.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1234,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b32",
+      "text": "the scapula. Shoulder elevation is manually resisted by the examiner. ",
+      "bbox_pt": [
+        39.685001373291016,
+        671.0956420898438,
+        296.24346923828125,
+        681.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2796,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b33",
+      "text": "Pain or weakness denotes a positive test 140 , 141 . Furthermore, the drop ",
+      "bbox_pt": [
+        39.685001373291016,
+        681.50732421875,
+        296.2545166015625,
+        692.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2839,
+        1234,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b34",
+      "text": "arm test can also be used to assess the supraspinatus muscle. The ",
+      "bbox_pt": [
+        39.685001373291016,
+        692.5956420898438,
+        296.38720703125,
+        702.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1234,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b35",
+      "text": "patient’s arm is passively abducted to 90° and the patient then slowly ",
+      "bbox_pt": [
+        39.685001373291016,
+        703.3456420898438,
+        296.2839050292969,
+        713.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2930,
+        1234,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b36",
+      "text": "lowers the straight arm to the side (adducted position). Inability to ",
+      "bbox_pt": [
+        39.685001373291016,
+        714.0956420898438,
+        296.42822265625,
+        724.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2975,
+        1235,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b37",
+      "text": "control the descent of the arm or pain reported during this manoeuvre ",
+      "bbox_pt": [
+        39.685001373291016,
+        724.8456420898438,
+        296.1319580078125,
+        735.026123046875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1233,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b38",
+      "text": "constitutes a positive test 138 – 140 .",
+      "bbox_pt": [
+        39.685001373291016,
+        735.25732421875,
+        155.71018981933594,
+        745.776123046875
+      ],
+      "bbox_px": [
+        165,
+        3063,
+        648,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b39",
+      "text": "Several tests are also available to assess the subscapularis muscle ",
+      "bbox_pt": [
+        323.14959716796875,
+        359.3456115722656,
+        562.57861328125,
+        369.526123046875
+      ],
+      "bbox_px": [
+        1346,
+        1497,
+        2344,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b40",
+      "text": "and tendon. The shoulder must be placed in an internally rotated ",
+      "bbox_pt": [
+        306.1416931152344,
+        370.0956115722656,
+        562.6554565429688,
+        380.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1542,
+        2344,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b41",
+      "text": "position prior to testing to eliminate the strength of the pectoralis. ",
+      "bbox_pt": [
+        306.1416931152344,
+        380.8456115722656,
+        562.6781616210938,
+        391.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        2344,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b42",
+      "text": "The lift-off test (Gerber test) is performed by placing the arm in an ",
+      "bbox_pt": [
+        306.1416931152344,
+        391.5956115722656,
+        562.5227661132812,
+        401.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1631,
+        2343,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b43",
+      "text": "internal rotated position behind the patient’s back 138 . The dorsum of the ",
+      "bbox_pt": [
+        306.1416931152344,
+        402.00732421875,
+        562.6742553710938,
+        412.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1675,
+        2344,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b44",
+      "text": "hand is placed at the base of the lumbar spine and the patient is asked ",
+      "bbox_pt": [
+        306.1416931152344,
+        413.0956115722656,
+        562.7169189453125,
+        423.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2344,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b45",
+      "text": "to lift the hand off the back and hold the position. The strength of the ",
+      "bbox_pt": [
+        306.1416931152344,
+        423.8453674316406,
+        562.6918334960938,
+        434.02587890625
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b46",
+      "text": "manoeuvre is assessed by the examiner by applying counter-pressure ",
+      "bbox_pt": [
+        306.1416931152344,
+        434.5956115722656,
+        562.8612670898438,
+        444.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2345,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b47",
+      "text": "to the hand. An inability to lift the hand off the back or inability to ",
+      "bbox_pt": [
+        306.1416931152344,
+        445.3456115722656,
+        562.5536499023438,
+        455.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2343,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b48",
+      "text": "resist the examiner’s counter-pressure represents a positive test 140 , 141 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        455.75732421875,
+        562.7119750976562,
+        466.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1898,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b49",
+      "text": "The belly press test evaluates subscapularis function: in a standing or ",
+      "bbox_pt": [
+        306.14520263671875,
+        466.8453674316406,
+        562.7367553710938,
+        477.02587890625
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2344,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b50",
+      "text": "seated position, the patient’s arm is abducted ~20–30° with the arm ",
+      "bbox_pt": [
+        306.1418151855469,
+        477.5956115722656,
+        562.7767333984375,
+        487.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2344,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b51",
+      "text": "internally rotated and elbow flexed to 90°. The patient is instructed ",
+      "bbox_pt": [
+        306.1418151855469,
+        488.3456115722656,
+        562.7311401367188,
+        498.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2034,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b52",
+      "text": "to press the palm of the hand into the abdomen while keeping the ipsi-",
+      "bbox_pt": [
+        306.1418151855469,
+        499.0956115722656,
+        561.2599487304688,
+        509.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        2338,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b53",
+      "text": "lateral elbow in the abducted starting position. The patient not being ",
+      "bbox_pt": [
+        306.1418151855469,
+        509.8456115722656,
+        562.724365234375,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b54",
+      "text": "able to perform the manoeuvre or the elbow falling to the patient’s side ",
+      "bbox_pt": [
+        306.1418151855469,
+        520.5956420898438,
+        562.6026000976562,
+        530.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b55",
+      "text": "during the attempted press indicates a positive test 140 , 142 , 143 .",
+      "bbox_pt": [
+        306.1418151855469,
+        531.00732421875,
+        524.16015625,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2212,
+        2184,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b56",
+      "text": "No single test is diagnostically accurate, but the combination of ",
+      "bbox_pt": [
+        323.14892578125,
+        542.0953979492188,
+        562.7134399414062,
+        552.27587890625
+      ],
+      "bbox_px": [
+        1346,
+        2258,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b57",
+      "text": "manoeuvres, and correlation with symptoms, facilitates an accurate ",
+      "bbox_pt": [
+        306.1418151855469,
+        552.8456420898438,
+        562.601806640625,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b58",
+      "text": "diagnosis of rotator cuff pathology. However, distinguishing the spec-",
+      "bbox_pt": [
+        306.1418151855469,
+        563.5956420898438,
+        561.2599487304688,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2338,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b59",
+      "text": "trum of impingement to partial-thickness to small full-thickness tears ",
+      "bbox_pt": [
+        306.1418151855469,
+        574.3456420898438,
+        562.665283203125,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2344,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b60",
+      "text": "remains challenging. Nevertheless, large tears and those with loss of ",
+      "bbox_pt": [
+        306.1418151855469,
+        585.0956420898438,
+        562.7334594726562,
+        595.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2437,
+        2344,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b61",
+      "text": "the force couple from tears that extend through the rotator cuff cable 55",
+      "bbox_pt": [
+        306.1418151855469,
+        595.50732421875,
+        562.692138671875,
+        606.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2481,
+        2344,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b62",
+      "text": "are readily diagnosed owing to profound weakness of the shoulder ",
+      "bbox_pt": [
+        306.1418151855469,
+        606.5956420898438,
+        562.732421875,
+        616.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b63",
+      "text": "(pseudoparesis) and by a positive external rotation lag sign 138 , 144 .",
+      "bbox_pt": [
+        306.1418151855469,
+        617.00732421875,
+        543.6885986328125,
+        627.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2570,
+        2265,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b64",
+      "text": "Radiography .  Imaging is an important diagnostic tool for evaluating ",
+      "bbox_pt": [
+        306.13812255859375,
+        637.4591064453125,
+        562.6966552734375,
+        649.025634765625
+      ],
+      "bbox_px": [
+        1275,
+        2656,
+        2344,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b65",
+      "text": "the severity of rotator cuff pathology. Multiple imaging modalities ",
+      "bbox_pt": [
+        306.1418151855469,
+        649.5956420898438,
+        562.685546875,
+        659.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b66",
+      "text": "allow non-invasive diagnosis of rotator cuff tears and can provide key ",
+      "bbox_pt": [
+        306.1418151855469,
+        660.3456420898438,
+        562.6995239257812,
+        670.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b67",
+      "text": "information to determine the most appropriate and effective treatment ",
+      "bbox_pt": [
+        306.1418151855469,
+        671.0956420898438,
+        562.704833984375,
+        681.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2344,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b68",
+      "text": "options. Imaging evaluation should begin with plain radiographs of ",
+      "bbox_pt": [
+        306.1418151855469,
+        681.8456420898438,
+        562.6397094726562,
+        692.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b69",
+      "text": "the shoulder, as they are inexpensive and accessible, and can provide ",
+      "bbox_pt": [
+        306.1418151855469,
+        692.5956420898438,
+        562.716064453125,
+        702.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b70",
+      "text": "information regarding acute bony injury or confirm the presence ",
+      "bbox_pt": [
+        306.1418151855469,
+        703.3456420898438,
+        562.8936157226562,
+        713.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2345,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b71",
+      "text": "of concomitant degenerative joint disease, which influences initial ",
+      "bbox_pt": [
+        306.1418151855469,
+        714.0956420898438,
+        562.7877197265625,
+        724.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2975,
+        2344,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b72",
+      "text": "management. Key findings from imaging include the degree of rotator ",
+      "bbox_pt": [
+        306.1418151855469,
+        724.8456420898438,
+        562.5145263671875,
+        735.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        3020,
+        2343,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b73",
+      "text": "cuff tear arthropathy 145 ; degenerative or proliferative changes at the ",
+      "bbox_pt": [
+        306.1418151855469,
+        735.25732421875,
+        562.7115478515625,
+        745.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        3063,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b74",
+      "text": "a   Impingement",
+      "bbox_pt": [
+        40.99190139770508,
+        109.81385040283203,
+        95.5551986694336,
+        122.77804565429688
+      ],
+      "bbox_px": [
+        170,
+        457,
+        398,
+        511
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b75",
+      "text": "c   Full thickness rotator cuﬀ tear",
+      "bbox_pt": [
+        390.2648010253906,
+        109.81385040283203,
+        500.33270263671875,
+        122.77804565429688
+      ],
+      "bbox_px": [
+        1626,
+        457,
+        2084,
+        511
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b76",
+      "text": "b   Partial rotator cuﬀ tear",
+      "bbox_pt": [
+        216.8468017578125,
+        109.81385040283203,
+        303.16119384765625,
+        122.77804565429688
+      ],
+      "bbox_px": [
+        903,
+        457,
+        1263,
+        511
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b77",
+      "text": "Bursitis",
+      "bbox_pt": [
+        146.87319946289062,
+        203.54965209960938,
+        169.96771240234375,
+        212.5196533203125
+      ],
+      "bbox_px": [
+        611,
+        848,
+        708,
+        885
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b78",
+      "text": "Rotator cuﬀ",
+      "bbox_pt": [
+        104.19419860839844,
+        247.64566040039062,
+        140.68519592285156,
+        256.61566162109375
+      ],
+      "bbox_px": [
+        434,
+        1031,
+        586,
+        1069
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b79",
+      "text": "intact",
+      "bbox_pt": [
+        104.19419860839844,
+        255.64718627929688,
+        122.04969787597656,
+        264.6171875
+      ],
+      "bbox_px": [
+        434,
+        1065,
+        508,
+        1102
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b80",
+      "text": "Partial tear",
+      "bbox_pt": [
+        230.13169860839844,
+        175.41769409179688,
+        263.87322998046875,
+        184.3876953125
+      ],
+      "bbox_px": [
+        958,
+        730,
+        1099,
+        768
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b81",
+      "text": "Humeral ",
+      "bbox_pt": [
+        287.2666931152344,
+        229.80319213867188,
+        315.35968017578125,
+        238.773193359375
+      ],
+      "bbox_px": [
+        1196,
+        957,
+        1313,
+        994
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b82",
+      "text": "head",
+      "bbox_pt": [
+        287.2666931152344,
+        237.80471801757812,
+        302.72369384765625,
+        246.77471923828125
+      ],
+      "bbox_px": [
+        1196,
+        990,
+        1261,
+        1028
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b83",
+      "text": "Humeral ",
+      "bbox_pt": [
+        486.69317626953125,
+        237.38223266601562,
+        514.7861938476562,
+        246.35223388671875
+      ],
+      "bbox_px": [
+        2027,
+        989,
+        2144,
+        1026
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b84",
+      "text": "head",
+      "bbox_pt": [
+        486.69317626953125,
+        245.38375854492188,
+        502.1501770019531,
+        254.353759765625
+      ],
+      "bbox_px": [
+        2027,
+        1022,
+        2092,
+        1059
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b85",
+      "text": "Torn cuﬀ",
+      "bbox_pt": [
+        411.3451843261719,
+        164.37423706054688,
+        438.5801696777344,
+        173.34423828125
+      ],
+      "bbox_px": [
+        1713,
+        684,
+        1827,
+        722
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b86",
+      "text": "Fig. 4 | Surgical anatomy of rotator cuff tears.  Arthroscopic images of rotator ",
+      "bbox_pt": [
+        39.685001373291016,
+        284.6043395996094,
+        288.835205078125,
+        293.361328125
+      ],
+      "bbox_px": [
+        165,
+        1185,
+        1203,
+        1222
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b87",
+      "text": "cuff impingement (part  a ), partial-thickness tears (part  b ) and full-thickness ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.6073303222656,
+        278.51171875,
+        303.36431884765625
+      ],
+      "bbox_px": [
+        165,
+        1227,
+        1160,
+        1264
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b88",
+      "text": "tears (part  c ). In impingement, inflammatory tissue is present above the intact ",
+      "bbox_pt": [
+        39.68498229980469,
+        304.6103210449219,
+        284.61920166015625,
+        313.3673095703125
+      ],
+      "bbox_px": [
+        165,
+        1269,
+        1185,
+        1305
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b89",
+      "text": "rotator cuff, with increased vascularity and tissue in the subacromial space. ",
+      "bbox_pt": [
+        39.68498229980469,
+        314.7253112792969,
+        275.88250732421875,
+        323.3633117675781
+      ],
+      "bbox_px": [
+        165,
+        1311,
+        1149,
+        1347
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b90",
+      "text": "In partial-thickness tears, there is fraying of the rotator cuff, but the attachment ",
+      "bbox_pt": [
+        306.1419982910156,
+        284.7163391113281,
+        556.0164794921875,
+        293.3543395996094
+      ],
+      "bbox_px": [
+        1275,
+        1186,
+        2316,
+        1222
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b91",
+      "text": "of the tendon to the greater tuberosity is largely intact. In full-thickness rotator ",
+      "bbox_pt": [
+        306.1419982910156,
+        294.7193298339844,
+        554.0956420898438,
+        303.3573303222656
+      ],
+      "bbox_px": [
+        1275,
+        1227,
+        2308,
+        1263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b92",
+      "text": "cuff tears, the rotator cuff is detached from the humeral head. In this example, ",
+      "bbox_pt": [
+        306.1419982910156,
+        304.7223205566406,
+        551.3524169921875,
+        313.3603210449219
+      ],
+      "bbox_px": [
+        1275,
+        1269,
+        2297,
+        1305
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b93",
+      "text": "the tear is large with retraction of the rotator cuff to the glenoid rim.",
+      "bbox_pt": [
+        306.1419982910156,
+        314.7253112792969,
+        518.4215087890625,
+        323.3633117675781
+      ],
+      "bbox_px": [
+        1275,
+        1311,
+        2160,
+        1347
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 94
+  }
+}

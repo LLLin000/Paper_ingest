@@ -1,0 +1,2287 @@
+{
+  "page": 10,
+  "image_path": "run\\zhtrial01\\pages\\p010.png",
+  "blocks": [
+    {
+      "block_id": "p10_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b1",
+      "text": "10",
+      "bbox_pt": [
+        551.8248291015625,
+        760.43701171875,
+        561.2008666992188,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2299,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b4",
+      "text": "greater tuberosity and at the undersurface of the acromion 146 , 147  and ",
+      "bbox_pt": [
+        39.685001373291016,
+        466.50732421875,
+        296.2611083984375,
+        477.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1943,
+        1234,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b5",
+      "text": "signs of osteoarthritis 148 , 149 . An acromiohumeral interval of <6 mm ",
+      "bbox_pt": [
+        39.685001373291016,
+        477.25732421875,
+        296.27471923828125,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1988,
+        1234,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b6",
+      "text": "suggests a chronic full-thickness rotator cuff tear 150 . Radiographs can ",
+      "bbox_pt": [
+        39.685001373291016,
+        488.00732421875,
+        296.2641906738281,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2033,
+        1234,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b7",
+      "text": "also effectively diagnose conditions such as greater tuberosity frac -",
+      "bbox_pt": [
+        39.685001373291016,
+        499.0956115722656,
+        294.80322265625,
+        509.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2079,
+        1228,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b8",
+      "text": "tures, calcific tendinopathy and shoulder osteoarthritis, which may ",
+      "bbox_pt": [
+        39.685001373291016,
+        509.8456115722656,
+        296.1552429199219,
+        520.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2124,
+        1233,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b9",
+      "text": "have overlapping symptoms with rotator cuff disease but different ",
+      "bbox_pt": [
+        39.685001373291016,
+        520.5956420898438,
+        296.1962585449219,
+        530.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1234,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b10",
+      "text": "treatment pathways 148 , 151 – 153 .",
+      "bbox_pt": [
+        39.685001373291016,
+        531.00732421875,
+        143.12908935546875,
+        541.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2212,
+        596,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b11",
+      "text": "MRI .  MRI offers a comprehensive three-dimensional evaluation of ",
+      "bbox_pt": [
+        39.685001373291016,
+        551.4595947265625,
+        296.2596130371094,
+        563.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2297,
+        1234,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b12",
+      "text": "the rotator cuff and has high diagnostic performance in detecting ",
+      "bbox_pt": [
+        39.685001373291016,
+        563.5956420898438,
+        296.3909606933594,
+        573.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1234,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b13",
+      "text": "partial-thickness and full-thickness rotator cuff tears, with sensitivity ",
+      "bbox_pt": [
+        39.685001373291016,
+        574.3456420898438,
+        296.3148498535156,
+        584.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2393,
+        1234,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b14",
+      "text": "and specificity values ranging from 0.8 to 0.97 (refs.  154 , 155 ). Images ",
+      "bbox_pt": [
+        39.685001373291016,
+        585.0956420898438,
+        296.2558898925781,
+        595.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2437,
+        1234,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b15",
+      "text": "from MRI can provide an accurate assessment of clinically relevant ",
+      "bbox_pt": [
+        39.685001373291016,
+        595.8456420898438,
+        296.1292419433594,
+        606.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2482,
+        1233,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b16",
+      "text": "measurements that help predict the likely success of surgical repair, ",
+      "bbox_pt": [
+        39.685001373291016,
+        606.5956420898438,
+        296.3575439453125,
+        616.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2527,
+        1234,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b17",
+      "text": "including tear size 156  and tendon retraction 157 , and depict the pres-",
+      "bbox_pt": [
+        39.685001373291016,
+        617.00732421875,
+        294.80322265625,
+        627.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2570,
+        1228,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b18",
+      "text": "ence of associated injuries of the acromioclavicular joint, labrum and ",
+      "bbox_pt": [
+        39.685001373291016,
+        628.0956420898438,
+        296.2839050292969,
+        638.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2617,
+        1234,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b19",
+      "text": "glenohumeral cartilage 158 . A fat-sensitive sagittal–oblique sequence ",
+      "bbox_pt": [
+        39.685001373291016,
+        638.50732421875,
+        296.1541442871094,
+        649.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2660,
+        1233,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b20",
+      "text": "is essential for evaluating the rotator cuff muscle quality, which is ",
+      "bbox_pt": [
+        39.685001373291016,
+        649.5956420898438,
+        296.4603271484375,
+        659.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2706,
+        1235,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b21",
+      "text": "most commonly performed clinically with the Fuchs modification of ",
+      "bbox_pt": [
+        39.685001373291016,
+        660.3456420898438,
+        296.2516784667969,
+        670.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1234,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b22",
+      "text": "the Goutallier classification 159 . The Goutallier classification grades ",
+      "bbox_pt": [
+        39.685001373291016,
+        670.75732421875,
+        296.1785583496094,
+        681.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2794,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b23",
+      "text": "muscle quality from 0 to 4: 0 indicates normal muscle with no fat, ",
+      "bbox_pt": [
+        39.68510055541992,
+        681.8456420898438,
+        296.30889892578125,
+        692.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2841,
+        1234,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b24",
+      "text": "1 indicates streaks of fat in the muscle, 2 indicates more muscle than ",
+      "bbox_pt": [
+        39.68510055541992,
+        692.5956420898438,
+        296.1770324707031,
+        702.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1234,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b25",
+      "text": "fat, 3 indicates equal proportions of muscle and fat, and 4 indicates ",
+      "bbox_pt": [
+        39.68510055541992,
+        703.3456420898438,
+        296.27716064453125,
+        713.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2930,
+        1234,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b26",
+      "text": "more fat than muscle in the expected muscle location 159 . Muscle quality, ",
+      "bbox_pt": [
+        39.68510055541992,
+        713.75732421875,
+        296.199462890625,
+        724.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2973,
+        1234,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b27",
+      "text": "especially of the infraspinatus, is predictive of surgical outcomes after ",
+      "bbox_pt": [
+        39.68510055541992,
+        724.8456420898438,
+        296.3814697265625,
+        735.026123046875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1234,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b28",
+      "text": "rotator cuff repair 160 – 162 . The Goutallier classification impacts clinical ",
+      "bbox_pt": [
+        39.68510055541992,
+        735.25732421875,
+        296.2580871582031,
+        745.776123046875
+      ],
+      "bbox_px": [
+        165,
+        3063,
+        1234,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b29",
+      "text": "decisions, although the reproducibility of this system is moderate at ",
+      "bbox_pt": [
+        306.14239501953125,
+        112.09367370605469,
+        562.716552734375,
+        122.274169921875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2344,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b30",
+      "text": "best 163 – 165 . Advanced MRI techniques, such as IDEAL MRI and Dixon fat–",
+      "bbox_pt": [
+        306.1416931152344,
+        122.50740051269531,
+        561.3259887695312,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        510,
+        2338,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b31",
+      "text": "water separation sequences, can allow a more precise measurement of ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.5956268310547,
+        562.5420532226562,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        556,
+        2343,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b32",
+      "text": "intramuscular fat that allows improved treatment recommendations ",
+      "bbox_pt": [
+        306.1416931152344,
+        144.3456268310547,
+        562.7166137695312,
+        154.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        601,
+        2344,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b33",
+      "text": "compared with findings from conventional MRI 89 , 166 – 169 . Information ",
+      "bbox_pt": [
+        306.1416931152344,
+        154.7574005126953,
+        562.7037963867188,
+        165.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        644,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b34",
+      "text": "obtained from preoperative MRI can be utilized in scoring systems, ",
+      "bbox_pt": [
+        306.1416931152344,
+        165.8456268310547,
+        562.6038818359375,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b35",
+      "text": "such as the rotator cuff healing index, which offer insight into the ",
+      "bbox_pt": [
+        306.1416931152344,
+        176.5956268310547,
+        562.7208251953125,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b36",
+      "text": "likelihood of success after surgical treatment 170 . Magnetic resonance ",
+      "bbox_pt": [
+        306.1416931152344,
+        187.0074005126953,
+        562.7064208984375,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        779,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b37",
+      "text": "arthrography has excellent diagnostic performance and is an additional ",
+      "bbox_pt": [
+        306.1416931152344,
+        198.0956268310547,
+        562.6632080078125,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        825,
+        2344,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b38",
+      "text": "option for imaging, although the addition of intra-articular contrast ",
+      "bbox_pt": [
+        306.1416931152344,
+        208.8456268310547,
+        562.6041870117188,
+        219.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2344,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b39",
+      "text": "material is often not necessary for the routine evaluation of rotator ",
+      "bbox_pt": [
+        306.1416931152344,
+        219.5956268310547,
+        562.63916015625,
+        229.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        914,
+        2344,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b40",
+      "text": "cuff tears 155 , 171 . In areas with limited MRI availability, availability of ",
+      "bbox_pt": [
+        306.1416931152344,
+        230.0074005126953,
+        562.656005859375,
+        240.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        958,
+        2344,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b41",
+      "text": "arthroscopic surgical resources might also be limited, making overall ",
+      "bbox_pt": [
+        306.1416931152344,
+        241.0956268310547,
+        562.7317504882812,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1004,
+        2344,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b42",
+      "text": "diagnosis and treatment of rotator cuff pathology very challenging.",
+      "bbox_pt": [
+        306.1416931152344,
+        251.8456268310547,
+        557.0520629882812,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2321,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b43",
+      "text": "CT .  CT is less frequently utilized than other imaging modalities for ",
+      "bbox_pt": [
+        306.1416931152344,
+        271.9596252441406,
+        562.8279418945312,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1133,
+        2345,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b44",
+      "text": "the diagnosis of rotator cuff tears. The Goutallier classification was ",
+      "bbox_pt": [
+        306.1416931152344,
+        284.0956115722656,
+        562.6011352539062,
+        294.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b45",
+      "text": "originally developed based on CT imaging. Although CT can provide an ",
+      "bbox_pt": [
+        306.1416931152344,
+        294.8456115722656,
+        562.7938842773438,
+        305.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2344,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b46",
+      "text": "evaluation of muscle quality, a detailed analysis of soft tissue employing ",
+      "bbox_pt": [
+        306.1416931152344,
+        305.5956115722656,
+        562.6342163085938,
+        315.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2344,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b47",
+      "text": "a CT scan is limited 161 . For patients who do not have access to MRI, a CT ",
+      "bbox_pt": [
+        306.1416931152344,
+        316.00732421875,
+        562.71826171875,
+        326.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1316,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b48",
+      "text": "arthrogram can be an option to evaluate the rotator cuff; extension of ",
+      "bbox_pt": [
+        306.1416931152344,
+        327.0956115722656,
+        562.7559204101562,
+        337.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1362,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b49",
+      "text": "contrast material into the subacromial space indicates a full-thickness ",
+      "bbox_pt": [
+        306.1416931152344,
+        337.8456115722656,
+        562.6689453125,
+        348.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b50",
+      "text": "rotator cuff tear 172 .",
+      "bbox_pt": [
+        306.1416931152344,
+        348.25732421875,
+        375.6357116699219,
+        358.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1451,
+        1565,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b51",
+      "text": "Ultrasonography .  Ultrasonography can offer excellent information ",
+      "bbox_pt": [
+        306.1416931152344,
+        368.7096252441406,
+        562.7750854492188,
+        380.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1536,
+        2344,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b52",
+      "text": "regarding all clinically relevant aspects of rotator cuff injuries, while ",
+      "bbox_pt": [
+        306.1416931152344,
+        380.8456115722656,
+        562.732421875,
+        391.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        2344,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b53",
+      "text": "also being low-cost, portable and more comfortable for patients ",
+      "bbox_pt": [
+        306.1416931152344,
+        391.5956115722656,
+        562.8562622070312,
+        401.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1631,
+        2345,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b54",
+      "text": "than MRI 173 – 175 . Ultrasonography can detect partial-thickness and ",
+      "bbox_pt": [
+        306.1416931152344,
+        402.00732421875,
+        562.8512573242188,
+        412.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1675,
+        2345,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b55",
+      "text": "full-thickness rotator cuff tears, with specificity ranging from 0.77 to ",
+      "bbox_pt": [
+        306.1416931152344,
+        413.0956115722656,
+        562.7259521484375,
+        423.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2344,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b56",
+      "text": "0.98 (refs.  155 , 176 , 177 ). Ultrasonography can be utilized to determine ",
+      "bbox_pt": [
+        306.1416931152344,
+        423.8453674316406,
+        562.7142333984375,
+        434.02587890625
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b57",
+      "text": "rotator cuff tear size, retraction and muscle quality 16 , 178 . Although ",
+      "bbox_pt": [
+        306.1416931152344,
+        434.25732421875,
+        562.7553100585938,
+        444.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1809,
+        2344,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b58",
+      "text": "ultrasonographic evaluation can be operator-dependent, this modal-",
+      "bbox_pt": [
+        306.1418151855469,
+        445.3456115722656,
+        561.2598876953125,
+        455.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2338,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b59",
+      "text": "ity can be an excellent, low-cost first-line option for evaluating the ",
+      "bbox_pt": [
+        306.1418151855469,
+        456.0956115722656,
+        562.6981811523438,
+        466.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b60",
+      "text": "rotator cuff 173 .",
+      "bbox_pt": [
+        306.1418151855469,
+        466.50732421875,
+        359.1888122558594,
+        477.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1943,
+        1496,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b61",
+      "text": "Prevention strategies",
+      "bbox_pt": [
+        306.1418151855469,
+        487.8218688964844,
+        394.6611328125,
+        498.6631164550781
+      ],
+      "bbox_px": [
+        1275,
+        2032,
+        1644,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b62",
+      "text": "When developing prevention strategies for the development of rota-",
+      "bbox_pt": [
+        306.1418151855469,
+        499.0956115722656,
+        561.2401123046875,
+        509.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        2338,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b63",
+      "text": "tor cuff tears, it is important to understand that not all risk factors ",
+      "bbox_pt": [
+        306.1418151855469,
+        509.8456115722656,
+        562.6555786132812,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b64",
+      "text": "are modifiable. However, strategies should minimize not only the ",
+      "bbox_pt": [
+        306.1418151855469,
+        520.5956420898438,
+        562.5964965820312,
+        530.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b65",
+      "text": "development of rotator cuff pathology but also symptoms. Postural ",
+      "bbox_pt": [
+        306.1418151855469,
+        531.3456420898438,
+        562.8310546875,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2345,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b66",
+      "text": "training, flexibility programmes and simple strengthening exercises ",
+      "bbox_pt": [
+        306.1418151855469,
+        542.0956420898438,
+        562.5216064453125,
+        552.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2258,
+        2343,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b67",
+      "text": "for the shoulder and scapular muscles can be beneficial in improving ",
+      "bbox_pt": [
+        306.1418151855469,
+        552.8456420898438,
+        562.7086791992188,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b68",
+      "text": "shoulder health 179 . These strategies might help to minimize the risk of ",
+      "bbox_pt": [
+        306.1418151855469,
+        563.25732421875,
+        562.7517700195312,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2346,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b69",
+      "text": "developing poor posture or form, which can lead to compensation and ",
+      "bbox_pt": [
+        306.1418151855469,
+        574.3456420898438,
+        562.6277465820312,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2344,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b70",
+      "text": "undue pressure on an ageing rotator cuff, leading to injury. However, ",
+      "bbox_pt": [
+        306.1418151855469,
+        585.0956420898438,
+        562.7239990234375,
+        595.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2437,
+        2344,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b71",
+      "text": "studies have not shown a clear link between improving posture and ",
+      "bbox_pt": [
+        306.1418151855469,
+        595.8456420898438,
+        562.8082275390625,
+        606.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2482,
+        2345,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b72",
+      "text": "minimizing the incidence of cuff tear and, therefore, the benefits of ",
+      "bbox_pt": [
+        306.1418151855469,
+        606.5956420898438,
+        562.5360717773438,
+        616.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2343,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b73",
+      "text": "better posture remain theoretical.",
+      "bbox_pt": [
+        306.1418151855469,
+        617.3456420898438,
+        433.5053405761719,
+        627.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        1806,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b74",
+      "text": "Although flexibility and rotator cuff exercises can be beneficial in ",
+      "bbox_pt": [
+        323.14959716796875,
+        628.0956420898438,
+        562.8142700195312,
+        638.276123046875
+      ],
+      "bbox_px": [
+        1346,
+        2617,
+        2345,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b75",
+      "text": "the prevention of symptoms, studies have shown that excessive repeti-",
+      "bbox_pt": [
+        306.1418151855469,
+        638.8456420898438,
+        561.2598266601562,
+        649.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2661,
+        2338,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b76",
+      "text": "tive use of the rotator cuff can be detrimental 180 . The repetitive nature ",
+      "bbox_pt": [
+        306.1418151855469,
+        649.25732421875,
+        562.6704711914062,
+        659.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2705,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b77",
+      "text": "of overhead sports is a well-known factor that contributes to rota-",
+      "bbox_pt": [
+        306.1418151855469,
+        660.3456420898438,
+        561.2599487304688,
+        670.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2338,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b78",
+      "text": "tor cuff symptoms, although how progression to full-thickness tears ",
+      "bbox_pt": [
+        306.1418151855469,
+        671.0956420898438,
+        562.72412109375,
+        681.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2344,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b79",
+      "text": "occurs is unclear. Limiting the time spent engaged in repetitive exer-",
+      "bbox_pt": [
+        306.1418151855469,
+        681.8453979492188,
+        561.265625,
+        692.02587890625
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2338,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b80",
+      "text": "cises and activities, careful biomechanical evaluation of performance ",
+      "bbox_pt": [
+        306.1418151855469,
+        692.5956420898438,
+        562.6698608398438,
+        702.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b81",
+      "text": "and a continual emphasis on form are the most effective ­preventative ",
+      "bbox_pt": [
+        306.1418151855469,
+        703.3456420898438,
+        562.7084350585938,
+        713.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b82",
+      "text": "measures to avoid symptoms arising from a rotator cuff tear.",
+      "bbox_pt": [
+        306.14178466796875,
+        714.0953979492188,
+        530.6520385742188,
+        724.27587890625
+      ],
+      "bbox_px": [
+        1275,
+        2975,
+        2211,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b83",
+      "text": "Smoking cessation programmes are imperative before any surgi-",
+      "bbox_pt": [
+        323.1496887207031,
+        724.8456420898438,
+        561.2599487304688,
+        735.026123046875
+      ],
+      "bbox_px": [
+        1346,
+        3020,
+        2338,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b84",
+      "text": "cal intervention to circumvent its negative effect on healing. Chronic ",
+      "bbox_pt": [
+        306.1418151855469,
+        735.5956420898438,
+        562.6995239257812,
+        745.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        3064,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p10_b85",
+      "text": "Table 1 | Differential diagnosis of rotator cuff pathology",
+      "bbox_pt": [
+        39.685001373291016,
+        110.2098159790039,
+        270.22900390625,
+        122.62981414794922
+      ],
+      "bbox_px": [
+        165,
+        459,
+        1125,
+        510
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b86",
+      "text": "Diagnosis",
+      "bbox_pt": [
+        43.685001373291016,
+        130.75250244140625,
+        76.07400512695312,
+        140.41250610351562
+      ],
+      "bbox_px": [
+        182,
+        544,
+        316,
+        585
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b87",
+      "text": "Clinical symptoms or key physical examination findings",
+      "bbox_pt": [
+        95.68800354003906,
+        130.75250244140625,
+        276.8654479980469,
+        140.41250610351562
+      ],
+      "bbox_px": [
+        398,
+        544,
+        1153,
+        585
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b88",
+      "text": "Rotator cuff ",
+      "bbox_pt": [
+        43.68500518798828,
+        145.3054962158203,
+        83.28121948242188,
+        154.86050415039062
+      ],
+      "bbox_px": [
+        182,
+        605,
+        347,
+        645
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b89",
+      "text": "degeneration",
+      "bbox_pt": [
+        43.68500518798828,
+        153.80348205566406,
+        86.63910675048828,
+        163.35848999023438
+      ],
+      "bbox_px": [
+        182,
+        640,
+        360,
+        680
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b90",
+      "text": "Impingement signs",
+      "bbox_pt": [
+        95.68800354003906,
+        145.3054962158203,
+        156.9450225830078,
+        154.86050415039062
+      ],
+      "bbox_px": [
+        398,
+        605,
+        653,
+        645
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b91",
+      "text": "Neer test (sensitivity 72–78%, specificity 58–60%)",
+      "bbox_pt": [
+        95.68800354003906,
+        155.8054962158203,
+        250.14234924316406,
+        165.36050415039062
+      ],
+      "bbox_px": [
+        398,
+        649,
+        1042,
+        689
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b92",
+      "text": "Hawkins–Kennedy test (specificity 79–92%, sensitivity 25–57%)",
+      "bbox_pt": [
+        95.68800354003906,
+        166.3054962158203,
+        290.53582763671875,
+        175.86050415039062
+      ],
+      "bbox_px": [
+        398,
+        692,
+        1210,
+        732
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b93",
+      "text": "Painful arc test (positive likelihood ratio 3.7)",
+      "bbox_pt": [
+        95.68800354003906,
+        176.8054962158203,
+        232.4687042236328,
+        186.36050415039062
+      ],
+      "bbox_px": [
+        398,
+        736,
+        968,
+        776
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b94",
+      "text": "Supraspinatus ",
+      "bbox_pt": [
+        43.68500518798828,
+        190.53248596191406,
+        91.23391723632812,
+        200.08749389648438
+      ],
+      "bbox_px": [
+        182,
+        793,
+        380,
+        833
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b95",
+      "text": "tear",
+      "bbox_pt": [
+        43.68500518798828,
+        199.0304718017578,
+        56.32280349731445,
+        208.58547973632812
+      ],
+      "bbox_px": [
+        182,
+        829,
+        234,
+        869
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b96",
+      "text": "Painful arc test (positive likelihood ratio 3.7)",
+      "bbox_pt": [
+        95.68800354003906,
+        190.53248596191406,
+        232.4687042236328,
+        200.08749389648438
+      ],
+      "bbox_px": [
+        398,
+        793,
+        968,
+        833
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b97",
+      "text": "Jobe test (sensitivity 69–88%, specificity 30–62%)",
+      "bbox_pt": [
+        95.68800354003906,
+        201.03248596191406,
+        252.0519256591797,
+        210.58749389648438
+      ],
+      "bbox_px": [
+        398,
+        837,
+        1050,
+        877
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b98",
+      "text": "Drop arm test (sensitivity 8–12%, specificity 92–100%)",
+      "bbox_pt": [
+        95.68800354003906,
+        211.53248596191406,
+        263.5899963378906,
+        221.08749389648438
+      ],
+      "bbox_px": [
+        398,
+        881,
+        1098,
+        921
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b99",
+      "text": "Subscapularis ",
+      "bbox_pt": [
+        43.68500518798828,
+        225.2594757080078,
+        90.6368179321289,
+        234.81448364257812
+      ],
+      "bbox_px": [
+        182,
+        938,
+        377,
+        978
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b100",
+      "text": "tear",
+      "bbox_pt": [
+        43.68500518798828,
+        233.75746154785156,
+        56.32280349731445,
+        243.31246948242188
+      ],
+      "bbox_px": [
+        182,
+        973,
+        234,
+        1013
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b101",
+      "text": "Pain or weakness with lift-off test (sensitivity 25–100%, ",
+      "bbox_pt": [
+        95.68800354003906,
+        225.2594757080078,
+        268.68316650390625,
+        234.81448364257812
+      ],
+      "bbox_px": [
+        398,
+        938,
+        1119,
+        978
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b102",
+      "text": "specificity 50–94%)",
+      "bbox_pt": [
+        95.68800354003906,
+        233.75746154785156,
+        157.85011291503906,
+        243.31246948242188
+      ],
+      "bbox_px": [
+        398,
+        973,
+        657,
+        1013
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b103",
+      "text": "Pain or weakness with belly press test (sensitivity 34–73%, ",
+      "bbox_pt": [
+        95.68800354003906,
+        244.25746154785156,
+        279.2980041503906,
+        253.81246948242188
+      ],
+      "bbox_px": [
+        398,
+        1017,
+        1163,
+        1057
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b104",
+      "text": "specificity 72–96%)",
+      "bbox_pt": [
+        95.68800354003906,
+        252.7554473876953,
+        156.71192932128906,
+        262.3104553222656
+      ],
+      "bbox_px": [
+        398,
+        1053,
+        652,
+        1092
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b105",
+      "text": "Large rotator ",
+      "bbox_pt": [
+        43.68500518798828,
+        266.482421875,
+        86.85400390625,
+        276.0374450683594
+      ],
+      "bbox_px": [
+        182,
+        1110,
+        361,
+        1150
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b106",
+      "text": "cuff tears",
+      "bbox_pt": [
+        43.68500518798828,
+        274.98040771484375,
+        73.67861938476562,
+        284.5354309082031
+      ],
+      "bbox_px": [
+        182,
+        1145,
+        306,
+        1185
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b107",
+      "text": "External rotation lag sign (positive likelihood ratio 7.6)",
+      "bbox_pt": [
+        95.68800354003906,
+        266.482421875,
+        264.18365478515625,
+        276.0374450683594
+      ],
+      "bbox_px": [
+        398,
+        1110,
+        1100,
+        1150
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b108",
+      "text": "Weakness with muscle testing (all groups)",
+      "bbox_pt": [
+        95.68800354003906,
+        276.982421875,
+        228.56765747070312,
+        286.5374450683594
+      ],
+      "bbox_px": [
+        398,
+        1154,
+        952,
+        1193
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b109",
+      "text": "Other common shoulder pathologies",
+      "bbox_pt": [
+        43.68500518798828,
+        290.60443115234375,
+        164.9403533935547,
+        300.2644348144531
+      ],
+      "bbox_px": [
+        182,
+        1210,
+        687,
+        1251
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b110",
+      "text": "Frozen ",
+      "bbox_pt": [
+        43.68500518798828,
+        304.4364013671875,
+        66.93270874023438,
+        313.9914245605469
+      ],
+      "bbox_px": [
+        182,
+        1268,
+        278,
+        1308
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b111",
+      "text": "shoulder",
+      "bbox_pt": [
+        43.68500518798828,
+        312.93438720703125,
+        72.02801513671875,
+        322.4894104003906
+      ],
+      "bbox_px": [
+        182,
+        1303,
+        300,
+        1343
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b112",
+      "text": "Limited active and passive range of motion (no radiographic ",
+      "bbox_pt": [
+        95.68800354003906,
+        304.4364013671875,
+        287.1786193847656,
+        313.9914245605469
+      ],
+      "bbox_px": [
+        398,
+        1268,
+        1196,
+        1308
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b113",
+      "text": "signs of glenohumeral arthritis)",
+      "bbox_pt": [
+        95.68800354003906,
+        312.93438720703125,
+        194.71490478515625,
+        322.4894104003906
+      ],
+      "bbox_px": [
+        398,
+        1303,
+        811,
+        1343
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b114",
+      "text": "Glenohumeral ",
+      "bbox_pt": [
+        43.68500518798828,
+        326.661376953125,
+        91.4691162109375,
+        336.2164001464844
+      ],
+      "bbox_px": [
+        182,
+        1361,
+        381,
+        1400
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b115",
+      "text": "arthritis",
+      "bbox_pt": [
+        43.68500518798828,
+        335.15936279296875,
+        68.12480926513672,
+        344.7143859863281
+      ],
+      "bbox_px": [
+        182,
+        1396,
+        283,
+        1436
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b116",
+      "text": "Limited active and passive range of motion (radiographic ",
+      "bbox_pt": [
+        95.68800354003906,
+        326.661376953125,
+        277.4563293457031,
+        336.2164001464844
+      ],
+      "bbox_px": [
+        398,
+        1361,
+        1156,
+        1400
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b117",
+      "text": "signs of glenohumeral arthritis)",
+      "bbox_pt": [
+        95.68800354003906,
+        335.15936279296875,
+        194.71490478515625,
+        344.7143859863281
+      ],
+      "bbox_px": [
+        398,
+        1396,
+        811,
+        1436
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b118",
+      "text": "SLAP tear",
+      "bbox_pt": [
+        43.68500518798828,
+        348.8863525390625,
+        74.36882019042969,
+        358.4413757324219
+      ],
+      "bbox_px": [
+        182,
+        1453,
+        309,
+        1493
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b119",
+      "text": "O’Brien test",
+      "bbox_pt": [
+        95.68800354003906,
+        348.8863525390625,
+        132.86920166015625,
+        358.4413757324219
+      ],
+      "bbox_px": [
+        398,
+        1453,
+        553,
+        1493
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b120",
+      "text": "Biceps ",
+      "bbox_pt": [
+        43.68500518798828,
+        362.61334228515625,
+        66.93901062011719,
+        372.1683654785156
+      ],
+      "bbox_px": [
+        182,
+        1510,
+        278,
+        1550
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b121",
+      "text": "tendonitis",
+      "bbox_pt": [
+        43.68500518798828,
+        371.111328125,
+        75.73100280761719,
+        380.6663513183594
+      ],
+      "bbox_px": [
+        182,
+        1546,
+        315,
+        1586
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b122",
+      "text": "Painful at bicipital groove",
+      "bbox_pt": [
+        95.68800354003906,
+        362.61334228515625,
+        176.10888671875,
+        372.1683654785156
+      ],
+      "bbox_px": [
+        398,
+        1510,
+        733,
+        1550
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b123",
+      "text": "Yergason test",
+      "bbox_pt": [
+        95.68800354003906,
+        373.11334228515625,
+        138.66799926757812,
+        382.6683654785156
+      ],
+      "bbox_px": [
+        398,
+        1554,
+        577,
+        1594
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b124",
+      "text": "Speed test",
+      "bbox_pt": [
+        95.68800354003906,
+        383.61334228515625,
+        129.91311645507812,
+        393.1683654785156
+      ],
+      "bbox_px": [
+        398,
+        1598,
+        541,
+        1638
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b125",
+      "text": "AC joint ",
+      "bbox_pt": [
+        43.68500518798828,
+        397.34033203125,
+        70.50481414794922,
+        406.8953552246094
+      ],
+      "bbox_px": [
+        182,
+        1655,
+        293,
+        1695
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b126",
+      "text": "degeneration",
+      "bbox_pt": [
+        43.68500518798828,
+        405.83831787109375,
+        86.63910675048828,
+        415.3933410644531
+      ],
+      "bbox_px": [
+        182,
+        1690,
+        360,
+        1730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b127",
+      "text": "Tenderness at AC joint",
+      "bbox_pt": [
+        95.68800354003906,
+        397.34033203125,
+        166.29002380371094,
+        406.8953552246094
+      ],
+      "bbox_px": [
+        398,
+        1655,
+        692,
+        1695
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b128",
+      "text": "Cross-body test",
+      "bbox_pt": [
+        95.68800354003906,
+        407.84033203125,
+        145.9731903076172,
+        417.3953552246094
+      ],
+      "bbox_px": [
+        398,
+        1699,
+        608,
+        1739
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b129",
+      "text": "Cervical spine ",
+      "bbox_pt": [
+        43.68500518798828,
+        421.56732177734375,
+        90.73411560058594,
+        431.1223449707031
+      ],
+      "bbox_px": [
+        182,
+        1756,
+        378,
+        1796
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b130",
+      "text": "degeneration",
+      "bbox_pt": [
+        43.68500518798828,
+        430.0653076171875,
+        86.63910675048828,
+        439.6203308105469
+      ],
+      "bbox_px": [
+        182,
+        1791,
+        360,
+        1831
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b131",
+      "text": "Radiating pain past elbow",
+      "bbox_pt": [
+        95.68800354003906,
+        421.56732177734375,
+        177.51382446289062,
+        431.1223449707031
+      ],
+      "bbox_px": [
+        398,
+        1756,
+        739,
+        1796
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b132",
+      "text": "Spurling test",
+      "bbox_pt": [
+        95.68800354003906,
+        432.06732177734375,
+        136.50009155273438,
+        441.6223449707031
+      ],
+      "bbox_px": [
+        398,
+        1800,
+        568,
+        1840
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p10_b133",
+      "text": "AC, acromioclavicular; SLAP, superior labrum anterior posterior.",
+      "bbox_pt": [
+        39.685001373291016,
+        445.6272277832031,
+        213.4443817138672,
+        453.8172302246094
+      ],
+      "bbox_px": [
+        165,
+        1856,
+        889,
+        1890
+      ],
+      "column_guess": 1
+    }
+  ],
+  "constraints": {
+    "total_blocks": 134
+  }
+}

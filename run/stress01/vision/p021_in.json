@@ -1,0 +1,536 @@
+{
+  "page": 21,
+  "image_path": "run\\stress01\\pages\\p021.png",
+  "blocks": [
+    {
+      "block_id": "p21_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b2",
+      "text": "Figure 7.  Exploration of electric stimulation-induced molecular and cell responses. a) Electrical stimulation accelerates proliferation and diﬀerenti-",
+      "bbox_pt": [
+        50.81093978881836,
+        540.7283935546875,
+        546.882568359375,
+        548.7584228515625
+      ],
+      "bbox_px": [
+        211,
+        2253,
+        2278,
+        2286
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b3",
+      "text": "ation of osteoblasts, promotes vascularization, and improves macrophage phagocytosis in the process of bone healing. [ 199 ] Copyright 2024, Wiley-",
+      "bbox_pt": [
+        50.81093978881836,
+        547.4573364257812,
+        546.8824462890625,
+        558.2173461914062
+      ],
+      "bbox_px": [
+        211,
+        2281,
+        2278,
+        2325
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b4",
+      "text": "VCH. b ∼ c) Scratch test exhibits the migration of stem cell by treated with control, Piezo, and collagen hydrogel (Scale bars: 500  μ m). [ 190 ] Copyright",
+      "bbox_pt": [
+        50.81142807006836,
+        556.9253540039062,
+        546.8773803710938,
+        567.6854248046875
+      ],
+      "bbox_px": [
+        211,
+        2320,
+        2278,
+        2365
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b5",
+      "text": "2023, Springer Nature. d) Bright-ﬁeld images and ﬂuorescence images of GelMA and GelMA-Pani by digital projection micro-GelMA-Pani produced by",
+      "bbox_pt": [
+        50.8120002746582,
+        569.1830444335938,
+        546.8575439453125,
+        577.1531372070312
+      ],
+      "bbox_px": [
+        211,
+        2371,
+        2278,
+        2404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b6",
+      "text": "stereolithography. [ 216 ] Copyright 2016, Elsevier. e) GO functional enrichment analysis including cellular component, biological process, and molecular",
+      "bbox_pt": [
+        50.8120002746582,
+        575.8523559570312,
+        546.8514404296875,
+        586.6124267578125
+      ],
+      "bbox_px": [
+        211,
+        2399,
+        2278,
+        2444
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b7",
+      "text": "function. [ 12 ] Copyright 2024, AAAS. f) The gene expression patterns in cells after electric stimulations. [ 12 ] g) Schematic of the battery-free Bd-eS for",
+      "bbox_pt": [
+        50.810768127441406,
+        585.3203735351562,
+        546.870849609375,
+        596.0804443359375
+      ],
+      "bbox_px": [
+        211,
+        2438,
+        2278,
+        2483
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b8",
+      "text": "patients performing active and the possible mechanism for bone and cartilage repair. Copyright 2024, AAAS. [ 12 ]",
+      "bbox_pt": [
+        50.811790466308594,
+        596.2677001953125,
+        417.4893798828125,
+        605.5393676757812
+      ],
+      "bbox_px": [
+        211,
+        2484,
+        1739,
+        2523
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b9",
+      "text": "electrically controlling cellular redox properties and their appli-",
+      "bbox_pt": [
+        50.81093978881836,
+        623.8251953125,
+        291.7641296386719,
+        632.8722534179688
+      ],
+      "bbox_px": [
+        211,
+        2599,
+        1215,
+        2636
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b10",
+      "text": "cations in cell culture experiments. [ 204 ] By applying ES, changes",
+      "bbox_pt": [
+        50.81093978881836,
+        631.6460571289062,
+        291.74237060546875,
+        643.8345336914062
+      ],
+      "bbox_px": [
+        211,
+        2631,
+        1215,
+        2682
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b11",
+      "text": "in the conformational states of ECM proteins can be induced,",
+      "bbox_pt": [
+        50.81071853637695,
+        645.7405395507812,
+        291.752197265625,
+        654.78759765625
+      ],
+      "bbox_px": [
+        211,
+        2690,
+        1215,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b12",
+      "text": "leading to alterations in cellular responses such as cell adhesion.",
+      "bbox_pt": [
+        50.81071853637695,
+        656.702880859375,
+        291.7513122558594,
+        665.7499389648438
+      ],
+      "bbox_px": [
+        211,
+        2736,
+        1215,
+        2773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b13",
+      "text": "Oxidized PEDOT coated with Fn promotes speciﬁc protein con-",
+      "bbox_pt": [
+        50.81071853637695,
+        667.6651611328125,
+        291.73876953125,
+        676.7122192382812
+      ],
+      "bbox_px": [
+        211,
+        2781,
+        1215,
+        2819
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b14",
+      "text": "formations that facilitate cell attachment and proliferation. Re-",
+      "bbox_pt": [
+        50.81071853637695,
+        678.6185302734375,
+        291.76300048828125,
+        687.6655883789062
+      ],
+      "bbox_px": [
+        211,
+        2827,
+        1215,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b15",
+      "text": "cent advancements have demonstrated that heparin-doped oxi-",
+      "bbox_pt": [
+        50.81071853637695,
+        689.5808715820312,
+        291.7369384765625,
+        698.6279296875
+      ],
+      "bbox_px": [
+        211,
+        2873,
+        1215,
+        2910
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b16",
+      "text": "dized PEDOT eﬀectively releases the ﬁbroblast growth factors",
+      "bbox_pt": [
+        50.81071853637695,
+        700.5431518554688,
+        291.7396545410156,
+        709.5902099609375
+      ],
+      "bbox_px": [
+        211,
+        2918,
+        1215,
+        2956
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b17",
+      "text": "anchored to its surface, thereby promoting stem cell diﬀerenti-",
+      "bbox_pt": [
+        50.81071853637695,
+        711.4965209960938,
+        291.7531433105469,
+        720.5435791015625
+      ],
+      "bbox_px": [
+        211,
+        2964,
+        1215,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b18",
+      "text": "ation through precise electrochemical switches. This highlights",
+      "bbox_pt": [
+        305.9254150390625,
+        623.8275146484375,
+        546.853271484375,
+        632.8745727539062
+      ],
+      "bbox_px": [
+        1274,
+        2599,
+        2278,
+        2636
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b19",
+      "text": "the correlation between electrochemical modulation and the ac-",
+      "bbox_pt": [
+        305.9254150390625,
+        634.7898559570312,
+        546.8505859375,
+        643.8369140625
+      ],
+      "bbox_px": [
+        1274,
+        2644,
+        2278,
+        2682
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b20",
+      "text": "curate sequential regulation of stem cell states.",
+      "bbox_pt": [
+        305.9254150390625,
+        645.7432250976562,
+        482.06402587890625,
+        654.790283203125
+      ],
+      "bbox_px": [
+        1274,
+        2690,
+        2008,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b21",
+      "text": "The ongoing discussion about whether a positively or nega-",
+      "bbox_pt": [
+        315.3930358886719,
+        656.70556640625,
+        546.85693359375,
+        665.7526245117188
+      ],
+      "bbox_px": [
+        1314,
+        2736,
+        2278,
+        2773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b22",
+      "text": "tively charged surface is more eﬀective in promoting osteogenic",
+      "bbox_pt": [
+        305.9254150390625,
+        667.6678466796875,
+        546.8777465820312,
+        676.7149047851562
+      ],
+      "bbox_px": [
+        1274,
+        2781,
+        2278,
+        2819
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b23",
+      "text": "diﬀerentiation remains unresolved. Because of the wurtzite",
+      "bbox_pt": [
+        305.9254150390625,
+        678.6212158203125,
+        546.8894653320312,
+        687.6682739257812
+      ],
+      "bbox_px": [
+        1274,
+        2827,
+        2278,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b24",
+      "text": "structures of GaN and AlGaN, which exhibit opposing sponta-",
+      "bbox_pt": [
+        305.9254150390625,
+        689.5835571289062,
+        546.8533325195312,
+        698.630615234375
+      ],
+      "bbox_px": [
+        1274,
+        2873,
+        2278,
+        2910
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b25",
+      "text": "neous polarizations, it is feasible to manipulate the heterostruc-",
+      "bbox_pt": [
+        305.9254150390625,
+        700.5458374023438,
+        546.8840942382812,
+        709.5928955078125
+      ],
+      "bbox_px": [
+        1274,
+        2918,
+        2278,
+        2956
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b26",
+      "text": "tures of these materials by varying the direction and magnitude",
+      "bbox_pt": [
+        305.9254150390625,
+        711.4992065429688,
+        546.8778076171875,
+        720.5462646484375
+      ],
+      "bbox_px": [
+        1274,
+        2964,
+        2278,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b27",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b28",
+      "text": "2411209 (21 of 29)",
+      "bbox_pt": [
+        191.2935333251953,
+        743.669189453125,
+        260.0792236328125,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        797,
+        3098,
+        1083,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p21_b29",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0694274902344,
+        745.216064453125,
+        546.88330078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p21_b30",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 31
+  }
+}

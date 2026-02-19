@@ -1,0 +1,893 @@
+{
+  "page": 1,
+  "image_path": "run\\test01\\pages\\p001.png",
+  "blocks": [
+    {
+      "block_id": "p1_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b1",
+      "text": "1",
+      "bbox_pt": [
+        557.659912109375,
+        760.4366455078125,
+        561.2598876953125,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2323,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b2",
+      "text": "nature reviews  disease primers",
+      "bbox_pt": [
+        39.685001373291016,
+        36.67351150512695,
+        219.1621551513672,
+        55.47550964355469
+      ],
+      "bbox_px": [
+        165,
+        152,
+        913,
+        231
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b3",
+      "text": "https://doi.org/10.1038/s41572-024-00492-3",
+      "bbox_pt": [
+        391.1018981933594,
+        39.86884307861328,
+        561.2601928710938,
+        50.86884307861328
+      ],
+      "bbox_px": [
+        1629,
+        166,
+        2338,
+        211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b4",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        91.43093872070312,
+        71.53500366210938,
+        105.2309341430664
+      ],
+      "bbox_px": [
+        165,
+        380,
+        298,
+        438
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b5",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b6",
+      "text": "Check for updates",
+      "bbox_pt": [
+        491.5256042480469,
+        92.56192016601562,
+        561.2559814453125,
+        104.24942016601562
+      ],
+      "bbox_px": [
+        2048,
+        385,
+        2338,
+        434
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b7",
+      "text": "Rotator cuff tears",
+      "bbox_pt": [
+        39.685001373291016,
+        114.40462493896484,
+        286.3210144042969,
+        156.2586212158203
+      ],
+      "bbox_px": [
+        165,
+        476,
+        1193,
+        651
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b8",
+      "text": "Asheesh Bedi 1,2 , Julie Bishop 3 , Jay Keener 4 , Drew A. Lansdown 5 , Ofer Levy 6 , Peter MacDonald 7 , Nicola Maffulli ",
+      "bbox_pt": [
+        39.685001373291016,
+        187.0086212158203,
+        509.1472473144531,
+        199.77362060546875
+      ],
+      "bbox_px": [
+        165,
+        779,
+        2121,
+        832
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b9",
+      "text": "8 , ",
+      "bbox_pt": [
+        517.2661743164062,
+        187.0086212158203,
+        526.5352172851562,
+        199.77362060546875
+      ],
+      "bbox_px": [
+        2155,
+        779,
+        2193,
+        832
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b10",
+      "text": "Joo Han Oh 9 , Vani J. Sabesan 10 , Joaquin Sanchez-Sotelo 11 , Riley J. Williams III 12  & Brian T. Feeley ",
+      "bbox_pt": [
+        39.689208984375,
+        199.75514221191406,
+        445.3257141113281,
+        212.52362060546875
+      ],
+      "bbox_px": [
+        165,
+        832,
+        1855,
+        885
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b11",
+      "text": "5",
+      "bbox_pt": [
+        453.4399108886719,
+        198.56863403320312,
+        460.1005859375,
+        212.52362060546875
+      ],
+      "bbox_px": [
+        1889,
+        827,
+        1917,
+        885
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b12",
+      "text": "Abstract",
+      "bbox_pt": [
+        39.68510055541992,
+        216.91262817382812,
+        80.52410125732422,
+        230.71263122558594
+      ],
+      "bbox_px": [
+        165,
+        903,
+        335,
+        961
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b13",
+      "text": "Rotator cuff tears are the most common upper extremity condition seen ",
+      "bbox_pt": [
+        39.68510055541992,
+        251.24562072753906,
+        429.6253662109375,
+        266.0536193847656
+      ],
+      "bbox_px": [
+        165,
+        1046,
+        1790,
+        1108
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b14",
+      "text": "by primary care and orthopaedic surgeons, with a spectrum ranging ",
+      "bbox_pt": [
+        39.68510055541992,
+        267.2416076660156,
+        408.4679260253906,
+        282.0495910644531
+      ],
+      "bbox_px": [
+        165,
+        1113,
+        1701,
+        1175
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b15",
+      "text": "from tendinopathy to full-thickness tears with arthritic change. Some ",
+      "bbox_pt": [
+        39.68510055541992,
+        283.23760986328125,
+        416.0267028808594,
+        298.04559326171875
+      ],
+      "bbox_px": [
+        165,
+        1180,
+        1733,
+        1241
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b16",
+      "text": "tears are traumatic, but most rotator cuff problems are degenerative. ",
+      "bbox_pt": [
+        39.68510055541992,
+        299.2336120605469,
+        413.82958984375,
+        314.0415954589844
+      ],
+      "bbox_px": [
+        165,
+        1246,
+        1724,
+        1308
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b17",
+      "text": "Not all tears are symptomatic and not all progress, and many patients ",
+      "bbox_pt": [
+        39.68510055541992,
+        315.2296142578125,
+        413.98919677734375,
+        330.03759765625
+      ],
+      "bbox_px": [
+        165,
+        1313,
+        1724,
+        1375
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b18",
+      "text": "in whom tears become more extensive do not experience symptom ",
+      "bbox_pt": [
+        39.68510055541992,
+        331.2256164550781,
+        403.32122802734375,
+        346.0335998535156
+      ],
+      "bbox_px": [
+        165,
+        1380,
+        1680,
+        1441
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b19",
+      "text": "worsening. Hence, a standard algorithm for managing patients is ",
+      "bbox_pt": [
+        39.68510055541992,
+        347.22161865234375,
+        390.7031555175781,
+        362.02960205078125
+      ],
+      "bbox_px": [
+        165,
+        1446,
+        1627,
+        1508
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b20",
+      "text": "challenging. The pathophysiology of rotator cuff tears is complex ",
+      "bbox_pt": [
+        39.68510055541992,
+        363.2176208496094,
+        395.13836669921875,
+        378.0256042480469
+      ],
+      "bbox_px": [
+        165,
+        1513,
+        1646,
+        1575
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b21",
+      "text": "and encompasses an interplay between the tendon, bone and muscle. ",
+      "bbox_pt": [
+        39.68510055541992,
+        379.213623046875,
+        415.4327392578125,
+        394.0216064453125
+      ],
+      "bbox_px": [
+        165,
+        1580,
+        1730,
+        1641
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b22",
+      "text": "Rotator cuff tears begin as degenerative changes within the tendon, ",
+      "bbox_pt": [
+        39.68510055541992,
+        395.2096252441406,
+        405.4739685058594,
+        410.0176086425781
+      ],
+      "bbox_px": [
+        165,
+        1646,
+        1689,
+        1708
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b23",
+      "text": "with matrix disorganization and inflammatory changes. Subsequently, ",
+      "bbox_pt": [
+        39.68510055541992,
+        411.20562744140625,
+        422.7575988769531,
+        426.01361083984375
+      ],
+      "bbox_px": [
+        165,
+        1713,
+        1761,
+        1775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b24",
+      "text": "tears progress to partial-thickness and then full-thickness tears. Muscle ",
+      "bbox_pt": [
+        39.68510055541992,
+        427.2016296386719,
+        426.3396301269531,
+        442.0096130371094
+      ],
+      "bbox_px": [
+        165,
+        1780,
+        1776,
+        1841
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b25",
+      "text": "quality, as evidenced by the overall size of the muscle and intramuscular ",
+      "bbox_pt": [
+        39.68510055541992,
+        443.1976318359375,
+        429.0168151855469,
+        458.005615234375
+      ],
+      "bbox_px": [
+        165,
+        1846,
+        1787,
+        1908
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b26",
+      "text": "fatty infiltration, also influences symptoms, tear progression and the ",
+      "bbox_pt": [
+        39.68510055541992,
+        459.1936340332031,
+        411.9708251953125,
+        474.0016174316406
+      ],
+      "bbox_px": [
+        165,
+        1913,
+        1716,
+        1975
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b27",
+      "text": "outcomes of surgery. Treatment depends primarily on symptoms, with ",
+      "bbox_pt": [
+        39.68510055541992,
+        475.18963623046875,
+        423.94793701171875,
+        489.99761962890625
+      ],
+      "bbox_px": [
+        165,
+        1979,
+        1766,
+        2041
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b28",
+      "text": "non-operative management sufficient for most patients with rotator ",
+      "bbox_pt": [
+        39.68510055541992,
+        491.1856384277344,
+        409.5,
+        505.9936218261719
+      ],
+      "bbox_px": [
+        165,
+        2046,
+        1706,
+        2108
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b29",
+      "text": "cuff problems. Modern arthroscopic repair techniques have improved ",
+      "bbox_pt": [
+        39.68510055541992,
+        507.1816711425781,
+        419.862060546875,
+        521.9896850585938
+      ],
+      "bbox_px": [
+        165,
+        2113,
+        1749,
+        2174
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b30",
+      "text": "recovery, but outcomes are still limited by a lack of understanding of ",
+      "bbox_pt": [
+        39.68510055541992,
+        523.1776123046875,
+        410.2788391113281,
+        537.9856567382812
+      ],
+      "bbox_px": [
+        165,
+        2179,
+        1709,
+        2241
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b31",
+      "text": "how to improve tendon to bone healing in many patients.",
+      "bbox_pt": [
+        39.68510055541992,
+        539.173583984375,
+        346.93316650390625,
+        553.9816284179688
+      ],
+      "bbox_px": [
+        165,
+        2246,
+        1445,
+        2308
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b32",
+      "text": "Sections",
+      "bbox_pt": [
+        438.3700866699219,
+        217.89254760742188,
+        479.6300354003906,
+        231.6925506591797
+      ],
+      "bbox_px": [
+        1826,
+        907,
+        1998,
+        965
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b33",
+      "text": "Introduction",
+      "bbox_pt": [
+        438.3700866699219,
+        251.62704467773438,
+        488.0440979003906,
+        263.3145446777344
+      ],
+      "bbox_px": [
+        1826,
+        1048,
+        2033,
+        1097
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b34",
+      "text": "Epidemiology",
+      "bbox_pt": [
+        438.3700866699219,
+        270.9560546875,
+        493.6285705566406,
+        282.6435546875
+      ],
+      "bbox_px": [
+        1826,
+        1128,
+        2056,
+        1177
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b35",
+      "text": "Mechanisms/pathophysiology",
+      "bbox_pt": [
+        438.3700866699219,
+        290.2850646972656,
+        558.5091552734375,
+        301.9725646972656
+      ],
+      "bbox_px": [
+        1826,
+        1209,
+        2327,
+        1258
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b36",
+      "text": "Diagnosis, screening and ",
+      "bbox_pt": [
+        438.3700866699219,
+        309.61407470703125,
+        539.4087524414062,
+        321.30157470703125
+      ],
+      "bbox_px": [
+        1826,
+        1290,
+        2247,
+        1338
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b37",
+      "text": "prevention",
+      "bbox_pt": [
+        438.3700866699219,
+        320.01806640625,
+        481.5841064453125,
+        331.70556640625
+      ],
+      "bbox_px": [
+        1826,
+        1333,
+        2006,
+        1382
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b38",
+      "text": "Management",
+      "bbox_pt": [
+        438.3700866699219,
+        339.3470764160156,
+        491.07861328125,
+        351.0345764160156
+      ],
+      "bbox_px": [
+        1826,
+        1413,
+        2046,
+        1462
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b39",
+      "text": "Quality of life",
+      "bbox_pt": [
+        438.3700866699219,
+        358.67608642578125,
+        491.2655944824219,
+        370.36358642578125
+      ],
+      "bbox_px": [
+        1826,
+        1494,
+        2046,
+        1543
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b40",
+      "text": "Outlook",
+      "bbox_pt": [
+        438.3700866699219,
+        378.0050964355469,
+        470.6955871582031,
+        389.6925964355469
+      ],
+      "bbox_px": [
+        1826,
+        1575,
+        1961,
+        1623
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p1_b41",
+      "text": "1 Department of Orthopedic Surgery, University of Chicago, Chicago, IL, USA.  2 NorthShore Health System, ",
+      "bbox_pt": [
+        39.685001373291016,
+        627.6681518554688,
+        399.2395935058594,
+        637.9056396484375
+      ],
+      "bbox_px": [
+        165,
+        2615,
+        1663,
+        2657
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b42",
+      "text": "Chicago, IL, USA.  3 Department of Orthopedic Surgery, The Ohio State Wexner Medical Center, Columbus, OH, ",
+      "bbox_pt": [
+        39.68359375,
+        638.4156494140625,
+        415.9814453125,
+        648.6556396484375
+      ],
+      "bbox_px": [
+        165,
+        2660,
+        1733,
+        2702
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b43",
+      "text": "USA.  4 Department of Orthopedic Surgery, Washington University, St. Louis, MO, USA.  5 Department of Orthopedic ",
+      "bbox_pt": [
+        39.68529510498047,
+        649.1656494140625,
+        425.49664306640625,
+        659.4056396484375
+      ],
+      "bbox_px": [
+        165,
+        2704,
+        1772,
+        2747
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b44",
+      "text": "Surgery, University of California San Francisco, San Francisco, CA, USA.  6 Reading Shoulder Unit, Berkshire ",
+      "bbox_pt": [
+        39.682403564453125,
+        659.9156494140625,
+        400.85797119140625,
+        670.1556396484375
+      ],
+      "bbox_px": [
+        165,
+        2749,
+        1670,
+        2792
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b45",
+      "text": "Independent Hospital, Reading, UK.  7 Department of Surgery, Max Rady College of Medicine, Winnipeg, Manitoba, ",
+      "bbox_pt": [
+        39.68119812011719,
+        670.6656494140625,
+        426.7787170410156,
+        680.9056396484375
+      ],
+      "bbox_px": [
+        165,
+        2794,
+        1778,
+        2837
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b46",
+      "text": "Canada.  8 Department of Trauma and Orthopaedic Surgery, Faculty of Medicine and Psychology, University of ",
+      "bbox_pt": [
+        39.68341064453125,
+        681.4156494140625,
+        411.7322692871094,
+        691.6556396484375
+      ],
+      "bbox_px": [
+        165,
+        2839,
+        1715,
+        2881
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b47",
+      "text": "Rome Sapienza, Rome, Italy.  9 Department of Orthopedic Surgery, Seoul National University College of Medicine, ",
+      "bbox_pt": [
+        39.6879997253418,
+        692.1656494140625,
+        423.3144836425781,
+        702.4056396484375
+      ],
+      "bbox_px": [
+        165,
+        2884,
+        1763,
+        2926
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b48",
+      "text": "Seoul National University Bundang Hospital, Seoul, Korea.  10 HCA Florida JFK Orthopaedic Surgery Residency ",
+      "bbox_pt": [
+        39.683502197265625,
+        702.9156494140625,
+        410.61480712890625,
+        713.1556396484375
+      ],
+      "bbox_px": [
+        165,
+        2928,
+        1710,
+        2971
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b49",
+      "text": "Program, Atlantis Orthopedics, Atlantis, FL, USA.  11 Department of Orthopedic Surgery, Mayo Clinic, Rochester, ",
+      "bbox_pt": [
+        39.68800354003906,
+        713.6656494140625,
+        415.35772705078125,
+        723.9056396484375
+      ],
+      "bbox_px": [
+        165,
+        2973,
+        1730,
+        3016
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b50",
+      "text": "MN, USA.  12 Department of Orthopedic Surgery, Hospital for Special Surgery, New York, NY, USA.  ",
+      "bbox_pt": [
+        39.68489074707031,
+        724.4156494140625,
+        367.5943908691406,
+        734.6556396484375
+      ],
+      "bbox_px": [
+        165,
+        3018,
+        1531,
+        3061
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p1_b51",
+      "text": " e-mail:  Brian.feeley@ucsf.edu",
+      "bbox_pt": [
+        48.8380012512207,
+        735.1681518554688,
+        151.010498046875,
+        745.4056396484375
+      ],
+      "bbox_px": [
+        203,
+        3063,
+        629,
+        3105
+      ],
+      "column_guess": 1
+    }
+  ],
+  "constraints": {
+    "total_blocks": 52
+  }
+}

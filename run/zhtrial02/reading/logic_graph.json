@@ -1,0 +1,69 @@
+{
+  "nodes": [
+    {
+      "node_id": "n1",
+      "type": "claim",
+      "text": "肩袖撕裂是最常见的上肢疾病之一，影响初级保健和骨科医生的患者。",
+      "source_para_ids": [
+        "para_253adac098f9",
+        "para_252b95062719"
+      ]
+    },
+    {
+      "node_id": "n2",
+      "type": "evidence",
+      "text": "肩袖撕裂的流行病学研究表明，年龄是肩袖退变的主要风险因素。",
+      "source_para_ids": [
+        "para_e0d18cec5241",
+        "para_f0eb15539915"
+      ]
+    },
+    {
+      "node_id": "n3",
+      "type": "evidence",
+      "text": "遗传因素可能在肩袖疾病的发展中起一定作用。",
+      "source_para_ids": [
+        "para_a4c511e8875c",
+        "para_6738c94daa83"
+      ]
+    },
+    {
+      "node_id": "n4",
+      "type": "claim",
+      "text": "肩袖撕裂的诊断和治疗是复杂且多样的。",
+      "source_para_ids": [
+        "para_253adac098f9",
+        "para_2821b252bb92"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "n2",
+      "to": "n1",
+      "relation": "supports"
+    },
+    {
+      "from": "n3",
+      "to": "n1",
+      "relation": "supports"
+    },
+    {
+      "from": "n1",
+      "to": "n4",
+      "relation": "extends"
+    }
+  ],
+  "argument_flow": {
+    "premises": [
+      "n2",
+      "n3"
+    ],
+    "core_claims": [
+      "n1"
+    ],
+    "conclusions": [
+      "n4"
+    ]
+  }
+}

@@ -1,0 +1,1709 @@
+{
+  "page": 5,
+  "image_path": "run\\zhtrial01\\pages\\p005.png",
+  "blocks": [
+    {
+      "block_id": "p5_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b1",
+      "text": "5",
+      "bbox_pt": [
+        556.2119140625,
+        760.4366455078125,
+        561.2598876953125,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2317,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b4",
+      "text": "Rotator cuff muscle degeneration refers to the development ",
+      "bbox_pt": [
+        56.692901611328125,
+        112.09562683105469,
+        296.3395690917969,
+        122.276123046875
+      ],
+      "bbox_px": [
+        236,
+        467,
+        1234,
+        509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b5",
+      "text": "of muscle atrophy and fatty cell infiltration into the muscle. Rotator ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.84562683105469,
+        296.26690673828125,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        511,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b6",
+      "text": "cuff muscle degeneration is almost exclusive to full-thickness rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        133.5956268310547,
+        296.2318115234375,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        556,
+        1234,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b7",
+      "text": "tears 16 , 57 . In one study, tears that enlarged had more than twice the risk ",
+      "bbox_pt": [
+        39.685001373291016,
+        144.0074005126953,
+        296.1783752441406,
+        154.526123046875
+      ],
+      "bbox_px": [
+        165,
+        600,
+        1234,
+        643
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b8",
+      "text": "of progression of muscle degeneration than stable tears 61 . Additionally, ",
+      "bbox_pt": [
+        39.685001373291016,
+        154.7574005126953,
+        296.2284851074219,
+        165.276123046875
+      ],
+      "bbox_px": [
+        165,
+        644,
+        1234,
+        688
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b9",
+      "text": "when tear progression led to disruption of the anterior cable or when ",
+      "bbox_pt": [
+        39.685001373291016,
+        165.8456268310547,
+        296.2922058105469,
+        176.026123046875
+      ],
+      "bbox_px": [
+        165,
+        691,
+        1234,
+        733
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b10",
+      "text": "the extent of tear enlargement was big, the risk of progression of muscle ",
+      "bbox_pt": [
+        39.685001373291016,
+        176.5956268310547,
+        296.1024475097656,
+        186.776123046875
+      ],
+      "bbox_px": [
+        165,
+        735,
+        1233,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b11",
+      "text": "degeneration increased over time after adjusting for covariates 16 , 61 .",
+      "bbox_pt": [
+        39.685001373291016,
+        187.0074005126953,
+        287.2989196777344,
+        197.526123046875
+      ],
+      "bbox_px": [
+        165,
+        779,
+        1197,
+        823
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b12",
+      "text": "Mechanisms/pathophysiology",
+      "bbox_pt": [
+        39.685001373291016,
+        204.63961791992188,
+        193.87225341796875,
+        219.47462463378906
+      ],
+      "bbox_px": [
+        165,
+        852,
+        807,
+        914
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b13",
+      "text": "Rotator cuff tears represent a spectrum of disease, from impingement, ",
+      "bbox_pt": [
+        39.685001373291016,
+        219.5956268310547,
+        296.243896484375,
+        229.776123046875
+      ],
+      "bbox_px": [
+        165,
+        914,
+        1234,
+        957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b14",
+      "text": "tendinopathy, to partial-thickness tears and to full-thickness tears of ",
+      "bbox_pt": [
+        39.685001373291016,
+        230.3456268310547,
+        296.27728271484375,
+        240.526123046875
+      ],
+      "bbox_px": [
+        165,
+        959,
+        1234,
+        1002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b15",
+      "text": "varying sizes (Fig.  2 ). Impingement (originally named after the idea ",
+      "bbox_pt": [
+        39.685001373291016,
+        241.0956268310547,
+        296.328369140625,
+        251.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1004,
+        1234,
+        1046
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b16",
+      "text": "that the acromion impinges on the rotator cuff 62 ) occurs when the ",
+      "bbox_pt": [
+        39.685001373291016,
+        251.5074005126953,
+        296.3398742675781,
+        262.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1047,
+        1234,
+        1091
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b17",
+      "text": "bursa above the rotator cuff is inflamed as a consequence of altered ",
+      "bbox_pt": [
+        39.685001373291016,
+        262.5956115722656,
+        296.16754150390625,
+        272.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1094,
+        1234,
+        1136
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b18",
+      "text": "kinematics of the shoulder girdle. When the larger muscles (deltoid) ",
+      "bbox_pt": [
+        39.685001373291016,
+        273.3456115722656,
+        296.10546875,
+        283.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1138,
+        1233,
+        1181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b19",
+      "text": "over-compensate due to rotator cuff dysfunction, the rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        284.0956115722656,
+        296.1974182128906,
+        294.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1183,
+        1234,
+        1226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b20",
+      "text": "cannot function as an effective force couple, resulting in the humeral ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.8456115722656,
+        296.2592468261719,
+        305.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1228,
+        1234,
+        1270
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b21",
+      "text": "head elevating rather than depressing during shoulder motion 63 , 64 . ",
+      "bbox_pt": [
+        39.685001373291016,
+        305.25732421875,
+        296.28729248046875,
+        315.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1271,
+        1234,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b22",
+      "text": "This altered movement pattern increases inflammation within the ",
+      "bbox_pt": [
+        39.68510055541992,
+        316.3456115722656,
+        296.20941162109375,
+        326.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1318,
+        1234,
+        1360
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b23",
+      "text": "rotator cuff bursa above the tendon, leading to pain with motion and ",
+      "bbox_pt": [
+        39.68510055541992,
+        327.0956115722656,
+        296.2683410644531,
+        337.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1362,
+        1234,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b24",
+      "text": "overhead activity, and pain during sleep. Although imaging findings ",
+      "bbox_pt": [
+        39.68510055541992,
+        337.8456115722656,
+        296.36175537109375,
+        348.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1407,
+        1234,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b25",
+      "text": "are normal in patients with mild impingement, increased fluid signal ",
+      "bbox_pt": [
+        39.68510055541992,
+        348.5956115722656,
+        296.1768798828125,
+        358.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1452,
+        1234,
+        1494
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b26",
+      "text": "on ultrasonography or MRI above the rotator cuff is a key indication of ",
+      "bbox_pt": [
+        39.68510055541992,
+        359.3456115722656,
+        296.2156677246094,
+        369.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1497,
+        1234,
+        1539
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b27",
+      "text": "active impingement. Studies have suggested that the bursa is a source ",
+      "bbox_pt": [
+        39.68510055541992,
+        370.0956115722656,
+        296.1026306152344,
+        380.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1542,
+        1233,
+        1584
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b28",
+      "text": "of active healing of the cuff, by stimulating inflammatory cells and fac-",
+      "bbox_pt": [
+        39.68510055541992,
+        380.8456115722656,
+        294.86273193359375,
+        391.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1586,
+        1228,
+        1629
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b29",
+      "text": "tors that promote healing 65 – 67 . The bursal cells display mesenchymal ",
+      "bbox_pt": [
+        39.68510055541992,
+        391.25732421875,
+        296.1966857910156,
+        401.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1630,
+        1234,
+        1674
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b30",
+      "text": "markers of stemness, including CD73 and CD90, and, in experimental ",
+      "bbox_pt": [
+        39.68510055541992,
+        402.3456115722656,
+        296.3143005371094,
+        412.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1676,
+        1234,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b31",
+      "text": "models of bursa–tendon crosstalk, the bursa has upregulated markers ",
+      "bbox_pt": [
+        39.68510055541992,
+        413.0956115722656,
+        296.35589599609375,
+        423.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1721,
+        1234,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b32",
+      "text": "of extracellular matrix production (TGFβ), immune cell signalling and ",
+      "bbox_pt": [
+        39.68510055541992,
+        423.8456115722656,
+        296.1495666503906,
+        434.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1766,
+        1233,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b33",
+      "text": "vascular signalling including PDGFRβ 68 .",
+      "bbox_pt": [
+        39.68510055541992,
+        434.25732421875,
+        187.3555908203125,
+        444.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1809,
+        780,
+        1853
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b34",
+      "text": "The exact mechanisms of how rotator cuff injury progresses from ",
+      "bbox_pt": [
+        56.692901611328125,
+        445.3456115722656,
+        296.2987060546875,
+        455.526123046875
+      ],
+      "bbox_px": [
+        236,
+        1855,
+        1234,
+        1898
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b35",
+      "text": "tendinopathy to partial-thickness tears and to full-thickness tears is ",
+      "bbox_pt": [
+        39.68510055541992,
+        456.0956115722656,
+        296.3036193847656,
+        466.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1900,
+        1234,
+        1942
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b36",
+      "text": "yet to be fully understood. In addition, the inconsistent terminology ",
+      "bbox_pt": [
+        39.68510055541992,
+        466.8456115722656,
+        296.2509460449219,
+        477.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1945,
+        1234,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b37",
+      "text": "commonly used even among orthopaedic surgeons can be confus-",
+      "bbox_pt": [
+        39.68510055541992,
+        477.5956115722656,
+        294.80316162109375,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1989,
+        1228,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b38",
+      "text": "ing and misleading to patients and providers alike 69 , 70 . Patients who ",
+      "bbox_pt": [
+        39.68510055541992,
+        488.00732421875,
+        296.2449645996094,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2033,
+        1234,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b39",
+      "text": "present with new-onset pain, from a purely biological viewpoint, might ",
+      "bbox_pt": [
+        306.1416931152344,
+        112.09562683105469,
+        562.7457885742188,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2344,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b40",
+      "text": "have well-established histopathological changes. Why a biologically ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.84562683105469,
+        562.8067016601562,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        511,
+        2345,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b41",
+      "text": "long-standing condition suddenly manifests itself in an acute fashion ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.5956268310547,
+        562.741455078125,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        556,
+        2344,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b42",
+      "text": "is still unclear.",
+      "bbox_pt": [
+        306.1416931152344,
+        144.3453826904297,
+        359.0984191894531,
+        154.52587890625
+      ],
+      "bbox_px": [
+        1275,
+        601,
+        1496,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b43",
+      "text": "The present scientific evidence suggests that the initial lesion ",
+      "bbox_pt": [
+        323.14959716796875,
+        155.0956268310547,
+        562.6484375,
+        165.276123046875
+      ],
+      "bbox_px": [
+        1346,
+        646,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b44",
+      "text": "of tendinopathy is a failed healing response to microtrauma, and the ",
+      "bbox_pt": [
+        306.1416931152344,
+        165.8456268310547,
+        562.70849609375,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b45",
+      "text": "role of inflammation in these conditions has been re-evaluated and ",
+      "bbox_pt": [
+        306.1416931152344,
+        176.5956268310547,
+        562.6165161132812,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b46",
+      "text": "is thought to be an important contributor 71 , 72  (Fig.  3 ). In the devel -",
+      "bbox_pt": [
+        306.1416931152344,
+        187.0074005126953,
+        561.2599487304688,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        779,
+        2338,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b47",
+      "text": "opment of tendinopathy of the rotator cuff, an increase in inflam-",
+      "bbox_pt": [
+        306.1416931152344,
+        198.0956268310547,
+        561.2598266601562,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        825,
+        2338,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b48",
+      "text": "matory cells and production of pro-inflammatory cytokines from ",
+      "bbox_pt": [
+        306.1416931152344,
+        208.8456268310547,
+        562.7100219726562,
+        219.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2344,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b49",
+      "text": "tenocytes are thought to have a role 3 , 73 . Animal models of tendino­",
+      "bbox_pt": [
+        306.1416931152344,
+        219.2574005126953,
+        561.255859375,
+        229.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        913,
+        2338,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b50",
+      "text": "pathy show increased numbers of macrophages and mast cells within ",
+      "bbox_pt": [
+        306.1416931152344,
+        230.3456268310547,
+        562.7421875,
+        240.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        959,
+        2344,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b51",
+      "text": "the injured tendon 74 . In response to altered mechanical load or ",
+      "bbox_pt": [
+        306.1416931152344,
+        240.7574005126953,
+        562.8170776367188,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1003,
+        2345,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b52",
+      "text": "­tissue injury, tenocytes and immune cells within the tendon release ",
+      "bbox_pt": [
+        306.1416931152344,
+        251.8456268310547,
+        562.6699829101562,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2344,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b53",
+      "text": "pro-inflammatory cytokines, including TNF, IL-6 and IL-1β. IL-17A has ",
+      "bbox_pt": [
+        306.1416931152344,
+        262.5956115722656,
+        562.6909790039062,
+        272.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1094,
+        2344,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b54",
+      "text": "been found to be upregulated in patients with a rotator cuff tear 75 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        273.00738525390625,
+        562.7360229492188,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1137,
+        2344,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b55",
+      "text": "IL-17A was expressed in various inflammatory cells within rotator cuff ",
+      "bbox_pt": [
+        306.1416931152344,
+        284.095703125,
+        562.7002563476562,
+        294.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b56",
+      "text": "tendon, and tenocytes that were treated with IL-17A had increased ",
+      "bbox_pt": [
+        306.1416931152344,
+        294.845703125,
+        562.8372802734375,
+        305.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2345,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b57",
+      "text": "production of pro-inflammatory cytokines, and increased expres-",
+      "bbox_pt": [
+        306.1416931152344,
+        305.595703125,
+        561.2598266601562,
+        315.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2338,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b58",
+      "text": "sion of apoptosis-related factors 75 . The role of IL-17A is notable given ",
+      "bbox_pt": [
+        306.1416931152344,
+        316.0074157714844,
+        562.7237548828125,
+        326.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1316,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b59",
+      "text": "the availability of anti-IL-17A monoclonal antibodies (secukinumab ",
+      "bbox_pt": [
+        306.1416931152344,
+        327.095703125,
+        562.594970703125,
+        337.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1362,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b60",
+      "text": "and ixekizumab) that have been evaluated for their role in treating ",
+      "bbox_pt": [
+        306.1416931152344,
+        337.845703125,
+        562.6815795898438,
+        348.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b61",
+      "text": "tendinopathy 3 .",
+      "bbox_pt": [
+        306.1416931152344,
+        348.2574157714844,
+        362.4241943359375,
+        358.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1451,
+        1510,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b62",
+      "text": "In most patients, partial-thickness tears and full-thickness tears ",
+      "bbox_pt": [
+        323.14959716796875,
+        359.345703125,
+        562.5479736328125,
+        369.5262145996094
+      ],
+      "bbox_px": [
+        1346,
+        1497,
+        2343,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b63",
+      "text": "are hypothesized to be the result of the tendinopathy process over ",
+      "bbox_pt": [
+        306.1416931152344,
+        370.095703125,
+        562.599609375,
+        380.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1542,
+        2344,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b64",
+      "text": "a period of many years. Histologically, tendinopathy demonstrates ",
+      "bbox_pt": [
+        306.1416931152344,
+        380.845703125,
+        562.790771484375,
+        391.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        2344,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b65",
+      "text": "altered collagen organization with increased inflammatory tissue with ",
+      "bbox_pt": [
+        306.1416931152344,
+        391.595703125,
+        562.5281982421875,
+        401.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1631,
+        2343,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b66",
+      "text": "decreased vascularity, which, for as-yet unidentified reasons, may not ",
+      "bbox_pt": [
+        306.1416931152344,
+        402.345703125,
+        562.8150634765625,
+        412.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        2345,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b67",
+      "text": "necessarily cause symptoms even as tendinopathy progresses into ",
+      "bbox_pt": [
+        306.1416931152344,
+        413.095703125,
+        562.7269287109375,
+        423.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2344,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b68",
+      "text": "partial-thickness and full-thickness tears. The severity of tear as well ",
+      "bbox_pt": [
+        306.1416931152344,
+        423.845703125,
+        562.6204833984375,
+        434.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b69",
+      "text": "as the extent of tendinopathy do not correlate with patient symptoms, ",
+      "bbox_pt": [
+        306.1416931152344,
+        434.595703125,
+        562.8190307617188,
+        444.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2345,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b70",
+      "text": "which highlights the complex relationship between degeneration, ",
+      "bbox_pt": [
+        306.1416931152344,
+        445.345703125,
+        562.6986694335938,
+        455.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2344,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b71",
+      "text": "pain development and pain perception at the central nervous system ",
+      "bbox_pt": [
+        306.1416931152344,
+        456.095703125,
+        562.7333374023438,
+        466.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b72",
+      "text": "level. An upregulation of the glutamatergic system has been observed ",
+      "bbox_pt": [
+        306.1416931152344,
+        466.845703125,
+        562.827392578125,
+        477.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2345,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b73",
+      "text": "in patients with rotator cuff tendinopathy, with localization of glu-",
+      "bbox_pt": [
+        306.1416931152344,
+        477.595703125,
+        561.2598266601562,
+        487.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2338,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b74",
+      "text": "tamate to tenocytes with glutamate receptors on macrophages 76 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        488.0074157714844,
+        562.740966796875,
+        498.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        2033,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b75",
+      "text": "Impingement",
+      "bbox_pt": [
+        127.6709976196289,
+        531.6700439453125,
+        169.3099822998047,
+        540.6400146484375
+      ],
+      "bbox_px": [
+        531,
+        2215,
+        705,
+        2252
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b76",
+      "text": "Massive full-thickness tear",
+      "bbox_pt": [
+        452.91796875,
+        532.924560546875,
+        535.0181274414062,
+        541.89453125
+      ],
+      "bbox_px": [
+        1887,
+        2220,
+        2229,
+        2257
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b77",
+      "text": "Symptoms",
+      "bbox_pt": [
+        208.92739868164062,
+        648.6182250976562,
+        242.10987854003906,
+        657.5881958007812
+      ],
+      "bbox_px": [
+        870,
+        2702,
+        1008,
+        2739
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b78",
+      "text": "•  Overhead pain, night pain, minimal weakness",
+      "bbox_pt": [
+        208.92739868164062,
+        656.2167358398438,
+        350.0677490234375,
+        665.0892333984375
+      ],
+      "bbox_px": [
+        870,
+        2734,
+        1458,
+        2771
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b79",
+      "text": "Examination",
+      "bbox_pt": [
+        208.92739868164062,
+        663.6202392578125,
+        247.30923461914062,
+        672.5902099609375
+      ],
+      "bbox_px": [
+        870,
+        2765,
+        1030,
+        2802
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b80",
+      "text": "•  Range of motion and strength intact",
+      "bbox_pt": [
+        208.92739868164062,
+        671.21875,
+        322.4303894042969,
+        680.0912475585938
+      ],
+      "bbox_px": [
+        870,
+        2796,
+        1343,
+        2833
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b81",
+      "text": "•  Impingement signs and painful arc test",
+      "bbox_pt": [
+        208.92739868164062,
+        678.7197265625,
+        331.0948791503906,
+        687.5922241210938
+      ],
+      "bbox_px": [
+        870,
+        2827,
+        1379,
+        2864
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b82",
+      "text": "Pathophysiology",
+      "bbox_pt": [
+        208.92739868164062,
+        686.1232299804688,
+        260.86883544921875,
+        695.0932006835938
+      ],
+      "bbox_px": [
+        870,
+        2858,
+        1086,
+        2896
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b83",
+      "text": "•  Tendinopathy and/or degeneration",
+      "bbox_pt": [
+        208.92739868164062,
+        693.7217407226562,
+        318.1404113769531,
+        702.59423828125
+      ],
+      "bbox_px": [
+        870,
+        2890,
+        1325,
+        2927
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b84",
+      "text": "Symptoms",
+      "bbox_pt": [
+        446.4142150878906,
+        648.6182250976562,
+        479.59674072265625,
+        657.5881958007812
+      ],
+      "bbox_px": [
+        1860,
+        2702,
+        1998,
+        2739
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b85",
+      "text": "•  Pain, weakness",
+      "bbox_pt": [
+        446.4142150878906,
+        656.2167358398438,
+        497.0160827636719,
+        665.0892333984375
+      ],
+      "bbox_px": [
+        1860,
+        2734,
+        2070,
+        2771
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b86",
+      "text": "Examination",
+      "bbox_pt": [
+        446.4142150878906,
+        663.6202392578125,
+        484.79608154296875,
+        672.5902099609375
+      ],
+      "bbox_px": [
+        1860,
+        2765,
+        2019,
+        2802
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b87",
+      "text": "•  Global rotator cuﬀ weakness and ",
+      "bbox_pt": [
+        446.4142150878906,
+        671.21875,
+        552.37060546875,
+        680.0912475585938
+      ],
+      "bbox_px": [
+        1860,
+        2796,
+        2301,
+        2833
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b88",
+      "text": " external rotation lag sign",
+      "bbox_pt": [
+        446.4142150878906,
+        678.7197265625,
+        526.5286865234375,
+        687.5922241210938
+      ],
+      "bbox_px": [
+        1860,
+        2827,
+        2193,
+        2864
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b89",
+      "text": "Pathophysiology",
+      "bbox_pt": [
+        446.4142150878906,
+        686.1232299804688,
+        498.3556823730469,
+        695.0932006835938
+      ],
+      "bbox_px": [
+        1860,
+        2858,
+        2076,
+        2896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b90",
+      "text": "•  Muscle atrophy, fatty infiltration ",
+      "bbox_pt": [
+        446.4142150878906,
+        693.7217407226562,
+        548.2822875976562,
+        702.59423828125
+      ],
+      "bbox_px": [
+        1860,
+        2890,
+        2284,
+        2927
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b91",
+      "text": "Small full-thickness tear",
+      "bbox_pt": [
+        339.77520751953125,
+        531.7482299804688,
+        414.79034423828125,
+        540.7182006835938
+      ],
+      "bbox_px": [
+        1415,
+        2215,
+        1728,
+        2252
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b92",
+      "text": "Partial-thickness tear",
+      "bbox_pt": [
+        233.72120666503906,
+        531.6767578125,
+        299.1891784667969,
+        540.646728515625
+      ],
+      "bbox_px": [
+        973,
+        2215,
+        1246,
+        2252
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b93",
+      "text": "Rotator cuﬀ spectrum of disease",
+      "bbox_pt": [
+        124.6885986328125,
+        518.8623046875,
+        233.74021911621094,
+        528.5852661132812
+      ],
+      "bbox_px": [
+        519,
+        2161,
+        973,
+        2202
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b94",
+      "text": "Fig. 2 | Representative pathology and functional differences in rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        716.0809326171875,
+        286.2445983886719,
+        724.837890625
+      ],
+      "bbox_px": [
+        165,
+        2983,
+        1192,
+        3020
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b95",
+      "text": "pathology.  Impingement, partial-thickness and small full-thickness tears present ",
+      "bbox_pt": [
+        39.685001373291016,
+        726.0839233398438,
+        295.6056213378906,
+        734.8408813476562
+      ],
+      "bbox_px": [
+        165,
+        3025,
+        1231,
+        3061
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b96",
+      "text": "with similar symptoms, with pain on overhead activity, pain at night and variable ",
+      "bbox_pt": [
+        39.685001373291016,
+        736.198974609375,
+        291.5960998535156,
+        744.8369750976562
+      ],
+      "bbox_px": [
+        165,
+        3067,
+        1214,
+        3103
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p5_b97",
+      "text": "findings on clinical examination. Patients with larger and massive tears will have ",
+      "bbox_pt": [
+        306.468994140625,
+        716.199951171875,
+        556.7802734375,
+        724.8379516601562
+      ],
+      "bbox_px": [
+        1276,
+        2984,
+        2319,
+        3020
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b98",
+      "text": "lost their force couple and have difficulty elevating their arm, and are more likely ",
+      "bbox_pt": [
+        306.468994140625,
+        726.2029418945312,
+        558.9476928710938,
+        734.8409423828125
+      ],
+      "bbox_px": [
+        1276,
+        3025,
+        2328,
+        3061
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p5_b99",
+      "text": "to have a positive external rotation lag test than patients with small tears.",
+      "bbox_pt": [
+        306.468994140625,
+        736.2059326171875,
+        533.6328735351562,
+        744.8439331054688
+      ],
+      "bbox_px": [
+        1276,
+        3067,
+        2223,
+        3103
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 100
+  }
+}

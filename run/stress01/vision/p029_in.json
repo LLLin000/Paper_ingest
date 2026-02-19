@@ -1,0 +1,434 @@
+{
+  "page": 29,
+  "image_path": "run\\stress01\\pages\\p029.png",
+  "blocks": [
+    {
+      "block_id": "p29_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b2",
+      "text": "XiCui receivedherPh.D.degreeattheBeijingInstituteofNanoenergyandNanosystems,Chinese",
+      "bbox_pt": [
+        168.73800659179688,
+        86.12908172607422,
+        520.7733154296875,
+        95.1628646850586
+      ],
+      "bbox_px": [
+        703,
+        358,
+        2169,
+        396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b3",
+      "text": "AcademyofSciences,Beijing,China,in2024.Herresearchmainlyfocusesonpiezoelectricboneim-",
+      "bbox_pt": [
+        168.73800659179688,
+        97.15880584716797,
+        528.109619140625,
+        106.12520599365234
+      ],
+      "bbox_px": [
+        703,
+        404,
+        2200,
+        442
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b4",
+      "text": "plantmaterials.",
+      "bbox_pt": [
+        168.73800659179688,
+        108.12114715576172,
+        225.75262451171875,
+        117.0875473022461
+      ],
+      "bbox_px": [
+        703,
+        450,
+        940,
+        487
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b5",
+      "text": "ShenglongDing  iscurrentlyanorthopedicsurgeonatBeijingTongrenHospital,CapitalMedicalUni-",
+      "bbox_pt": [
+        168.73800659179688,
+        230.6241912841797,
+        530.2150268554688,
+        239.65797424316406
+      ],
+      "bbox_px": [
+        703,
+        960,
+        2209,
+        998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b6",
+      "text": "versity.HecompletedhisPh.DinorthopedicsatCapitalMedicalUniversity(2020-2023).Dr.Ding",
+      "bbox_pt": [
+        168.73800659179688,
+        241.6539306640625,
+        518.3271484375,
+        250.6203155517578
+      ],
+      "bbox_px": [
+        703,
+        1006,
+        2159,
+        1044
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b7",
+      "text": "obtainedhismaster’sdegreeinmedicinefromFudanUniversityin2020andearnedhisbachelor’sde-",
+      "bbox_pt": [
+        168.73800659179688,
+        252.6162109375,
+        534.2785034179688,
+        261.5826110839844
+      ],
+      "bbox_px": [
+        703,
+        1052,
+        2226,
+        1089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b8",
+      "text": "greefromNanchangUniversityin2017.Hehaspublishedover10peer-reviewedarticlesinrenowned",
+      "bbox_pt": [
+        168.73800659179688,
+        263.569580078125,
+        532.12109375,
+        272.5359802246094
+      ],
+      "bbox_px": [
+        703,
+        1098,
+        2217,
+        1135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b9",
+      "text": "journals,includingAdvMater,AdFunctMater,AdvSci,ExpMolMed,andBioactMater.Hisresearch",
+      "bbox_pt": [
+        168.73800659179688,
+        274.53192138671875,
+        529.8563232421875,
+        283.4983215332031
+      ],
+      "bbox_px": [
+        703,
+        1143,
+        2207,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b10",
+      "text": "focusesonosteoarthritis,cartilageregeneration,andthedevelopmentandapplicationofmicrocarri-",
+      "bbox_pt": [
+        168.73800659179688,
+        285.4942321777344,
+        531.4281005859375,
+        294.46063232421875
+      ],
+      "bbox_px": [
+        703,
+        1189,
+        2214,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b11",
+      "text": "ersand3Dbioprintinghydrogels.",
+      "bbox_pt": [
+        168.73800659179688,
+        296.44757080078125,
+        289.50555419921875,
+        305.4139709472656
+      ],
+      "bbox_px": [
+        703,
+        1235,
+        1206,
+        1272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b12",
+      "text": "KetaoWang obtainedhisPhDdegreefromthenationalfamousorthopediccenter-theDepartmentof",
+      "bbox_pt": [
+        168.73800659179688,
+        375.2720947265625,
+        530.64697265625,
+        384.3058776855469
+      ],
+      "bbox_px": [
+        703,
+        1563,
+        2211,
+        1601
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b13",
+      "text": "OrthopedicSurgery,ZhongshanHospital,FudanUniversity,in2021.Hisresearchinterestincludes",
+      "bbox_pt": [
+        168.73800659179688,
+        386.30181884765625,
+        524.8709716796875,
+        395.2682189941406
+      ],
+      "bbox_px": [
+        703,
+        1609,
+        2186,
+        1646
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b14",
+      "text": "platelet-richplasma-basedengineeredcartilage,non-small-celllungcancerspinalmetastasis,DNA",
+      "bbox_pt": [
+        168.73800659179688,
+        397.2641296386719,
+        527.3377075195312,
+        406.23052978515625
+      ],
+      "bbox_px": [
+        703,
+        1655,
+        2197,
+        1692
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b15",
+      "text": "methylation,SEERdatabase,andpan-cancerresearch.",
+      "bbox_pt": [
+        168.73800659179688,
+        408.2174987792969,
+        365.6357727050781,
+        417.18389892578125
+      ],
+      "bbox_px": [
+        703,
+        1700,
+        1523,
+        1738
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b16",
+      "text": "MingzhuZhang iscurrentlyaprofessorandDirectoroftheDepartmentofFootandAnkleSurgery",
+      "bbox_pt": [
+        168.73800659179688,
+        519.9202270507812,
+        519.205810546875,
+        528.9539794921875
+      ],
+      "bbox_px": [
+        703,
+        2166,
+        2163,
+        2203
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b17",
+      "text": "atBeijingTongrenHospital,CapitalMedicalUniversity,China.Hecompletedpostdoctrainingat",
+      "bbox_pt": [
+        168.73800659179688,
+        530.9498901367188,
+        516.0408325195312,
+        539.916259765625
+      ],
+      "bbox_px": [
+        703,
+        2212,
+        2150,
+        2249
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b18",
+      "text": "HarvardMedicalSchoolin2011.Hededicatesonregenerationofcartilageandarthritisresearchwith",
+      "bbox_pt": [
+        168.73800659179688,
+        541.9122314453125,
+        532.0800170898438,
+        550.8786010742188
+      ],
+      "bbox_px": [
+        703,
+        2257,
+        2217,
+        2295
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b19",
+      "text": "newmaterialsthroughnewtechnology.Healsoworksondevelopingnewpharmaceuticalclinical",
+      "bbox_pt": [
+        168.73800659179688,
+        552.8656005859375,
+        517.760498046875,
+        561.8319702148438
+      ],
+      "bbox_px": [
+        703,
+        2303,
+        2157,
+        2340
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b20",
+      "text": "trialsandtechniquesonjointdiseases.",
+      "bbox_pt": [
+        168.73800659179688,
+        563.8279418945312,
+        308.9339599609375,
+        572.7943115234375
+      ],
+      "bbox_px": [
+        703,
+        2349,
+        1287,
+        2386
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b21",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81100082397461,
+        745.1636352539062,
+        118.28182220458984,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b22",
+      "text": "2411209 (29 of 29)",
+      "bbox_pt": [
+        191.29359436035156,
+        743.669189453125,
+        260.07928466796875,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        797,
+        3098,
+        1083,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p29_b23",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0694885253906,
+        745.216064453125,
+        546.8833618164062,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p29_b24",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 25
+  }
+}

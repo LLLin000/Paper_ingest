@@ -1,0 +1,1743 @@
+{
+  "page": 11,
+  "image_path": "run\\stress01\\pages\\p011.png",
+  "blocks": [
+    {
+      "block_id": "p11_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b2",
+      "text": "2.6. Biosafety Evaluation of Electrical Biomaterials",
+      "bbox_pt": [
+        50.81093978881836,
+        75.96855926513672,
+        235.43893432617188,
+        84.9349594116211
+      ],
+      "bbox_px": [
+        211,
+        316,
+        980,
+        353
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b3",
+      "text": "The majority of electrical biomaterials exhibit commendable in",
+      "bbox_pt": [
+        50.81093978881836,
+        97.90129089355469,
+        291.76409912109375,
+        106.9483871459961
+      ],
+      "bbox_px": [
+        211,
+        407,
+        1215,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b4",
+      "text": "vitro biocompatibility. For example, piezoelectric materials de-",
+      "bbox_pt": [
+        50.81093978881836,
+        108.85466003417969,
+        291.72552490234375,
+        117.9017562866211
+      ],
+      "bbox_px": [
+        211,
+        453,
+        1215,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b5",
+      "text": "rived from polylactic acid (PLA) or polyhydroxy butyrate (PHB)",
+      "bbox_pt": [
+        50.81093978881836,
+        119.81694030761719,
+        291.7785339355469,
+        128.86404418945312
+      ],
+      "bbox_px": [
+        211,
+        499,
+        1215,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b6",
+      "text": "demonstrate relatively low cytotoxicity. [ 91 ] Triboelectric scaﬀolds",
+      "bbox_pt": [
+        50.81093978881836,
+        127.63719177246094,
+        291.74176025390625,
+        139.82638549804688
+      ],
+      "bbox_px": [
+        211,
+        531,
+        1215,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b7",
+      "text": "have been shown to enhance cell adhesion and proliferation",
+      "bbox_pt": [
+        50.8101692199707,
+        141.7314910888672,
+        291.7525329589844,
+        150.77859497070312
+      ],
+      "bbox_px": [
+        211,
+        590,
+        1215,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b8",
+      "text": "through electrical stimulation, facilitating the diﬀerentiation of",
+      "bbox_pt": [
+        50.8101692199707,
+        152.69383239746094,
+        291.757080078125,
+        161.74093627929688
+      ],
+      "bbox_px": [
+        211,
+        636,
+        1215,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b9",
+      "text": "osteoblasts and ﬁbroblasts. [ 146,147 ] Zwitterionic hydrogels possess",
+      "bbox_pt": [
+        50.8101692199707,
+        160.51414489746094,
+        291.7278137207031,
+        172.70327758789062
+      ],
+      "bbox_px": [
+        211,
+        668,
+        1215,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b10",
+      "text": "favorable ion-regulating capabilities that help maintain ionic bal-",
+      "bbox_pt": [
+        50.81047821044922,
+        174.60850524902344,
+        291.76544189453125,
+        183.65560913085938
+      ],
+      "bbox_px": [
+        211,
+        727,
+        1215,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b11",
+      "text": "ance both intracellularly and extracellularly. [ 148,149 ] Nanogener-",
+      "bbox_pt": [
+        50.81047821044922,
+        182.42918395996094,
+        291.7483825683594,
+        194.61795043945312
+      ],
+      "bbox_px": [
+        211,
+        760,
+        1215,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b12",
+      "text": "ators and zwitterionic hydrogels generally elicit mild immune",
+      "bbox_pt": [
+        50.810447692871094,
+        196.53245544433594,
+        291.7582092285156,
+        205.57955932617188
+      ],
+      "bbox_px": [
+        211,
+        818,
+        1215,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b13",
+      "text": "or inﬂammatory responses in animal studies, primarily linked",
+      "bbox_pt": [
+        50.810447692871094,
+        207.48582458496094,
+        291.74658203125,
+        216.53292846679688
+      ],
+      "bbox_px": [
+        211,
+        864,
+        1215,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b14",
+      "text": "to the surface modiﬁcations and degradation products of these",
+      "bbox_pt": [
+        50.810447692871094,
+        218.4481658935547,
+        291.7654113769531,
+        227.49526977539062
+      ],
+      "bbox_px": [
+        211,
+        910,
+        1215,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b15",
+      "text": "materials. [ 150 ] When implanted into bone defect models, piezo-",
+      "bbox_pt": [
+        50.810447692871094,
+        226.26805114746094,
+        291.7381896972656,
+        238.45761108398438
+      ],
+      "bbox_px": [
+        211,
+        942,
+        1215,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b16",
+      "text": "electric materials eﬀectively promote bone tissue regeneration",
+      "bbox_pt": [
+        50.81110763549805,
+        240.36241149902344,
+        291.7642822265625,
+        249.40951538085938
+      ],
+      "bbox_px": [
+        211,
+        1001,
+        1215,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b17",
+      "text": "without inducing signiﬁcant long-term inﬂammation. [ 19,151 ] De-",
+      "bbox_pt": [
+        50.81110763549805,
+        248.1831512451172,
+        291.74896240234375,
+        260.3718566894531
+      ],
+      "bbox_px": [
+        211,
+        1034,
+        1215,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b18",
+      "text": "tailed information regarding the in vivo concentration/dose,",
+      "bbox_pt": [
+        50.81013870239258,
+        262.27752685546875,
+        291.7561340332031,
+        271.3246154785156
+      ],
+      "bbox_px": [
+        211,
+        1092,
+        1215,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b19",
+      "text": "biodegradation proﬁles, and long-term biosafety of various elec-",
+      "bbox_pt": [
+        50.81013870239258,
+        273.2398376464844,
+        291.7264709472656,
+        282.28692626953125
+      ],
+      "bbox_px": [
+        211,
+        1138,
+        1215,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b20",
+      "text": "trical biomaterials is presented in  Table  1 .",
+      "bbox_pt": [
+        50.81013870239258,
+        284.2021789550781,
+        207.60018920898438,
+        293.249267578125
+      ],
+      "bbox_px": [
+        211,
+        1184,
+        865,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b21",
+      "text": "3. Applications of Electrical Biomaterials for Bone",
+      "bbox_pt": [
+        50.81093978881836,
+        307.4252624511719,
+        284.3802795410156,
+        318.88226318359375
+      ],
+      "bbox_px": [
+        211,
+        1280,
+        1184,
+        1328
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b22",
+      "text": "and Cartilage Regeneration",
+      "bbox_pt": [
+        50.81093978881836,
+        319.3863525390625,
+        178.628662109375,
+        330.8433532714844
+      ],
+      "bbox_px": [
+        211,
+        1330,
+        744,
+        1378
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b23",
+      "text": "3.1. Electric Stimulation for Bone Regeneration",
+      "bbox_pt": [
+        50.81093978881836,
+        339.1822204589844,
+        223.92071533203125,
+        348.14862060546875
+      ],
+      "bbox_px": [
+        211,
+        1413,
+        933,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b24",
+      "text": "Bone possesses essential bioelectric properties that are vital",
+      "bbox_pt": [
+        50.81093978881836,
+        361.11492919921875,
+        291.7398986816406,
+        370.1620178222656
+      ],
+      "bbox_px": [
+        211,
+        1504,
+        1215,
+        1542
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b25",
+      "text": "for the remodeling process, and its degradation under various",
+      "bbox_pt": [
+        50.81093978881836,
+        372.0682678222656,
+        291.76593017578125,
+        381.1153564453125
+      ],
+      "bbox_px": [
+        211,
+        1550,
+        1215,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b26",
+      "text": "pathological conditions results in signiﬁcant alterations in these",
+      "bbox_pt": [
+        50.81093978881836,
+        383.0306091308594,
+        291.7622985839844,
+        392.07769775390625
+      ],
+      "bbox_px": [
+        211,
+        1595,
+        1215,
+        1633
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b27",
+      "text": "properties. Researchers are increasingly focusing on the utiliza-",
+      "bbox_pt": [
+        50.81093978881836,
+        393.98394775390625,
+        291.7659606933594,
+        403.0310363769531
+      ],
+      "bbox_px": [
+        211,
+        1641,
+        1215,
+        1679
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b28",
+      "text": "tion of biomimetic electroactive materials to enhance bone re-",
+      "bbox_pt": [
+        50.81093978881836,
+        404.9462585449219,
+        291.7658996582031,
+        413.99334716796875
+      ],
+      "bbox_px": [
+        211,
+        1687,
+        1215,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b29",
+      "text": "pair by mimicking the natural electrophysiological environment",
+      "bbox_pt": [
+        50.81093978881836,
+        415.9085998535156,
+        291.76763916015625,
+        424.9556884765625
+      ],
+      "bbox_px": [
+        211,
+        1732,
+        1215,
+        1770
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b30",
+      "text": "of healthy bone tissue. Theoretically, bone mass and strength",
+      "bbox_pt": [
+        50.81093978881836,
+        426.8619384765625,
+        291.7757263183594,
+        435.9090270996094
+      ],
+      "bbox_px": [
+        211,
+        1778,
+        1215,
+        1816
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b31",
+      "text": "rely on a balance between osteoclast-mediated resorption and",
+      "bbox_pt": [
+        50.81093978881836,
+        437.82427978515625,
+        291.7505798339844,
+        446.8713684082031
+      ],
+      "bbox_px": [
+        211,
+        1824,
+        1215,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b32",
+      "text": "osteoblast-driven formation. Regulating the electric ﬁeld within",
+      "bbox_pt": [
+        50.81093978881836,
+        448.7865905761719,
+        291.765869140625,
+        457.83367919921875
+      ],
+      "bbox_px": [
+        211,
+        1869,
+        1215,
+        1907
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b33",
+      "text": "the bone microenvironment through microdevices can acceler-",
+      "bbox_pt": [
+        50.81093978881836,
+        459.73992919921875,
+        291.7569274902344,
+        468.7870178222656
+      ],
+      "bbox_px": [
+        211,
+        1915,
+        1215,
+        1953
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b34",
+      "text": "ate bone formation and oﬀer eﬀective treatment for injuries.",
+      "bbox_pt": [
+        50.81093978881836,
+        470.7022705078125,
+        291.76055908203125,
+        479.7493591308594
+      ],
+      "bbox_px": [
+        211,
+        1961,
+        1215,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b35",
+      "text": "EnEFs in bones also play a role in the regulation of cellular",
+      "bbox_pt": [
+        50.81093978881836,
+        481.6645812988281,
+        291.7587585449219,
+        490.711669921875
+      ],
+      "bbox_px": [
+        211,
+        2006,
+        1215,
+        2044
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b36",
+      "text": "metabolism, including growth, proliferation, diﬀerentiation, and",
+      "bbox_pt": [
+        50.81093978881836,
+        492.6179504394531,
+        291.7417297363281,
+        501.6650390625
+      ],
+      "bbox_px": [
+        211,
+        2052,
+        1215,
+        2090
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b37",
+      "text": "motility ( Figure  4 c ). [ 152,153 ] For instance, during walking, human",
+      "bbox_pt": [
+        50.81093978881836,
+        500.4350891113281,
+        291.7621765136719,
+        512.6273193359375
+      ],
+      "bbox_px": [
+        211,
+        2085,
+        1215,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b38",
+      "text": "tibia generates a piezoelectric potential of  ≈ 300  μ V. [ 91 ] Natural",
+      "bbox_pt": [
+        50.810829162597656,
+        511.397216796875,
+        291.7470397949219,
+        523.5855712890625
+      ],
+      "bbox_px": [
+        211,
+        2130,
+        1215,
+        2181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b39",
+      "text": "bioelectrical signals from living bones, such as piezoelectric-",
+      "bbox_pt": [
+        50.80998992919922,
+        525.4915161132812,
+        291.73443603515625,
+        534.53857421875
+      ],
+      "bbox_px": [
+        211,
+        2189,
+        1215,
+        2227
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b40",
+      "text": "ity, pyroelectricity, and ferroelectricity, are recognized as key fac-",
+      "bbox_pt": [
+        50.80998992919922,
+        536.453857421875,
+        291.73358154296875,
+        545.5009155273438
+      ],
+      "bbox_px": [
+        211,
+        2235,
+        1215,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b41",
+      "text": "tors inﬂuencing metabolic processes such as growth regulation,",
+      "bbox_pt": [
+        50.80998992919922,
+        547.4161987304688,
+        291.7739562988281,
+        556.4632568359375
+      ],
+      "bbox_px": [
+        211,
+        2280,
+        1215,
+        2318
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b42",
+      "text": "structural remodeling, and fracture healing. [ 5,12 ]",
+      "bbox_pt": [
+        50.80998992919922,
+        557.4747924804688,
+        230.32540893554688,
+        567.4165649414062
+      ],
+      "bbox_px": [
+        211,
+        2322,
+        959,
+        2364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b43",
+      "text": "Bone tissue consists of inorganic minerals and organic colla-",
+      "bbox_pt": [
+        60.26993942260742,
+        569.3302001953125,
+        291.7572937011719,
+        578.3772583007812
+      ],
+      "bbox_px": [
+        251,
+        2372,
+        1215,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b44",
+      "text": "gen, with the collagen/HA complex imparting piezoelectric prop-",
+      "bbox_pt": [
+        50.811279296875,
+        580.29248046875,
+        291.7761535644531,
+        589.3395385742188
+      ],
+      "bbox_px": [
+        211,
+        2417,
+        1215,
+        2455
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b45",
+      "text": "erties to bone tissue. Utilizing piezoelectric materials to recre-",
+      "bbox_pt": [
+        50.811279296875,
+        591.245849609375,
+        291.7259521484375,
+        600.2929077148438
+      ],
+      "bbox_px": [
+        211,
+        2463,
+        1215,
+        2501
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b46",
+      "text": "ate the physiological electrical microenvironment at defect sites",
+      "bbox_pt": [
+        50.811279296875,
+        602.2081909179688,
+        291.740234375,
+        611.2552490234375
+      ],
+      "bbox_px": [
+        211,
+        2509,
+        1215,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b47",
+      "text": "is an eﬀective approach for enhancing osteogenesis, particularly",
+      "bbox_pt": [
+        50.811279296875,
+        613.1705322265625,
+        291.7420349121094,
+        622.2175903320312
+      ],
+      "bbox_px": [
+        211,
+        2554,
+        1215,
+        2592
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b48",
+      "text": "during the early stages. Biomimetic scaﬀolds that replicate both",
+      "bbox_pt": [
+        50.811279296875,
+        624.1238403320312,
+        291.7743225097656,
+        633.1708984375
+      ],
+      "bbox_px": [
+        211,
+        2600,
+        1215,
+        2638
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b49",
+      "text": "the composition and piezoelectric characteristics of bones are",
+      "bbox_pt": [
+        50.811279296875,
+        635.086181640625,
+        291.73486328125,
+        644.1332397460938
+      ],
+      "bbox_px": [
+        211,
+        2646,
+        1215,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b50",
+      "text": "promising candidates for regenerative medicine. The noncen-",
+      "bbox_pt": [
+        50.811279296875,
+        646.0484619140625,
+        291.7599792480469,
+        655.0955200195312
+      ],
+      "bbox_px": [
+        211,
+        2691,
+        1215,
+        2729
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b51",
+      "text": "trosymmetric nature of collagen molecules has been identiﬁed",
+      "bbox_pt": [
+        50.811279296875,
+        657.0018310546875,
+        291.7285461425781,
+        666.0488891601562
+      ],
+      "bbox_px": [
+        211,
+        2737,
+        1215,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b52",
+      "text": "as a key factor contributing to bioelectricity in healthy bones.",
+      "bbox_pt": [
+        50.811279296875,
+        667.9641723632812,
+        291.72772216796875,
+        677.01123046875
+      ],
+      "bbox_px": [
+        211,
+        2783,
+        1215,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b53",
+      "text": "In addition, piezoelectric collagen within the bone generates a",
+      "bbox_pt": [
+        50.811279296875,
+        678.926513671875,
+        291.76800537109375,
+        687.9735717773438
+      ],
+      "bbox_px": [
+        211,
+        2828,
+        1215,
+        2866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b54",
+      "text": "streaming potential when subjected to stress, which leads to",
+      "bbox_pt": [
+        50.811279296875,
+        689.8798217773438,
+        291.75103759765625,
+        698.9268798828125
+      ],
+      "bbox_px": [
+        211,
+        2874,
+        1215,
+        2912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b55",
+      "text": "decreased hydraulic permeability and increased stiﬀness. Kwon",
+      "bbox_pt": [
+        50.811279296875,
+        700.8421630859375,
+        291.737548828125,
+        709.8892211914062
+      ],
+      "bbox_px": [
+        211,
+        2920,
+        1215,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b56",
+      "text": "proposed a perspective on ACP inﬁltration that emphasizes the",
+      "bbox_pt": [
+        50.811279296875,
+        711.8045043945312,
+        291.73040771484375,
+        720.8515625
+      ],
+      "bbox_px": [
+        211,
+        2965,
+        1215,
+        3003
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b57",
+      "text": "Table 1.  Biosafety evaluation of electrical biomaterials.",
+      "bbox_pt": [
+        362.36236572265625,
+        540.5810546875,
+        370.3923645019531,
+        718.5159912109375
+      ],
+      "bbox_px": [
+        1509,
+        2252,
+        1543,
+        2993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b58",
+      "text": "Electrical biomaterials",
+      "bbox_pt": [
+        385.3110046386719,
+        654.7447509765625,
+        392.2848205566406,
+        718.5159912109375
+      ],
+      "bbox_px": [
+        1605,
+        2728,
+        1634,
+        2993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b59",
+      "text": "Usage concentration/dosage",
+      "bbox_pt": [
+        385.3110046386719,
+        540.3355102539062,
+        392.2848205566406,
+        623.7434692382812
+      ],
+      "bbox_px": [
+        1605,
+        2251,
+        1634,
+        2598
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b60",
+      "text": "Degradation products",
+      "bbox_pt": [
+        385.3110046386719,
+        450.2235412597656,
+        392.2848205566406,
+        513.6090698242188
+      ],
+      "bbox_px": [
+        1605,
+        1875,
+        1634,
+        2140
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b61",
+      "text": "Degradation time",
+      "bbox_pt": [
+        385.3110046386719,
+        368.90966796875,
+        392.2848205566406,
+        419.60015869140625
+      ],
+      "bbox_px": [
+        1605,
+        1537,
+        1634,
+        1748
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b62",
+      "text": "Biocompatibility",
+      "bbox_pt": [
+        385.3110046386719,
+        272.6258850097656,
+        392.2848205566406,
+        319.63836669921875
+      ],
+      "bbox_px": [
+        1605,
+        1135,
+        1634,
+        1331
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b63",
+      "text": "Long-term safety evaluation",
+      "bbox_pt": [
+        385.3110046386719,
+        113.608642578125,
+        392.2848205566406,
+        193.7041015625
+      ],
+      "bbox_px": [
+        1605,
+        473,
+        1634,
+        807
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b64",
+      "text": "Nanogenerators",
+      "bbox_pt": [
+        399.6929931640625,
+        671.5167236328125,
+        406.66680908203125,
+        718.5159912109375
+      ],
+      "bbox_px": [
+        1665,
+        2797,
+        1694,
+        2993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b65",
+      "text": "Micrograms to milligrams",
+      "bbox_pt": [
+        399.6929931640625,
+        544.2825927734375,
+        406.66680908203125,
+        619.78857421875
+      ],
+      "bbox_px": [
+        1665,
+        2267,
+        1694,
+        2582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b66",
+      "text": "Zn 2 +  and other ions",
+      "bbox_pt": [
+        397.2539978027344,
+        452.6276550292969,
+        406.66680908203125,
+        511.17523193359375
+      ],
+      "bbox_px": [
+        1655,
+        1885,
+        1694,
+        2129
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b67",
+      "text": "Days to weeks",
+      "bbox_pt": [
+        399.6929931640625,
+        373.7065734863281,
+        406.66680908203125,
+        414.75921630859375
+      ],
+      "bbox_px": [
+        1665,
+        1557,
+        1694,
+        1728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b68",
+      "text": "Good (Zn 2 +  in moderation",
+      "bbox_pt": [
+        397.2539978027344,
+        257.11895751953125,
+        406.66680908203125,
+        335.0912170410156
+      ],
+      "bbox_px": [
+        1655,
+        1071,
+        1694,
+        1396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b69",
+      "text": "promotes cell function)",
+      "bbox_pt": [
+        409.65576171875,
+        258.73828125,
+        416.62957763671875,
+        326.49359130859375
+      ],
+      "bbox_px": [
+        1706,
+        1078,
+        1735,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b70",
+      "text": "Excess Zn 2 +  may lead to toxicity; chronic safety needs",
+      "bbox_pt": [
+        397.2539978027344,
+        76.0144271850586,
+        406.66680908203125,
+        231.255859375
+      ],
+      "bbox_px": [
+        1655,
+        316,
+        1694,
+        963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b71",
+      "text": "evaluation",
+      "bbox_pt": [
+        409.65576171875,
+        135.2303466796875,
+        416.62957763671875,
+        165.07952880859375
+      ],
+      "bbox_px": [
+        1706,
+        563,
+        1735,
+        687
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b72",
+      "text": "Piezoelectric Materials",
+      "bbox_pt": [
+        421.6074523925781,
+        653.3005981445312,
+        428.5812683105469,
+        718.5126342773438
+      ],
+      "bbox_px": [
+        1756,
+        2722,
+        1785,
+        2993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b73",
+      "text": "Hundreds of milligrams to",
+      "bbox_pt": [
+        421.6074523925781,
+        543.5602416992188,
+        428.5812683105469,
+        620.4630737304688
+      ],
+      "bbox_px": [
+        1756,
+        2264,
+        1785,
+        2585
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b74",
+      "text": "grams",
+      "bbox_pt": [
+        431.5702209472656,
+        569.4266967773438,
+        438.5440368652344,
+        587.6534423828125
+      ],
+      "bbox_px": [
+        1798,
+        2372,
+        1827,
+        2448
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b75",
+      "text": "Small molecules like",
+      "bbox_pt": [
+        421.6074523925781,
+        452.3638000488281,
+        428.5812683105469,
+        511.4416809082031
+      ],
+      "bbox_px": [
+        1756,
+        1884,
+        1785,
+        2131
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b76",
+      "text": "lactic acid",
+      "bbox_pt": [
+        431.5702209472656,
+        464.07000732421875,
+        438.5440368652344,
+        492.7581481933594
+      ],
+      "bbox_px": [
+        1798,
+        1933,
+        1827,
+        2053
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b77",
+      "text": "Weeks to months",
+      "bbox_pt": [
+        421.6074523925781,
+        369.1308898925781,
+        428.5812683105469,
+        419.3456726074219
+      ],
+      "bbox_px": [
+        1756,
+        1538,
+        1785,
+        1747
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b78",
+      "text": "Excellent (promotes bone",
+      "bbox_pt": [
+        421.6074523925781,
+        259.1066589355469,
+        428.5812683105469,
+        333.0895690917969
+      ],
+      "bbox_px": [
+        1756,
+        1079,
+        1785,
+        1387
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b79",
+      "text": "tissue repair)",
+      "bbox_pt": [
+        431.5702209472656,
+        273.49981689453125,
+        438.5440368652344,
+        311.7245788574219
+      ],
+      "bbox_px": [
+        1798,
+        1139,
+        1827,
+        1298
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b80",
+      "text": "Long-term stability, no signiﬁcant rejection observed",
+      "bbox_pt": [
+        421.6074523925781,
+        78.14657592773438,
+        428.5812683105469,
+        229.140869140625
+      ],
+      "bbox_px": [
+        1756,
+        325,
+        1785,
+        954
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b81",
+      "text": "Triboelectric Scaﬀolds",
+      "bbox_pt": [
+        443.531005859375,
+        655.2678833007812,
+        450.50482177734375,
+        718.5126342773438
+      ],
+      "bbox_px": [
+        1848,
+        2730,
+        1877,
+        2993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b82",
+      "text": "10–50 mg/scaﬀold",
+      "bbox_pt": [
+        443.531005859375,
+        554.9896240234375,
+        450.50482177734375,
+        609.0657958984375
+      ],
+      "bbox_px": [
+        1848,
+        2312,
+        1877,
+        2537
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b83",
+      "text": "Small organic acids",
+      "bbox_pt": [
+        443.531005859375,
+        453.7557373046875,
+        450.50482177734375,
+        510.0678405761719
+      ],
+      "bbox_px": [
+        1848,
+        1890,
+        1877,
+        2125
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b84",
+      "text": "1–6 months",
+      "bbox_pt": [
+        443.531005859375,
+        376.93304443359375,
+        450.50482177734375,
+        411.5670166015625
+      ],
+      "bbox_px": [
+        1848,
+        1570,
+        1877,
+        1714
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b85",
+      "text": "Good (signiﬁcant tissue repair",
+      "bbox_pt": [
+        443.531005859375,
+        252.3196258544922,
+        450.50482177734375,
+        339.89239501953125
+      ],
+      "bbox_px": [
+        1848,
+        1051,
+        1877,
+        1416
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b86",
+      "text": "promotion)",
+      "bbox_pt": [
+        453.4937744140625,
+        275.92041015625,
+        460.46759033203125,
+        309.3123474121094
+      ],
+      "bbox_px": [
+        1889,
+        1149,
+        1918,
+        1288
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b87",
+      "text": "Scaﬀold properties need to match tissue to avoid",
+      "bbox_pt": [
+        443.531005859375,
+        82.74093627929688,
+        450.50482177734375,
+        224.53326416015625
+      ],
+      "bbox_px": [
+        1848,
+        344,
+        1877,
+        935
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b88",
+      "text": "overstimulation",
+      "bbox_pt": [
+        453.4937744140625,
+        127.41876220703125,
+        460.46759033203125,
+        172.900634765625
+      ],
+      "bbox_px": [
+        1889,
+        530,
+        1918,
+        720
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b89",
+      "text": "Zwitterionic Hydrogels",
+      "bbox_pt": [
+        465.4454650878906,
+        653.0655517578125,
+        472.4192810058594,
+        718.5126342773438
+      ],
+      "bbox_px": [
+        1939,
+        2721,
+        1968,
+        2993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b90",
+      "text": "5–10% (w/v)",
+      "bbox_pt": [
+        465.4454650878906,
+        563.3594970703125,
+        472.4192810058594,
+        600.67138671875
+      ],
+      "bbox_px": [
+        1939,
+        2347,
+        1968,
+        2502
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b91",
+      "text": "Controlled hydrolysis",
+      "bbox_pt": [
+        465.4454650878906,
+        451.5360107421875,
+        472.4192810058594,
+        512.2513427734375
+      ],
+      "bbox_px": [
+        1939,
+        1881,
+        1968,
+        2134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b92",
+      "text": "products",
+      "bbox_pt": [
+        475.4082336425781,
+        465.54150390625,
+        482.3820495605469,
+        491.2908630371094
+      ],
+      "bbox_px": [
+        1980,
+        1939,
+        2009,
+        2047
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b93",
+      "text": "Days to months",
+      "bbox_pt": [
+        465.4454650878906,
+        371.2369384765625,
+        472.4192810058594,
+        417.2395935058594
+      ],
+      "bbox_px": [
+        1939,
+        1546,
+        1968,
+        1738
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b94",
+      "text": "Excellent (good ion regulation",
+      "bbox_pt": [
+        465.4454650878906,
+        252.84136962890625,
+        472.4192810058594,
+        339.3624572753906
+      ],
+      "bbox_px": [
+        1939,
+        1053,
+        1968,
+        1414
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b95",
+      "text": "capability)",
+      "bbox_pt": [
+        475.4082336425781,
+        277.70849609375,
+        482.3820495605469,
+        307.521484375
+      ],
+      "bbox_px": [
+        1980,
+        1157,
+        2009,
+        1281
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b96",
+      "text": "Long-term degradation product metabolism and",
+      "bbox_pt": [
+        465.4454650878906,
+        83.74319458007812,
+        472.4192810058594,
+        223.51580810546875
+      ],
+      "bbox_px": [
+        1939,
+        348,
+        1968,
+        931
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b97",
+      "text": "immune response need evaluation",
+      "bbox_pt": [
+        475.4082336425781,
+        100.158935546875,
+        482.3820495605469,
+        200.15216064453125
+      ],
+      "bbox_px": [
+        1980,
+        417,
+        2009,
+        833
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b98",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b99",
+      "text": "2411209 (11 of 29)",
+      "bbox_pt": [
+        191.2935333251953,
+        743.669189453125,
+        260.0792236328125,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        797,
+        3098,
+        1083,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b100",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0694274902344,
+        745.216064453125,
+        546.88330078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b101",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 102
+  }
+}

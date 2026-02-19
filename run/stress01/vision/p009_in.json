@@ -1,0 +1,2066 @@
+{
+  "page": 9,
+  "image_path": "run\\stress01\\pages\\p009.png",
+  "blocks": [
+    {
+      "block_id": "p9_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b2",
+      "text": "to cardiomyocyte cultures have signiﬁcantly improved rhythmic",
+      "bbox_pt": [
+        50.81093978881836,
+        75.97752380371094,
+        291.76861572265625,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        211,
+        316,
+        1215,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b3",
+      "text": "contraction and functional integration. [ 96 ] Meanwhile, vascular",
+      "bbox_pt": [
+        50.81093978881836,
+        83.79814147949219,
+        291.7311096191406,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        211,
+        349,
+        1215,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b4",
+      "text": "stents incorporating barium titanate cores have shown excel-",
+      "bbox_pt": [
+        50.810150146484375,
+        97.90147399902344,
+        291.72119140625,
+        106.94857025146484
+      ],
+      "bbox_px": [
+        211,
+        407,
+        1215,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b5",
+      "text": "lent results in promoting endothelial cell proliferation and vas-",
+      "bbox_pt": [
+        50.810150146484375,
+        108.85484313964844,
+        291.74530029296875,
+        117.90193939208984
+      ],
+      "bbox_px": [
+        211,
+        453,
+        1215,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b6",
+      "text": "cular regeneration in animal models. [ 97 ] Furthermore, piezoelec-",
+      "bbox_pt": [
+        50.810150146484375,
+        116.67503356933594,
+        291.7282409667969,
+        128.86428833007812
+      ],
+      "bbox_px": [
+        211,
+        486,
+        1215,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b7",
+      "text": "tric materials are being explored for self-powered cardiac pace-",
+      "bbox_pt": [
+        50.81095886230469,
+        130.7784881591797,
+        291.76507568359375,
+        139.82559204101562
+      ],
+      "bbox_px": [
+        211,
+        544,
+        1215,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b8",
+      "text": "makers, harvesting biomechanical energy from body movements",
+      "bbox_pt": [
+        50.81095886230469,
+        141.7318572998047,
+        291.7318420410156,
+        150.77896118164062
+      ],
+      "bbox_px": [
+        211,
+        590,
+        1215,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b9",
+      "text": "to provide sustained electrical stimulation, thereby reducing de-",
+      "bbox_pt": [
+        50.81095886230469,
+        152.6941375732422,
+        291.7604675292969,
+        161.74124145507812
+      ],
+      "bbox_px": [
+        211,
+        636,
+        1215,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b10",
+      "text": "pendence on battery replacements. [ 98 ] Piezoelectric biomaterials,",
+      "bbox_pt": [
+        50.81095886230469,
+        160.51414489746094,
+        291.74371337890625,
+        172.70358276367188
+      ],
+      "bbox_px": [
+        211,
+        668,
+        1215,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b11",
+      "text": "with their unique ability to deliver electrical stimulation, inter-",
+      "bbox_pt": [
+        50.81031799316406,
+        174.60850524902344,
+        291.77154541015625,
+        183.65560913085938
+      ],
+      "bbox_px": [
+        211,
+        727,
+        1215,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b12",
+      "text": "act synergistically with various cell types to support the repair",
+      "bbox_pt": [
+        50.81031799316406,
+        185.5708465576172,
+        291.7437438964844,
+        194.61795043945312
+      ],
+      "bbox_px": [
+        211,
+        773,
+        1215,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b13",
+      "text": "and regeneration of nerve, bone, skin, and cardiovascular tissues.",
+      "bbox_pt": [
+        50.81031799316406,
+        196.53318786621094,
+        291.747314453125,
+        205.58029174804688
+      ],
+      "bbox_px": [
+        211,
+        818,
+        1215,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b14",
+      "text": "As material designs are optimized and biological mechanisms",
+      "bbox_pt": [
+        50.81031799316406,
+        207.4864959716797,
+        291.73834228515625,
+        216.53359985351562
+      ],
+      "bbox_px": [
+        211,
+        864,
+        1215,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b15",
+      "text": "are further elucidated, these materials hold immense potential",
+      "bbox_pt": [
+        50.81031799316406,
+        218.44883728027344,
+        291.7563781738281,
+        227.49594116210938
+      ],
+      "bbox_px": [
+        211,
+        910,
+        1215,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b16",
+      "text": "for clinical translation and broader applications in regenerative",
+      "bbox_pt": [
+        50.81031799316406,
+        229.4111785888672,
+        291.76617431640625,
+        238.45828247070312
+      ],
+      "bbox_px": [
+        211,
+        955,
+        1215,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b17",
+      "text": "medicine.",
+      "bbox_pt": [
+        50.81031799316406,
+        240.36448669433594,
+        88.12129211425781,
+        249.41159057617188
+      ],
+      "bbox_px": [
+        211,
+        1001,
+        367,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b18",
+      "text": "2.4. Triboelectric Scaﬀolds",
+      "bbox_pt": [
+        50.81031799316406,
+        273.4308166503906,
+        147.3919219970703,
+        282.397216796875
+      ],
+      "bbox_px": [
+        211,
+        1139,
+        614,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b19",
+      "text": "Currently, there are two main types of triboelectric materials:",
+      "bbox_pt": [
+        50.81031799316406,
+        295.363525390625,
+        291.74383544921875,
+        304.4106140136719
+      ],
+      "bbox_px": [
+        211,
+        1230,
+        1215,
+        1268
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b20",
+      "text": "electrospun triboelectric materials and cellulose triboelectric ma-",
+      "bbox_pt": [
+        50.81031799316406,
+        306.3168640136719,
+        291.7734069824219,
+        315.36395263671875
+      ],
+      "bbox_px": [
+        211,
+        1276,
+        1215,
+        1314
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b21",
+      "text": "terials. The electrospinning process for fabricating triboelec-",
+      "bbox_pt": [
+        50.81031799316406,
+        317.2792053222656,
+        291.76348876953125,
+        326.3262939453125
+      ],
+      "bbox_px": [
+        211,
+        1321,
+        1215,
+        1359
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b22",
+      "text": "tric oﬀers exceptional control over the micro-nano-scale surface",
+      "bbox_pt": [
+        50.81031799316406,
+        328.24151611328125,
+        291.76434326171875,
+        337.2886047363281
+      ],
+      "bbox_px": [
+        211,
+        1367,
+        1215,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b23",
+      "text": "structure, allowing for precise adjustments to surface roughness",
+      "bbox_pt": [
+        50.81031799316406,
+        339.19488525390625,
+        291.76348876953125,
+        348.2419738769531
+      ],
+      "bbox_px": [
+        211,
+        1413,
+        1215,
+        1451
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b24",
+      "text": "to meet speciﬁc requirements. Compared to manufacturing tech-",
+      "bbox_pt": [
+        50.81031799316406,
+        350.1571960449219,
+        291.75543212890625,
+        359.20428466796875
+      ],
+      "bbox_px": [
+        211,
+        1458,
+        1215,
+        1496
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b25",
+      "text": "niques such as the template method, self-assembly, and 3D print-",
+      "bbox_pt": [
+        50.81031799316406,
+        361.1195068359375,
+        291.77069091796875,
+        370.1665954589844
+      ],
+      "bbox_px": [
+        211,
+        1504,
+        1215,
+        1542
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b26",
+      "text": "ing, electrospinning has advantages such as low cost, ease of op-",
+      "bbox_pt": [
+        50.81031799316406,
+        372.0728759765625,
+        291.747314453125,
+        381.1199645996094
+      ],
+      "bbox_px": [
+        211,
+        1550,
+        1215,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b27",
+      "text": "eration, and high controllability, fulﬁlling the demands of large-",
+      "bbox_pt": [
+        50.81031799316406,
+        383.0351867675781,
+        291.742919921875,
+        392.082275390625
+      ],
+      "bbox_px": [
+        211,
+        1595,
+        1215,
+        1633
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b28",
+      "text": "scale batch production. [ 99 ]",
+      "bbox_pt": [
+        50.81031799316406,
+        393.0897521972656,
+        147.61480712890625,
+        403.03564453125
+      ],
+      "bbox_px": [
+        211,
+        1637,
+        615,
+        1679
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b29",
+      "text": "The principal forms of electrospun triboelectric materials in-",
+      "bbox_pt": [
+        60.26993942260742,
+        404.9451904296875,
+        291.75555419921875,
+        413.9922790527344
+      ],
+      "bbox_px": [
+        251,
+        1687,
+        1215,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b30",
+      "text": "clude nanoﬁbers with diﬀerent orientations (random and direc-",
+      "bbox_pt": [
+        50.811279296875,
+        415.9075012207031,
+        291.74560546875,
+        424.95458984375
+      ],
+      "bbox_px": [
+        211,
+        1732,
+        1215,
+        1770
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b31",
+      "text": "tional), microspheres with rough surfaces (e.g., spherical and",
+      "bbox_pt": [
+        50.811279296875,
+        426.86083984375,
+        291.7626953125,
+        435.9079284667969
+      ],
+      "bbox_px": [
+        211,
+        1778,
+        1215,
+        1816
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b32",
+      "text": "honeycomb-like), and hierarchical structures (e.g., porous and",
+      "bbox_pt": [
+        50.811279296875,
+        437.82318115234375,
+        291.7599792480469,
+        446.8702697753906
+      ],
+      "bbox_px": [
+        211,
+        1824,
+        1215,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b33",
+      "text": "core–shell nanoﬁbers). Among these, random nanoﬁbers are",
+      "bbox_pt": [
+        50.811279296875,
+        448.7854919433594,
+        291.76715087890625,
+        457.83258056640625
+      ],
+      "bbox_px": [
+        211,
+        1869,
+        1215,
+        1907
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b34",
+      "text": "the most widely used in triboelectric materials. [ 100,101 ] Owing",
+      "bbox_pt": [
+        50.811279296875,
+        456.6051940917969,
+        291.7506103515625,
+        468.78594970703125
+      ],
+      "bbox_px": [
+        211,
+        1902,
+        1215,
+        1953
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b35",
+      "text": "to their high surface-area ratio and surface roughness, random",
+      "bbox_pt": [
+        50.810020446777344,
+        470.6994934082031,
+        291.7668151855469,
+        479.74658203125
+      ],
+      "bbox_px": [
+        211,
+        1961,
+        1215,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b36",
+      "text": "nanoﬁbers are frequently utilized as friction layers to enhance",
+      "bbox_pt": [
+        50.810020446777344,
+        481.66180419921875,
+        291.7506408691406,
+        490.7088928222656
+      ],
+      "bbox_px": [
+        211,
+        2006,
+        1215,
+        2044
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b37",
+      "text": "the triboelectric properties of materials. In contrast, directional",
+      "bbox_pt": [
+        50.810020446777344,
+        492.61517333984375,
+        291.75067138671875,
+        501.6622619628906
+      ],
+      "bbox_px": [
+        211,
+        2052,
+        1215,
+        2090
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b38",
+      "text": "nanoﬁbers are spun in a predeﬁned direction during the electro-",
+      "bbox_pt": [
+        50.810020446777344,
+        503.5774841308594,
+        291.74261474609375,
+        512.6245727539062
+      ],
+      "bbox_px": [
+        211,
+        2098,
+        1215,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b39",
+      "text": "spinning process, thereby generating an anisotropic triboelectric",
+      "bbox_pt": [
+        50.810020446777344,
+        514.539794921875,
+        291.7596740722656,
+        523.5868530273438
+      ],
+      "bbox_px": [
+        211,
+        2143,
+        1215,
+        2181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b40",
+      "text": "performance. Wang et al. obtained a triboelectric ﬁlm through di-",
+      "bbox_pt": [
+        50.810020446777344,
+        525.4931640625,
+        291.7550964355469,
+        534.5402221679688
+      ],
+      "bbox_px": [
+        211,
+        2189,
+        1215,
+        2227
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b41",
+      "text": "rectional electrospinning of PVDF nanoﬁbers that could output",
+      "bbox_pt": [
+        50.810020446777344,
+        536.4555053710938,
+        291.754150390625,
+        545.5025634765625
+      ],
+      "bbox_px": [
+        211,
+        2235,
+        1215,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b42",
+      "text": "electrical signals of diﬀerent intensities when exposed to friction",
+      "bbox_pt": [
+        50.810020446777344,
+        547.4178466796875,
+        291.7452392578125,
+        556.4649047851562
+      ],
+      "bbox_px": [
+        211,
+        2280,
+        1215,
+        2318
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b43",
+      "text": "stress in diﬀerent directions. [ 102 ] However, numerous challenges",
+      "bbox_pt": [
+        50.810020446777344,
+        555.2362060546875,
+        291.7412109375,
+        567.418212890625
+      ],
+      "bbox_px": [
+        211,
+        2313,
+        1215,
+        2364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b44",
+      "text": "remain in the preparation of nanoﬁber ﬁlms via electrospinning.",
+      "bbox_pt": [
+        50.81047058105469,
+        569.3305053710938,
+        291.7510986328125,
+        578.3775634765625
+      ],
+      "bbox_px": [
+        211,
+        2372,
+        1215,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b45",
+      "text": "Parameters such as the molecular weight of the polymer, concen-",
+      "bbox_pt": [
+        50.81047058105469,
+        580.2928466796875,
+        291.7358093261719,
+        589.3399047851562
+      ],
+      "bbox_px": [
+        211,
+        2417,
+        1215,
+        2455
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b46",
+      "text": "tration of the precursor solution, and magnitude of the spinning",
+      "bbox_pt": [
+        50.81047058105469,
+        591.2462158203125,
+        291.7528381347656,
+        600.2932739257812
+      ],
+      "bbox_px": [
+        211,
+        2463,
+        1215,
+        2501
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b47",
+      "text": "voltage can signiﬁcantly inﬂuence the triboelectric performance",
+      "bbox_pt": [
+        50.81047058105469,
+        602.20849609375,
+        291.76904296875,
+        611.2555541992188
+      ],
+      "bbox_px": [
+        211,
+        2509,
+        1215,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b48",
+      "text": "of the nanoﬁber membrane. [ 103–107 ] Low-molecular-weight poly-",
+      "bbox_pt": [
+        50.81047058105469,
+        610.028076171875,
+        291.74468994140625,
+        622.2178955078125
+      ],
+      "bbox_px": [
+        211,
+        2541,
+        1215,
+        2592
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b49",
+      "text": "mers result in the formation of beaded ﬁbers or even an inability",
+      "bbox_pt": [
+        50.81039047241211,
+        624.12255859375,
+        291.751953125,
+        633.1696166992188
+      ],
+      "bbox_px": [
+        211,
+        2600,
+        1215,
+        2638
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b50",
+      "text": "to form ﬁbers owing to insuﬃcient entanglement. An excessively",
+      "bbox_pt": [
+        50.81039047241211,
+        635.0848388671875,
+        291.7428894042969,
+        644.1318969726562
+      ],
+      "bbox_px": [
+        211,
+        2646,
+        1215,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b51",
+      "text": "low concentration of the precursor solution causes spraying at the",
+      "bbox_pt": [
+        50.81039047241211,
+        646.0471801757812,
+        291.760009765625,
+        655.09423828125
+      ],
+      "bbox_px": [
+        211,
+        2691,
+        1215,
+        2729
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b52",
+      "text": "electro-nozzle instead of electrospinning. Conversely, an overly",
+      "bbox_pt": [
+        50.81039047241211,
+        657.0005493164062,
+        291.7420349121094,
+        666.047607421875
+      ],
+      "bbox_px": [
+        211,
+        2737,
+        1215,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b53",
+      "text": "high concentration is prone to blockage at the exit of the electro-",
+      "bbox_pt": [
+        50.81039047241211,
+        667.9628295898438,
+        291.7608642578125,
+        677.0098876953125
+      ],
+      "bbox_px": [
+        211,
+        2783,
+        1215,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b54",
+      "text": "nozzle and fails to form continuous and uniform spun ﬁbers. The",
+      "bbox_pt": [
+        50.81039047241211,
+        678.9251708984375,
+        291.7769470214844,
+        687.9722290039062
+      ],
+      "bbox_px": [
+        211,
+        2828,
+        1215,
+        2866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b55",
+      "text": "electric ﬁeld intensity applied during electrospinning directly de-",
+      "bbox_pt": [
+        50.81039047241211,
+        689.8785400390625,
+        291.75372314453125,
+        698.9255981445312
+      ],
+      "bbox_px": [
+        211,
+        2874,
+        1215,
+        2912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b56",
+      "text": "termines the diameter of the ﬁbers. Excessive voltage is not con-",
+      "bbox_pt": [
+        50.81039047241211,
+        700.8408203125,
+        291.7366638183594,
+        709.8878784179688
+      ],
+      "bbox_px": [
+        211,
+        2920,
+        1215,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b57",
+      "text": "ducive to the formation of continuous and uniform nanoﬁbers",
+      "bbox_pt": [
+        50.81039047241211,
+        711.8031616210938,
+        291.73577880859375,
+        720.8502197265625
+      ],
+      "bbox_px": [
+        211,
+        2965,
+        1215,
+        3003
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b58",
+      "text": "and is highly likely to cause beaded ﬁbers or ﬁber fractures owing",
+      "bbox_pt": [
+        305.9250793457031,
+        75.97868347167969,
+        546.8592529296875,
+        85.0257797241211
+      ],
+      "bbox_px": [
+        1274,
+        316,
+        2278,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b59",
+      "text": "to excessive ejection speed. Additionally, for porous triboelectric",
+      "bbox_pt": [
+        305.9250793457031,
+        86.94102478027344,
+        546.8683471679688,
+        95.98812103271484
+      ],
+      "bbox_px": [
+        1274,
+        362,
+        2278,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b60",
+      "text": "materials, such as random nanoﬁbers, porosity plays a key role",
+      "bbox_pt": [
+        305.9250793457031,
+        97.90330505371094,
+        546.8565673828125,
+        106.95040130615234
+      ],
+      "bbox_px": [
+        1274,
+        407,
+        2278,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b61",
+      "text": "in triboelectric performance. The electrospinning process allows",
+      "bbox_pt": [
+        305.9250793457031,
+        108.85667419433594,
+        546.8739624023438,
+        117.90377044677734
+      ],
+      "bbox_px": [
+        1274,
+        453,
+        2278,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b62",
+      "text": "for ﬁne control over pore size between nanoﬁbers.",
+      "bbox_pt": [
+        305.9250793457031,
+        119.81901550292969,
+        494.9187316894531,
+        128.86611938476562
+      ],
+      "bbox_px": [
+        1274,
+        499,
+        2062,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b63",
+      "text": "Electrospraying technology is the most widely utilized proce-",
+      "bbox_pt": [
+        315.3927001953125,
+        130.7812957763672,
+        546.8530883789062,
+        139.82839965820312
+      ],
+      "bbox_px": [
+        1314,
+        544,
+        2278,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b64",
+      "text": "dure for the manufacture of electrospun microspheres and con-",
+      "bbox_pt": [
+        305.9250793457031,
+        141.7346649169922,
+        546.8676147460938,
+        150.78176879882812
+      ],
+      "bbox_px": [
+        1274,
+        590,
+        2278,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b65",
+      "text": "stitutes a variation of electrospinning technology. Factors such",
+      "bbox_pt": [
+        305.9250793457031,
+        152.69700622558594,
+        546.84228515625,
+        161.74411010742188
+      ],
+      "bbox_px": [
+        1274,
+        636,
+        2278,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b66",
+      "text": "as an excessively low molecular weight of the polymer resulting",
+      "bbox_pt": [
+        305.9250793457031,
+        163.6593475341797,
+        546.8861694335938,
+        172.70645141601562
+      ],
+      "bbox_px": [
+        1274,
+        681,
+        2278,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b67",
+      "text": "in insuﬃcient entanglement among molecular chains, an overly",
+      "bbox_pt": [
+        305.9250793457031,
+        174.61265563964844,
+        546.8504028320312,
+        183.65975952148438
+      ],
+      "bbox_px": [
+        1274,
+        727,
+        2278,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b68",
+      "text": "low concentration of the precursor solution causing inadequate",
+      "bbox_pt": [
+        305.9250793457031,
+        185.5749969482422,
+        546.8765869140625,
+        194.62210083007812
+      ],
+      "bbox_px": [
+        1274,
+        773,
+        2278,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b69",
+      "text": "solution viscosity, or an overly large electric ﬁeld intensity applied",
+      "bbox_pt": [
+        305.9250793457031,
+        196.53733825683594,
+        546.8475952148438,
+        205.58444213867188
+      ],
+      "bbox_px": [
+        1274,
+        818,
+        2278,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b70",
+      "text": "during the electrospinning process all lead to the discontinuity",
+      "bbox_pt": [
+        305.9250793457031,
+        207.4906463623047,
+        546.8792724609375,
+        216.53775024414062
+      ],
+      "bbox_px": [
+        1274,
+        864,
+        2278,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b71",
+      "text": "of the jet during the spinning process, thereby forming parti-",
+      "bbox_pt": [
+        305.9250793457031,
+        218.45298767089844,
+        546.8621215820312,
+        227.50009155273438
+      ],
+      "bbox_px": [
+        1274,
+        910,
+        2278,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b72",
+      "text": "cles of various shapes. [ 108 ] By further adjusting experimental pa-",
+      "bbox_pt": [
+        305.9250793457031,
+        226.26805114746094,
+        546.8701782226562,
+        238.46243286132812
+      ],
+      "bbox_px": [
+        1274,
+        942,
+        2278,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b73",
+      "text": "rameters, electrospun microspheres with uniform and control-",
+      "bbox_pt": [
+        305.92510986328125,
+        240.36241149902344,
+        546.8720703125,
+        249.40951538085938
+      ],
+      "bbox_px": [
+        1274,
+        1001,
+        2278,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b74",
+      "text": "lable particle sizes can be fabricated. Compared to electrospun",
+      "bbox_pt": [
+        305.92510986328125,
+        251.3247528076172,
+        546.8558349609375,
+        260.3718566894531
+      ],
+      "bbox_px": [
+        1274,
+        1047,
+        2278,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b75",
+      "text": "nanoﬁbers, electrospun microspheres have a larger surface-area",
+      "bbox_pt": [
+        305.92510986328125,
+        262.27813720703125,
+        546.8540649414062,
+        271.3252258300781
+      ],
+      "bbox_px": [
+        1274,
+        1092,
+        2278,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b76",
+      "text": "ratio and surface roughness. Consequently, electrospun micro-",
+      "bbox_pt": [
+        305.92510986328125,
+        273.24041748046875,
+        546.8864135742188,
+        282.2875061035156
+      ],
+      "bbox_px": [
+        1274,
+        1138,
+        2278,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b77",
+      "text": "spheres exhibit superior triboelectric properties. However, owing",
+      "bbox_pt": [
+        305.92510986328125,
+        284.2027587890625,
+        546.8530883789062,
+        293.2498474121094
+      ],
+      "bbox_px": [
+        1274,
+        1184,
+        2278,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b78",
+      "text": "to the mechanical properties that require improvement, there are",
+      "bbox_pt": [
+        305.92510986328125,
+        295.1560974121094,
+        546.8674926757812,
+        304.20318603515625
+      ],
+      "bbox_px": [
+        1274,
+        1229,
+        2278,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b79",
+      "text": "currently relatively few cases of individual applications of elec-",
+      "bbox_pt": [
+        305.92510986328125,
+        306.1184387207031,
+        546.8504638671875,
+        315.16552734375
+      ],
+      "bbox_px": [
+        1274,
+        1275,
+        2278,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b80",
+      "text": "trospun microspheres. They are mainly employed as ﬁlling ma-",
+      "bbox_pt": [
+        305.92510986328125,
+        317.08074951171875,
+        546.8494873046875,
+        326.1278381347656
+      ],
+      "bbox_px": [
+        1274,
+        1321,
+        2278,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b81",
+      "text": "terials in the preparation of composite triboelectric materials to",
+      "bbox_pt": [
+        305.92510986328125,
+        328.0340881347656,
+        546.8722534179688,
+        337.0811767578125
+      ],
+      "bbox_px": [
+        1274,
+        1366,
+        2278,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b82",
+      "text": "enhance their triboelectric properties or hydrophobicity. [ 109,110 ]",
+      "bbox_pt": [
+        305.92510986328125,
+        338.09075927734375,
+        538.9803466796875,
+        348.04351806640625
+      ],
+      "bbox_px": [
+        1274,
+        1408,
+        2245,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b83",
+      "text": "Layered-structured nanoﬁbers are 2D or 3D structures based",
+      "bbox_pt": [
+        315.3929443359375,
+        349.9551696777344,
+        546.8740844726562,
+        359.00225830078125
+      ],
+      "bbox_px": [
+        1314,
+        1458,
+        2278,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b84",
+      "text": "on electrospun nanoﬁbers, which are mainly categorized into",
+      "bbox_pt": [
+        305.9253234863281,
+        360.9085388183594,
+        546.8551025390625,
+        369.95562744140625
+      ],
+      "bbox_px": [
+        1274,
+        1503,
+        2278,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b85",
+      "text": "porous nanoﬁbers and core–shell nanoﬁbers. [ 111,112 ] The funda-",
+      "bbox_pt": [
+        305.9253234863281,
+        368.72918701171875,
+        546.8751220703125,
+        380.9179382324219
+      ],
+      "bbox_px": [
+        1274,
+        1536,
+        2278,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b86",
+      "text": "mental principle of preparing porous nanoﬁbers through elec-",
+      "bbox_pt": [
+        305.9245910644531,
+        382.8324890136719,
+        546.857177734375,
+        391.87957763671875
+      ],
+      "bbox_px": [
+        1274,
+        1595,
+        2278,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b87",
+      "text": "trospinning lies in separating solvents, blends, and polymers",
+      "bbox_pt": [
+        305.9245910644531,
+        393.7858581542969,
+        546.878662109375,
+        402.83294677734375
+      ],
+      "bbox_px": [
+        1274,
+        1640,
+        2278,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b88",
+      "text": "during the fabrication process by exploiting the diﬀerences in",
+      "bbox_pt": [
+        305.9245910644531,
+        404.7481689453125,
+        546.8751220703125,
+        413.7952575683594
+      ],
+      "bbox_px": [
+        1274,
+        1686,
+        2278,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b89",
+      "text": "solubility and volatility and forming pores on the surface and",
+      "bbox_pt": [
+        305.9245910644531,
+        415.71051025390625,
+        546.8660888671875,
+        424.7575988769531
+      ],
+      "bbox_px": [
+        1274,
+        1732,
+        2278,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b90",
+      "text": "within the polymer ﬁbers. Commonly adopted methods include",
+      "bbox_pt": [
+        305.9245910644531,
+        426.6638488769531,
+        546.8768920898438,
+        435.7109375
+      ],
+      "bbox_px": [
+        1274,
+        1777,
+        2278,
+        1815
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b91",
+      "text": "gas phase separation, nonsolvent phase separation, thermally in-",
+      "bbox_pt": [
+        305.9245910644531,
+        437.62615966796875,
+        546.8596801757812,
+        446.6732482910156
+      ],
+      "bbox_px": [
+        1274,
+        1823,
+        2278,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b92",
+      "text": "duced phase separation, and template sacriﬁce. [ 113–115 ] By reg-",
+      "bbox_pt": [
+        305.9245910644531,
+        445.4451904296875,
+        546.8726196289062,
+        457.6355895996094
+      ],
+      "bbox_px": [
+        1274,
+        1856,
+        2278,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b93",
+      "text": "ulating the pore size and quantity, triboelectric materials with",
+      "bbox_pt": [
+        305.9248046875,
+        459.5395202636719,
+        546.8663940429688,
+        468.58660888671875
+      ],
+      "bbox_px": [
+        1274,
+        1914,
+        2278,
+        1952
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b94",
+      "text": "outstanding hydrophobicity and electrical properties can be fab-",
+      "bbox_pt": [
+        305.9248046875,
+        470.5018615722656,
+        546.8491821289062,
+        479.5489501953125
+      ],
+      "bbox_px": [
+        1274,
+        1960,
+        2278,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b95",
+      "text": "ricated to satisfy diverse application requirements. Core–shell-",
+      "bbox_pt": [
+        305.9248046875,
+        481.46417236328125,
+        546.8582763671875,
+        490.5112609863281
+      ],
+      "bbox_px": [
+        1274,
+        2006,
+        2278,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b96",
+      "text": "structured nanoﬁbers are obtained by preparing two immisci-",
+      "bbox_pt": [
+        305.9248046875,
+        492.41754150390625,
+        546.869140625,
+        501.4646301269531
+      ],
+      "bbox_px": [
+        1274,
+        2051,
+        2278,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b97",
+      "text": "ble or semi-miscible polymers into nanoﬁbers with a core–shell",
+      "bbox_pt": [
+        305.9248046875,
+        503.3798522949219,
+        546.8753662109375,
+        512.4269409179688
+      ],
+      "bbox_px": [
+        1274,
+        2097,
+        2278,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b98",
+      "text": "structure via a coaxial electrospinning process. [ 116 ] The concen-",
+      "bbox_pt": [
+        305.9248046875,
+        511.1990966796875,
+        546.8642578125,
+        523.3892211914062
+      ],
+      "bbox_px": [
+        1274,
+        2129,
+        2278,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b99",
+      "text": "tration, viscosity, compatibility, ﬂow rate ratio, and spinning volt-",
+      "bbox_pt": [
+        305.9246826171875,
+        525.2935180664062,
+        546.8825073242188,
+        534.340576171875
+      ],
+      "bbox_px": [
+        1274,
+        2188,
+        2278,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b100",
+      "text": "age of the two-phase solution are all crucial factors inﬂuencing",
+      "bbox_pt": [
+        305.9246826171875,
+        536.255859375,
+        546.8869018554688,
+        545.3029174804688
+      ],
+      "bbox_px": [
+        1274,
+        2234,
+        2278,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b101",
+      "text": "core–shell nanoﬁbers. Notably, the ﬂow rate of the core phase",
+      "bbox_pt": [
+        305.9246826171875,
+        547.2182006835938,
+        546.8807983398438,
+        556.2652587890625
+      ],
+      "bbox_px": [
+        1274,
+        2280,
+        2278,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b102",
+      "text": "solution must be lower than that of the shell phase solution to",
+      "bbox_pt": [
+        305.9246826171875,
+        558.1715087890625,
+        546.85888671875,
+        567.2185668945312
+      ],
+      "bbox_px": [
+        1274,
+        2325,
+        2278,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b103",
+      "text": "ensure the integrity and continuity of the shell structure during",
+      "bbox_pt": [
+        305.9246826171875,
+        569.1338500976562,
+        546.900390625,
+        578.180908203125
+      ],
+      "bbox_px": [
+        1274,
+        2371,
+        2278,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b104",
+      "text": "the spinning process.",
+      "bbox_pt": [
+        305.9246826171875,
+        580.0872192382812,
+        386.65277099609375,
+        589.13427734375
+      ],
+      "bbox_px": [
+        1274,
+        2417,
+        1611,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b105",
+      "text": "Another major category of triboelectric materials is cellulose.",
+      "bbox_pt": [
+        315.3923034667969,
+        591.049560546875,
+        546.8482055664062,
+        600.0966186523438
+      ],
+      "bbox_px": [
+        1314,
+        2462,
+        2278,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b106",
+      "text": "Cellulose is widely present in plants and an abundant source of",
+      "bbox_pt": [
+        305.9246826171875,
+        602.0118408203125,
+        546.8544921875,
+        611.0588989257812
+      ],
+      "bbox_px": [
+        1274,
+        2508,
+        2278,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b107",
+      "text": "raw materials. As a natural and environmentally friendly mate-",
+      "bbox_pt": [
+        305.9246826171875,
+        612.9652099609375,
+        546.8699951171875,
+        622.0122680664062
+      ],
+      "bbox_px": [
+        1274,
+        2554,
+        2278,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b108",
+      "text": "rial, cellulose exhibits excellent biocompatibility, degradability,",
+      "bbox_pt": [
+        305.9246826171875,
+        623.927490234375,
+        546.8408203125,
+        632.9745483398438
+      ],
+      "bbox_px": [
+        1274,
+        2599,
+        2278,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b109",
+      "text": "and mechanical strength. [ 117–119 ] Its molecules contain a large",
+      "bbox_pt": [
+        305.9246826171875,
+        631.7451782226562,
+        546.865966796875,
+        643.9368896484375
+      ],
+      "bbox_px": [
+        1274,
+        2632,
+        2278,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b110",
+      "text": "number of modiﬁable hydroxyl reactive groups and can be mod-",
+      "bbox_pt": [
+        305.9245910644531,
+        645.8394165039062,
+        546.8445434570312,
+        654.886474609375
+      ],
+      "bbox_px": [
+        1274,
+        2690,
+        2278,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b111",
+      "text": "iﬁed to produce triboelectric materials such as hydrogels, aero-",
+      "bbox_pt": [
+        305.9245910644531,
+        656.8017578125,
+        546.884033203125,
+        665.8488159179688
+      ],
+      "bbox_px": [
+        1274,
+        2736,
+        2278,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b112",
+      "text": "gels, ﬁlms, and fabrics. [ 120–123 ] Researchers have eﬀectively en-",
+      "bbox_pt": [
+        305.9245910644531,
+        664.6221923828125,
+        546.8721313476562,
+        676.8111572265625
+      ],
+      "bbox_px": [
+        1274,
+        2769,
+        2278,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b113",
+      "text": "hanced the triboelectric properties of materials by increasing the",
+      "bbox_pt": [
+        305.9243469238281,
+        678.7164306640625,
+        546.8785400390625,
+        687.7634887695312
+      ],
+      "bbox_px": [
+        1274,
+        2827,
+        2278,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b114",
+      "text": "interface area and improving the dielectric constant of composite",
+      "bbox_pt": [
+        305.9243469238281,
+        689.6787719726562,
+        546.865966796875,
+        698.725830078125
+      ],
+      "bbox_px": [
+        1274,
+        2873,
+        2278,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b115",
+      "text": "materials through diﬀerent interface design strategies, thereby",
+      "bbox_pt": [
+        305.9243469238281,
+        700.64111328125,
+        546.8829345703125,
+        709.6881713867188
+      ],
+      "bbox_px": [
+        1274,
+        2919,
+        2278,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b116",
+      "text": "enhancing charge density or regulating charge characteristics.",
+      "bbox_pt": [
+        305.9243469238281,
+        711.5944213867188,
+        538.9932861328125,
+        720.6414794921875
+      ],
+      "bbox_px": [
+        1274,
+        2964,
+        2245,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b117",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b118",
+      "text": "2411209 (9 of 29)",
+      "bbox_pt": [
+        193.5345458984375,
+        743.669189453125,
+        257.8379211425781,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        806,
+        3098,
+        1074,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p9_b119",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0695495605469,
+        745.216064453125,
+        546.8819580078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p9_b120",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 121
+  }
+}

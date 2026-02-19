@@ -1,0 +1,740 @@
+{
+  "page": 3,
+  "image_path": "run\\stress01\\pages\\p003.png",
+  "blocks": [
+    {
+      "block_id": "p3_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b2",
+      "text": "Figure 1.  Principles and applications of electrical biomaterials. Electrical biomaterials can be divided into four main categories: nanogenerators, piezo-",
+      "bbox_pt": [
+        50.81093978881836,
+        442.7274169921875,
+        546.8676147460938,
+        450.7574157714844
+      ],
+      "bbox_px": [
+        211,
+        1844,
+        2278,
+        1878
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b3",
+      "text": "electric biomaterials, triboelectric scaﬀolds, and zwitterionic hydrogels. 1. Nanogenerators: Nanogenerators convert small mechanical movements into",
+      "bbox_pt": [
+        50.81093978881836,
+        452.2550048828125,
+        546.8826293945312,
+        460.22509765625
+      ],
+      "bbox_px": [
+        211,
+        1884,
+        2278,
+        1917
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b4",
+      "text": "electrical energy, leveraging the piezoelectric or triboelectric eﬀect. In neurological applications, nanogenerators could potentially harvest bio-mechanical",
+      "bbox_pt": [
+        50.81093978881836,
+        461.71392822265625,
+        546.88671875,
+        469.68402099609375
+      ],
+      "bbox_px": [
+        211,
+        1923,
+        2278,
+        1957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b5",
+      "text": "energy to power implants or wearable devices, which can monitor brain activity, stimulate nerve cells, or facilitate nerve repair. These could also play a role",
+      "bbox_pt": [
+        50.81093978881836,
+        471.18157958984375,
+        546.8770751953125,
+        479.1517028808594
+      ],
+      "bbox_px": [
+        211,
+        1963,
+        2278,
+        1996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b6",
+      "text": "in pacemakers or other implantable devices that harvest energy from body movements. 2. Piezoelectric Biomaterials: Piezoelectric materials generate",
+      "bbox_pt": [
+        50.81093978881836,
+        480.6405029296875,
+        546.8762817382812,
+        488.6106262207031
+      ],
+      "bbox_px": [
+        211,
+        2002,
+        2278,
+        2035
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b7",
+      "text": "an electric charge in response to applied mechanical stress. In biomedical applications, piezoelectric biomaterials are useful for wound healing, tissue",
+      "bbox_pt": [
+        50.81093978881836,
+        490.10821533203125,
+        546.8762817382812,
+        498.07830810546875
+      ],
+      "bbox_px": [
+        211,
+        2042,
+        2278,
+        2075
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b8",
+      "text": "engineering, and regenerative medicine, where mechanical stimuli are converted into electrical signals to encourage cellular response. 3. Triboelectric",
+      "bbox_pt": [
+        50.81093978881836,
+        499.57586669921875,
+        546.8651123046875,
+        507.5459899902344
+      ],
+      "bbox_px": [
+        211,
+        2081,
+        2278,
+        2114
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b9",
+      "text": "Scaﬀolds: Triboelectric scaﬀolds leverage the triboelectric eﬀect, where two materials generate charge when rubbed together. These scaﬀolds are espe-",
+      "bbox_pt": [
+        50.81093978881836,
+        509.03485107421875,
+        546.8683471679688,
+        517.0049438476562
+      ],
+      "bbox_px": [
+        211,
+        2120,
+        2278,
+        2154
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b10",
+      "text": "cially promising for bone and cartilage regeneration, as mechanical movements during joint activity can generate electric stimulation, which promotes",
+      "bbox_pt": [
+        50.81093978881836,
+        518.5025024414062,
+        546.869140625,
+        526.4725952148438
+      ],
+      "bbox_px": [
+        211,
+        2160,
+        2278,
+        2193
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b11",
+      "text": "cell growth and tissue repair. 4. Zwitterionic Hydrogels: Zwitterionic hydrogels are hydrogels that carry both positive and negative charges. They are",
+      "bbox_pt": [
+        50.81093978881836,
+        527.9701538085938,
+        546.8755493164062,
+        535.9402465820312
+      ],
+      "bbox_px": [
+        211,
+        2199,
+        2278,
+        2233
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b12",
+      "text": "highly ﬂexible, biocompatible, and resistant to protein fouling, making them ideal for wearable devices or ﬂexible electronics. They are commonly used",
+      "bbox_pt": [
+        50.81093978881836,
+        537.4290771484375,
+        546.8667602539062,
+        545.399169921875
+      ],
+      "bbox_px": [
+        211,
+        2239,
+        2278,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b13",
+      "text": "in bioelectronics and soft robotics, as they can maintain function while enduring repetitive motion. The hydrogel’s conductive properties enable it to",
+      "bbox_pt": [
+        50.81093978881836,
+        546.8967895507812,
+        546.8731079101562,
+        554.8668823242188
+      ],
+      "bbox_px": [
+        211,
+        2278,
+        2278,
+        2311
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b14",
+      "text": "act as a sensor or actuator in applications like wearable sports equipment or medical monitoring devices. Each of these categories represents a unique",
+      "bbox_pt": [
+        50.81093978881836,
+        556.3556518554688,
+        546.8755493164062,
+        564.3257446289062
+      ],
+      "bbox_px": [
+        211,
+        2318,
+        2278,
+        2351
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b15",
+      "text": "way in which mechanical energy or environmental stimuli are converted into electrical energy to inﬂuence biological processes or power devices. The",
+      "bbox_pt": [
+        50.81093978881836,
+        565.8233642578125,
+        546.9050903320312,
+        573.79345703125
+      ],
+      "bbox_px": [
+        211,
+        2357,
+        2278,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b16",
+      "text": "concept of electrical biomaterials holds promise in applications ranging from neural interfaces to regenerative medicine and wearable health devices.",
+      "bbox_pt": [
+        50.81093978881836,
+        575.2910766601562,
+        541.8543701171875,
+        583.2611694335938
+      ],
+      "bbox_px": [
+        211,
+        2397,
+        2257,
+        2430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b17",
+      "text": "regard, in addition to defect passivation for control, [ 34 ] piezo-",
+      "bbox_pt": [
+        50.81093978881836,
+        598.7691650390625,
+        291.7504577636719,
+        610.9572143554688
+      ],
+      "bbox_px": [
+        211,
+        2494,
+        1215,
+        2545
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b18",
+      "text": "electric performance can be enhanced by embedding an organic",
+      "bbox_pt": [
+        50.81072998046875,
+        612.863525390625,
+        291.76123046875,
+        621.9105834960938
+      ],
+      "bbox_px": [
+        211,
+        2553,
+        1215,
+        2591
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b19",
+      "text": "molecular layer with large mechanical ﬂexibility and structural",
+      "bbox_pt": [
+        50.81072998046875,
+        623.8258666992188,
+        291.7477722167969,
+        632.8729248046875
+      ],
+      "bbox_px": [
+        211,
+        2599,
+        1215,
+        2636
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b20",
+      "text": "asymmetry as the active layer in the material. [ 35 ] Over recent",
+      "bbox_pt": [
+        50.81072998046875,
+        631.6460571289062,
+        291.75244140625,
+        643.8352661132812
+      ],
+      "bbox_px": [
+        211,
+        2631,
+        1215,
+        2682
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b21",
+      "text": "decades, PENGs have evolved from ZnO nanowires, nanocom-",
+      "bbox_pt": [
+        50.81013870239258,
+        645.7405395507812,
+        291.7516174316406,
+        654.78759765625
+      ],
+      "bbox_px": [
+        211,
+        2690,
+        1215,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b22",
+      "text": "posites such as BaTiO 3  to materials such as polyvinylidene",
+      "bbox_pt": [
+        50.81013870239258,
+        656.7021484375,
+        291.7535095214844,
+        667.990234375
+      ],
+      "bbox_px": [
+        211,
+        2736,
+        1215,
+        2783
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b23",
+      "text": "ﬂuoride (PVDF), graphene, and lead-free NaKNbO 3 . [ 36–42 ] The",
+      "bbox_pt": [
+        50.81108856201172,
+        664.523193359375,
+        291.76177978515625,
+        678.1751708984375
+      ],
+      "bbox_px": [
+        211,
+        2768,
+        1215,
+        2825
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b24",
+      "text": "update and improvement of materials not only increases the out-",
+      "bbox_pt": [
+        50.81040954589844,
+        678.6175537109375,
+        291.76531982421875,
+        687.6646118164062
+      ],
+      "bbox_px": [
+        211,
+        2827,
+        1215,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b25",
+      "text": "put of the PENG, but also signiﬁcantly enhances the plasticity,",
+      "bbox_pt": [
+        50.81040954589844,
+        689.579833984375,
+        291.7509765625,
+        698.6268920898438
+      ],
+      "bbox_px": [
+        211,
+        2873,
+        1215,
+        2910
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b26",
+      "text": "safety, and miniaturization of the product. These performance",
+      "bbox_pt": [
+        50.81040954589844,
+        700.5421752929688,
+        291.7564697265625,
+        709.5892333984375
+      ],
+      "bbox_px": [
+        211,
+        2918,
+        1215,
+        2956
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b27",
+      "text": "upgrades further expand the application scope of PENGs in the",
+      "bbox_pt": [
+        50.81040954589844,
+        711.4955444335938,
+        291.76263427734375,
+        720.5426025390625
+      ],
+      "bbox_px": [
+        211,
+        2964,
+        1215,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b28",
+      "text": "medical and health ﬁelds, particularly for miniaturized electronic",
+      "bbox_pt": [
+        305.92510986328125,
+        601.910888671875,
+        546.8378295898438,
+        610.9579467773438
+      ],
+      "bbox_px": [
+        1274,
+        2507,
+        2278,
+        2545
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b29",
+      "text": "devices. [ 12,43 ]",
+      "bbox_pt": [
+        305.92510986328125,
+        611.9696655273438,
+        352.76153564453125,
+        621.9113159179688
+      ],
+      "bbox_px": [
+        1274,
+        2549,
+        1469,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b30",
+      "text": "The fundamental operating principle of TENGs is founded",
+      "bbox_pt": [
+        315.3929443359375,
+        623.8251953125,
+        546.8660278320312,
+        632.8722534179688
+      ],
+      "bbox_px": [
+        1314,
+        2599,
+        2278,
+        2636
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b31",
+      "text": "upon the coupling of contact electriﬁcation and electrostatic",
+      "bbox_pt": [
+        305.9253234863281,
+        634.7874755859375,
+        546.847900390625,
+        643.8345336914062
+      ],
+      "bbox_px": [
+        1274,
+        2644,
+        2278,
+        2682
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b32",
+      "text": "induction. [ 44,45 ] When two materials with disparate electron",
+      "bbox_pt": [
+        305.9253234863281,
+        642.6080932617188,
+        546.8660888671875,
+        654.7879028320312
+      ],
+      "bbox_px": [
+        1274,
+        2677,
+        2278,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b33",
+      "text": "aﬃnities come into contact and subsequently separate, one has",
+      "bbox_pt": [
+        305.9246520996094,
+        656.7025146484375,
+        546.8912963867188,
+        665.7495727539062
+      ],
+      "bbox_px": [
+        1274,
+        2736,
+        2278,
+        2773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b34",
+      "text": "a propensity to acquire electrons (becoming negatively charged),",
+      "bbox_pt": [
+        305.9246520996094,
+        667.664794921875,
+        546.8770751953125,
+        676.7118530273438
+      ],
+      "bbox_px": [
+        1274,
+        2781,
+        2278,
+        2819
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b35",
+      "text": "whereas the other tends to lose electrons (becoming positively",
+      "bbox_pt": [
+        305.9246520996094,
+        678.6181640625,
+        546.8518676757812,
+        687.6652221679688
+      ],
+      "bbox_px": [
+        1274,
+        2827,
+        2278,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b36",
+      "text": "charged). This phenomenon is called contact electriﬁcation or",
+      "bbox_pt": [
+        305.9246520996094,
+        689.5805053710938,
+        546.8507690429688,
+        698.6275634765625
+      ],
+      "bbox_px": [
+        1274,
+        2873,
+        2278,
+        2910
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b37",
+      "text": "the triboelectric eﬀect. Since their initial inception in 2012, [ 46 ]",
+      "bbox_pt": [
+        305.9246520996094,
+        699.6387329101562,
+        546.3777465820312,
+        709.5899047851562
+      ],
+      "bbox_px": [
+        1274,
+        2915,
+        2276,
+        2956
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b38",
+      "text": "based on the classiﬁcation of motion direction and capacitance",
+      "bbox_pt": [
+        305.9249267578125,
+        711.4942016601562,
+        546.8600463867188,
+        720.541259765625
+      ],
+      "bbox_px": [
+        1274,
+        2964,
+        2278,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b39",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b40",
+      "text": "2411209 (3 of 29)",
+      "bbox_pt": [
+        193.5345458984375,
+        743.669189453125,
+        257.8379211425781,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        806,
+        3098,
+        1074,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p3_b41",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0695495605469,
+        745.216064453125,
+        546.8819580078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p3_b42",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 43
+  }
+}

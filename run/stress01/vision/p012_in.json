@@ -1,0 +1,485 @@
+{
+  "page": 12,
+  "image_path": "run\\stress01\\pages\\p012.png",
+  "blocks": [
+    {
+      "block_id": "p12_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b2",
+      "text": "Figure 4.  The applications of piezoelectric materials and nanogenerators for bone regeneration. a) BTO/P(VDF-TrFE) ﬁlm exhibited a favorable bone",
+      "bbox_pt": [
+        47.97600173950195,
+        557.7293090820312,
+        544.0635986328125,
+        565.7593383789062
+      ],
+      "bbox_px": [
+        199,
+        2323,
+        2266,
+        2357
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b3",
+      "text": "healing in rat calvarial models. Reproduced with permission. [ 163 ] Copyright 2016, American Chemical Society. b) Histological outcomes and Micro-",
+      "bbox_pt": [
+        47.97600173950195,
+        564.4583129882812,
+        544.0439453125,
+        575.2184448242188
+      ],
+      "bbox_px": [
+        199,
+        2351,
+        2266,
+        2396
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b4",
+      "text": "CT image of bone healing calvarial models with CS, HA-CS and HA-MS-CS implant show more newly developed bone tissues compared with HA-CS",
+      "bbox_pt": [
+        47.976131439208984,
+        576.7160034179688,
+        544.0288696289062,
+        584.6860961914062
+      ],
+      "bbox_px": [
+        199,
+        2402,
+        2266,
+        2436
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b5",
+      "text": "and CS scaﬀold in vivo. [ 159 ] Copyright 2017, American Chemical Society. c) WH NPs and PWH-750 NPs exhibit diﬀerent osteogenic diﬀerentiation",
+      "bbox_pt": [
+        47.976131439208984,
+        583.3942260742188,
+        544.0206298828125,
+        594.1454467773438
+      ],
+      "bbox_px": [
+        199,
+        2430,
+        2266,
+        2475
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b6",
+      "text": "potential with or without LIPUS treatment. [ 152 ] Copyright 2021, Elsevier. d) Biomimetic piezoelectric scaﬀolds promote nerve and vascular regeneration",
+      "bbox_pt": [
+        47.976539611816406,
+        592.8533325195312,
+        544.0094604492188,
+        603.6134643554688
+      ],
+      "bbox_px": [
+        199,
+        2470,
+        2266,
+        2515
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b7",
+      "text": "via continuously releasing Mg 2 + to enhance bone regeneration. [ 157 ] Copyright 2023, KeAi Communications Co.",
+      "bbox_pt": [
+        47.975868225097656,
+        602.3213500976562,
+        412.9284973144531,
+        613.0813598632812
+      ],
+      "bbox_px": [
+        199,
+        2509,
+        1720,
+        2554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b8",
+      "text": "physiological signiﬁcance of collagen piezoelectricity in intraﬁb-",
+      "bbox_pt": [
+        47.97600173950195,
+        634.787109375,
+        288.9156799316406,
+        643.8341674804688
+      ],
+      "bbox_px": [
+        199,
+        2644,
+        1203,
+        2682
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b9",
+      "text": "rillar mineralization. [ 154–156 ] Yu et al. developed a biomimetic",
+      "bbox_pt": [
+        47.97600173950195,
+        642.6080932617188,
+        288.92315673828125,
+        654.7874755859375
+      ],
+      "bbox_px": [
+        199,
+        2677,
+        1203,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b10",
+      "text": "piezoelectric composite scaﬀold with a sustained release of mag-",
+      "bbox_pt": [
+        47.975379943847656,
+        656.7025146484375,
+        288.9160461425781,
+        665.7495727539062
+      ],
+      "bbox_px": [
+        199,
+        2736,
+        1203,
+        2773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b11",
+      "text": "nesium ions. By incorporating magnesium calcium phosphate,",
+      "bbox_pt": [
+        47.975379943847656,
+        667.664794921875,
+        288.93212890625,
+        676.7118530273438
+      ],
+      "bbox_px": [
+        199,
+        2781,
+        1203,
+        2819
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b12",
+      "text": "scaﬀolds gain electrical properties similar to bone, thereby en-",
+      "bbox_pt": [
+        47.975379943847656,
+        678.6181640625,
+        288.8971252441406,
+        687.6652221679688
+      ],
+      "bbox_px": [
+        199,
+        2827,
+        1203,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b13",
+      "text": "hancing osteogenesis (Figure  4d ). [ 157 ] Apart from piezoelectric-",
+      "bbox_pt": [
+        47.975379943847656,
+        686.4381713867188,
+        288.89935302734375,
+        698.6275634765625
+      ],
+      "bbox_px": [
+        199,
+        2860,
+        1203,
+        2910
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b14",
+      "text": "ity, the biological response of hard tissues can be improved by",
+      "bbox_pt": [
+        47.9758186340332,
+        700.54150390625,
+        288.91546630859375,
+        709.5885620117188
+      ],
+      "bbox_px": [
+        199,
+        2918,
+        1203,
+        2956
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b15",
+      "text": "direct electrical stimulation. [ 158 ] Sun et al. synthesized hydroxya-",
+      "bbox_pt": [
+        47.9758186340332,
+        708.3621826171875,
+        288.9200134277344,
+        720.5419311523438
+      ],
+      "bbox_px": [
+        199,
+        2951,
+        1203,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b16",
+      "text": "patite nanowire@magnesium silicate nanosheet (HANW@MS)",
+      "bbox_pt": [
+        303.09051513671875,
+        634.78662109375,
+        544.0230102539062,
+        643.8336791992188
+      ],
+      "bbox_px": [
+        1262,
+        2644,
+        2266,
+        2682
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b17",
+      "text": "core–shell porous hierarchical nanocomposites (nanobrushes)",
+      "bbox_pt": [
+        303.09051513671875,
+        645.739990234375,
+        544.0158081054688,
+        654.7870483398438
+      ],
+      "bbox_px": [
+        1262,
+        2690,
+        2266,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b18",
+      "text": "and implanted chitosan (CS), HA-CS, and HA-MS-CS in bone",
+      "bbox_pt": [
+        303.09051513671875,
+        656.7022705078125,
+        544.03564453125,
+        665.7493286132812
+      ],
+      "bbox_px": [
+        1262,
+        2736,
+        2266,
+        2773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b19",
+      "text": "defect areas. They performed histological staining and found that",
+      "bbox_pt": [
+        303.09051513671875,
+        667.6646118164062,
+        544.051025390625,
+        676.711669921875
+      ],
+      "bbox_px": [
+        1262,
+        2781,
+        2266,
+        2819
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b20",
+      "text": "compared with HA-CS and CS scaﬀolds, HA-MS-CS scaﬀold ex-",
+      "bbox_pt": [
+        303.09051513671875,
+        678.6179809570312,
+        544.0473022460938,
+        687.6650390625
+      ],
+      "bbox_px": [
+        1262,
+        2827,
+        2266,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b21",
+      "text": "hibited enhanced bone repair. Micro-CT images of the defect",
+      "bbox_pt": [
+        303.09051513671875,
+        689.580322265625,
+        544.005126953125,
+        698.6273803710938
+      ],
+      "bbox_px": [
+        1262,
+        2873,
+        2266,
+        2910
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b22",
+      "text": "area showed that the bone growth of the group implanted with",
+      "bbox_pt": [
+        303.09051513671875,
+        700.5426025390625,
+        544.0447387695312,
+        709.5896606445312
+      ],
+      "bbox_px": [
+        1262,
+        2918,
+        2266,
+        2956
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b23",
+      "text": "a piezoelectric MS based stent (HA-CS-MS) was signiﬁcantly",
+      "bbox_pt": [
+        303.09051513671875,
+        711.4959716796875,
+        544.0465087890625,
+        720.5430297851562
+      ],
+      "bbox_px": [
+        1262,
+        2964,
+        2266,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b24",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b25",
+      "text": "2411209 (12 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b26",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b27",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 28
+  }
+}

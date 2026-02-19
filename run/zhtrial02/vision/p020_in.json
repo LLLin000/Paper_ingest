@@ -1,0 +1,570 @@
+{
+  "page": 20,
+  "image_path": "run\\zhtrial02\\pages\\p020.png",
+  "blocks": [
+    {
+      "block_id": "p20_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b1",
+      "text": "20",
+      "bbox_pt": [
+        550.5447998046875,
+        760.43701171875,
+        561.2008056640625,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2293,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b4",
+      "text": "inhibiting range of motion: a biomechanical analysis.  Arthroscopy 34 , 2590–2600  ",
+      "bbox_pt": [
+        53.858299255371094,
+        111.13983917236328,
+        278.0182800292969,
+        119.41983795166016
+      ],
+      "bbox_px": [
+        224,
+        463,
+        1158,
+        497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b5",
+      "text": "(2018).",
+      "bbox_pt": [
+        53.86427307128906,
+        119.22782135009766,
+        72.37428283691406,
+        127.4178237915039
+      ],
+      "bbox_px": [
+        224,
+        496,
+        301,
+        530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b6",
+      "text": "300.\tSchmalzl, J. et al. Tendon-derived stem cells from the long head of the biceps tendon: ",
+      "bbox_pt": [
+        39.6922721862793,
+        127.2258071899414,
+        287.57086181640625,
+        135.41580200195312
+      ],
+      "bbox_px": [
+        165,
+        530,
+        1198,
+        564
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b7",
+      "text": "inflammation does not affect the regenerative potential.  Bone Joint Res. 8 , 414–424 ",
+      "bbox_pt": [
+        53.86427307128906,
+        135.1337890625,
+        279.2626647949219,
+        143.41378784179688
+      ],
+      "bbox_px": [
+        224,
+        563,
+        1163,
+        597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b8",
+      "text": "(2019).",
+      "bbox_pt": [
+        53.86427307128906,
+        143.22178649902344,
+        72.45286560058594,
+        151.41177368164062
+      ],
+      "bbox_px": [
+        224,
+        596,
+        301,
+        630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b9",
+      "text": "301.\t Potty, A. G. et al. Approaching artificial intelligence in orthopaedics: predictive analytics ",
+      "bbox_pt": [
+        39.6922721862793,
+        151.2197723388672,
+        292.7524108886719,
+        159.40975952148438
+      ],
+      "bbox_px": [
+        165,
+        630,
+        1219,
+        664
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b10",
+      "text": "and machine learning to prognosticate arthroscopic rotator cuff surgical outcomes.  ",
+      "bbox_pt": [
+        53.86427307128906,
+        159.21775817871094,
+        283.5562438964844,
+        167.40774536132812
+      ],
+      "bbox_px": [
+        224,
+        663,
+        1181,
+        697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b11",
+      "text": "J. Clin. Med. 12 , 2369 (2023).",
+      "bbox_pt": [
+        53.8642578125,
+        167.125732421875,
+        131.32127380371094,
+        175.40573120117188
+      ],
+      "bbox_px": [
+        224,
+        696,
+        547,
+        730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b12",
+      "text": "302.\tAkhtar, A., Richards, J. & Monga, P. The biomechanics of the rotator cuff in health  ",
+      "bbox_pt": [
+        39.6922607421875,
+        175.21372985839844,
+        273.86627197265625,
+        183.40371704101562
+      ],
+      "bbox_px": [
+        165,
+        730,
+        1141,
+        764
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b13",
+      "text": "and disease – a narrative review.  J. Clin. Orthop. Trauma. 18 , 150–156 (2021).",
+      "bbox_pt": [
+        53.86427307128906,
+        183.1217041015625,
+        257.275634765625,
+        191.40170288085938
+      ],
+      "bbox_px": [
+        224,
+        763,
+        1071,
+        797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b14",
+      "text": "Acknowledgements",
+      "bbox_pt": [
+        39.685001373291016,
+        196.8838348388672,
+        115.53459167480469,
+        207.92384338378906
+      ],
+      "bbox_px": [
+        165,
+        820,
+        481,
+        866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b15",
+      "text": "The authors acknowledge S. E. Feeley for her initial artwork for the Primer.",
+      "bbox_pt": [
+        39.685001373291016,
+        207.22984313964844,
+        238.57595825195312,
+        215.41983032226562
+      ],
+      "bbox_px": [
+        165,
+        863,
+        994,
+        897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b16",
+      "text": "Author contributions",
+      "bbox_pt": [
+        39.685001373291016,
+        220.8838348388672,
+        118.16740417480469,
+        231.92384338378906
+      ],
+      "bbox_px": [
+        165,
+        920,
+        492,
+        966
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b17",
+      "text": "Introduction (B.T.F. and A.B.); Epidemiology (J.K. and P.M.); Mechanisms/pathophysiology  ",
+      "bbox_pt": [
+        39.685001373291016,
+        231.22984313964844,
+        282.385009765625,
+        239.41983032226562
+      ],
+      "bbox_px": [
+        165,
+        963,
+        1176,
+        997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b18",
+      "text": "(A.B. and B.T.F.), Diagnosis, screening and prevention (R.J.W.III, J.B. and D.A.L.), Management ",
+      "bbox_pt": [
+        39.68499755859375,
+        239.2278289794922,
+        288.64776611328125,
+        247.41781616210938
+      ],
+      "bbox_px": [
+        165,
+        996,
+        1202,
+        1030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b19",
+      "text": "(O.L., J.H.O. and V.J.S.), Quality of Life, (J.S.-S.) Outlook (N.M.); Overview of Primer (B.T.F.).",
+      "bbox_pt": [
+        39.68499755859375,
+        247.22581481933594,
+        277.71160888671875,
+        255.41580200195312
+      ],
+      "bbox_px": [
+        165,
+        1030,
+        1157,
+        1064
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p20_b20",
+      "text": "Competing interests",
+      "bbox_pt": [
+        306.1416931152344,
+        110.51982116699219,
+        383.1721496582031,
+        121.55982208251953
+      ],
+      "bbox_px": [
+        1275,
+        460,
+        1596,
+        506
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b21",
+      "text": "The authors declare no competing interests.",
+      "bbox_pt": [
+        306.1416931152344,
+        120.8658218383789,
+        426.1673278808594,
+        129.05581665039062
+      ],
+      "bbox_px": [
+        1275,
+        503,
+        1775,
+        537
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b22",
+      "text": "Additional information",
+      "bbox_pt": [
+        306.1416931152344,
+        134.5198211669922,
+        391.1649169921875,
+        145.55982971191406
+      ],
+      "bbox_px": [
+        1275,
+        560,
+        1629,
+        606
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b23",
+      "text": "Peer review information Nature Reviews Disease Primers  thanks A. Carr; N. Jain, who ",
+      "bbox_pt": [
+        306.1416931152344,
+        144.77581787109375,
+        535.7723999023438,
+        153.05581665039062
+      ],
+      "bbox_px": [
+        1275,
+        603,
+        2232,
+        637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b24",
+      "text": "co-reviewed with R. Prakash; and the other, anonymous, reviewer(s) for their contribution  ",
+      "bbox_pt": [
+        306.1416931152344,
+        152.8638153076172,
+        549.1537475585938,
+        161.05380249023438
+      ],
+      "bbox_px": [
+        1275,
+        636,
+        2288,
+        671
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b25",
+      "text": "to the peer review of this work.",
+      "bbox_pt": [
+        306.1417236328125,
+        160.86180114746094,
+        389.2019958496094,
+        169.05178833007812
+      ],
+      "bbox_px": [
+        1275,
+        670,
+        1621,
+        704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b26",
+      "text": "Publisher’s note  Springer Nature remains neutral with regard to jurisdictional claims  ",
+      "bbox_pt": [
+        306.1417236328125,
+        176.7738037109375,
+        537.1657104492188,
+        185.05380249023438
+      ],
+      "bbox_px": [
+        1275,
+        736,
+        2238,
+        771
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b27",
+      "text": "in published maps and institutional affiliations.",
+      "bbox_pt": [
+        306.1416931152344,
+        184.86180114746094,
+        431.9974365234375,
+        193.05178833007812
+      ],
+      "bbox_px": [
+        1275,
+        770,
+        1799,
+        804
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b28",
+      "text": "Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to  ",
+      "bbox_pt": [
+        306.1416931152344,
+        200.8638153076172,
+        541.8276977539062,
+        209.05380249023438
+      ],
+      "bbox_px": [
+        1275,
+        836,
+        2257,
+        871
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b29",
+      "text": "this article under a publishing agreement with the author(s) or other rightsholder(s); author ",
+      "bbox_pt": [
+        306.14166259765625,
+        208.86180114746094,
+        553.3372802734375,
+        217.05178833007812
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2305,
+        904
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b30",
+      "text": "self-archiving of the accepted manuscript version of this article is solely governed by the ",
+      "bbox_pt": [
+        306.14166259765625,
+        216.8597869873047,
+        547.4429321289062,
+        225.04977416992188
+      ],
+      "bbox_px": [
+        1275,
+        903,
+        2281,
+        937
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b31",
+      "text": "terms of such publishing agreement and applicable law.",
+      "bbox_pt": [
+        306.14166259765625,
+        224.85777282714844,
+        458.2899475097656,
+        233.04776000976562
+      ],
+      "bbox_px": [
+        1275,
+        936,
+        1909,
+        971
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p20_b32",
+      "text": "© Springer Nature Limited 2024",
+      "bbox_pt": [
+        306.14166259765625,
+        240.8597869873047,
+        392.77490234375,
+        249.04977416992188
+      ],
+      "bbox_px": [
+        1275,
+        1003,
+        1636,
+        1037
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 33
+  }
+}

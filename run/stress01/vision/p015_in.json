@@ -1,0 +1,2219 @@
+{
+  "page": 15,
+  "image_path": "run\\stress01\\pages\\p015.png",
+  "blocks": [
+    {
+      "block_id": "p15_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b2",
+      "text": "reduces charge decay and maximizes TENG eﬃciency by utiliz-",
+      "bbox_pt": [
+        50.81093978881836,
+        75.97752380371094,
+        291.7461853027344,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        211,
+        316,
+        1215,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b3",
+      "text": "ing the high charge capacitance of an ion double layer (iEDL).",
+      "bbox_pt": [
+        50.81093978881836,
+        86.93986511230469,
+        291.7461242675781,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        211,
+        362,
+        1215,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b4",
+      "text": "This device exhibited signiﬁcant stability over 10 000 operating",
+      "bbox_pt": [
+        50.81093978881836,
+        97.90214538574219,
+        291.7335510253906,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        211,
+        407,
+        1215,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b5",
+      "text": "cycles and eﬀectively maintained its performance when subjected",
+      "bbox_pt": [
+        50.81093978881836,
+        108.85551452636719,
+        291.7273254394531,
+        117.9026107788086
+      ],
+      "bbox_px": [
+        211,
+        453,
+        1215,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b6",
+      "text": "to external physical forces, such as cuts, penetrations, and se-",
+      "bbox_pt": [
+        50.81093978881836,
+        119.81785583496094,
+        291.75518798828125,
+        128.86495971679688
+      ],
+      "bbox_px": [
+        211,
+        499,
+        1215,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b7",
+      "text": "vere creases caused by blades. [ 175 ] Other researchers developed",
+      "bbox_pt": [
+        50.81093978881836,
+        127.63719177246094,
+        291.7461242675781,
+        139.82730102539062
+      ],
+      "bbox_px": [
+        211,
+        531,
+        1215,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b8",
+      "text": "stretchable TENGs based on micropatterned fabric-coated molyb-",
+      "bbox_pt": [
+        50.81089782714844,
+        141.7314910888672,
+        291.7380676269531,
+        150.77859497070312
+      ],
+      "bbox_px": [
+        211,
+        590,
+        1215,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b9",
+      "text": "denum disulﬁde (MoS) and Ecoﬂex nanocomposites as electron",
+      "bbox_pt": [
+        50.81089782714844,
+        152.69383239746094,
+        291.7344055175781,
+        161.74093627929688
+      ],
+      "bbox_px": [
+        211,
+        636,
+        1215,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b10",
+      "text": "acceptor layers for wearable biomechanical energy-harvesting",
+      "bbox_pt": [
+        50.81089782714844,
+        163.6561737060547,
+        291.7461242675781,
+        172.70327758789062
+      ],
+      "bbox_px": [
+        211,
+        681,
+        1215,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b11",
+      "text": "and self-powered human motion monitoring. [ 176 ] These TENGs",
+      "bbox_pt": [
+        50.81089782714844,
+        171.47618103027344,
+        291.7503662109375,
+        183.65664672851562
+      ],
+      "bbox_px": [
+        211,
+        714,
+        1215,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b12",
+      "text": "are designed for wearable biomechanical energy-harvesting and",
+      "bbox_pt": [
+        50.81064987182617,
+        185.5704803466797,
+        291.74053955078125,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        211,
+        773,
+        1215,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b13",
+      "text": "self-powered human motion monitoring, with applications in",
+      "bbox_pt": [
+        50.81064987182617,
+        196.53282165527344,
+        291.75482177734375,
+        205.57992553710938
+      ],
+      "bbox_px": [
+        211,
+        818,
+        1215,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b14",
+      "text": "biomedical ﬁelds and human-machine systems.",
+      "bbox_pt": [
+        50.81064987182617,
+        207.48619079589844,
+        230.5914306640625,
+        216.53329467773438
+      ],
+      "bbox_px": [
+        211,
+        864,
+        960,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b15",
+      "text": "Electrospinning",
+      "bbox_pt": [
+        60.269309997558594,
+        218.44847106933594,
+        120.28144073486328,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        251,
+        910,
+        501,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b16",
+      "text": "technology",
+      "bbox_pt": [
+        127.8858413696289,
+        218.44847106933594,
+        168.826416015625,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        532,
+        910,
+        703,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b17",
+      "text": "has",
+      "bbox_pt": [
+        176.42813110351562,
+        218.44847106933594,
+        189.39353942871094,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        735,
+        910,
+        789,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b18",
+      "text": "been",
+      "bbox_pt": [
+        196.99435424804688,
+        218.44847106933594,
+        215.1871795654297,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        820,
+        910,
+        896,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b19",
+      "text": "used",
+      "bbox_pt": [
+        222.7933807373047,
+        218.44847106933594,
+        240.58273315429688,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        928,
+        910,
+        1002,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b20",
+      "text": "to",
+      "bbox_pt": [
+        248.1871337890625,
+        218.44847106933594,
+        255.3961181640625,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        1034,
+        910,
+        1064,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b21",
+      "text": "prepare",
+      "bbox_pt": [
+        262.99066162109375,
+        218.44847106933594,
+        291.76385498046875,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        1095,
+        910,
+        1215,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b22",
+      "text": "PAN/BaTiO3/MXene nanoﬁber membranes with high-voltage",
+      "bbox_pt": [
+        50.81064987182617,
+        229.4108123779297,
+        291.7584533691406,
+        238.45791625976562
+      ],
+      "bbox_px": [
+        211,
+        955,
+        1215,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b23",
+      "text": "electrical performance and photothermal conversion eﬃciency,",
+      "bbox_pt": [
+        50.81064987182617,
+        240.3641815185547,
+        291.7162780761719,
+        249.41128540039062
+      ],
+      "bbox_px": [
+        211,
+        1001,
+        1215,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b24",
+      "text": "combined with nickel copper conductive fabrics to construct",
+      "bbox_pt": [
+        50.81064987182617,
+        251.3264617919922,
+        291.73687744140625,
+        260.3735656738281
+      ],
+      "bbox_px": [
+        211,
+        1047,
+        1215,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b25",
+      "text": "piezoelectric frictional hybrid nanogenerators with superior",
+      "bbox_pt": [
+        50.81064987182617,
+        262.27984619140625,
+        291.76287841796875,
+        271.3269348144531
+      ],
+      "bbox_px": [
+        211,
+        1092,
+        1215,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b26",
+      "text": "electrical properties. These membranes, which combine the",
+      "bbox_pt": [
+        50.81064987182617,
+        273.2421569824219,
+        291.7315673828125,
+        282.28924560546875
+      ],
+      "bbox_px": [
+        211,
+        1138,
+        1215,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b27",
+      "text": "advantages of piezoelectric materials and nanogenerators, ex-",
+      "bbox_pt": [
+        50.81064987182617,
+        284.2044982910156,
+        291.7359924316406,
+        293.2515869140625
+      ],
+      "bbox_px": [
+        211,
+        1184,
+        1215,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b28",
+      "text": "hibit excellent photothermal properties and can be applied in",
+      "bbox_pt": [
+        50.81064987182617,
+        295.1578369140625,
+        291.732421875,
+        304.2049255371094
+      ],
+      "bbox_px": [
+        211,
+        1229,
+        1215,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b29",
+      "text": "photothermal therapy to relieve joint pain. Dan et al. developed",
+      "bbox_pt": [
+        50.81064987182617,
+        306.1201477050781,
+        291.7163391113281,
+        315.167236328125
+      ],
+      "bbox_px": [
+        211,
+        1275,
+        1215,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b30",
+      "text": "a self-promoting electroactive mineralization scaﬀold (sp-EMS)",
+      "bbox_pt": [
+        50.81064987182617,
+        317.0824890136719,
+        291.76556396484375,
+        326.12957763671875
+      ],
+      "bbox_px": [
+        211,
+        1321,
+        1215,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b31",
+      "text": "by biomimetically assembling mineralized collagen ﬁbers with",
+      "bbox_pt": [
+        50.81064987182617,
+        328.03582763671875,
+        291.73516845703125,
+        337.0829162597656
+      ],
+      "bbox_px": [
+        211,
+        1366,
+        1215,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b32",
+      "text": "silver ultrathin nanowires (Ag uNWs) to eﬀectively address",
+      "bbox_pt": [
+        50.81064987182617,
+        338.9981689453125,
+        291.7386779785156,
+        348.0452575683594
+      ],
+      "bbox_px": [
+        211,
+        1412,
+        1215,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b33",
+      "text": "bacterial-infected bone defects. [ 177 ] The sp-EMS consistently",
+      "bbox_pt": [
+        50.81064987182617,
+        346.8141784667969,
+        291.74481201171875,
+        359.007568359375
+      ],
+      "bbox_px": [
+        211,
+        1445,
+        1215,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b34",
+      "text": "produces weak currents through gentle electrochemical reac-",
+      "bbox_pt": [
+        50.81053924560547,
+        360.9085388183594,
+        291.7322692871094,
+        369.95562744140625
+      ],
+      "bbox_px": [
+        211,
+        1503,
+        1215,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b35",
+      "text": "tions, stimulating the recruitment of BMSCs and promoting",
+      "bbox_pt": [
+        50.81053924560547,
+        371.870849609375,
+        291.7718200683594,
+        380.9179382324219
+      ],
+      "bbox_px": [
+        211,
+        1549,
+        1215,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b36",
+      "text": "osteogenic diﬀerentiation and angiogenesis. [ 177 ]",
+      "bbox_pt": [
+        50.81053924560547,
+        381.9297790527344,
+        229.8035430908203,
+        391.8802795410156
+      ],
+      "bbox_px": [
+        211,
+        1591,
+        957,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b37",
+      "text": "As noted previously, TENGs show signiﬁcant potential for the",
+      "bbox_pt": [
+        60.26993942260742,
+        393.7851867675781,
+        291.7366638183594,
+        402.832275390625
+      ],
+      "bbox_px": [
+        251,
+        1640,
+        1215,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b38",
+      "text": "development of self-powered devices. However, their sensitivity",
+      "bbox_pt": [
+        50.811279296875,
+        404.74749755859375,
+        291.753662109375,
+        413.7945861816406
+      ],
+      "bbox_px": [
+        211,
+        1686,
+        1215,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b39",
+      "text": "to moisture necessitates encapsulation within a protective layer,",
+      "bbox_pt": [
+        50.811279296875,
+        415.7098083496094,
+        291.74383544921875,
+        424.75689697265625
+      ],
+      "bbox_px": [
+        211,
+        1732,
+        1215,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b40",
+      "text": "making them unsuitable as tissue-engineered scaﬀolds that re-",
+      "bbox_pt": [
+        50.811279296875,
+        426.6631774902344,
+        291.7447509765625,
+        435.71026611328125
+      ],
+      "bbox_px": [
+        211,
+        1777,
+        1215,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b41",
+      "text": "quire direct contact with surrounding cells. Zhengwei et al. intro-",
+      "bbox_pt": [
+        50.811279296875,
+        437.62548828125,
+        291.76092529296875,
+        446.6725769042969
+      ],
+      "bbox_px": [
+        211,
+        1823,
+        1215,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b42",
+      "text": "duced friction electric scaﬀolds (TESs) made from polyglycerides",
+      "bbox_pt": [
+        50.811279296875,
+        448.58782958984375,
+        291.7213134765625,
+        457.6349182128906
+      ],
+      "bbox_px": [
+        211,
+        1869,
+        1215,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b43",
+      "text": "(PGs), a biodegradable and hydrophobic elastomer. [ 10 ] In multi-",
+      "bbox_pt": [
+        50.811279296875,
+        456.40716552734375,
+        291.7609558105469,
+        468.5882568359375
+      ],
+      "bbox_px": [
+        211,
+        1901,
+        1215,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b44",
+      "text": "stage porous TESs, each hydrophobic and moisture-resistant mi-",
+      "bbox_pt": [
+        50.81052017211914,
+        470.5014953613281,
+        291.7377624511719,
+        479.548583984375
+      ],
+      "bbox_px": [
+        211,
+        1960,
+        1215,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b45",
+      "text": "cropore eﬃciently serves as the working unit of TENGs, even in",
+      "bbox_pt": [
+        50.81052017211914,
+        481.46380615234375,
+        291.7376708984375,
+        490.5108947753906
+      ],
+      "bbox_px": [
+        211,
+        2006,
+        1215,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b46",
+      "text": "humid environments. The integration of a large number of mi-",
+      "bbox_pt": [
+        50.81052017211914,
+        492.41717529296875,
+        291.7502746582031,
+        501.4642639160156
+      ],
+      "bbox_px": [
+        211,
+        2051,
+        1215,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b47",
+      "text": "cropores ensures the ability of TESs to perform electrotherapy in",
+      "bbox_pt": [
+        50.81052017211914,
+        503.3794860839844,
+        291.7520751953125,
+        512.4265747070312
+      ],
+      "bbox_px": [
+        211,
+        2097,
+        1215,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b48",
+      "text": "vivo without the need for encapsulation. Additionally, the initially",
+      "bbox_pt": [
+        50.81052017211914,
+        514.341796875,
+        291.7628479003906,
+        523.3888549804688
+      ],
+      "bbox_px": [
+        211,
+        2143,
+        1215,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b49",
+      "text": "hydrophobic TES is degraded by surface erosion and transformed",
+      "bbox_pt": [
+        50.81052017211914,
+        525.295166015625,
+        291.760986328125,
+        534.3422241210938
+      ],
+      "bbox_px": [
+        211,
+        2188,
+        1215,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b50",
+      "text": "into hydrophilic surfaces, contributing to its role as a tissue engi-",
+      "bbox_pt": [
+        50.81052017211914,
+        536.2575073242188,
+        291.7457275390625,
+        545.3045654296875
+      ],
+      "bbox_px": [
+        211,
+        2234,
+        1215,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b51",
+      "text": "neering scaﬀold. [ 10 ] Notably, TESs inoculated with chondrocytes",
+      "bbox_pt": [
+        50.81052017211914,
+        544.076171875,
+        291.7492980957031,
+        556.266845703125
+      ],
+      "bbox_px": [
+        211,
+        2266,
+        1215,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b52",
+      "text": "produced dense, mature cartilage after subcutaneous implanta-",
+      "bbox_pt": [
+        50.810508728027344,
+        558.1705322265625,
+        291.73138427734375,
+        567.2175903320312
+      ],
+      "bbox_px": [
+        211,
+        2325,
+        1215,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b53",
+      "text": "tion in nude mice. Importantly, rabbits with osteochondral de-",
+      "bbox_pt": [
+        50.810508728027344,
+        569.1328125,
+        291.7519836425781,
+        578.1798706054688
+      ],
+      "bbox_px": [
+        211,
+        2371,
+        1215,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b54",
+      "text": "fects implanted with TESs exhibited good hyaluronic acid car-",
+      "bbox_pt": [
+        50.810508728027344,
+        580.086181640625,
+        291.727783203125,
+        589.1332397460938
+      ],
+      "bbox_px": [
+        211,
+        2417,
+        1215,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b55",
+      "text": "tilage regeneration and complete cartilage healing. This study",
+      "bbox_pt": [
+        50.810508728027344,
+        591.0485229492188,
+        291.7635803222656,
+        600.0955810546875
+      ],
+      "bbox_px": [
+        211,
+        2462,
+        1215,
+        2500
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b56",
+      "text": "highlights TESs as a promising electronic biomedical device with",
+      "bbox_pt": [
+        50.810508728027344,
+        602.0108642578125,
+        291.7528991699219,
+        611.0579223632812
+      ],
+      "bbox_px": [
+        211,
+        2508,
+        1215,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b57",
+      "text": "potential for new in vivo applications. [ 10 ] Shuangfei et al. utilized",
+      "bbox_pt": [
+        50.810508728027344,
+        609.8302001953125,
+        291.7519226074219,
+        622.0112915039062
+      ],
+      "bbox_px": [
+        211,
+        2540,
+        1215,
+        2591
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b58",
+      "text": "cell wall nanoengineering technology to construct a lightweight",
+      "bbox_pt": [
+        50.81039047241211,
+        623.9244995117188,
+        291.732177734375,
+        632.9715576171875
+      ],
+      "bbox_px": [
+        211,
+        2599,
+        1215,
+        2637
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b59",
+      "text": "and ultra-strong cellulose triboelectric material. This strategy al-",
+      "bbox_pt": [
+        50.81039047241211,
+        634.8868408203125,
+        291.7582092285156,
+        643.9338989257812
+      ],
+      "bbox_px": [
+        211,
+        2645,
+        1215,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b60",
+      "text": "lows for the design of a cell wall structure with multilevel pores",
+      "bbox_pt": [
+        50.81039047241211,
+        645.8402099609375,
+        291.728515625,
+        654.8872680664062
+      ],
+      "bbox_px": [
+        211,
+        2691,
+        1215,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b61",
+      "text": "interconnected at diﬀerent scales and good structural stability.",
+      "bbox_pt": [
+        50.81039047241211,
+        656.802490234375,
+        291.7186584472656,
+        665.8495483398438
+      ],
+      "bbox_px": [
+        211,
+        2736,
+        1215,
+        2774
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b62",
+      "text": "This material exhibits porous properties, good structural stability,",
+      "bbox_pt": [
+        50.81039047241211,
+        667.7648315429688,
+        291.7430419921875,
+        676.8118896484375
+      ],
+      "bbox_px": [
+        211,
+        2782,
+        1215,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b63",
+      "text": "and excellent output performance, making it a promising candi-",
+      "bbox_pt": [
+        50.81039047241211,
+        678.7181396484375,
+        291.75543212890625,
+        687.7651977539062
+      ],
+      "bbox_px": [
+        211,
+        2827,
+        1215,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b64",
+      "text": "date for use in frictional electric sensors. [ 178 ]",
+      "bbox_pt": [
+        50.81039047241211,
+        688.7757568359375,
+        216.33056640625,
+        698.7275390625
+      ],
+      "bbox_px": [
+        211,
+        2869,
+        901,
+        2911
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b65",
+      "text": "In recent years, numerous scholars have conducted extensive",
+      "bbox_pt": [
+        60.26993942260742,
+        700.6401977539062,
+        291.7348937988281,
+        709.687255859375
+      ],
+      "bbox_px": [
+        251,
+        2919,
+        1215,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b66",
+      "text": "research on the chemical structures and material properties of",
+      "bbox_pt": [
+        50.811279296875,
+        711.593505859375,
+        291.73486328125,
+        720.6405639648438
+      ],
+      "bbox_px": [
+        211,
+        2964,
+        1215,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b67",
+      "text": "polymer materials in accordance with speciﬁc application scenar-",
+      "bbox_pt": [
+        305.9259948730469,
+        75.97618103027344,
+        546.8655395507812,
+        85.02327728271484
+      ],
+      "bbox_px": [
+        1274,
+        316,
+        2278,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b68",
+      "text": "ios. Researchers synthesized implantable polyzwitterionic hydro-",
+      "bbox_pt": [
+        305.9259948730469,
+        86.93852233886719,
+        546.8557739257812,
+        95.9856185913086
+      ],
+      "bbox_px": [
+        1274,
+        362,
+        2278,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b69",
+      "text": "gel scaﬀolds using methacrylated sulfonated betaine (DMAPS)",
+      "bbox_pt": [
+        305.9259948730469,
+        97.90080261230469,
+        546.862060546875,
+        106.9478988647461
+      ],
+      "bbox_px": [
+        1274,
+        407,
+        2278,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b70",
+      "text": "and acrylated gelatin (GelMA). The mechanical properties of the",
+      "bbox_pt": [
+        305.9259948730469,
+        108.85417175292969,
+        546.8548583984375,
+        117.9012680053711
+      ],
+      "bbox_px": [
+        1274,
+        453,
+        2278,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b71",
+      "text": "polyzwitterionic hydrogel were signiﬁcantly enhanced, making it",
+      "bbox_pt": [
+        305.9259948730469,
+        119.81651306152344,
+        546.8837890625,
+        128.86361694335938
+      ],
+      "bbox_px": [
+        1274,
+        499,
+        2278,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b72",
+      "text": "suitable for repairing bone tissue defects. Zwitterionic hydrogels",
+      "bbox_pt": [
+        305.9259948730469,
+        130.77879333496094,
+        546.8882446289062,
+        139.82589721679688
+      ],
+      "bbox_px": [
+        1274,
+        544,
+        2278,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b73",
+      "text": "can regulate ﬁbronectin binding and metabolic reactions, medi-",
+      "bbox_pt": [
+        305.9259948730469,
+        141.73216247558594,
+        546.8909912109375,
+        150.77926635742188
+      ],
+      "bbox_px": [
+        1274,
+        590,
+        2278,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b74",
+      "text": "ate cell-matrix interactions, recruit BMSCs, and signiﬁcantly en-",
+      "bbox_pt": [
+        305.9259948730469,
+        152.6945037841797,
+        546.869384765625,
+        161.74160766601562
+      ],
+      "bbox_px": [
+        1274,
+        636,
+        2278,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b75",
+      "text": "hance osteoblastic diﬀerentiation, ultimately leading to signiﬁ-",
+      "bbox_pt": [
+        305.9259948730469,
+        163.6567840576172,
+        546.8837280273438,
+        172.70388793945312
+      ],
+      "bbox_px": [
+        1274,
+        681,
+        2278,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b76",
+      "text": "cant improvements in osteogenesis (Figure  5d ). [ 179 ] These ﬁnd-",
+      "bbox_pt": [
+        305.9259948730469,
+        171.47618103027344,
+        546.8729858398438,
+        183.65725708007812
+      ],
+      "bbox_px": [
+        1274,
+        714,
+        2278,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b77",
+      "text": "ings underscore the potential of zwitterionic hydrogels in bone",
+      "bbox_pt": [
+        305.92437744140625,
+        185.5704803466797,
+        546.8740234375,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        1274,
+        773,
+        2278,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b78",
+      "text": "tissue repair and their future clinical applications.",
+      "bbox_pt": [
+        305.92437744140625,
+        196.53282165527344,
+        493.34527587890625,
+        205.57992553710938
+      ],
+      "bbox_px": [
+        1274,
+        818,
+        2055,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b79",
+      "text": "In recent years, there have been many new signs of progress",
+      "bbox_pt": [
+        315.3919982910156,
+        207.48619079589844,
+        546.8819580078125,
+        216.53329467773438
+      ],
+      "bbox_px": [
+        1314,
+        864,
+        2278,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b80",
+      "text": "in the application of electric materials in osteochondral repair,",
+      "bbox_pt": [
+        305.92437744140625,
+        218.44847106933594,
+        546.85400390625,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        1274,
+        910,
+        2278,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b81",
+      "text": "which is of great signiﬁcance for exploring the improvement",
+      "bbox_pt": [
+        305.92437744140625,
+        229.4108123779297,
+        546.883056640625,
+        238.45791625976562
+      ],
+      "bbox_px": [
+        1274,
+        955,
+        2278,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b82",
+      "text": "ideas of electric materials. Millisecond-pulsed electrical stim-",
+      "bbox_pt": [
+        305.92437744140625,
+        240.3641815185547,
+        546.8631591796875,
+        249.41128540039062
+      ],
+      "bbox_px": [
+        1274,
+        1001,
+        2278,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b83",
+      "text": "ulation could inﬂuence cellular activities and gene expression",
+      "bbox_pt": [
+        305.92437744140625,
+        251.3264617919922,
+        546.8488159179688,
+        260.3735656738281
+      ],
+      "bbox_px": [
+        1274,
+        1047,
+        2278,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b84",
+      "text": "through ion channel activation, calcium oscillations, and chro-",
+      "bbox_pt": [
+        305.92437744140625,
+        262.27984619140625,
+        546.8513793945312,
+        271.3269348144531
+      ],
+      "bbox_px": [
+        1274,
+        1092,
+        2278,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b85",
+      "text": "matin accessibility. Epigenetic alterations such as histone acety-",
+      "bbox_pt": [
+        305.92437744140625,
+        273.2421569824219,
+        546.8504028320312,
+        282.28924560546875
+      ],
+      "bbox_px": [
+        1274,
+        1138,
+        2278,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b86",
+      "text": "lation modiﬁcation can alter chromatin outcome and play an im-",
+      "bbox_pt": [
+        305.92437744140625,
+        284.2044982910156,
+        546.8804931640625,
+        293.2515869140625
+      ],
+      "bbox_px": [
+        1274,
+        1184,
+        2278,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b87",
+      "text": "portant role in ES induced cell behavior. [ 180 ] A novel electrical",
+      "bbox_pt": [
+        305.92437744140625,
+        292.0221862792969,
+        546.8583984375,
+        304.2049255371094
+      ],
+      "bbox_px": [
+        1274,
+        1216,
+        2278,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b88",
+      "text": "stimulation system based on polypyrrole nanowires (ppyNWs)",
+      "bbox_pt": [
+        305.92413330078125,
+        306.1164855957031,
+        546.8593139648438,
+        315.16357421875
+      ],
+      "bbox_px": [
+        1274,
+        1275,
+        2278,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b89",
+      "text": "integrated within a conductive hydrogel matrix was developed",
+      "bbox_pt": [
+        305.92413330078125,
+        317.0788269042969,
+        546.84765625,
+        326.12591552734375
+      ],
+      "bbox_px": [
+        1274,
+        1321,
+        2278,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b90",
+      "text": "to mimic the cell microenvironment and enhance bone mar-",
+      "bbox_pt": [
+        305.92413330078125,
+        328.03216552734375,
+        546.8658447265625,
+        337.0792541503906
+      ],
+      "bbox_px": [
+        1274,
+        1366,
+        2278,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b91",
+      "text": "row mesenchymal stem cell osteogenesis, demonstrating im-",
+      "bbox_pt": [
+        305.92413330078125,
+        338.9945068359375,
+        546.8700561523438,
+        348.0415954589844
+      ],
+      "bbox_px": [
+        1274,
+        1412,
+        2278,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b92",
+      "text": "proved cell spreading, osteogenic markers, and bone-related",
+      "bbox_pt": [
+        305.92413330078125,
+        349.9568176269531,
+        546.8512573242188,
+        359.00390625
+      ],
+      "bbox_px": [
+        1274,
+        1458,
+        2278,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b93",
+      "text": "gene expression, with RNA-seq analysis revealing connections",
+      "bbox_pt": [
+        305.92413330078125,
+        360.91015625,
+        546.8726806640625,
+        369.9572448730469
+      ],
+      "bbox_px": [
+        1274,
+        1503,
+        2278,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b94",
+      "text": "to Notch, BMP/Smad, and calcium signal pathways. [ 181 ] Liu D",
+      "bbox_pt": [
+        305.92413330078125,
+        368.72918701171875,
+        546.8762817382812,
+        380.9195861816406
+      ],
+      "bbox_px": [
+        1274,
+        1536,
+        2278,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b95",
+      "text": "et al. engineered a piezoelectric-conductive scaﬀold that har-",
+      "bbox_pt": [
+        305.9239807128906,
+        382.8324890136719,
+        546.8671264648438,
+        391.87957763671875
+      ],
+      "bbox_px": [
+        1274,
+        1595,
+        2278,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b96",
+      "text": "nesses joint movement to generate electrical potential, direct-",
+      "bbox_pt": [
+        305.9239807128906,
+        393.7858581542969,
+        546.8565063476562,
+        402.83294677734375
+      ],
+      "bbox_px": [
+        1274,
+        1640,
+        2278,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b97",
+      "text": "ing BMSCs toward chondrogenic diﬀerentiation in the upper",
+      "bbox_pt": [
+        305.9239807128906,
+        404.7481689453125,
+        546.8565673828125,
+        413.7952575683594
+      ],
+      "bbox_px": [
+        1274,
+        1686,
+        2278,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b98",
+      "text": "layer and osteogenic diﬀerentiation in the lower layer, thus en-",
+      "bbox_pt": [
+        305.9239807128906,
+        415.71051025390625,
+        546.8563232421875,
+        424.7575988769531
+      ],
+      "bbox_px": [
+        1274,
+        1732,
+        2278,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b99",
+      "text": "hancing osteochondral repair. This piezoelectric-conducive scaf-",
+      "bbox_pt": [
+        305.9239807128906,
+        426.6638488769531,
+        546.8572998046875,
+        435.7109375
+      ],
+      "bbox_px": [
+        1274,
+        1777,
+        2278,
+        1815
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b100",
+      "text": "fold induced biphasic division of BMSCs to provide a promis-",
+      "bbox_pt": [
+        305.9239807128906,
+        437.62615966796875,
+        546.8709106445312,
+        446.6732482910156
+      ],
+      "bbox_px": [
+        1274,
+        1823,
+        2278,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b101",
+      "text": "ing platform for the repair of osteochondral defects. [ 182 ] Silva",
+      "bbox_pt": [
+        305.9239807128906,
+        445.4451904296875,
+        546.8665161132812,
+        457.6355895996094
+      ],
+      "bbox_px": [
+        1274,
+        1856,
+        2278,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b102",
+      "text": "JC et al. evaluated how the ﬁve distinct ES protocols impact",
+      "bbox_pt": [
+        305.924072265625,
+        459.5395202636719,
+        546.8565063476562,
+        468.58660888671875
+      ],
+      "bbox_px": [
+        1274,
+        1914,
+        2278,
+        1952
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b103",
+      "text": "the viability, proliferation, and osteogenic diﬀerentiation of hu-",
+      "bbox_pt": [
+        305.924072265625,
+        470.5018615722656,
+        546.8711547851562,
+        479.5489501953125
+      ],
+      "bbox_px": [
+        1274,
+        1960,
+        2278,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b104",
+      "text": "man bone marrow-derived mesenchymal stem − 1 stromal cells,",
+      "bbox_pt": [
+        305.924072265625,
+        480.504150390625,
+        546.86181640625,
+        490.5112609863281
+      ],
+      "bbox_px": [
+        1274,
+        2002,
+        2278,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b105",
+      "text": "revealing that speciﬁc ES waveforms signiﬁcantly inﬂuence tis-",
+      "bbox_pt": [
+        305.9248046875,
+        492.4165344238281,
+        546.84912109375,
+        501.463623046875
+      ],
+      "bbox_px": [
+        1274,
+        2051,
+        2278,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b106",
+      "text": "sue mineralization and osteogenic gene expression, underscor-",
+      "bbox_pt": [
+        305.9248046875,
+        503.37884521484375,
+        546.8637084960938,
+        512.4259033203125
+      ],
+      "bbox_px": [
+        1274,
+        2097,
+        2278,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b107",
+      "text": "ing the need for precise ES parameter optimization to enhance",
+      "bbox_pt": [
+        305.9248046875,
+        514.3411865234375,
+        546.8726806640625,
+        523.3882446289062
+      ],
+      "bbox_px": [
+        1274,
+        2143,
+        2278,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b108",
+      "text": "in vitro osteogenesis. [ 183 ] The electrophysiological microenviron-",
+      "bbox_pt": [
+        305.9248046875,
+        522.1611938476562,
+        546.8864135742188,
+        534.3416137695312
+      ],
+      "bbox_px": [
+        1274,
+        2175,
+        2278,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b109",
+      "text": "ment, such as the fate of cells or bacteria, immune response, and",
+      "bbox_pt": [
+        305.9250793457031,
+        536.2554931640625,
+        546.8837280273438,
+        545.3025512695312
+      ],
+      "bbox_px": [
+        1274,
+        2234,
+        2278,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b110",
+      "text": "micro-biomechanics, plays an important role in bone regener-",
+      "bbox_pt": [
+        305.9250793457031,
+        547.2178344726562,
+        546.8547973632812,
+        556.264892578125
+      ],
+      "bbox_px": [
+        1274,
+        2280,
+        2278,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b111",
+      "text": "ation, which is an important direction for the improvement of",
+      "bbox_pt": [
+        305.9250793457031,
+        558.171142578125,
+        546.86669921875,
+        567.2182006835938
+      ],
+      "bbox_px": [
+        1274,
+        2325,
+        2278,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b112",
+      "text": "electrical materials for bone defect repair. Aoao Wang et al. were",
+      "bbox_pt": [
+        305.9250793457031,
+        569.1334838867188,
+        546.8549194335938,
+        578.1805419921875
+      ],
+      "bbox_px": [
+        1274,
+        2371,
+        2278,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b113",
+      "text": "inspired by the complex physiological processes involved in the",
+      "bbox_pt": [
+        305.9250793457031,
+        580.0868530273438,
+        546.8735961914062,
+        589.1339111328125
+      ],
+      "bbox_px": [
+        1274,
+        2417,
+        2278,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b114",
+      "text": "initial healing phase of fracture to develop the ZnO@PCL/PVDF",
+      "bbox_pt": [
+        305.9250793457031,
+        591.0491943359375,
+        546.8793334960938,
+        600.0962524414062
+      ],
+      "bbox_px": [
+        1274,
+        2462,
+        2278,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b115",
+      "text": "piezoelectric nanoﬁber-oriented scaﬀold. This nanoﬁbrous scaf-",
+      "bbox_pt": [
+        305.9250793457031,
+        602.011474609375,
+        546.8792114257812,
+        611.0585327148438
+      ],
+      "bbox_px": [
+        1274,
+        2508,
+        2278,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b116",
+      "text": "fold can not only guide cell growth and promote osteogenic dif-",
+      "bbox_pt": [
+        305.9250793457031,
+        612.96484375,
+        546.8899536132812,
+        622.0119018554688
+      ],
+      "bbox_px": [
+        1274,
+        2554,
+        2278,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b117",
+      "text": "ferentiation, but also produce piezoelectric signal output simi-",
+      "bbox_pt": [
+        305.9250793457031,
+        623.9271850585938,
+        546.88818359375,
+        632.9742431640625
+      ],
+      "bbox_px": [
+        1274,
+        2599,
+        2278,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b118",
+      "text": "lar to the physiological electrical signal of normal bone tissue,",
+      "bbox_pt": [
+        305.9250793457031,
+        634.8895263671875,
+        546.8565063476562,
+        643.9365844726562
+      ],
+      "bbox_px": [
+        1274,
+        2645,
+        2278,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b119",
+      "text": "thereby creating a favorable electrical microenvironment during",
+      "bbox_pt": [
+        305.9250793457031,
+        645.8428344726562,
+        546.8883666992188,
+        654.889892578125
+      ],
+      "bbox_px": [
+        1274,
+        2691,
+        2278,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b120",
+      "text": "bone defect repair. Importantly, the scaﬀold eﬀectively inhibited",
+      "bbox_pt": [
+        305.9250793457031,
+        656.80517578125,
+        546.886474609375,
+        665.8522338867188
+      ],
+      "bbox_px": [
+        1274,
+        2736,
+        2278,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b121",
+      "text": "local pathogen infection and excessive inﬂammatory response",
+      "bbox_pt": [
+        305.9250793457031,
+        667.7674560546875,
+        546.8602294921875,
+        676.8145141601562
+      ],
+      "bbox_px": [
+        1274,
+        2782,
+        2278,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b122",
+      "text": "through the synergistic eﬀect of ZnO nanoparticles, thereby cre-",
+      "bbox_pt": [
+        305.9250793457031,
+        678.7208251953125,
+        546.8854370117188,
+        687.7678833007812
+      ],
+      "bbox_px": [
+        1274,
+        2828,
+        2278,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b123",
+      "text": "ating a favorable regenerative microenvironment. This remote-",
+      "bbox_pt": [
+        305.9250793457031,
+        689.6831665039062,
+        546.875732421875,
+        698.730224609375
+      ],
+      "bbox_px": [
+        1274,
+        2873,
+        2278,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b124",
+      "text": "controlled composite piezoelectric scaﬀold provides a simple",
+      "bbox_pt": [
+        305.9250793457031,
+        700.6455078125,
+        546.8565063476562,
+        709.6925659179688
+      ],
+      "bbox_px": [
+        1274,
+        2919,
+        2278,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b125",
+      "text": "and eﬀective solution for the treatment of bone defects. [ 184 ]",
+      "bbox_pt": [
+        305.9250793457031,
+        710.6996459960938,
+        546.3785400390625,
+        720.6458740234375
+      ],
+      "bbox_px": [
+        1274,
+        2961,
+        2276,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b126",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b127",
+      "text": "2411209 (15 of 29)",
+      "bbox_pt": [
+        191.2935333251953,
+        743.669189453125,
+        260.0792236328125,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        797,
+        3098,
+        1083,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p15_b128",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0694274902344,
+        745.216064453125,
+        546.88330078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p15_b129",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 130
+  }
+}

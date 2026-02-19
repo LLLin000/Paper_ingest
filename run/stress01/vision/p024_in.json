@@ -1,0 +1,774 @@
+{
+  "page": 24,
+  "image_path": "run\\stress01\\pages\\p024.png",
+  "blocks": [
+    {
+      "block_id": "p24_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b2",
+      "text": "Figure 8.  Illustration shows the ECM of bone and cartilage repair as well as the underlying mechanisms.",
+      "bbox_pt": [
+        47.97600173950195,
+        489.7254333496094,
+        392.17022705078125,
+        497.75543212890625
+      ],
+      "bbox_px": [
+        199,
+        2040,
+        1634,
+        2073
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b3",
+      "text": "improve interactions between cells and their matrices when sub-",
+      "bbox_pt": [
+        47.97600173950195,
+        514.232177734375,
+        288.8968811035156,
+        523.2792358398438
+      ],
+      "bbox_px": [
+        199,
+        2142,
+        1203,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b4",
+      "text": "jected to external electric ﬁelds; this enhances ECM distribution",
+      "bbox_pt": [
+        47.97600173950195,
+        525.1945190429688,
+        288.937255859375,
+        534.2415771484375
+      ],
+      "bbox_px": [
+        199,
+        2188,
+        1203,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b5",
+      "text": "while supporting bone and cartilage tissue regeneration. Dur-",
+      "bbox_pt": [
+        47.97600173950195,
+        536.1567993164062,
+        288.9336242675781,
+        545.203857421875
+      ],
+      "bbox_px": [
+        199,
+        2233,
+        1203,
+        2271
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b6",
+      "text": "ing regenerative processes involving bone and cartilage, inﬂam-",
+      "bbox_pt": [
+        47.97600173950195,
+        547.1101684570312,
+        288.94708251953125,
+        556.1572265625
+      ],
+      "bbox_px": [
+        199,
+        2279,
+        1203,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b7",
+      "text": "matory responses may adversely aﬀect tissue repair outcomes.",
+      "bbox_pt": [
+        47.97600173950195,
+        558.072509765625,
+        288.9166259765625,
+        567.1195678710938
+      ],
+      "bbox_px": [
+        199,
+        2325,
+        1203,
+        2362
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b8",
+      "text": "Research indicates that moderate electrical stimulation can",
+      "bbox_pt": [
+        47.97600173950195,
+        569.0347900390625,
+        288.903076171875,
+        578.0818481445312
+      ],
+      "bbox_px": [
+        199,
+        2370,
+        1203,
+        2408
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b9",
+      "text": "suppress pro-inﬂammatory cytokine release while promoting",
+      "bbox_pt": [
+        47.97600173950195,
+        579.9881591796875,
+        288.9237976074219,
+        589.0352172851562
+      ],
+      "bbox_px": [
+        199,
+        2416,
+        1203,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b10",
+      "text": "anti-inﬂammatory factor expression—thus fostering a more fa-",
+      "bbox_pt": [
+        47.97600173950195,
+        590.9505004882812,
+        288.9157409667969,
+        599.99755859375
+      ],
+      "bbox_px": [
+        199,
+        2462,
+        1203,
+        2499
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b11",
+      "text": "vorable environment for early-stage regeneration. For instance,",
+      "bbox_pt": [
+        47.97600173950195,
+        601.912841796875,
+        288.8941955566406,
+        610.9598999023438
+      ],
+      "bbox_px": [
+        199,
+        2507,
+        1203,
+        2545
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b12",
+      "text": "microcurrents produced by nanogenerators have been shown",
+      "bbox_pt": [
+        47.97600173950195,
+        612.8661499023438,
+        288.9273986816406,
+        621.9132080078125
+      ],
+      "bbox_px": [
+        199,
+        2553,
+        1203,
+        2591
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b13",
+      "text": "to inhibit macrophage activation while decreasing inﬂammatory",
+      "bbox_pt": [
+        47.97600173950195,
+        623.8284912109375,
+        288.93450927734375,
+        632.8755493164062
+      ],
+      "bbox_px": [
+        199,
+        2599,
+        1203,
+        2636
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b14",
+      "text": "factor production—ultimately leading to enhanced tissue regen-",
+      "bbox_pt": [
+        47.97600173950195,
+        634.790771484375,
+        288.8951110839844,
+        643.8378295898438
+      ],
+      "bbox_px": [
+        199,
+        2644,
+        1203,
+        2682
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b15",
+      "text": "eration.",
+      "bbox_pt": [
+        47.97600173950195,
+        645.744140625,
+        76.77607727050781,
+        654.7911987304688
+      ],
+      "bbox_px": [
+        199,
+        2690,
+        319,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b16",
+      "text": "Future research in the domain of bone and cartilage regen-",
+      "bbox_pt": [
+        57.434661865234375,
+        656.7064819335938,
+        288.9201965332031,
+        665.7535400390625
+      ],
+      "bbox_px": [
+        239,
+        2736,
+        1203,
+        2773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b17",
+      "text": "eration should build on recent progress in electro-biomaterials",
+      "bbox_pt": [
+        47.97600173950195,
+        667.6688232421875,
+        288.9264831542969,
+        676.7158813476562
+      ],
+      "bbox_px": [
+        199,
+        2781,
+        1203,
+        2819
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b18",
+      "text": "by concentrating on the following key areas: 1) Examine how",
+      "bbox_pt": [
+        47.97600173950195,
+        678.6221923828125,
+        288.9319152832031,
+        687.6692504882812
+      ],
+      "bbox_px": [
+        199,
+        2827,
+        1203,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b19",
+      "text": "variations in electric ﬁeld intensity, frequency, and duration af-",
+      "bbox_pt": [
+        47.97600173950195,
+        689.58447265625,
+        288.9184875488281,
+        698.6315307617188
+      ],
+      "bbox_px": [
+        199,
+        2873,
+        1203,
+        2910
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b20",
+      "text": "fect bone and cartilage cells to determine the most eﬀective com-",
+      "bbox_pt": [
+        47.97600173950195,
+        700.5468139648438,
+        288.8896789550781,
+        709.5938720703125
+      ],
+      "bbox_px": [
+        199,
+        2918,
+        1203,
+        2956
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b21",
+      "text": "binations of electrical stimulation parameters that enhance re-",
+      "bbox_pt": [
+        47.97600173950195,
+        711.5001220703125,
+        288.9336853027344,
+        720.5471801757812
+      ],
+      "bbox_px": [
+        199,
+        2964,
+        1203,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b22",
+      "text": "generative results. 2) Combine speciﬁc growth factors (such as",
+      "bbox_pt": [
+        303.0906982421875,
+        514.237548828125,
+        544.0186157226562,
+        523.2846069335938
+      ],
+      "bbox_px": [
+        1262,
+        2142,
+        2266,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b23",
+      "text": "bone morphogenetic protein BMP and transforming growth fac-",
+      "bbox_pt": [
+        303.0906982421875,
+        525.1998901367188,
+        544.0259399414062,
+        534.2469482421875
+      ],
+      "bbox_px": [
+        1262,
+        2188,
+        2266,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b24",
+      "text": "tor TGF) with electrical stimulation to investigate their com-",
+      "bbox_pt": [
+        303.0906982421875,
+        536.1622314453125,
+        544.0503540039062,
+        545.2092895507812
+      ],
+      "bbox_px": [
+        1262,
+        2234,
+        2266,
+        2271
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b25",
+      "text": "bined eﬀects on the proliferation and diﬀerentiation of bone",
+      "bbox_pt": [
+        303.0906982421875,
+        547.1155395507812,
+        544.03857421875,
+        556.16259765625
+      ],
+      "bbox_px": [
+        1262,
+        2279,
+        2266,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b26",
+      "text": "and cartilage cells. 3) Create electro-biomaterials designed for re-",
+      "bbox_pt": [
+        303.0906982421875,
+        558.077880859375,
+        544.0204467773438,
+        567.1249389648438
+      ],
+      "bbox_px": [
+        1262,
+        2325,
+        2266,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b27",
+      "text": "sponsive and controllable release characteristics, enabling real-",
+      "bbox_pt": [
+        303.0906982421875,
+        569.0401611328125,
+        544.0302124023438,
+        578.0872192382812
+      ],
+      "bbox_px": [
+        1262,
+        2371,
+        2266,
+        2408
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b28",
+      "text": "time adjustments to external stimuli and material reactions. 4)",
+      "bbox_pt": [
+        303.0906982421875,
+        579.9935302734375,
+        544.0457763671875,
+        589.0405883789062
+      ],
+      "bbox_px": [
+        1262,
+        2416,
+        2266,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b29",
+      "text": "Utilize advanced methodologies like transcriptomics and pro-",
+      "bbox_pt": [
+        303.0906982421875,
+        590.9558715820312,
+        544.0538940429688,
+        600.0029296875
+      ],
+      "bbox_px": [
+        1262,
+        2462,
+        2266,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b30",
+      "text": "teomics to thoroughly investigate the regulatory mechanisms",
+      "bbox_pt": [
+        303.0906982421875,
+        601.918212890625,
+        544.0394897460938,
+        610.9652709960938
+      ],
+      "bbox_px": [
+        1262,
+        2507,
+        2266,
+        2545
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b31",
+      "text": "through which electrical stimulation impacts cell signaling path-",
+      "bbox_pt": [
+        303.0906982421875,
+        612.87158203125,
+        544.0467529296875,
+        621.9186401367188
+      ],
+      "bbox_px": [
+        1262,
+        2553,
+        2266,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b32",
+      "text": "ways, gene expression, and protein synthesis, thereby clarifying",
+      "bbox_pt": [
+        303.0906982421875,
+        623.8338623046875,
+        544.0321044921875,
+        632.8809204101562
+      ],
+      "bbox_px": [
+        1262,
+        2599,
+        2266,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b33",
+      "text": "the biological principles behind electrical stimulation’s role in",
+      "bbox_pt": [
+        303.0906982421875,
+        634.7962036132812,
+        544.044921875,
+        643.84326171875
+      ],
+      "bbox_px": [
+        1262,
+        2644,
+        2266,
+        2682
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b34",
+      "text": "bone and cartilage regeneration. The use of electro-biomaterials",
+      "bbox_pt": [
+        303.0906982421875,
+        645.74951171875,
+        544.0387573242188,
+        654.7965698242188
+      ],
+      "bbox_px": [
+        1262,
+        2690,
+        2266,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b35",
+      "text": "oﬀers an innovative strategy for improving bone and cartilage",
+      "bbox_pt": [
+        303.0906982421875,
+        656.7118530273438,
+        544.0331420898438,
+        665.7589111328125
+      ],
+      "bbox_px": [
+        1262,
+        2736,
+        2266,
+        2773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b36",
+      "text": "repair processes. Incorporating electrical stimulation technology",
+      "bbox_pt": [
+        303.0906982421875,
+        667.6741943359375,
+        544.0068359375,
+        676.7212524414062
+      ],
+      "bbox_px": [
+        1262,
+        2781,
+        2266,
+        2819
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b37",
+      "text": "into this area of study will provide a solid theoretical foundation",
+      "bbox_pt": [
+        303.0906982421875,
+        678.6275634765625,
+        544.0332641601562,
+        687.6746215820312
+      ],
+      "bbox_px": [
+        1262,
+        2827,
+        2266,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b38",
+      "text": "along with practical support for further advancements.",
+      "bbox_pt": [
+        303.0906982421875,
+        689.58984375,
+        508.3143615722656,
+        698.6369018554688
+      ],
+      "bbox_px": [
+        1262,
+        2873,
+        2117,
+        2910
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b39",
+      "text": "This review concludes with a call for the development of intel-",
+      "bbox_pt": [
+        312.5583190917969,
+        700.5521850585938,
+        544.0205078125,
+        709.5992431640625
+      ],
+      "bbox_px": [
+        1302,
+        2918,
+        2266,
+        2956
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b40",
+      "text": "ligent bone-implantable scaﬀolds that integrate osteogenic and",
+      "bbox_pt": [
+        303.0906982421875,
+        711.5055541992188,
+        544.0565795898438,
+        720.5526123046875
+      ],
+      "bbox_px": [
+        1262,
+        2964,
+        2266,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b41",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b42",
+      "text": "2411209 (24 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p24_b43",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p24_b44",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 45
+  }
+}

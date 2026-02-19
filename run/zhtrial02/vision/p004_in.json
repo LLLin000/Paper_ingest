@@ -1,0 +1,2117 @@
+{
+  "page": 4,
+  "image_path": "run\\zhtrial02\\pages\\p004.png",
+  "blocks": [
+    {
+      "block_id": "p4_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b1",
+      "text": "4",
+      "bbox_pt": [
+        555.7769165039062,
+        760.43701171875,
+        561.200927734375,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2315,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b4",
+      "text": "asymptomatic tears 41 . For degenerative tears, evidence shows that activ-",
+      "bbox_pt": [
+        39.685001373291016,
+        552.50732421875,
+        294.80316162109375,
+        563.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2302,
+        1228,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b5",
+      "text": "ity tear development is linked to hand dominance, with higher likelihood ",
+      "bbox_pt": [
+        39.685001373291016,
+        563.5956420898438,
+        296.0838317871094,
+        573.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2348,
+        1233,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b6",
+      "text": "of a symptomatic tear in the dominant shoulder than the non-dominant ",
+      "bbox_pt": [
+        39.685001373291016,
+        574.3456420898438,
+        296.1325988769531,
+        584.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2393,
+        1233,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b7",
+      "text": "shoulder 13 , 41 – 43 . Occupational demands might play a part in rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        584.75732421875,
+        296.27947998046875,
+        595.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2436,
+        1234,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b8",
+      "text": "tear development; for example, studies have identified several occu-",
+      "bbox_pt": [
+        39.685001373291016,
+        595.8456420898438,
+        294.80322265625,
+        606.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2482,
+        1228,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b9",
+      "text": "pational exposure risk factors, such as repetitive arm elevation, heavy ",
+      "bbox_pt": [
+        39.685001373291016,
+        606.5956420898438,
+        296.23529052734375,
+        616.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2527,
+        1234,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b10",
+      "text": "lifting and use of vibrating tools, that are associated with rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        617.3453979492188,
+        296.22705078125,
+        627.52587890625
+      ],
+      "bbox_px": [
+        165,
+        2572,
+        1234,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b11",
+      "text": "tears 44 – 48 . However, the exact duration and type of exposure that con-",
+      "bbox_pt": [
+        39.685001373291016,
+        627.75732421875,
+        294.8117980957031,
+        638.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2615,
+        1228,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b12",
+      "text": "stitute a risk is unknown. A study in a population of >250,000 individu-",
+      "bbox_pt": [
+        39.685001373291016,
+        638.8456420898438,
+        294.60626220703125,
+        649.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2661,
+        1227,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b13",
+      "text": "als (UK Biobank) showed a correlation between self-reported manual ",
+      "bbox_pt": [
+        39.685001373291016,
+        649.5956420898438,
+        296.27734375,
+        659.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2706,
+        1234,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b14",
+      "text": "labour and the need for rotator cuff surgery compared with ­controls, ",
+      "bbox_pt": [
+        39.685001373291016,
+        660.3453979492188,
+        296.2518005371094,
+        670.52587890625
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1234,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b15",
+      "text": "particularly when the occupational exposure lasted >10 years 49 .",
+      "bbox_pt": [
+        39.68499755859375,
+        670.75732421875,
+        271.68359375,
+        681.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2794,
+        1132,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b16",
+      "text": "Natural history",
+      "bbox_pt": [
+        39.685001373291016,
+        692.0718994140625,
+        102.54850006103516,
+        702.9131469726562
+      ],
+      "bbox_px": [
+        165,
+        2883,
+        427,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b17",
+      "text": "Although, the greatest risk factor for rotator cuff tear development is ",
+      "bbox_pt": [
+        39.685001373291016,
+        703.3456420898438,
+        296.28485107421875,
+        713.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2930,
+        1234,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b18",
+      "text": "age, time is the greatest risk factor for tear progression. The risk of tear ",
+      "bbox_pt": [
+        39.685001373291016,
+        714.0956420898438,
+        296.0958251953125,
+        724.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2975,
+        1233,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b19",
+      "text": "enlargement is greater in full-thickness tears than partial-thickness ",
+      "bbox_pt": [
+        39.685001373291016,
+        724.8456420898438,
+        296.36370849609375,
+        735.026123046875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1234,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b20",
+      "text": "tears 5 , 43 , 50 . Although smoking, obesity, diabetes and hyperlipidaemia ",
+      "bbox_pt": [
+        39.685001373291016,
+        735.25732421875,
+        296.25469970703125,
+        745.776123046875
+      ],
+      "bbox_px": [
+        165,
+        3063,
+        1234,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b21",
+      "text": "have been linked to rotator cuff disease, no studies have examined ",
+      "bbox_pt": [
+        306.1416931152344,
+        112.09562683105469,
+        562.7672729492188,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2344,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b22",
+      "text": "the effects of these conditions on the natural history or progression ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.84562683105469,
+        562.7478637695312,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        511,
+        2344,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b23",
+      "text": "of rotator cuff disease. The role of scapular morphology, specifically ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.5956268310547,
+        562.7323608398438,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        556,
+        2344,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b24",
+      "text": "the acromion, in the development of and the progression of degenera-",
+      "bbox_pt": [
+        306.1416931152344,
+        144.3456268310547,
+        561.2598266601562,
+        154.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        601,
+        2338,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b25",
+      "text": "tive rotator cuff tears is debated. For example, in one study, the critical ",
+      "bbox_pt": [
+        306.1416931152344,
+        155.0956268310547,
+        562.79443359375,
+        165.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        646,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b26",
+      "text": "shoulder angle of patients with an asymptomatic rotator cuff tear was ",
+      "bbox_pt": [
+        306.1416931152344,
+        165.8456268310547,
+        562.7041625976562,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b27",
+      "text": "larger than in control patients with normal rotator cuffs but was not ",
+      "bbox_pt": [
+        306.1416931152344,
+        176.5956268310547,
+        562.742431640625,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b28",
+      "text": "associated with tear size or the risk of tear enlargement (median time ",
+      "bbox_pt": [
+        306.1416931152344,
+        187.3456268310547,
+        562.7084350585938,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        780,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b29",
+      "text": "to enlargement of 3.3 years) 51 . Other studies, including a meta-analysis, ",
+      "bbox_pt": [
+        306.1416931152344,
+        197.7574005126953,
+        562.7359619140625,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        823,
+        2344,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b30",
+      "text": "demonstrated considerable variability in the relationship between criti-",
+      "bbox_pt": [
+        306.1416931152344,
+        208.8456268310547,
+        561.2598876953125,
+        219.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2338,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b31",
+      "text": "cal shoulder angle and the presence of rotator cuff tears, suggesting ",
+      "bbox_pt": [
+        306.1416931152344,
+        219.5956268310547,
+        562.6817016601562,
+        229.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        914,
+        2344,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b32",
+      "text": "that it may only be a factor in some patients 52 .",
+      "bbox_pt": [
+        306.1416931152344,
+        230.0074005126953,
+        474.5957946777344,
+        240.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        958,
+        1977,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b33",
+      "text": "The typical site of initiation of a rotator cuff tear is between ",
+      "bbox_pt": [
+        323.14959716796875,
+        241.0956268310547,
+        562.5951538085938,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1346,
+        1004,
+        2344,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b34",
+      "text": "13 mm and 17 mm posterior to the biceps tendon within the rotator ",
+      "bbox_pt": [
+        306.1416931152344,
+        251.8456268310547,
+        562.6864624023438,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2344,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b35",
+      "text": "crescent 16 , 53 . The rotator crescent is a relatively hypovascular area of ",
+      "bbox_pt": [
+        306.1416931152344,
+        262.25738525390625,
+        562.8053588867188,
+        272.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1092,
+        2345,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b36",
+      "text": "the posterior cuff that is protected to some degree biomechanically ",
+      "bbox_pt": [
+        306.1416931152344,
+        273.3456115722656,
+        562.73291015625,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1138,
+        2344,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b37",
+      "text": "by the thick rotator cable, which spans from the anterior edge of the ",
+      "bbox_pt": [
+        306.1416931152344,
+        284.0956115722656,
+        562.7168579101562,
+        294.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b38",
+      "text": "supraspinatus to the inferior infraspinatus 54 – 56 . Approximately 30% of ",
+      "bbox_pt": [
+        306.1416931152344,
+        294.50732421875,
+        562.7129516601562,
+        305.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1227,
+        2344,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b39",
+      "text": "full-thickness tears, regardless of tear size, involve the anterior cable ",
+      "bbox_pt": [
+        306.1416931152344,
+        305.5956115722656,
+        562.682861328125,
+        315.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2344,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b40",
+      "text": "tissue adjacent to the biceps tendon, and only 3% of small full-thickness ",
+      "bbox_pt": [
+        306.1416931152344,
+        316.3456115722656,
+        562.7235717773438,
+        326.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1318,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b41",
+      "text": "tears (≤10 mm) involve this area 53 , 57 . Longitudinal studies have shown ",
+      "bbox_pt": [
+        306.1416931152344,
+        326.75732421875,
+        562.7062377929688,
+        337.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1361,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b42",
+      "text": "that tear enlargement within the rotator crescent is common in the ",
+      "bbox_pt": [
+        306.1416931152344,
+        337.8456115722656,
+        562.7168579101562,
+        348.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b43",
+      "text": "anterior and posterior directions 4 . Rotator cuff tear location mapping ",
+      "bbox_pt": [
+        306.1416931152344,
+        348.25732421875,
+        562.6119384765625,
+        358.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1451,
+        2344,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b44",
+      "text": "has shown that anterior cable disruption is strongly associated with ",
+      "bbox_pt": [
+        306.1416931152344,
+        359.3456115722656,
+        562.77978515625,
+        369.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1497,
+        2344,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b45",
+      "text": "supraspinatus muscle degeneration 16 , 58 .",
+      "bbox_pt": [
+        306.1416931152344,
+        369.75732421875,
+        453.8874206542969,
+        380.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1540,
+        1891,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b46",
+      "text": "Pain is an important clinical indicator of tear size progression ",
+      "bbox_pt": [
+        323.14959716796875,
+        380.8456115722656,
+        562.83349609375,
+        391.026123046875
+      ],
+      "bbox_px": [
+        1346,
+        1586,
+        2345,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b47",
+      "text": "over time with the tear width and amount of retraction from the bone ",
+      "bbox_pt": [
+        306.1416931152344,
+        391.5956115722656,
+        562.71337890625,
+        401.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1631,
+        2344,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b48",
+      "text": "increasing. Much of the research examining tear progression has been ",
+      "bbox_pt": [
+        306.1416931152344,
+        402.3456115722656,
+        562.6530151367188,
+        412.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        2344,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b49",
+      "text": "performed in asymptomatic shoulders by identifying painless tears in ",
+      "bbox_pt": [
+        306.1416931152344,
+        413.0956115722656,
+        562.87939453125,
+        423.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2345,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b50",
+      "text": "patients presenting with a painful cuff tear in the opposite shoulder. ",
+      "bbox_pt": [
+        306.1416931152344,
+        423.8456115722656,
+        562.7249145507812,
+        434.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b51",
+      "text": "Clinically, most patients in whom the tear progressed had an increased ",
+      "bbox_pt": [
+        306.1416931152344,
+        434.5956115722656,
+        562.6493530273438,
+        444.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2344,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b52",
+      "text": "risk of developing pain 59 . In a large study of 224 shoulders in patients ",
+      "bbox_pt": [
+        306.1416931152344,
+        445.00732421875,
+        562.723876953125,
+        455.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1854,
+        2344,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b53",
+      "text": "with asymptomatic tears in one shoulder and a contralateral painful ",
+      "bbox_pt": [
+        306.1416931152344,
+        456.0956115722656,
+        562.7449951171875,
+        466.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b54",
+      "text": "rotator cuff tear, tear progression was found in 49% of asymptomatic ",
+      "bbox_pt": [
+        306.1416931152344,
+        466.8456115722656,
+        562.73388671875,
+        477.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2344,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b55",
+      "text": "shoulders by ultrasonography, with a median time to enlargement of ",
+      "bbox_pt": [
+        306.1416931152344,
+        477.5953674316406,
+        562.7150268554688,
+        487.77587890625
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2344,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b56",
+      "text": "2.8 years 5 . In this study, the risk of tear enlargement for full-thickness ",
+      "bbox_pt": [
+        306.1416931152344,
+        488.00732421875,
+        562.732666015625,
+        498.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2033,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b57",
+      "text": "tears was significantly greater than for partial-thickness tears and ",
+      "bbox_pt": [
+        306.1416931152344,
+        499.0956115722656,
+        562.726318359375,
+        509.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        2344,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b58",
+      "text": "control shoulders. Overall, 46% of originally asymptomatic shoulders ",
+      "bbox_pt": [
+        306.1416931152344,
+        509.8456115722656,
+        562.6430053710938,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b59",
+      "text": "developed pain at a median of 2.6 years. A subsequent study involv-",
+      "bbox_pt": [
+        306.1416931152344,
+        520.5956420898438,
+        561.2598876953125,
+        530.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2338,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b60",
+      "text": "ing 227 shoulders in patients aged 65 years or younger demonstrated ",
+      "bbox_pt": [
+        306.1416931152344,
+        531.3456420898438,
+        562.72412109375,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2344,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b61",
+      "text": "continued tear progression over an average follow up of 7.1 years 43 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        541.75732421875,
+        562.7273559570312,
+        552.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2257,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b62",
+      "text": "Overall, 60% of tears enlarged during the 7-year study period. The risks ",
+      "bbox_pt": [
+        306.1416931152344,
+        552.8456420898438,
+        562.6519165039062,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b63",
+      "text": "of enlargement of a full-thickness tear at 2 years, 5 years and 8 years ",
+      "bbox_pt": [
+        306.1416931152344,
+        563.5956420898438,
+        562.6998291015625,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b64",
+      "text": "were 26%, 58% and 80%, respectively. Approximately 57% of the cohort ",
+      "bbox_pt": [
+        306.1416931152344,
+        574.3456420898438,
+        562.81787109375,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2345,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b65",
+      "text": "developed pain, which was strongly linked to tear enlargement. ",
+      "bbox_pt": [
+        306.1416931152344,
+        585.0956420898438,
+        562.6983032226562,
+        595.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2437,
+        2344,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b66",
+      "text": "The presence and progression of degeneration of the supraspinatus ",
+      "bbox_pt": [
+        306.1416931152344,
+        595.8456420898438,
+        562.7479248046875,
+        606.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2482,
+        2344,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b67",
+      "text": "and infraspinatus muscles were linked to absolute tear size and tear ",
+      "bbox_pt": [
+        306.1416931152344,
+        606.5956420898438,
+        562.6828002929688,
+        616.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b68",
+      "text": "­enlargement during follow-up 43 .",
+      "bbox_pt": [
+        306.1416931152344,
+        617.00732421875,
+        426.3211975097656,
+        627.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2570,
+        1776,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b69",
+      "text": "Clinical evidence strongly suggests that symptomatic degenera-",
+      "bbox_pt": [
+        323.1466979980469,
+        628.0953979492188,
+        561.25,
+        638.27587890625
+      ],
+      "bbox_px": [
+        1346,
+        2617,
+        2338,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b70",
+      "text": "tive full-thickness rotator cuff tears do not heal, and most tears are at ",
+      "bbox_pt": [
+        306.13519287109375,
+        638.8451538085938,
+        562.73583984375,
+        649.025634765625
+      ],
+      "bbox_px": [
+        1275,
+        2661,
+        2344,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b71",
+      "text": "risk of slow progression over time. Tear progression can be defined ",
+      "bbox_pt": [
+        306.1416931152344,
+        649.5956420898438,
+        562.74853515625,
+        659.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b72",
+      "text": "as tear enlargement or progression of muscle degeneration — both of ",
+      "bbox_pt": [
+        306.1416931152344,
+        660.3456420898438,
+        562.7324829101562,
+        670.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b73",
+      "text": "which have implications on healing potential following surgical repair. ",
+      "bbox_pt": [
+        306.1416931152344,
+        671.0956420898438,
+        562.6268310546875,
+        681.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2344,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b74",
+      "text": "Multiple studies have demonstrated that painful tears will enlarge in ",
+      "bbox_pt": [
+        306.1416931152344,
+        681.8456420898438,
+        562.7003173828125,
+        692.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b75",
+      "text": "size, especially over a period of 18 months or more, but the amount ",
+      "bbox_pt": [
+        306.1416931152344,
+        692.5956420898438,
+        562.6201782226562,
+        702.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2344,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b76",
+      "text": "of tear enlargement is relatively low 50 , 60 . For example, in 49 patients ",
+      "bbox_pt": [
+        306.1416931152344,
+        703.00732421875,
+        562.744140625,
+        713.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2929,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b77",
+      "text": "with a symptomatic full-thickness rotator cuff tear, the average tear ",
+      "bbox_pt": [
+        306.1416931152344,
+        714.0956420898438,
+        562.7894287109375,
+        724.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2975,
+        2344,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b78",
+      "text": "size increase was <1 cm, and progression of muscle degeneration was ",
+      "bbox_pt": [
+        306.1416931152344,
+        724.8456420898438,
+        562.7423095703125,
+        735.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        3020,
+        2344,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b79",
+      "text": "seen in <50% of patients 59 .",
+      "bbox_pt": [
+        306.1416931152344,
+        735.25732421875,
+        402.03662109375,
+        745.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        3063,
+        1675,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p4_b80",
+      "text": "Box 1",
+      "bbox_pt": [
+        45.35430145263672,
+        118.97362518310547,
+        78.9822998046875,
+        138.2936248779297
+      ],
+      "bbox_px": [
+        188,
+        495,
+        329,
+        576
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b81",
+      "text": "Classification of rotator cuff ",
+      "bbox_pt": [
+        45.35430145263672,
+        145.7896270751953,
+        260.33184814453125,
+        167.9476318359375
+      ],
+      "bbox_px": [
+        188,
+        607,
+        1084,
+        699
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b82",
+      "text": "tears",
+      "bbox_pt": [
+        45.35430145263672,
+        166.29164123535156,
+        83.11830139160156,
+        188.44964599609375
+      ],
+      "bbox_px": [
+        188,
+        692,
+        346,
+        785
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b83",
+      "text": "Tears are classified based on their size (partial or complete), and ",
+      "bbox_pt": [
+        45.35430145263672,
+        197.1116180419922,
+        275.60150146484375,
+        208.03163146972656
+      ],
+      "bbox_px": [
+        188,
+        821,
+        1148,
+        866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b84",
+      "text": "several classification systems are used. Most commonly, partial ",
+      "bbox_pt": [
+        45.35430145263672,
+        207.86363220214844,
+        273.52471923828125,
+        218.7836456298828
+      ],
+      "bbox_px": [
+        188,
+        866,
+        1139,
+        911
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b85",
+      "text": "tears are classified based on the amount of tearing off the footprint ",
+      "bbox_pt": [
+        45.35430145263672,
+        218.6156463623047,
+        285.57513427734375,
+        229.53565979003906
+      ],
+      "bbox_px": [
+        188,
+        910,
+        1189,
+        956
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b86",
+      "text": "(Ellman classification) as seen on MRI. Full thickness tears are ",
+      "bbox_pt": [
+        45.35430145263672,
+        229.36766052246094,
+        265.62713623046875,
+        240.2876739501953
+      ],
+      "bbox_px": [
+        188,
+        955,
+        1106,
+        1001
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b87",
+      "text": "usually classified with the Codman classification based on tear size ",
+      "bbox_pt": [
+        45.35430145263672,
+        240.1196746826172,
+        286.4958801269531,
+        251.03968811035156
+      ],
+      "bbox_px": [
+        188,
+        1000,
+        1193,
+        1045
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b88",
+      "text": "in the anterior–posterior dimension. Although these classifications ",
+      "bbox_pt": [
+        45.35430145263672,
+        250.87168884277344,
+        284.839111328125,
+        261.79168701171875
+      ],
+      "bbox_px": [
+        188,
+        1045,
+        1186,
+        1090
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b89",
+      "text": "lack high reproducibility, the Codman classification is predictive ",
+      "bbox_pt": [
+        45.35430145263672,
+        261.62371826171875,
+        276.27105712890625,
+        272.543701171875
+      ],
+      "bbox_px": [
+        188,
+        1090,
+        1151,
+        1135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b90",
+      "text": "of outcome after rotator cuff repair, and helps guide treatment ",
+      "bbox_pt": [
+        45.35430145263672,
+        272.375732421875,
+        270.2526550292969,
+        283.29571533203125
+      ],
+      "bbox_px": [
+        188,
+        1134,
+        1126,
+        1180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b91",
+      "text": "decisions. The Goutallier classification is utilized to determine the ",
+      "bbox_pt": [
+        45.35430145263672,
+        283.12774658203125,
+        281.6470947265625,
+        294.0477294921875
+      ],
+      "bbox_px": [
+        188,
+        1179,
+        1173,
+        1225
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b92",
+      "text": "degree of fatty infiltration within the rotator cuff, and is assessed  ",
+      "bbox_pt": [
+        45.35430145263672,
+        293.8797607421875,
+        277.6903076171875,
+        304.79974365234375
+      ],
+      "bbox_px": [
+        188,
+        1224,
+        1157,
+        1269
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b93",
+      "text": "on sagittal views on MRI.",
+      "bbox_pt": [
+        45.35430908203125,
+        304.63177490234375,
+        133.31993103027344,
+        315.5517578125
+      ],
+      "bbox_px": [
+        188,
+        1269,
+        555,
+        1314
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b94",
+      "text": "Partial-thickness tears — Ellman classification 301",
+      "bbox_pt": [
+        45.35430145263672,
+        325.1456298828125,
+        243.10255432128906,
+        337.2206115722656
+      ],
+      "bbox_px": [
+        188,
+        1354,
+        1012,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b95",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        336.86163330078125,
+        54.94089889526367,
+        347.7816162109375
+      ],
+      "bbox_px": [
+        220,
+        1403,
+        228,
+        1449
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b96",
+      "text": "•  Grade 1: <3 mm (<25% thickness)",
+      "bbox_pt": [
+        48.188899993896484,
+        336.86163330078125,
+        172.1737060546875,
+        347.7816162109375
+      ],
+      "bbox_px": [
+        200,
+        1403,
+        717,
+        1449
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b97",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        347.6136474609375,
+        54.94089889526367,
+        358.53363037109375
+      ],
+      "bbox_px": [
+        220,
+        1448,
+        228,
+        1493
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b98",
+      "text": "•  Grade 2: 3–6 mm (25–50% thickness)",
+      "bbox_pt": [
+        48.188899993896484,
+        347.6136474609375,
+        188.634521484375,
+        358.53363037109375
+      ],
+      "bbox_px": [
+        200,
+        1448,
+        785,
+        1493
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b99",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        358.36566162109375,
+        54.94089889526367,
+        369.28564453125
+      ],
+      "bbox_px": [
+        220,
+        1493,
+        228,
+        1538
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b100",
+      "text": "•  Grade 3: >6 mm (>50% thickness)",
+      "bbox_pt": [
+        48.188899993896484,
+        358.36566162109375,
+        175.14892578125,
+        369.28564453125
+      ],
+      "bbox_px": [
+        200,
+        1493,
+        729,
+        1538
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b101",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        369.11767578125,
+        54.94089889526367,
+        380.03765869140625
+      ],
+      "bbox_px": [
+        220,
+        1537,
+        228,
+        1583
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b102",
+      "text": "•  Location: A, articular sided; B, bursal sided; C, intratendinous",
+      "bbox_pt": [
+        48.188899993896484,
+        369.11767578125,
+        274.1024475097656,
+        380.03765869140625
+      ],
+      "bbox_px": [
+        200,
+        1537,
+        1142,
+        1583
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b103",
+      "text": "Full-thickness tears — Codman classification (tear size  ",
+      "bbox_pt": [
+        45.35430145263672,
+        389.6456298828125,
+        271.27056884765625,
+        401.7206115722656
+      ],
+      "bbox_px": [
+        188,
+        1623,
+        1130,
+        1673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b104",
+      "text": "in anterior to posterior direction) 302",
+      "bbox_pt": [
+        45.35430908203125,
+        400.3993835449219,
+        189.31065368652344,
+        412.474365234375
+      ],
+      "bbox_px": [
+        188,
+        1668,
+        788,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b105",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        412.11163330078125,
+        54.94089889526367,
+        423.0316162109375
+      ],
+      "bbox_px": [
+        220,
+        1717,
+        228,
+        1762
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b106",
+      "text": "•  Small: 0–1 cm",
+      "bbox_pt": [
+        48.188899993896484,
+        412.11163330078125,
+        105.82330322265625,
+        423.0316162109375
+      ],
+      "bbox_px": [
+        200,
+        1717,
+        440,
+        1762
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b107",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        422.8636474609375,
+        54.94089889526367,
+        433.78363037109375
+      ],
+      "bbox_px": [
+        220,
+        1761,
+        228,
+        1807
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b108",
+      "text": "•  Medium: 1–3 cm",
+      "bbox_pt": [
+        48.188899993896484,
+        422.8636474609375,
+        114.23931884765625,
+        433.78363037109375
+      ],
+      "bbox_px": [
+        200,
+        1761,
+        475,
+        1807
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b109",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        433.61566162109375,
+        54.94089889526367,
+        444.53564453125
+      ],
+      "bbox_px": [
+        220,
+        1806,
+        228,
+        1852
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b110",
+      "text": "•  Large: 3–5 cm",
+      "bbox_pt": [
+        48.188899993896484,
+        433.61566162109375,
+        106.61531829833984,
+        444.53564453125
+      ],
+      "bbox_px": [
+        200,
+        1806,
+        444,
+        1852
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b111",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        444.36767578125,
+        54.94089889526367,
+        455.28765869140625
+      ],
+      "bbox_px": [
+        220,
+        1851,
+        228,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b112",
+      "text": "•  Massive: >5 cm",
+      "bbox_pt": [
+        48.188899993896484,
+        444.36767578125,
+        110.00011444091797,
+        455.28765869140625
+      ],
+      "bbox_px": [
+        200,
+        1851,
+        458,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b113",
+      "text": "Fatty infiltration — Goutallier classification 160",
+      "bbox_pt": [
+        45.35430145263672,
+        464.8956298828125,
+        230.1039581298828,
+        476.9706115722656
+      ],
+      "bbox_px": [
+        188,
+        1937,
+        958,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b114",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        476.61163330078125,
+        54.94089889526367,
+        487.5316162109375
+      ],
+      "bbox_px": [
+        220,
+        1985,
+        228,
+        2031
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b115",
+      "text": "•  Normal: score 0",
+      "bbox_pt": [
+        48.188899993896484,
+        476.61163330078125,
+        114.31930541992188,
+        487.5316162109375
+      ],
+      "bbox_px": [
+        200,
+        1985,
+        476,
+        2031
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b116",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        487.3636474609375,
+        54.94089889526367,
+        498.28363037109375
+      ],
+      "bbox_px": [
+        220,
+        2030,
+        228,
+        2076
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b117",
+      "text": "•  Fatty streaks: score 1",
+      "bbox_pt": [
+        48.188899993896484,
+        487.3636474609375,
+        130.0977020263672,
+        498.28363037109375
+      ],
+      "bbox_px": [
+        200,
+        2030,
+        542,
+        2076
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b118",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        498.11566162109375,
+        54.94089889526367,
+        509.03564453125
+      ],
+      "bbox_px": [
+        220,
+        2075,
+        228,
+        2120
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b119",
+      "text": "•  More muscle than fat: score 2",
+      "bbox_pt": [
+        48.188899993896484,
+        498.11566162109375,
+        162.14971923828125,
+        509.03564453125
+      ],
+      "bbox_px": [
+        200,
+        2075,
+        675,
+        2120
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b120",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        508.86767578125,
+        54.94089889526367,
+        519.7876586914062
+      ],
+      "bbox_px": [
+        220,
+        2120,
+        228,
+        2165
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b121",
+      "text": "•  Equal fat and muscle: score 3",
+      "bbox_pt": [
+        48.188899993896484,
+        508.86767578125,
+        161.78570556640625,
+        519.7876586914062
+      ],
+      "bbox_px": [
+        200,
+        2120,
+        674,
+        2165
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b122",
+      "text": "•",
+      "bbox_pt": [
+        52.820899963378906,
+        519.6196899414062,
+        54.94089889526367,
+        530.5396728515625
+      ],
+      "bbox_px": [
+        220,
+        2165,
+        228,
+        2210
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p4_b123",
+      "text": "•  More fat than muscle: score 4",
+      "bbox_pt": [
+        48.188899993896484,
+        519.6196899414062,
+        162.6529083251953,
+        530.5396728515625
+      ],
+      "bbox_px": [
+        200,
+        2165,
+        677,
+        2210
+      ],
+      "column_guess": 1
+    }
+  ],
+  "constraints": {
+    "total_blocks": 124
+  }
+}

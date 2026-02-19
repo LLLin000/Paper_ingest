@@ -1,0 +1,247 @@
+{
+  "page": 7,
+  "image_path": "run\\stress01\\pages\\p007.png",
+  "blocks": [
+    {
+      "block_id": "p7_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b2",
+      "text": "Figure 3.  a) Crystal structures of cubic, wurtzite, hexagonal, and rhombohedral BN. Reproduced with permission. [ 62 ] Copyright 2017, Wiley-VCH. b) The",
+      "bbox_pt": [
+        50.81093978881836,
+        599.0003051757812,
+        546.874755859375,
+        609.7513427734375
+      ],
+      "bbox_px": [
+        211,
+        2495,
+        2278,
+        2540
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b3",
+      "text": "anchoring of single-atom tungsten (W) can cause signiﬁcant lattice distortions in h-BN lattice plane, thus introducing a strikingly enhanced piezoelectric",
+      "bbox_pt": [
+        50.811859130859375,
+        611.2489013671875,
+        546.8692626953125,
+        619.218994140625
+      ],
+      "bbox_px": [
+        211,
+        2546,
+        2278,
+        2580
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b4",
+      "text": "response, approximately 12-fold that of the parent h-BN nanosheets. Reproduced with permission. [ 68 ] Copyright 2022, Elsevier. c) Adopting stacking",
+      "bbox_pt": [
+        50.811859130859375,
+        617.9273071289062,
+        546.8740234375,
+        628.6874389648438
+      ],
+      "bbox_px": [
+        211,
+        2574,
+        2278,
+        2619
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b5",
+      "text": "strategy, the corresponding  d 33  piezoelectric coeﬃcient of  𝛼 -In 2 Se 3  increases from 0.34 (monolayer) to 5.6 pm V − 1 (bulk) without any odd–even eﬀect.",
+      "bbox_pt": [
+        50.81110763549805,
+        627.3863525390625,
+        546.8631591796875,
+        640.1443481445312
+      ],
+      "bbox_px": [
+        211,
+        2614,
+        2278,
+        2667
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b6",
+      "text": "Reproduced with permission. [ 70 ] Copyright 2018, American Chemical Society. d) A label-free microfabricated thickness shear mode electroacoustic device",
+      "bbox_pt": [
+        50.8111572265625,
+        636.854248046875,
+        546.8961181640625,
+        647.6143188476562
+      ],
+      "bbox_px": [
+        211,
+        2653,
+        2278,
+        2698
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b7",
+      "text": "based on a ZnO piezoelectric ﬁlm for the assay of cardiac biomarkers. Reproduced with permission. [ 80 ] Copyright 2020, Elsevier. e) and f): Piezoelectric",
+      "bbox_pt": [
+        50.810829162597656,
+        646.3223266601562,
+        546.8555297851562,
+        657.0824584960938
+      ],
+      "bbox_px": [
+        211,
+        2693,
+        2278,
+        2737
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b8",
+      "text": "materials as sonodynamic sensitizers to eliminate cancer cells with reactive oxygen species (ROS). Reproduced with permission. [ 82 ] Copyright 2020,",
+      "bbox_pt": [
+        50.811710357666016,
+        655.78125,
+        546.8856201171875,
+        666.5414428710938
+      ],
+      "bbox_px": [
+        211,
+        2732,
+        2278,
+        2777
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b9",
+      "text": "American Chemical Society.",
+      "bbox_pt": [
+        50.81142807006836,
+        668.0390014648438,
+        141.95748901367188,
+        676.0090942382812
+      ],
+      "bbox_px": [
+        211,
+        2783,
+        591,
+        2816
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b10",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b11",
+      "text": "2411209 (7 of 29)",
+      "bbox_pt": [
+        193.5345458984375,
+        743.669189453125,
+        257.8379211425781,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        806,
+        3098,
+        1074,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p7_b12",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0695495605469,
+        745.216064453125,
+        546.8819580078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p7_b13",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 14
+  }
+}

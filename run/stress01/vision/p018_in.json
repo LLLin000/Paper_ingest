@@ -1,0 +1,213 @@
+{
+  "page": 18,
+  "image_path": "run\\stress01\\pages\\p018.png",
+  "blocks": [
+    {
+      "block_id": "p18_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b2",
+      "text": "Figure 6.  The applications of electroactive biological materials for cartilage regeneration. a) Macrophotography, electromechanical response, cyclic",
+      "bbox_pt": [
+        47.97600173950195,
+        610.7213134765625,
+        544.0332641601562,
+        618.7513427734375
+      ],
+      "bbox_px": [
+        199,
+        2544,
+        2266,
+        2578
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b3",
+      "text": "compression, and scanning electron microscopy (SEM) images of piezoelectric 3D scaﬀolds fabricated with 0.7PHBV. [ 187 ] Copyright 2024, Cell. b) Piezo",
+      "bbox_pt": [
+        47.97600173950195,
+        617.459228515625,
+        544.0263061523438,
+        628.2192993164062
+      ],
+      "bbox_px": [
+        199,
+        2572,
+        2266,
+        2617
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b4",
+      "text": "PLLA hydrogels produce better articular cartilage regeneration compared with sham and non-piezo PLLA hydrogels by H&E, Safranin O/fast green, and",
+      "bbox_pt": [
+        47.97692108154297,
+        629.7169189453125,
+        544.0137939453125,
+        637.68701171875
+      ],
+      "bbox_px": [
+        199,
+        2623,
+        2266,
+        2657
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b5",
+      "text": "collagen II staining. [ 190 ] Copyright 2023, Springer Nature. c) Triboelectric scaﬀolds (TESs) promote cartilage regeneration compared with Poly (glycerol",
+      "bbox_pt": [
+        47.97692108154297,
+        636.3863525390625,
+        544.0215454101562,
+        647.1463012695312
+      ],
+      "bbox_px": [
+        199,
+        2651,
+        2266,
+        2696
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b6",
+      "text": "sebacate) (PGS). [ 10 ] Copyright 2024, Wiley-VCH. d) Piezoelectric scaﬀold promotes ADSC chondrogenesis under, and exercise-induced piezoelectric",
+      "bbox_pt": [
+        47.97602844238281,
+        645.854248046875,
+        544.04541015625,
+        656.6144409179688
+      ],
+      "bbox_px": [
+        199,
+        2691,
+        2266,
+        2735
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b7",
+      "text": "stimulation enhances bone and cartilage regeneration. [ 5 ] Copyright 2024, AAAS.",
+      "bbox_pt": [
+        47.975948333740234,
+        655.3223266601562,
+        311.455810546875,
+        666.0824584960938
+      ],
+      "bbox_px": [
+        199,
+        2730,
+        1297,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b8",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b9",
+      "text": "2411209 (18 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b10",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b11",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 12
+  }
+}

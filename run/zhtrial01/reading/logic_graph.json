@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "node_id": "claim1",
+      "type": "claim",
+      "text": "肩袖撕裂是最常见的上肢疾病之一，其范围从肌腱病到完全性撕裂伴有关节炎变化。",
+      "source_para_ids": [
+        "para_d8c46f01c3d7",
+        "para_d745353b8065"
+      ]
+    },
+    {
+      "node_id": "claim2",
+      "type": "claim",
+      "text": "肩袖撕裂的发病机制复杂，涉及肌腱、骨骼和肌肉之间的相互作用。",
+      "source_para_ids": [
+        "para_d8c46f01c3d7",
+        "para_d2d8ab571826"
+      ]
+    },
+    {
+      "node_id": "claim3",
+      "type": "claim",
+      "text": "肩袖撕裂的治疗主要取决于症状，大多数患者可以通过非手术管理。",
+      "source_para_ids": [
+        "para_49991e8b1613"
+      ]
+    },
+    {
+      "node_id": "evidence1",
+      "type": "evidence",
+      "text": "肩袖撕裂的发病机制包括肌腱内的退行性变化，随后发展为部分厚度和完全厚度撕裂。",
+      "source_para_ids": [
+        "para_4ce1b2d55d7a",
+        "para_034afffb729e"
+      ]
+    },
+    {
+      "node_id": "evidence2",
+      "type": "evidence",
+      "text": "肌纤维浸润的质量影响症状、撕裂进展和手术结果。",
+      "source_para_ids": [
+        "para_22c11a12925b"
+      ]
+    },
+    {
+      "node_id": "evidence3",
+      "type": "evidence",
+      "text": "现代关节镜修复技术已改善了恢复，但结果仍受限于对如何改善许多患者肌腱到骨愈合的理解不足。",
+      "source_para_ids": [
+        "para_e4791de3b7bf"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "claim1",
+      "to": "evidence1",
+      "relation": "supports"
+    },
+    {
+      "from": "claim2",
+      "to": "evidence1",
+      "relation": "supports"
+    },
+    {
+      "from": "claim2",
+      "to": "evidence2",
+      "relation": "supports"
+    },
+    {
+      "from": "claim3",
+      "to": "evidence3",
+      "relation": "supports"
+    }
+  ],
+  "argument_flow": {
+    "premises": [
+      "evidence1",
+      "evidence2",
+      "evidence3"
+    ],
+    "core_claims": [
+      "claim1",
+      "claim2",
+      "claim3"
+    ],
+    "conclusions": []
+  }
+}

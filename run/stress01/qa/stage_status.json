@@ -1,0 +1,6 @@
+{
+  "stage": "verify",
+  "status": "degraded",
+  "hard_stop": false,
+  "reason": "Some metrics not evaluated (no golden file)"
+}

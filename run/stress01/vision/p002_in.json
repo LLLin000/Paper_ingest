@@ -1,0 +1,2032 @@
+{
+  "page": 2,
+  "image_path": "run\\stress01\\pages\\p002.png",
+  "blocks": [
+    {
+      "block_id": "p2_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b2",
+      "text": "nature. [ 14 ] Research on ﬂexible micro-/nanoelectronic devices",
+      "bbox_pt": [
+        47.97600173950195,
+        72.84513854980469,
+        288.90692138671875,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        199,
+        303,
+        1203,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b3",
+      "text": "has focused primarily on improving electrical performance or ex-",
+      "bbox_pt": [
+        47.97621154785156,
+        86.93949890136719,
+        288.92401123046875,
+        95.9865951538086
+      ],
+      "bbox_px": [
+        199,
+        362,
+        1203,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b4",
+      "text": "ploring various manufacturing methods such as melt spinning,",
+      "bbox_pt": [
+        47.97621154785156,
+        97.90177917480469,
+        288.9266662597656,
+        106.9488754272461
+      ],
+      "bbox_px": [
+        199,
+        407,
+        1203,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b5",
+      "text": "solution spinning, electrospinning, and 3D printing. [ 15,16 ] Struc-",
+      "bbox_pt": [
+        47.97621154785156,
+        105.72215270996094,
+        288.925048828125,
+        117.9022445678711
+      ],
+      "bbox_px": [
+        199,
+        440,
+        1203,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b6",
+      "text": "tural designs, including microstructures, core–shell structures,",
+      "bbox_pt": [
+        47.975460052490234,
+        119.81651306152344,
+        288.9268493652344,
+        128.86361694335938
+      ],
+      "bbox_px": [
+        199,
+        499,
+        1203,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b7",
+      "text": "and porous structures, have also been explored to enhance electri-",
+      "bbox_pt": [
+        47.975460052490234,
+        130.77879333496094,
+        288.8998718261719,
+        139.82589721679688
+      ],
+      "bbox_px": [
+        199,
+        544,
+        1203,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b8",
+      "text": "cal output. [ 17 ] However, there are still some key issues associated",
+      "bbox_pt": [
+        47.975460052490234,
+        138.5991668701172,
+        288.9084167480469,
+        150.77926635742188
+      ],
+      "bbox_px": [
+        199,
+        577,
+        1203,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b9",
+      "text": "with electrical micro/nano-materials, such as low electric output",
+      "bbox_pt": [
+        47.97591018676758,
+        152.69346618652344,
+        288.9012451171875,
+        161.74057006835938
+      ],
+      "bbox_px": [
+        199,
+        636,
+        1203,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b10",
+      "text": "performance, poor washing resistance, and poor durability.",
+      "bbox_pt": [
+        47.97591018676758,
+        163.6558074951172,
+        269.6934814453125,
+        172.70291137695312
+      ],
+      "bbox_px": [
+        199,
+        681,
+        1123,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b11",
+      "text": "Electrical biomaterials are essential for the regeneration of",
+      "bbox_pt": [
+        57.4345588684082,
+        174.6091766357422,
+        288.9372253417969,
+        183.65628051757812
+      ],
+      "bbox_px": [
+        239,
+        727,
+        1203,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b12",
+      "text": "bone and cartilage, as they replicate endogenous electrical",
+      "bbox_pt": [
+        47.97591018676758,
+        185.5714569091797,
+        288.89410400390625,
+        194.61856079101562
+      ],
+      "bbox_px": [
+        199,
+        773,
+        1203,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b13",
+      "text": "signals. [ 18 ] These materials eﬀectively stimulate cellular activi-",
+      "bbox_pt": [
+        47.97591018676758,
+        193.3911590576172,
+        288.90362548828125,
+        205.58090209960938
+      ],
+      "bbox_px": [
+        199,
+        805,
+        1203,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b14",
+      "text": "ties, facilitate cell proliferation and directed diﬀerentiation, reg-",
+      "bbox_pt": [
+        47.97563171386719,
+        207.4855194091797,
+        288.9288330078125,
+        216.53262329101562
+      ],
+      "bbox_px": [
+        199,
+        864,
+        1203,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b15",
+      "text": "ulate the synthesis of extracellular matrix components, promote",
+      "bbox_pt": [
+        47.97563171386719,
+        218.44786071777344,
+        288.9350891113281,
+        227.49496459960938
+      ],
+      "bbox_px": [
+        199,
+        910,
+        1203,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b16",
+      "text": "cell migration, and expedite tissue repair processes. [ 19 ] Addition-",
+      "bbox_pt": [
+        47.97563171386719,
+        226.26805114746094,
+        288.9122314453125,
+        238.45724487304688
+      ],
+      "bbox_px": [
+        199,
+        942,
+        1203,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b17",
+      "text": "ally, electrical biomaterials can reduce inﬂammatory responses,",
+      "bbox_pt": [
+        47.9752082824707,
+        240.36241149902344,
+        288.883544921875,
+        249.40951538085938
+      ],
+      "bbox_px": [
+        199,
+        1001,
+        1203,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b18",
+      "text": "thus establishing an optimal microenvironment conducive to",
+      "bbox_pt": [
+        47.9752082824707,
+        251.3247528076172,
+        288.93096923828125,
+        260.3718566894531
+      ],
+      "bbox_px": [
+        199,
+        1047,
+        1203,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b19",
+      "text": "regeneration. They demonstrate excellent biocompatibility and",
+      "bbox_pt": [
+        47.9752082824707,
+        262.27813720703125,
+        288.9292907714844,
+        271.3252258300781
+      ],
+      "bbox_px": [
+        199,
+        1092,
+        1203,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b20",
+      "text": "controllable directional characteristics, enabling them to fulﬁll",
+      "bbox_pt": [
+        47.9752082824707,
+        273.24041748046875,
+        288.89703369140625,
+        282.2875061035156
+      ],
+      "bbox_px": [
+        199,
+        1138,
+        1203,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b21",
+      "text": "diverse regenerative requirements. [ 20,21 ] These electrically active",
+      "bbox_pt": [
+        47.9752082824707,
+        281.0601806640625,
+        288.9087829589844,
+        293.2498474121094
+      ],
+      "bbox_px": [
+        199,
+        1171,
+        1203,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b22",
+      "text": "materials must be biocompatible, oﬀering minimal cytotoxicity",
+      "bbox_pt": [
+        47.97536849975586,
+        295.154541015625,
+        288.91778564453125,
+        304.2016296386719
+      ],
+      "bbox_px": [
+        199,
+        1229,
+        1203,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b23",
+      "text": "while supporting cell adhesion and growth. Additionally, they",
+      "bbox_pt": [
+        47.97536849975586,
+        306.1168518066406,
+        288.92138671875,
+        315.1639404296875
+      ],
+      "bbox_px": [
+        199,
+        1275,
+        1203,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b24",
+      "text": "require suﬃcient mechanical strength to withstand physiologi-",
+      "bbox_pt": [
+        47.97536849975586,
+        317.0791931152344,
+        288.92584228515625,
+        326.12628173828125
+      ],
+      "bbox_px": [
+        199,
+        1321,
+        1203,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b25",
+      "text": "cal loads and should possess tailored electrical properties to op-",
+      "bbox_pt": [
+        47.97536849975586,
+        328.03253173828125,
+        288.9106140136719,
+        337.0796203613281
+      ],
+      "bbox_px": [
+        199,
+        1366,
+        1203,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b26",
+      "text": "timize cellular responses and promote successful integration.",
+      "bbox_pt": [
+        47.97536849975586,
+        338.9948425292969,
+        288.90972900390625,
+        348.04193115234375
+      ],
+      "bbox_px": [
+        199,
+        1412,
+        1203,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b27",
+      "text": "However, several key bottlenecks hinder progress in this ﬁeld.",
+      "bbox_pt": [
+        47.97536849975586,
+        349.9571838378906,
+        288.9106140136719,
+        359.0042724609375
+      ],
+      "bbox_px": [
+        199,
+        1458,
+        1203,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b28",
+      "text": "There are challenges in selecting and fabricating materials that",
+      "bbox_pt": [
+        47.97536849975586,
+        360.9105224609375,
+        288.93389892578125,
+        369.9576110839844
+      ],
+      "bbox_px": [
+        199,
+        1503,
+        1203,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b29",
+      "text": "balance conductivity, mechanical properties, and biocompatibil-",
+      "bbox_pt": [
+        47.97536849975586,
+        371.87286376953125,
+        288.8908386230469,
+        380.9199523925781
+      ],
+      "bbox_px": [
+        199,
+        1549,
+        1203,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b30",
+      "text": "ity. Furthermore, regulatory hurdles delay the clinical application",
+      "bbox_pt": [
+        47.97536849975586,
+        382.8351745605469,
+        288.9124755859375,
+        391.88226318359375
+      ],
+      "bbox_px": [
+        199,
+        1595,
+        1203,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b31",
+      "text": "of new biomaterials, and ensuring the long-term stability and per-",
+      "bbox_pt": [
+        47.97536849975586,
+        393.78851318359375,
+        288.9222412109375,
+        402.8356018066406
+      ],
+      "bbox_px": [
+        199,
+        1640,
+        1203,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b32",
+      "text": "formance of these materials within the biological environment",
+      "bbox_pt": [
+        47.97536849975586,
+        404.7508239746094,
+        288.923095703125,
+        413.79791259765625
+      ],
+      "bbox_px": [
+        199,
+        1686,
+        1203,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b33",
+      "text": "remains a signiﬁcant concern. Addressing these needs and over-",
+      "bbox_pt": [
+        47.97536849975586,
+        415.7131652832031,
+        288.9007873535156,
+        424.76025390625
+      ],
+      "bbox_px": [
+        199,
+        1732,
+        1203,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b34",
+      "text": "coming these challenges is crucial for advancing the use of elec-",
+      "bbox_pt": [
+        47.97536849975586,
+        426.6665344238281,
+        288.9106140136719,
+        435.713623046875
+      ],
+      "bbox_px": [
+        199,
+        1777,
+        1203,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b35",
+      "text": "trically active materials in clinical applications for bone and car-",
+      "bbox_pt": [
+        47.97536849975586,
+        437.62884521484375,
+        288.8953552246094,
+        446.6759338378906
+      ],
+      "bbox_px": [
+        199,
+        1823,
+        1203,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b36",
+      "text": "tilage repair.",
+      "bbox_pt": [
+        47.97536849975586,
+        448.5911560058594,
+        94.4544906616211,
+        457.63824462890625
+      ],
+      "bbox_px": [
+        199,
+        1869,
+        393,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b37",
+      "text": "This article systematically reviews the working principles, de-",
+      "bbox_pt": [
+        57.43402862548828,
+        459.54449462890625,
+        288.896240234375,
+        468.5915832519531
+      ],
+      "bbox_px": [
+        239,
+        1914,
+        1203,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b38",
+      "text": "vice design mechanics, classiﬁcations, biological eﬀects, mecha-",
+      "bbox_pt": [
+        47.97536849975586,
+        470.5068359375,
+        288.8864440917969,
+        479.5539245605469
+      ],
+      "bbox_px": [
+        199,
+        1960,
+        1203,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b39",
+      "text": "nisms, and applications of piezoelectric materials, nanogenera-",
+      "bbox_pt": [
+        47.97536849975586,
+        481.4691467285156,
+        288.8953552246094,
+        490.5162353515625
+      ],
+      "bbox_px": [
+        199,
+        2006,
+        1203,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b40",
+      "text": "tors, zwitterionic hydrogels, and triboelectric scaﬀolds for bone",
+      "bbox_pt": [
+        47.97536849975586,
+        492.4225158691406,
+        288.9267578125,
+        501.4696044921875
+      ],
+      "bbox_px": [
+        199,
+        2051,
+        1203,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b41",
+      "text": "and cartilage tissue engineering. The upcoming sections discuss",
+      "bbox_pt": [
+        47.97536849975586,
+        503.38482666015625,
+        288.8855285644531,
+        512.431884765625
+      ],
+      "bbox_px": [
+        199,
+        2097,
+        1203,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b42",
+      "text": "the prospects of electric materials and their potential roles as",
+      "bbox_pt": [
+        47.97536849975586,
+        514.34716796875,
+        288.8971862792969,
+        523.3942260742188
+      ],
+      "bbox_px": [
+        199,
+        2143,
+        1203,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b43",
+      "text": "foundational elements that can inspire and inﬂuence advance-",
+      "bbox_pt": [
+        47.97536849975586,
+        525.300537109375,
+        288.9150390625,
+        534.3475952148438
+      ],
+      "bbox_px": [
+        199,
+        2188,
+        1203,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b44",
+      "text": "ments in bone and cartilage treatment applications.",
+      "bbox_pt": [
+        47.97536849975586,
+        536.2628173828125,
+        241.752685546875,
+        545.3098754882812
+      ],
+      "bbox_px": [
+        199,
+        2234,
+        1007,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b45",
+      "text": "2. Emerging Electrical Biomaterials",
+      "bbox_pt": [
+        47.97600173950195,
+        560.4782104492188,
+        213.04965209960938,
+        571.9352416992188
+      ],
+      "bbox_px": [
+        199,
+        2335,
+        887,
+        2383
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b46",
+      "text": "2.1. Overview of Electrical Biomaterials",
+      "bbox_pt": [
+        47.97600173950195,
+        580.283203125,
+        192.733154296875,
+        589.2495727539062
+      ],
+      "bbox_px": [
+        199,
+        2417,
+        803,
+        2455
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b47",
+      "text": "With improvements in living standards and technological ad-",
+      "bbox_pt": [
+        47.97600173950195,
+        602.2069702148438,
+        288.92376708984375,
+        611.2540283203125
+      ],
+      "bbox_px": [
+        199,
+        2509,
+        1203,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b48",
+      "text": "vances, there is a growing demand for convenient and comfort-",
+      "bbox_pt": [
+        47.97600173950195,
+        613.1693115234375,
+        288.9327392578125,
+        622.2163696289062
+      ],
+      "bbox_px": [
+        199,
+        2554,
+        1203,
+        2592
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b49",
+      "text": "able disease diagnosis and health monitoring. Traditional med-",
+      "bbox_pt": [
+        47.97600173950195,
+        624.1226196289062,
+        288.941650390625,
+        633.169677734375
+      ],
+      "bbox_px": [
+        199,
+        2600,
+        1203,
+        2638
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b50",
+      "text": "ical electronics often fall short of modern demands due to their",
+      "bbox_pt": [
+        47.97600173950195,
+        635.0849609375,
+        288.904052734375,
+        644.1320190429688
+      ],
+      "bbox_px": [
+        199,
+        2646,
+        1203,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b51",
+      "text": "large size and limited power supply. For instance, although Dr.",
+      "bbox_pt": [
+        47.97600173950195,
+        646.0472412109375,
+        288.89874267578125,
+        655.0942993164062
+      ],
+      "bbox_px": [
+        199,
+        2691,
+        1203,
+        2729
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b52",
+      "text": "Paul Zoll’s 1952 invention of the ﬁrst human heart pacemaker",
+      "bbox_pt": [
+        47.97600173950195,
+        657.0006103515625,
+        288.8906555175781,
+        666.0476684570312
+      ],
+      "bbox_px": [
+        199,
+        2737,
+        1203,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b53",
+      "text": "excited both the medical community and broader society, its",
+      "bbox_pt": [
+        47.97600173950195,
+        667.9629516601562,
+        288.9040832519531,
+        677.010009765625
+      ],
+      "bbox_px": [
+        199,
+        2783,
+        1203,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b54",
+      "text": "substantial dimensions hindered further progress. Ongoing en-",
+      "bbox_pt": [
+        47.97600173950195,
+        678.92529296875,
+        288.9237976074219,
+        687.9723510742188
+      ],
+      "bbox_px": [
+        199,
+        2828,
+        1203,
+        2866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b55",
+      "text": "hancements have rendered contemporary heart pacemakers suit-",
+      "bbox_pt": [
+        47.97600173950195,
+        689.8786010742188,
+        288.925537109375,
+        698.9256591796875
+      ],
+      "bbox_px": [
+        199,
+        2874,
+        1203,
+        2912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b56",
+      "text": "able for internal implantation. However, their operational lifes-",
+      "bbox_pt": [
+        47.97600173950195,
+        700.8409423828125,
+        288.9291687011719,
+        709.8880004882812
+      ],
+      "bbox_px": [
+        199,
+        2920,
+        1203,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b57",
+      "text": "pan remains restricted by their battery capacity. Analogous chal-",
+      "bbox_pt": [
+        47.97600173950195,
+        711.8032836914062,
+        288.93365478515625,
+        720.850341796875
+      ],
+      "bbox_px": [
+        199,
+        2965,
+        1203,
+        3003
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b58",
+      "text": "lenges persist across diverse facets of healthcare, such as blood",
+      "bbox_pt": [
+        303.0906982421875,
+        75.97880554199219,
+        544.044677734375,
+        85.0259017944336
+      ],
+      "bbox_px": [
+        1262,
+        316,
+        2266,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b59",
+      "text": "sugar or blood pressure monitoring, which depend on special-",
+      "bbox_pt": [
+        303.0906982421875,
+        86.94108581542969,
+        544.0132446289062,
+        95.9881820678711
+      ],
+      "bbox_px": [
+        1262,
+        362,
+        2266,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b60",
+      "text": "ized medical apparatus.",
+      "bbox_pt": [
+        303.0906982421875,
+        97.90342712402344,
+        392.0373229980469,
+        106.95052337646484
+      ],
+      "bbox_px": [
+        1262,
+        407,
+        1633,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b61",
+      "text": "The emergence and evolution of electroactive biomaterials of-",
+      "bbox_pt": [
+        312.5583190917969,
+        108.85679626464844,
+        544.0169677734375,
+        117.90389251708984
+      ],
+      "bbox_px": [
+        1302,
+        453,
+        2266,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b62",
+      "text": "fer an advantageous foundation for advancing miniaturization",
+      "bbox_pt": [
+        303.0906982421875,
+        119.81907653808594,
+        544.02685546875,
+        128.86618041992188
+      ],
+      "bbox_px": [
+        1262,
+        499,
+        2266,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b63",
+      "text": "eﬀorts alongside self-sustaining systems in associated electronic",
+      "bbox_pt": [
+        303.0906982421875,
+        130.7814178466797,
+        544.0277099609375,
+        139.82852172851562
+      ],
+      "bbox_px": [
+        1262,
+        544,
+        2266,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b64",
+      "text": "devices. This section provides a comprehensive review encom-",
+      "bbox_pt": [
+        303.0906982421875,
+        141.7347869873047,
+        544.0384521484375,
+        150.78189086914062
+      ],
+      "bbox_px": [
+        1262,
+        590,
+        2266,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b65",
+      "text": "passing composition analysis, structural examination, electrical",
+      "bbox_pt": [
+        303.0906982421875,
+        152.69712829589844,
+        544.0205078125,
+        161.74423217773438
+      ],
+      "bbox_px": [
+        1262,
+        636,
+        2266,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b66",
+      "text": "property assessment, and application exploration pertaining to",
+      "bbox_pt": [
+        303.0906982421875,
+        163.65940856933594,
+        544.0555419921875,
+        172.70651245117188
+      ],
+      "bbox_px": [
+        1262,
+        681,
+        2266,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b67",
+      "text": "various electrically active biomaterials within the biomedical do-",
+      "bbox_pt": [
+        303.0906982421875,
+        174.61277770996094,
+        544.0131225585938,
+        183.65988159179688
+      ],
+      "bbox_px": [
+        1262,
+        727,
+        2266,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b68",
+      "text": "main ( Figure  1 ).",
+      "bbox_pt": [
+        303.0906982421875,
+        185.5751190185547,
+        364.14739990234375,
+        194.62222290039062
+      ],
+      "bbox_px": [
+        1262,
+        773,
+        1517,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b69",
+      "text": "2.2. Nanogenerators",
+      "bbox_pt": [
+        303.0906982421875,
+        218.6414031982422,
+        378.9222717285156,
+        227.60781860351562
+      ],
+      "bbox_px": [
+        1262,
+        911,
+        1578,
+        948
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b70",
+      "text": "As medical technology advances, the need for more precise,",
+      "bbox_pt": [
+        303.0906982421875,
+        240.5651092529297,
+        544.0331420898438,
+        249.61221313476562
+      ],
+      "bbox_px": [
+        1262,
+        1002,
+        2266,
+        1040
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b71",
+      "text": "miniaturized therapeutic devices grows. However, most still rely",
+      "bbox_pt": [
+        303.0906982421875,
+        251.52745056152344,
+        544.0276489257812,
+        260.5745544433594
+      ],
+      "bbox_px": [
+        1262,
+        1048,
+        2266,
+        1085
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b72",
+      "text": "on external power sources, creating signiﬁcant challenges dur-",
+      "bbox_pt": [
+        303.0906982421875,
+        262.48980712890625,
+        544.02392578125,
+        271.5368957519531
+      ],
+      "bbox_px": [
+        1262,
+        1093,
+        2266,
+        1131
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b73",
+      "text": "ing treatment. [ 22 ] To address this limitation, nanogenerators have",
+      "bbox_pt": [
+        303.0906982421875,
+        270.30517578125,
+        544.03662109375,
+        282.490234375
+      ],
+      "bbox_px": [
+        1262,
+        1126,
+        2266,
+        1177
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b74",
+      "text": "been developed. In the absence of an external power supply,",
+      "bbox_pt": [
+        303.0897216796875,
+        284.3995056152344,
+        544.031005859375,
+        293.44659423828125
+      ],
+      "bbox_px": [
+        1262,
+        1184,
+        2266,
+        1222
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b75",
+      "text": "nanogenerators can generate self-sustaining power by converting",
+      "bbox_pt": [
+        303.0897216796875,
+        295.36181640625,
+        544.0572509765625,
+        304.4089050292969
+      ],
+      "bbox_px": [
+        1262,
+        1230,
+        2266,
+        1268
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b76",
+      "text": "various forms of mechanical energy into electrical energy. [ 23,24 ]",
+      "bbox_pt": [
+        303.0897216796875,
+        305.4207763671875,
+        543.5436401367188,
+        315.3622741699219
+      ],
+      "bbox_px": [
+        1262,
+        1272,
+        2264,
+        1314
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b77",
+      "text": "Based on this operational principle, nanogenerators can be classi-",
+      "bbox_pt": [
+        303.0899963378906,
+        317.2760925292969,
+        544.0126342773438,
+        326.32318115234375
+      ],
+      "bbox_px": [
+        1262,
+        1321,
+        2266,
+        1359
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b78",
+      "text": "ﬁed into piezoelectric nanogenerators (PENGs) and triboelectric",
+      "bbox_pt": [
+        303.0899963378906,
+        328.2384033203125,
+        544.0485229492188,
+        337.2854919433594
+      ],
+      "bbox_px": [
+        1262,
+        1367,
+        2266,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b79",
+      "text": "nanogenerators (TENGs). [ 25,26 ]",
+      "bbox_pt": [
+        303.0899963378906,
+        338.2977600097656,
+        417.111083984375,
+        348.23883056640625
+      ],
+      "bbox_px": [
+        1262,
+        1409,
+        1737,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b80",
+      "text": "PENGs consist of piezoelectric materials, ﬂexible substrates,",
+      "bbox_pt": [
+        312.5580139160156,
+        350.1531677246094,
+        544.0255737304688,
+        359.20025634765625
+      ],
+      "bbox_px": [
+        1302,
+        1458,
+        2266,
+        1496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b81",
+      "text": "and connecting electrodes. [ 27,28 ] Piezoelectric materials are typ-",
+      "bbox_pt": [
+        303.09039306640625,
+        357.97418212890625,
+        544.0438232421875,
+        370.16259765625
+      ],
+      "bbox_px": [
+        1262,
+        1491,
+        2266,
+        1542
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b82",
+      "text": "ically crystals with noncentrosymmetric structures, indicating",
+      "bbox_pt": [
+        303.08953857421875,
+        372.06854248046875,
+        544.0535278320312,
+        381.1156311035156
+      ],
+      "bbox_px": [
+        1262,
+        1550,
+        2266,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b83",
+      "text": "that their lattices lack inversion symmetry, which is a neces-",
+      "bbox_pt": [
+        303.08953857421875,
+        383.0308532714844,
+        544.0245971679688,
+        392.07794189453125
+      ],
+      "bbox_px": [
+        1262,
+        1595,
+        2266,
+        1633
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b84",
+      "text": "sary condition for the piezoelectric eﬀect. [ 29 ] When mechanical",
+      "bbox_pt": [
+        303.08953857421875,
+        390.8511657714844,
+        544.0223388671875,
+        403.03131103515625
+      ],
+      "bbox_px": [
+        1262,
+        1628,
+        2266,
+        1679
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b85",
+      "text": "stress is applied to a piezoelectric material, it induces deforma-",
+      "bbox_pt": [
+        303.08984375,
+        404.94549560546875,
+        544.0150756835938,
+        413.9925842285156
+      ],
+      "bbox_px": [
+        1262,
+        1687,
+        2266,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b86",
+      "text": "tion of the internal lattice, and the charge centers of the anions",
+      "bbox_pt": [
+        303.08984375,
+        415.9078063964844,
+        544.0406494140625,
+        424.95489501953125
+      ],
+      "bbox_px": [
+        1262,
+        1732,
+        2266,
+        1770
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b87",
+      "text": "and cations separate, thereby generating an electric dipole mo-",
+      "bbox_pt": [
+        303.08984375,
+        426.8611755371094,
+        544.0531005859375,
+        435.90826416015625
+      ],
+      "bbox_px": [
+        1262,
+        1778,
+        2266,
+        1816
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b88",
+      "text": "ment on the material and further generating an internal poten-",
+      "bbox_pt": [
+        303.08984375,
+        437.823486328125,
+        544.0278930664062,
+        446.8705749511719
+      ],
+      "bbox_px": [
+        1262,
+        1824,
+        2266,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b89",
+      "text": "tial. The charge produced is directly related to the applied me-",
+      "bbox_pt": [
+        303.08984375,
+        448.78582763671875,
+        544.0169067382812,
+        457.8329162597656
+      ],
+      "bbox_px": [
+        1262,
+        1869,
+        2266,
+        1907
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b90",
+      "text": "chanical stress; this phenomenon is known as the direct piezo-",
+      "bbox_pt": [
+        303.08984375,
+        459.7391662597656,
+        544.0187377929688,
+        468.7862548828125
+      ],
+      "bbox_px": [
+        1262,
+        1915,
+        2266,
+        1953
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b91",
+      "text": "electric eﬀect. In contrast, when an electric ﬁeld is applied to a",
+      "bbox_pt": [
+        303.08984375,
+        470.70147705078125,
+        544.0557861328125,
+        479.7485656738281
+      ],
+      "bbox_px": [
+        1262,
+        1961,
+        2266,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b92",
+      "text": "piezoelectric material, it induces mechanical deformation, which",
+      "bbox_pt": [
+        303.08984375,
+        481.663818359375,
+        544.0142211914062,
+        490.7109069824219
+      ],
+      "bbox_px": [
+        1262,
+        2006,
+        2266,
+        2044
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b93",
+      "text": "is known as the converse piezoelectric eﬀect [ 29,30 ] ( Figure  2 a,b ).",
+      "bbox_pt": [
+        303.08984375,
+        489.482177734375,
+        544.0387573242188,
+        501.66424560546875
+      ],
+      "bbox_px": [
+        1262,
+        2039,
+        2266,
+        2090
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b94",
+      "text": "Using ZnO crystals as an illustration (Figure  2c ), the arrange-",
+      "bbox_pt": [
+        303.0901184082031,
+        503.5765075683594,
+        544.0352172851562,
+        512.6235961914062
+      ],
+      "bbox_px": [
+        1262,
+        2098,
+        2266,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b95",
+      "text": "ment of tetrahedrally coordinated Zn 2 + and O 2",
+      "bbox_pt": [
+        303.0910339355469,
+        511.397216796875,
+        484.06280517578125,
+        525.049072265625
+      ],
+      "bbox_px": [
+        1262,
+        2130,
+        2016,
+        2187
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b96",
+      "text": "− occurs in lay-",
+      "bbox_pt": [
+        484.56610107421875,
+        513.578857421875,
+        544.0289916992188,
+        523.5852661132812
+      ],
+      "bbox_px": [
+        2019,
+        2139,
+        2266,
+        2181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b97",
+      "text": "ers along the axis, with the charge centers of both anions and",
+      "bbox_pt": [
+        303.08929443359375,
+        525.4915161132812,
+        544.0408325195312,
+        534.53857421875
+      ],
+      "bbox_px": [
+        1262,
+        2189,
+        2266,
+        2227
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b98",
+      "text": "cations aligning without any stress inﬂuence. When an external",
+      "bbox_pt": [
+        303.08929443359375,
+        536.453857421875,
+        544.0389404296875,
+        545.5009155273438
+      ],
+      "bbox_px": [
+        1262,
+        2235,
+        2266,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b99",
+      "text": "force is applied to one corner of the tetrahedron, the displace-",
+      "bbox_pt": [
+        303.08929443359375,
+        547.4161987304688,
+        544.034423828125,
+        556.4632568359375
+      ],
+      "bbox_px": [
+        1262,
+        2280,
+        2266,
+        2318
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b100",
+      "text": "ment between the negative and positive charge centers creates an",
+      "bbox_pt": [
+        303.08929443359375,
+        558.3695068359375,
+        544.0225830078125,
+        567.4165649414062
+      ],
+      "bbox_px": [
+        1262,
+        2326,
+        2266,
+        2364
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b101",
+      "text": "electric dipole. Furthermore, the cumulative eﬀect of the dipole",
+      "bbox_pt": [
+        303.08929443359375,
+        569.3318481445312,
+        544.0380859375,
+        578.37890625
+      ],
+      "bbox_px": [
+        1262,
+        2372,
+        2266,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b102",
+      "text": "moments from all the units within the crystal results in a piezo-",
+      "bbox_pt": [
+        303.08929443359375,
+        580.294189453125,
+        544.02197265625,
+        589.3412475585938
+      ],
+      "bbox_px": [
+        1262,
+        2417,
+        2266,
+        2455
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b103",
+      "text": "electric ﬁeld that induces a potential diﬀerence in line with the",
+      "bbox_pt": [
+        303.08929443359375,
+        591.24755859375,
+        544.0433959960938,
+        600.2946166992188
+      ],
+      "bbox_px": [
+        1262,
+        2463,
+        2266,
+        2501
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b104",
+      "text": "direction of the crystal strain, which is referred to as the piezo-",
+      "bbox_pt": [
+        303.08929443359375,
+        602.2098388671875,
+        544.0344848632812,
+        611.2568969726562
+      ],
+      "bbox_px": [
+        1262,
+        2509,
+        2266,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b105",
+      "text": "electric potential. Once the crystal is linked to an external load,",
+      "bbox_pt": [
+        303.08929443359375,
+        613.1721801757812,
+        544.0135498046875,
+        622.21923828125
+      ],
+      "bbox_px": [
+        1262,
+        2554,
+        2266,
+        2592
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b106",
+      "text": "the electrons within the circuit are compelled to move, partially",
+      "bbox_pt": [
+        303.08929443359375,
+        624.12548828125,
+        544.0471801757812,
+        633.1725463867188
+      ],
+      "bbox_px": [
+        1262,
+        2600,
+        2266,
+        2638
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b107",
+      "text": "mitigating the piezoelectric potential. [ 31,32 ] Consequently, when",
+      "bbox_pt": [
+        303.08929443359375,
+        631.9431762695312,
+        544.0313720703125,
+        644.1348876953125
+      ],
+      "bbox_px": [
+        1262,
+        2633,
+        2266,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b108",
+      "text": "a dynamic external force periodically modiﬁes the piezoelectric",
+      "bbox_pt": [
+        303.0898132324219,
+        646.0465087890625,
+        544.0061645507812,
+        655.0935668945312
+      ],
+      "bbox_px": [
+        1262,
+        2691,
+        2266,
+        2729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b109",
+      "text": "potential, continuous current pulses are generated through the",
+      "bbox_pt": [
+        303.0898132324219,
+        656.9998779296875,
+        544.0377197265625,
+        666.0469360351562
+      ],
+      "bbox_px": [
+        1262,
+        2737,
+        2266,
+        2775
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b110",
+      "text": "external circuit. In practical applications, the chemical vapor de-",
+      "bbox_pt": [
+        303.0898132324219,
+        667.962158203125,
+        544.0247802734375,
+        677.0092163085938
+      ],
+      "bbox_px": [
+        1262,
+        2783,
+        2266,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b111",
+      "text": "position (CVD) method is a common approach to achieve mass",
+      "bbox_pt": [
+        303.0898132324219,
+        678.9244995117188,
+        544.0177612304688,
+        687.9715576171875
+      ],
+      "bbox_px": [
+        1262,
+        2828,
+        2266,
+        2866
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b112",
+      "text": "production of PENGs, but inevitable defects occur during the",
+      "bbox_pt": [
+        303.0898132324219,
+        689.8778686523438,
+        544.052001953125,
+        698.9249267578125
+      ],
+      "bbox_px": [
+        1262,
+        2874,
+        2266,
+        2912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b113",
+      "text": "production process, which leads to the piezoelectric shielding ef-",
+      "bbox_pt": [
+        303.0898132324219,
+        700.8401489257812,
+        544.0284423828125,
+        709.88720703125
+      ],
+      "bbox_px": [
+        1262,
+        2920,
+        2266,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b114",
+      "text": "fect and signiﬁcantly reduces product performance. [ 33 ] In this",
+      "bbox_pt": [
+        303.0898132324219,
+        708.6591796875,
+        544.0430908203125,
+        720.8495483398438
+      ],
+      "bbox_px": [
+        1262,
+        2952,
+        2266,
+        3003
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b115",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b116",
+      "text": "2411209 (2 of 29)",
+      "bbox_pt": [
+        190.69960021972656,
+        743.669189453125,
+        255.0029754638672,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        794,
+        3098,
+        1062,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p2_b117",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2345886230469,
+        745.216064453125,
+        544.045654296875,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p2_b118",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 119
+  }
+}

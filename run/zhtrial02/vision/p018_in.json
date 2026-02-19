@@ -1,0 +1,2763 @@
+{
+  "page": 18,
+  "image_path": "run\\zhtrial02\\pages\\p018.png",
+  "blocks": [
+    {
+      "block_id": "p18_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b1",
+      "text": "18",
+      "bbox_pt": [
+        552.4248046875,
+        760.43701171875,
+        561.2008056640625,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2301,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b4",
+      "text": "189.\t Kukkonen, J. et al. Treatment of nontraumatic rotator cuff tears: a randomized controlled ",
+      "bbox_pt": [
+        39.685001373291016,
+        111.2298355102539,
+        294.0303955078125,
+        119.41983795166016
+      ],
+      "bbox_px": [
+        165,
+        463,
+        1225,
+        497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b5",
+      "text": "trial with two years of clinical and imaging follow-up.  J. Bone Joint Surg. Am. 97 , ",
+      "bbox_pt": [
+        53.85700225830078,
+        119.13782501220703,
+        270.01300048828125,
+        127.4178237915039
+      ],
+      "bbox_px": [
+        224,
+        496,
+        1125,
+        530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b6",
+      "text": "1729–1737 (2015).",
+      "bbox_pt": [
+        53.857025146484375,
+        127.2258071899414,
+        100.61923217773438,
+        135.41580200195312
+      ],
+      "bbox_px": [
+        224,
+        530,
+        419,
+        564
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b7",
+      "text": "190.\t Moosmayer, S. et al. At a 10-year follow-up, tendon repair is superior to physiotherapy  ",
+      "bbox_pt": [
+        39.68502426147461,
+        135.2238006591797,
+        286.89703369140625,
+        143.41378784179688
+      ],
+      "bbox_px": [
+        165,
+        563,
+        1195,
+        597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b8",
+      "text": "in the treatment of small and medium-sized rotator cuff tears.  J. Bone Joint Surg. Am.",
+      "bbox_pt": [
+        53.857025146484375,
+        143.22178649902344,
+        284.9770202636719,
+        151.41177368164062
+      ],
+      "bbox_px": [
+        224,
+        596,
+        1187,
+        630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b9",
+      "text": "101 , 1050–1060 (2019).",
+      "bbox_pt": [
+        53.857025146484375,
+        151.1297607421875,
+        116.49765014648438,
+        159.40975952148438
+      ],
+      "bbox_px": [
+        224,
+        629,
+        485,
+        664
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b10",
+      "text": "191.\t Levy, O., Mullett, H., Roberts, S. & Copeland, S. The role of anterior deltoid reeducation in ",
+      "bbox_pt": [
+        39.68502426147461,
+        159.21775817871094,
+        295.3923645019531,
+        167.40774536132812
+      ],
+      "bbox_px": [
+        165,
+        663,
+        1230,
+        697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b11",
+      "text": "patients with massive irreparable degenerative rotator cuff tears.  J. Shoulder Elbow Surg.",
+      "bbox_pt": [
+        53.857025146484375,
+        167.2157440185547,
+        295.38702392578125,
+        175.40573120117188
+      ],
+      "bbox_px": [
+        224,
+        696,
+        1230,
+        730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b12",
+      "text": "17 , 863–870 (2008).",
+      "bbox_pt": [
+        53.857025146484375,
+        175.12371826171875,
+        108.075439453125,
+        183.40371704101562
+      ],
+      "bbox_px": [
+        224,
+        729,
+        450,
+        764
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b13",
+      "text": "192.\t Bennell, K. et al. Efficacy of standardised manual therapy and home exercise programme ",
+      "bbox_pt": [
+        39.68502426147461,
+        183.2117156982422,
+        294.92254638671875,
+        191.40170288085938
+      ],
+      "bbox_px": [
+        165,
+        763,
+        1228,
+        797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b14",
+      "text": "for chronic rotator cuff disease: randomised placebo controlled trial.  BMJ 340 , c2756 ",
+      "bbox_pt": [
+        53.857025146484375,
+        191.11968994140625,
+        286.3846130371094,
+        199.39968872070312
+      ],
+      "bbox_px": [
+        224,
+        796,
+        1193,
+        830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b15",
+      "text": "(2010).",
+      "bbox_pt": [
+        53.857025146484375,
+        199.2076873779297,
+        72.86923217773438,
+        207.39767456054688
+      ],
+      "bbox_px": [
+        224,
+        830,
+        303,
+        864
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b16",
+      "text": "193.\t Bernhardsson, S., Klintberg, I. H. & Wendt, G. K. Evaluation of an exercise concept ",
+      "bbox_pt": [
+        39.68502426147461,
+        207.20567321777344,
+        274.5724182128906,
+        215.39566040039062
+      ],
+      "bbox_px": [
+        165,
+        863,
+        1144,
+        897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b17",
+      "text": "focusing on eccentric strength training of the rotator cuff for patients with subacromial ",
+      "bbox_pt": [
+        53.857025146484375,
+        215.2036590576172,
+        290.223388671875,
+        223.39364624023438
+      ],
+      "bbox_px": [
+        224,
+        896,
+        1209,
+        930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b18",
+      "text": "impingement syndrome.  Clin. Rehabil. 25 , 69–78 (2011).",
+      "bbox_pt": [
+        53.857025146484375,
+        223.11163330078125,
+        204.08322143554688,
+        231.39163208007812
+      ],
+      "bbox_px": [
+        224,
+        929,
+        850,
+        964
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b19",
+      "text": "194.\t Ludewig, P. M. & Reynolds, J. F. The association of scapular kinematics and glenohumeral ",
+      "bbox_pt": [
+        39.685028076171875,
+        231.1996307373047,
+        295.4883728027344,
+        239.38961791992188
+      ],
+      "bbox_px": [
+        165,
+        963,
+        1231,
+        997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b20",
+      "text": "joint pathologies.  J. Orthop. Sports Phys. Ther. 39 , 90–104 (2009).",
+      "bbox_pt": [
+        53.85702896118164,
+        239.10760498046875,
+        232.03721618652344,
+        247.38760375976562
+      ],
+      "bbox_px": [
+        224,
+        996,
+        966,
+        1030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b21",
+      "text": "195.\t Cools, A. M. et al. Rehabilitation of scapular muscle balance: which exercises  ",
+      "bbox_pt": [
+        39.685028076171875,
+        247.1956024169922,
+        264.6670227050781,
+        255.38558959960938
+      ],
+      "bbox_px": [
+        165,
+        1029,
+        1102,
+        1064
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b22",
+      "text": "to prescribe?  Am. J. Sports Med. 35 , 1744–1751 (2007).",
+      "bbox_pt": [
+        53.857025146484375,
+        255.10357666015625,
+        199.36961364746094,
+        263.3835754394531
+      ],
+      "bbox_px": [
+        224,
+        1062,
+        830,
+        1097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b23",
+      "text": "196.\t Boudreault, J. et al. The efficacy of oral non-steroidal anti-inflammatory drugs for rotator ",
+      "bbox_pt": [
+        39.68501281738281,
+        263.1915588378906,
+        292.93353271484375,
+        271.3815612792969
+      ],
+      "bbox_px": [
+        165,
+        1096,
+        1220,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b24",
+      "text": "cuff tendinopathy: a systematic review and meta-analysis.  J. Rehabil. Med. 46 , 294–306 ",
+      "bbox_pt": [
+        53.85701370239258,
+        271.09954833984375,
+        291.5157470703125,
+        279.3795471191406
+      ],
+      "bbox_px": [
+        224,
+        1129,
+        1214,
+        1164
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b25",
+      "text": "(2014).",
+      "bbox_pt": [
+        53.85700988769531,
+        279.1875305175781,
+        72.36761474609375,
+        287.3775329589844
+      ],
+      "bbox_px": [
+        224,
+        1163,
+        301,
+        1197
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b26",
+      "text": "197.\t Mazières, B., Rouanet, S., Guillon, Y., Scarsi, C. & Reiner, V. Topical ketoprofen patch  ",
+      "bbox_pt": [
+        39.68500900268555,
+        287.1855163574219,
+        281.2569885253906,
+        295.3755187988281
+      ],
+      "bbox_px": [
+        165,
+        1196,
+        1171,
+        1230
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b27",
+      "text": "in the treatment of tendinitis: a randomized, double blind, placebo controlled study.  ",
+      "bbox_pt": [
+        53.85699462890625,
+        295.1835021972656,
+        283.9629821777344,
+        303.3735046386719
+      ],
+      "bbox_px": [
+        224,
+        1229,
+        1183,
+        1264
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b28",
+      "text": "J. Rheumatol. 32 , 1563–1570 (2005).",
+      "bbox_pt": [
+        53.85699462890625,
+        303.09149169921875,
+        151.1121826171875,
+        311.3714904785156
+      ],
+      "bbox_px": [
+        224,
+        1262,
+        629,
+        1297
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b29",
+      "text": "198.\t Tangtiphaiboontana, J. et al. The effects of nonsteroidal anti-inflammatory medications ",
+      "bbox_pt": [
+        39.678993225097656,
+        311.1794738769531,
+        289.9497375488281,
+        319.3694763183594
+      ],
+      "bbox_px": [
+        165,
+        1296,
+        1208,
+        1330
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b30",
+      "text": "after rotator cuff surgery: a randomized, double-blind, placebo-controlled trial.  J. Shoulder ",
+      "bbox_pt": [
+        53.85099411010742,
+        319.1774597167969,
+        296.1424255371094,
+        327.3674621582031
+      ],
+      "bbox_px": [
+        224,
+        1329,
+        1233,
+        1364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b31",
+      "text": "Elbow Surg. 30 , 1990–1997 (2021).",
+      "bbox_pt": [
+        53.85099411010742,
+        327.08544921875,
+        146.6457977294922,
+        335.3654479980469
+      ],
+      "bbox_px": [
+        224,
+        1362,
+        611,
+        1397
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b32",
+      "text": "199.\t Desai, V. S. et al. Increasing numbers of shoulder corticosteroid injections within a year ",
+      "bbox_pt": [
+        39.678993225097656,
+        335.1734313964844,
+        289.38037109375,
+        343.3634338378906
+      ],
+      "bbox_px": [
+        165,
+        1396,
+        1205,
+        1430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b33",
+      "text": "preoperatively may be associated with a higher rate of subsequent revision rotator cuff ",
+      "bbox_pt": [
+        53.85099411010742,
+        343.1714172363281,
+        289.7980041503906,
+        351.3614196777344
+      ],
+      "bbox_px": [
+        224,
+        1429,
+        1207,
+        1464
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b34",
+      "text": "surgery.  Arthroscopy 35 , 45–50 (2019).",
+      "bbox_pt": [
+        53.85099411010742,
+        351.07940673828125,
+        159.12338256835938,
+        359.3594055175781
+      ],
+      "bbox_px": [
+        224,
+        1462,
+        663,
+        1497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b35",
+      "text": "200.\tWerner, B. C. et al. The timing of elective shoulder surgery after shoulder injection affects ",
+      "bbox_pt": [
+        39.67298889160156,
+        359.1673889160156,
+        295.832763671875,
+        367.3573913574219
+      ],
+      "bbox_px": [
+        165,
+        1496,
+        1232,
+        1530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b36",
+      "text": "postoperative infection risk in Medicare patients.  J. Shoulder Elbow Surg. 25 , 390–397 ",
+      "bbox_pt": [
+        53.84498977661133,
+        367.07537841796875,
+        287.6565856933594,
+        375.3553771972656
+      ],
+      "bbox_px": [
+        224,
+        1529,
+        1198,
+        1563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b37",
+      "text": "(2016).",
+      "bbox_pt": [
+        53.84498596191406,
+        375.1633605957031,
+        72.48518371582031,
+        383.3533630371094
+      ],
+      "bbox_px": [
+        224,
+        1563,
+        302,
+        1597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b38",
+      "text": "201.\t Bhattacharjee, S., Lee, W., Lee, M. J. & Shi, L. L. Preoperative corticosteroid joint injections ",
+      "bbox_pt": [
+        39.6729850769043,
+        383.1613464355469,
+        296.0872497558594,
+        391.3513488769531
+      ],
+      "bbox_px": [
+        165,
+        1596,
+        1233,
+        1630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b39",
+      "text": "within 2 weeks of shoulder arthroscopies increase postoperative infection risk.  J. Shoulder ",
+      "bbox_pt": [
+        53.84498596191406,
+        391.1593322753906,
+        296.22467041015625,
+        399.3493347167969
+      ],
+      "bbox_px": [
+        224,
+        1629,
+        1234,
+        1663
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b40",
+      "text": "Elbow Surg. 28 , 2098–2102 (2019).",
+      "bbox_pt": [
+        53.84498596191406,
+        399.06732177734375,
+        147.60340881347656,
+        407.3473205566406
+      ],
+      "bbox_px": [
+        224,
+        1662,
+        615,
+        1697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b41",
+      "text": "202.\tXiang, X. N. et al. Conservative treatment of partial-thickness rotator cuff tears  ",
+      "bbox_pt": [
+        39.678993225097656,
+        407.1553039550781,
+        267.57696533203125,
+        415.3453063964844
+      ],
+      "bbox_px": [
+        165,
+        1696,
+        1114,
+        1730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b42",
+      "text": "and tendinopathy with platelet-rich plasma: a systematic review and meta-analysis.  ",
+      "bbox_pt": [
+        53.850982666015625,
+        415.1532897949219,
+        281.8689880371094,
+        423.3432922363281
+      ],
+      "bbox_px": [
+        224,
+        1729,
+        1174,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b43",
+      "text": "Clin. Rehabil. 35 , 1661–1673 (2021).",
+      "bbox_pt": [
+        53.85099792480469,
+        423.061279296875,
+        147.70962524414062,
+        431.3412780761719
+      ],
+      "bbox_px": [
+        224,
+        1762,
+        615,
+        1797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b44",
+      "text": "203.\tPang, L. et al. Platelet-rich plasma injection can be a viable alternative to corticosteroid ",
+      "bbox_pt": [
+        39.67900085449219,
+        431.1492614746094,
+        290.4508056640625,
+        439.3392639160156
+      ],
+      "bbox_px": [
+        165,
+        1796,
+        1210,
+        1830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b45",
+      "text": "injection for conservative treatment of rotator cuff disease: a meta-analysis of randomized ",
+      "bbox_pt": [
+        53.85100173950195,
+        439.1472473144531,
+        296.23309326171875,
+        447.3372497558594
+      ],
+      "bbox_px": [
+        224,
+        1829,
+        1234,
+        1863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b46",
+      "text": "controlled trials.  Arthroscopy 39 , 402–421.e1 (2023).",
+      "bbox_pt": [
+        53.85100173950195,
+        447.05523681640625,
+        195.45339965820312,
+        455.3352355957031
+      ],
+      "bbox_px": [
+        224,
+        1862,
+        814,
+        1897
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b47",
+      "text": "204.\tJo, C. H. et al. Intratendinous injection of autologous adipose tissue-derived mesenchymal ",
+      "bbox_pt": [
+        39.672996520996094,
+        455.1432189941406,
+        296.20361328125,
+        463.3332214355469
+      ],
+      "bbox_px": [
+        165,
+        1896,
+        1234,
+        1930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b48",
+      "text": "stem cells for the treatment of rotator cuff disease: a first-in-human trial.  Stem Cell 36 , ",
+      "bbox_pt": [
+        53.84499740600586,
+        463.05120849609375,
+        288.17498779296875,
+        471.3312072753906
+      ],
+      "bbox_px": [
+        224,
+        1929,
+        1200,
+        1963
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b49",
+      "text": "1441–1450 (2018).",
+      "bbox_pt": [
+        53.845001220703125,
+        471.1391906738281,
+        101.54380798339844,
+        479.3291931152344
+      ],
+      "bbox_px": [
+        224,
+        1963,
+        423,
+        1997
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b50",
+      "text": "205.\tPaloneva, J. et al. Declining incidence of acromioplasty in Finland.  Acta Orthop. 86 , ",
+      "bbox_pt": [
+        39.67300033569336,
+        479.04718017578125,
+        279.9129638671875,
+        487.3271789550781
+      ],
+      "bbox_px": [
+        165,
+        1996,
+        1166,
+        2030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b51",
+      "text": "220–224 (2015).",
+      "bbox_pt": [
+        53.844970703125,
+        487.1351623535156,
+        96.94178771972656,
+        495.3251647949219
+      ],
+      "bbox_px": [
+        224,
+        2029,
+        403,
+        2063
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b52",
+      "text": "206.\tOh, J. H., Kim, J. Y., Lee, H. K. & Choi, J. A. Classification and clinical significance of acromial ",
+      "bbox_pt": [
+        39.672969818115234,
+        495.1331481933594,
+        296.18865966796875,
+        503.3231506347656
+      ],
+      "bbox_px": [
+        165,
+        2063,
+        1234,
+        2097
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b53",
+      "text": "spur in rotator cuff tear: heel-type spur and rotator cuff tear.  Clin. Orthop. Relat. Res. 468 , ",
+      "bbox_pt": [
+        53.844966888427734,
+        503.0411376953125,
+        296.346923828125,
+        511.3211364746094
+      ],
+      "bbox_px": [
+        224,
+        2096,
+        1234,
+        2130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b54",
+      "text": "1542–1550 (2010).",
+      "bbox_pt": [
+        53.838958740234375,
+        511.1291198730469,
+        102.69998168945312,
+        519.3191528320312
+      ],
+      "bbox_px": [
+        224,
+        2129,
+        427,
+        2163
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b55",
+      "text": "207.\t Farfaras, S., Sernert, N., Rostgard Christensen, L., Hallstrom, E. K. & Kartus, J. T. ",
+      "bbox_pt": [
+        39.66695785522461,
+        519.1271362304688,
+        266.736328125,
+        527.317138671875
+      ],
+      "bbox_px": [
+        165,
+        2163,
+        1111,
+        2197
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b56",
+      "text": "Subacromial decompression yields a better clinical outcome than therapy alone:  ",
+      "bbox_pt": [
+        53.838958740234375,
+        527.1251220703125,
+        275.6889343261719,
+        535.3151245117188
+      ],
+      "bbox_px": [
+        224,
+        2196,
+        1148,
+        2230
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b57",
+      "text": "a prospective randomized study of patients with a minimum 10-year follow-up.  Am. J. ",
+      "bbox_pt": [
+        53.83894348144531,
+        535.1231079101562,
+        284.6133117675781,
+        543.3131103515625
+      ],
+      "bbox_px": [
+        224,
+        2229,
+        1185,
+        2263
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b58",
+      "text": "Sports Med. 46 , 1397–1407 (2018).",
+      "bbox_pt": [
+        53.838958740234375,
+        543.0310668945312,
+        145.96414184570312,
+        551.3110961914062
+      ],
+      "bbox_px": [
+        224,
+        2262,
+        608,
+        2297
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b59",
+      "text": "208.\tFarfaras, S., Sernert, N., Hallstrom, E. & Kartus, J. Comparison of open acromioplasty, ",
+      "bbox_pt": [
+        39.666954040527344,
+        551.119140625,
+        283.8830871582031,
+        559.3091430664062
+      ],
+      "bbox_px": [
+        165,
+        2296,
+        1182,
+        2330
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b60",
+      "text": "arthroscopic acromioplasty and physiotherapy in patients with subacromial ",
+      "bbox_pt": [
+        53.83895492553711,
+        559.1171264648438,
+        259.96533203125,
+        567.30712890625
+      ],
+      "bbox_px": [
+        224,
+        2329,
+        1083,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b61",
+      "text": "impingement syndrome: a prospective randomised study.  Knee Surg. Sports Traumatol. ",
+      "bbox_pt": [
+        53.83895492553711,
+        567.1151123046875,
+        292.14044189453125,
+        575.3051147460938
+      ],
+      "bbox_px": [
+        224,
+        2362,
+        1217,
+        2397
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b62",
+      "text": "Arthrosc. 24 , 2181–2191 (2016).",
+      "bbox_pt": [
+        53.83895492553711,
+        575.0231323242188,
+        135.91477966308594,
+        583.3031616210938
+      ],
+      "bbox_px": [
+        224,
+        2395,
+        566,
+        2430
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b63",
+      "text": "209.\tWaterman, B. R. et al. Randomized trial of arthroscopic rotator cuff with or without ",
+      "bbox_pt": [
+        39.6729621887207,
+        583.1111450195312,
+        276.6387634277344,
+        591.3011474609375
+      ],
+      "bbox_px": [
+        165,
+        2429,
+        1152,
+        2463
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b64",
+      "text": "acromioplasty: no difference in patient-reported outcomes at long-term follow-up. ",
+      "bbox_pt": [
+        53.84496307373047,
+        591.109130859375,
+        278.47296142578125,
+        599.2991333007812
+      ],
+      "bbox_px": [
+        224,
+        2462,
+        1160,
+        2497
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b65",
+      "text": "Arthroscopy 37 , 3072–3078 (2021).",
+      "bbox_pt": [
+        53.84496307373047,
+        599.01708984375,
+        147.9693603515625,
+        607.297119140625
+      ],
+      "bbox_px": [
+        224,
+        2495,
+        616,
+        2530
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b66",
+      "text": "210.\t Paavola, M. et al. Subacromial decompression versus diagnostic arthroscopy for shoulder ",
+      "bbox_pt": [
+        39.67295837402344,
+        607.1051025390625,
+        296.15264892578125,
+        615.2951049804688
+      ],
+      "bbox_px": [
+        165,
+        2529,
+        1233,
+        2563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b67",
+      "text": "impingement: a 5-year follow-up of a randomised, placebo surgery controlled clinical ",
+      "bbox_pt": [
+        53.8449592590332,
+        615.1031494140625,
+        286.9923400878906,
+        623.2931518554688
+      ],
+      "bbox_px": [
+        224,
+        2562,
+        1195,
+        2597
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b68",
+      "text": "trial.  Br. J. Sports Med. 55 , 99–107 (2021).",
+      "bbox_pt": [
+        53.8449592590332,
+        623.0111083984375,
+        163.75836181640625,
+        631.2911376953125
+      ],
+      "bbox_px": [
+        224,
+        2595,
+        682,
+        2630
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b69",
+      "text": "211.\t Kolk, A. et al. Does acromioplasty result in favorable clinical and radiologic outcomes  ",
+      "bbox_pt": [
+        39.67896270751953,
+        631.09912109375,
+        286.9689636230469,
+        639.2891235351562
+      ],
+      "bbox_px": [
+        165,
+        2629,
+        1195,
+        2663
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b70",
+      "text": "in the management of chronic subacromial pain syndrome? A double-blinded ",
+      "bbox_pt": [
+        53.8509521484375,
+        639.09716796875,
+        265.8165283203125,
+        647.2871704101562
+      ],
+      "bbox_px": [
+        224,
+        2662,
+        1107,
+        2697
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b71",
+      "text": "randomized clinical trial with 9 to 14 years’ follow-up.  J. Shoulder Elbow Surg. 26 , ",
+      "bbox_pt": [
+        53.8509521484375,
+        647.005126953125,
+        273.6909484863281,
+        655.28515625
+      ],
+      "bbox_px": [
+        224,
+        2695,
+        1140,
+        2730
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b72",
+      "text": "1407–1415 (2017).",
+      "bbox_pt": [
+        53.850982666015625,
+        655.0931396484375,
+        100.1494140625,
+        663.2831420898438
+      ],
+      "bbox_px": [
+        224,
+        2729,
+        417,
+        2763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b73",
+      "text": "212.\t Ketola, S., Lehtinen, J. T. & Arnala, I. Arthroscopic decompression not recommended in ",
+      "bbox_pt": [
+        39.67898178100586,
+        663.0911254882812,
+        289.1175231933594,
+        671.2811279296875
+      ],
+      "bbox_px": [
+        165,
+        2762,
+        1204,
+        2797
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b74",
+      "text": "the treatment of rotator cuff tendinopathy: a final review of a randomised controlled trial ",
+      "bbox_pt": [
+        53.850982666015625,
+        671.089111328125,
+        294.0489501953125,
+        679.2791137695312
+      ],
+      "bbox_px": [
+        224,
+        2796,
+        1225,
+        2830
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b75",
+      "text": "at a minimum follow-up of ten years.  Bone Joint J. 99-B , 799–805 (2017).",
+      "bbox_pt": [
+        53.850982666015625,
+        678.9971313476562,
+        248.3103790283203,
+        687.2771606445312
+      ],
+      "bbox_px": [
+        224,
+        2829,
+        1034,
+        2863
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b76",
+      "text": "213.\t Woodmass, J. M. et al. Arthroscopic rotator cuff repair with and without acromioplasty  ",
+      "bbox_pt": [
+        39.67897033691406,
+        687.0851440429688,
+        288.8229675292969,
+        695.275146484375
+      ],
+      "bbox_px": [
+        165,
+        2862,
+        1203,
+        2896
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b77",
+      "text": "in the treatment of full-thickness rotator cuff tears: long-term outcomes of a  ",
+      "bbox_pt": [
+        53.850982666015625,
+        695.0831298828125,
+        261.80499267578125,
+        703.2731323242188
+      ],
+      "bbox_px": [
+        224,
+        2896,
+        1090,
+        2930
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b78",
+      "text": "multicenter, randomized controlled trial.  J. Bone Joint Surg. Am. 104 , 2101–2107  ",
+      "bbox_pt": [
+        53.850982666015625,
+        702.9911499023438,
+        271.05096435546875,
+        711.2711791992188
+      ],
+      "bbox_px": [
+        224,
+        2929,
+        1129,
+        2963
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b79",
+      "text": "(2022).",
+      "bbox_pt": [
+        53.8509521484375,
+        711.0791625976562,
+        73.03115844726562,
+        719.2691650390625
+      ],
+      "bbox_px": [
+        224,
+        2962,
+        304,
+        2996
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b80",
+      "text": "214.\t Jensen, A. R. et al. Evaluation of the trends, concomitant procedures, and complications ",
+      "bbox_pt": [
+        39.678951263427734,
+        719.0771484375,
+        293.2815246582031,
+        727.2671508789062
+      ],
+      "bbox_px": [
+        165,
+        2996,
+        1222,
+        3030
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b81",
+      "text": "with open and arthroscopic rotator cuff repairs in the Medicare population.  Orthop. J. ",
+      "bbox_pt": [
+        53.8509521484375,
+        727.0751342773438,
+        285.4209289550781,
+        735.26513671875
+      ],
+      "bbox_px": [
+        224,
+        3029,
+        1189,
+        3063
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b82",
+      "text": "Sports Med. 5 , 2325967117731310 (2017).",
+      "bbox_pt": [
+        53.8509521484375,
+        734.9830932617188,
+        163.82974243164062,
+        743.2631225585938
+      ],
+      "bbox_px": [
+        224,
+        3062,
+        682,
+        3096
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p18_b83",
+      "text": "215.\t Buyukdogan, K. et al. Long-term outcomes after arthroscopic transosseous-equivalent ",
+      "bbox_pt": [
+        306.1389465332031,
+        111.07315826416016,
+        555.5157470703125,
+        119.2631607055664
+      ],
+      "bbox_px": [
+        1275,
+        462,
+        2314,
+        496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b84",
+      "text": "repair: clinical and magnetic resonance imaging results of rotator cuff tears at a ",
+      "bbox_pt": [
+        320.3109436035156,
+        119.0711441040039,
+        536.6275024414062,
+        127.26114654541016
+      ],
+      "bbox_px": [
+        1334,
+        496,
+        2235,
+        530
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b85",
+      "text": "minimum follow-up of 10 years.  J. Shoulder Elbow Surg. 30 , 2767–2777 (2021).",
+      "bbox_pt": [
+        320.3109436035156,
+        126.97913360595703,
+        529.7456665039062,
+        135.25912475585938
+      ],
+      "bbox_px": [
+        1334,
+        529,
+        2207,
+        563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b86",
+      "text": "216.\t Randelli, P. S. et al. Long-term results of arthroscopic rotator cuff repair: initial tear size ",
+      "bbox_pt": [
+        306.1389465332031,
+        135.06712341308594,
+        554.8449096679688,
+        143.25711059570312
+      ],
+      "bbox_px": [
+        1275,
+        562,
+        2311,
+        596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b87",
+      "text": "matters: a prospective study on clinical and radiological results at a minimum follow-up ",
+      "bbox_pt": [
+        320.3109436035156,
+        143.0651092529297,
+        558.724365234375,
+        151.25509643554688
+      ],
+      "bbox_px": [
+        1334,
+        596,
+        2328,
+        630
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b88",
+      "text": "of 10 years.  Am. J. Sports Med. 47 , 2659–2669 (2019).",
+      "bbox_pt": [
+        320.3109436035156,
+        150.97308349609375,
+        463.8741455078125,
+        159.25308227539062
+      ],
+      "bbox_px": [
+        1334,
+        629,
+        1932,
+        663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b89",
+      "text": "217.\t Jeong, H. J., Nam, K. P., Yeo, J. H., Rhee, S. M. & Oh, J. H. Retear after arthroscopic rotator ",
+      "bbox_pt": [
+        306.138916015625,
+        159.0610809326172,
+        559.086181640625,
+        167.25106811523438
+      ],
+      "bbox_px": [
+        1275,
+        662,
+        2329,
+        696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b90",
+      "text": "cuff repair results in functional outcome deterioration over time.  Arthroscopy 38 , ",
+      "bbox_pt": [
+        320.3109130859375,
+        166.96905517578125,
+        540.4449462890625,
+        175.24905395507812
+      ],
+      "bbox_px": [
+        1334,
+        695,
+        2251,
+        730
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b91",
+      "text": "2399–2412 (2022).",
+      "bbox_pt": [
+        320.3109130859375,
+        175.0570526123047,
+        369.94293212890625,
+        183.24703979492188
+      ],
+      "bbox_px": [
+        1334,
+        729,
+        1541,
+        763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b92",
+      "text": "218.\t Le, B. T., Wu, X. L., Lam, P. H. & Murrell, G. A. Factors predicting rotator cuff retears: an ",
+      "bbox_pt": [
+        306.138916015625,
+        183.05503845214844,
+        551.598876953125,
+        191.24502563476562
+      ],
+      "bbox_px": [
+        1275,
+        762,
+        2298,
+        796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b93",
+      "text": "analysis of 1000 consecutive rotator cuff repairs.  Am. J. Sports Med. 42 , 1134–1142 (2014).",
+      "bbox_pt": [
+        320.3109130859375,
+        190.9630126953125,
+        560.89404296875,
+        199.24301147460938
+      ],
+      "bbox_px": [
+        1334,
+        795,
+        2337,
+        830
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b94",
+      "text": "219.\t Guo, A. A., Stitz, D. J., Lam, P. & Murrell, G. A. C. Tear size and stiffness are important ",
+      "bbox_pt": [
+        306.138916015625,
+        199.05101013183594,
+        545.9288330078125,
+        207.24099731445312
+      ],
+      "bbox_px": [
+        1275,
+        829,
+        2274,
+        863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b95",
+      "text": "predictors of retear: an assessment of factors associated with repair integrity at 6 months ",
+      "bbox_pt": [
+        320.3109130859375,
+        207.0489959716797,
+        562.6574096679688,
+        215.23898315429688
+      ],
+      "bbox_px": [
+        1334,
+        862,
+        2344,
+        896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b96",
+      "text": "in 1,526 rotator cuff repairs.  JB JS Open Access 7 , e22.00006 (2022).",
+      "bbox_pt": [
+        320.3109130859375,
+        214.95697021484375,
+        504.1593017578125,
+        223.23696899414062
+      ],
+      "bbox_px": [
+        1334,
+        895,
+        2100,
+        930
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b97",
+      "text": "220.\tMaher, A. et al. Do age, demographics, and tear characteristics affect outcomes after ",
+      "bbox_pt": [
+        306.138916015625,
+        223.0449676513672,
+        551.0101928710938,
+        231.23495483398438
+      ],
+      "bbox_px": [
+        1275,
+        929,
+        2295,
+        963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b98",
+      "text": "rotator cuff repair? results of over 2000 rotator cuff repairs at 5-year follow-up.  Orthop. J. ",
+      "bbox_pt": [
+        320.3109130859375,
+        231.04295349121094,
+        561.5276489257812,
+        239.23294067382812
+      ],
+      "bbox_px": [
+        1334,
+        962,
+        2339,
+        996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b99",
+      "text": "Sports Med. 10 , 23259671221119222 (2022).",
+      "bbox_pt": [
+        320.3109130859375,
+        238.950927734375,
+        437.1165466308594,
+        247.23092651367188
+      ],
+      "bbox_px": [
+        1334,
+        995,
+        1821,
+        1030
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b100",
+      "text": "221.\t Gerber, C. et al. Neer Award 2007: reversion of structural muscle changes caused by ",
+      "bbox_pt": [
+        306.138916015625,
+        247.03892517089844,
+        549.6242065429688,
+        255.22891235351562
+      ],
+      "bbox_px": [
+        1275,
+        1029,
+        2290,
+        1063
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b101",
+      "text": "chronic rotator cuff tears using continuous musculotendinous traction. An experimental ",
+      "bbox_pt": [
+        320.3109130859375,
+        255.0369110107422,
+        560.252197265625,
+        263.2268981933594
+      ],
+      "bbox_px": [
+        1334,
+        1062,
+        2334,
+        1096
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b102",
+      "text": "study in sheep.  J. Shoulder Elbow Surg. 18 , 163–171 (2009).",
+      "bbox_pt": [
+        320.3109130859375,
+        262.94488525390625,
+        478.1318664550781,
+        271.2248840332031
+      ],
+      "bbox_px": [
+        1334,
+        1095,
+        1992,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b103",
+      "text": "222.\t Zhao, J. et al. Risk factors affecting rotator cuff retear after arthroscopic repair:  ",
+      "bbox_pt": [
+        306.1388854980469,
+        271.0328674316406,
+        533.9468994140625,
+        279.2228698730469
+      ],
+      "bbox_px": [
+        1275,
+        1129,
+        2224,
+        1163
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b104",
+      "text": "a meta-analysis and systematic review.  J. Shoulder Elbow Surg. 30 , 2660–2670  ",
+      "bbox_pt": [
+        320.3108825683594,
+        278.94085693359375,
+        535.9389038085938,
+        287.2208557128906
+      ],
+      "bbox_px": [
+        1334,
+        1162,
+        2233,
+        1196
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b105",
+      "text": "(2021).",
+      "bbox_pt": [
+        320.3108825683594,
+        287.0288391113281,
+        338.56109619140625,
+        295.2188415527344
+      ],
+      "bbox_px": [
+        1334,
+        1195,
+        1410,
+        1230
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b106",
+      "text": "223.\t Gatto, A. P., Hu, D. A., Feeley, B. T. & Lansdown, D. Dyslipidemia is associated with risk for ",
+      "bbox_pt": [
+        306.1388854980469,
+        295.0268249511719,
+        559.109619140625,
+        303.2168273925781
+      ],
+      "bbox_px": [
+        1275,
+        1229,
+        2329,
+        1263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b107",
+      "text": "rotator cuff repair failure: a systematic review and meta-analysis.  JSES Rev. Rep. Tech. 2 , ",
+      "bbox_pt": [
+        320.3108825683594,
+        302.934814453125,
+        558.5589599609375,
+        311.2148132324219
+      ],
+      "bbox_px": [
+        1334,
+        1262,
+        2327,
+        1296
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b108",
+      "text": "302–309 (2022).",
+      "bbox_pt": [
+        320.3169250488281,
+        311.0227966308594,
+        365.64569091796875,
+        319.2127990722656
+      ],
+      "bbox_px": [
+        1334,
+        1295,
+        1523,
+        1330
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b109",
+      "text": "224.\t Yang, Z. et al. Association of obesity with high retears and complication rates, and  ",
+      "bbox_pt": [
+        306.1449279785156,
+        319.0207824707031,
+        543.9729614257812,
+        327.2107849121094
+      ],
+      "bbox_px": [
+        1275,
+        1329,
+        2266,
+        1363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b110",
+      "text": "low functional scores after rotator cuff repair: a systematic review and meta-analysis.  ",
+      "bbox_pt": [
+        320.3169250488281,
+        327.0187683105469,
+        552.408935546875,
+        335.2087707519531
+      ],
+      "bbox_px": [
+        1334,
+        1362,
+        2301,
+        1396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b111",
+      "text": "J. Shoulder Elbow Surg. 32 , 2400–2411 (2023).",
+      "bbox_pt": [
+        320.31689453125,
+        334.9267578125,
+        444.8793029785156,
+        343.2067565917969
+      ],
+      "bbox_px": [
+        1334,
+        1395,
+        1853,
+        1430
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b112",
+      "text": "225.\t Fan, N. et al. The effects of smoking on clinical and structural outcomes after rotator ",
+      "bbox_pt": [
+        306.138916015625,
+        343.0147399902344,
+        548.80322265625,
+        351.2047424316406
+      ],
+      "bbox_px": [
+        1275,
+        1429,
+        2286,
+        1463
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b113",
+      "text": "cuff repair: a systematic review and meta-analysis.  J. Shoulder Elbow Surg. 31 , 656–667 ",
+      "bbox_pt": [
+        320.3109130859375,
+        350.9227294921875,
+        556.851318359375,
+        359.2027282714844
+      ],
+      "bbox_px": [
+        1334,
+        1462,
+        2320,
+        1496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b114",
+      "text": "(2022).",
+      "bbox_pt": [
+        320.31695556640625,
+        359.0107116699219,
+        339.4971618652344,
+        367.2007141113281
+      ],
+      "bbox_px": [
+        1334,
+        1495,
+        1414,
+        1530
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b115",
+      "text": "226.\t Sheean, A. J., Hartzler, R. U. & Burkhart, S. S. Arthroscopic rotator cuff repair in 2019: ",
+      "bbox_pt": [
+        306.14495849609375,
+        367.0086975097656,
+        547.68701171875,
+        375.1986999511719
+      ],
+      "bbox_px": [
+        1275,
+        1529,
+        2282,
+        1563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b116",
+      "text": "linked, double row repair for achieving higher healing rates and optimal clinical ",
+      "bbox_pt": [
+        320.31695556640625,
+        375.0066833496094,
+        536.3850708007812,
+        383.1966857910156
+      ],
+      "bbox_px": [
+        1334,
+        1562,
+        2234,
+        1596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b117",
+      "text": "outcomes.  Arthroscopy 35 , 2749–2755 (2019).",
+      "bbox_pt": [
+        320.31695556640625,
+        382.9146728515625,
+        444.4551696777344,
+        391.1946716308594
+      ],
+      "bbox_px": [
+        1334,
+        1595,
+        1851,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b118",
+      "text": "227.\t Bedeir, Y. H., Schumaier, A. P., Abu-Sheasha, G. & Grawe, B. M. Type 2 retear after ",
+      "bbox_pt": [
+        306.14495849609375,
+        391.0026550292969,
+        538.47802734375,
+        399.1926574707031
+      ],
+      "bbox_px": [
+        1275,
+        1629,
+        2243,
+        1663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b119",
+      "text": "arthroscopic single-row, double-row and suture bridge rotator cuff repair: a systematic ",
+      "bbox_pt": [
+        320.31695556640625,
+        399.0006408691406,
+        555.8588256835938,
+        407.1906433105469
+      ],
+      "bbox_px": [
+        1334,
+        1662,
+        2316,
+        1696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b120",
+      "text": "review.  Eur. J. Orthop. Surg. Traumatol. 29 , 373–382 (2019).",
+      "bbox_pt": [
+        320.31695556640625,
+        406.90863037109375,
+        479.1585388183594,
+        415.1886291503906
+      ],
+      "bbox_px": [
+        1334,
+        1695,
+        1996,
+        1729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b121",
+      "text": "228.\t Malavolta, E. A. et al. Prognostic factors for clinical outcomes after arthroscopic rotator ",
+      "bbox_pt": [
+        306.14495849609375,
+        414.9966125488281,
+        557.237060546875,
+        423.1866149902344
+      ],
+      "bbox_px": [
+        1275,
+        1729,
+        2321,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b122",
+      "text": "cuff repair.  Orthop. J. Sports Med. 11 , 23259671231160738 (2023).",
+      "bbox_pt": [
+        320.31695556640625,
+        422.90460205078125,
+        495.7790832519531,
+        431.1846008300781
+      ],
+      "bbox_px": [
+        1334,
+        1762,
+        2065,
+        1796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b123",
+      "text": "229.\t Bishop, M. E. et al. Biomechanical and clinical comparison of suture techniques  ",
+      "bbox_pt": [
+        306.15093994140625,
+        430.9925842285156,
+        537.4869995117188,
+        439.1825866699219
+      ],
+      "bbox_px": [
+        1275,
+        1795,
+        2239,
+        1829
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b124",
+      "text": "in arthroscopic rotator cuff repair.  JBJS Rev. 5 , e3 (2017).",
+      "bbox_pt": [
+        320.3229675292969,
+        438.90057373046875,
+        471.4509582519531,
+        447.1805725097656
+      ],
+      "bbox_px": [
+        1334,
+        1828,
+        1964,
+        1863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b125",
+      "text": "230.\tHohmann, E. et al. Single- versus double-row repair for full-thickness rotator cuff tears ",
+      "bbox_pt": [
+        306.1510009765625,
+        446.9885559082031,
+        554.06005859375,
+        455.1785583496094
+      ],
+      "bbox_px": [
+        1275,
+        1862,
+        2308,
+        1896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b126",
+      "text": "using suture anchors. A systematic review and meta-analysis of basic biomechanical ",
+      "bbox_pt": [
+        320.322998046875,
+        454.9865417480469,
+        550.3724365234375,
+        463.1765441894531
+      ],
+      "bbox_px": [
+        1334,
+        1895,
+        2293,
+        1929
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b127",
+      "text": "studies.  Eur. J. Orthop. Surg. Traumatol. 28 , 859–868 (2018).",
+      "bbox_pt": [
+        320.322998046875,
+        462.89453125,
+        482.1075744628906,
+        471.1745300292969
+      ],
+      "bbox_px": [
+        1334,
+        1928,
+        2008,
+        1963
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b128",
+      "text": "231.\t Millett, P. J., Warth, R. J., Dornan, G. J., Lee, J. T. & Spiegl, U. J. Clinical and structural ",
+      "bbox_pt": [
+        306.1510009765625,
+        470.9825134277344,
+        544.482177734375,
+        479.1725158691406
+      ],
+      "bbox_px": [
+        1275,
+        1962,
+        2268,
+        1996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b129",
+      "text": "outcomes after arthroscopic single-row versus double-row rotator cuff repair:  ",
+      "bbox_pt": [
+        320.322998046875,
+        478.9804992675781,
+        533.0950317382812,
+        487.1705017089844
+      ],
+      "bbox_px": [
+        1334,
+        1995,
+        2221,
+        2029
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b130",
+      "text": "a systematic review and meta-analysis of level I randomized clinical trials.  J. Shoulder ",
+      "bbox_pt": [
+        320.322998046875,
+        486.9784851074219,
+        551.7926025390625,
+        495.1684875488281
+      ],
+      "bbox_px": [
+        1334,
+        2029,
+        2299,
+        2063
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b131",
+      "text": "Elbow Surg. 23 , 586–597 (2014).",
+      "bbox_pt": [
+        320.322998046875,
+        494.886474609375,
+        407.328369140625,
+        503.1664733886719
+      ],
+      "bbox_px": [
+        1334,
+        2062,
+        1697,
+        2096
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b132",
+      "text": "232.\t Sobhy, M. H., Khater, A. H., Hassan, M. R. & El Shazly, O. Do functional outcomes and ",
+      "bbox_pt": [
+        306.1510009765625,
+        502.9744567871094,
+        548.3367919921875,
+        511.1644592285156
+      ],
+      "bbox_px": [
+        1275,
+        2095,
+        2284,
+        2129
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b133",
+      "text": "cuff integrity correlate after single- versus double-row rotator cuff repair? A systematic ",
+      "bbox_pt": [
+        320.322998046875,
+        510.9724426269531,
+        555.86669921875,
+        519.1624755859375
+      ],
+      "bbox_px": [
+        1334,
+        2129,
+        2316,
+        2163
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b134",
+      "text": "review and meta-analysis study.  Eur. J. Orthop. Surg. Traumatol. 28 , 593–605 (2018).",
+      "bbox_pt": [
+        320.322998046875,
+        518.8804321289062,
+        547.2628173828125,
+        527.1604614257812
+      ],
+      "bbox_px": [
+        1334,
+        2162,
+        2280,
+        2196
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b135",
+      "text": "233.\tHernigou, P. et al. Biologic augmentation of rotator cuff repair with mesenchymal stem ",
+      "bbox_pt": [
+        306.156982421875,
+        526.9684448242188,
+        555.7399291992188,
+        535.158447265625
+      ],
+      "bbox_px": [
+        1275,
+        2195,
+        2315,
+        2229
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b136",
+      "text": "cells during arthroscopy improves healing and prevents further tears: a case-controlled ",
+      "bbox_pt": [
+        320.3289794921875,
+        534.9664306640625,
+        558.5283203125,
+        543.1564331054688
+      ],
+      "bbox_px": [
+        1334,
+        2229,
+        2327,
+        2263
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b137",
+      "text": "study.  Int. Orthop. 38 , 1811–1818 (2014).",
+      "bbox_pt": [
+        320.3289794921875,
+        542.8744506835938,
+        425.8053894042969,
+        551.1544799804688
+      ],
+      "bbox_px": [
+        1334,
+        2261,
+        1774,
+        2296
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b138",
+      "text": "234.\tCole, B. J. et al. Prospective randomized trial of biologic augmentation with bone  ",
+      "bbox_pt": [
+        306.156982421875,
+        550.9624633789062,
+        541.4110107421875,
+        559.1524658203125
+      ],
+      "bbox_px": [
+        1275,
+        2295,
+        2255,
+        2329
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b139",
+      "text": "marrow aspirate concentrate in patients undergoing arthroscopic rotator cuff repair.  ",
+      "bbox_pt": [
+        320.3289794921875,
+        558.96044921875,
+        550.9929809570312,
+        567.1504516601562
+      ],
+      "bbox_px": [
+        1334,
+        2329,
+        2295,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b140",
+      "text": "Am. J. Sports Med. 51 , 1234–1242 (2023).",
+      "bbox_pt": [
+        320.3289489746094,
+        566.868408203125,
+        429.0897216796875,
+        575.1484375
+      ],
+      "bbox_px": [
+        1334,
+        2361,
+        1787,
+        2396
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b141",
+      "text": "235.\t Feltri, P. et al. Platelet-rich plasma does not improve clinical results in patients with ",
+      "bbox_pt": [
+        306.1629333496094,
+        574.9564208984375,
+        544.6536865234375,
+        583.1464233398438
+      ],
+      "bbox_px": [
+        1275,
+        2395,
+        2269,
+        2429
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b142",
+      "text": "rotator cuff disorders but reduces the retear rate. A systematic review and meta-analysis. ",
+      "bbox_pt": [
+        320.3349304199219,
+        582.9544677734375,
+        561.6129150390625,
+        591.1444702148438
+      ],
+      "bbox_px": [
+        1334,
+        2428,
+        2340,
+        2463
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b143",
+      "text": "Knee Surg. Sports Traumatol. Arthrosc. 31 , 1940–1952 (2023).",
+      "bbox_pt": [
+        320.3349304199219,
+        590.8624267578125,
+        485.1993103027344,
+        599.1424560546875
+      ],
+      "bbox_px": [
+        1334,
+        2461,
+        2021,
+        2496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b144",
+      "text": "236.\tLavoie-Gagne, O. et al. Double-row repair with platelet-rich plasma optimizes retear rates ",
+      "bbox_pt": [
+        306.16290283203125,
+        598.950439453125,
+        562.3231201171875,
+        607.1404418945312
+      ],
+      "bbox_px": [
+        1275,
+        2495,
+        2343,
+        2529
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b145",
+      "text": "after small to medium full-thickness rotator cuff repair: a systematic review and network ",
+      "bbox_pt": [
+        320.33489990234375,
+        606.948486328125,
+        559.6074829101562,
+        615.1384887695312
+      ],
+      "bbox_px": [
+        1334,
+        2528,
+        2331,
+        2563
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b146",
+      "text": "meta-analysis of randomized controlled trials.  Arthroscopy 38 , 2714–2729 (2022).",
+      "bbox_pt": [
+        320.33489990234375,
+        614.8564453125,
+        539.459716796875,
+        623.136474609375
+      ],
+      "bbox_px": [
+        1334,
+        2561,
+        2247,
+        2596
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b147",
+      "text": "237.\t Zhang, C., Cai, Y. Z. & Wang, Y. Injection of leukocyte-poor platelet-rich plasma for ",
+      "bbox_pt": [
+        306.16290283203125,
+        622.9444580078125,
+        542.5927734375,
+        631.1344604492188
+      ],
+      "bbox_px": [
+        1275,
+        2595,
+        2260,
+        2629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b148",
+      "text": "moderate-to-large rotator cuff tears does not improve clinical outcomes but reduces ",
+      "bbox_pt": [
+        320.33489990234375,
+        630.9424438476562,
+        550.9484252929688,
+        639.1324462890625
+      ],
+      "bbox_px": [
+        1334,
+        2628,
+        2295,
+        2663
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b149",
+      "text": "retear rates and fatty infiltration: a prospective, single-blinded randomized study. ",
+      "bbox_pt": [
+        320.33489990234375,
+        638.9404296875,
+        540.9793701171875,
+        647.1304321289062
+      ],
+      "bbox_px": [
+        1334,
+        2662,
+        2254,
+        2696
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b150",
+      "text": "Arthroscopy 38 , 2381–2388.e1 (2022).",
+      "bbox_pt": [
+        320.33489990234375,
+        646.8484497070312,
+        422.0534973144531,
+        655.1284790039062
+      ],
+      "bbox_px": [
+        1334,
+        2695,
+        1758,
+        2729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b151",
+      "text": "238.\tLiu, B., Jeong, H. J., Yeo, J. H. & Oh, J. H. Efficacy of intraoperative platelet-rich plasma  ",
+      "bbox_pt": [
+        306.15692138671875,
+        654.9364624023438,
+        552.4389038085938,
+        663.12646484375
+      ],
+      "bbox_px": [
+        1275,
+        2728,
+        2301,
+        2763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b152",
+      "text": "augmentation and postoperative platelet-rich plasma booster injection for rotator ",
+      "bbox_pt": [
+        320.3288879394531,
+        662.9344482421875,
+        543.0305786132812,
+        671.1244506835938
+      ],
+      "bbox_px": [
+        1334,
+        2762,
+        2262,
+        2796
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b153",
+      "text": "cuff healing: a randomized controlled clinical trial.  Orthop. J. Sports Med. 9 , ",
+      "bbox_pt": [
+        320.3288879394531,
+        670.8424682617188,
+        526.8128662109375,
+        679.1224975585938
+      ],
+      "bbox_px": [
+        1334,
+        2795,
+        2195,
+        2829
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b154",
+      "text": "23259671211006100 (2021).",
+      "bbox_pt": [
+        320.3288269042969,
+        678.9304809570312,
+        395.69122314453125,
+        687.1204833984375
+      ],
+      "bbox_px": [
+        1334,
+        2828,
+        1648,
+        2863
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b155",
+      "text": "239.\tHurley, E. T., Lim Fat, D., Moran, C. J. & Mullett, H. The efficacy of platelet-rich plasma ",
+      "bbox_pt": [
+        306.1568298339844,
+        686.928466796875,
+        549.1956787109375,
+        695.1184692382812
+      ],
+      "bbox_px": [
+        1275,
+        2862,
+        2288,
+        2896
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b156",
+      "text": "and platelet-rich fibrin in arthroscopic rotator cuff repair: a meta-analysis of randomized ",
+      "bbox_pt": [
+        320.3288269042969,
+        694.9264526367188,
+        559.343017578125,
+        703.116455078125
+      ],
+      "bbox_px": [
+        1334,
+        2895,
+        2330,
+        2929
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b157",
+      "text": "controlled trials.  Am. J. Sports Med. 47 , 753–761 (2019).",
+      "bbox_pt": [
+        320.3288269042969,
+        702.8344116210938,
+        468.9283752441406,
+        711.1144409179688
+      ],
+      "bbox_px": [
+        1334,
+        2928,
+        1953,
+        2962
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b158",
+      "text": "240.\tCastricini, R. et al. Platelet-rich plasma augmentation for arthroscopic rotator cuff repair: ",
+      "bbox_pt": [
+        306.1628112792969,
+        710.9224853515625,
+        560.8944702148438,
+        719.1124877929688
+      ],
+      "bbox_px": [
+        1275,
+        2962,
+        2337,
+        2996
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b159",
+      "text": "a randomized controlled trial.  Am. J. Sports Med. 39 , 258–265 (2011).",
+      "bbox_pt": [
+        320.3348083496094,
+        718.8304443359375,
+        505.6856384277344,
+        727.1104736328125
+      ],
+      "bbox_px": [
+        1334,
+        2995,
+        2107,
+        3029
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b160",
+      "text": "241.\t Randelli, P. S., Stoppani, C. A., Santarsiero, G., Nocerino, E. & Menon, A. Platelet-rich ",
+      "bbox_pt": [
+        306.1628112792969,
+        726.91845703125,
+        547.8313598632812,
+        735.1084594726562
+      ],
+      "bbox_px": [
+        1275,
+        3028,
+        2282,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p18_b161",
+      "text": "plasma in arthroscopic rotator cuff repair: clinical and radiological results of a ",
+      "bbox_pt": [
+        320.3348083496094,
+        734.91650390625,
+        531.8526611328125,
+        743.1065063476562
+      ],
+      "bbox_px": [
+        1334,
+        3062,
+        2216,
+        3096
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 162
+  }
+}

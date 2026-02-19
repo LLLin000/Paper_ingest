@@ -1,0 +1,1998 @@
+{
+  "page": 11,
+  "image_path": "run\\test01\\pages\\p011.png",
+  "blocks": [
+    {
+      "block_id": "p11_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b1",
+      "text": "11",
+      "bbox_pt": [
+        554.2197875976562,
+        760.4366455078125,
+        561.259765625,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        2309,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        249.5,
+        777.264404296875,
+        308.5729675292969,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1039,
+        3238,
+        1285,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.469932556152344,
+        93.83000946044922,
+        58.929935455322266
+      ],
+      "bbox_px": [
+        165,
+        147,
+        390,
+        245
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b4",
+      "text": "inflammation, which are observed in individuals with diabetes mellitus ",
+      "bbox_pt": [
+        39.685001373291016,
+        112.09562683105469,
+        296.1839599609375,
+        122.276123046875
+      ],
+      "bbox_px": [
+        165,
+        467,
+        1234,
+        509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b5",
+      "text": "and obesity can contribute to tendon injury 181 . Although no clear dietary ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.50740051269531,
+        296.1969299316406,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        510,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b6",
+      "text": "change can prevent rotator cuff tears, following an anti-inflammatory ",
+      "bbox_pt": [
+        39.685001373291016,
+        133.5956268310547,
+        296.2529296875,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        556,
+        1234,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b7",
+      "text": "diet (for example, foods that are high in anti-oxidants such as blueber-",
+      "bbox_pt": [
+        39.685001373291016,
+        144.3456268310547,
+        294.8031005859375,
+        154.526123046875
+      ],
+      "bbox_px": [
+        165,
+        601,
+        1228,
+        643
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b8",
+      "text": "ries, almonds and fatty fish) may aid in alleviating pain and inflamma-",
+      "bbox_pt": [
+        39.685001373291016,
+        155.0956268310547,
+        294.8153991699219,
+        165.276123046875
+      ],
+      "bbox_px": [
+        165,
+        646,
+        1228,
+        688
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b9",
+      "text": "tion associated with rotator cuff injuries. Further research investigating ",
+      "bbox_pt": [
+        39.685001373291016,
+        165.8456268310547,
+        296.33599853515625,
+        176.026123046875
+      ],
+      "bbox_px": [
+        165,
+        691,
+        1234,
+        733
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b10",
+      "text": "the role of anti-inflammatory diet is necessary 182 . In animals, vitamin D ",
+      "bbox_pt": [
+        39.685001373291016,
+        176.2574005126953,
+        296.2100524902344,
+        186.776123046875
+      ],
+      "bbox_px": [
+        165,
+        734,
+        1234,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b11",
+      "text": "deficiency may affect the ability of an acutely injured rotator cuff to ",
+      "bbox_pt": [
+        39.685001373291016,
+        187.3456268310547,
+        296.19256591796875,
+        197.526123046875
+      ],
+      "bbox_px": [
+        165,
+        780,
+        1234,
+        823
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b12",
+      "text": "heal following surgery. Hence, screening for and treating vitamin D ",
+      "bbox_pt": [
+        39.685001373291016,
+        198.0956268310547,
+        296.4000244140625,
+        208.276123046875
+      ],
+      "bbox_px": [
+        165,
+        825,
+        1235,
+        867
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b13",
+      "text": "deficiency may be beneficial 183 . Evidence shows a possibility of longer ",
+      "bbox_pt": [
+        39.685001373291016,
+        208.5074005126953,
+        296.3272705078125,
+        219.026123046875
+      ],
+      "bbox_px": [
+        165,
+        868,
+        1234,
+        912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b14",
+      "text": "duration of symptoms and a worse prognosis in patients with depres-",
+      "bbox_pt": [
+        39.685001373291016,
+        219.5956268310547,
+        294.7831726074219,
+        229.776123046875
+      ],
+      "bbox_px": [
+        165,
+        914,
+        1228,
+        957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b15",
+      "text": "sion and anxiety than in those without. Patients should be screened ",
+      "bbox_pt": [
+        39.685001373291016,
+        230.3456268310547,
+        296.31610107421875,
+        240.526123046875
+      ],
+      "bbox_px": [
+        165,
+        959,
+        1234,
+        1002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b16",
+      "text": "to identify those with these common pathologies so that they can be ",
+      "bbox_pt": [
+        39.685001373291016,
+        241.0956268310547,
+        296.2599792480469,
+        251.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1004,
+        1234,
+        1046
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b17",
+      "text": "counselled to improve outcomes 184 .",
+      "bbox_pt": [
+        39.685001373291016,
+        251.5074005126953,
+        172.33558654785156,
+        262.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1047,
+        718,
+        1091
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b18",
+      "text": "Management",
+      "bbox_pt": [
+        39.685001373291016,
+        269.1396179199219,
+        107.23800659179688,
+        283.9746398925781
+      ],
+      "bbox_px": [
+        165,
+        1121,
+        446,
+        1183
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b19",
+      "text": "The goals of management are to reduce pain and enable return to ",
+      "bbox_pt": [
+        39.685001373291016,
+        284.0956115722656,
+        296.3691101074219,
+        294.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1183,
+        1234,
+        1226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b20",
+      "text": "function, including improved sleep. In asymptomatic patients or in ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.8456115722656,
+        296.3130187988281,
+        305.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1228,
+        1234,
+        1270
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b21",
+      "text": "those with minimal shoulder symptoms, observation alone might be ",
+      "bbox_pt": [
+        39.685001373291016,
+        305.5956115722656,
+        296.2764892578125,
+        315.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1273,
+        1234,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b22",
+      "text": "sufficient. These patients should be made well aware of the risks of ",
+      "bbox_pt": [
+        39.685001373291016,
+        316.3456115722656,
+        296.3869934082031,
+        326.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1318,
+        1234,
+        1360
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b23",
+      "text": "progression, with pain serving as a key marker of likely tear ­progression ",
+      "bbox_pt": [
+        39.685001373291016,
+        327.0956115722656,
+        296.2022705078125,
+        337.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1362,
+        1234,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b24",
+      "text": "over time and an indicator warranting evaluation and treatment.",
+      "bbox_pt": [
+        39.685001373291016,
+        337.8456115722656,
+        278.8104248046875,
+        348.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1407,
+        1161,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b25",
+      "text": "Physical therapy",
+      "bbox_pt": [
+        39.685001373291016,
+        358.8218688964844,
+        108.07062530517578,
+        369.6631164550781
+      ],
+      "bbox_px": [
+        165,
+        1495,
+        450,
+        1540
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b26",
+      "text": "The predominant treatment modality in patients with symptomatic rota-",
+      "bbox_pt": [
+        39.685001373291016,
+        370.0956115722656,
+        294.8031921386719,
+        380.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1542,
+        1228,
+        1584
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b27",
+      "text": "tor cuff tendinopathy, or partial-thickness or full-thickness tears is phys-",
+      "bbox_pt": [
+        39.685001373291016,
+        380.8456115722656,
+        294.8030700683594,
+        391.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1586,
+        1228,
+        1629
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b28",
+      "text": "ical therapy. Physical therapy is effective and when successful, results ",
+      "bbox_pt": [
+        39.685001373291016,
+        391.5956115722656,
+        296.2892761230469,
+        401.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1631,
+        1234,
+        1674
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b29",
+      "text": "in quicker return to activities and function than surgical treatment 185 . ",
+      "bbox_pt": [
+        39.685001373291016,
+        402.00732421875,
+        296.2552185058594,
+        412.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1675,
+        1234,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b30",
+      "text": "The MOON Shoulder Group followed 381 patients (31–90 years ",
+      "bbox_pt": [
+        39.685001373291016,
+        413.0956115722656,
+        296.3724670410156,
+        423.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1721,
+        1234,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b31",
+      "text": "of age; mean age 62 years) with atraumatic full-thickness rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        423.8456115722656,
+        296.2574462890625,
+        434.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1766,
+        1234,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b32",
+      "text": "tears over 2 years, and demonstrated substantial improvements in ",
+      "bbox_pt": [
+        39.685001373291016,
+        434.5956115722656,
+        296.2696533203125,
+        444.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1810,
+        1234,
+        1853
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b33",
+      "text": "patient-reported outcomes (PROs) including American Shoulder ",
+      "bbox_pt": [
+        39.685001373291016,
+        445.3456115722656,
+        296.1624755859375,
+        455.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1855,
+        1234,
+        1898
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b34",
+      "text": "and Elbow Surgeons (ASES) scores and a reduced rate of surgery after ",
+      "bbox_pt": [
+        39.685001373291016,
+        456.0956115722656,
+        296.2567443847656,
+        466.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1900,
+        1234,
+        1942
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b35",
+      "text": "physical therapy 186 . Patients undertook 6–12 weeks of a standardized ",
+      "bbox_pt": [
+        39.685001373291016,
+        466.50732421875,
+        296.23291015625,
+        477.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1943,
+        1234,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b36",
+      "text": "supervised physical therapy programme focusing on basic rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        477.5956115722656,
+        296.2325439453125,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1989,
+        1234,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b37",
+      "text": "strengthening and shoulder mobility, and >70% of the patients demon-",
+      "bbox_pt": [
+        39.685001373291016,
+        488.3456115722656,
+        294.8031005859375,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2034,
+        1228,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b38",
+      "text": "strated improvements in PROs and were satisfied with non-operative ",
+      "bbox_pt": [
+        39.685001373291016,
+        499.0956115722656,
+        296.2558288574219,
+        509.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2079,
+        1234,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b39",
+      "text": "management. Importantly, belief that physical therapy would improve ",
+      "bbox_pt": [
+        39.685001373291016,
+        509.8456115722656,
+        296.1999816894531,
+        520.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2124,
+        1234,
+        2166
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b40",
+      "text": "their symptoms was the most important factor in predicting the suc-",
+      "bbox_pt": [
+        39.685001373291016,
+        520.5956420898438,
+        294.7906188964844,
+        530.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2169,
+        1228,
+        2211
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b41",
+      "text": "cess of therapy 187 . Several other randomized studies have shown similar ",
+      "bbox_pt": [
+        39.685001373291016,
+        531.00732421875,
+        296.1510009765625,
+        541.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2212,
+        1233,
+        2256
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b42",
+      "text": "outcomes comparing physical therapy and surgical intervention with ",
+      "bbox_pt": [
+        39.685001373291016,
+        542.0956420898438,
+        296.357177734375,
+        552.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2258,
+        1234,
+        2301
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b43",
+      "text": "short-term and mid-term follow-up 188 , 189 , although long-term PROs may ",
+      "bbox_pt": [
+        39.685001373291016,
+        552.50732421875,
+        296.185546875,
+        563.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2302,
+        1234,
+        2345
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b44",
+      "text": "favour surgery in some patients at 10 years after presentation 190 . Even ",
+      "bbox_pt": [
+        39.685001373291016,
+        563.25732421875,
+        296.254638671875,
+        573.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2346,
+        1234,
+        2390
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b45",
+      "text": "in the setting of massive tears, a deltoid muscle rehabilitation regimen ",
+      "bbox_pt": [
+        39.685001373291016,
+        574.3456420898438,
+        296.3344421386719,
+        584.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2393,
+        1234,
+        2435
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b46",
+      "text": "is effective in improving function and pain 191 .",
+      "bbox_pt": [
+        39.685001373291016,
+        584.75732421875,
+        205.93809509277344,
+        595.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2436,
+        858,
+        2480
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b47",
+      "text": "The goal of physical therapy is restoration of full, pain-free ",
+      "bbox_pt": [
+        56.692901611328125,
+        595.8456420898438,
+        296.2856140136719,
+        606.026123046875
+      ],
+      "bbox_px": [
+        236,
+        2482,
+        1234,
+        2525
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b48",
+      "text": "range of motion, flexibility, muscle balance and scapulothoracic and ",
+      "bbox_pt": [
+        39.685001373291016,
+        606.5956420898438,
+        296.2756652832031,
+        616.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2527,
+        1234,
+        2569
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b49",
+      "text": "glenohumeral muscular control and stability. Improving scapular ",
+      "bbox_pt": [
+        39.685001373291016,
+        617.3456420898438,
+        296.30975341796875,
+        627.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2572,
+        1234,
+        2614
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b50",
+      "text": "stability, proper neuromuscular control of the shoulder girdle and ",
+      "bbox_pt": [
+        39.685001373291016,
+        628.0956420898438,
+        296.1890563964844,
+        638.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2617,
+        1234,
+        2659
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b51",
+      "text": "thoracic posture are essential in a well-designed rotator cuff exercise ",
+      "bbox_pt": [
+        39.685001373291016,
+        638.8456420898438,
+        296.2756042480469,
+        649.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2661,
+        1234,
+        2704
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b52",
+      "text": "programme 192 , 193 . Potential contributing mechanisms to abnormal ",
+      "bbox_pt": [
+        39.685001373291016,
+        649.25732421875,
+        296.2332458496094,
+        659.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2705,
+        1234,
+        2749
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b53",
+      "text": "scapular kinematics include pain, soft-tissue tightness, altered muscle ",
+      "bbox_pt": [
+        39.685001373291016,
+        660.3456420898438,
+        296.08953857421875,
+        670.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2751,
+        1233,
+        2793
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b54",
+      "text": "activation or strength imbalances, muscle fatigue and poor thoracic ",
+      "bbox_pt": [
+        39.685001373291016,
+        671.0956420898438,
+        296.2294006347656,
+        681.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2796,
+        1234,
+        2838
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b55",
+      "text": "posture 194 , 195 . Studies have shown tightness of the pectoralis minor ",
+      "bbox_pt": [
+        39.685001373291016,
+        681.50732421875,
+        296.1162109375,
+        692.026123046875
+      ],
+      "bbox_px": [
+        165,
+        2839,
+        1233,
+        2883
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b56",
+      "text": "and posterior glenohumeral capsular stiffness in relation to abnormal ",
+      "bbox_pt": [
+        39.685001373291016,
+        692.5956420898438,
+        296.05108642578125,
+        702.776123046875
+      ],
+      "bbox_px": [
+        165,
+        2885,
+        1233,
+        2928
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b57",
+      "text": "scapular position. Rehabilitation exercises to stretch the posterior cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        703.3456420898438,
+        296.1260681152344,
+        713.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2930,
+        1233,
+        2973
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b58",
+      "text": "and pectoralis minor and reduce upper trapezius activation are recom-",
+      "bbox_pt": [
+        39.685001373291016,
+        714.0956420898438,
+        294.8031005859375,
+        724.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2975,
+        1228,
+        3017
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b59",
+      "text": "mended to improve soft-tissue tightness and allow optimal scapular ",
+      "bbox_pt": [
+        39.685001373291016,
+        724.8456420898438,
+        296.15985107421875,
+        735.026123046875
+      ],
+      "bbox_px": [
+        165,
+        3020,
+        1233,
+        3062
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b60",
+      "text": "motion. For larger tears, physiotherapy should focus on active anterior ",
+      "bbox_pt": [
+        39.685001373291016,
+        735.5956420898438,
+        296.2691955566406,
+        745.776123046875
+      ],
+      "bbox_px": [
+        165,
+        3064,
+        1234,
+        3107
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p11_b61",
+      "text": "deltoid strengthening, teres minor strengthening for active external ",
+      "bbox_pt": [
+        306.1416931152344,
+        112.09562683105469,
+        562.7167358398438,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2344,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b62",
+      "text": "rotation, scapular stability and control exercises, patient education, ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.84562683105469,
+        562.7466430664062,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        511,
+        2344,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b63",
+      "text": "adaptation, proprioception and a home exercise programme 191 .",
+      "bbox_pt": [
+        306.1416931152344,
+        133.2574005126953,
+        541.3495483398438,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        555,
+        2255,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b64",
+      "text": "Medical management",
+      "bbox_pt": [
+        306.1418151855469,
+        154.57186889648438,
+        395.4653015136719,
+        165.4131317138672
+      ],
+      "bbox_px": [
+        1275,
+        644,
+        1647,
+        689
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b65",
+      "text": "Pharmacotherapy, including medications such as acetaminophen, ",
+      "bbox_pt": [
+        306.1418151855469,
+        165.8456268310547,
+        562.7854614257812,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        691,
+        2344,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b66",
+      "text": "NSAIDs and corticosteroids, can be used for short-term pain relief in ",
+      "bbox_pt": [
+        306.1418151855469,
+        176.5956268310547,
+        562.5850219726562,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b67",
+      "text": "patients with symptomatic rotator cuff tears. If no contraindications ",
+      "bbox_pt": [
+        306.1418151855469,
+        187.3456268310547,
+        562.6926879882812,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        780,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b68",
+      "text": "exist, acetaminophen is commonly used as the first-line medication and ",
+      "bbox_pt": [
+        306.1418151855469,
+        198.0956268310547,
+        562.7971801757812,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        825,
+        2344,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b69",
+      "text": "NSAIDs are suggested for intermittent use as a second-line treatment. ",
+      "bbox_pt": [
+        306.1418151855469,
+        208.8456268310547,
+        562.82275390625,
+        219.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2345,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b70",
+      "text": "Oral and topical NSAIDs can effectively relieve shoulder pain secondary ",
+      "bbox_pt": [
+        306.1418151855469,
+        219.5956268310547,
+        562.6358642578125,
+        229.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        914,
+        2344,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b71",
+      "text": "to tear if used for a short time period (4–8 weeks) 196 , 197  and have been ",
+      "bbox_pt": [
+        306.1418151855469,
+        230.0074005126953,
+        562.70947265625,
+        240.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        958,
+        2344,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b72",
+      "text": "shown to be safe preoperatively and postoperatively 198 . The adverse ",
+      "bbox_pt": [
+        306.1418151855469,
+        240.7574005126953,
+        562.7303466796875,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1003,
+        2344,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b73",
+      "text": "effects of these medications should be taken into consideration when ",
+      "bbox_pt": [
+        306.1418151855469,
+        251.8456268310547,
+        562.8478393554688,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2345,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b74",
+      "text": "used as long-term treatment.",
+      "bbox_pt": [
+        306.1418151855469,
+        262.5956115722656,
+        414.49737548828125,
+        272.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1094,
+        1727,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b75",
+      "text": "Subacromial corticosteroid injections (CSIs) are recommended ",
+      "bbox_pt": [
+        323.1496887207031,
+        273.3456115722656,
+        562.8134765625,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1346,
+        1138,
+        2345,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b76",
+      "text": "in the inflammatory stage or early stages of rotator cuff tears to ",
+      "bbox_pt": [
+        306.1418151855469,
+        284.0956115722656,
+        562.7755737304688,
+        294.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b77",
+      "text": "reduce pain and improve function in patients with moderate-to-",
+      "bbox_pt": [
+        306.1418151855469,
+        294.8453674316406,
+        561.230712890625,
+        305.02587890625
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2338,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b78",
+      "text": "severe pain and in those who failed initial physical therapy and/or ",
+      "bbox_pt": [
+        306.1418151855469,
+        305.5951232910156,
+        562.6256103515625,
+        315.775634765625
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2344,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b79",
+      "text": "oral anti-inflammatory drugs. CSIs can be effective in the short term, ",
+      "bbox_pt": [
+        306.1418151855469,
+        316.3456115722656,
+        562.7160034179688,
+        326.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1318,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b80",
+      "text": "especially for small tears, and CSIs in combination with physical therapy ",
+      "bbox_pt": [
+        306.1418151855469,
+        327.0956115722656,
+        562.7572021484375,
+        337.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1362,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b81",
+      "text": "can successfully reduce pain and improve function within 6 weeks. ",
+      "bbox_pt": [
+        306.1418151855469,
+        337.8456115722656,
+        562.7392578125,
+        348.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b82",
+      "text": "This combination can allow some patients to avoid surgery altogether. ",
+      "bbox_pt": [
+        306.1418151855469,
+        348.5956115722656,
+        562.5565185546875,
+        358.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1452,
+        2343,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b83",
+      "text": "If not successful after 6 weeks of treatment, the long-term efficacy of ",
+      "bbox_pt": [
+        306.1418151855469,
+        359.3456115722656,
+        562.7243041992188,
+        369.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1497,
+        2344,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b84",
+      "text": "CSIs is limited. Importantly, preoperative CSIs may be associated with ",
+      "bbox_pt": [
+        306.1418151855469,
+        370.0956115722656,
+        562.8233032226562,
+        380.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1542,
+        2345,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b85",
+      "text": "increased rates of postoperative infections and revision surgery if ",
+      "bbox_pt": [
+        306.1418151855469,
+        380.8456115722656,
+        562.6993408203125,
+        391.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        2344,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b86",
+      "text": "administered within 1 month of surgery 199 – 201 . Furthermore, the admin-",
+      "bbox_pt": [
+        306.1418151855469,
+        391.25732421875,
+        561.2598876953125,
+        401.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1630,
+        2338,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b87",
+      "text": "istration of two or more CSIs the year before surgery substantially ",
+      "bbox_pt": [
+        306.1418151855469,
+        402.3456115722656,
+        562.787353515625,
+        412.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        2344,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b88",
+      "text": "increases the risk of subsequent revision rotator cuff surgery 199 .",
+      "bbox_pt": [
+        306.1418151855469,
+        412.75732421875,
+        541.2305908203125,
+        423.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1719,
+        2255,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b89",
+      "text": "Platelet-rich plasma",
+      "bbox_pt": [
+        306.1418151855469,
+        434.0718688964844,
+        389.06109619140625,
+        444.9131164550781
+      ],
+      "bbox_px": [
+        1275,
+        1808,
+        1621,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b90",
+      "text": "Many studies have investigated platelet-rich plasma (PRP) as a potential ",
+      "bbox_pt": [
+        306.1418151855469,
+        445.3456115722656,
+        562.7335205078125,
+        455.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2344,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b91",
+      "text": "non-operative treatment for rotator cuff tears and have shown mixed ",
+      "bbox_pt": [
+        306.1418151855469,
+        456.0956115722656,
+        562.7398681640625,
+        466.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b92",
+      "text": "results regarding the effectiveness of these injections. The studies ",
+      "bbox_pt": [
+        306.1418151855469,
+        466.8456115722656,
+        562.6912841796875,
+        477.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2344,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b93",
+      "text": "showed reduced pain and improved function in patients with tendi-",
+      "bbox_pt": [
+        306.1418151855469,
+        477.5956115722656,
+        561.2598876953125,
+        487.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1989,
+        2338,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b94",
+      "text": "nopathy at 6 months with deterioration to baseline levels by 1 year 202 . ",
+      "bbox_pt": [
+        306.1418151855469,
+        488.00732421875,
+        562.7119750976562,
+        498.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2033,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b95",
+      "text": "A meta-analysis in 2023 demonstrated that PRP was equivalent to CSIs ",
+      "bbox_pt": [
+        306.1418151855469,
+        499.0956115722656,
+        562.6473999023438,
+        509.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        2344,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b96",
+      "text": "in terms of pain relief and function at any given time point 203 . In addi-",
+      "bbox_pt": [
+        306.1418151855469,
+        509.50732421875,
+        561.2631225585938,
+        520.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2122,
+        2338,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b97",
+      "text": "tion, these studies showed substantial variability in the number of PRP ",
+      "bbox_pt": [
+        306.1418151855469,
+        520.5956420898438,
+        562.7921142578125,
+        530.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2344,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b98",
+      "text": "injections, injection volume and platelet concentration. According to ",
+      "bbox_pt": [
+        306.1418151855469,
+        531.3456420898438,
+        562.8630981445312,
+        541.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2345,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b99",
+      "text": "the 2019 clinical practice guidelines from the American Academy of ",
+      "bbox_pt": [
+        306.1418151855469,
+        542.0956420898438,
+        562.6499633789062,
+        552.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2258,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b100",
+      "text": "Orthopaedic Surgeons, evidence is limited to support the routine use ",
+      "bbox_pt": [
+        306.1418151855469,
+        552.8456420898438,
+        562.7219848632812,
+        563.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b101",
+      "text": "of PRP for treating cuff tendinopathy or partial-thickness tears and, ",
+      "bbox_pt": [
+        306.1418151855469,
+        563.5956420898438,
+        562.5691528320312,
+        573.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b102",
+      "text": "currently, PRP is not indicated for the treatment of full-thickness tears.",
+      "bbox_pt": [
+        306.1418151855469,
+        574.3456420898438,
+        561.1441040039062,
+        584.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2338,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b103",
+      "text": "Mesenchymal stem cells",
+      "bbox_pt": [
+        306.1418151855469,
+        595.3218994140625,
+        405.3658142089844,
+        606.1631469726562
+      ],
+      "bbox_px": [
+        1275,
+        2480,
+        1689,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b104",
+      "text": "The advent of MSCs has opened new potential avenues for therapeutic ",
+      "bbox_pt": [
+        306.1418151855469,
+        606.5956420898438,
+        562.7802124023438,
+        616.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2527,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b105",
+      "text": "interventions for rotator cuff tears. This technique involves the injec-",
+      "bbox_pt": [
+        306.1418151855469,
+        617.3456420898438,
+        561.2481689453125,
+        627.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2338,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b106",
+      "text": "tion of MSCs into the rotator cuff tendon or into the subacromial bursa. ",
+      "bbox_pt": [
+        306.1418151855469,
+        628.0956420898438,
+        562.690673828125,
+        638.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2344,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b107",
+      "text": "Studies have shown significant improvements in pain and functional ",
+      "bbox_pt": [
+        306.1418151855469,
+        638.8456420898438,
+        562.70849609375,
+        649.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2661,
+        2344,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b108",
+      "text": "outcomes in patients treated with MSCs compared with placebo, but ",
+      "bbox_pt": [
+        306.1418151855469,
+        649.5956420898438,
+        562.7318115234375,
+        659.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b109",
+      "text": "further research assessing mid-term and long-term outcomes is needed ",
+      "bbox_pt": [
+        306.1418151855469,
+        660.3456420898438,
+        562.77294921875,
+        670.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2344,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b110",
+      "text": "to standardize their use 204 . Moreover, the use of culture-expanded ",
+      "bbox_pt": [
+        306.1418151855469,
+        670.75732421875,
+        562.712890625,
+        681.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        2794,
+        2344,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b111",
+      "text": "MSCs is not approved by the FDA and, therefore, these cellular treat-",
+      "bbox_pt": [
+        306.1418151855469,
+        681.8456420898438,
+        561.2598876953125,
+        692.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        2841,
+        2338,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b112",
+      "text": "ments are only available in the USA within an Investigational New Drug ",
+      "bbox_pt": [
+        306.1418151855469,
+        692.5956420898438,
+        562.8037719726562,
+        702.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2345,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b113",
+      "text": "application or FDA-regulated randomized control trial.",
+      "bbox_pt": [
+        306.1418151855469,
+        703.3456420898438,
+        510.4366455078125,
+        713.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2126,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b114",
+      "text": "Proper patient counselling and careful patient selection are crucial ",
+      "bbox_pt": [
+        323.1496887207031,
+        714.0956420898438,
+        562.707275390625,
+        724.276123046875
+      ],
+      "bbox_px": [
+        1346,
+        2975,
+        2344,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b115",
+      "text": "when considering non-operative management of rotator cuff tears. ",
+      "bbox_pt": [
+        306.1418151855469,
+        724.8456420898438,
+        562.6688842773438,
+        735.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        3020,
+        2344,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p11_b116",
+      "text": "Educating the patient to understand that non-operative treatment ",
+      "bbox_pt": [
+        306.1418151855469,
+        735.5956420898438,
+        562.7357177734375,
+        745.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        3064,
+        2344,
+        3107
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 117
+  }
+}

@@ -1,0 +1,2117 @@
+{
+  "page": 13,
+  "image_path": "run\\stress01\\pages\\p013.png",
+  "blocks": [
+    {
+      "block_id": "p13_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        50.81093978881836,
+        49.40917205810547,
+        171.59109497070312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        211,
+        205,
+        714,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        445.4195861816406,
+        49.40917205810547,
+        546.8305053710938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1855,
+        205,
+        2278,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b2",
+      "text": "better than that of the control stent group without MS (i.e.,",
+      "bbox_pt": [
+        50.81093978881836,
+        75.97752380371094,
+        291.7462463378906,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        211,
+        316,
+        1215,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b3",
+      "text": "CS, HA-CS). Coronary and internal 3D views showed that",
+      "bbox_pt": [
+        50.81093978881836,
+        86.93986511230469,
+        291.75787353515625,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        211,
+        362,
+        1215,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b4",
+      "text": "bone growth was qualitatively and quantitatively enhanced af-",
+      "bbox_pt": [
+        50.81093978881836,
+        97.90214538574219,
+        291.7363586425781,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        211,
+        407,
+        1215,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b5",
+      "text": "ter implantation of the piezoelectric MS (HA-CS-MS) stent",
+      "bbox_pt": [
+        50.81093978881836,
+        108.85551452636719,
+        291.74346923828125,
+        117.9026107788086
+      ],
+      "bbox_px": [
+        211,
+        453,
+        1215,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b6",
+      "text": "(Figure  4b ). [ 159 ] Thrivikraman et al. explored how physical fac-",
+      "bbox_pt": [
+        50.81093978881836,
+        116.67503356933594,
+        291.74468994140625,
+        128.86495971679688
+      ],
+      "bbox_px": [
+        211,
+        486,
+        1215,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b7",
+      "text": "tors, such as surface elasticity, topography, and chemistry, aﬀect",
+      "bbox_pt": [
+        50.81039047241211,
+        130.7784881591797,
+        291.764404296875,
+        139.82559204101562
+      ],
+      "bbox_px": [
+        211,
+        544,
+        1215,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b8",
+      "text": "mesenchymal stem cell (MSC) behavior, showing that a combina-",
+      "bbox_pt": [
+        50.81039047241211,
+        141.7318572998047,
+        291.7671203613281,
+        150.77896118164062
+      ],
+      "bbox_px": [
+        211,
+        590,
+        1215,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b9",
+      "text": "tion of substrate conductivity, chemical composition, and electric",
+      "bbox_pt": [
+        50.81039047241211,
+        152.6941375732422,
+        291.72943115234375,
+        161.74124145507812
+      ],
+      "bbox_px": [
+        211,
+        636,
+        1215,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b10",
+      "text": "pulses can direct MSC diﬀerentiation toward osteogenesis. [ 160 ]",
+      "bbox_pt": [
+        50.81039047241211,
+        162.7527618408203,
+        291.25555419921875,
+        172.70358276367188
+      ],
+      "bbox_px": [
+        211,
+        678,
+        1213,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b11",
+      "text": "Basu et al. developed a theory suggesting that bioelectric stress",
+      "bbox_pt": [
+        50.81093978881836,
+        174.60813903808594,
+        291.7381286621094,
+        183.65524291992188
+      ],
+      "bbox_px": [
+        211,
+        727,
+        1215,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b12",
+      "text": "can alter cell morphology and electroporation, thus inﬂuenc-",
+      "bbox_pt": [
+        50.81093978881836,
+        185.5704803466797,
+        291.76678466796875,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        211,
+        773,
+        1215,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b13",
+      "text": "ing the overall cell response to electric ﬁelds in the context",
+      "bbox_pt": [
+        50.81093978881836,
+        196.53282165527344,
+        291.73809814453125,
+        205.57992553710938
+      ],
+      "bbox_px": [
+        211,
+        818,
+        1215,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b14",
+      "text": "of biomaterials. [ 161 ] However, selecting appropriate piezoelectric",
+      "bbox_pt": [
+        50.81093978881836,
+        204.3441619873047,
+        291.7381591796875,
+        216.53329467773438
+      ],
+      "bbox_px": [
+        211,
+        851,
+        1215,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b15",
+      "text": "materials to meet the diﬀerent requirements of the regeneration",
+      "bbox_pt": [
+        50.81095886230469,
+        218.44749450683594,
+        291.745361328125,
+        227.49459838867188
+      ],
+      "bbox_px": [
+        211,
+        910,
+        1215,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b16",
+      "text": "process remains challenging.",
+      "bbox_pt": [
+        50.81095886230469,
+        229.40977478027344,
+        160.83944702148438,
+        238.45687866210938
+      ],
+      "bbox_px": [
+        211,
+        955,
+        670,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b17",
+      "text": "The stress-induced potential in piezo-bioceramics and piezo-",
+      "bbox_pt": [
+        60.26961898803711,
+        240.36314392089844,
+        291.7336730957031,
+        249.41024780273438
+      ],
+      "bbox_px": [
+        251,
+        1001,
+        1215,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b18",
+      "text": "biopolymers augments bone metabolism (Figure  4a ). [ 162,163 ]",
+      "bbox_pt": [
+        50.81095886230469,
+        250.42176818847656,
+        291.25537109375,
+        260.3725891113281
+      ],
+      "bbox_px": [
+        211,
+        1043,
+        1213,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b19",
+      "text": "Piezoelectric bioceramics have proven to be an eﬀective in vivo",
+      "bbox_pt": [
+        50.81093978881836,
+        262.27716064453125,
+        291.7489013671875,
+        271.3242492675781
+      ],
+      "bbox_px": [
+        211,
+        1092,
+        1215,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b20",
+      "text": "energy source for biosensors and pacemakers. Wang et al. ana-",
+      "bbox_pt": [
+        50.81093978881836,
+        273.239501953125,
+        291.7407531738281,
+        282.2865905761719
+      ],
+      "bbox_px": [
+        211,
+        1138,
+        1215,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b21",
+      "text": "lyzed the power generation characteristics of PZT hard ceramics",
+      "bbox_pt": [
+        50.81093978881836,
+        284.2018127441406,
+        291.7247009277344,
+        293.2489013671875
+      ],
+      "bbox_px": [
+        211,
+        1184,
+        1215,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b22",
+      "text": "and their equivalent circuits through extensive experiments. [ 164 ]",
+      "bbox_pt": [
+        50.81093978881836,
+        294.2607727050781,
+        291.25494384765625,
+        304.2022705078125
+      ],
+      "bbox_px": [
+        211,
+        1226,
+        1213,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b23",
+      "text": "McKinstry et al. synthesized a two-step pyrolysis solution to pro-",
+      "bbox_pt": [
+        50.81093978881836,
+        306.1161804199219,
+        291.7398986816406,
+        315.16326904296875
+      ],
+      "bbox_px": [
+        211,
+        1275,
+        1215,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b24",
+      "text": "duce thin ﬁlms with dense columnar microstructures, which is",
+      "bbox_pt": [
+        50.81093978881836,
+        317.0784912109375,
+        291.72100830078125,
+        326.1255798339844
+      ],
+      "bbox_px": [
+        211,
+        1321,
+        1215,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b25",
+      "text": "signiﬁcant for orientation control and enhancement of piezo-",
+      "bbox_pt": [
+        50.81093978881836,
+        328.0318603515625,
+        291.7586975097656,
+        337.0789489746094
+      ],
+      "bbox_px": [
+        211,
+        1366,
+        1215,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b26",
+      "text": "electric performance. This new solution exhibited good dielec-",
+      "bbox_pt": [
+        50.81093978881836,
+        338.9941711425781,
+        291.7237243652344,
+        348.041259765625
+      ],
+      "bbox_px": [
+        211,
+        1412,
+        1215,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b27",
+      "text": "tric, ferroelectric, and breakdown ﬁeld characteristics. [ 165 ] Other",
+      "bbox_pt": [
+        50.81093978881836,
+        346.8141784667969,
+        291.7541198730469,
+        359.00360107421875
+      ],
+      "bbox_px": [
+        211,
+        1445,
+        1215,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b28",
+      "text": "studies have reported that piezoelectric bioceramics/biopolymers",
+      "bbox_pt": [
+        50.810787200927734,
+        360.9085388183594,
+        291.7245178222656,
+        369.95562744140625
+      ],
+      "bbox_px": [
+        211,
+        1503,
+        1215,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b29",
+      "text": "generate surface charges under external stress similar to those",
+      "bbox_pt": [
+        50.810787200927734,
+        371.870849609375,
+        291.7289733886719,
+        380.9179382324219
+      ],
+      "bbox_px": [
+        211,
+        1549,
+        1215,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b30",
+      "text": "in bones. Notably, polarized piezoelectric surfaces can improve",
+      "bbox_pt": [
+        50.810787200927734,
+        382.83319091796875,
+        291.7523193359375,
+        391.8802795410156
+      ],
+      "bbox_px": [
+        211,
+        1595,
+        1215,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b31",
+      "text": "the osteogenic performance of bones. To address the issue of",
+      "bbox_pt": [
+        50.810787200927734,
+        393.7865295410156,
+        291.742431640625,
+        402.8336181640625
+      ],
+      "bbox_px": [
+        211,
+        1640,
+        1215,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b32",
+      "text": "aseptic loosening of bone implants, Zhou et al. designed a sur-",
+      "bbox_pt": [
+        50.810787200927734,
+        404.74884033203125,
+        291.7442321777344,
+        413.7959289550781
+      ],
+      "bbox_px": [
+        211,
+        1686,
+        1215,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b33",
+      "text": "face coating of implants based on piezoelectric poly (l-lactic acid)",
+      "bbox_pt": [
+        50.810787200927734,
+        415.711181640625,
+        291.7414855957031,
+        424.7582702636719
+      ],
+      "bbox_px": [
+        211,
+        1732,
+        1215,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b34",
+      "text": "(PLLA). [ 14 ] The scaﬀold was endowed with bone-like mechanical",
+      "bbox_pt": [
+        50.810787200927734,
+        423.53009033203125,
+        291.7410583496094,
+        435.71160888671875
+      ],
+      "bbox_px": [
+        211,
+        1764,
+        1215,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b35",
+      "text": "strength and a conducive chemical environment through a con-",
+      "bbox_pt": [
+        50.81123733520508,
+        437.62451171875,
+        291.7536315917969,
+        446.6716003417969
+      ],
+      "bbox_px": [
+        211,
+        1823,
+        1215,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b36",
+      "text": "trollable mineralization strategy facilitated by piezoelectric catal-",
+      "bbox_pt": [
+        50.81123733520508,
+        448.5868225097656,
+        291.7266845703125,
+        457.6339111328125
+      ],
+      "bbox_px": [
+        211,
+        1869,
+        1215,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b37",
+      "text": "ysis on the surface of PLLA ﬁbers. Additionally, the PLLA ﬁbers",
+      "bbox_pt": [
+        50.81123733520508,
+        459.5401916503906,
+        291.7563781738281,
+        468.5872802734375
+      ],
+      "bbox_px": [
+        211,
+        1914,
+        1215,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b38",
+      "text": "preserved their piezoelectric signal, which could eﬀectively stim-",
+      "bbox_pt": [
+        50.81123733520508,
+        470.50250244140625,
+        291.74560546875,
+        479.5495910644531
+      ],
+      "bbox_px": [
+        211,
+        1960,
+        1215,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b39",
+      "text": "ulate stem cells to diﬀerentiate into osteoblasts in response to",
+      "bbox_pt": [
+        50.81123733520508,
+        481.4648132324219,
+        291.76885986328125,
+        490.51190185546875
+      ],
+      "bbox_px": [
+        211,
+        2006,
+        1215,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b40",
+      "text": "ultrasound-activated electrical signals, thereby promoting bone",
+      "bbox_pt": [
+        50.81123733520508,
+        492.4181823730469,
+        291.7294616699219,
+        501.46527099609375
+      ],
+      "bbox_px": [
+        211,
+        2051,
+        1215,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b41",
+      "text": "regeneration.",
+      "bbox_pt": [
+        50.81123733520508,
+        503.3804931640625,
+        101.01412200927734,
+        512.4275512695312
+      ],
+      "bbox_px": [
+        211,
+        2097,
+        420,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b42",
+      "text": "Piezoelectric implants enhance fracture repair by generating",
+      "bbox_pt": [
+        60.2698974609375,
+        514.3427734375,
+        291.7554626464844,
+        523.3898315429688
+      ],
+      "bbox_px": [
+        251,
+        2143,
+        1215,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b43",
+      "text": "ES at the injury site through physiological stress. This hyperpolar-",
+      "bbox_pt": [
+        50.81123733520508,
+        525.296142578125,
+        291.75811767578125,
+        534.3432006835938
+      ],
+      "bbox_px": [
+        211,
+        2188,
+        1215,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b44",
+      "text": "ization activates voltage-gated calcium channels in the cell mem-",
+      "bbox_pt": [
+        50.81123733520508,
+        536.2584838867188,
+        291.753662109375,
+        545.3055419921875
+      ],
+      "bbox_px": [
+        211,
+        2234,
+        1215,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b45",
+      "text": "brane, with intracellular Ca 2 + playing a critical role in cell prolif-",
+      "bbox_pt": [
+        50.81123733520508,
+        544.076171875,
+        291.7610778808594,
+        556.2678833007812
+      ],
+      "bbox_px": [
+        211,
+        2266,
+        1215,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b46",
+      "text": "eration. Consequently, biocompatible piezoelectric scaﬀolds can",
+      "bbox_pt": [
+        50.81064987182617,
+        558.1705322265625,
+        291.73419189453125,
+        567.2175903320312
+      ],
+      "bbox_px": [
+        211,
+        2325,
+        1215,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b47",
+      "text": "promote early-stage tissue repair more eﬀectively than nonpiezo-",
+      "bbox_pt": [
+        50.81064987182617,
+        569.1328125,
+        291.7342224121094,
+        578.1798706054688
+      ],
+      "bbox_px": [
+        211,
+        2371,
+        1215,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b48",
+      "text": "electric ones. [ 166 ] Liu et al. compared the bone integration of posi-",
+      "bbox_pt": [
+        50.81064987182617,
+        576.9530639648438,
+        291.7539978027344,
+        589.1332397460938
+      ],
+      "bbox_px": [
+        211,
+        2403,
+        1215,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b49",
+      "text": "tively polarized BiFeO 3  membrane strontium titanate (STO), neg-",
+      "bbox_pt": [
+        50.81068801879883,
+        591.0471801757812,
+        291.74151611328125,
+        602.3352661132812
+      ],
+      "bbox_px": [
+        211,
+        2462,
+        1215,
+        2509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b50",
+      "text": "atively polarized BFO membrane STO implants, and nonpolar-",
+      "bbox_pt": [
+        50.81079864501953,
+        602.009521484375,
+        291.7657775878906,
+        611.0565795898438
+      ],
+      "bbox_px": [
+        211,
+        2508,
+        1215,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b51",
+      "text": "ized STO implants ﬁxed in rat femurs. The electric ﬁeld at the in-",
+      "bbox_pt": [
+        50.81079864501953,
+        612.9628295898438,
+        291.7630920410156,
+        622.0098876953125
+      ],
+      "bbox_px": [
+        211,
+        2554,
+        1215,
+        2591
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b52",
+      "text": "terface between  + BFO-STO ( + 75 mV) and the negatively charged",
+      "bbox_pt": [
+        50.81079864501953,
+        623.8402709960938,
+        291.75140380859375,
+        632.9722290039062
+      ],
+      "bbox_px": [
+        211,
+        2599,
+        1215,
+        2637
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b53",
+      "text": "bone defect surface ( − 52 to  − 87 mV) enhanced bone integration",
+      "bbox_pt": [
+        50.809898376464844,
+        634.8026123046875,
+        291.75146484375,
+        643.9345703125
+      ],
+      "bbox_px": [
+        211,
+        2645,
+        1215,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b54",
+      "text": "compared to –BFO-STO and nonpolarized STO surfaces. [ 167 ] In",
+      "bbox_pt": [
+        50.80900955200195,
+        642.7071533203125,
+        291.75750732421875,
+        654.8878784179688
+      ],
+      "bbox_px": [
+        211,
+        2677,
+        1215,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b55",
+      "text": "a separate study, composite ceramics made from barium titanate",
+      "bbox_pt": [
+        50.81060791015625,
+        656.801513671875,
+        291.7593078613281,
+        665.8485717773438
+      ],
+      "bbox_px": [
+        211,
+        2736,
+        1215,
+        2774
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b56",
+      "text": "(BT; BaTiO 3 ,) and hydroxyapatite (HA) were used as dielectric",
+      "bbox_pt": [
+        50.81060791015625,
+        667.7630615234375,
+        291.74658203125,
+        678.274169921875
+      ],
+      "bbox_px": [
+        211,
+        2782,
+        1215,
+        2826
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b57",
+      "text": "materials and 3D-printed using digital light processing technol-",
+      "bbox_pt": [
+        50.810550689697266,
+        678.7164306640625,
+        291.76190185546875,
+        687.7634887695312
+      ],
+      "bbox_px": [
+        211,
+        2827,
+        1215,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b58",
+      "text": "ogy to create BT/HA bone scaﬀolds. These 3D-printed scaﬀolds",
+      "bbox_pt": [
+        50.810550689697266,
+        689.6787719726562,
+        291.73583984375,
+        698.725830078125
+      ],
+      "bbox_px": [
+        211,
+        2873,
+        1215,
+        2911
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b59",
+      "text": "exhibited excellent biological and dielectric properties, force sen-",
+      "bbox_pt": [
+        50.810550689697266,
+        700.64111328125,
+        291.7341613769531,
+        709.6881713867188
+      ],
+      "bbox_px": [
+        211,
+        2919,
+        1215,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b60",
+      "text": "sitivity, and biocompatibility, and were found to shorten bone re-",
+      "bbox_pt": [
+        50.810550689697266,
+        711.5944213867188,
+        291.76556396484375,
+        720.6414794921875
+      ],
+      "bbox_px": [
+        211,
+        2964,
+        1215,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b61",
+      "text": "generation time. The combination of these properties suggests",
+      "bbox_pt": [
+        305.9252624511719,
+        75.97709655761719,
+        546.8334350585938,
+        85.0241928100586
+      ],
+      "bbox_px": [
+        1274,
+        316,
+        2278,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b62",
+      "text": "that ceramic piezoelectric composites could be a new genera-",
+      "bbox_pt": [
+        305.9252624511719,
+        86.93937683105469,
+        546.8585815429688,
+        95.9864730834961
+      ],
+      "bbox_px": [
+        1274,
+        362,
+        2278,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b63",
+      "text": "tion of bone regeneration implants. This study also explored",
+      "bbox_pt": [
+        305.9252624511719,
+        97.90171813964844,
+        546.8704223632812,
+        106.94881439208984
+      ],
+      "bbox_px": [
+        1274,
+        407,
+        2278,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b64",
+      "text": "the development of artiﬁcial bone materials with piezoelectric",
+      "bbox_pt": [
+        305.9252624511719,
+        108.85508728027344,
+        546.87939453125,
+        117.90218353271484
+      ],
+      "bbox_px": [
+        1274,
+        453,
+        2278,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b65",
+      "text": "properties using varying ratios of BT and HA. Composite sam-",
+      "bbox_pt": [
+        305.9252624511719,
+        119.81736755371094,
+        546.875732421875,
+        128.86447143554688
+      ],
+      "bbox_px": [
+        1274,
+        499,
+        2278,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b66",
+      "text": "ples were prepared via compression molding and characterized",
+      "bbox_pt": [
+        305.9252624511719,
+        130.7797088623047,
+        546.8766479492188,
+        139.82681274414062
+      ],
+      "bbox_px": [
+        1274,
+        544,
+        2278,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b67",
+      "text": "for their mechanical, electrical, and biological properties, meet-",
+      "bbox_pt": [
+        305.9252624511719,
+        141.7330780029297,
+        546.8549194335938,
+        150.78018188476562
+      ],
+      "bbox_px": [
+        1274,
+        590,
+        2278,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b68",
+      "text": "ing the demands for mechanical strength, biological compatibil-",
+      "bbox_pt": [
+        305.9252624511719,
+        152.69541931152344,
+        546.8858032226562,
+        161.74252319335938
+      ],
+      "bbox_px": [
+        1274,
+        636,
+        2278,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b69",
+      "text": "ity, and piezoelectric performance. The results indicated that the",
+      "bbox_pt": [
+        305.9252624511719,
+        163.65769958496094,
+        546.8856811523438,
+        172.70480346679688
+      ],
+      "bbox_px": [
+        1274,
+        681,
+        2278,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b70",
+      "text": "mixture of 95wt% BT and 5wt% HA exhibited excellent mechan-",
+      "bbox_pt": [
+        305.9252624511719,
+        174.61106872558594,
+        546.8622436523438,
+        183.65817260742188
+      ],
+      "bbox_px": [
+        1274,
+        727,
+        2278,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b71",
+      "text": "ical properties and biological activity. In the future, this piezo-",
+      "bbox_pt": [
+        305.9252624511719,
+        185.5734100341797,
+        546.8325805664062,
+        194.62051391601562
+      ],
+      "bbox_px": [
+        1274,
+        773,
+        2278,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b72",
+      "text": "electric bone material could be used as a 3D printing consum-",
+      "bbox_pt": [
+        305.9252624511719,
+        196.5356903076172,
+        546.8812255859375,
+        205.58279418945312
+      ],
+      "bbox_px": [
+        1274,
+        818,
+        2278,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b73",
+      "text": "able, combined with 3D printing technology, to achieve person-",
+      "bbox_pt": [
+        305.9252624511719,
+        207.4890594482422,
+        546.8486328125,
+        216.53616333007812
+      ],
+      "bbox_px": [
+        1274,
+        864,
+        2278,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b74",
+      "text": "alized customization of human bones, providing an important",
+      "bbox_pt": [
+        305.9252624511719,
+        218.45140075683594,
+        546.85498046875,
+        227.49850463867188
+      ],
+      "bbox_px": [
+        1274,
+        910,
+        2278,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b75",
+      "text": "reference for the current clinical challenges of artiﬁcial bone de-",
+      "bbox_pt": [
+        305.9252624511719,
+        229.41368103027344,
+        546.8515014648438,
+        238.46078491210938
+      ],
+      "bbox_px": [
+        1274,
+        955,
+        2278,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b76",
+      "text": "fects.",
+      "bbox_pt": [
+        305.9252624511719,
+        240.36705017089844,
+        325.4989318847656,
+        249.41415405273438
+      ],
+      "bbox_px": [
+        1274,
+        1001,
+        1356,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b77",
+      "text": "Eﬀorts to treat bone nonunion with ES date back to 1812, but",
+      "bbox_pt": [
+        315.39288330078125,
+        251.3293914794922,
+        546.8704833984375,
+        260.3764953613281
+      ],
+      "bbox_px": [
+        1314,
+        1047,
+        2278,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b78",
+      "text": "signiﬁcant interest in the relationship between bone and elec-",
+      "bbox_pt": [
+        305.9252624511719,
+        262.28277587890625,
+        546.8478393554688,
+        271.3298645019531
+      ],
+      "bbox_px": [
+        1274,
+        1092,
+        2278,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b79",
+      "text": "tricity only emerged after the discovery of bone’s piezoelectric",
+      "bbox_pt": [
+        305.9252624511719,
+        273.24505615234375,
+        546.8478393554688,
+        282.2921447753906
+      ],
+      "bbox_px": [
+        1274,
+        1138,
+        2278,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b80",
+      "text": "properties in 1953. [ 168 ] ES proved eﬀective in accelerating new",
+      "bbox_pt": [
+        305.9252624511719,
+        281.0601806640625,
+        546.8610229492188,
+        293.2544860839844
+      ],
+      "bbox_px": [
+        1274,
+        1171,
+        2278,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b81",
+      "text": "bone formation. However, the need for an external power source",
+      "bbox_pt": [
+        305.9249572753906,
+        295.154541015625,
+        546.8511962890625,
+        304.2016296386719
+      ],
+      "bbox_px": [
+        1274,
+        1229,
+        2278,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b82",
+      "text": "limited its portability and real-time application. The emergence",
+      "bbox_pt": [
+        305.9249572753906,
+        306.1168518066406,
+        546.8566284179688,
+        315.1639404296875
+      ],
+      "bbox_px": [
+        1274,
+        1275,
+        2278,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b83",
+      "text": "of friction nanogenerators (i.e., TENGs) in 2012 revitalized the",
+      "bbox_pt": [
+        305.9249572753906,
+        317.0791931152344,
+        546.8872680664062,
+        326.12628173828125
+      ],
+      "bbox_px": [
+        1274,
+        1321,
+        2278,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b84",
+      "text": "ﬁeld by enabling small, wearable energy-harvesting devices. [ 169 ]",
+      "bbox_pt": [
+        305.9249572753906,
+        327.13775634765625,
+        546.3785400390625,
+        337.0796203613281
+      ],
+      "bbox_px": [
+        1274,
+        1363,
+        2276,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b85",
+      "text": "TENGs can convert micro- and nano-scale energy sources, such",
+      "bbox_pt": [
+        305.9249267578125,
+        338.9931640625,
+        546.8628540039062,
+        348.0402526855469
+      ],
+      "bbox_px": [
+        1274,
+        1412,
+        2278,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b86",
+      "text": "as heartbeats, pulses, and walking, into electrical energy. By har-",
+      "bbox_pt": [
+        305.9249267578125,
+        349.95550537109375,
+        546.8662719726562,
+        359.0025939941406
+      ],
+      "bbox_px": [
+        1274,
+        1458,
+        2278,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b87",
+      "text": "nessing the mechanical energy of human activities, TENGs could",
+      "bbox_pt": [
+        305.9249267578125,
+        360.9088439941406,
+        546.86181640625,
+        369.9559326171875
+      ],
+      "bbox_px": [
+        1274,
+        1503,
+        2278,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b88",
+      "text": "provide a wearable, self-powered method for electrically stimulat-",
+      "bbox_pt": [
+        305.9249267578125,
+        371.8711853027344,
+        546.8546142578125,
+        380.91827392578125
+      ],
+      "bbox_px": [
+        1274,
+        1549,
+        2278,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b89",
+      "text": "ing bone formation and regeneration.",
+      "bbox_pt": [
+        305.9249267578125,
+        382.83349609375,
+        447.8093566894531,
+        391.8805847167969
+      ],
+      "bbox_px": [
+        1274,
+        1595,
+        1865,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b90",
+      "text": "Zhou et al. focused on the application of TENGs in",
+      "bbox_pt": [
+        315.3925476074219,
+        393.7868347167969,
+        546.8619384765625,
+        402.83392333984375
+      ],
+      "bbox_px": [
+        1314,
+        1640,
+        2278,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b91",
+      "text": "biomedicine. In 2014, they ﬁrst used the electrical energy gen-",
+      "bbox_pt": [
+        305.9249267578125,
+        404.7491760253906,
+        546.857177734375,
+        413.7962646484375
+      ],
+      "bbox_px": [
+        1274,
+        1686,
+        2278,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b92",
+      "text": "erated by rat respiration to drive a pacemaker. In 2016, they suc-",
+      "bbox_pt": [
+        305.9249267578125,
+        415.71148681640625,
+        546.852783203125,
+        424.7585754394531
+      ],
+      "bbox_px": [
+        1274,
+        1732,
+        2278,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b93",
+      "text": "cessfully converted the mechanical energy generated by the heart-",
+      "bbox_pt": [
+        305.9249267578125,
+        426.66485595703125,
+        546.857421875,
+        435.7119445800781
+      ],
+      "bbox_px": [
+        1274,
+        1777,
+        2278,
+        1815
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b94",
+      "text": "beat into electrical energy, achieving self-driven, real-time moni-",
+      "bbox_pt": [
+        305.9249267578125,
+        437.6271667480469,
+        546.8519897460938,
+        446.67425537109375
+      ],
+      "bbox_px": [
+        1274,
+        1823,
+        2278,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b95",
+      "text": "toring of the heart rate over a long range. [ 170,171 ] Furthermore, in",
+      "bbox_pt": [
+        305.9249267578125,
+        445.4451904296875,
+        546.8698120117188,
+        457.6365661621094
+      ],
+      "bbox_px": [
+        1274,
+        1856,
+        2278,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b96",
+      "text": "response to the repair characteristics of bone and joint injuries,",
+      "bbox_pt": [
+        305.9247741699219,
+        459.5395202636719,
+        546.8842163085938,
+        468.58660888671875
+      ],
+      "bbox_px": [
+        1274,
+        1914,
+        2278,
+        1952
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b97",
+      "text": "Zhou et al. designed a self-driving ES device based on the basic",
+      "bbox_pt": [
+        305.9247741699219,
+        470.5018615722656,
+        546.868896484375,
+        479.5489501953125
+      ],
+      "bbox_px": [
+        1274,
+        1960,
+        2278,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b98",
+      "text": "principle of TENGs and conducted in vitro ES experiments us-",
+      "bbox_pt": [
+        305.9247741699219,
+        481.46417236328125,
+        546.8751831054688,
+        490.5112609863281
+      ],
+      "bbox_px": [
+        1274,
+        2006,
+        2278,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b99",
+      "text": "ing pre-osteoblast MC3T3-E1 ( Figure  5 a,b ). [ 172 ] Through in vitro",
+      "bbox_pt": [
+        305.9247741699219,
+        489.2841796875,
+        546.878173828125,
+        501.4646301269531
+      ],
+      "bbox_px": [
+        1274,
+        2038,
+        2278,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b100",
+      "text": "experiments, they demonstrated that the constructed self-driving",
+      "bbox_pt": [
+        305.924072265625,
+        503.3785095214844,
+        546.8825073242188,
+        512.4255981445312
+      ],
+      "bbox_px": [
+        1274,
+        2097,
+        2278,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b101",
+      "text": "ES device promoted the adhesion, proliferation, and diﬀerentia-",
+      "bbox_pt": [
+        305.924072265625,
+        514.3408203125,
+        546.872802734375,
+        523.3878784179688
+      ],
+      "bbox_px": [
+        1274,
+        2143,
+        2278,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b102",
+      "text": "tion of osteoblasts. They found that after 3 h of ES, the cell adhe-",
+      "bbox_pt": [
+        305.924072265625,
+        525.294189453125,
+        546.8601684570312,
+        534.3412475585938
+      ],
+      "bbox_px": [
+        1274,
+        2188,
+        2278,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b103",
+      "text": "sion rate increased by 72.76% compared with that in the control",
+      "bbox_pt": [
+        305.924072265625,
+        536.2564697265625,
+        546.854736328125,
+        545.3035278320312
+      ],
+      "bbox_px": [
+        1274,
+        2234,
+        2278,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b104",
+      "text": "group, and after 3 d of ES, the cell proliferation rate increased",
+      "bbox_pt": [
+        305.924072265625,
+        547.2188110351562,
+        546.8729248046875,
+        556.265869140625
+      ],
+      "bbox_px": [
+        1274,
+        2280,
+        2278,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b105",
+      "text": "by 23.82%. In addition, the ﬂexible TENG was implanted on the",
+      "bbox_pt": [
+        305.924072265625,
+        558.1721801757812,
+        546.8764038085938,
+        567.21923828125
+      ],
+      "bbox_px": [
+        1274,
+        2325,
+        2278,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b106",
+      "text": "femoral surface of mice, where it successfully generated electri-",
+      "bbox_pt": [
+        305.924072265625,
+        569.134521484375,
+        546.8538818359375,
+        578.1815795898438
+      ],
+      "bbox_px": [
+        1274,
+        2371,
+        2278,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b107",
+      "text": "cal signals during leg movements. This conﬁrmed its potential",
+      "bbox_pt": [
+        305.924072265625,
+        580.0878295898438,
+        546.8764038085938,
+        589.1348876953125
+      ],
+      "bbox_px": [
+        1274,
+        2417,
+        2278,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b108",
+      "text": "for in situ stimulation, oﬀering a new approach for clinical frac-",
+      "bbox_pt": [
+        305.924072265625,
+        591.0501708984375,
+        546.87109375,
+        600.0972290039062
+      ],
+      "bbox_px": [
+        1274,
+        2462,
+        2278,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b109",
+      "text": "ture treatment and bone remodeling. [ 173 ] Wang et al. reported an",
+      "bbox_pt": [
+        305.924072265625,
+        598.8681640625,
+        546.8663330078125,
+        611.0595092773438
+      ],
+      "bbox_px": [
+        1274,
+        2495,
+        2278,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b110",
+      "text": "intelligent “tissue battery” utilizing friction nanogenerators for",
+      "bbox_pt": [
+        305.92474365234375,
+        612.9625244140625,
+        546.8717041015625,
+        622.0095825195312
+      ],
+      "bbox_px": [
+        1274,
+        2554,
+        2278,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b111",
+      "text": "real-time monitoring of cartilage repair. This device used self-",
+      "bbox_pt": [
+        305.92474365234375,
+        623.9248657226562,
+        546.8700561523438,
+        632.971923828125
+      ],
+      "bbox_px": [
+        1274,
+        2599,
+        2278,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b112",
+      "text": "generated microcurrents to stimulate rapid cartilage repair and",
+      "bbox_pt": [
+        305.92474365234375,
+        634.88720703125,
+        546.8753662109375,
+        643.9342651367188
+      ],
+      "bbox_px": [
+        1274,
+        2645,
+        2278,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b113",
+      "text": "provided real-time visualization of the repair process, integrating",
+      "bbox_pt": [
+        305.92474365234375,
+        645.8405151367188,
+        546.8480834960938,
+        654.8875732421875
+      ],
+      "bbox_px": [
+        1274,
+        2691,
+        2278,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b114",
+      "text": "tissue regeneration with real-time monitoring (Figure  5c ). [ 12 ]",
+      "bbox_pt": [
+        305.92474365234375,
+        655.8987426757812,
+        533.4003295898438,
+        665.8499145507812
+      ],
+      "bbox_px": [
+        1274,
+        2732,
+        2222,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b115",
+      "text": "Early TENG materials, including 2D materials and nanopar-",
+      "bbox_pt": [
+        315.3929443359375,
+        667.7630615234375,
+        546.8822021484375,
+        676.8101196289062
+      ],
+      "bbox_px": [
+        1314,
+        2782,
+        2278,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b116",
+      "text": "ticles, faced challenges such as mechanical damage, high costs,",
+      "bbox_pt": [
+        305.9253234863281,
+        678.7164306640625,
+        546.8463134765625,
+        687.7634887695312
+      ],
+      "bbox_px": [
+        1274,
+        2827,
+        2278,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b117",
+      "text": "limited sustainability, and complex manufacturing processes. [ 174 ]",
+      "bbox_pt": [
+        305.9253234863281,
+        688.7757568359375,
+        546.3785400390625,
+        698.725830078125
+      ],
+      "bbox_px": [
+        1274,
+        2869,
+        2276,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b118",
+      "text": "In contrast, ion layers can be customized using various ma-",
+      "bbox_pt": [
+        305.9249267578125,
+        700.6401977539062,
+        546.8870239257812,
+        709.687255859375
+      ],
+      "bbox_px": [
+        1274,
+        2919,
+        2278,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b119",
+      "text": "terials, making them promising solutions for TENG interlayer",
+      "bbox_pt": [
+        305.9249267578125,
+        711.593505859375,
+        546.8701171875,
+        720.6405639648438
+      ],
+      "bbox_px": [
+        1274,
+        2964,
+        2278,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b120",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        50.81093978881836,
+        745.1636352539062,
+        118.2817611694336,
+        752.2001953125
+      ],
+      "bbox_px": [
+        211,
+        3104,
+        492,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b121",
+      "text": "2411209 (13 of 29)",
+      "bbox_pt": [
+        191.2935333251953,
+        743.669189453125,
+        260.0792236328125,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        797,
+        3098,
+        1083,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p13_b122",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        333.0694274902344,
+        745.216064453125,
+        546.88330078125,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1387,
+        3105,
+        2278,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p13_b123",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 124
+  }
+}

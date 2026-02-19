@@ -1,0 +1,2134 @@
+{
+  "page": 12,
+  "image_path": "run\\test01\\pages\\p012.png",
+  "blocks": [
+    {
+      "block_id": "p12_b0",
+      "text": "Nature Reviews Disease Primers  |             (2024) 10:8 ",
+      "bbox_pt": [
+        39.685001373291016,
+        760.5486450195312,
+        226.01239013671875,
+        771.5486450195312
+      ],
+      "bbox_px": [
+        165,
+        3168,
+        941,
+        3214
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b1",
+      "text": "12",
+      "bbox_pt": [
+        552.7609252929688,
+        760.43701171875,
+        561.200927734375,
+        771.5490112304688
+      ],
+      "bbox_px": [
+        2303,
+        3168,
+        2338,
+        3214
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b2",
+      "text": "0123456789();: ",
+      "bbox_pt": [
+        258.2756042480469,
+        777.264404296875,
+        317.34857177734375,
+        786.889404296875
+      ],
+      "bbox_px": [
+        1076,
+        3238,
+        1322,
+        3278
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b3",
+      "text": "Primer",
+      "bbox_pt": [
+        39.685001373291016,
+        35.915000915527344,
+        93.83000946044922,
+        59.375003814697266
+      ],
+      "bbox_px": [
+        165,
+        149,
+        390,
+        247
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b4",
+      "text": "typically does not result in a complete ‘cure’ or healing of the tear ",
+      "bbox_pt": [
+        39.685001373291016,
+        112.09562683105469,
+        296.18096923828125,
+        122.276123046875
+      ],
+      "bbox_px": [
+        165,
+        467,
+        1234,
+        509
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b5",
+      "text": "despite symptom improvement is important. Although conservative ",
+      "bbox_pt": [
+        39.685001373291016,
+        122.84562683105469,
+        296.27569580078125,
+        133.026123046875
+      ],
+      "bbox_px": [
+        165,
+        511,
+        1234,
+        554
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b6",
+      "text": "management can successfully treat most patients with rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        133.5956268310547,
+        296.19097900390625,
+        143.776123046875
+      ],
+      "bbox_px": [
+        165,
+        556,
+        1234,
+        599
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b7",
+      "text": "tears, ~25% of patients progress to need surgical intervention.",
+      "bbox_pt": [
+        39.685001373291016,
+        144.3456268310547,
+        267.3231506347656,
+        154.526123046875
+      ],
+      "bbox_px": [
+        165,
+        601,
+        1113,
+        643
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b8",
+      "text": "Surgical intervention",
+      "bbox_pt": [
+        39.685001373291016,
+        165.32186889648438,
+        127.70475769042969,
+        176.1631317138672
+      ],
+      "bbox_px": [
+        165,
+        688,
+        532,
+        734
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b9",
+      "text": "Subacromial decompression including acromioplasty is a widely per-",
+      "bbox_pt": [
+        39.685001373291016,
+        176.5956268310547,
+        294.8079833984375,
+        186.776123046875
+      ],
+      "bbox_px": [
+        165,
+        735,
+        1228,
+        778
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b10",
+      "text": "formed procedure to treat subacromial impingement syndrome 205 , 206 . ",
+      "bbox_pt": [
+        39.685001373291016,
+        187.0074005126953,
+        296.2437744140625,
+        197.526123046875
+      ],
+      "bbox_px": [
+        165,
+        779,
+        1234,
+        823
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b11",
+      "text": "Despite the theoretical advantages of acromioplasty, its role in pain ",
+      "bbox_pt": [
+        39.685001373291016,
+        198.0956268310547,
+        296.1497802734375,
+        208.276123046875
+      ],
+      "bbox_px": [
+        165,
+        825,
+        1233,
+        867
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b12",
+      "text": "management and/or prevention of progression to rotator cuff tear is still ",
+      "bbox_pt": [
+        39.685001373291016,
+        208.8456268310547,
+        296.2042236328125,
+        219.026123046875
+      ],
+      "bbox_px": [
+        165,
+        870,
+        1234,
+        912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b13",
+      "text": "a matter of debate. Several randomized trials found superiority of acro -",
+      "bbox_pt": [
+        39.685001373291016,
+        219.5956268310547,
+        294.80316162109375,
+        229.776123046875
+      ],
+      "bbox_px": [
+        165,
+        914,
+        1228,
+        957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b14",
+      "text": "mioplasty to exercise therapy alone 207 , 208 ; however, long-term follow-up ",
+      "bbox_pt": [
+        39.685001373291016,
+        230.0074005126953,
+        296.2181091308594,
+        240.526123046875
+      ],
+      "bbox_px": [
+        165,
+        958,
+        1234,
+        1002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b15",
+      "text": "studies found no significant differences in ­clinical outcomes 209 – 213 .",
+      "bbox_pt": [
+        39.685001373291016,
+        240.7574005126953,
+        284.906005859375,
+        251.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1003,
+        1187,
+        1046
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b16",
+      "text": "All-arthroscopic rotator cuff repair is considered the treatment of ",
+      "bbox_pt": [
+        56.692901611328125,
+        251.8456268310547,
+        296.2113952636719,
+        262.026123046875
+      ],
+      "bbox_px": [
+        236,
+        1049,
+        1234,
+        1091
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b17",
+      "text": "choice for rotator cuff tears that fail non-operative management or for ",
+      "bbox_pt": [
+        39.685001373291016,
+        262.5956115722656,
+        296.1534729003906,
+        272.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1094,
+        1233,
+        1136
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b18",
+      "text": "acute traumatic rotator cuff tears. However, retear remains an unsolved ",
+      "bbox_pt": [
+        39.685001373291016,
+        273.3456115722656,
+        296.18011474609375,
+        283.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1138,
+        1234,
+        1181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b19",
+      "text": "problem, reported for 10–40% of procedures 214 . Short-term outcomes ",
+      "bbox_pt": [
+        39.685001373291016,
+        283.75732421875,
+        296.2575988769531,
+        294.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1182,
+        1234,
+        1226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b20",
+      "text": "are favourable regardless of retear; however, in many patients with ",
+      "bbox_pt": [
+        39.685001373291016,
+        294.8456115722656,
+        296.25628662109375,
+        305.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1228,
+        1234,
+        1270
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b21",
+      "text": "retear, long-term outcomes are worse than in patients without retear ",
+      "bbox_pt": [
+        39.685001373291016,
+        305.5956115722656,
+        296.25079345703125,
+        315.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1273,
+        1234,
+        1315
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b22",
+      "text": "and deteriorate over time 215 – 217 .",
+      "bbox_pt": [
+        39.685001373291016,
+        316.00732421875,
+        153.78469848632812,
+        326.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1316,
+        640,
+        1360
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b23",
+      "text": "To prevent retear, accurate prediction of reparability and healing ",
+      "bbox_pt": [
+        56.692901611328125,
+        327.0956115722656,
+        296.2190246582031,
+        337.276123046875
+      ],
+      "bbox_px": [
+        236,
+        1362,
+        1234,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b24",
+      "text": "after repair is important. Predictors of retear can be classified as tear ",
+      "bbox_pt": [
+        39.685001373291016,
+        337.8456115722656,
+        296.2583312988281,
+        348.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1407,
+        1234,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b25",
+      "text": "characteristic factors and patient demographic factors. Tear charac-",
+      "bbox_pt": [
+        39.685001373291016,
+        348.5953674316406,
+        294.7980041503906,
+        358.77587890625
+      ],
+      "bbox_px": [
+        165,
+        1452,
+        1228,
+        1494
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b26",
+      "text": "teristic factors include tear size 170 , 218 – 220 , fatty infiltration and muscle ",
+      "bbox_pt": [
+        39.685001373291016,
+        359.00732421875,
+        296.21044921875,
+        369.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1495,
+        1234,
+        1539
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b27",
+      "text": "atrophy 221 . These factors could decrease the elasticity and vitality of ",
+      "bbox_pt": [
+        39.685001373291016,
+        369.75732421875,
+        296.2717590332031,
+        380.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1540,
+        1234,
+        1584
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b28",
+      "text": "the rotator cuff tendon tissues, inhibiting healing after rotator cuff ",
+      "bbox_pt": [
+        39.685001373291016,
+        380.8456115722656,
+        296.23126220703125,
+        391.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1586,
+        1234,
+        1629
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b29",
+      "text": "repair 221 , 222 . Old age, diabetes, osteoporosis, dyslipidaemia, obesity ",
+      "bbox_pt": [
+        39.685001373291016,
+        391.25732421875,
+        296.1501770019531,
+        401.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1630,
+        1233,
+        1674
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b30",
+      "text": "and smoking are demographic risk factor for retear 170 , 218 , 222 – 225 . Using a ",
+      "bbox_pt": [
+        39.685001373291016,
+        402.00732421875,
+        296.2741394042969,
+        412.526123046875
+      ],
+      "bbox_px": [
+        165,
+        1675,
+        1234,
+        1718
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b31",
+      "text": "15-point scoring system to predict healing after cuff repair 170  (Table  2 ), ",
+      "bbox_pt": [
+        39.685001373291016,
+        412.75732421875,
+        296.23956298828125,
+        423.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1719,
+        1234,
+        1763
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b32",
+      "text": "retear rate in patients with ≤4 points was 6.0%; however, rates in those ",
+      "bbox_pt": [
+        39.685001373291016,
+        423.8456115722656,
+        296.2613220214844,
+        434.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1766,
+        1234,
+        1808
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b33",
+      "text": "with ≥5 and ≥10 points were 55.2% and 86.2%, respectively.",
+      "bbox_pt": [
+        39.685001373291016,
+        434.5956115722656,
+        253.88388061523438,
+        444.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1810,
+        1057,
+        1853
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b34",
+      "text": "Given the high retear rates, there has been considerable focus on ",
+      "bbox_pt": [
+        56.696502685546875,
+        445.3453674316406,
+        296.2707214355469,
+        455.52587890625
+      ],
+      "bbox_px": [
+        236,
+        1855,
+        1234,
+        1898
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b35",
+      "text": "improving the biomechanical and biological construct of the repair. The ",
+      "bbox_pt": [
+        39.685001373291016,
+        456.0956115722656,
+        296.3708801269531,
+        466.276123046875
+      ],
+      "bbox_px": [
+        165,
+        1900,
+        1234,
+        1942
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b36",
+      "text": "ideal biomechanical suture configuration for rotator cuff repair ",
+      "bbox_pt": [
+        39.685001373291016,
+        466.8456115722656,
+        296.1784973144531,
+        477.026123046875
+      ],
+      "bbox_px": [
+        165,
+        1945,
+        1234,
+        1987
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b37",
+      "text": "requires mechanical stability until tendon-to-bone healing occurs, ",
+      "bbox_pt": [
+        39.685001373291016,
+        477.5956115722656,
+        296.3546142578125,
+        487.776123046875
+      ],
+      "bbox_px": [
+        165,
+        1989,
+        1234,
+        2032
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b38",
+      "text": "without excessive tension, which can damage the repaired tendon 226 , 227 . ",
+      "bbox_pt": [
+        39.685001373291016,
+        488.00732421875,
+        296.2305603027344,
+        498.526123046875
+      ],
+      "bbox_px": [
+        165,
+        2033,
+        1234,
+        2077
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b39",
+      "text": "To achieve this goal, several repair techniques are employed but there ",
+      "bbox_pt": [
+        39.685001373291016,
+        499.0956115722656,
+        296.0796203613281,
+        509.276123046875
+      ],
+      "bbox_px": [
+        165,
+        2079,
+        1233,
+        2121
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b40",
+      "text": "is no consensus on the optimal technique, which is likely to depend on ",
+      "bbox_pt": [
+        306.1416931152344,
+        112.09562683105469,
+        562.8209228515625,
+        122.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        467,
+        2345,
+        509
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b41",
+      "text": "tear configuration and so-far-undefined patient-specific factors 228 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        122.50740051269531,
+        562.7276000976562,
+        133.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        510,
+        2344,
+        554
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b42",
+      "text": "Although the biomechanical properties and retear rates of double-row ",
+      "bbox_pt": [
+        306.1416931152344,
+        133.5956268310547,
+        562.8143310546875,
+        143.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        556,
+        2345,
+        599
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b43",
+      "text": "suture bridge repair are better than simple single-row repair 229 – 231 , ",
+      "bbox_pt": [
+        306.1416931152344,
+        144.0074005126953,
+        562.7400512695312,
+        154.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        600,
+        2344,
+        643
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b44",
+      "text": "clinical outcomes according to repair technique are not significantly ",
+      "bbox_pt": [
+        306.1416931152344,
+        155.0956268310547,
+        562.7159423828125,
+        165.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        646,
+        2344,
+        688
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b45",
+      "text": "different 232 .",
+      "bbox_pt": [
+        306.1416931152344,
+        165.5074005126953,
+        349.763916015625,
+        176.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        689,
+        1457,
+        733
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b46",
+      "text": "The use of orthobiologics, such as MSCs intraoperatively has ",
+      "bbox_pt": [
+        323.14959716796875,
+        176.5956268310547,
+        562.6431274414062,
+        186.776123046875
+      ],
+      "bbox_px": [
+        1346,
+        735,
+        2344,
+        778
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b47",
+      "text": "shown promising results to decrease retear rates 233 . In a prospective ",
+      "bbox_pt": [
+        306.1416931152344,
+        187.0074005126953,
+        562.7164916992188,
+        197.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        779,
+        2344,
+        823
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b48",
+      "text": "study 234 , bone marrow aspirate concentrate augmentation resulted in ",
+      "bbox_pt": [
+        306.1416931152344,
+        197.7574005126953,
+        562.7755737304688,
+        208.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        823,
+        2344,
+        867
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b49",
+      "text": "a 39% decrease in retear rate at 1 year compared with a control group ",
+      "bbox_pt": [
+        306.1416931152344,
+        208.8456268310547,
+        562.7333984375,
+        219.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        870,
+        2344,
+        912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b50",
+      "text": "who underwent rotator cuff repair only. For PRP, several studies have ",
+      "bbox_pt": [
+        306.1416931152344,
+        219.5953826904297,
+        562.740478515625,
+        229.77587890625
+      ],
+      "bbox_px": [
+        1275,
+        914,
+        2344,
+        957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b51",
+      "text": "shown improved healing rates, particularly in larger tears, but clinical ",
+      "bbox_pt": [
+        306.1416931152344,
+        230.3456268310547,
+        562.8626708984375,
+        240.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        959,
+        2345,
+        1002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b52",
+      "text": "outcomes are not improved by PRP augmentation 235 – 238 . Although PRP ",
+      "bbox_pt": [
+        306.1416931152344,
+        240.7574005126953,
+        562.6759033203125,
+        251.276123046875
+      ],
+      "bbox_px": [
+        1275,
+        1003,
+        2344,
+        1046
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b53",
+      "text": "may enable some early mobilization and pain relief, the long-term ",
+      "bbox_pt": [
+        306.1416931152344,
+        251.8456268310547,
+        562.844482421875,
+        262.026123046875
+      ],
+      "bbox_px": [
+        1275,
+        1049,
+        2345,
+        1091
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b54",
+      "text": "outcomes are comparable to those following well-performed rota-",
+      "bbox_pt": [
+        306.1416931152344,
+        262.5956115722656,
+        561.2598876953125,
+        272.776123046875
+      ],
+      "bbox_px": [
+        1275,
+        1094,
+        2338,
+        1136
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b55",
+      "text": "tor cuff repair 239 , 240 . The clinical evidence for the use of PRP in the ",
+      "bbox_pt": [
+        306.1416931152344,
+        273.00738525390625,
+        562.6174926757812,
+        283.526123046875
+      ],
+      "bbox_px": [
+        1275,
+        1137,
+        2344,
+        1181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b56",
+      "text": "non-operative management of rotator cuff disorders is inconsistent, ",
+      "bbox_pt": [
+        306.1416931152344,
+        284.095703125,
+        562.6909790039062,
+        294.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1183,
+        2344,
+        1226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b57",
+      "text": "making inferences difficult. Furthermore, in one study in patients with ",
+      "bbox_pt": [
+        306.1416931152344,
+        294.845703125,
+        562.4942016601562,
+        305.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1228,
+        2343,
+        1270
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b58",
+      "text": "rotator cuff tears managed with arthroscopic surgical repair, there was ",
+      "bbox_pt": [
+        306.1416931152344,
+        305.595703125,
+        562.7647094726562,
+        315.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1273,
+        2344,
+        1315
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b59",
+      "text": "no difference in clinical and imaging outcomes at 10 years follow-up ",
+      "bbox_pt": [
+        306.1416931152344,
+        316.345703125,
+        562.7081909179688,
+        326.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1318,
+        2344,
+        1360
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b60",
+      "text": "between those receiving and those not receiving PRP injections 241 . The ",
+      "bbox_pt": [
+        306.1416931152344,
+        326.7574157714844,
+        562.7098388671875,
+        337.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1361,
+        2344,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b61",
+      "text": "wide range of effectiveness can be related to the types of PRP used and ",
+      "bbox_pt": [
+        306.1416931152344,
+        337.845703125,
+        562.6766357421875,
+        348.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1407,
+        2344,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b62",
+      "text": "the variability in preparation techniques, cell counts and growth factors ",
+      "bbox_pt": [
+        306.1416931152344,
+        348.595703125,
+        562.6494750976562,
+        358.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1452,
+        2344,
+        1494
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b63",
+      "text": "available 242 . These differences make it necessary to plan adequately ",
+      "bbox_pt": [
+        306.1416931152344,
+        359.0074157714844,
+        562.7620239257812,
+        369.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1495,
+        2344,
+        1539
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b64",
+      "text": "powered appropriately standardized studies with clinically relevant ",
+      "bbox_pt": [
+        306.1416931152344,
+        370.095703125,
+        562.8355712890625,
+        380.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1542,
+        2345,
+        1584
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b65",
+      "text": "outcome measures.",
+      "bbox_pt": [
+        306.1416931152344,
+        380.845703125,
+        379.8388977050781,
+        391.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1586,
+        1582,
+        1629
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b66",
+      "text": "In patients with an irreparable tear, when retracted tendons can-",
+      "bbox_pt": [
+        323.1531982421875,
+        391.595458984375,
+        561.2730102539062,
+        401.7759704589844
+      ],
+      "bbox_px": [
+        1346,
+        1631,
+        2338,
+        1674
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b67",
+      "text": "not be re-attached to the greater or lesser tuberosity without arthritic ",
+      "bbox_pt": [
+        306.1416931152344,
+        402.345703125,
+        562.5239868164062,
+        412.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1676,
+        2343,
+        1718
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b68",
+      "text": "change of the glenohumeral joint, other treatment options are con-",
+      "bbox_pt": [
+        306.1416931152344,
+        413.095703125,
+        561.2599487304688,
+        423.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1721,
+        2338,
+        1763
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b69",
+      "text": "sidered, especially in young, active patients. These include partial ",
+      "bbox_pt": [
+        306.1416931152344,
+        423.845703125,
+        562.6671142578125,
+        434.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1766,
+        2344,
+        1808
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b70",
+      "text": "repair, superior capsular reconstruction (reconstructing the superior ",
+      "bbox_pt": [
+        306.1416931152344,
+        434.595703125,
+        562.7982788085938,
+        444.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1810,
+        2344,
+        1853
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b71",
+      "text": "capsule using allograft or autogenic tensor fascia lata), an allogenic or ",
+      "bbox_pt": [
+        306.1416931152344,
+        445.345703125,
+        562.8872680664062,
+        455.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1855,
+        2345,
+        1898
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b72",
+      "text": "xenogenic patch bridging graft, muscle advancement (releasing the ",
+      "bbox_pt": [
+        306.1416931152344,
+        456.095703125,
+        562.6610717773438,
+        466.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1900,
+        2344,
+        1942
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b73",
+      "text": "proximal rotator cuff muscle to re-attach to the footprint), tendon ",
+      "bbox_pt": [
+        306.1416931152344,
+        466.845703125,
+        562.8303833007812,
+        477.0262145996094
+      ],
+      "bbox_px": [
+        1275,
+        1945,
+        2345,
+        1987
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b74",
+      "text": "transfer, subacromial balloon spacer, and other procedures 243 – 246 . ",
+      "bbox_pt": [
+        306.1416931152344,
+        477.2574157714844,
+        562.740966796875,
+        487.7762145996094
+      ],
+      "bbox_px": [
+        1275,
+        1988,
+        2344,
+        2032
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b75",
+      "text": "Results with these diverse treatment strategies are mixed, as expected ",
+      "bbox_pt": [
+        306.1416931152344,
+        488.345703125,
+        562.7308349609375,
+        498.5262145996094
+      ],
+      "bbox_px": [
+        1275,
+        2034,
+        2344,
+        2077
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b76",
+      "text": "in small case series with complex conditions.",
+      "bbox_pt": [
+        306.1416931152344,
+        499.095703125,
+        472.01617431640625,
+        509.2762145996094
+      ],
+      "bbox_px": [
+        1275,
+        2079,
+        1966,
+        2121
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b77",
+      "text": "If the rotator cuff tear is assumed to be irreparable in older ",
+      "bbox_pt": [
+        323.14959716796875,
+        509.8457336425781,
+        562.6609497070312,
+        520.0262451171875
+      ],
+      "bbox_px": [
+        1346,
+        2124,
+        2344,
+        2166
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b78",
+      "text": "patients and/or if accompanied by arthritic change of the gleno-",
+      "bbox_pt": [
+        306.14288330078125,
+        520.5955200195312,
+        561.2598266601562,
+        530.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2169,
+        2338,
+        2211
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b79",
+      "text": "humeral joint, reverse shoulder replacement is the primary treatment ",
+      "bbox_pt": [
+        306.1416931152344,
+        531.3457641601562,
+        562.6468505859375,
+        541.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2213,
+        2344,
+        2256
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b80",
+      "text": "option 247 . Reverse shoulder arthroplasty reverses normal anatomy, so ",
+      "bbox_pt": [
+        306.1416931152344,
+        541.7573852539062,
+        562.7965087890625,
+        552.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2257,
+        2344,
+        2301
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b81",
+      "text": "that the glenoid has the ‘ball’ side (glenosphere on the glenoid side) ",
+      "bbox_pt": [
+        306.1416931152344,
+        552.8457641601562,
+        562.6845092773438,
+        563.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2303,
+        2344,
+        2345
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b82",
+      "text": "articulating with the humeral cup (metal tray with polyethylene insert). ",
+      "bbox_pt": [
+        306.1416931152344,
+        563.5957641601562,
+        562.5946655273438,
+        573.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2348,
+        2344,
+        2390
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b83",
+      "text": "This technique has excellent long-term outcomes for irreparable cuff ",
+      "bbox_pt": [
+        306.1416931152344,
+        574.3457641601562,
+        562.8018188476562,
+        584.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2393,
+        2345,
+        2435
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b84",
+      "text": "tears and cuff tear arthropathy 247 , 248 . The 10-year success rate of reverse ",
+      "bbox_pt": [
+        306.1416931152344,
+        584.7573852539062,
+        562.7011108398438,
+        595.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2436,
+        2344,
+        2480
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b85",
+      "text": "shoulder arthroplasty is up to 93%, but functional outcomes deterio-",
+      "bbox_pt": [
+        306.1416931152344,
+        595.8457641601562,
+        561.2564697265625,
+        606.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2482,
+        2338,
+        2525
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b86",
+      "text": "rate over time, particularly in patients >80 years of age 249 – 251 . Various ",
+      "bbox_pt": [
+        306.1417236328125,
+        606.2573852539062,
+        562.7119750976562,
+        616.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2526,
+        2344,
+        2569
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b87",
+      "text": "complications related to reverse shoulder including scapular acro-",
+      "bbox_pt": [
+        306.1416931152344,
+        617.3457641601562,
+        561.2598876953125,
+        627.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2572,
+        2338,
+        2614
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b88",
+      "text": "mial notching, instability, infection and glenoid loosening can occur ",
+      "bbox_pt": [
+        306.1416931152344,
+        628.0957641601562,
+        562.7081909179688,
+        638.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2617,
+        2344,
+        2659
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b89",
+      "text": "(at rates of 1–5%) 252 – 257 .",
+      "bbox_pt": [
+        306.1417236328125,
+        638.5073852539062,
+        389.3832092285156,
+        649.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2660,
+        1622,
+        2704
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b90",
+      "text": "An overall algorithm for treatment is presented in Fig.  5 . Rotator ",
+      "bbox_pt": [
+        323.14959716796875,
+        649.5957641601562,
+        562.7134399414062,
+        659.7762451171875
+      ],
+      "bbox_px": [
+        1346,
+        2706,
+        2344,
+        2749
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b91",
+      "text": "cuff repairs with concomitant moderate-to-severe glenohumeral osteo-",
+      "bbox_pt": [
+        306.1416931152344,
+        660.3457641601562,
+        561.2598876953125,
+        670.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2751,
+        2338,
+        2793
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b92",
+      "text": "arthritis had worse outcomes than rotator cuff tears with mild gleno-",
+      "bbox_pt": [
+        306.1416931152344,
+        671.0957641601562,
+        561.2598266601562,
+        681.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2796,
+        2338,
+        2838
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b93",
+      "text": "humeral osteoarthritis 258 . Thus, reverse shoulder arthroplasty in patients ",
+      "bbox_pt": [
+        306.1416931152344,
+        681.5073852539062,
+        562.6751708984375,
+        692.0262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2839,
+        2344,
+        2883
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b94",
+      "text": "with rotator cuff tear with concomitant moderate-to-severe osteoar-",
+      "bbox_pt": [
+        306.1416931152344,
+        692.5957641601562,
+        561.2598266601562,
+        702.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2885,
+        2338,
+        2928
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b95",
+      "text": "thritis classified as grade ≥2 using the Samilson–Prieto ­classification ",
+      "bbox_pt": [
+        306.1416931152344,
+        703.3457641601562,
+        562.7210083007812,
+        713.5262451171875
+      ],
+      "bbox_px": [
+        1275,
+        2930,
+        2344,
+        2973
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b96",
+      "text": "is the treatment of choice, especially in those >65 years old 148 , 258 .",
+      "bbox_pt": [
+        306.1416931152344,
+        713.7573852539062,
+        537.7684936523438,
+        724.2762451171875
+      ],
+      "bbox_px": [
+        1275,
+        2973,
+        2240,
+        3017
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b97",
+      "text": "If the degenerative arthritic change is mild (Samilson–Prieto clas-",
+      "bbox_pt": [
+        323.14959716796875,
+        724.8457641601562,
+        561.2598266601562,
+        735.0262451171875
+      ],
+      "bbox_px": [
+        1346,
+        3020,
+        2338,
+        3062
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b98",
+      "text": "sification grade ≤1) 148 , the healing potential of the rotator cuff repair is ",
+      "bbox_pt": [
+        306.1418151855469,
+        735.2573852539062,
+        562.8310546875,
+        745.7762451171875
+      ],
+      "bbox_px": [
+        1275,
+        3063,
+        2345,
+        3107
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p12_b99",
+      "text": "Table 2 | 15-point scoring system to predict healing after ",
+      "bbox_pt": [
+        39.685001373291016,
+        528.1686401367188,
+        276.39312744140625,
+        540.588623046875
+      ],
+      "bbox_px": [
+        165,
+        2200,
+        1151,
+        2252
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b100",
+      "text": "arthroscopic rotator cuff repair",
+      "bbox_pt": [
+        39.685001373291016,
+        538.1676635742188,
+        171.13992309570312,
+        550.587646484375
+      ],
+      "bbox_px": [
+        165,
+        2242,
+        713,
+        2294
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b101",
+      "text": "Factor",
+      "bbox_pt": [
+        43.685001373291016,
+        558.71142578125,
+        64.90060424804688,
+        568.3713989257812
+      ],
+      "bbox_px": [
+        182,
+        2327,
+        270,
+        2368
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b102",
+      "text": "Points",
+      "bbox_pt": [
+        270.6880187988281,
+        558.71142578125,
+        291.3135070800781,
+        568.3713989257812
+      ],
+      "bbox_px": [
+        1127,
+        2327,
+        1213,
+        2368
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b103",
+      "text": "Demographics",
+      "bbox_pt": [
+        43.68501281738281,
+        573.159423828125,
+        92.24050903320312,
+        582.8193969726562
+      ],
+      "bbox_px": [
+        182,
+        2388,
+        384,
+        2428
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b104",
+      "text": "Age >70 years",
+      "bbox_pt": [
+        43.68501281738281,
+        586.9913940429688,
+        87.99362182617188,
+        596.54638671875
+      ],
+      "bbox_px": [
+        182,
+        2445,
+        366,
+        2485
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b105",
+      "text": "2",
+      "bbox_pt": [
+        270.6880187988281,
+        586.9913940429688,
+        274.5660095214844,
+        596.54638671875
+      ],
+      "bbox_px": [
+        1127,
+        2445,
+        1144,
+        2485
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b106",
+      "text": "Bone mineral density T-score ≤−2.5",
+      "bbox_pt": [
+        43.68501281738281,
+        600.7183837890625,
+        153.1992950439453,
+        610.2733764648438
+      ],
+      "bbox_px": [
+        182,
+        2502,
+        638,
+        2542
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b107",
+      "text": "2",
+      "bbox_pt": [
+        270.6880187988281,
+        600.7183837890625,
+        274.5660095214844,
+        610.2733764648438
+      ],
+      "bbox_px": [
+        1127,
+        2502,
+        1144,
+        2542
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b108",
+      "text": "Level of work activity high",
+      "bbox_pt": [
+        43.68501281738281,
+        614.4454345703125,
+        125.83631134033203,
+        624.0004272460938
+      ],
+      "bbox_px": [
+        182,
+        2560,
+        524,
+        2600
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b109",
+      "text": "2",
+      "bbox_pt": [
+        270.6880187988281,
+        614.4454345703125,
+        274.5660095214844,
+        624.0004272460938
+      ],
+      "bbox_px": [
+        1127,
+        2560,
+        1144,
+        2600
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b110",
+      "text": "Tear characteristics",
+      "bbox_pt": [
+        43.68501281738281,
+        628.0674438476562,
+        108.38951110839844,
+        637.7274169921875
+      ],
+      "bbox_px": [
+        182,
+        2616,
+        451,
+        2657
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b111",
+      "text": "Anteroposterior direction tear size >2.5 cm",
+      "bbox_pt": [
+        43.68501281738281,
+        641.8994140625,
+        177.20999145507812,
+        651.4544067382812
+      ],
+      "bbox_px": [
+        182,
+        2674,
+        738,
+        2714
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b112",
+      "text": "2",
+      "bbox_pt": [
+        270.6880187988281,
+        641.8994140625,
+        274.5660095214844,
+        651.4544067382812
+      ],
+      "bbox_px": [
+        1127,
+        2674,
+        1144,
+        2714
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b113",
+      "text": "Mediolateral direction tear size (retraction) <1 cm",
+      "bbox_pt": [
+        43.68501281738281,
+        655.6264038085938,
+        196.8737030029297,
+        665.181396484375
+      ],
+      "bbox_px": [
+        182,
+        2731,
+        820,
+        2771
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b114",
+      "text": "0",
+      "bbox_pt": [
+        270.6880187988281,
+        655.6264038085938,
+        275.45501708984375,
+        665.181396484375
+      ],
+      "bbox_px": [
+        1127,
+        2731,
+        1147,
+        2771
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b115",
+      "text": "Mediolateral direction tear size (retraction) 1 to <2 cm",
+      "bbox_pt": [
+        43.68501281738281,
+        669.3533935546875,
+        210.17440795898438,
+        678.9083862304688
+      ],
+      "bbox_px": [
+        182,
+        2788,
+        875,
+        2828
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b116",
+      "text": "1",
+      "bbox_pt": [
+        270.6880187988281,
+        669.3533935546875,
+        273.48101806640625,
+        678.9083862304688
+      ],
+      "bbox_px": [
+        1127,
+        2788,
+        1139,
+        2828
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b117",
+      "text": "Mediolateral direction tear size (retraction) 2 to <3 cm",
+      "bbox_pt": [
+        43.68501281738281,
+        683.0804443359375,
+        211.6087188720703,
+        692.6354370117188
+      ],
+      "bbox_px": [
+        182,
+        2846,
+        881,
+        2885
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b118",
+      "text": "2",
+      "bbox_pt": [
+        270.6880187988281,
+        683.0804443359375,
+        274.5660095214844,
+        692.6354370117188
+      ],
+      "bbox_px": [
+        1127,
+        2846,
+        1144,
+        2885
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b119",
+      "text": "Mediolateral direction tear size (retraction) ≥3 cm",
+      "bbox_pt": [
+        43.68501281738281,
+        696.8074340820312,
+        198.30938720703125,
+        706.3624267578125
+      ],
+      "bbox_px": [
+        182,
+        2903,
+        826,
+        2943
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b120",
+      "text": "4",
+      "bbox_pt": [
+        270.6880187988281,
+        696.8074340820312,
+        275.00701904296875,
+        706.3624267578125
+      ],
+      "bbox_px": [
+        1127,
+        2903,
+        1145,
+        2943
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b121",
+      "text": "Infraspinatus fatty infiltration Goutallier grade ≥2",
+      "bbox_pt": [
+        43.68501281738281,
+        710.534423828125,
+        196.95494079589844,
+        720.0894165039062
+      ],
+      "bbox_px": [
+        182,
+        2960,
+        820,
+        3000
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b122",
+      "text": "3",
+      "bbox_pt": [
+        270.6880187988281,
+        710.534423828125,
+        274.916015625,
+        720.0894165039062
+      ],
+      "bbox_px": [
+        1127,
+        2960,
+        1145,
+        3000
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b123",
+      "text": "Using this algorithm, retear rates of patients with ≤4 points were 6.0%; however, those with ≥5 ",
+      "bbox_pt": [
+        39.685001373291016,
+        724.086181640625,
+        294.8482971191406,
+        732.2761840820312
+      ],
+      "bbox_px": [
+        165,
+        3017,
+        1228,
+        3051
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p12_b124",
+      "text": "and ≥10 points were 55.2% and 86.2%, respectively 170 .",
+      "bbox_pt": [
+        39.685001373291016,
+        732.586181640625,
+        184.39590454101562,
+        740.7781372070312
+      ],
+      "bbox_px": [
+        165,
+        3052,
+        768,
+        3086
+      ],
+      "column_guess": 1
+    }
+  ],
+  "constraints": {
+    "total_blocks": 125
+  }
+}

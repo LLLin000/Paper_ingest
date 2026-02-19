@@ -1,0 +1,24 @@
+{
+  "doc_id": "test01",
+  "input_pdf_path": "D:\\L\\AI\\Paper_ingest\\example_pdf\\Bedi 等 - 2024 - Rotator cuff tears.pdf",
+  "input_pdf_sha256": "023ceea455eb2e5d4b5834fcf3ec655537075d6415676c29f733d07e23d297f1",
+  "started_at_utc": "2026-02-18T12:07:46.183697+00:00",
+  "toolchain": {
+    "python_version": "3.14.0",
+    "package_lock_hash": "35b9001de330d23a"
+  },
+  "model_config": {
+    "text_model": "",
+    "vision_model": "",
+    "vision_provider": "",
+    "reading_provider": "",
+    "reading_model": "",
+    "temperature": 0.0,
+    "prompt_bundle_version": "v1"
+  },
+  "render_config": {
+    "dpi": 150,
+    "scale": 2.0
+  },
+  "pipeline_version": "0.1.0"
+}

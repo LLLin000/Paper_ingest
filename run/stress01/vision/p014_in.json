@@ -1,0 +1,417 @@
+{
+  "page": 14,
+  "image_path": "run\\stress01\\pages\\p014.png",
+  "blocks": [
+    {
+      "block_id": "p14_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b2",
+      "text": "Figure 5.  The applications of zwitterionic hydrogel and triboelectric scaﬀold for bone regeneration. a) Self-powered electrical stimulator promotes adhe-",
+      "bbox_pt": [
+        47.97600173950195,
+        578.726318359375,
+        544.072265625,
+        586.75634765625
+      ],
+      "bbox_px": [
+        199,
+        2411,
+        2266,
+        2444
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b3",
+      "text": "sion and proliferation of osteoblasts. [ 172 ] Copyright 2019, Elsevier. b) Self-powered electrical stimulator promotes osteogenesis of MC3T3-E1 cells. [ 172 ]",
+      "bbox_pt": [
+        47.97600173950195,
+        585.4642333984375,
+        543.5430297851562,
+        596.2243041992188
+      ],
+      "bbox_px": [
+        199,
+        2439,
+        2264,
+        2484
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b4",
+      "text": "Copyright 2019, Elsevier. c) Hybrid tribo/piezoelectric nanogenerator for repairing bone defects through self-powered electrical stimulation. [ 12 ] Copy-",
+      "bbox_pt": [
+        47.97600173950195,
+        594.92333984375,
+        544.0421142578125,
+        605.6834106445312
+      ],
+      "bbox_px": [
+        199,
+        2478,
+        2266,
+        2523
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b5",
+      "text": "right 2024, AAAS. d) An implantable poly zwitterionic hydrogel scaﬀold (PDMAPS) was synthesized using methacrylated sulfobetaine (DMAPS) and",
+      "bbox_pt": [
+        47.976688385009766,
+        607.1810302734375,
+        544.0031127929688,
+        615.151123046875
+      ],
+      "bbox_px": [
+        199,
+        2529,
+        2266,
+        2563
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b6",
+      "text": "acrylated gelatin (GelMA) as the matrix. Using polyanionic ﬁber (PAC) and polydimethyldiallylammonium chloride (PDAC) as control, the repairing",
+      "bbox_pt": [
+        47.976688385009766,
+        616.6399536132812,
+        544.006103515625,
+        624.6100463867188
+      ],
+      "bbox_px": [
+        199,
+        2569,
+        2266,
+        2602
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b7",
+      "text": "eﬀect of PDMAPS hydrogel scaﬀold on rat femoral defect was observed. [ 179 ] Copyright 2023, Wiley-VCH.",
+      "bbox_pt": [
+        47.976688385009766,
+        623.3182983398438,
+        391.5703125,
+        634.0784301757812
+      ],
+      "bbox_px": [
+        199,
+        2597,
+        1631,
+        2641
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b8",
+      "text": "materials. Diﬀerent materials have been used as intermediate lay-",
+      "bbox_pt": [
+        47.97600173950195,
+        656.7021484375,
+        288.8959655761719,
+        665.7492065429688
+      ],
+      "bbox_px": [
+        199,
+        2736,
+        1203,
+        2773
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b9",
+      "text": "ers to improve the performance of TENGs. However, challenges",
+      "bbox_pt": [
+        47.97600173950195,
+        667.6644897460938,
+        288.8887939453125,
+        676.7115478515625
+      ],
+      "bbox_px": [
+        199,
+        2781,
+        1203,
+        2819
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b10",
+      "text": "persist in terms of cost and stability. Previous studies have pri-",
+      "bbox_pt": [
+        47.97600173950195,
+        678.6178588867188,
+        288.9049377441406,
+        687.6649169921875
+      ],
+      "bbox_px": [
+        199,
+        2827,
+        1203,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b11",
+      "text": "marily focused on the electrical performance of TENGs and have",
+      "bbox_pt": [
+        47.97600173950195,
+        689.5802001953125,
+        288.8960266113281,
+        698.6272583007812
+      ],
+      "bbox_px": [
+        199,
+        2873,
+        1203,
+        2910
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b12",
+      "text": "often neglected their mechanical properties. However, sacriﬁc-",
+      "bbox_pt": [
+        47.97600173950195,
+        700.54248046875,
+        288.91473388671875,
+        709.5895385742188
+      ],
+      "bbox_px": [
+        199,
+        2918,
+        1203,
+        2956
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b13",
+      "text": "ing mechanical performance to improve TENG output perfor-",
+      "bbox_pt": [
+        47.97600173950195,
+        711.495849609375,
+        288.9184265136719,
+        720.5429077148438
+      ],
+      "bbox_px": [
+        199,
+        2964,
+        1203,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b14",
+      "text": "mance may limit their potential in various ﬂexible biological de-",
+      "bbox_pt": [
+        303.0906982421875,
+        656.7039794921875,
+        544.016845703125,
+        665.7510375976562
+      ],
+      "bbox_px": [
+        1262,
+        2736,
+        2266,
+        2773
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b15",
+      "text": "vices. Therefore, adding an ionic liquid-based double layer (EDL)",
+      "bbox_pt": [
+        303.0906982421875,
+        667.666259765625,
+        544.0194702148438,
+        676.7133178710938
+      ],
+      "bbox_px": [
+        1262,
+        2781,
+        2266,
+        2819
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b16",
+      "text": "to TENGs is a favorable approach for improving output perfor-",
+      "bbox_pt": [
+        303.0906982421875,
+        678.61962890625,
+        544.03759765625,
+        687.6666870117188
+      ],
+      "bbox_px": [
+        1262,
+        2827,
+        2266,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b17",
+      "text": "mance by reducing frictional charge decay without aﬀecting me-",
+      "bbox_pt": [
+        303.0906982421875,
+        689.5819702148438,
+        544.0167846679688,
+        698.6290283203125
+      ],
+      "bbox_px": [
+        1262,
+        2873,
+        2266,
+        2910
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b18",
+      "text": "chanical durability. [ 175 ] Kim et al. proposed the use of ionic elec-",
+      "bbox_pt": [
+        303.0906982421875,
+        697.400146484375,
+        544.0169067382812,
+        709.5913696289062
+      ],
+      "bbox_px": [
+        1262,
+        2905,
+        2266,
+        2956
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b19",
+      "text": "trolyte polymers as intermediate layers. This method eﬀectively",
+      "bbox_pt": [
+        303.0896911621094,
+        711.4944458007812,
+        544.0420532226562,
+        720.54150390625
+      ],
+      "bbox_px": [
+        1262,
+        2964,
+        2266,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b20",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b21",
+      "text": "2411209 (14 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p14_b22",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p14_b23",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 24
+  }
+}

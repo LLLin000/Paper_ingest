@@ -1,0 +1,2015 @@
+{
+  "page": 22,
+  "image_path": "run\\stress01\\pages\\p022.png",
+  "blocks": [
+    {
+      "block_id": "p22_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b2",
+      "text": "of their spontaneous and piezoelectric polarizations. This manip-",
+      "bbox_pt": [
+        47.97600173950195,
+        75.97752380371094,
+        288.9425964355469,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        199,
+        316,
+        1203,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b3",
+      "text": "ulation ultimately aﬀects surface charge. Zhang et al. success-",
+      "bbox_pt": [
+        47.97600173950195,
+        86.93986511230469,
+        288.887939453125,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        199,
+        362,
+        1203,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b4",
+      "text": "fully developed two piezoelectric heterostructured materials with",
+      "bbox_pt": [
+        47.97600173950195,
+        97.90214538574219,
+        288.88702392578125,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        199,
+        407,
+        1203,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b5",
+      "text": "contrasting surface charges: negatively charged Ga-GaN/AlGaN",
+      "bbox_pt": [
+        47.97600173950195,
+        108.85551452636719,
+        288.8852844238281,
+        117.9026107788086
+      ],
+      "bbox_px": [
+        199,
+        453,
+        1203,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b6",
+      "text": "and positively charged N-GaN/AlGaN. The experimental results",
+      "bbox_pt": [
+        47.97600173950195,
+        119.81785583496094,
+        288.914794921875,
+        128.86495971679688
+      ],
+      "bbox_px": [
+        199,
+        499,
+        1203,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b7",
+      "text": "demonstrated that negatively charged Ga-GaN/AlGaN signiﬁ-",
+      "bbox_pt": [
+        47.97600173950195,
+        130.7801971435547,
+        288.90582275390625,
+        139.82730102539062
+      ],
+      "bbox_px": [
+        199,
+        544,
+        1203,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b8",
+      "text": "cantly improved the attachment, osteogenic diﬀerentiation, dif-",
+      "bbox_pt": [
+        47.97600173950195,
+        141.73350524902344,
+        288.9300537109375,
+        150.78060913085938
+      ],
+      "bbox_px": [
+        199,
+        590,
+        1203,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b9",
+      "text": "fusion, and recruitment of bone mesenchymal stem cells. [ 2 ]",
+      "bbox_pt": [
+        47.97600173950195,
+        151.79078674316406,
+        288.42083740234375,
+        161.74295043945312
+      ],
+      "bbox_px": [
+        199,
+        632,
+        1201,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b10",
+      "text": "Furthermore, these results indicate that bone morphogenetic",
+      "bbox_pt": [
+        47.97600173950195,
+        163.65513610839844,
+        288.91485595703125,
+        172.70223999023438
+      ],
+      "bbox_px": [
+        199,
+        681,
+        1203,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b11",
+      "text": "protein-6 may act as an electrosensitive protein during early-",
+      "bbox_pt": [
+        47.97600173950195,
+        174.60850524902344,
+        288.9273986816406,
+        183.65560913085938
+      ],
+      "bbox_px": [
+        199,
+        727,
+        1203,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b12",
+      "text": "stage osteogenic diﬀerentiation. However, additional studies are",
+      "bbox_pt": [
+        47.97600173950195,
+        185.5708465576172,
+        288.93634033203125,
+        194.61795043945312
+      ],
+      "bbox_px": [
+        199,
+        773,
+        1203,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b13",
+      "text": "needed to fully elucidate the underlying mechanisms.",
+      "bbox_pt": [
+        47.97600173950195,
+        196.53318786621094,
+        249.96475219726562,
+        205.58029174804688
+      ],
+      "bbox_px": [
+        199,
+        818,
+        1041,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b14",
+      "text": "4.3. Electric Stimulation-Induced Molecular Response",
+      "bbox_pt": [
+        47.97600173950195,
+        229.59947204589844,
+        246.31903076171875,
+        238.56588745117188
+      ],
+      "bbox_px": [
+        199,
+        956,
+        1026,
+        994
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b15",
+      "text": "ES induced by piezoelectricity and direct mechanical stimula-",
+      "bbox_pt": [
+        47.97600173950195,
+        251.52317810058594,
+        288.8987121582031,
+        260.5702819824219
+      ],
+      "bbox_px": [
+        199,
+        1048,
+        1203,
+        1085
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b16",
+      "text": "tion can facilitate the healing of damaged tissues. These mech-",
+      "bbox_pt": [
+        47.97600173950195,
+        262.48553466796875,
+        288.914794921875,
+        271.5326232910156
+      ],
+      "bbox_px": [
+        199,
+        1093,
+        1203,
+        1131
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b17",
+      "text": "anisms can be explained by two separate components. Accord-",
+      "bbox_pt": [
+        47.97600173950195,
+        273.4388732910156,
+        288.8977355957031,
+        282.4859619140625
+      ],
+      "bbox_px": [
+        199,
+        1139,
+        1203,
+        1177
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b18",
+      "text": "ing to the ﬁrst component, when functional loads are applied,",
+      "bbox_pt": [
+        47.97600173950195,
+        284.4012145996094,
+        288.920166015625,
+        293.44830322265625
+      ],
+      "bbox_px": [
+        199,
+        1185,
+        1203,
+        1222
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b19",
+      "text": "the piezoelectric scaﬀolds generate an electrical potential. This",
+      "bbox_pt": [
+        47.97600173950195,
+        295.363525390625,
+        288.9102783203125,
+        304.4106140136719
+      ],
+      "bbox_px": [
+        199,
+        1230,
+        1203,
+        1268
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b20",
+      "text": "type of ES activates pathways involving voltage-gated Ca 2 + chan-",
+      "bbox_pt": [
+        47.97600173950195,
+        303.18218994140625,
+        288.91473388671875,
+        315.36395263671875
+      ],
+      "bbox_px": [
+        199,
+        1263,
+        1203,
+        1314
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b21",
+      "text": "nels and stretch-activated calcium channels, leading to increased",
+      "bbox_pt": [
+        47.975040435791016,
+        317.2764892578125,
+        288.9031066894531,
+        326.3235778808594
+      ],
+      "bbox_px": [
+        199,
+        1321,
+        1203,
+        1359
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b22",
+      "text": "intracellular Ca 2 + . [ 205 ] Additionally, a local electrical ﬁeld can al-",
+      "bbox_pt": [
+        47.975040435791016,
+        325.09716796875,
+        288.9123229980469,
+        337.2859191894531
+      ],
+      "bbox_px": [
+        199,
+        1354,
+        1203,
+        1405
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b23",
+      "text": "ter the conﬁguration of membrane receptors and open recep-",
+      "bbox_pt": [
+        47.976200103759766,
+        339.1915283203125,
+        288.92938232421875,
+        348.2386169433594
+      ],
+      "bbox_px": [
+        199,
+        1413,
+        1203,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b24",
+      "text": "tor channels, allowing intracellular Ca 2 + ions from the endo-",
+      "bbox_pt": [
+        47.976200103759766,
+        347.0121765136719,
+        288.92010498046875,
+        359.200927734375
+      ],
+      "bbox_px": [
+        199,
+        1445,
+        1203,
+        1496
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b25",
+      "text": "plasmic reticulum to enter. Elevated levels of Ca 2 + within cells",
+      "bbox_pt": [
+        47.975868225097656,
+        357.97418212890625,
+        288.90557861328125,
+        370.16259765625
+      ],
+      "bbox_px": [
+        199,
+        1491,
+        1203,
+        1542
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b26",
+      "text": "activate calcium-modulated proteins and a calcium-dependent",
+      "bbox_pt": [
+        47.97578811645508,
+        372.06854248046875,
+        288.93157958984375,
+        381.1156311035156
+      ],
+      "bbox_px": [
+        199,
+        1550,
+        1203,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b27",
+      "text": "protein phosphatase, calcineurin. Calcineurin interacts with",
+      "bbox_pt": [
+        47.97578811645508,
+        383.0308532714844,
+        288.9262390136719,
+        392.07794189453125
+      ],
+      "bbox_px": [
+        199,
+        1595,
+        1203,
+        1633
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b28",
+      "text": "phosphorylated nuclear factors of activated cells (NF-AT-PO 4 ),",
+      "bbox_pt": [
+        47.97578811645508,
+        393.9831848144531,
+        288.92413330078125,
+        404.503173828125
+      ],
+      "bbox_px": [
+        199,
+        1641,
+        1203,
+        1685
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b29",
+      "text": "converting them into dephosphorylated nuclear factors of acti-",
+      "bbox_pt": [
+        47.97542953491211,
+        404.94549560546875,
+        288.8945007324219,
+        413.9925842285156
+      ],
+      "bbox_px": [
+        199,
+        1687,
+        1203,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b30",
+      "text": "vated cells (NF-AT). These dephosphorylated NF-AT then move",
+      "bbox_pt": [
+        47.97542953491211,
+        415.9078063964844,
+        288.9052734375,
+        424.95489501953125
+      ],
+      "bbox_px": [
+        199,
+        1732,
+        1203,
+        1770
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b31",
+      "text": "into the nucleus, where they bind to other proteins and initi-",
+      "bbox_pt": [
+        47.97542953491211,
+        426.8611755371094,
+        288.9151306152344,
+        435.90826416015625
+      ],
+      "bbox_px": [
+        199,
+        1778,
+        1203,
+        1816
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b32",
+      "text": "ate gene transcription. Gene transcription promotes the synthe-",
+      "bbox_pt": [
+        47.97542953491211,
+        437.823486328125,
+        288.91510009765625,
+        446.8705749511719
+      ],
+      "bbox_px": [
+        199,
+        1824,
+        1203,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b33",
+      "text": "sis of TGF- 𝛽 and BMP-2, thereby regulating cell metabolism and",
+      "bbox_pt": [
+        47.97542953491211,
+        448.3285217285156,
+        288.9151611328125,
+        457.8329162597656
+      ],
+      "bbox_px": [
+        199,
+        1868,
+        1203,
+        1907
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b34",
+      "text": "ECM synthesis. In the second component, mechanical stimula-",
+      "bbox_pt": [
+        47.97542953491211,
+        459.7391662597656,
+        288.89630126953125,
+        468.7862548828125
+      ],
+      "bbox_px": [
+        199,
+        1915,
+        1203,
+        1953
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b35",
+      "text": "tion directly activates mechanoreceptors, such as integrins. Once",
+      "bbox_pt": [
+        47.97542953491211,
+        470.70147705078125,
+        288.89813232421875,
+        479.7485656738281
+      ],
+      "bbox_px": [
+        199,
+        1961,
+        1203,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b36",
+      "text": "activated, integrins transport protein kinase C (PKC) to the cell",
+      "bbox_pt": [
+        47.97542953491211,
+        481.663818359375,
+        288.91253662109375,
+        490.7109069824219
+      ],
+      "bbox_px": [
+        199,
+        2006,
+        1203,
+        2044
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b37",
+      "text": "membrane, triggering MAPK pathways for transmembrane sig-",
+      "bbox_pt": [
+        47.97542953491211,
+        492.6171569824219,
+        288.9115905761719,
+        501.66424560546875
+      ],
+      "bbox_px": [
+        199,
+        2052,
+        1203,
+        2090
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b38",
+      "text": "naling. Consequently, extracellular mechanical signals are trans-",
+      "bbox_pt": [
+        47.97542953491211,
+        503.5794982910156,
+        288.9088134765625,
+        512.6265869140625
+      ],
+      "bbox_px": [
+        199,
+        2098,
+        1203,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b39",
+      "text": "mitted to actin. [ 91,206 ] Receptor-associated protein RACK1, located",
+      "bbox_pt": [
+        47.97542953491211,
+        511.397216796875,
+        288.9106140136719,
+        523.5888671875
+      ],
+      "bbox_px": [
+        199,
+        2130,
+        1203,
+        2181
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b40",
+      "text": "within the cell, forms a complex with integrins and binds to",
+      "bbox_pt": [
+        47.975440979003906,
+        525.4915161132812,
+        288.9169616699219,
+        534.53857421875
+      ],
+      "bbox_px": [
+        199,
+        2189,
+        1203,
+        2227
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b41",
+      "text": "the PKC domain. Consequently, the interaction between RACK1",
+      "bbox_pt": [
+        47.975440979003906,
+        536.453857421875,
+        288.9205322265625,
+        545.5009155273438
+      ],
+      "bbox_px": [
+        199,
+        2235,
+        1203,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b42",
+      "text": "and PKC-integrin plays a crucial role in the transmission of sig-",
+      "bbox_pt": [
+        47.975440979003906,
+        547.4161987304688,
+        288.9142150878906,
+        556.4632568359375
+      ],
+      "bbox_px": [
+        199,
+        2280,
+        1203,
+        2318
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b43",
+      "text": "nals across the cell membrane. These signaling cascades then",
+      "bbox_pt": [
+        47.975440979003906,
+        558.3695068359375,
+        288.919677734375,
+        567.4165649414062
+      ],
+      "bbox_px": [
+        199,
+        2326,
+        1203,
+        2364
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b44",
+      "text": "proceed toward the nucleus, where they interact with transcrip-",
+      "bbox_pt": [
+        47.975440979003906,
+        569.3318481445312,
+        288.9375915527344,
+        578.37890625
+      ],
+      "bbox_px": [
+        199,
+        2372,
+        1203,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b45",
+      "text": "tion factors sensitive to mechanical stimuli, ultimately leading",
+      "bbox_pt": [
+        47.975440979003906,
+        580.294189453125,
+        288.9294738769531,
+        589.3412475585938
+      ],
+      "bbox_px": [
+        199,
+        2417,
+        1203,
+        2455
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b46",
+      "text": "to gene transcription. It can be inferred that this signaling cas-",
+      "bbox_pt": [
+        47.975440979003906,
+        591.24755859375,
+        288.9052734375,
+        600.2946166992188
+      ],
+      "bbox_px": [
+        199,
+        2463,
+        1203,
+        2501
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b47",
+      "text": "cade primarily consists of G protein-coupled calcium channels.",
+      "bbox_pt": [
+        47.975440979003906,
+        602.2098388671875,
+        288.89813232421875,
+        611.2568969726562
+      ],
+      "bbox_px": [
+        199,
+        2509,
+        1203,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b48",
+      "text": "The regulation of adenosine triphosphate (ATP) and reactive",
+      "bbox_pt": [
+        47.975440979003906,
+        613.1721801757812,
+        288.92681884765625,
+        622.21923828125
+      ],
+      "bbox_px": [
+        199,
+        2554,
+        1203,
+        2592
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b49",
+      "text": "oxygen species (ROS) levels is predominantly governed by the",
+      "bbox_pt": [
+        47.975440979003906,
+        624.12548828125,
+        288.9052734375,
+        633.1725463867188
+      ],
+      "bbox_px": [
+        199,
+        2600,
+        1203,
+        2638
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b50",
+      "text": "mitogen-activated protein kinase (MAPK) and Phosphatidylinos-",
+      "bbox_pt": [
+        47.975440979003906,
+        635.0878295898438,
+        288.93218994140625,
+        644.1348876953125
+      ],
+      "bbox_px": [
+        199,
+        2646,
+        1203,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b51",
+      "text": "itol 3-kinase/Protein Kinase (PI3K/AKT) pathways (Figures  2h",
+      "bbox_pt": [
+        47.975440979003906,
+        646.0501708984375,
+        288.9232482910156,
+        655.0972290039062
+      ],
+      "bbox_px": [
+        199,
+        2691,
+        1203,
+        2729
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b52",
+      "text": "and  7e–g ). [ 84 ]",
+      "bbox_pt": [
+        47.975440979003906,
+        656.1057739257812,
+        96.91842651367188,
+        666.0505981445312
+      ],
+      "bbox_px": [
+        199,
+        2733,
+        403,
+        2775
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b53",
+      "text": "The piezoelectric nature of bone collagen leads to the gener-",
+      "bbox_pt": [
+        57.435001373291016,
+        667.9610595703125,
+        288.8963317871094,
+        677.0081176757812
+      ],
+      "bbox_px": [
+        239,
+        2783,
+        1203,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b54",
+      "text": "ation of both negative and positive potentials when subjected to",
+      "bbox_pt": [
+        47.976341247558594,
+        678.9234008789062,
+        288.9196472167969,
+        687.970458984375
+      ],
+      "bbox_px": [
+        199,
+        2828,
+        1203,
+        2866
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b55",
+      "text": "mechanical deformation, with compression resulting in a nega-",
+      "bbox_pt": [
+        47.976341247558594,
+        689.8767700195312,
+        288.9339599609375,
+        698.923828125
+      ],
+      "bbox_px": [
+        199,
+        2874,
+        1203,
+        2912
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b56",
+      "text": "tive potential, and tension resulting in a positive potential. Bones",
+      "bbox_pt": [
+        47.976341247558594,
+        700.839111328125,
+        288.8909912109375,
+        709.8861694335938
+      ],
+      "bbox_px": [
+        199,
+        2920,
+        1203,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b57",
+      "text": "possess an inherent zeta potential of  − 5 mV, which is further",
+      "bbox_pt": [
+        47.976341247558594,
+        711.7164916992188,
+        288.9277038574219,
+        720.8484497070312
+      ],
+      "bbox_px": [
+        199,
+        2965,
+        1203,
+        3003
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b58",
+      "text": "enhanced by the development of negative charges from com-",
+      "bbox_pt": [
+        303.091064453125,
+        75.97691345214844,
+        544.025390625,
+        85.02400970458984
+      ],
+      "bbox_px": [
+        1262,
+        316,
+        2266,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b59",
+      "text": "pressed bone collagen. [ 87 ] This stress-induced electrical potential",
+      "bbox_pt": [
+        303.091064453125,
+        83.79814147949219,
+        544.0269165039062,
+        95.9863510131836
+      ],
+      "bbox_px": [
+        1262,
+        349,
+        2266,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b60",
+      "text": "improves electroosmosis, reduces hydraulic permeability, and in-",
+      "bbox_pt": [
+        303.0899658203125,
+        97.90147399902344,
+        544.0521850585938,
+        106.94857025146484
+      ],
+      "bbox_px": [
+        1262,
+        407,
+        2266,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b61",
+      "text": "creases bone stiﬀness. Articular cartilage is a load-bearing tis-",
+      "bbox_pt": [
+        303.0899658203125,
+        108.85484313964844,
+        544.02587890625,
+        117.90193939208984
+      ],
+      "bbox_px": [
+        1262,
+        453,
+        2266,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b62",
+      "text": "sue composed mainly of collagen molecules (type II, VI, IX, X,",
+      "bbox_pt": [
+        303.0899658203125,
+        119.81718444824219,
+        544.04052734375,
+        128.86428833007812
+      ],
+      "bbox_px": [
+        1262,
+        499,
+        2266,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b63",
+      "text": "and XI), proteoglycans, non-collagenous proteins, and ﬂuids. It",
+      "bbox_pt": [
+        303.0899658203125,
+        130.7794647216797,
+        544.0504150390625,
+        139.82656860351562
+      ],
+      "bbox_px": [
+        1262,
+        544,
+        2266,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b64",
+      "text": "also exhibits piezoelectric properties similar to bone owing to its",
+      "bbox_pt": [
+        303.0899658203125,
+        141.7328338623047,
+        544.0177612304688,
+        150.77993774414062
+      ],
+      "bbox_px": [
+        1262,
+        590,
+        2266,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b65",
+      "text": "collagen composition. Therefore, exploring the use of piezoelec-",
+      "bbox_pt": [
+        303.0899658203125,
+        152.69517517089844,
+        544.0018310546875,
+        161.74227905273438
+      ],
+      "bbox_px": [
+        1262,
+        636,
+        2266,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b66",
+      "text": "tric materials for engineered cartilage constructs is promising as",
+      "bbox_pt": [
+        303.0899658203125,
+        163.65745544433594,
+        544.03515625,
+        172.70455932617188
+      ],
+      "bbox_px": [
+        1262,
+        681,
+        2266,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b67",
+      "text": "the cartilage itself consists of piezoelectric components. [ 207 ] Al-",
+      "bbox_pt": [
+        303.0899658203125,
+        171.47618103027344,
+        544.0368041992188,
+        183.65792846679688
+      ],
+      "bbox_px": [
+        1262,
+        714,
+        2266,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b68",
+      "text": "though studies have been conducted on the eﬀects of mechan-",
+      "bbox_pt": [
+        303.08905029296875,
+        185.5704803466797,
+        544.0269165039062,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        1262,
+        773,
+        2266,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b69",
+      "text": "ical stress (shear, compressive, or hydrostatic) and electromag-",
+      "bbox_pt": [
+        303.08905029296875,
+        196.53282165527344,
+        544.0277709960938,
+        205.57992553710938
+      ],
+      "bbox_px": [
+        1262,
+        818,
+        2266,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b70",
+      "text": "netic stimuli on chondrocyte behavior in cartilage regeneration,",
+      "bbox_pt": [
+        303.08905029296875,
+        207.48619079589844,
+        544.0477294921875,
+        216.53329467773438
+      ],
+      "bbox_px": [
+        1262,
+        864,
+        2266,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b71",
+      "text": "little attention has been paid to the direct relationship between",
+      "bbox_pt": [
+        303.08905029296875,
+        218.44847106933594,
+        544.0089721679688,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        1262,
+        910,
+        2266,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b72",
+      "text": "piezoelectricity and cartilage regeneration. [ 208 ]",
+      "bbox_pt": [
+        303.08905029296875,
+        228.5066680908203,
+        475.12506103515625,
+        238.45791625976562
+      ],
+      "bbox_px": [
+        1262,
+        952,
+        1979,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b73",
+      "text": "4.4. Potential Mechanisms of Electric Stimulation-Induced",
+      "bbox_pt": [
+        303.0899963378906,
+        262.4752197265625,
+        518.4082641601562,
+        271.4416198730469
+      ],
+      "bbox_px": [
+        1262,
+        1093,
+        2160,
+        1131
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b74",
+      "text": "Osteochondral Repair",
+      "bbox_pt": [
+        303.0899963378906,
+        273.4285583496094,
+        384.102294921875,
+        282.39495849609375
+      ],
+      "bbox_px": [
+        1262,
+        1139,
+        1600,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b75",
+      "text": "ES is a promising external intervention with the potential to ac-",
+      "bbox_pt": [
+        303.0899963378906,
+        295.36126708984375,
+        544.0316772460938,
+        304.4083557128906
+      ],
+      "bbox_px": [
+        1262,
+        1230,
+        2266,
+        1268
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b76",
+      "text": "celerate the healing of bone defects. Natural electric ﬁelds within",
+      "bbox_pt": [
+        303.0899963378906,
+        306.31463623046875,
+        544.0550537109375,
+        315.3617248535156
+      ],
+      "bbox_px": [
+        1262,
+        1276,
+        2266,
+        1314
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b77",
+      "text": "our bodies play a vital role in regulating bone health and regen-",
+      "bbox_pt": [
+        303.0899963378906,
+        317.2769470214844,
+        544.0276489257812,
+        326.32403564453125
+      ],
+      "bbox_px": [
+        1262,
+        1321,
+        2266,
+        1359
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b78",
+      "text": "eration, making them important biophysical factors. Electroac-",
+      "bbox_pt": [
+        303.0899963378906,
+        328.2392578125,
+        544.0486450195312,
+        337.2863464355469
+      ],
+      "bbox_px": [
+        1262,
+        1367,
+        2266,
+        1405
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b79",
+      "text": "tive materials found in bone tissue generate bioelectric signals",
+      "bbox_pt": [
+        303.0899963378906,
+        339.192626953125,
+        544.0477905273438,
+        348.2397155761719
+      ],
+      "bbox_px": [
+        1262,
+        1413,
+        2266,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b80",
+      "text": "that inﬂuence various aspects of bone healing, such as cell adhe-",
+      "bbox_pt": [
+        303.0899963378906,
+        350.1549377441406,
+        544.0333251953125,
+        359.2020263671875
+      ],
+      "bbox_px": [
+        1262,
+        1458,
+        2266,
+        1496
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b81",
+      "text": "sion, proliferation, arrangement, migration, and diﬀerentiation.",
+      "bbox_pt": [
+        303.0899963378906,
+        361.1172790527344,
+        544.0234985351562,
+        370.16436767578125
+      ],
+      "bbox_px": [
+        1262,
+        1504,
+        2266,
+        1542
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b82",
+      "text": "There are two main types of EABMs based on their source of elec-",
+      "bbox_pt": [
+        303.0899963378906,
+        372.07061767578125,
+        544.0199584960938,
+        381.1177062988281
+      ],
+      "bbox_px": [
+        1262,
+        1550,
+        2266,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b83",
+      "text": "trical signals: conductive biomaterials capable of transmitting",
+      "bbox_pt": [
+        303.0899963378906,
+        383.0329284667969,
+        544.0205688476562,
+        392.08001708984375
+      ],
+      "bbox_px": [
+        1262,
+        1595,
+        2266,
+        1633
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b84",
+      "text": "electrical signals, and piezoelectric biomaterials that can gen-",
+      "bbox_pt": [
+        303.0899963378906,
+        393.9862976074219,
+        544.0294189453125,
+        403.03338623046875
+      ],
+      "bbox_px": [
+        1262,
+        1641,
+        2266,
+        1679
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b85",
+      "text": "erate electrical signals themselves. This review highlights how",
+      "bbox_pt": [
+        303.0899963378906,
+        404.9486083984375,
+        544.0187377929688,
+        413.9956970214844
+      ],
+      "bbox_px": [
+        1262,
+        1687,
+        2266,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b86",
+      "text": "these materials signiﬁcantly advance osteogenesis, chondroge-",
+      "bbox_pt": [
+        303.0899963378906,
+        415.91094970703125,
+        544.0296020507812,
+        424.9580383300781
+      ],
+      "bbox_px": [
+        1262,
+        1732,
+        2266,
+        1770
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b87",
+      "text": "nesis, angiogenesis, and possess antibacterial properties during",
+      "bbox_pt": [
+        303.0899963378906,
+        426.8642883300781,
+        544.0394897460938,
+        435.911376953125
+      ],
+      "bbox_px": [
+        1262,
+        1778,
+        2266,
+        1816
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b88",
+      "text": "bone healing. [ 209 ]",
+      "bbox_pt": [
+        303.0899963378906,
+        436.9197692871094,
+        367.1160888671875,
+        446.87371826171875
+      ],
+      "bbox_px": [
+        1262,
+        1820,
+        1529,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b89",
+      "text": "EnEFs play a crucial role in biological processes such as em-",
+      "bbox_pt": [
+        312.5580139160156,
+        448.7841796875,
+        544.0327758789062,
+        457.8312683105469
+      ],
+      "bbox_px": [
+        1302,
+        1869,
+        2266,
+        1907
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b90",
+      "text": "bryogenesis, physiological activity, wound healing, and tissue re-",
+      "bbox_pt": [
+        303.09039306640625,
+        459.7375183105469,
+        544.0415649414062,
+        468.78460693359375
+      ],
+      "bbox_px": [
+        1262,
+        1915,
+        2266,
+        1953
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b91",
+      "text": "modeling, with the bone’s EnEF originating from the piezoelec-",
+      "bbox_pt": [
+        303.09039306640625,
+        470.6998596191406,
+        544.0221557617188,
+        479.7469482421875
+      ],
+      "bbox_px": [
+        1262,
+        1961,
+        2266,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b92",
+      "text": "tric eﬀect of the collagen matrix. Hydrogels such as methacryloyl",
+      "bbox_pt": [
+        303.09039306640625,
+        481.66217041015625,
+        544.0175170898438,
+        490.7092590332031
+      ],
+      "bbox_px": [
+        1262,
+        2006,
+        2266,
+        2044
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b93",
+      "text": "gelatin (GelMA)-PANi are ideal for 3D scaﬀolds and can be pre-",
+      "bbox_pt": [
+        303.09039306640625,
+        492.61553955078125,
+        544.0237426757812,
+        501.6626281738281
+      ],
+      "bbox_px": [
+        1262,
+        2052,
+        2266,
+        2090
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b94",
+      "text": "pared using enhanced interfacial polymerization. Electroactive",
+      "bbox_pt": [
+        303.09039306640625,
+        503.5778503417969,
+        544.01123046875,
+        512.6249389648438
+      ],
+      "bbox_px": [
+        1262,
+        2098,
+        2266,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b95",
+      "text": "ﬁber membranes have been fabricated by self-assembling and",
+      "bbox_pt": [
+        303.09039306640625,
+        514.5401611328125,
+        544.0272216796875,
+        523.5872192382812
+      ],
+      "bbox_px": [
+        1262,
+        2143,
+        2266,
+        2181
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b96",
+      "text": "chemically reducing graphene oxide on PVC/PLGA nanoﬁbers.",
+      "bbox_pt": [
+        303.09039306640625,
+        525.4935302734375,
+        544.0463256835938,
+        534.5405883789062
+      ],
+      "bbox_px": [
+        1262,
+        2189,
+        2266,
+        2227
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b97",
+      "text": "Coating 316 L stainless steel alloy (316L-SA) with AgNPs/PLGA",
+      "bbox_pt": [
+        303.09039306640625,
+        536.4558715820312,
+        544.0301513671875,
+        545.5029296875
+      ],
+      "bbox_px": [
+        1262,
+        2235,
+        2266,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b98",
+      "text": "induces electron ﬂow, creating a positive surface potential for lo-",
+      "bbox_pt": [
+        303.09039306640625,
+        547.4181518554688,
+        544.0157470703125,
+        556.4652099609375
+      ],
+      "bbox_px": [
+        1262,
+        2280,
+        2266,
+        2318
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b99",
+      "text": "cal osteogenesis and bone fusion. To prevent BT nanoparticle ag-",
+      "bbox_pt": [
+        303.09039306640625,
+        558.3715209960938,
+        544.0282592773438,
+        567.4185791015625
+      ],
+      "bbox_px": [
+        1262,
+        2326,
+        2266,
+        2364
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b100",
+      "text": "gregation, DOPA modiﬁcation is performed before mixing with",
+      "bbox_pt": [
+        303.09039306640625,
+        569.3338623046875,
+        544.0337524414062,
+        578.3809204101562
+      ],
+      "bbox_px": [
+        1262,
+        2372,
+        2266,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b101",
+      "text": "PVDF to form a piezoelectric DOPA@BT thin ﬁlm. After corona",
+      "bbox_pt": [
+        303.09039306640625,
+        580.296142578125,
+        544.0462646484375,
+        589.3432006835938
+      ],
+      "bbox_px": [
+        1262,
+        2417,
+        2266,
+        2455
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b102",
+      "text": "polarization, this ﬁlm maintains a surface potential of  − 76.8 mV",
+      "bbox_pt": [
+        303.09039306640625,
+        591.1646118164062,
+        544.0400390625,
+        600.2965698242188
+      ],
+      "bbox_px": [
+        1262,
+        2463,
+        2266,
+        2501
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b103",
+      "text": "and retains over half of its charge in vivo for 12 weeks (Figure  3b ).",
+      "bbox_pt": [
+        303.0894775390625,
+        602.2118530273438,
+        544.0380859375,
+        611.2589111328125
+      ],
+      "bbox_px": [
+        1262,
+        2509,
+        2266,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b104",
+      "text": "Saos-2 osteoblast migration onto the ZnO nanosheets generates",
+      "bbox_pt": [
+        303.0894775390625,
+        613.1741943359375,
+        544.0130004882812,
+        622.2212524414062
+      ],
+      "bbox_px": [
+        1262,
+        2554,
+        2266,
+        2592
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b105",
+      "text": "an electric ﬁeld that enhances cell activity without the adverse ef-",
+      "bbox_pt": [
+        303.0894775390625,
+        624.1275024414062,
+        544.0219116210938,
+        633.174560546875
+      ],
+      "bbox_px": [
+        1262,
+        2600,
+        2266,
+        2638
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b106",
+      "text": "fects of aggregation or other factors. [ 210 ]",
+      "bbox_pt": [
+        303.0894775390625,
+        634.1817626953125,
+        451.49102783203125,
+        644.1369018554688
+      ],
+      "bbox_px": [
+        1262,
+        2642,
+        1881,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b107",
+      "text": "The utilization of a 3D ﬂexible nanoﬁber P (VDF TrFE) scaf-",
+      "bbox_pt": [
+        312.5580139160156,
+        646.0460815429688,
+        544.0338134765625,
+        655.0931396484375
+      ],
+      "bbox_px": [
+        1302,
+        2691,
+        2266,
+        2729
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b108",
+      "text": "fold is a signiﬁcant milestone in evaluating the diﬀerentiation",
+      "bbox_pt": [
+        303.09039306640625,
+        656.9994506835938,
+        544.0489501953125,
+        666.0465087890625
+      ],
+      "bbox_px": [
+        1262,
+        2737,
+        2266,
+        2775
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b109",
+      "text": "of BMSCs into cartilage and bone cells. In the case of skull de-",
+      "bbox_pt": [
+        303.09039306640625,
+        667.9617309570312,
+        544.0518798828125,
+        677.0087890625
+      ],
+      "bbox_px": [
+        1262,
+        2783,
+        2266,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b110",
+      "text": "fects, analysis through the 3D reconstruction of blood vessels re-",
+      "bbox_pt": [
+        303.09039306640625,
+        678.924072265625,
+        544.0274047851562,
+        687.9711303710938
+      ],
+      "bbox_px": [
+        1262,
+        2828,
+        2266,
+        2866
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b111",
+      "text": "vealed that the presence of ES had a notable impact on promoting",
+      "bbox_pt": [
+        303.09039306640625,
+        689.87744140625,
+        544.02734375,
+        698.9244995117188
+      ],
+      "bbox_px": [
+        1262,
+        2874,
+        2266,
+        2912
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b112",
+      "text": "both bone maturation and angiogenesis. [ 210 ] The incorporation of",
+      "bbox_pt": [
+        303.09039306640625,
+        697.6972045898438,
+        544.0322875976562,
+        709.8867797851562
+      ],
+      "bbox_px": [
+        1262,
+        2907,
+        2266,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b113",
+      "text": "Na0.5K0.5NbO 3  into positively or negatively polarized composite",
+      "bbox_pt": [
+        303.08990478515625,
+        711.8001708984375,
+        544.0221557617188,
+        723.088134765625
+      ],
+      "bbox_px": [
+        1262,
+        2965,
+        2266,
+        3012
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b114",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b115",
+      "text": "2411209 (22 of 29)",
+      "bbox_pt": [
+        188.45860290527344,
+        743.669189453125,
+        257.2442932128906,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        785,
+        3098,
+        1071,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p22_b116",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2344970703125,
+        745.216064453125,
+        544.0469360351562,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p22_b117",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 118
+  }
+}

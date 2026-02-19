@@ -1,0 +1,2117 @@
+{
+  "page": 6,
+  "image_path": "run\\stress01\\pages\\p006.png",
+  "blocks": [
+    {
+      "block_id": "p6_b0",
+      "text": "www.advancedsciencenews.com",
+      "bbox_pt": [
+        47.97600173950195,
+        49.40917205810547,
+        168.75613403320312,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        199,
+        205,
+        703,
+        243
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b1",
+      "text": "www.advancedscience.com",
+      "bbox_pt": [
+        442.5846252441406,
+        49.40917205810547,
+        543.9955444335938,
+        58.375572204589844
+      ],
+      "bbox_px": [
+        1844,
+        205,
+        2266,
+        243
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b2",
+      "text": "novel, ultrathin piezoelectric materials has not only achieved con-",
+      "bbox_pt": [
+        47.97600173950195,
+        75.97752380371094,
+        288.89068603515625,
+        85.02462005615234
+      ],
+      "bbox_px": [
+        199,
+        316,
+        1203,
+        354
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b3",
+      "text": "siderable nano-scale piezoelectric eﬀects but also shown that the",
+      "bbox_pt": [
+        47.97600173950195,
+        86.93986511230469,
+        288.9102783203125,
+        95.9869613647461
+      ],
+      "bbox_px": [
+        199,
+        362,
+        1203,
+        399
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b4",
+      "text": "piezoelectric eﬀect improves as material size decreases. [ 24 ] With",
+      "bbox_pt": [
+        47.97600173950195,
+        94.76017761230469,
+        288.9128112792969,
+        106.9492416381836
+      ],
+      "bbox_px": [
+        199,
+        394,
+        1203,
+        445
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b5",
+      "text": "the in-depth study of piezoelectric materials, synthesis meth-",
+      "bbox_pt": [
+        47.97578048706055,
+        108.85453796386719,
+        288.9020690917969,
+        117.9016342163086
+      ],
+      "bbox_px": [
+        199,
+        453,
+        1203,
+        491
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b6",
+      "text": "ods have been continuously reﬁned to meet market require-",
+      "bbox_pt": [
+        47.97578048706055,
+        119.81681823730469,
+        288.90380859375,
+        128.86392211914062
+      ],
+      "bbox_px": [
+        199,
+        499,
+        1203,
+        536
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b7",
+      "text": "ments. Currently, the mainstream synthesis methods for piezo-",
+      "bbox_pt": [
+        47.97578048706055,
+        130.77915954589844,
+        288.9181823730469,
+        139.82626342773438
+      ],
+      "bbox_px": [
+        199,
+        544,
+        1203,
+        582
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b8",
+      "text": "electric materials include chemical vapor deposition (CVD), elec-",
+      "bbox_pt": [
+        47.97578048706055,
+        141.73252868652344,
+        288.8975524902344,
+        150.77963256835938
+      ],
+      "bbox_px": [
+        199,
+        590,
+        1203,
+        628
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b9",
+      "text": "trochemical exfoliation, and mechanical micrometer-scale exfoli-",
+      "bbox_pt": [
+        47.97578048706055,
+        152.69480895996094,
+        288.89312744140625,
+        161.74191284179688
+      ],
+      "bbox_px": [
+        199,
+        636,
+        1203,
+        673
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b10",
+      "text": "ation. These techniques work by overcoming interlayer adhesion",
+      "bbox_pt": [
+        47.97578048706055,
+        163.6571502685547,
+        288.8939514160156,
+        172.70425415039062
+      ],
+      "bbox_px": [
+        199,
+        681,
+        1203,
+        719
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b11",
+      "text": "or chemically producing single-atomic-layer nanosheets. [ 60 ]",
+      "bbox_pt": [
+        47.97578048706055,
+        173.7147979736328,
+        269.78143310546875,
+        183.65762329101562
+      ],
+      "bbox_px": [
+        199,
+        723,
+        1124,
+        765
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b12",
+      "text": "A noncentrosymmetric lattice structure and non-zero energy",
+      "bbox_pt": [
+        57.435001373291016,
+        185.57017517089844,
+        288.91339111328125,
+        194.61727905273438
+      ],
+      "bbox_px": [
+        239,
+        773,
+        1203,
+        810
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b13",
+      "text": "gap constitute two indispensable conditions that piezoelectric",
+      "bbox_pt": [
+        47.976341247558594,
+        196.53245544433594,
+        288.8900146484375,
+        205.57955932617188
+      ],
+      "bbox_px": [
+        199,
+        818,
+        1203,
+        856
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b14",
+      "text": "materials must satisfy. For example, hexagonal boron nitride (h-",
+      "bbox_pt": [
+        47.976341247558594,
+        207.48582458496094,
+        288.9402770996094,
+        216.53292846679688
+      ],
+      "bbox_px": [
+        199,
+        864,
+        1203,
+        902
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b15",
+      "text": "BN) exhibits inherent piezoelectric attributes owing to its wide",
+      "bbox_pt": [
+        47.976341247558594,
+        218.4481658935547,
+        288.91693115234375,
+        227.49526977539062
+      ],
+      "bbox_px": [
+        199,
+        910,
+        1203,
+        947
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b16",
+      "text": "bandgap and noncentrosymmetric lattice conﬁguration [ 61–63 ]",
+      "bbox_pt": [
+        47.976341247558594,
+        228.5066680908203,
+        288.42047119140625,
+        238.45761108398438
+      ],
+      "bbox_px": [
+        199,
+        952,
+        1201,
+        993
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b17",
+      "text": "( Figure  3 a ). Inspired by the natural structure of h-BN, other",
+      "bbox_pt": [
+        47.97600173950195,
+        240.36204528808594,
+        288.9077453613281,
+        249.40914916992188
+      ],
+      "bbox_px": [
+        199,
+        1001,
+        1203,
+        1039
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b18",
+      "text": "hexagonal III–V semiconductors such as h-GaN and h-ZnO have",
+      "bbox_pt": [
+        47.97600173950195,
+        251.3243865966797,
+        288.9246520996094,
+        260.3714904785156
+      ],
+      "bbox_px": [
+        199,
+        1047,
+        1203,
+        1084
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b19",
+      "text": "also attracted the attention of scholars. [ 64,65 ] A common trait",
+      "bbox_pt": [
+        47.97600173950195,
+        259.14520263671875,
+        288.92388916015625,
+        271.3248596191406
+      ],
+      "bbox_px": [
+        199,
+        1079,
+        1203,
+        1130
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b20",
+      "text": "among them is that they possess two distinct, dynamically sta-",
+      "bbox_pt": [
+        47.975189208984375,
+        273.239501953125,
+        288.9095153808594,
+        282.2865905761719
+      ],
+      "bbox_px": [
+        199,
+        1138,
+        1203,
+        1176
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b21",
+      "text": "ble, 2D architectures: planar hexagons and wrinkled hexagons.",
+      "bbox_pt": [
+        47.975189208984375,
+        284.2018127441406,
+        288.8978576660156,
+        293.2489013671875
+      ],
+      "bbox_px": [
+        199,
+        1184,
+        1203,
+        1221
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b22",
+      "text": "Li et al. reported that mixed-layer phase III–V compounds also",
+      "bbox_pt": [
+        47.975189208984375,
+        295.1551818847656,
+        288.899658203125,
+        304.2022705078125
+      ],
+      "bbox_px": [
+        199,
+        1229,
+        1203,
+        1267
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b23",
+      "text": "exhibit piezoelectric properties. [ 66 ] In addition, the asymmetric",
+      "bbox_pt": [
+        47.975189208984375,
+        302.9751892089844,
+        288.9147033691406,
+        315.1645812988281
+      ],
+      "bbox_px": [
+        199,
+        1262,
+        1203,
+        1313
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b24",
+      "text": "lattice structure of transition metal sulﬁde crystals (2h-TMDC)",
+      "bbox_pt": [
+        47.97591018676758,
+        317.0784912109375,
+        288.9353942871094,
+        326.1255798339844
+      ],
+      "bbox_px": [
+        199,
+        1321,
+        1203,
+        1358
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b25",
+      "text": "also endows them with piezoelectric capabilities. However, the",
+      "bbox_pt": [
+        47.97591018676758,
+        328.0318603515625,
+        288.9200744628906,
+        337.0789489746094
+      ],
+      "bbox_px": [
+        199,
+        1366,
+        1203,
+        1404
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b26",
+      "text": "piezoelectric properties of most contemporary piezoelectric ma-",
+      "bbox_pt": [
+        47.97591018676758,
+        338.9941711425781,
+        288.9380798339844,
+        348.041259765625
+      ],
+      "bbox_px": [
+        199,
+        1412,
+        1203,
+        1450
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b27",
+      "text": "terials are poor. Hence, there is an urgent need to enhance the",
+      "bbox_pt": [
+        47.97591018676758,
+        349.9565124511719,
+        288.9237060546875,
+        359.00360107421875
+      ],
+      "bbox_px": [
+        199,
+        1458,
+        1203,
+        1495
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b28",
+      "text": "synthetic approaches to augment the piezoelectric performance",
+      "bbox_pt": [
+        47.97591018676758,
+        360.90985107421875,
+        288.9371643066406,
+        369.9569396972656
+      ],
+      "bbox_px": [
+        199,
+        1503,
+        1203,
+        1541
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b29",
+      "text": "of materials.",
+      "bbox_pt": [
+        47.97591018676758,
+        371.8721618652344,
+        94.88003540039062,
+        380.91925048828125
+      ],
+      "bbox_px": [
+        199,
+        1549,
+        395,
+        1587
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b30",
+      "text": "In modern industrial technology, there are numerous strate-",
+      "bbox_pt": [
+        57.4345703125,
+        382.8345031738281,
+        288.9012756347656,
+        391.881591796875
+      ],
+      "bbox_px": [
+        239,
+        1595,
+        1203,
+        1632
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b31",
+      "text": "gies for enhancing the piezoelectric properties of materials. One",
+      "bbox_pt": [
+        47.97591018676758,
+        393.787841796875,
+        288.9282531738281,
+        402.8349304199219
+      ],
+      "bbox_px": [
+        199,
+        1640,
+        1203,
+        1678
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b32",
+      "text": "example is doping, where researchers introduce atoms such as",
+      "bbox_pt": [
+        47.97591018676758,
+        404.75018310546875,
+        288.897705078125,
+        413.7972717285156
+      ],
+      "bbox_px": [
+        199,
+        1686,
+        1203,
+        1724
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b33",
+      "text": "Li, K, and F on one side of the graphene surface to disrupt",
+      "bbox_pt": [
+        47.97591018676758,
+        415.7124938964844,
+        288.919189453125,
+        424.75958251953125
+      ],
+      "bbox_px": [
+        199,
+        1732,
+        1203,
+        1769
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b34",
+      "text": "the symmetry of its structure. This creates a noncentrosymmet-",
+      "bbox_pt": [
+        47.97591018676758,
+        426.66583251953125,
+        288.91473388671875,
+        435.7129211425781
+      ],
+      "bbox_px": [
+        199,
+        1777,
+        1203,
+        1815
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b35",
+      "text": "ric structure analogous to h-BN, allowing graphene—previously",
+      "bbox_pt": [
+        47.97591018676758,
+        437.628173828125,
+        288.9129333496094,
+        446.6752624511719
+      ],
+      "bbox_px": [
+        199,
+        1823,
+        1203,
+        1861
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b36",
+      "text": "nonpiezoelectric—to gain piezoelectric characteristics. [ 67 ] Based",
+      "bbox_pt": [
+        47.97591018676758,
+        445.4451904296875,
+        288.9136047363281,
+        457.6375732421875
+      ],
+      "bbox_px": [
+        199,
+        1856,
+        1203,
+        1906
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b37",
+      "text": "on this principle, Zhang et al. loaded tungsten atoms on one side",
+      "bbox_pt": [
+        47.97570037841797,
+        459.5395202636719,
+        288.92889404296875,
+        468.58660888671875
+      ],
+      "bbox_px": [
+        199,
+        1914,
+        1203,
+        1952
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b38",
+      "text": "of h-BN nanosheets to enhance the piezoelectric properties of the",
+      "bbox_pt": [
+        47.97570037841797,
+        470.5018615722656,
+        288.9244384765625,
+        479.5489501953125
+      ],
+      "bbox_px": [
+        199,
+        1960,
+        1203,
+        1998
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b39",
+      "text": "material. [ 68 ] The experimental results suggested that even at an",
+      "bbox_pt": [
+        47.97570037841797,
+        478.3221740722656,
+        288.9071960449219,
+        490.5112609863281
+      ],
+      "bbox_px": [
+        199,
+        1993,
+        1203,
+        2043
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b40",
+      "text": "extremely low tungsten atom loading, the piezoelectric proper-",
+      "bbox_pt": [
+        47.97554016113281,
+        492.4165344238281,
+        288.9000549316406,
+        501.463623046875
+      ],
+      "bbox_px": [
+        199,
+        2051,
+        1203,
+        2089
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b41",
+      "text": "ties of the nanosheets enhanced by the doping strategy were sig-",
+      "bbox_pt": [
+        47.97554016113281,
+        503.37884521484375,
+        288.92333984375,
+        512.4259033203125
+      ],
+      "bbox_px": [
+        199,
+        2097,
+        1203,
+        2135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b42",
+      "text": "niﬁcantly improved (approximately 34 times) compared to those",
+      "bbox_pt": [
+        47.97554016113281,
+        514.3411865234375,
+        288.9259948730469,
+        523.3882446289062
+      ],
+      "bbox_px": [
+        199,
+        2143,
+        1203,
+        2180
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b43",
+      "text": "of the original material (Figure  3b ). Furthermore, doping transi-",
+      "bbox_pt": [
+        47.97554016113281,
+        525.2945556640625,
+        288.9107360839844,
+        534.3416137695312
+      ],
+      "bbox_px": [
+        199,
+        2188,
+        1203,
+        2226
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b44",
+      "text": "tion metal sulﬁdes to form Janus crystal structures is regarded",
+      "bbox_pt": [
+        47.974639892578125,
+        536.2568359375,
+        288.90899658203125,
+        545.3038940429688
+      ],
+      "bbox_px": [
+        199,
+        2234,
+        1203,
+        2272
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b45",
+      "text": "as one of the most promising methods for inducing piezoelec-",
+      "bbox_pt": [
+        47.974639892578125,
+        547.2191772460938,
+        288.9161376953125,
+        556.2662353515625
+      ],
+      "bbox_px": [
+        199,
+        2280,
+        1203,
+        2317
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b46",
+      "text": "tric eﬀects. [ 69 ] Sulfur atoms selectively substitute certain atoms",
+      "bbox_pt": [
+        47.974639892578125,
+        555.029052734375,
+        288.931396484375,
+        567.2196044921875
+      ],
+      "bbox_px": [
+        199,
+        2312,
+        1203,
+        2363
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b47",
+      "text": "on the material surface to modify the overall crystal structure,",
+      "bbox_pt": [
+        47.97547912597656,
+        569.1325073242188,
+        288.9322814941406,
+        578.1795654296875
+      ],
+      "bbox_px": [
+        199,
+        2371,
+        1203,
+        2409
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b48",
+      "text": "resulting in the formation of z-direction dipoles and the loss of z-",
+      "bbox_pt": [
+        47.97547912597656,
+        580.0858154296875,
+        288.91339111328125,
+        589.1328735351562
+      ],
+      "bbox_px": [
+        199,
+        2417,
+        1203,
+        2454
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b49",
+      "text": "direction symmetry owing to variations in electron density. These",
+      "bbox_pt": [
+        47.97547912597656,
+        591.0481567382812,
+        288.9313049316406,
+        600.09521484375
+      ],
+      "bbox_px": [
+        199,
+        2462,
+        1203,
+        2500
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b50",
+      "text": "crucial alterations further break the symmetry of the material lat-",
+      "bbox_pt": [
+        47.97547912597656,
+        602.010498046875,
+        288.90985107421875,
+        611.0575561523438
+      ],
+      "bbox_px": [
+        199,
+        2508,
+        1203,
+        2546
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b51",
+      "text": "tice and increase structural heterogeneity, thereby enhancing the",
+      "bbox_pt": [
+        47.97547912597656,
+        612.9638671875,
+        288.9241943359375,
+        622.0109252929688
+      ],
+      "bbox_px": [
+        199,
+        2554,
+        1203,
+        2591
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b52",
+      "text": "piezoelectric properties of the material.",
+      "bbox_pt": [
+        47.97547912597656,
+        623.9261474609375,
+        195.11141967773438,
+        632.9732055664062
+      ],
+      "bbox_px": [
+        199,
+        2599,
+        812,
+        2637
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b53",
+      "text": "In addition to doping, stacking is an eﬀective method for im-",
+      "bbox_pt": [
+        57.434139251708984,
+        634.8884887695312,
+        288.93402099609375,
+        643.935546875
+      ],
+      "bbox_px": [
+        239,
+        2645,
+        1203,
+        2683
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b54",
+      "text": "proving piezoelectric performance. Stacked layers are classiﬁed",
+      "bbox_pt": [
+        47.97547912597656,
+        645.8418579101562,
+        288.8900451660156,
+        654.888916015625
+      ],
+      "bbox_px": [
+        199,
+        2691,
+        1203,
+        2728
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b55",
+      "text": "as homogeneous or heterogeneous based on material character-",
+      "bbox_pt": [
+        47.97547912597656,
+        656.80419921875,
+        288.9071350097656,
+        665.8512573242188
+      ],
+      "bbox_px": [
+        199,
+        2736,
+        1203,
+        2774
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b56",
+      "text": "istics. In homogeneous stacking, the piezoelectric eﬀect depends",
+      "bbox_pt": [
+        47.97547912597656,
+        667.7664794921875,
+        288.9053649902344,
+        676.8135375976562
+      ],
+      "bbox_px": [
+        199,
+        2782,
+        1203,
+        2820
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b57",
+      "text": "on the monolayer’s planar polarization direction. In AA stack-",
+      "bbox_pt": [
+        47.97547912597656,
+        678.7198486328125,
+        288.88739013671875,
+        687.7669067382812
+      ],
+      "bbox_px": [
+        199,
+        2827,
+        1203,
+        2865
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b58",
+      "text": "ing, adjacent layers have aligned polarization and dipole direc-",
+      "bbox_pt": [
+        47.97547912597656,
+        689.68212890625,
+        288.9008483886719,
+        698.7291870117188
+      ],
+      "bbox_px": [
+        199,
+        2873,
+        1203,
+        2911
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b59",
+      "text": "tions. Through this stacking strategy, multilayer structured mate-",
+      "bbox_pt": [
+        47.97547912597656,
+        700.6444702148438,
+        288.9098815917969,
+        709.6915283203125
+      ],
+      "bbox_px": [
+        199,
+        2919,
+        1203,
+        2957
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b60",
+      "text": "rials, whether containing odd-numbered or even-numbered lay-",
+      "bbox_pt": [
+        47.97547912597656,
+        711.5978393554688,
+        288.92059326171875,
+        720.6448974609375
+      ],
+      "bbox_px": [
+        199,
+        2964,
+        1203,
+        3002
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b61",
+      "text": "ers, can eﬀectively exhibit piezoelectric properties and ultimately",
+      "bbox_pt": [
+        303.0901794433594,
+        75.98045349121094,
+        544.0206909179688,
+        85.02754974365234
+      ],
+      "bbox_px": [
+        1262,
+        316,
+        2266,
+        354
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b62",
+      "text": "generate a robust piezoelectric eﬀect. As the polarization direc-",
+      "bbox_pt": [
+        303.0901794433594,
+        86.94279479980469,
+        544.0234375,
+        95.9898910522461
+      ],
+      "bbox_px": [
+        1262,
+        362,
+        2266,
+        399
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b63",
+      "text": "tions between the layers are the same, the piezoelectric coeﬃ-",
+      "bbox_pt": [
+        303.0901794433594,
+        97.90513610839844,
+        544.0244750976562,
+        106.95223236083984
+      ],
+      "bbox_px": [
+        1262,
+        407,
+        2266,
+        445
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b64",
+      "text": "cient of the overall material is proportional to the number of",
+      "bbox_pt": [
+        303.0901794433594,
+        108.85850524902344,
+        544.037109375,
+        117.90560150146484
+      ],
+      "bbox_px": [
+        1262,
+        453,
+        2266,
+        491
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b65",
+      "text": "stacked layers [ 70 ] (Figure  3c ). In contrast, the dipole directions",
+      "bbox_pt": [
+        303.0901794433594,
+        116.67503356933594,
+        544.0386352539062,
+        128.86788940429688
+      ],
+      "bbox_px": [
+        1262,
+        486,
+        2266,
+        536
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b66",
+      "text": "between the adjacent layers of multilayer materials in AB stack-",
+      "bbox_pt": [
+        303.0899658203125,
+        130.7784881591797,
+        544.0322875976562,
+        139.82559204101562
+      ],
+      "bbox_px": [
+        1262,
+        544,
+        2266,
+        582
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b67",
+      "text": "ing are opposite, and the piezoelectric eﬀect of each monolayer",
+      "bbox_pt": [
+        303.0899658203125,
+        141.7318572998047,
+        544.0277099609375,
+        150.77896118164062
+      ],
+      "bbox_px": [
+        1262,
+        590,
+        2266,
+        628
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b68",
+      "text": "is neutralized by the adjacent layer. Therefore, the overall piezo-",
+      "bbox_pt": [
+        303.0899658203125,
+        152.6941375732422,
+        544.0089721679688,
+        161.74124145507812
+      ],
+      "bbox_px": [
+        1262,
+        636,
+        2266,
+        673
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b69",
+      "text": "electric output mainly depends on the piezoelectric eﬀect of a few",
+      "bbox_pt": [
+        303.0899658203125,
+        163.65647888183594,
+        544.0557250976562,
+        172.70358276367188
+      ],
+      "bbox_px": [
+        1262,
+        681,
+        2266,
+        719
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b70",
+      "text": "layers. [ 33 ] In contrast, heterogeneous stacking is advantageous in",
+      "bbox_pt": [
+        303.0899658203125,
+        171.47618103027344,
+        544.0239868164062,
+        183.65695190429688
+      ],
+      "bbox_px": [
+        1262,
+        714,
+        2266,
+        765
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b71",
+      "text": "practical applications. Alternately stacked piezoelectric polymers",
+      "bbox_pt": [
+        303.0897216796875,
+        185.5704803466797,
+        544.0310668945312,
+        194.61758422851562
+      ],
+      "bbox_px": [
+        1262,
+        773,
+        2266,
+        810
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b72",
+      "text": "with nano-materials, such as metal oxides, metal nanoions, and",
+      "bbox_pt": [
+        303.0897216796875,
+        196.53282165527344,
+        544.0320434570312,
+        205.57992553710938
+      ],
+      "bbox_px": [
+        1262,
+        818,
+        2266,
+        856
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b73",
+      "text": "nanotubes, to form heterogeneous structures can eﬀectively en-",
+      "bbox_pt": [
+        303.0897216796875,
+        207.48619079589844,
+        544.050048828125,
+        216.53329467773438
+      ],
+      "bbox_px": [
+        1262,
+        864,
+        2266,
+        902
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b74",
+      "text": "hance the piezoelectric properties of composite materials. PVDF,",
+      "bbox_pt": [
+        303.0897216796875,
+        218.44847106933594,
+        544.021240234375,
+        227.49557495117188
+      ],
+      "bbox_px": [
+        1262,
+        910,
+        2266,
+        947
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b75",
+      "text": "one of the most common piezoelectric polymers, is extensively",
+      "bbox_pt": [
+        303.0897216796875,
+        229.4108123779297,
+        544.0096435546875,
+        238.45791625976562
+      ],
+      "bbox_px": [
+        1262,
+        955,
+        2266,
+        993
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b76",
+      "text": "used in biological research and medical consumables. During the",
+      "bbox_pt": [
+        303.0897216796875,
+        240.3641815185547,
+        544.0401000976562,
+        249.41128540039062
+      ],
+      "bbox_px": [
+        1262,
+        1001,
+        2266,
+        1039
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b77",
+      "text": "production of PVDF ﬁlms, doping diﬀerent proportions of ZnO",
+      "bbox_pt": [
+        303.0897216796875,
+        251.3264617919922,
+        544.0186767578125,
+        260.3735656738281
+      ],
+      "bbox_px": [
+        1262,
+        1047,
+        2266,
+        1084
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b78",
+      "text": "nanoparticles during electrospinning can improve the piezoelec-",
+      "bbox_pt": [
+        303.0897216796875,
+        262.27984619140625,
+        544.0321655273438,
+        271.3269348144531
+      ],
+      "bbox_px": [
+        1262,
+        1092,
+        2266,
+        1130
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b79",
+      "text": "tric properties of composite ﬁlms to varying degrees. [ 71 ] This is",
+      "bbox_pt": [
+        303.0897216796875,
+        270.0981750488281,
+        544.0408935546875,
+        282.28924560546875
+      ],
+      "bbox_px": [
+        1262,
+        1125,
+        2266,
+        1176
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b80",
+      "text": "attributed to the embedding of ZnO, which modiﬁes the crystal",
+      "bbox_pt": [
+        303.0895080566406,
+        284.2015075683594,
+        544.031982421875,
+        293.24859619140625
+      ],
+      "bbox_px": [
+        1262,
+        1184,
+        2266,
+        1221
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b81",
+      "text": "structure of PVDF, increases the proportion of the  𝛽 -phase lattice,",
+      "bbox_pt": [
+        303.0895080566406,
+        294.6975402832031,
+        544.0275268554688,
+        304.2019348144531
+      ],
+      "bbox_px": [
+        1262,
+        1227,
+        2266,
+        1267
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b82",
+      "text": "and further generates a synergistic eﬀect with PVDF nanoﬁbers,",
+      "bbox_pt": [
+        303.0895080566406,
+        306.1171875,
+        544.0507202148438,
+        315.1642761230469
+      ],
+      "bbox_px": [
+        1262,
+        1275,
+        2266,
+        1313
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b83",
+      "text": "resulting in a remarkable enhancement in the piezoelectric prop-",
+      "bbox_pt": [
+        303.0895080566406,
+        317.0794982910156,
+        544.0409545898438,
+        326.1265869140625
+      ],
+      "bbox_px": [
+        1262,
+        1321,
+        2266,
+        1358
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b84",
+      "text": "erties of the overall composite material. [ 72 ]",
+      "bbox_pt": [
+        303.0895080566406,
+        327.13775634765625,
+        461.3548583984375,
+        337.0799255371094
+      ],
+      "bbox_px": [
+        1262,
+        1363,
+        1922,
+        1404
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b85",
+      "text": "For inorganic bio-piezoelectric materials, modifying the lattice",
+      "bbox_pt": [
+        312.5580139160156,
+        338.9931640625,
+        544.0419921875,
+        348.0402526855469
+      ],
+      "bbox_px": [
+        1302,
+        1412,
+        2266,
+        1450
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b86",
+      "text": "size of the material itself is an eﬀective approach for enhanc-",
+      "bbox_pt": [
+        303.09039306640625,
+        349.95550537109375,
+        544.0263061523438,
+        359.0025939941406
+      ],
+      "bbox_px": [
+        1262,
+        1458,
+        2266,
+        1495
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b87",
+      "text": "ing piezoelectric performance. Conventionally, it is widely rec-",
+      "bbox_pt": [
+        303.09039306640625,
+        360.9088439941406,
+        544.0103149414062,
+        369.9559326171875
+      ],
+      "bbox_px": [
+        1262,
+        1503,
+        2266,
+        1541
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b88",
+      "text": "ognized that a high surface-area ratio is a critical factor that trig-",
+      "bbox_pt": [
+        303.09039306640625,
+        371.8711853027344,
+        544.012939453125,
+        380.91827392578125
+      ],
+      "bbox_px": [
+        1262,
+        1549,
+        2266,
+        1587
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b89",
+      "text": "gers surface eﬀects. Thus, when the scale of a material reaches",
+      "bbox_pt": [
+        303.09039306640625,
+        382.83349609375,
+        544.0299682617188,
+        391.8805847167969
+      ],
+      "bbox_px": [
+        1262,
+        1595,
+        2266,
+        1632
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b90",
+      "text": "the nanometer or sub-nanometer level, the performance of the",
+      "bbox_pt": [
+        303.09039306640625,
+        393.7868347167969,
+        544.0399169921875,
+        402.83392333984375
+      ],
+      "bbox_px": [
+        1262,
+        1640,
+        2266,
+        1678
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b91",
+      "text": "piezoelectric material is further enhanced, and even nonpiezo-",
+      "bbox_pt": [
+        303.09039306640625,
+        404.7491760253906,
+        544.0173950195312,
+        413.7962646484375
+      ],
+      "bbox_px": [
+        1262,
+        1686,
+        2266,
+        1724
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b92",
+      "text": "electric materials may exhibit piezoelectric properties. For in-",
+      "bbox_pt": [
+        303.09039306640625,
+        415.71148681640625,
+        544.0137939453125,
+        424.7585754394531
+      ],
+      "bbox_px": [
+        1262,
+        1732,
+        2266,
+        1769
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b93",
+      "text": "stance, when the lattice size of BaTiO 3  ceramics approaches 1",
+      "bbox_pt": [
+        303.09039306640625,
+        426.66217041015625,
+        544.0369873046875,
+        437.95025634765625
+      ],
+      "bbox_px": [
+        1262,
+        1777,
+        2266,
+        1824
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b94",
+      "text": "μ m, a signiﬁcant improvement in piezoelectric performance oc-",
+      "bbox_pt": [
+        303.08917236328125,
+        437.5395812988281,
+        544.0414428710938,
+        446.6716003417969
+      ],
+      "bbox_px": [
+        1262,
+        1823,
+        2266,
+        1861
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b95",
+      "text": "curs. Additionally, researchers have augmented the piezoelectric",
+      "bbox_pt": [
+        303.08917236328125,
+        448.5868225097656,
+        544.0134887695312,
+        457.6339111328125
+      ],
+      "bbox_px": [
+        1262,
+        1869,
+        2266,
+        1906
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b96",
+      "text": "constant of the material by reducing the diameter of the BaTiO 3",
+      "bbox_pt": [
+        303.08917236328125,
+        459.5401916503906,
+        543.5438232421875,
+        470.0501708984375
+      ],
+      "bbox_px": [
+        1262,
+        1914,
+        2264,
+        1958
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b97",
+      "text": "nanoﬁbers. [ 73 ]",
+      "bbox_pt": [
+        303.0899963378906,
+        469.5987548828125,
+        355.57843017578125,
+        479.54827880859375
+      ],
+      "bbox_px": [
+        1262,
+        1956,
+        1481,
+        1998
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b98",
+      "text": "Biocompatibility is another parameter that cannot be over-",
+      "bbox_pt": [
+        312.5580139160156,
+        481.4631652832031,
+        544.008544921875,
+        490.51025390625
+      ],
+      "bbox_px": [
+        1302,
+        2006,
+        2266,
+        2043
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b99",
+      "text": "looked when bio-piezoelectric materials are utilized in the",
+      "bbox_pt": [
+        303.09039306640625,
+        492.4165344238281,
+        544.0509643554688,
+        501.463623046875
+      ],
+      "bbox_px": [
+        1262,
+        2051,
+        2266,
+        2089
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b100",
+      "text": "biomedical ﬁeld. Biosecurity is a core factor that determines",
+      "bbox_pt": [
+        303.09039306640625,
+        503.37884521484375,
+        544.0589599609375,
+        512.4259033203125
+      ],
+      "bbox_px": [
+        1262,
+        2097,
+        2266,
+        2135
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b101",
+      "text": "whether bio-piezoelectric materials can pass tests and be practi-",
+      "bbox_pt": [
+        303.09039306640625,
+        514.3411865234375,
+        544.0237426757812,
+        523.3882446289062
+      ],
+      "bbox_px": [
+        1262,
+        2143,
+        2266,
+        2180
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b102",
+      "text": "cally applied in biomedicine. For example, lead zirconate titanate",
+      "bbox_pt": [
+        303.09039306640625,
+        525.2945556640625,
+        544.0316162109375,
+        534.3416137695312
+      ],
+      "bbox_px": [
+        1262,
+        2188,
+        2266,
+        2226
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b103",
+      "text": "(PZT) is a piezoelectric material with remarkable piezoelectric",
+      "bbox_pt": [
+        303.09039306640625,
+        536.2568359375,
+        544.0401000976562,
+        545.3038940429688
+      ],
+      "bbox_px": [
+        1262,
+        2234,
+        2266,
+        2272
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b104",
+      "text": "performance. However, as the material contains lead (Pb), which",
+      "bbox_pt": [
+        303.09039306640625,
+        547.2191772460938,
+        544.0146484375,
+        556.2662353515625
+      ],
+      "bbox_px": [
+        1262,
+        2280,
+        2266,
+        2317
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b105",
+      "text": "is a heavy metal with biological toxicity, it cannot be directly ap-",
+      "bbox_pt": [
+        303.09039306640625,
+        558.1725463867188,
+        544.0352172851562,
+        567.2196044921875
+      ],
+      "bbox_px": [
+        1262,
+        2325,
+        2266,
+        2363
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b106",
+      "text": "plied to cells or tissues. Researchers have mitigated the cytotoxic-",
+      "bbox_pt": [
+        303.09039306640625,
+        569.1348266601562,
+        544.0363159179688,
+        578.181884765625
+      ],
+      "bbox_px": [
+        1262,
+        2371,
+        2266,
+        2409
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b107",
+      "text": "ity of this material by conducting surface modiﬁcations or apply-",
+      "bbox_pt": [
+        303.09039306640625,
+        580.0881958007812,
+        544.0310668945312,
+        589.13525390625
+      ],
+      "bbox_px": [
+        1262,
+        2417,
+        2266,
+        2454
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b108",
+      "text": "ing a biological coating to PZT, exerting its excellent piezoelec-",
+      "bbox_pt": [
+        303.09039306640625,
+        591.050537109375,
+        544.003173828125,
+        600.0975952148438
+      ],
+      "bbox_px": [
+        1262,
+        2462,
+        2266,
+        2500
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b109",
+      "text": "tric properties while enhancing the biosafety of the material. [ 74 ]",
+      "bbox_pt": [
+        303.09039306640625,
+        601.1067504882812,
+        543.54345703125,
+        611.0598754882812
+      ],
+      "bbox_px": [
+        1262,
+        2504,
+        2264,
+        2546
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b110",
+      "text": "The hydrophilicity of a material, which is an important indica-",
+      "bbox_pt": [
+        303.0899963378906,
+        612.962158203125,
+        544.037109375,
+        622.0092163085938
+      ],
+      "bbox_px": [
+        1262,
+        2554,
+        2266,
+        2591
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b111",
+      "text": "tor of bioadhesion, has received considerable attention. PVDF",
+      "bbox_pt": [
+        303.0899963378906,
+        623.9244995117188,
+        544.030517578125,
+        632.9715576171875
+      ],
+      "bbox_px": [
+        1262,
+        2599,
+        2266,
+        2637
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b112",
+      "text": "ﬁlms are unfavorable for cell adhesion and proliferation because",
+      "bbox_pt": [
+        303.0899963378906,
+        634.8868408203125,
+        544.0333862304688,
+        643.9338989257812
+      ],
+      "bbox_px": [
+        1262,
+        2645,
+        2266,
+        2683
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b113",
+      "text": "of their high surface hydrophobicity. Kitsara et al. performed sur-",
+      "bbox_pt": [
+        303.0899963378906,
+        645.8402099609375,
+        544.033447265625,
+        654.8872680664062
+      ],
+      "bbox_px": [
+        1262,
+        2691,
+        2266,
+        2728
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b114",
+      "text": "face modiﬁcation of a ﬁber membrane through plasma treatment",
+      "bbox_pt": [
+        303.0899963378906,
+        656.802490234375,
+        544.04248046875,
+        665.8495483398438
+      ],
+      "bbox_px": [
+        1262,
+        2736,
+        2266,
+        2774
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b115",
+      "text": "to form a long-term stable superhydrophilic layer on the surface",
+      "bbox_pt": [
+        303.0899963378906,
+        667.7648315429688,
+        544.037841796875,
+        676.8118896484375
+      ],
+      "bbox_px": [
+        1262,
+        2782,
+        2266,
+        2820
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b116",
+      "text": "of the ﬁber membrane, resolving the problem of cell adhesion.",
+      "bbox_pt": [
+        303.0899963378906,
+        678.7181396484375,
+        544.04150390625,
+        687.7651977539062
+      ],
+      "bbox_px": [
+        1262,
+        2827,
+        2266,
+        2865
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b117",
+      "text": "In addition to the hydrophilicity of the piezoelectric material sur-",
+      "bbox_pt": [
+        303.0899963378906,
+        689.6804809570312,
+        544.0407104492188,
+        698.7275390625
+      ],
+      "bbox_px": [
+        1262,
+        2873,
+        2266,
+        2911
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b118",
+      "text": "face, cell adhesion depends on its roughness. The smooth surface",
+      "bbox_pt": [
+        303.0899963378906,
+        700.642822265625,
+        544.01806640625,
+        709.6898803710938
+      ],
+      "bbox_px": [
+        1262,
+        2919,
+        2266,
+        2957
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b119",
+      "text": "of PCL piezoelectric scaﬀolds is detrimental to cell adhesion, but",
+      "bbox_pt": [
+        303.0899963378906,
+        711.59619140625,
+        544.049560546875,
+        720.6432495117188
+      ],
+      "bbox_px": [
+        1262,
+        2964,
+        2266,
+        3002
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b120",
+      "text": "Adv. Sci.  2025 , 2411209",
+      "bbox_pt": [
+        47.97600173950195,
+        745.1636352539062,
+        115.44682312011719,
+        752.2001953125
+      ],
+      "bbox_px": [
+        199,
+        3104,
+        481,
+        3134
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b121",
+      "text": "2411209 (6 of 29)",
+      "bbox_pt": [
+        190.69960021972656,
+        743.669189453125,
+        255.0029754638672,
+        752.6355590820312
+      ],
+      "bbox_px": [
+        794,
+        3098,
+        1062,
+        3135
+      ],
+      "column_guess": 1
+    },
+    {
+      "block_id": "p6_b122",
+      "text": "© 2025 The Author(s). Advanced Science published by Wiley-VCH GmbH",
+      "bbox_pt": [
+        330.2345886230469,
+        745.216064453125,
+        544.045654296875,
+        752.1898193359375
+      ],
+      "bbox_px": [
+        1375,
+        3105,
+        2266,
+        3134
+      ],
+      "column_guess": 2
+    },
+    {
+      "block_id": "p6_b123",
+      "text": " 21983844, 0, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202411209 by CochraneChina, Wiley Online Library on [15/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",
+      "bbox_pt": [
+        578.6572265625,
+        15.6519775390625,
+        585.5540161132812,
+        767.0807495117188
+      ],
+      "bbox_px": [
+        2411,
+        65,
+        2439,
+        3196
+      ],
+      "column_guess": 2
+    }
+  ],
+  "constraints": {
+    "total_blocks": 124
+  }
+}

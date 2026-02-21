@@ -17,6 +17,7 @@ blocks_norm.jsonl (lines 124-128):
 """
 
 import json
+import re
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Optional, Any
@@ -60,6 +61,49 @@ class FaultInjectionEvent:
     retry_attempts: int
     fallback_used: bool
     status: str
+
+
+def should_start_new_paragraph(
+    current_chunk: list[dict[str, Any]],
+    next_line: dict[str, Any],
+) -> bool:
+    if not current_chunk:
+        return False
+
+    prev = current_chunk[-1]
+    prev_bbox = prev.get("bbox", [0.0, 0.0, 0.0, 0.0])
+    next_bbox = next_line.get("bbox", [0.0, 0.0, 0.0, 0.0])
+    prev_text = str(prev.get("text", "")).strip()
+    next_text = str(next_line.get("text", "")).strip()
+
+    prev_y1 = float(prev_bbox[3])
+    next_y0 = float(next_bbox[1])
+    prev_x0 = float(prev_bbox[0])
+    next_x0 = float(next_bbox[0])
+    prev_height = max(1.0, float(prev_bbox[3]) - float(prev_bbox[1]))
+    vertical_gap = next_y0 - prev_y1
+    current_words = sum(len(str(x.get("text", "")).split()) for x in current_chunk)
+
+    if current_words >= 180:
+        return True
+
+    if current_words >= 120:
+        starts_like_new_sentence = bool(next_text[:1].isupper()) or bool(re.match(r"^\s*\d+", next_text))
+        prev_ended = prev_text.endswith((".", "?", "!", ":", ";"))
+        if starts_like_new_sentence and prev_ended:
+            return True
+
+    if vertical_gap > prev_height * 0.9:
+        return True
+
+    if re.match(r"^\s*\d+[\).]", next_text):
+        if len(current_chunk) >= 2 or len(prev_text.split()) > 10:
+            return True
+
+    if next_y0 <= float(prev_bbox[1]) and abs(next_x0 - prev_x0) > 80:
+        return True
+
+    return False
 
 
 def render_page_to_png(
@@ -114,42 +158,103 @@ def extract_blocks_from_page(
         if not isinstance(lines, list):
             continue
 
+        parsed_lines: list[dict[str, Any]] = []
+
         for line in lines:
             if not isinstance(line, dict):
                 continue
-            bbox = line.get("bbox", (0, 0, 0, 0))
-            text_parts = []
-            all_sizes = []
-            all_fonts = []
-            has_bold = False
-            has_italic = False
+            line_bbox = line.get("bbox", (0, 0, 0, 0))
+            if isinstance(line_bbox, (tuple, list)) and len(line_bbox) >= 4:
+                line_bbox_list = [
+                    float(line_bbox[0]), float(line_bbox[1]),
+                    float(line_bbox[2]), float(line_bbox[3]),
+                ]
+            else:
+                line_bbox_list = [0.0, 0.0, 0.0, 0.0]
 
             spans = line.get("spans", [])
             if not isinstance(spans, list):
                 continue
+
+            span_texts: list[str] = []
+            line_sizes: list[float] = []
+            line_fonts: list[str] = []
+            line_has_bold = False
+            line_has_italic = False
 
             for span in spans:
                 if not isinstance(span, dict):
                     continue
                 text = span.get("text", "")
                 if isinstance(text, str) and text.strip():
-                    text_parts.append(text)
+                    span_texts.append(text.strip())
                     size = span.get("size", 0.0)
                     if isinstance(size, (int, float)):
-                        all_sizes.append(float(size))
+                        line_sizes.append(float(size))
                     font = span.get("font", "")
                     if isinstance(font, str):
-                        all_fonts.append(font)
+                        line_fonts.append(font)
                         font_lower = font.lower()
                         if "bold" in font_lower or "heavy" in font_lower:
-                            has_bold = True
+                            line_has_bold = True
                         if "italic" in font_lower or "oblique" in font_lower:
-                            has_italic = True
+                            line_has_italic = True
 
-            combined_text = " ".join(text_parts)
-            if not combined_text.strip():
+            line_text = " ".join(span_texts).strip()
+            if line_text:
+                parsed_lines.append({
+                    "text": line_text,
+                    "bbox": line_bbox_list,
+                    "sizes": line_sizes,
+                    "fonts": line_fonts,
+                    "is_bold": line_has_bold,
+                    "is_italic": line_has_italic,
+                })
+
+        if not parsed_lines:
+            continue
+
+        paragraph_chunks: list[list[dict[str, Any]]] = []
+        current_chunk: list[dict[str, Any]] = []
+        for line_entry in parsed_lines:
+            if should_start_new_paragraph(current_chunk, line_entry):
+                paragraph_chunks.append(current_chunk)
+                current_chunk = [line_entry]
+            else:
+                current_chunk.append(line_entry)
+        if current_chunk:
+            paragraph_chunks.append(current_chunk)
+
+        for chunk in paragraph_chunks:
+            if not chunk:
                 continue
 
+            texts = [str(x.get("text", "")).strip() for x in chunk]
+            combined_text = " ".join(t for t in texts if t)
+            if not combined_text:
+                continue
+
+            all_sizes: list[float] = []
+            all_fonts: list[str] = []
+            has_bold = False
+            has_italic = False
+            xs0: list[float] = []
+            ys0: list[float] = []
+            xs1: list[float] = []
+            ys1: list[float] = []
+
+            for item in chunk:
+                all_sizes.extend([float(v) for v in item.get("sizes", [])])
+                all_fonts.extend([str(v) for v in item.get("fonts", []) if str(v)])
+                has_bold = has_bold or bool(item.get("is_bold", False))
+                has_italic = has_italic or bool(item.get("is_italic", False))
+                ibox = item.get("bbox", [0.0, 0.0, 0.0, 0.0])
+                xs0.append(float(ibox[0]))
+                ys0.append(float(ibox[1]))
+                xs1.append(float(ibox[2]))
+                ys1.append(float(ibox[3]))
+
+            bbox_list = [min(xs0), min(ys0), max(xs1), max(ys1)]
             font_stats: dict[str, Any] = {
                 "sizes": all_sizes,
                 "names": list(set(all_fonts)),
@@ -158,11 +263,6 @@ def extract_blocks_from_page(
                 "is_italic": has_italic,
                 "dominant_font": Counter(all_fonts).most_common(1)[0][0] if all_fonts else "",
             }
-
-            if isinstance(bbox, (tuple, list)) and len(bbox) >= 4:
-                bbox_list = [float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3])]
-            else:
-                bbox_list = [0.0, 0.0, 0.0, 0.0]
 
             raw_block = RawBlock(
                 block_id=f"p{page_num}_b{block_idx}",

@@ -12,6 +12,7 @@ Output artifacts:
 
 import json
 import os
+import re
 import urllib.request
 import urllib.error
 from dataclasses import dataclass, asdict
@@ -23,6 +24,14 @@ from .manifest import Manifest, load_manifest
 
 SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 SILICONFLOW_DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct"
+
+
+def resolve_api_key() -> str:
+    for key_name in ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN"):
+        value = os.environ.get(key_name, "").strip()
+        if value:
+            return value
+    return ""
 
 FACT_CATEGORIES = frozenset({
     "result", "statistics", "comparison", "definition",
@@ -147,12 +156,311 @@ def load_figure_table_links(links_path: Path) -> dict[str, Any]:
         return {"by_section": {}, "by_fact": {}, "by_synthesis_slot": {}}
 
 
+def load_cite_anchors(cite_anchors_path: Path) -> list[dict[str, Any]]:
+    anchors: list[dict[str, Any]] = []
+    if not cite_anchors_path.exists():
+        return anchors
+    with open(cite_anchors_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                d = json.loads(line)
+                anchors.append(d)
+            except json.JSONDecodeError:
+                continue
+    return anchors
+
+
+def is_noise_paragraph(para: dict[str, Any]) -> bool:
+    text = str(para.get("text", "")).strip()
+    if not text:
+        return True
+    role = str(para.get("role", "Body"))
+    if role in {"HeaderFooter", "ReferenceList"}:
+        return True
+    low = text.lower()
+    if "orcid.org" in low or "@" in text and len(text.split()) < 12:
+        return True
+    if "check for updates" in low:
+        return True
+    if re.search(r"\bdepartment of\b", low) and re.search(r"\buniversity\b", low):
+        return True
+    if low.count(",") >= 6 and re.search(r"\b(and|et al\.?|jr\.?|iii)\b", low):
+        return True
+    words = text.split()
+    page_start = int(para.get("page_span", {}).get("start", 1))
+    if words:
+        short_token_ratio = sum(1 for w in words if len(w.strip(".,;:()[]")) <= 2) / len(words)
+        if len(words) < 20 and short_token_ratio > 0.55:
+            return True
+        digit_tokens = sum(1 for w in words if any(ch.isdigit() for ch in w))
+        title_case_tokens = sum(1 for w in words if w[:1].isupper())
+        if page_start <= 2 and digit_tokens >= 3 and text.count(",") >= 3 and len(words) <= 45:
+            return True
+        if page_start <= 2 and len(words) <= 50 and title_case_tokens / len(words) > 0.55 and text.count(",") >= 2:
+            return True
+    if re.fullmatch(r"[\d\W_]+", text):
+        return True
+    return False
+
+
+def select_analysis_paragraphs(paragraphs: list[dict[str, Any]], max_items: int = 220) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for para in paragraphs:
+        if is_noise_paragraph(para):
+            continue
+        role = str(para.get("role", "Body"))
+        text = str(para.get("text", "")).strip()
+        words = len(text.split())
+        if role in {"FigureCaption", "TableCaption"} and words < 8:
+            continue
+        if words < 5 and role != "Heading":
+            continue
+        score = 0.0
+        score += min(70.0, float(words))
+        score += float(para.get("confidence", 0.5)) * 10.0
+        if role == "Heading":
+            score += 8.0
+        if role in {"Body", "Heading"}:
+            score += 4.0
+        if 18 <= words <= 180:
+            score += 6.0
+        para_copy = dict(para)
+        para_copy["_rank_score"] = score
+        candidates.append(para_copy)
+
+    # Section-balanced selection: keep ordering while avoiding overfocus on early pages.
+    by_section: dict[str, list[dict[str, Any]]] = {}
+    for p in candidates:
+        section_path = p.get("section_path")
+        if isinstance(section_path, list) and section_path:
+            key = " > ".join(str(x) for x in section_path if str(x).strip())
+        else:
+            key = f"page_{int(p.get('page_span', {}).get('start', 1) or 1):03d}"
+        by_section.setdefault(key, []).append(p)
+
+    for key in by_section:
+        by_section[key].sort(
+            key=lambda p: (
+                -float(p.get("_rank_score", 0.0)),
+                int(p.get("page_span", {}).get("start", 1) or 1),
+                str(p.get("para_id", "")),
+            )
+        )
+
+    selected: list[dict[str, Any]] = []
+    section_keys = sorted(by_section.keys())
+    per_section = max(3, min(12, max_items // max(1, len(section_keys))))
+    for key in section_keys:
+        selected.extend(by_section[key][:per_section])
+
+    if len(selected) < max_items:
+        selected_ids = {str(p.get("para_id", "")) for p in selected}
+        remaining = [p for p in candidates if str(p.get("para_id", "")) not in selected_ids]
+        remaining.sort(key=lambda p: -float(p.get("_rank_score", 0.0)))
+        selected.extend(remaining[: max(0, max_items - len(selected))])
+
+    selected.sort(
+        key=lambda p: (
+            int(p.get("page_span", {}).get("start", 1) or 1),
+            float(p.get("evidence_pointer", {}).get("bbox_union", [0, 0, 0, 0])[1] if isinstance(p.get("evidence_pointer", {}).get("bbox_union", [0, 0, 0, 0]), list) else 0),
+            str(p.get("para_id", "")),
+        )
+    )
+    return selected[:max_items]
+
+
+def safe_json_parse(raw: str) -> Optional[Any]:
+    text = raw.strip()
+    if not text:
+        return None
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?\s*", "", text)
+        text = re.sub(r"\s*```$", "", text)
+    start_obj = text.find("{")
+    start_arr = text.find("[")
+    starts = [x for x in (start_obj, start_arr) if x >= 0]
+    if starts:
+        text = text[min(starts):]
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        return None
+
+
+def heuristic_statement_from_text(text: str) -> str:
+    clean = " ".join(text.split())
+    if not clean:
+        return ""
+    parts = re.split(r"(?<=[\.!?])\s+", clean)
+    first = parts[0] if parts else clean
+    words = first.split()
+    if len(words) > 30:
+        first = " ".join(words[:30])
+    return first
+
+
+def is_noise_statement(text: str) -> bool:
+    clean = " ".join(text.split())
+    if not clean:
+        return True
+    low = clean.lower()
+    if "department of" in low or "orcid" in low or "check for updates" in low:
+        return True
+    words = clean.split()
+    if len(words) < 5:
+        return True
+    digit_tokens = sum(1 for w in words if any(ch.isdigit() for ch in w))
+    title_case_tokens = sum(1 for w in words if w[:1].isupper())
+    if len(words) <= 45 and digit_tokens >= 3 and clean.count(",") >= 2:
+        return True
+    if len(words) <= 50 and title_case_tokens / len(words) > 0.6 and clean.count(",") >= 2:
+        return True
+    return False
+
+
+def build_evidence_graph(
+    paragraphs: list[dict[str, Any]],
+    facts: list[Fact],
+    citations: list[dict[str, Any]],
+    cite_anchors: list[dict[str, Any]],
+    assets: list[dict[str, Any]],
+) -> dict[str, Any]:
+    para_lookup = {str(p.get("para_id", "")): p for p in paragraphs if p.get("para_id")}
+    citation_by_anchor = {str(c.get("anchor_id", "")): c for c in citations}
+
+    nodes: list[dict[str, Any]] = []
+    edges: list[dict[str, Any]] = []
+
+    for para_id, para in para_lookup.items():
+        nodes.append({
+            "id": f"para:{para_id}",
+            "type": "paragraph",
+            "page": para.get("page_span", {}).get("start", 1),
+            "role": para.get("role", "Body"),
+        })
+
+    for fact in facts:
+        nodes.append({
+            "id": f"fact:{fact.fact_id}",
+            "type": "fact",
+            "category": fact.category,
+            "para_id": fact.para_id,
+        })
+        if fact.para_id:
+            edges.append({
+                "from": f"fact:{fact.fact_id}",
+                "to": f"para:{fact.para_id}",
+                "relation": "derived_from",
+            })
+
+    for asset in assets:
+        asset_id = str(asset.get("asset_id", ""))
+        if not asset_id:
+            continue
+        nodes.append({
+            "id": f"asset:{asset_id}",
+            "type": "asset",
+            "asset_type": asset.get("asset_type", "unknown"),
+            "page": asset.get("page", 1),
+        })
+
+    for anchor in cite_anchors:
+        anchor_id = str(anchor.get("anchor_id", ""))
+        if not anchor_id:
+            continue
+        anchor_type = str(anchor.get("anchor_type", "unknown"))
+        nearest_para_id = str(anchor.get("nearest_para_id", "") or "")
+        nodes.append({
+            "id": f"anchor:{anchor_id}",
+            "type": "citation_anchor",
+            "anchor_type": anchor_type,
+            "page": anchor.get("page", 1),
+        })
+        if nearest_para_id:
+            edges.append({
+                "from": f"anchor:{anchor_id}",
+                "to": f"para:{nearest_para_id}",
+                "relation": "located_near",
+            })
+        mapped = citation_by_anchor.get(anchor_id, {}).get("mapped_ref_key")
+        if mapped:
+            edges.append({
+                "from": f"anchor:{anchor_id}",
+                "to": f"ref:{mapped}",
+                "relation": "maps_to",
+            })
+
+    return {
+        "nodes": nodes,
+        "edges": edges,
+        "summary": {
+            "paragraph_nodes": len(para_lookup),
+            "fact_nodes": len(facts),
+            "asset_nodes": len([a for a in assets if a.get("asset_id")]),
+            "citation_anchors": len(cite_anchors),
+        },
+    }
+
+
+def ensure_synthesis_slots(
+    synthesis: dict[str, Any],
+    assets: list[dict[str, Any]],
+    figure_links: dict[str, Any],
+) -> dict[str, Any]:
+    slots = synthesis.get("figure_table_slots", [])
+    if not isinstance(slots, list):
+        slots = []
+
+    existing_assets = {
+        aid
+        for slot in slots if isinstance(slot, dict)
+        for aid in slot.get("asset_ids", [])
+        if isinstance(aid, str)
+    }
+
+    by_section = figure_links.get("by_section", {}) if isinstance(figure_links, dict) else {}
+    if isinstance(by_section, dict):
+        for section_name, asset_ids in by_section.items():
+            if not isinstance(asset_ids, list):
+                continue
+            pending = [aid for aid in asset_ids if isinstance(aid, str) and aid not in existing_assets]
+            if not pending:
+                continue
+            slots.append({
+                "slot_id": f"slot_section_{len(slots)+1:03d}",
+                "position_hint": "section_appendix",
+                "asset_ids": pending,
+                "render_mode": "content_only",
+                "section": str(section_name),
+            })
+            existing_assets.update(pending)
+
+    for asset in assets:
+        aid = str(asset.get("asset_id", ""))
+        if not aid or aid in existing_assets:
+            continue
+        slots.append({
+            "slot_id": f"slot_{aid}",
+            "position_hint": "end_of_summary",
+            "asset_ids": [aid],
+            "render_mode": "content_only",
+        })
+        existing_assets.add(aid)
+
+    synthesis["figure_table_slots"] = slots
+    return synthesis
+
+
 def call_siliconflow(prompt: str, max_tokens: int = 4000) -> tuple[str, dict[str, Any]]:
-    api_key = os.environ.get("SILICONFLOW_API_KEY", "")
+    api_key = resolve_api_key()
     model = os.environ.get("SILICONFLOW_READING_MODEL", SILICONFLOW_DEFAULT_MODEL)
+    endpoint = os.environ.get("SILICONFLOW_ENDPOINT", SILICONFLOW_ENDPOINT)
     meta: dict[str, Any] = {
         "model": model,
-        "endpoint": SILICONFLOW_ENDPOINT,
+        "endpoint": endpoint,
         "success": False,
         "error_type": "unknown",
         "http_status": None,
@@ -170,7 +478,7 @@ def call_siliconflow(prompt: str, max_tokens: int = 4000) -> tuple[str, dict[str
         "max_tokens": max_tokens,
     }).encode("utf-8")
     req = urllib.request.Request(
-        SILICONFLOW_ENDPOINT,
+        endpoint,
         data=payload,
         headers={
             "Authorization": f"Bearer {api_key}",
@@ -193,6 +501,12 @@ def call_siliconflow(prompt: str, max_tokens: int = 4000) -> tuple[str, dict[str
     except urllib.error.HTTPError as e:
         meta["http_status"] = e.code
         meta["error_type"] = "http_error"
+        try:
+            body = e.read().decode("utf-8", errors="replace")
+            meta["response_chars"] = len(body)
+            meta["response_preview"] = body[:300]
+        except OSError:
+            pass
         return "{}", meta
     except urllib.error.URLError:
         meta["error_type"] = "url_error"
@@ -227,13 +541,13 @@ def truncate_quote(quote: str, max_words: int = 30) -> tuple[str, bool, Optional
     words = quote.split()
     if len(words) <= max_words:
         return quote, False, None
-    truncated = " ".join(words[:max_words])
+    truncated = " ".join(words[:max_words]).rstrip() + " ..."
     return truncated, True, f"Quote truncated to {max_words} words"
 
 
 def parse_paper_profile(raw: str) -> Optional[PaperProfile]:
     try:
-        data = json.loads(raw)
+        data = safe_json_parse(raw)
         if not isinstance(data, dict):
             return None
         required = ["paper_type", "paper_type_confidence", "research_problem", "claimed_contribution", "reading_strategy"]
@@ -252,26 +566,23 @@ def parse_paper_profile(raw: str) -> Optional[PaperProfile]:
             claimed_contribution=str(data.get("claimed_contribution", "")),
             reading_strategy=reading_strategy,
         )
-    except (json.JSONDecodeError, TypeError, ValueError):
+    except (TypeError, ValueError):
         return None
 
 
 def parse_logic_graph(raw: str) -> Optional[dict[str, Any]]:
-    try:
-        data = json.loads(raw)
-        if not isinstance(data, dict):
-            return None
-        required = ["nodes", "edges", "argument_flow"]
-        if not all(k in data for k in required):
-            return None
-        return data
-    except json.JSONDecodeError:
+    data = safe_json_parse(raw)
+    if not isinstance(data, dict):
         return None
+    required = ["nodes", "edges", "argument_flow"]
+    if not all(k in data for k in required):
+        return None
+    return data
 
 
 def parse_facts(raw: str, para_id: str) -> list[Fact]:
     try:
-        data = json.loads(raw)
+        data = safe_json_parse(raw)
         if not isinstance(data, list):
             return []
         facts = []
@@ -295,7 +606,7 @@ def parse_facts(raw: str, para_id: str) -> list[Fact]:
             evidence = item.get("evidence_pointer", {})
             if not isinstance(evidence, dict):
                 evidence = {}
-            facts.append(Fact(
+            parsed_fact = Fact(
                 fact_id=fact_id,
                 para_id=str(item.get("para_id", para_id)),
                 category=category,
@@ -304,35 +615,61 @@ def parse_facts(raw: str, para_id: str) -> list[Fact]:
                 evidence_pointer=evidence,
                 quote_truncated=quote_truncated,
                 truncation_reason=truncation_reason,
-            ))
+            )
+            facts.append(normalize_fact_for_truncation(parsed_fact))
         return facts
-    except (json.JSONDecodeError, TypeError):
+    except TypeError:
         return []
 
 
 def parse_themes(raw: str) -> Optional[dict[str, Any]]:
-    try:
-        data = json.loads(raw)
-        if not isinstance(data, dict):
-            return None
-        if "themes" not in data:
-            return None
-        return data
-    except json.JSONDecodeError:
+    data = safe_json_parse(raw)
+    if not isinstance(data, dict):
         return None
+    if "themes" not in data:
+        alt = data.get("topic_clusters") or data.get("clusters") or data.get("items")
+        if isinstance(alt, list):
+            data = {
+                "themes": alt,
+                "cross_theme_links": data.get("cross_theme_links", []),
+                "contradictions": data.get("contradictions", []),
+            }
+        else:
+            return None
+    return data
+
+
+def normalize_fact_for_truncation(fact: Fact) -> Fact:
+    quote = str(fact.quote or "").strip()
+    statement = str(fact.statement or "").strip()
+    if not quote or not statement:
+        return fact
+
+    if fact.quote_truncated:
+        if not quote.endswith("..."):
+            fact.quote = quote.rstrip() + " ..."
+        if not fact.truncation_reason:
+            fact.truncation_reason = "Quote truncated by upstream model output"
+        return fact
+
+    q_len = len(quote)
+    s_len = len(statement)
+    if q_len < s_len and (s_len - q_len > 6):
+        if quote.rstrip()[-1:] not in ".!?" and not quote.endswith("..."):
+            fact.quote = quote.rstrip() + " ..."
+            fact.quote_truncated = True
+            fact.truncation_reason = "Detected likely truncation in model quote"
+    return fact
 
 
 def parse_synthesis(raw: str) -> Optional[dict[str, Any]]:
-    try:
-        data = json.loads(raw)
-        if not isinstance(data, dict):
-            return None
-        required = ["executive_summary", "key_evidence_lines"]
-        if not all(k in data for k in required):
-            return None
-        return data
-    except json.JSONDecodeError:
+    data = safe_json_parse(raw)
+    if not isinstance(data, dict):
         return None
+    required = ["executive_summary", "key_evidence_lines"]
+    if not all(k in data for k in required):
+        return None
+    return data
 
 
 def build_profile_prompt(paragraphs: list[dict[str, Any]], citations: list[dict[str, Any]]) -> str:
@@ -606,12 +943,18 @@ def generate_fallback_facts(paragraphs: list[dict[str, Any]]) -> list[Fact]:
             continue
         page_span = para.get("page_span", {})
         evidence = para.get("evidence_pointer", {})
+        para_text = str(para.get("text", "")).strip()
+        heuristic_statement = heuristic_statement_from_text(para_text)
+        if not heuristic_statement:
+            heuristic_statement = "此段落无可提取的原子事实 (No extractable atomic facts in this paragraph)"
+        if len(heuristic_statement.split()) < 6:
+            continue
         fact = Fact(
             fact_id=generate_fact_id(para_id, 0),
             para_id=para_id,
-            category="none",
-            statement="此段落无可提取的原子事实 (No extractable atomic facts in this paragraph)",
-            quote="",
+            category="background" if heuristic_statement != "此段落无可提取的原子事实 (No extractable atomic facts in this paragraph)" else "none",
+            statement=heuristic_statement,
+            quote=heuristic_statement if len(heuristic_statement.split()) <= 30 else "",
             evidence_pointer={
                 "page": page_span.get("start", 1),
                 "bbox": evidence.get("bbox_union", [0, 0, 0, 0]),
@@ -622,21 +965,54 @@ def generate_fallback_facts(paragraphs: list[dict[str, Any]]) -> list[Fact]:
     return facts
 
 
-def generate_fallback_themes() -> dict[str, Any]:
-    return {"themes": [], "cross_theme_links": [], "contradictions": []}
+def generate_fallback_themes(facts: list[Fact]) -> dict[str, Any]:
+    groups: dict[str, list[str]] = {}
+    for fact in facts:
+        if fact.category == "none":
+            continue
+        groups.setdefault(fact.category, []).append(fact.fact_id)
+
+    themes = []
+    for idx, (cat, fact_ids) in enumerate(sorted(groups.items()), start=1):
+        themes.append({
+            "theme_id": f"theme_{idx:03d}",
+            "name": f"{cat} 主题",
+            "description": f"围绕 {cat} 的证据汇总。",
+            "fact_ids": fact_ids[:20],
+            "strength": "moderate" if len(fact_ids) >= 3 else "weak",
+            "evidence_quality": "medium" if len(fact_ids) >= 3 else "low",
+        })
+
+    return {"themes": themes, "cross_theme_links": [], "contradictions": []}
 
 
 def generate_fallback_synthesis(facts: list[Fact], assets: list[dict[str, Any]]) -> dict[str, Any]:
     key_lines = []
-    for fact in facts[:10]:
-        if fact.category != "none" and fact.statement:
-            key_lines.append({
-                "line_id": f"line_{fact.fact_id}",
-                "statement": fact.statement[:200],
-                "fact_ids": [fact.fact_id],
-                "strength": "weak",
-                "is_strong_claim": False,
-            })
+    scored_candidates: list[tuple[float, Fact]] = []
+    for fact in facts:
+        stmt = str(fact.statement or "").strip()
+        if not stmt or is_noise_statement(stmt):
+            continue
+        score = 0.0
+        score += min(60.0, float(len(stmt.split())))
+        if fact.category != "none":
+            score += 12.0
+        if any(k in stmt.lower() for k in ["risk", "increase", "decrease", "outcome", "associated", "repair", "tear"]):
+            score += 10.0
+        scored_candidates.append((score, fact))
+    scored_candidates.sort(key=lambda x: x[0], reverse=True)
+    fact_candidates = [f for _, f in scored_candidates]
+    if not fact_candidates:
+        fact_candidates = [f for f in facts if f.statement][:8]
+
+    for fact in fact_candidates[:8]:
+        key_lines.append({
+            "line_id": f"line_{fact.fact_id}",
+            "statement": fact.statement[:200],
+            "fact_ids": [fact.fact_id],
+            "strength": "moderate" if fact.category != "none" else "weak",
+            "is_strong_claim": False,
+        })
     slots = []
     for asset in assets[:5]:
         slots.append({
@@ -645,8 +1021,14 @@ def generate_fallback_synthesis(facts: list[Fact], assets: list[dict[str, Any]])
             "asset_ids": [asset.get("asset_id", "")],
             "render_mode": "content_only",
         })
+    if fact_candidates:
+        summary_lines = [f"- {f.statement[:90]}" for f in fact_candidates[:4]]
+        summary_text = "自动回退摘要（基于证据段落）：\n" + "\n".join(summary_lines)
+    else:
+        summary_text = "由于处理失败，无法生成摘要。请参阅各个事实了解详情。(Unable to generate summary due to processing failure. See individual facts for details.)"
+
     return {
-        "executive_summary": "由于处理失败，无法生成摘要。请参阅各个事实了解详情。(Unable to generate summary due to processing failure. See individual facts for details.)",
+        "executive_summary": summary_text,
         "key_evidence_lines": key_lines,
         "figure_table_slots": slots,
     }
@@ -665,17 +1047,26 @@ def run_reading(
     qa_dir.mkdir(parents=True, exist_ok=True)
     paragraphs_path = run_dir / "paragraphs" / "paragraphs.jsonl"
     paragraphs = load_paragraphs(paragraphs_path)
+    analysis_paragraphs = select_analysis_paragraphs(paragraphs)
+    if not analysis_paragraphs:
+        analysis_paragraphs = paragraphs[:220]
     cite_map_path = run_dir / "citations" / "cite_map.jsonl"
     citations = load_cite_map(cite_map_path)
+    cite_anchors_path = run_dir / "citations" / "cite_anchors.jsonl"
+    cite_anchors = load_cite_anchors(cite_anchors_path)
     figure_index_path = run_dir / "figures_tables" / "figure_table_index.jsonl"
     assets = load_figure_table_index(figure_index_path)
     figure_links_path = run_dir / "figures_tables" / "figure_table_links.json"
     figure_links = load_figure_table_links(figure_links_path)
-    _ = figure_links
     fault_events: list[FaultEvent] = []
     llm_model = os.environ.get("SILICONFLOW_READING_MODEL", SILICONFLOW_DEFAULT_MODEL)
+    print(
+        f"[reading] start paragraphs={len(paragraphs)} analysis={len(analysis_paragraphs)} "
+        f"citations={len(citations)} assets={len(assets)} model={llm_model}",
+        flush=True,
+    )
 
-    profile_prompt = build_profile_prompt(paragraphs, citations)
+    profile_prompt = build_profile_prompt(analysis_paragraphs, citations)
     if inject_malformed_json:
         raw_profile = "{ malformed json !!! "
         profile_meta: dict[str, Any] = {
@@ -691,6 +1082,10 @@ def run_reading(
     else:
         raw_profile, profile_meta = call_siliconflow(profile_prompt)
     profile = parse_paper_profile(raw_profile)
+    print(
+        f"[reading] profile parse_success={profile is not None} error={profile_meta.get('error_type', 'unknown')}",
+        flush=True,
+    )
     append_llm_call_event(qa_dir, LLMCallEvent(
         stage="reading",
         step="profile",
@@ -718,7 +1113,7 @@ def run_reading(
             "reading_strategy": profile.reading_strategy,
         }, f, indent=2, ensure_ascii=False)
 
-    logic_prompt = build_logic_prompt(paragraphs, profile)
+    logic_prompt = build_logic_prompt(analysis_paragraphs, profile)
     if inject_malformed_json:
         raw_logic = "{ malformed json !!! "
         logic_meta: dict[str, Any] = {
@@ -734,6 +1129,10 @@ def run_reading(
     else:
         raw_logic, logic_meta = call_siliconflow(logic_prompt)
     logic_graph = parse_logic_graph(raw_logic)
+    print(
+        f"[reading] logic parse_success={logic_graph is not None} error={logic_meta.get('error_type', 'unknown')}",
+        flush=True,
+    )
     append_llm_call_event(qa_dir, LLMCallEvent(
         stage="reading",
         step="logic",
@@ -758,9 +1157,11 @@ def run_reading(
     facts: list[Fact] = []
     facts_path = reading_dir / "facts.jsonl"
     batch_size = 10
-    total_paragraphs = len(paragraphs)
+    total_paragraphs = len(analysis_paragraphs)
+    total_batches = (total_paragraphs + batch_size - 1) // batch_size
     for start_idx in range(0, total_paragraphs, batch_size):
-        facts_prompt, para_ids = build_facts_prompt(paragraphs, start_idx, batch_size)
+        batch_no = start_idx // batch_size + 1
+        facts_prompt, para_ids = build_facts_prompt(analysis_paragraphs, start_idx, batch_size)
         if inject_malformed_json and start_idx == 0:
             raw_facts = "{ malformed json !!! "
             facts_meta: dict[str, Any] = {
@@ -776,6 +1177,11 @@ def run_reading(
         else:
             raw_facts, facts_meta = call_siliconflow(facts_prompt)
         batch_facts = parse_facts(raw_facts, para_ids[0] if para_ids else "")
+        print(
+            f"[reading] facts batch={batch_no}/{total_batches} parse_success={bool(batch_facts)} "
+            f"error={facts_meta.get('error_type', 'unknown')} para_ids={len(para_ids)}",
+            flush=True,
+        )
         append_llm_call_event(qa_dir, LLMCallEvent(
             stage="reading",
             step=f"facts_batch_{start_idx:05d}",
@@ -801,8 +1207,8 @@ def run_reading(
                     fallback_fact = Fact(
                         fact_id=generate_fact_id(para_id, 0),
                         para_id=para_id,
-                        category="none",
-                        statement="此段落无可提取的原子事实 (No extractable atomic facts in this paragraph)",
+                        category="background",
+                        statement=heuristic_statement_from_text(str(para.get("text", ""))) or "此段落无可提取的原子事实 (No extractable atomic facts in this paragraph)",
                         quote="",
                         evidence_pointer={
                             "page": page_span.get("start", 1),
@@ -810,10 +1216,11 @@ def run_reading(
                             "source_block_ids": evidence.get("source_block_ids", []),
                         },
                     )
-                    batch_facts.append(fallback_fact)
+                    if len(fallback_fact.statement.split()) >= 6:
+                        batch_facts.append(fallback_fact)
         facts.extend(batch_facts)
     if not facts:
-        facts = generate_fallback_facts(paragraphs)
+        facts = generate_fallback_facts(analysis_paragraphs)
     with open(facts_path, "w", encoding="utf-8") as f:
         for fact in facts:
             record: dict[str, Any] = {
@@ -845,6 +1252,10 @@ def run_reading(
     else:
         raw_themes, themes_meta = call_siliconflow(themes_prompt)
     themes = parse_themes(raw_themes)
+    print(
+        f"[reading] themes parse_success={themes is not None} error={themes_meta.get('error_type', 'unknown')}",
+        flush=True,
+    )
     append_llm_call_event(qa_dir, LLMCallEvent(
         stage="reading",
         step="themes",
@@ -860,7 +1271,7 @@ def run_reading(
         response_preview=str(themes_meta.get("response_preview", "")),
     ))
     if themes is None:
-        themes = generate_fallback_themes()
+        themes = generate_fallback_themes(facts)
         fault_events.append(FaultEvent(stage="reading", fault="themes-parse-failure", retry_attempts=0, fallback_used=True, status="degraded"))
     themes_path = reading_dir / "themes.json"
     with open(themes_path, "w", encoding="utf-8") as f:
@@ -882,6 +1293,10 @@ def run_reading(
     else:
         raw_synthesis, synthesis_meta = call_siliconflow(synthesis_prompt)
     synthesis = parse_synthesis(raw_synthesis)
+    print(
+        f"[reading] synthesis parse_success={synthesis is not None} error={synthesis_meta.get('error_type', 'unknown')}",
+        flush=True,
+    )
     append_llm_call_event(qa_dir, LLMCallEvent(
         stage="reading",
         step="synthesis",
@@ -909,10 +1324,38 @@ def run_reading(
         elif facts:
             line["fact_ids"] = [facts[0].fact_id]
             valid_lines.append(line)
+    if not valid_lines:
+        for idx, fact in enumerate(facts[:5], start=1):
+            valid_lines.append({
+                "line_id": f"line_fallback_{idx:03d}",
+                "statement": fact.statement[:180],
+                "fact_ids": [fact.fact_id],
+                "strength": "weak",
+                "is_strong_claim": False,
+            })
     synthesis["key_evidence_lines"] = valid_lines
+    synthesis = ensure_synthesis_slots(synthesis, assets, figure_links)
     synthesis_path = reading_dir / "synthesis.json"
     with open(synthesis_path, "w", encoding="utf-8") as f:
         json.dump(synthesis, f, indent=2, ensure_ascii=False)
+
+    evidence_graph = build_evidence_graph(
+        analysis_paragraphs,
+        facts,
+        citations,
+        cite_anchors,
+        assets,
+    )
+    evidence_graph_path = reading_dir / "evidence_graph.json"
+    with open(evidence_graph_path, "w", encoding="utf-8") as f:
+        json.dump(evidence_graph, f, indent=2, ensure_ascii=False)
+
+    print(
+        f"[reading] done facts={len(facts)} themes={len(themes.get('themes', []))} "
+        f"lines={len(synthesis.get('key_evidence_lines', []))} slots={len(synthesis.get('figure_table_slots', []))} "
+        f"fallbacks={len(fault_events)}",
+        flush=True,
+    )
 
     if fault_events:
         fp = qa_dir / "fault_injection.json"

@@ -249,12 +249,19 @@ def aggregate_paragraphs(
             block_ids = group.get("block_ids", [])
             if not block_ids:
                 continue
+
+            filtered_block_ids = [
+                bid for bid in block_ids
+                if not bool(blocks.get(bid, {}).get("is_header_footer_candidate", False))
+            ]
+            if not filtered_block_ids:
+                continue
             
             para = build_paragraph_from_group(
-                group_id, block_ids, blocks, role_labels, confidence
+                group_id, filtered_block_ids, blocks, role_labels, confidence
             )
             all_paragraphs.append(para)
-            grouped_blocks.update(block_ids)  # type: ignore[arg-type]
+            grouped_blocks.update(filtered_block_ids)  # type: ignore[arg-type]
     
     for block_id, block in blocks.items():
         if block_id in grouped_blocks:
@@ -266,6 +273,8 @@ def aggregate_paragraphs(
         
         role = role_labels.get(block_id, "Body")
         if role == "HeaderFooter":
+            continue
+        if bool(block.get("is_header_footer_candidate", False)):
             continue
         
         para = build_singleton_paragraph(block_id, block, role_labels, confidence)

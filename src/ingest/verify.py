@@ -371,8 +371,40 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
             details={"reason": "no citation data found"}
         )
     
-    total_markers = len(anchors)
-    mapped_markers = sum(1 for m in mappings if m.get("mapped_ref_key") is not None)
+    mapping_by_anchor = {str(m.get("anchor_id", "")): m for m in mappings}
+
+    def is_citation_marker_anchor(anchor: dict[str, Any]) -> bool:
+        anchor_type = str(anchor.get("anchor_type", "")).strip().lower()
+        if anchor_type:
+            return anchor_type == "citation_marker"
+        text = str(anchor.get("anchor_text", "")).strip().lower()
+        if re.fullmatch(r"[\[\(]?\d+(?:\s*[-,;]\s*\d+)*[\]\)]?", text):
+            return True
+        if text.startswith("doi:") or text.startswith("pmid:"):
+            return True
+        return False
+
+    citation_anchors = [a for a in anchors if is_citation_marker_anchor(a)]
+    citation_anchor_ids = {str(a.get("anchor_id", "")) for a in citation_anchors}
+
+    if not citation_anchors:
+        return GateResult(
+            name="citation_mapping_coverage",
+            value=0.0,
+            status=GateStatus.NOT_EVALUATED,
+            details={
+                "reason": "no citation-marker anchors found",
+                "raw_total_anchors": len(anchors),
+                "raw_total_mappings": len(mappings),
+            },
+        )
+
+    total_markers = len(citation_anchors)
+    mapped_markers = sum(
+        1
+        for anchor_id in citation_anchor_ids
+        if mapping_by_anchor.get(anchor_id, {}).get("mapped_ref_key") is not None
+    )
     citation_mapping_coverage = mapped_markers / total_markers if total_markers > 0 else 0.0
     
     # Compute DOI/PMID precision if golden available
@@ -386,8 +418,9 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
         
         # Extract DOI/PMID mappings
         doi_pmid_mappings = [
-            m for m in mappings 
-            if m.get("mapped_ref_key") and 
+            m for m in mappings
+            if str(m.get("anchor_id", "")) in citation_anchor_ids
+            and m.get("mapped_ref_key") and 
             (m["mapped_ref_key"].startswith("doi:") or m["mapped_ref_key"].startswith("pmid:"))
         ]
         
@@ -425,6 +458,9 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
         details={
             "mapped_markers": mapped_markers,
             "total_markers": total_markers,
+            "raw_total_anchors": len(anchors),
+            "raw_total_mappings": len(mappings),
+            "raw_mapped_any": sum(1 for m in mappings if m.get("mapped_ref_key") is not None),
             "doi_pmid_precision": doi_pmid_precision,
             "correct_doi_pmid": correct_doi_pmid,
             "extracted_doi_pmid": extracted_doi_pmid,
@@ -532,10 +568,18 @@ def compute_truncation_gate(run_dir: Path) -> GateResult:
     for fact in facts:
         quote = fact.get("quote", "")
         statement = fact.get("statement", "")
+        quote_truncated = bool(fact.get("quote_truncated", False))
+        truncation_reason = str(fact.get("truncation_reason", "") or "")
+
+        if quote_truncated or truncation_reason:
+            continue
         
         # Check if quote looks truncated (ends abruptly with incomplete sentence)
         # but no truncation reason is provided in statement
         if quote and len(quote) < len(statement):
+            ratio = len(quote) / max(1, len(statement))
+            if ratio >= 0.9 or (len(statement) - len(quote) <= 6):
+                continue
             # Quote is shorter than statement - might be truncated
             # Check if truncation is documented
             if "truncat" not in statement.lower() and "..." not in quote:

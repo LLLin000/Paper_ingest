@@ -1,0 +1,9 @@
+layout-parser/
+pdfplumber/
+run/
+.env
+example_pdf/
+.opencode/
+.sisyphus/
+unilm/
+xy-cut/

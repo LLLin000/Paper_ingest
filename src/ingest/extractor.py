@@ -26,6 +26,7 @@ from collections import Counter
 import pymupdf
 
 from .manifest import Manifest, load_manifest
+from .qa_telemetry import append_fault_events
 
 
 @dataclass
@@ -364,6 +365,8 @@ def run_extractor(
     try:
         all_raw_blocks: list[RawBlock] = []
         all_norm_blocks: list[NormBlock] = []
+        per_page_raw_blocks: dict[int, list[RawBlock]] = {}
+        per_page_dimensions: dict[int, tuple[float, float]] = {}
         total_pages = len(doc)
 
         for page_idx in range(total_pages):
@@ -372,17 +375,17 @@ def run_extractor(
             png_path = pages_dir / f"p{page_num:03d}.png"
             render_page_to_png(page, png_path, dpi=dpi, scale=scale)
             blocks = extract_blocks_from_page(page, page_num)
+            per_page_raw_blocks[page_num] = blocks
+            page_rect = page.rect
+            per_page_dimensions[page_num] = (float(page_rect.width), float(page_rect.height))
             all_raw_blocks.extend(blocks)
 
         avg_body_size = compute_average_body_size(all_raw_blocks)
 
         for page_idx in range(total_pages):
-            page = doc[page_idx]
             page_num = page_idx + 1
-            page_rect = page.rect
-            page_width = page_rect.width
-            page_height = page_rect.height
-            page_blocks = [b for b in all_raw_blocks if b.page == page_num]
+            page_width, page_height = per_page_dimensions.get(page_num, (0.0, 0.0))
+            page_blocks = per_page_raw_blocks.get(page_num, [])
 
             for block in page_blocks:
                 if inject_missing_font_stats:
@@ -411,20 +414,7 @@ def run_extractor(
                 f.write(json.dumps(asdict(block), ensure_ascii=False) + "\n")
 
         if fault_events:
-            qa_dir.mkdir(parents=True, exist_ok=True)
-            fault_path = qa_dir / "fault_injection.json"
-            existing_events = []
-            if fault_path.exists():
-                try:
-                    with open(fault_path, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-                        existing_events = data if isinstance(data, list) else []
-                except (json.JSONDecodeError, IOError):
-                    existing_events = []
-
-            all_events = existing_events + [asdict(e) for e in fault_events]
-            with open(fault_path, "w", encoding="utf-8") as f:
-                json.dump(all_events, f, indent=2, ensure_ascii=False)
+            append_fault_events(qa_dir, [asdict(e) for e in fault_events])
 
         return total_pages, len(all_raw_blocks)
 

@@ -137,6 +137,77 @@ def _has_valid_evidence(fact: dict[str, Any]) -> bool:
     return True
 
 
+def _has_minimal_anchor_evidence(fact: dict[str, Any]) -> tuple[bool, str, str]:
+    """Validate minimal fact evidence for provenance anchoring.
+
+    Returns:
+        (is_valid, reason, text_evidence_type)
+    """
+    evidence = fact.get("evidence_pointer", {})
+    if not isinstance(evidence, dict) or not evidence:
+        return False, "missing_evidence_pointer", "none"
+
+    page = evidence.get("page")
+    if not isinstance(page, int) or page <= 0:
+        return False, "missing_or_invalid_evidence_page", "none"
+
+    bbox = evidence.get("bbox")
+    if not isinstance(bbox, list) or len(bbox) != 4:
+        return False, "missing_or_invalid_evidence_bbox", "none"
+    if not all(isinstance(v, (int, float)) for v in bbox):
+        return False, "missing_or_invalid_evidence_bbox", "none"
+
+    source_block_ids = evidence.get("source_block_ids")
+    if not isinstance(source_block_ids, list) or len(source_block_ids) == 0:
+        return False, "missing_source_block_ids", "none"
+
+    quote = str(fact.get("quote", "") or "").strip()
+    if quote:
+        return True, "ok", "quote"
+
+    statement = str(fact.get("statement", "") or "").strip()
+    if statement:
+        return True, "ok", "statement_fallback"
+
+    return False, "missing_text_evidence", "none"
+
+
+def _is_fact_mapped_to_paragraph(fact: dict[str, Any], para_lookup: dict[str, dict[str, Any]]) -> tuple[bool, str]:
+    """Validate fact -> paragraph mapping and page consistency."""
+    para_id = str(fact.get("para_id", "") or "")
+    if not para_id:
+        return False, "missing_para_id"
+
+    paragraph = para_lookup.get(para_id)
+    if not paragraph:
+        return False, "missing_paragraph_mapping"
+
+    paragraph_text = str(paragraph.get("text", "") or "").strip()
+    if not paragraph_text:
+        return False, "empty_paragraph_text"
+
+    fact_evidence = fact.get("evidence_pointer", {})
+    fact_page = fact_evidence.get("page") if isinstance(fact_evidence, dict) else None
+    if not isinstance(fact_page, int) or fact_page <= 0:
+        return False, "missing_or_invalid_evidence_page"
+
+    para_evidence = paragraph.get("evidence_pointer", {})
+    para_pages = para_evidence.get("pages", []) if isinstance(para_evidence, dict) else []
+    if isinstance(para_pages, list) and para_pages:
+        valid_pages = {int(p) for p in para_pages if isinstance(p, int)}
+        if fact_page in valid_pages:
+            return True, "ok"
+
+    page_span = paragraph.get("page_span", {})
+    if isinstance(page_span, dict):
+        start = page_span.get("start")
+        end = page_span.get("end")
+        if isinstance(start, int) and isinstance(end, int) and start <= fact_page <= end:
+            return True, "ok"
+
+    return False, "fact_page_not_in_paragraph_span"
+
+
 def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> GateResult:
     """Compute provenance coverage and strong claim support metrics.
     
@@ -145,9 +216,15 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
     """
     synthesis_path = run_dir / "reading" / "synthesis.json"
     facts_path = run_dir / "reading" / "facts.jsonl"
+    paragraphs_path = run_dir / "paragraphs" / "paragraphs.jsonl"
+    cite_anchors_path = run_dir / "citations" / "cite_anchors.jsonl"
+    cite_map_path = run_dir / "citations" / "cite_map.jsonl"
     
     synthesis = load_json(synthesis_path)
     facts = load_jsonl(facts_path)
+    paragraphs = load_jsonl(paragraphs_path)
+    cite_anchors = load_jsonl(cite_anchors_path)
+    cite_map = load_jsonl(cite_map_path)
     
     if not synthesis or not facts:
         return GateResult(
@@ -157,8 +234,27 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
             details={"reason": "missing synthesis or facts"}
         )
     
-    # Build fact lookup
+    # Build fact/paragraph/citation lookups
     fact_lookup = {f["fact_id"]: f for f in facts}
+    para_lookup = {str(p.get("para_id", "")): p for p in paragraphs}
+
+    mapped_ref_by_anchor_id = {
+        str(m.get("anchor_id", "")): str(m.get("mapped_ref_key", "") or "")
+        for m in cite_map
+    }
+    citation_support_by_para_id: dict[str, int] = {}
+    for anchor in cite_anchors:
+        if str(anchor.get("anchor_type", "")).strip().lower() != "citation_marker":
+            continue
+        anchor_id = str(anchor.get("anchor_id", ""))
+        if not anchor_id:
+            continue
+        if not mapped_ref_by_anchor_id.get(anchor_id):
+            continue
+        para_id = str(anchor.get("nearest_para_id", "") or "")
+        if not para_id:
+            continue
+        citation_support_by_para_id[para_id] = citation_support_by_para_id.get(para_id, 0) + 1
     
     # Get key evidence lines from synthesis
     key_evidence_lines = synthesis.get("key_evidence_lines", [])
@@ -179,6 +275,9 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
     anchored_count = 0
     strong_claim_count = 0
     unsupported_strong_claims = 0
+    unanchored_claims: list[dict[str, Any]] = []
+    anchor_type_counts: dict[str, int] = {}
+    claims_with_citation_support = 0
     
     # Check facts directly if no key_evidence_lines
     claims_to_check = key_evidence_lines if key_evidence_lines else facts
@@ -196,27 +295,77 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
             statement = claim.get("statement", "")
             category = claim.get("category", "none")
             if _is_strong_claim(statement, category):
+                strong_claim_count += 1
                 unsupported_strong_claims += 1
+            unanchored_claims.append(
+                {
+                    "line_id": claim.get("line_id") or claim.get("fact_id") or "unknown",
+                    "statement": str(statement),
+                    "fact_ids": [],
+                    "missing_anchor_reasons": ["missing_fact_ids"],
+                }
+            )
             continue
-        
+
         # Check each linked fact
         all_anchored = True
+        claim_anchor_types: set[str] = set()
+        claim_reasons: list[str] = []
+        has_citation_support = False
         for fid in fact_ids:
             fact = fact_lookup.get(fid)
             if not fact:
                 all_anchored = False
+                claim_reasons.append(f"missing_fact:{fid}")
                 break
-            if not _has_valid_evidence(fact):
+
+            has_evidence, evidence_reason, text_evidence_type = _has_minimal_anchor_evidence(fact)
+            if not has_evidence:
                 all_anchored = False
-                break
-        
+                claim_reasons.append(f"{fid}:{evidence_reason}")
+                continue
+
+            mapped_to_para, para_reason = _is_fact_mapped_to_paragraph(fact, para_lookup)
+            if not mapped_to_para:
+                all_anchored = False
+                claim_reasons.append(f"{fid}:{para_reason}")
+                continue
+
+            para_id = str(fact.get("para_id", "") or "")
+            if citation_support_by_para_id.get(para_id, 0) > 0:
+                has_citation_support = True
+
+            anchor_type = f"paragraph_{text_evidence_type}"
+            claim_anchor_types.add(anchor_type)
+
         if all_anchored:
             anchored_count += 1
-        
+            for anchor_type in claim_anchor_types:
+                anchor_type_counts[anchor_type] = anchor_type_counts.get(anchor_type, 0) + 1
+            if has_citation_support:
+                claims_with_citation_support += 1
+        else:
+            statement = str(claim.get("statement", "") or "")
+            unanchored_claims.append(
+                {
+                    "line_id": claim.get("line_id") or claim.get("fact_id") or "unknown",
+                    "statement": statement,
+                    "fact_ids": list(fact_ids),
+                    "missing_anchor_reasons": claim_reasons or ["unknown"],
+                }
+            )
+
         # Check if this is a strong claim
-        statement = claim.get("statement", "")
-        category = claim.get("category", "none")
-        if _is_strong_claim(statement, category):
+        statement = str(claim.get("statement", "") or "")
+        category = str(claim.get("category", "none") or "none")
+        inferred_category = category
+        if category == "none" and isinstance(fact_ids, list) and fact_ids:
+            first_fact = fact_lookup.get(str(fact_ids[0]))
+            if isinstance(first_fact, dict):
+                inferred_category = str(first_fact.get("category", "none") or "none")
+
+        is_strong = bool(claim.get("is_strong_claim", False)) or _is_strong_claim(statement, inferred_category)
+        if is_strong:
             strong_claim_count += 1
             if not all_anchored:
                 unsupported_strong_claims += 1
@@ -243,6 +392,25 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
             "anchored_atomic_claims": anchored_count,
             "total_atomic_claims": total_atomic_claims,
             "strong_claim_unsupported_count": unsupported_strong_claims,
+            "strong_claim_count": strong_claim_count,
+            "claims_with_citation_support": claims_with_citation_support,
+            "anchor_type_counts": anchor_type_counts,
+            "anchored_claim_rule": {
+                "anchor_type": "paragraph_anchor",
+                "minimal_evidence": [
+                    "fact.evidence_pointer.page",
+                    "fact.evidence_pointer.bbox",
+                    "fact.evidence_pointer.source_block_ids",
+                    "fact.quote or fact.statement",
+                ],
+                "mapping_rules": [
+                    "claim.fact_ids must all resolve in reading/facts.jsonl",
+                    "each fact.para_id must resolve in paragraphs/paragraphs.jsonl",
+                    "fact evidence page must align with mapped paragraph pages/page_span",
+                ],
+                "citation_support_note": "citation-marker anchors with mapped_ref_key are counted as supporting evidence when nearest_para_id maps to the fact paragraph",
+            },
+            "unanchored_claims": unanchored_claims,
             "golden_available": _has_evaluation_data(golden)
         }
     )
@@ -407,35 +575,86 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
     )
     citation_mapping_coverage = mapped_markers / total_markers if total_markers > 0 else 0.0
     
-    # Compute DOI/PMID precision if golden available
+    # Compute DOI/PMID precision if golden available.
+    #
+    # Semantics used here are explicit to avoid conflating coverage and
+    # identifier precision when golden truth is only partially annotated:
+    # - True positive: normalized exact identifier match on a golden-marked
+    #   DOI/PMID anchor.
+    # - Missing identifier on a golden DOI/PMID anchor: counted as incorrect
+    #   (included in denominator).
+    # - Predicted DOI/PMID on anchors not present in golden DOI/PMID truth:
+    #   excluded from this precision denominator (reported separately).
+    # - Multiple identifiers (expected/predicted): pass if any normalized
+    #   predicted DOI/PMID matches any normalized expected DOI/PMID.
     doi_pmid_precision = 0.0
     correct_doi_pmid = 0
     extracted_doi_pmid = 0
+    missing_doi_pmid = 0
+    mismatched_doi_pmid = 0
+    unscored_extracted_doi_pmid = 0
+
+    def _normalize_identifier(ref_key: str) -> str:
+        if ref_key.startswith("doi:"):
+            return f"doi:{ref_key[4:].strip().lower()}"
+        if ref_key.startswith("pmid:"):
+            return f"pmid:{ref_key[5:].strip()}"
+        return ref_key.strip().lower()
+
+    def _extract_identifier_candidates(value: Any) -> set[str]:
+        values: list[str] = []
+        if isinstance(value, str):
+            values = [value]
+        elif isinstance(value, list):
+            values = [item for item in value if isinstance(item, str)]
+        elif isinstance(value, tuple):
+            values = [item for item in value if isinstance(item, str)]
+
+        identifiers = {
+            _normalize_identifier(item)
+            for item in values
+            if item.startswith(("doi:", "pmid:"))
+        }
+        return identifiers
     
     if golden and "citation_truth" in golden:
         citation_truth = golden.get("citation_truth", [])
-        truth_map = {t["marker_id"]: t["expected_ref_key"] for t in citation_truth}
-        
-        # Extract DOI/PMID mappings
-        doi_pmid_mappings = [
-            m for m in mappings
-            if str(m.get("anchor_id", "")) in citation_anchor_ids
-            and m.get("mapped_ref_key") and 
-            (m["mapped_ref_key"].startswith("doi:") or m["mapped_ref_key"].startswith("pmid:"))
-        ]
-        
-        extracted_doi_pmid = len(doi_pmid_mappings)
-        
+        doi_pmid_truth: dict[str, set[str]] = {}
+
+        for truth in citation_truth:
+            marker_id = str(truth.get("marker_id", ""))
+            expected_identifiers = _extract_identifier_candidates(truth.get("expected_ref_key"))
+            if marker_id and expected_identifiers:
+                doi_pmid_truth[marker_id] = expected_identifiers
+
+        extracted_identifier_by_anchor: dict[str, set[str]] = {}
+        for mapping in mappings:
+            anchor_id = str(mapping.get("anchor_id", ""))
+            if anchor_id not in citation_anchor_ids:
+                continue
+            predicted = _extract_identifier_candidates(mapping.get("mapped_ref_key"))
+            if not predicted:
+                continue
+            extracted_identifier_by_anchor.setdefault(anchor_id, set()).update(predicted)
+
+        extracted_doi_pmid = len(doi_pmid_truth)
         if extracted_doi_pmid > 0:
-            for m in doi_pmid_mappings:
-                anchor_id = m.get("anchor_id", "")
-                mapped = m.get("mapped_ref_key", "")
-                expected = truth_map.get(anchor_id)
-                
-                if expected and mapped.lower() == expected.lower():
+            for anchor_id, expected_identifiers in doi_pmid_truth.items():
+                predicted_identifiers = extracted_identifier_by_anchor.get(anchor_id, set())
+                if not predicted_identifiers:
+                    missing_doi_pmid += 1
+                    continue
+                if expected_identifiers & predicted_identifiers:
                     correct_doi_pmid += 1
-            
+                else:
+                    mismatched_doi_pmid += 1
+
             doi_pmid_precision = correct_doi_pmid / extracted_doi_pmid
+
+        truth_anchor_ids = set(doi_pmid_truth)
+        for anchor_id, predicted_identifiers in extracted_identifier_by_anchor.items():
+            if anchor_id not in truth_anchor_ids:
+                unscored_extracted_doi_pmid += len(predicted_identifiers)
     else:
         # If no golden, assume extracted DOI/PMIDs are correct
         doi_pmid_precision = 1.0
@@ -464,6 +683,17 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
             "doi_pmid_precision": doi_pmid_precision,
             "correct_doi_pmid": correct_doi_pmid,
             "extracted_doi_pmid": extracted_doi_pmid,
+            "missing_doi_pmid": missing_doi_pmid,
+            "mismatched_doi_pmid": mismatched_doi_pmid,
+            "unscored_extracted_doi_pmid": unscored_extracted_doi_pmid,
+            "doi_pmid_precision_semantics": {
+                "true_positive": "normalized exact match between expected and predicted doi:/pmid: on a golden citation marker",
+                "missing_identifier_handling": "missing doi:/pmid: on a golden doi/pmid marker counts as incorrect and is included in denominator",
+                "multi_identifier_handling": "if expected or predicted has multiple doi:/pmid: values, any normalized overlap counts as correct",
+                "non_truth_identifier_handling": "predicted doi:/pmid: on citation markers not annotated in golden doi/pmid truth are excluded from precision denominator and reported via unscored_extracted_doi_pmid",
+                "precision_formula": "doi_pmid_precision = correct_doi_pmid / extracted_doi_pmid, where extracted_doi_pmid is the count of golden doi/pmid truth markers evaluated",
+                "gate_rule": "citation gate passes only when citation_mapping_coverage >= 0.98 and doi_pmid_precision >= 0.99",
+            },
             "golden_available": _has_evaluation_data(golden)
         }
     )
@@ -612,6 +842,115 @@ def compute_truncation_gate(run_dir: Path) -> GateResult:
     )
 
 
+def compute_reference_quality_gate(run_dir: Path, golden: Optional[dict[str, Any]] = None) -> GateResult:
+    """Compute reference-pipeline quality metrics.
+
+    Metrics produced in details:
+      - reference_source_mix: counts by provider and by kind (api/pdf)
+      - api_reference_count: number of API-sourced reference records
+      - dedupe_rate: 1 - (merged_count / raw_total) where raw_total = api_count + pdf_count
+      - identifier_completeness: fraction of merged refs with doi or pmid
+
+    Robust fallback semantics:
+      - If no reference artifacts at all -> NOT_EVALUATED
+      - If merged artifact missing but raw artifacts present -> DEGRADED
+    """
+    refs_api_path = run_dir / "refs" / "references_api.jsonl"
+    refs_merged_path = run_dir / "refs" / "references_merged.jsonl"
+    pdf_catalog_path = run_dir / "citations" / "reference_catalog.jsonl"
+
+    api_refs = load_jsonl(refs_api_path)
+    merged_refs = load_jsonl(refs_merged_path)
+    pdf_refs = load_jsonl(pdf_catalog_path)
+
+    api_count = len(api_refs)
+    merged_count = len(merged_refs)
+    pdf_count = len(pdf_refs)
+
+    raw_total = api_count + pdf_count
+
+    # Compute dedupe_rate defensively
+    if raw_total > 0:
+        dedupe_rate = 1.0 - (merged_count / float(raw_total))
+        if dedupe_rate < 0:
+            dedupe_rate = 0.0
+    else:
+        dedupe_rate = 0.0
+
+    # Identifier completeness over merged set
+    id_with_count = 0
+    provider_counts: dict[str, int] = {}
+    kind_counts: dict[str, int] = {}
+
+    for mr in merged_refs:
+        doi = mr.get("doi")
+        pmid = mr.get("pmid")
+        if doi or pmid:
+            id_with_count += 1
+
+        sources = mr.get("sources") or []
+        if isinstance(sources, list):
+            for s in sources:
+                provider = str(s.get("provider") or "unknown")
+                kind = str(s.get("kind") or "api")
+                provider_counts[provider] = provider_counts.get(provider, 0) + 1
+                kind_counts[kind] = kind_counts.get(kind, 0) + 1
+
+    identifier_completeness = (id_with_count / merged_count) if merged_count > 0 else 0.0
+
+    reference_source_mix = {"by_provider": provider_counts, "by_kind": kind_counts}
+
+    # Determine status semantics
+    # If no artifacts exist at all, we cannot evaluate
+    if api_count == 0 and merged_count == 0 and pdf_count == 0:
+        return GateResult(
+            name="reference_pipeline_quality",
+            value=0.0,
+            status=GateStatus.NOT_EVALUATED,
+            details={
+                "reason": "no_reference_artifacts",
+                "api_reference_count": api_count,
+                "pdf_reference_count": pdf_count,
+                "merged_reference_count": merged_count,
+            },
+        )
+
+    # If merged is missing but raw data exists, degrade
+    if merged_count == 0 and raw_total > 0:
+        return GateResult(
+            name="reference_pipeline_quality",
+            value=0.0,
+            status=GateStatus.DEGRADED,
+            details={
+                "reason": "merged_artifact_missing",
+                "api_reference_count": api_count,
+                "pdf_reference_count": pdf_count,
+                "merged_reference_count": merged_count,
+                "reference_source_mix": reference_source_mix,
+            },
+        )
+
+    # Otherwise produce measured metrics
+    # Provisional thresholds: identifier_completeness >= 0.5 and dedupe_rate >= 0.05 -> PASS
+    status = GateStatus.PASS if (identifier_completeness >= 0.5 and dedupe_rate >= 0.05) else GateStatus.DEGRADED
+
+    return GateResult(
+        name="reference_pipeline_quality",
+        value=float(identifier_completeness),
+        status=status,
+        threshold="identifier_completeness>=0.5,dedupe_rate>=0.05",
+        details={
+            "reference_source_mix": reference_source_mix,
+            "api_reference_count": api_count,
+            "pdf_reference_count": pdf_count,
+            "merged_reference_count": merged_count,
+            "dedupe_rate": dedupe_rate,
+            "identifier_completeness": identifier_completeness,
+            "golden_available": _has_evaluation_data(golden),
+        },
+    )
+
+
 def compute_runtime_safety(run_dir: Path) -> dict[str, Any]:
     """Compute runtime safety metrics.
     
@@ -648,12 +987,14 @@ def run_verification(doc_id: str) -> Report:
     citation_gate = compute_citation_gate(run_dir, golden)
     figure_caption_gate = compute_figure_caption_gate(run_dir, golden)
     truncation_gate = compute_truncation_gate(run_dir)
+    reference_gate = compute_reference_quality_gate(run_dir, golden)
     
     # Build gates dict
     gates = {
         "provenance": provenance_gate,
         "reading_order": reading_order_gate,
         "citation": citation_gate,
+        "reference": reference_gate,
         "figure_caption": figure_caption_gate,
         "truncation": truncation_gate
     }

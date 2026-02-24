@@ -779,13 +779,13 @@ def build_appendix(
         if tables:
             lines.append("\n**表格**:")
             for t in tables[:5]:
-                caption = t.get("caption_text", "")[:60]
+                caption = str(t.get("caption_text") or "")[:60]
                 asset_id = t.get("asset_id", "")
                 lines.append(f"- [{asset_id}] {caption}")
         if figures:
             lines.append("\n**图形**:")
             for f in figures[:5]:
-                caption = f.get("caption_text", "")[:60]
+                caption = str(f.get("caption_text") or "")[:60]
                 asset_id = f.get("asset_id", "")
                 lines.append(f"- [{asset_id}] {caption}")
         lines.append("")
@@ -803,7 +803,7 @@ def build_appendix(
         for f in facts[:30]:
             fact_id = f.get("fact_id", "")
             category = f.get("category", "")
-            statement = f.get("statement", "")[:80]
+            statement = str(f.get("statement") or "")[:80]
             lines.append(f"- [[#{fact_id}|{fact_id}]] [{category}] {statement}")
         if len(facts) > 30:
             lines.append(f"- ... 共 {len(facts)} 条事实")

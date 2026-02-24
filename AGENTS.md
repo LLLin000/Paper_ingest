@@ -136,6 +136,11 @@ Follow existing conventions in `src/ingest/*.py`.
 - Bugfixes: do not perform broad refactors unless requested.
 - Keep schema/artifact name compatibility with blueprint contracts.
 
+### Patch Tool Rule
+
+- When using patch/apply_patch, paths MUST be workspace-relative paths (for example `src/ingest/cli.py`).
+- Do NOT use absolute paths in patch headers; absolute paths can cause patch application to fail.
+
 ## Testing and Validation Expectations
 
 - For logic changes, run focused checks first (single test or closest stage command).

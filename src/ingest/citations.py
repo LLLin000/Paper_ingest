@@ -18,14 +18,21 @@ Output schema per citations/cite_map.jsonl:
 - reason: required when unmapped
 """
 
+# pyright: reportOptionalIterable=false
+# basedpyright: reportOptionalIterable=false
+
 import hashlib
 import json
 import re
+from bisect import bisect_left
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Optional
 
 import pymupdf
+
+from .reference_providers_impl import build_doc_identity
+from .reference_providers import collect_api_references
 
 
 # Strategy enum values
@@ -44,6 +51,20 @@ INLINE_BRACKET_PATTERN = re.compile(r"\[(\d{1,3}(?:\s*[-,;]\s*\d{1,3})*)\]")
 INLINE_PAREN_PATTERN = re.compile(r"\((\d{1,3}(?:\s*[-,;]\s*\d{1,3})*)\)")
 REF_MARKER_PATTERN = re.compile(r"^\s*(?:\[(\d{1,3})\]|(\d{1,3})[\.)])")
 REF_SEGMENT_MARKER_PATTERN = re.compile(r"(?:^|\s)(?:\[(\d{1,3})\]|(\d{1,3})[\.)])\s+")
+API_REFERENCE_FIELDS = (
+    "title",
+    "authors",
+    "year",
+    "doi",
+    "pmid",
+    "arxiv",
+    "venue",
+    "url",
+    "source",
+    "confidence",
+    "source_chain",
+    "filled_fields",
+)
 
 
 @dataclass
@@ -73,6 +94,13 @@ class ReferenceEntry:
     marker: Optional[int]
     ref_key: Optional[str]
     text: str
+
+
+@dataclass
+class ParagraphSpatialIndex:
+    by_page_entries: dict[int, list[tuple[float, str]]]
+    by_page_y: dict[int, list[float]]
+    para_bbox: dict[str, list[float]]
 
 
 def parse_reference_metadata(text: str) -> dict[str, Any]:
@@ -258,6 +286,27 @@ def expand_marker_text(marker_text: str) -> list[int]:
     return dedup
 
 
+def is_unbracketed_single_digit(text: str) -> bool:
+    candidate = text.strip()
+    if not candidate:
+        return False
+    if any(ch in candidate for ch in "[]()"):
+        return False
+    return bool(re.fullmatch(r"\d", candidate))
+
+
+def should_demote_anchor_to_structural_link(anchor: CiteAnchor, marker_to_key: dict[int, str]) -> bool:
+    if anchor.anchor_type != "citation_marker":
+        return False
+    marker_text = (anchor.anchor_text or "").strip()
+    if not is_unbracketed_single_digit(marker_text):
+        return False
+    marker_values = expand_marker_text(marker_text)
+    if not marker_values:
+        return False
+    return all(marker_to_key.get(marker) is None for marker in marker_values)
+
+
 def extract_inline_anchors(paragraphs: dict[str, dict[str, Any]]) -> list[CiteAnchor]:
     anchors: list[CiteAnchor] = []
     ordered = sorted(
@@ -291,37 +340,96 @@ def extract_inline_anchors(paragraphs: dict[str, dict[str, Any]]) -> list[CiteAn
     return anchors
 
 
+def build_paragraph_spatial_index(paragraphs: dict[str, dict[str, Any]]) -> ParagraphSpatialIndex:
+    by_page_entries: dict[int, list[tuple[float, str]]] = {}
+    by_page_y: dict[int, list[float]] = {}
+    para_bbox: dict[str, list[float]] = {}
+
+    for para_id, para in paragraphs.items():
+        raw_bbox = para.get("evidence_pointer", {}).get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+        if isinstance(raw_bbox, list) and len(raw_bbox) >= 4:
+            bbox = [float(raw_bbox[0]), float(raw_bbox[1]), float(raw_bbox[2]), float(raw_bbox[3])]
+        else:
+            bbox = [0.0, 0.0, 0.0, 0.0]
+        para_bbox[para_id] = bbox
+
+        page_span = para.get("page_span", {})
+        start_page = int(page_span.get("start", 1))
+        end_page = int(page_span.get("end", start_page))
+        if end_page < start_page:
+            end_page = start_page
+
+        y0 = bbox[1]
+        for page_num in range(start_page, end_page + 1):
+            by_page_entries.setdefault(page_num, []).append((y0, para_id))
+
+    for page_num, entries in by_page_entries.items():
+        sorted_entries = sorted(entries, key=lambda x: (x[0], x[1]))
+        by_page_entries[page_num] = sorted_entries
+        by_page_y[page_num] = [y for y, _ in sorted_entries]
+
+    return ParagraphSpatialIndex(
+        by_page_entries=by_page_entries,
+        by_page_y=by_page_y,
+        para_bbox=para_bbox,
+    )
+
+
+def _find_nearest_on_page(
+    index: ParagraphSpatialIndex,
+    page: int,
+    anchor_bbox: list[float],
+) -> Optional[str]:
+    entries = index.by_page_entries.get(page)
+    y_values = index.by_page_y.get(page)
+    if not entries or not y_values:
+        return None
+
+    anchor_y = float(anchor_bbox[1])
+    anchor_x_center = (float(anchor_bbox[0]) + float(anchor_bbox[2])) / 2.0
+
+    insertion = bisect_left(y_values, anchor_y)
+    if len(entries) <= 8:
+        candidate_slice = entries
+    else:
+        left = max(0, insertion - 4)
+        right = min(len(entries), insertion + 4)
+        candidate_slice = entries[left:right]
+
+    best_para_id: Optional[str] = None
+    best_score: tuple[float, float, str] = (float("inf"), float("inf"), "")
+    for _, para_id in candidate_slice:
+        bbox = index.para_bbox.get(para_id, [0.0, 0.0, 0.0, 0.0])
+        para_y = float(bbox[1])
+        para_x_center = (float(bbox[0]) + float(bbox[2])) / 2.0
+        score = (abs(para_y - anchor_y), abs(para_x_center - anchor_x_center), para_id)
+        if score < best_score:
+            best_score = score
+            best_para_id = para_id
+    return best_para_id
+
+
 def find_nearest_para(
     anchor_bbox: list[float],
     page: int,
     paragraphs: dict[str, dict[str, Any]],
+    paragraph_index: Optional[ParagraphSpatialIndex] = None,
 ) -> Optional[str]:
     if not paragraphs:
         return None
-    
-    same_page_paras = [
-        (para_id, para) for para_id, para in paragraphs.items()
-        if para.get("page_span", {}).get("start", 999) <= page <= para.get("page_span", {}).get("end", 0)
-    ]
-    
-    if not same_page_paras:
-        same_page_paras = list(paragraphs.items())
-    
-    anchor_y = anchor_bbox[1]
-    
-    best_para_id: Optional[str] = None
-    best_distance = float('inf')
-    
-    for para_id, para in same_page_paras:
-        bbox = para.get("evidence_pointer", {}).get("bbox_union", [0, 0, 0, 0])
-        para_y = bbox[1]
-        distance = abs(para_y - anchor_y)
-        
-        if distance < best_distance:
-            best_distance = distance
-            best_para_id = para_id
-    
-    return best_para_id
+
+    index = paragraph_index or build_paragraph_spatial_index(paragraphs)
+    nearest_same_page = _find_nearest_on_page(index, page, anchor_bbox)
+    if nearest_same_page is not None:
+        return nearest_same_page
+
+    candidate_pages = sorted(index.by_page_entries.keys(), key=lambda p: abs(p - page))
+    for candidate_page in candidate_pages:
+        nearest = _find_nearest_on_page(index, candidate_page, anchor_bbox)
+        if nearest is not None:
+            return nearest
+
+    return None
 
 
 def is_reference_paragraph(para: dict[str, Any]) -> bool:
@@ -686,6 +794,68 @@ def extract_links_from_pdf(pdf_path: Path) -> list[CiteAnchor]:
     return anchors
 
 
+def normalize_api_reference_record(raw: dict[str, Any]) -> dict[str, Any]:
+    authors_raw = raw.get("authors")
+    authors: list[str] = []
+    if isinstance(authors_raw, list):
+        authors = [str(item).strip() for item in authors_raw if str(item).strip()]
+
+    year_raw = raw.get("year")
+    year = year_raw if isinstance(year_raw, int) else None
+
+    confidence_raw = raw.get("confidence")
+    confidence_value = 0.0
+    if isinstance(confidence_raw, (int, float)):
+        try:
+            confidence_value = float(confidence_raw)
+        except Exception:
+            confidence_value = 0.0
+    elif isinstance(confidence_raw, str):
+        try:
+            confidence_value = float(confidence_raw.strip())
+        except Exception:
+            confidence_value = 0.0
+    confidence = max(0.0, min(1.0, confidence_value))
+
+    source_chain_norm: list[str] = []
+    source_chain_raw = raw.get("source_chain")
+    if isinstance(source_chain_raw, list):
+        idx = 0
+        while idx < len(source_chain_raw):
+            item = source_chain_raw[idx]
+            token = str(item).strip()
+            if token:
+                source_chain_norm.append(token)
+            idx += 1
+
+    filled_fields_norm: list[str] = []
+    filled_fields_raw = raw.get("filled_fields")
+    if isinstance(filled_fields_raw, list):
+        idx = 0
+        while idx < len(filled_fields_raw):
+            item = filled_fields_raw[idx]
+            token = str(item).strip()
+            if token:
+                filled_fields_norm.append(token)
+            idx += 1
+
+    normalized = {
+        "title": str(raw.get("title") or "").strip(),
+        "authors": authors,
+        "year": year,
+        "doi": str(raw.get("doi") or "").strip().lower() or None,
+        "pmid": str(raw.get("pmid") or "").strip() or None,
+        "arxiv": str(raw.get("arxiv") or "").strip() or None,
+        "venue": str(raw.get("venue") or "").strip(),
+        "url": str(raw.get("url") or "").strip() or None,
+        "source": str(raw.get("source") or "unknown").strip() or "unknown",
+        "confidence": round(confidence, 3),
+        "source_chain": source_chain_norm,
+        "filled_fields": filled_fields_norm,
+    }
+    return {field: normalized[field] for field in API_REFERENCE_FIELDS}
+
+
 def run_citations(
     run_dir: Path,
     manifest: Optional[Any] = None,
@@ -711,6 +881,7 @@ def run_citations(
     
     paragraphs_path = run_dir / "paragraphs" / "paragraphs.jsonl"
     paragraphs = load_paragraphs(paragraphs_path)
+    paragraph_index = build_paragraph_spatial_index(paragraphs)
     
     link_anchors = extract_links_from_pdf(pdf_path)
     inline_anchors = extract_inline_anchors(paragraphs)
@@ -732,6 +903,7 @@ def run_citations(
                 anchor.anchor_bbox,
                 anchor.page,
                 paragraphs,
+                paragraph_index,
             )
     
     reference_paras = {
@@ -739,18 +911,270 @@ def run_citations(
         if is_reference_paragraph(para)
     }
     reference_entries, marker_to_key = build_reference_entries(reference_paras)
-    
+
+    for anchor in anchors:
+        if should_demote_anchor_to_structural_link(anchor, marker_to_key):
+            anchor.anchor_type = "structural_link"
+
+    refs_dir = run_dir / "refs"
+    refs_dir.mkdir(parents=True, exist_ok=True)
+
+    doc_identity = build_doc_identity(run_dir, manifest_data)
+    try:
+        api_references, provider_status = collect_api_references(doc_identity)
+    except Exception as e:
+        api_references = []
+        provider_status = [{
+            "provider": "reference_collection",
+            "status": "error",
+            "reason": f"collection_exception:{type(e).__name__}",
+            "records": 0,
+        }]
+    doc_identity["provider_status"] = provider_status
+
+    doc_identity_path = refs_dir / "doc_identity.json"
+    with open(doc_identity_path, "w", encoding="utf-8") as f:
+        json.dump(doc_identity, f, ensure_ascii=False, indent=2)
+
+    references_api_path = refs_dir / "references_api.jsonl"
+    with open(references_api_path, "w", encoding="utf-8") as f:
+        for ref in api_references:
+            record = normalize_api_reference_record(ref)
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+    # Stage R3: Merge API + PDF references into a deduped merged set
+    merged_path = refs_dir / "references_merged.jsonl"
+
+    def _load_jsonl(path: Path) -> list[dict[str, Any]]:
+        out: list[dict[str, Any]] = []
+        if not path.exists():
+            return out
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                for line in fh:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        out.append(json.loads(line))
+                    except Exception:
+                        continue
+        except Exception:
+            return []
+        return out
+
+    # Normalization helpers for dedupe keys
+    def _normalized_title_key(title: str) -> str:
+        return " ".join(re.sub(r"[^a-z0-9]+", " ", (title or "").lower()).split())
+
+    def _record_key(rec: dict[str, Any]) -> str:
+        doi = rec.get("doi") or rec.get("DOI") or None
+        if isinstance(doi, str) and doi.strip():
+            d = doi.strip().lower().rstrip('.,;:)')
+            return f"doi:{d}"
+        pmid = rec.get("pmid")
+        if isinstance(pmid, str) and pmid.strip():
+            return f"pmid:{pmid.strip()}"
+        # fallback to normalized title+year
+        title = rec.get("title") or rec.get("raw_text") or ""
+        norm = _normalized_title_key(str(title))
+        year = rec.get("year") or ""
+        return f"title:{norm}|year:{year}"
+
+    api_list = _load_jsonl(references_api_path)
+    # build pdf_list from in-memory reference entries produced earlier in this run
+    # so we don't depend on a file that is written later in the pipeline
+    pdf_list = build_reference_catalog(reference_entries)
+
+    merged_map: dict[str, dict[str, Any]] = {}
+    order: list[str] = []
+
+    def _ingest(rec: dict[str, Any], kind: str) -> None:
+        # kind: 'api' or 'pdf'
+        key = _record_key(rec)
+        # prepare a normalized candidate record with common fields
+        # normalize year defensively to avoid Optional[str].isdigit() calls
+        year_raw = rec.get("year")
+        year_val: Optional[int] = None
+        if isinstance(year_raw, int):
+            year_val = year_raw
+        elif isinstance(year_raw, str):
+            yr = year_raw.strip()
+            if yr.isdigit():
+                try:
+                    year_val = int(yr)
+                except Exception:
+                    year_val = None
+
+        cand = {
+            "title": rec.get("title") or rec.get("raw_text") or "",
+            "authors": rec.get("authors") or [],
+            "year": year_val,
+            "doi": (rec.get("doi") or rec.get("DOI") or None) if rec.get("doi") or rec.get("DOI") else None,
+            "pmid": rec.get("pmid") or None,
+            "arxiv": rec.get("arxiv") or None,
+            "venue": rec.get("venue") or "",
+            "url": rec.get("url") or None,
+            "raw_text": rec.get("raw_text") or None,
+        }
+        # source attribution entry
+        src = None
+        if kind == "api":
+            src = str(rec.get("source") or "api")
+        else:
+            # pdf catalog entries don't have 'source' field - use marker/page info
+            src = f"pdf:para:{rec.get('source_para_id') or rec.get('para_id') or 'unknown'}"
+
+        confidence_raw = rec.get("confidence")
+        confidence = 0.0
+        if isinstance(confidence_raw, (int, float)):
+            try:
+                confidence = float(confidence_raw)
+            except Exception:
+                confidence = 0.0
+        elif isinstance(confidence_raw, str):
+            try:
+                confidence = float(confidence_raw.strip())
+            except Exception:
+                confidence = 0.0
+
+        src_entry = {"provider": src, "confidence": round(max(0.0, min(1.0, confidence)), 3), "kind": kind}
+
+        if key not in merged_map:
+            merged_map[key] = {
+                **cand,
+                "sources": [src_entry],
+                "confidence": src_entry["confidence"],
+            }
+            order.append(key)
+            return
+
+        # Merge into existing: prefer non-empty fields, and keep max confidence
+        existing = merged_map[key]
+        # Update simple fields preferring existing if present, else candidate
+        for fld in ("title", "authors", "year", "doi", "pmid", "arxiv", "venue", "url", "raw_text"):
+            if (existing.get(fld) in (None, "", [])) and cand.get(fld):
+                existing[fld] = cand.get(fld)
+        # append source entry
+        existing.setdefault("sources", []).append(src_entry)
+        # update confidence to max
+        existing_conf_raw = existing.get("confidence")
+        existing_conf = 0.0
+        if isinstance(existing_conf_raw, (int, float)):
+            try:
+                existing_conf = float(existing_conf_raw)
+            except Exception:
+                existing_conf = 0.0
+        elif isinstance(existing_conf_raw, str):
+            try:
+                existing_conf = float(existing_conf_raw.strip())
+            except Exception:
+                existing_conf = 0.0
+        # ensure both operands to round() are float to satisfy typing
+        try:
+            chosen_conf = max(float(existing_conf), float(src_entry.get("confidence", 0.0)))
+        except Exception:
+            chosen_conf = max(existing_conf, 0.0)
+        existing["confidence"] = round(chosen_conf, 3)
+
+    # ingest api first then pdf (pdf may complement missing fields)
+    for r in api_list:
+        _ingest(r, "api")
+    for r in pdf_list:
+        _ingest(r, "pdf")
+
+    # If a merged refs artifact already exists on disk (from earlier stage/run), prefer it
+    merged_refs_lookup: dict[str, dict[str, Any]] = {}
+    existing_merged = _load_jsonl(merged_path)
+    use_disk_merged = False
+    if existing_merged:
+        use_disk_merged = True
+        for r in existing_merged:
+            if r.get("doi"):
+                merged_refs_lookup[f"doi:{r.get('doi')}"] = r
+            if r.get("pmid"):
+                merged_refs_lookup[f"pmid:{r.get('pmid')}"] = r
+            title_norm = _normalized_title_key(r.get("title") or r.get("raw_text") or "")
+            year = r.get("year") or ""
+            merged_refs_lookup[f"title:{title_norm}|year:{year}"] = r
+    else:
+        for k in order:
+            rec = merged_map[k]
+            if rec.get("doi"):
+                merged_refs_lookup[f"doi:{rec.get('doi')}"] = rec
+            if rec.get("pmid"):
+                merged_refs_lookup[f"pmid:{rec.get('pmid')}"] = rec
+            title_norm = _normalized_title_key(rec.get("title") or rec.get("raw_text") or "")
+            year = rec.get("year") or ""
+            merged_refs_lookup[f"title:{title_norm}|year:{year}"] = rec
+
+    # Map citations preferring merged references when possible
     cite_maps: list[CiteMap] = []
     for anchor in anchors:
-        mapping = map_citation_to_reference(
+        # run the existing mapping logic first to get candidate
+        candidate = map_citation_to_reference(
             anchor,
             paragraphs,
             reference_paras,
             reference_entries,
             marker_to_key,
         )
-        cite_maps.append(mapping)
-    
+
+        mapped_key = candidate.mapped_ref_key
+        chosen = candidate
+
+        # If merged refs available, attempt to prefer them
+        if merged_refs_lookup:
+            # 1) If anchor text directly contains DOI/PMID that exists in merged refs
+            if anchor.anchor_text and not mapped_key:
+                ext = extract_reference_key(anchor.anchor_text)
+                if ext and ext[0] in merged_refs_lookup:
+                    k = ext[0]
+                    # prefer merged key
+                    chosen = CiteMap(anchor_id=anchor.anchor_id, mapped_ref_key=k, strategy_used=STRATEGY_REGEX, confidence=ext[2])
+                    cite_maps.append(chosen)
+                    continue
+
+            # 2) If candidate mapped_key already matches merged ref, keep
+            if mapped_key and mapped_key in merged_refs_lookup:
+                cite_maps.append(candidate)
+                continue
+
+            # 3) If candidate mapped_key refers to a PDF key, try to find a merged match by title+year
+            if mapped_key:
+                # locate the reference entry for this ref_key
+                match_entry = None
+                for entry in reference_entries:
+                    if entry.ref_key == mapped_key:
+                        match_entry = entry
+                        break
+                if match_entry:
+                    meta = parse_reference_metadata(match_entry.text)
+                    # remove year tokens from title before normalizing to improve matching
+                    raw_title = meta.get("title") or meta.get("raw_text") or ""
+                    title_no_year = re.sub(r"\b(19|20)\d{2}\b", "", raw_title)
+                    title_norm = _normalized_title_key(title_no_year)
+                    year = meta.get("year") or ""
+                    lookup_key = f"title:{title_norm}|year:{year}"
+                    if lookup_key in merged_refs_lookup:
+                        # map to merged key (prefer DOI/PMID if available)
+                        merged_rec = merged_refs_lookup[lookup_key]
+                        new_key = None
+                        if merged_rec.get("doi"):
+                            new_key = f"doi:{merged_rec.get('doi')}"
+                        elif merged_rec.get("pmid"):
+                            new_key = f"pmid:{merged_rec.get('pmid')}"
+                        else:
+                            new_key = lookup_key
+                        new_conf = max(candidate.confidence, float(merged_rec.get("confidence") or 0.0))
+                        chosen = CiteMap(anchor_id=anchor.anchor_id, mapped_ref_key=new_key, strategy_used=candidate.strategy_used, confidence=round(new_conf, 3))
+                        cite_maps.append(chosen)
+                        continue
+
+        # Default: keep candidate
+        cite_maps.append(candidate)
+
+    # Write anchors and mapping outputs (contract unchanged)
     anchors_path = citations_dir / "cite_anchors.jsonl"
     with open(anchors_path, "w", encoding="utf-8") as f:
         for anchor in anchors:
@@ -764,7 +1188,7 @@ def run_citations(
                 "anchor_type": anchor.anchor_type,
             }
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
-    
+
     map_path = citations_dir / "cite_map.jsonl"
     with open(map_path, "w", encoding="utf-8") as f:
         for mapping in cite_maps:
@@ -783,5 +1207,11 @@ def run_citations(
     with open(catalog_path, "w", encoding="utf-8") as f:
         for ref in reference_catalog:
             f.write(json.dumps(ref, ensure_ascii=False) + "\n")
-    
+
+    # write merged out in stable order
+    with open(merged_path, "w", encoding="utf-8") as f:
+        for k in order:
+            rec = merged_map[k]
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
     return len(anchors), len(cite_maps)

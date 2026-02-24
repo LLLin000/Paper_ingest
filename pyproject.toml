@@ -24,6 +24,7 @@ dev = [
 
 [project.scripts]
 ingest_pdf = "ingest.cli:main"
+ingest_qa_regression = "ingest.qa_regression:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ingest"]

@@ -5,6 +5,10 @@ from pathlib import Path
 from typing import Optional
 
 import typer
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from .manifest import create_manifest, load_manifest, Manifest
 from .extractor import run_extractor
@@ -16,6 +20,7 @@ from .figures_tables import run_figures_tables
 from .reading import run_reading
 from .render import run_render
 from .verify import verify as run_verify
+from .orchestration import execute_levelized_dag
 
 app = typer.Typer(
     name="ingest_pdf",
@@ -234,6 +239,8 @@ def _run_citations(manifest: Manifest) -> None:
     typer.echo(f"Created {mappings_created} citation mappings")
     typer.echo(f"Output: {run_dir / 'citations' / 'cite_anchors.jsonl'}")
     typer.echo(f"Output: {run_dir / 'citations' / 'cite_map.jsonl'}")
+    typer.echo(f"Output: {run_dir / 'refs' / 'doc_identity.json'}")
+    typer.echo(f"Output: {run_dir / 'refs' / 'references_api.jsonl'}")
     typer.echo("Citations stage complete.")
 
 
@@ -302,71 +309,84 @@ def _run_full(
     inject_reading_malformed_json: bool,
     inject_missing_font_stats: bool,
 ) -> None:
-    """Run full pipeline: extractor -> overlay -> vision -> paragraphs -> citations -> figures-tables -> reading -> render -> verify."""
+    """Run full pipeline with DAG-like orchestration and fixed output order."""
     typer.echo("=" * 50)
     typer.echo("Running FULL pipeline")
     typer.echo("=" * 50)
     
     run_dir = RUN_ROOT / manifest.doc_id
     
+    stage_jobs = {
+        "extractor": lambda: run_extractor(
+            run_dir=run_dir,
+            manifest=manifest,
+            inject_missing_font_stats=inject_missing_font_stats,
+        ),
+        "overlay": lambda: run_overlay(
+            run_dir=run_dir,
+            manifest=manifest,
+        ),
+        "vision": lambda: run_vision(
+            run_dir=run_dir,
+            manifest=manifest,
+            inject_malformed_json=inject_vision_malformed_json,
+        ),
+        "paragraphs": lambda: run_paragraphs(
+            run_dir=run_dir,
+            manifest=manifest,
+        ),
+        "citations": lambda: run_citations(
+            run_dir=run_dir,
+            manifest=manifest,
+        ),
+        "figures_tables": lambda: run_figures_tables(
+            run_dir=run_dir,
+            manifest=manifest,
+        ),
+        "reading": lambda: run_reading(
+            run_dir=run_dir,
+            manifest=manifest,
+            inject_malformed_json=inject_reading_malformed_json,
+        ),
+        "render": lambda: run_render(
+            run_dir=run_dir,
+            manifest=manifest,
+        ),
+    }
+
+    results = execute_levelized_dag(stage_jobs)
+
     typer.echo("\n[1/8] Extractor stage...")
-    total_pages, total_blocks = run_extractor(
-        run_dir=run_dir,
-        manifest=manifest,
-        inject_missing_font_stats=inject_missing_font_stats,
-    )
+    total_pages, total_blocks = results["extractor"]
     typer.echo(f"  Extracted {total_blocks} blocks from {total_pages} pages")
     
     typer.echo("\n[2/8] Overlay stage...")
-    pages_processed, blocks_drawn = run_overlay(
-        run_dir=run_dir,
-        manifest=manifest,
-    )
+    pages_processed, blocks_drawn = results["overlay"]
     typer.echo(f"  Drew {blocks_drawn} block overlays on {pages_processed} pages")
     
     typer.echo("\n[3/8] Vision stage...")
-    pages_processed, blocks_processed = run_vision(
-        run_dir=run_dir,
-        manifest=manifest,
-        inject_malformed_json=inject_vision_malformed_json,
-    )
+    pages_processed, blocks_processed = results["vision"]
     typer.echo(f"  Analyzed {blocks_processed} blocks on {pages_processed} pages")
     
     typer.echo("\n[4/8] Paragraphs stage...")
-    paragraphs_created, blocks_processed = run_paragraphs(
-        run_dir=run_dir,
-        manifest=manifest,
-    )
+    paragraphs_created, blocks_processed = results["paragraphs"]
     typer.echo(f"  Created {paragraphs_created} paragraphs from {blocks_processed} blocks")
     
     typer.echo("\n[5/8] Citations stage...")
-    anchors_created, mappings_created = run_citations(
-        run_dir=run_dir,
-        manifest=manifest,
-    )
+    anchors_created, mappings_created = results["citations"]
     typer.echo(f"  Extracted {anchors_created} citation anchors, {mappings_created} mappings")
     
     typer.echo("\n[6/8] Figures-tables stage...")
-    assets_created, images_cropped = run_figures_tables(
-        run_dir=run_dir,
-        manifest=manifest,
-    )
+    assets_created, images_cropped = results["figures_tables"]
     typer.echo(f"  Extracted {assets_created} assets, cropped {images_cropped} images")
     
     typer.echo("\n[7/8] Reading stage...")
-    facts_count, themes_count, lines_count, slots_count, fallback_count = run_reading(
-        run_dir=run_dir,
-        manifest=manifest,
-        inject_malformed_json=inject_reading_malformed_json,
-    )
+    facts_count, themes_count, lines_count, slots_count, fallback_count = results["reading"]
     typer.echo(f"  Extracted {facts_count} facts, {themes_count} themes")
     typer.echo(f"  Generated {lines_count} evidence lines, {slots_count} figure/table slots")
     
     typer.echo("\n[8/8] Render stage...")
-    sections_created, output_path = run_render(
-        run_dir=run_dir,
-        manifest=manifest,
-    )
+    sections_created, output_path = results["render"]
     typer.echo(f"  Created {sections_created} sections -> {output_path}")
     
     typer.echo("\n" + "=" * 50)

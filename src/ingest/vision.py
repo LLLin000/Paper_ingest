@@ -10,6 +10,7 @@ import json
 import os
 import re
 import base64
+import hashlib
 import io
 import urllib.request
 import urllib.error
@@ -23,7 +24,9 @@ from typing import Any, Optional
 
 from PIL import Image
 
+from .contract_guard import guard_model_output, safe_json_value
 from .manifest import Manifest, load_manifest
+from .qa_telemetry import append_fault_events, append_jsonl_event
 
 
 ROLE_LABELS = frozenset({
@@ -37,14 +40,64 @@ SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 SILICONFLOW_DEFAULT_MODEL = "Qwen/Qwen3-VL-8B-Instruct"
 SILICONFLOW_FALLBACK_MODEL = "Qwen/Qwen2.5-VL-32B-Instruct"
 VISION_LLM_LOG_LOCK = threading.Lock()
+REQUIRED_API_KEY_ENV_NAMES = ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN")
 
 
 def resolve_api_key() -> str:
-    for key_name in ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN"):
+    for key_name in REQUIRED_API_KEY_ENV_NAMES:
         value = os.environ.get(key_name, "").strip()
         if value:
             return value
     return ""
+
+
+def run_preflight_check(model: str) -> tuple[bool, dict[str, Any]]:
+    endpoint = os.environ.get("SILICONFLOW_ENDPOINT", SILICONFLOW_ENDPOINT).strip()
+    api_key = resolve_api_key()
+    if not api_key:
+        return False, {
+            "error_type": "missing_api_key",
+            "endpoint": endpoint,
+            "model": model,
+            "message": (
+                "Vision stage preflight failed: no SiliconFlow API credential found. "
+                f"Set one of {', '.join(REQUIRED_API_KEY_ENV_NAMES)} before running vision/full stage."
+            ),
+        }
+    if not endpoint.startswith("https://") or "/chat/completions" not in endpoint:
+        return False, {
+            "error_type": "invalid_endpoint",
+            "endpoint": endpoint,
+            "model": model,
+            "message": (
+                "Vision stage preflight failed: SILICONFLOW_ENDPOINT is not a valid chat-completions HTTPS endpoint. "
+                f"Current value: {endpoint!r}. Expected format similar to {SILICONFLOW_ENDPOINT!r}."
+            ),
+        }
+    return True, {
+        "error_type": "none",
+        "endpoint": endpoint,
+        "model": model,
+        "message": "ok",
+    }
+
+
+def is_request_contract_error(error_type: str, http_status: Any) -> bool:
+    error_l = str(error_type or "").lower()
+    status_num = int(http_status) if isinstance(http_status, int) else None
+    return status_num == 400 or "request_contract" in error_l
+
+
+def is_transient_retryable_error(error_type: str, http_status: Any) -> bool:
+    error_l = str(error_type or "").lower()
+    status_num = int(http_status) if isinstance(http_status, int) else None
+    if is_request_contract_error(error_l, status_num):
+        return False
+    if "timeout" in error_l or "url_error" in error_l or "network_error" in error_l:
+        return True
+    if "transient_http_error" in error_l:
+        return True
+    return status_num in {408, 429, 500, 502, 503, 504}
 
 
 @dataclass
@@ -95,6 +148,80 @@ class VisionLLMCallEvent:
     response_chars: int
     response_preview: str
     timestamp: str
+    budget_limit: Optional[int] = None
+    budget_consumed_before: Optional[int] = None
+    budget_consumed_after: Optional[int] = None
+    budget_remaining_after: Optional[int] = None
+    budget_exhausted: bool = False
+    cache_hit: Optional[bool] = None
+    cache_miss: Optional[bool] = None
+    cache_key: Optional[str] = None
+
+
+class VisionRequestBudget:
+    def __init__(self, limit: Optional[int]) -> None:
+        self.limit = limit if limit is not None and limit >= 0 else None
+        self._consumed = 0
+        self._lock = threading.Lock()
+
+    def try_consume(self) -> tuple[bool, int, int, Optional[int]]:
+        with self._lock:
+            consumed_before = self._consumed
+            if self.limit is None:
+                self._consumed += 1
+                return True, consumed_before, self._consumed, None
+            if self._consumed >= self.limit:
+                return False, consumed_before, self._consumed, max(0, self.limit - self._consumed)
+            self._consumed += 1
+            remaining = max(0, self.limit - self._consumed)
+            return True, consumed_before, self._consumed, remaining
+
+    def snapshot(self) -> tuple[Optional[int], int, Optional[int]]:
+        with self._lock:
+            if self.limit is None:
+                return None, self._consumed, None
+            return self.limit, self._consumed, max(0, self.limit - self._consumed)
+
+
+class VisionImageDataUrlCache:
+    def __init__(self) -> None:
+        self._cache: dict[str, str] = {}
+        self._hits = 0
+        self._misses = 0
+        self._lock = threading.Lock()
+
+    def _cache_key(self, image_path: Path, max_side: int) -> str:
+        image_bytes = image_path.read_bytes()
+        image_hash = hashlib.sha256(image_bytes).hexdigest()
+        return f"{image_hash}:{max_side}"
+
+    def get_or_encode(self, image_path: Path, max_side: int) -> tuple[str, bool, str]:
+        key = self._cache_key(image_path, max_side)
+        with self._lock:
+            cached = self._cache.get(key)
+            if cached is not None:
+                self._hits += 1
+                return cached, True, key
+
+        encoded = encode_image_data_url(image_path, max_side=max_side)
+        with self._lock:
+            existing = self._cache.get(key)
+            if existing is not None:
+                self._hits += 1
+                return existing, True, key
+            self._cache[key] = encoded
+            self._misses += 1
+            return encoded, False, key
+
+    def snapshot(self) -> tuple[int, int, int]:
+        with self._lock:
+            return self._hits, self._misses, len(self._cache)
+
+
+@dataclass
+class VisionRuntimeContext:
+    budget: VisionRequestBudget
+    image_cache: VisionImageDataUrlCache
 
 
 def pt_to_px(bbox_pt: list[float], dpi: int, scale: float) -> list[int]:
@@ -173,36 +300,26 @@ def encode_image_data_url(image_path: Path, max_side: int = 1400) -> str:
 
 
 def parse_model_json(raw: str) -> Optional[dict[str, Any]]:
-    try:
-        raw = raw.strip()
-        if raw.startswith("```"):
-            raw = re.sub(r"^```(?:json)?\s*", "", raw)
-            raw = re.sub(r"\s*```$", "", raw)
-        start_obj = raw.find("{")
-        if start_obj >= 0:
-            raw = raw[start_obj:]
-        data = json.loads(raw)
-        if not isinstance(data, dict):
-            return None
-        req = ["page", "reading_order", "merge_groups", "role_labels", "confidence"]
-        if not all(k in data for k in req):
-            return None
-        if not isinstance(data["reading_order"], list):
-            return None
-        if not all(isinstance(x, str) for x in data["reading_order"]):
-            return None
-        if not isinstance(data["merge_groups"], list):
-            return None
-        for mg in data["merge_groups"]:
-            if not isinstance(mg, dict) or "group_id" not in mg or "block_ids" not in mg:
-                return None
-        if not isinstance(data["role_labels"], dict):
-            return None
-        if not isinstance(data["confidence"], (int, float)):
-            return None
-        return data
-    except json.JSONDecodeError:
+    data = safe_json_value(raw)
+    if not isinstance(data, dict):
         return None
+    req = ["page", "reading_order", "merge_groups", "role_labels", "confidence"]
+    if not all(k in data for k in req):
+        return None
+    if not isinstance(data["reading_order"], list):
+        return None
+    if not all(isinstance(x, str) for x in data["reading_order"]):
+        return None
+    if not isinstance(data["merge_groups"], list):
+        return None
+    for mg in data["merge_groups"]:
+        if not isinstance(mg, dict) or "group_id" not in mg or "block_ids" not in mg:
+            return None
+    if not isinstance(data["role_labels"], dict):
+        return None
+    if not isinstance(data["confidence"], (int, float)):
+        return None
+    return data
 
 
 def detect_role(block: BlockCandidate) -> str:
@@ -269,6 +386,7 @@ def generate_fallback(page: int, blocks: list[BlockCandidate]) -> VisionOutput:
 def call_siliconflow(
     prompt: str,
     image_path: Optional[Path] = None,
+    image_data_url: Optional[str] = None,
     image_max_side: int = 1400,
     model_override: Optional[str] = None,
     timeout_seconds: int = 60,
@@ -291,7 +409,12 @@ def call_siliconflow(
         return "{}", meta
 
     message_content: list[dict[str, Any]] = [{"type": "text", "text": prompt}]
-    if image_path is not None:
+    if image_data_url is not None:
+        message_content.append({
+            "type": "image_url",
+            "image_url": {"url": image_data_url},
+        })
+    elif image_path is not None:
         try:
             image_data_url = encode_image_data_url(image_path, max_side=image_max_side)
             message_content.append({
@@ -341,7 +464,15 @@ def call_siliconflow(
             return response_text, meta
     except urllib.error.HTTPError as e:
         meta["http_status"] = e.code
-        meta["error_type"] = "http_error"
+        code = int(e.code)
+        if code == 400:
+            meta["error_type"] = "request_contract_error"
+        elif code in {401, 403}:
+            meta["error_type"] = "auth_http_error"
+        elif code in {408, 429, 500, 502, 503, 504}:
+            meta["error_type"] = "transient_http_error"
+        else:
+            meta["error_type"] = "http_error"
         try:
             body = e.read().decode("utf-8", errors="replace")
             meta["response_chars"] = len(body)
@@ -350,7 +481,7 @@ def call_siliconflow(
             pass
         return "{}", meta
     except urllib.error.URLError:
-        meta["error_type"] = "url_error"
+        meta["error_type"] = "network_error"
         return "{}", meta
     except json.JSONDecodeError:
         meta["error_type"] = "response_json_decode_error"
@@ -413,11 +544,38 @@ def validate_model_output(parsed: dict[str, Any], expected_page: int, blocks: li
 
 
 def append_vision_llm_call_event(qa_dir: Path, event: VisionLLMCallEvent) -> None:
-    qa_dir.mkdir(parents=True, exist_ok=True)
-    out_path = qa_dir / "vision_llm_calls.jsonl"
+    payload = asdict(event)
     with VISION_LLM_LOG_LOCK:
-        with open(out_path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(asdict(event), ensure_ascii=False) + "\n")
+        append_jsonl_event(qa_dir, "vision_llm_calls.jsonl", payload, "vision_llm_calls")
+
+
+def resolve_vision_request_budget() -> Optional[int]:
+    raw_limit = os.environ.get("SILICONFLOW_VISION_REQUEST_BUDGET", "0").strip()
+    try:
+        parsed = int(raw_limit)
+    except ValueError:
+        parsed = 0
+    if parsed <= 0:
+        return None
+    return parsed
+
+
+def append_vision_runtime_event(qa_dir: Path, runtime: VisionRuntimeContext, pages_done: int, total_pages: int) -> None:
+    budget_limit, budget_consumed, budget_remaining = runtime.budget.snapshot()
+    cache_hits, cache_misses, cache_entries = runtime.image_cache.snapshot()
+    payload = {
+        "stage": "vision",
+        "pages_done": pages_done,
+        "total_pages": total_pages,
+        "budget_limit": budget_limit,
+        "budget_consumed": budget_consumed,
+        "budget_remaining": budget_remaining,
+        "cache_hits": cache_hits,
+        "cache_misses": cache_misses,
+        "cache_entries": cache_entries,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    append_jsonl_event(qa_dir, "vision_runtime.jsonl", payload, "vision_runtime")
 
 
 def process_page(
@@ -427,6 +585,7 @@ def process_page(
     vision_dir: Path,
     qa_dir: Path,
     inject_malformed: bool,
+    runtime: VisionRuntimeContext,
 ) -> tuple[VisionOutput, Optional[FaultEvent]]:
     primary_text_limit = int(os.environ.get("SILICONFLOW_VISION_PRIMARY_TEXT_LIMIT", "180"))
     primary_max_blocks = int(os.environ.get("SILICONFLOW_VISION_PRIMARY_MAX_BLOCKS", "280"))
@@ -445,38 +604,109 @@ def process_page(
     fault: Optional[FaultEvent] = None
     retry_attempts = 0
     prompt = build_prompt(input_pkg)
+    model_name = os.environ.get("SILICONFLOW_VISION_MODEL", SILICONFLOW_DEFAULT_MODEL).strip()
+    endpoint = os.environ.get("SILICONFLOW_ENDPOINT", SILICONFLOW_ENDPOINT)
+    page_image_path = pages_dir / f"p{page:03d}.png"
 
     if inject_malformed:
+        budget_limit, budget_consumed, budget_remaining = runtime.budget.snapshot()
         raw = "{ malformed json !!! "
         meta: dict[str, Any] = {
-            "model": os.environ.get("SILICONFLOW_VISION_MODEL", SILICONFLOW_DEFAULT_MODEL),
-            "endpoint": SILICONFLOW_ENDPOINT,
+            "model": model_name,
+            "endpoint": endpoint,
             "success": False,
             "error_type": "injected_malformed_json",
             "http_status": None,
             "prompt_chars": len(prompt),
             "response_chars": len(raw),
             "response_preview": raw[:300],
+            "budget_limit": budget_limit,
+            "budget_consumed_before": budget_consumed,
+            "budget_consumed_after": budget_consumed,
+            "budget_remaining_after": budget_remaining,
+            "budget_exhausted": False,
+            "cache_hit": None,
+            "cache_miss": None,
+            "cache_key": None,
         }
     else:
         primary_timeout = int(os.environ.get("SILICONFLOW_VISION_PRIMARY_TIMEOUT", "20"))
-        raw, meta = call_siliconflow(
-            prompt,
-            pages_dir / f"p{page:03d}.png",
-            image_max_side=max(800, primary_image_max_side),
-            timeout_seconds=max(5, primary_timeout),
-        )
+        budget_allowed, budget_before, budget_after, budget_remaining_after = runtime.budget.try_consume()
+        if not budget_allowed:
+            raw = "{}"
+            budget_limit, _, _ = runtime.budget.snapshot()
+            meta = {
+                "model": model_name,
+                "endpoint": endpoint,
+                "success": False,
+                "error_type": "budget_exhausted",
+                "http_status": None,
+                "prompt_chars": len(prompt),
+                "response_chars": len(raw),
+                "response_preview": "vision request budget exhausted",
+                "budget_limit": budget_limit,
+                "budget_consumed_before": budget_before,
+                "budget_consumed_after": budget_after,
+                "budget_remaining_after": budget_remaining_after,
+                "budget_exhausted": True,
+                "cache_hit": None,
+                "cache_miss": None,
+                "cache_key": None,
+            }
+        else:
+            try:
+                image_data_url, cache_hit, cache_key = runtime.image_cache.get_or_encode(
+                    page_image_path,
+                    max_side=max(800, primary_image_max_side),
+                )
+            except (OSError, ValueError):
+                raw = "{}"
+                budget_limit, _, _ = runtime.budget.snapshot()
+                meta = {
+                    "model": model_name,
+                    "endpoint": endpoint,
+                    "success": False,
+                    "error_type": "image_read_error",
+                    "http_status": None,
+                    "prompt_chars": len(prompt),
+                    "response_chars": len(raw),
+                    "response_preview": "",
+                    "budget_limit": budget_limit,
+                    "budget_consumed_before": budget_before,
+                    "budget_consumed_after": budget_after,
+                    "budget_remaining_after": budget_remaining_after,
+                    "budget_exhausted": False,
+                    "cache_hit": None,
+                    "cache_miss": None,
+                    "cache_key": None,
+                }
+            else:
+                raw, meta = call_siliconflow(
+                    prompt,
+                    image_data_url=image_data_url,
+                    image_max_side=max(800, primary_image_max_side),
+                    timeout_seconds=max(5, primary_timeout),
+                )
+                meta["budget_limit"] = runtime.budget.snapshot()[0]
+                meta["budget_consumed_before"] = budget_before
+                meta["budget_consumed_after"] = budget_after
+                meta["budget_remaining_after"] = budget_remaining_after
+                meta["budget_exhausted"] = False
+                meta["cache_hit"] = cache_hit
+                meta["cache_miss"] = not cache_hit
+                meta["cache_key"] = cache_key
 
-    parsed = parse_model_json(raw)
-    validation_success = False
-    validation_reason = "parse_failure"
-    if parsed is not None:
-        validation_success, validation_reason = validate_model_output(parsed, page, blocks)
+    initial_guard = guard_model_output(
+        raw,
+        parse_model_json,
+        validator=lambda payload: validate_model_output(payload, page, blocks),
+    )
+    parsed = initial_guard.parsed
+    validation_success = initial_guard.validation_success
+    validation_reason = initial_guard.failure_reason
 
     event_error_type = str(meta.get("error_type", "unknown"))
-    if parsed is None and event_error_type in {"none", "empty_content"}:
-        event_error_type = "parse_failure"
-    elif parsed is not None and not validation_success:
+    if initial_guard.should_fallback and event_error_type in {"none", "empty_content"}:
         event_error_type = validation_reason
 
     append_vision_llm_call_event(qa_dir, VisionLLMCallEvent(
@@ -486,7 +716,7 @@ def process_page(
         model=str(meta.get("model", SILICONFLOW_DEFAULT_MODEL)),
         endpoint=str(meta.get("endpoint", SILICONFLOW_ENDPOINT)),
         success=bool(meta.get("success", False)),
-        parse_success=parsed is not None,
+        parse_success=initial_guard.parse_success,
         validation_success=validation_success,
         error_type=event_error_type,
         http_status=meta.get("http_status", None),
@@ -494,65 +724,164 @@ def process_page(
         response_chars=int(meta.get("response_chars", len(raw))),
         response_preview=str(meta.get("response_preview", "")),
         timestamp=datetime.now(timezone.utc).isoformat(),
+        budget_limit=meta.get("budget_limit"),
+        budget_consumed_before=meta.get("budget_consumed_before"),
+        budget_consumed_after=meta.get("budget_consumed_after"),
+        budget_remaining_after=meta.get("budget_remaining_after"),
+        budget_exhausted=bool(meta.get("budget_exhausted", False)),
+        cache_hit=meta.get("cache_hit"),
+        cache_miss=meta.get("cache_miss"),
+        cache_key=meta.get("cache_key"),
     ))
 
-    if parsed is None or not validation_success:
-        retry_attempts = 1
+    if initial_guard.should_fallback:
         if not inject_malformed:
+            retry_attempts = 0
             retry_model = os.environ.get("SILICONFLOW_VISION_MODEL", SILICONFLOW_DEFAULT_MODEL).strip()
             first_error_type = str(meta.get("error_type", "unknown"))
-            if first_error_type in {"timeout", "url_error", "http_error", "response_json_decode_error", "response_schema_error"}:
-                retry_model = os.environ.get("SILICONFLOW_VISION_FALLBACK_MODEL", SILICONFLOW_FALLBACK_MODEL).strip()
-            retry_input_pkg = build_input_pkg(
-                page,
-                blocks,
-                pages_dir,
-                text_limit=120,
-                max_blocks=220,
-            )
-            retry_prompt = build_prompt(retry_input_pkg)
-            retry_timeout = int(os.environ.get("SILICONFLOW_VISION_RETRY_TIMEOUT", "45"))
-            raw, meta = call_siliconflow(
-                retry_prompt,
-                pages_dir / f"p{page:03d}.png",
-                image_max_side=1100,
-                model_override=retry_model,
-                timeout_seconds=max(10, retry_timeout),
-            )
-            parsed = parse_model_json(raw)
-            validation_success = False
-            validation_reason = "parse_failure"
-            if parsed is not None:
-                validation_success, validation_reason = validate_model_output(parsed, page, blocks)
+            first_http_status = meta.get("http_status", None)
+            if first_error_type in {"none", "empty_content"}:
+                first_error_type = validation_reason
 
-            event_error_type = str(meta.get("error_type", "unknown"))
-            if parsed is None and event_error_type in {"none", "empty_content"}:
-                event_error_type = "parse_failure"
-            elif parsed is not None and not validation_success:
-                event_error_type = validation_reason
+            retry_blockers = {"missing_api_key", "invalid_endpoint", "auth_http_error", "budget_exhausted"}
+            if first_error_type in retry_blockers:
+                should_retry = False
+            else:
+                should_retry = (
+                    (parsed is not None and not validation_success)
+                    or validation_reason == "parse_failure"
+                    or not is_request_contract_error(first_error_type, first_http_status)
+                )
 
-            append_vision_llm_call_event(qa_dir, VisionLLMCallEvent(
-                stage="vision",
-                page=page,
-                attempt=2,
-                model=str(meta.get("model", SILICONFLOW_DEFAULT_MODEL)),
-                endpoint=str(meta.get("endpoint", SILICONFLOW_ENDPOINT)),
-                success=bool(meta.get("success", False)),
-                parse_success=parsed is not None,
-                validation_success=validation_success,
-                error_type=event_error_type,
-                http_status=meta.get("http_status", None),
-                prompt_chars=int(meta.get("prompt_chars", len(retry_prompt))),
-                response_chars=int(meta.get("response_chars", len(raw))),
-                response_preview=str(meta.get("response_preview", "")),
-                timestamp=datetime.now(timezone.utc).isoformat(),
-            ))
+            if should_retry:
+                retry_attempts = 1
+                transient_retry = is_transient_retryable_error(first_error_type, first_http_status)
+                if transient_retry:
+                    retry_backoff_seconds = float(os.environ.get("SILICONFLOW_VISION_RETRY_BACKOFF_SECONDS", "1.5"))
+                    if retry_backoff_seconds > 0:
+                        time.sleep(min(10.0, retry_backoff_seconds))
+                    retry_model = os.environ.get("SILICONFLOW_VISION_FALLBACK_MODEL", SILICONFLOW_FALLBACK_MODEL).strip()
+                retry_input_pkg = build_input_pkg(
+                    page,
+                    blocks,
+                    pages_dir,
+                    text_limit=120,
+                    max_blocks=220,
+                )
+                retry_prompt = build_prompt(retry_input_pkg)
+                retry_timeout = int(os.environ.get("SILICONFLOW_VISION_RETRY_TIMEOUT", "45"))
+                budget_allowed, budget_before, budget_after, budget_remaining_after = runtime.budget.try_consume()
+                if not budget_allowed:
+                    raw = "{}"
+                    budget_limit, _, _ = runtime.budget.snapshot()
+                    meta = {
+                        "model": retry_model,
+                        "endpoint": endpoint,
+                        "success": False,
+                        "error_type": "budget_exhausted",
+                        "http_status": None,
+                        "prompt_chars": len(retry_prompt),
+                        "response_chars": len(raw),
+                        "response_preview": "vision retry budget exhausted",
+                        "budget_limit": budget_limit,
+                        "budget_consumed_before": budget_before,
+                        "budget_consumed_after": budget_after,
+                        "budget_remaining_after": budget_remaining_after,
+                        "budget_exhausted": True,
+                        "cache_hit": None,
+                        "cache_miss": None,
+                        "cache_key": None,
+                    }
+                else:
+                    try:
+                        image_data_url, cache_hit, cache_key = runtime.image_cache.get_or_encode(
+                            page_image_path,
+                            max_side=1100,
+                        )
+                    except (OSError, ValueError):
+                        raw = "{}"
+                        budget_limit, _, _ = runtime.budget.snapshot()
+                        meta = {
+                            "model": retry_model,
+                            "endpoint": endpoint,
+                            "success": False,
+                            "error_type": "image_read_error",
+                            "http_status": None,
+                            "prompt_chars": len(retry_prompt),
+                            "response_chars": len(raw),
+                            "response_preview": "",
+                            "budget_limit": budget_limit,
+                            "budget_consumed_before": budget_before,
+                            "budget_consumed_after": budget_after,
+                            "budget_remaining_after": budget_remaining_after,
+                            "budget_exhausted": False,
+                            "cache_hit": None,
+                            "cache_miss": None,
+                            "cache_key": None,
+                        }
+                    else:
+                        raw, meta = call_siliconflow(
+                            retry_prompt,
+                            image_data_url=image_data_url,
+                            image_max_side=1100,
+                            model_override=retry_model,
+                            timeout_seconds=max(10, retry_timeout),
+                        )
+                        meta["budget_limit"] = runtime.budget.snapshot()[0]
+                        meta["budget_consumed_before"] = budget_before
+                        meta["budget_consumed_after"] = budget_after
+                        meta["budget_remaining_after"] = budget_remaining_after
+                        meta["budget_exhausted"] = False
+                        meta["cache_hit"] = cache_hit
+                        meta["cache_miss"] = not cache_hit
+                        meta["cache_key"] = cache_key
+                retry_guard = guard_model_output(
+                    raw,
+                    parse_model_json,
+                    validator=lambda payload: validate_model_output(payload, page, blocks),
+                )
+                parsed = retry_guard.parsed
+                validation_success = retry_guard.validation_success
+                validation_reason = retry_guard.failure_reason
+
+                event_error_type = str(meta.get("error_type", "unknown"))
+                if retry_guard.should_fallback and event_error_type in {"none", "empty_content"}:
+                    event_error_type = validation_reason
+
+                append_vision_llm_call_event(qa_dir, VisionLLMCallEvent(
+                    stage="vision",
+                    page=page,
+                    attempt=2,
+                    model=str(meta.get("model", SILICONFLOW_DEFAULT_MODEL)),
+                    endpoint=str(meta.get("endpoint", SILICONFLOW_ENDPOINT)),
+                    success=bool(meta.get("success", False)),
+                    parse_success=retry_guard.parse_success,
+                    validation_success=validation_success,
+                    error_type=event_error_type,
+                    http_status=meta.get("http_status", None),
+                    prompt_chars=int(meta.get("prompt_chars", len(retry_prompt))),
+                    response_chars=int(meta.get("response_chars", len(raw))),
+                    response_preview=str(meta.get("response_preview", "")),
+                    timestamp=datetime.now(timezone.utc).isoformat(),
+                    budget_limit=meta.get("budget_limit"),
+                    budget_consumed_before=meta.get("budget_consumed_before"),
+                    budget_consumed_after=meta.get("budget_consumed_after"),
+                    budget_remaining_after=meta.get("budget_remaining_after"),
+                    budget_exhausted=bool(meta.get("budget_exhausted", False)),
+                    cache_hit=meta.get("cache_hit"),
+                    cache_miss=meta.get("cache_miss"),
+                    cache_key=meta.get("cache_key"),
+                ))
 
     if parsed is None or not validation_success:
         output = generate_fallback(page, blocks)
+        if not inject_malformed and str(meta.get("error_type", "")) == "budget_exhausted":
+            fault_label = "budget-exhausted"
+        else:
+            fault_label = "malformed-json" if inject_malformed else f"invalid-model-output:{validation_reason}"
         fault = FaultEvent(
             stage="vision",
-            fault="malformed-json" if inject_malformed else f"invalid-model-output:{validation_reason}",
+            fault=fault_label,
             page=page,
             retry_attempts=retry_attempts,
             fallback_used=True,
@@ -602,6 +931,45 @@ def run_vision(
     qa_dir = run_dir / "qa"
 
     vision_dir.mkdir(parents=True, exist_ok=True)
+    qa_dir.mkdir(parents=True, exist_ok=True)
+
+    llm_model = os.environ.get("SILICONFLOW_VISION_MODEL", SILICONFLOW_DEFAULT_MODEL).strip()
+    if not inject_malformed_json:
+        preflight_ok, preflight_diag = run_preflight_check(llm_model)
+        if not preflight_ok:
+            preflight_message = str(preflight_diag.get("message", "Vision preflight failed."))
+            preflight_error_type = str(preflight_diag.get("error_type", "preflight_failure"))
+            append_vision_llm_call_event(qa_dir, VisionLLMCallEvent(
+                stage="vision",
+                page=0,
+                attempt=0,
+                model=str(preflight_diag.get("model", llm_model)),
+                endpoint=str(preflight_diag.get("endpoint", SILICONFLOW_ENDPOINT)),
+                success=False,
+                parse_success=False,
+                validation_success=False,
+                error_type=preflight_error_type,
+                http_status=None,
+                prompt_chars=0,
+                response_chars=0,
+                response_preview=preflight_message[:300],
+                timestamp=datetime.now(timezone.utc).isoformat(),
+            ))
+            append_fault_events(
+                qa_dir,
+                [
+                    {
+                        "stage": "vision",
+                        "fault": f"preflight-{preflight_error_type}",
+                        "page": 0,
+                        "retry_attempts": 0,
+                        "fallback_used": False,
+                        "status": "fail",
+                        "error_type": preflight_error_type,
+                    }
+                ],
+            )
+            raise RuntimeError(preflight_message)
 
     blocks_by_page = load_blocks(text_dir / "blocks_norm.jsonl", dpi, scale)
 
@@ -612,6 +980,10 @@ def run_vision(
     pages_done = 0
     blocks_done = 0
     total_pages = len(blocks_by_page)
+    runtime = VisionRuntimeContext(
+        budget=VisionRequestBudget(resolve_vision_request_budget()),
+        image_cache=VisionImageDataUrlCache(),
+    )
 
     max_workers = int(os.environ.get("SILICONFLOW_VISION_MAX_WORKERS", "2"))
     max_workers = max(1, min(4, max_workers))
@@ -620,7 +992,7 @@ def run_vision(
         for index, page in enumerate(sorted(blocks_by_page.keys()), start=1):
             page_start = time.time()
             blocks = blocks_by_page[page]
-            output, fault = process_page(page, blocks, pages_dir, vision_dir, qa_dir, inject_malformed_json)
+            output, fault = process_page(page, blocks, pages_dir, vision_dir, qa_dir, inject_malformed_json, runtime)
             if fault:
                 faults.append(fault)
             pages_done += 1
@@ -634,7 +1006,7 @@ def run_vision(
     else:
         def process_page_timed(page: int, blocks: list[BlockCandidate]) -> tuple[VisionOutput, Optional[FaultEvent], float]:
             started = time.time()
-            output, fault = process_page(page, blocks, pages_dir, vision_dir, qa_dir, inject_malformed_json)
+            output, fault = process_page(page, blocks, pages_dir, vision_dir, qa_dir, inject_malformed_json, runtime)
             return output, fault, time.time() - started
 
         ordered_pages = sorted(blocks_by_page.keys())
@@ -659,18 +1031,8 @@ def run_vision(
                 )
 
     if faults:
-        qa_dir.mkdir(parents=True, exist_ok=True)
-        fp = qa_dir / "fault_injection.json"
-        existing: list[dict[str, Any]] = []
-        if fp.exists():
-            try:
-                with open(fp, "r", encoding="utf-8") as f:
-                    d = json.load(f)
-                    existing = d if isinstance(d, list) else []
-            except (json.JSONDecodeError, IOError):
-                pass
-        all_events = existing + [asdict(e) for e in faults]
-        with open(fp, "w", encoding="utf-8") as f:
-            json.dump(all_events, f, indent=2, ensure_ascii=False)
+        append_fault_events(qa_dir, [asdict(e) for e in faults])
+
+    append_vision_runtime_event(qa_dir, runtime, pages_done=pages_done, total_pages=total_pages)
 
     return pages_done, blocks_done

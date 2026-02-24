@@ -20,12 +20,17 @@ Required keys: doc_id, input_pdf_path, input_pdf_sha256, started_at_utc,
 """
 
 import hashlib
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
+from dotenv import load_dotenv
 from pydantic import AliasChoices, BaseModel, Field
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 # Required module directories per Run Layout Contract
@@ -240,12 +245,23 @@ def create_manifest(
     lock_hash = compute_lockfile_hash(lockfile_path)
     
     # Build manifest
+    # Read LLM configuration from environment variables
+    llm_config = LLMSettings(
+        text_model=os.environ.get("LLM_TEXT_MODEL", ""),
+        vision_model=os.environ.get("LLM_VISION_MODEL", ""),
+        vision_provider=os.environ.get("LLM_VISION_PROVIDER", ""),
+        reading_provider=os.environ.get("LLM_READING_PROVIDER", ""),
+        reading_model=os.environ.get("LLM_READING_MODEL", ""),
+        temperature=float(os.environ.get("LLM_TEMPERATURE", "0.0")),
+    )
+    
     manifest = Manifest(
         doc_id=doc_id,
         input_pdf_path=str(pdf_path),
         input_pdf_sha256=compute_sha256(pdf_path),
         started_at_utc=datetime.now(timezone.utc).isoformat(),
         toolchain=ToolchainInfo(package_lock_hash=lock_hash),
+        llm_config=llm_config,
     )
     
     # Write manifest.json

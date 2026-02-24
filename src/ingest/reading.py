@@ -20,18 +20,52 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
 
+from .contract_guard import guard_model_output, safe_json_value
 from .manifest import Manifest, load_manifest
+from .qa_telemetry import append_fault_events, append_jsonl_event
 
 SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 SILICONFLOW_DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct"
+REQUIRED_API_KEY_ENV_NAMES = ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN")
 
 
 def resolve_api_key() -> str:
-    for key_name in ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN"):
+    for key_name in REQUIRED_API_KEY_ENV_NAMES:
         value = os.environ.get(key_name, "").strip()
         if value:
             return value
     return ""
+
+
+def run_preflight_check(model: str) -> tuple[bool, dict[str, Any]]:
+    endpoint = os.environ.get("SILICONFLOW_ENDPOINT", SILICONFLOW_ENDPOINT).strip()
+    api_key = resolve_api_key()
+    if not api_key:
+        return False, {
+            "error_type": "missing_api_key",
+            "endpoint": endpoint,
+            "model": model,
+            "message": (
+                "Reading stage preflight failed: no SiliconFlow API credential found. "
+                f"Set one of {', '.join(REQUIRED_API_KEY_ENV_NAMES)} before running reading/full stage."
+            ),
+        }
+    if not endpoint.startswith("https://") or "/chat/completions" not in endpoint:
+        return False, {
+            "error_type": "invalid_endpoint",
+            "endpoint": endpoint,
+            "model": model,
+            "message": (
+                "Reading stage preflight failed: SILICONFLOW_ENDPOINT is not a valid chat-completions HTTPS endpoint. "
+                f"Current value: {endpoint!r}. Expected format similar to {SILICONFLOW_ENDPOINT!r}."
+            ),
+        }
+    return True, {
+        "error_type": "none",
+        "endpoint": endpoint,
+        "model": model,
+        "message": "ok",
+    }
 
 FACT_CATEGORIES = frozenset({
     "result", "statistics", "comparison", "definition",
@@ -47,6 +81,9 @@ READING_STRATEGIES = frozenset({
     "methods_first", "evidence_synthesis", "statistical_focus",
     "narrative_flow", "protocol_extraction"
 })
+
+FACTS_GLOBAL_BATCH_SIZE = 80
+MAX_LOCAL_FACT_CANDIDATES = 160
 
 
 @dataclass
@@ -273,21 +310,7 @@ def select_analysis_paragraphs(paragraphs: list[dict[str, Any]], max_items: int 
 
 
 def safe_json_parse(raw: str) -> Optional[Any]:
-    text = raw.strip()
-    if not text:
-        return None
-    if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?\s*", "", text)
-        text = re.sub(r"\s*```$", "", text)
-    start_obj = text.find("{")
-    start_arr = text.find("[")
-    starts = [x for x in (start_obj, start_arr) if x >= 0]
-    if starts:
-        text = text[min(starts):]
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        return None
+    return safe_json_value(raw)
 
 
 def heuristic_statement_from_text(text: str) -> str:
@@ -500,7 +523,15 @@ def call_siliconflow(prompt: str, max_tokens: int = 4000) -> tuple[str, dict[str
             return content or "{}", meta
     except urllib.error.HTTPError as e:
         meta["http_status"] = e.code
-        meta["error_type"] = "http_error"
+        code = int(e.code)
+        if code == 400:
+            meta["error_type"] = "request_contract_error"
+        elif code in {401, 403}:
+            meta["error_type"] = "auth_http_error"
+        elif code in {408, 429, 500, 502, 503, 504}:
+            meta["error_type"] = "transient_http_error"
+        else:
+            meta["error_type"] = "http_error"
         try:
             body = e.read().decode("utf-8", errors="replace")
             meta["response_chars"] = len(body)
@@ -509,7 +540,7 @@ def call_siliconflow(prompt: str, max_tokens: int = 4000) -> tuple[str, dict[str
             pass
         return "{}", meta
     except urllib.error.URLError:
-        meta["error_type"] = "url_error"
+        meta["error_type"] = "network_error"
         return "{}", meta
     except json.JSONDecodeError:
         meta["error_type"] = "response_json_decode_error"
@@ -523,10 +554,7 @@ def call_siliconflow(prompt: str, max_tokens: int = 4000) -> tuple[str, dict[str
 
 
 def append_llm_call_event(qa_dir: Path, event: LLMCallEvent) -> None:
-    qa_dir.mkdir(parents=True, exist_ok=True)
-    out_path = qa_dir / "llm_calls.jsonl"
-    with open(out_path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(asdict(event), ensure_ascii=False) + "\n")
+    append_jsonl_event(qa_dir, "llm_calls.jsonl", asdict(event), "llm_calls")
 
 
 def generate_fact_id(para_id: str, index: int) -> str:
@@ -765,6 +793,152 @@ Please respond in Chinese where possible.
 
 Return JSON only:"""
     return prompt
+
+
+def infer_fact_candidate_category(text: str) -> str:
+    low = text.lower()
+    if any(token in low for token in ("recommend", "should", "guideline", "建议", "应当")):
+        return "recommendation"
+    if any(token in low for token in ("limitation", "future work", "不足", "局限")):
+        return "limitation"
+    if any(token in low for token in ("increase", "decrease", "odds", "p<", "p =", "significant", "%", "率")):
+        return "statistics"
+    if any(token in low for token in ("compared", "versus", "vs", "higher than", "lower than", "相比", "高于", "低于")):
+        return "comparison"
+    if any(token in low for token in ("mechanism", "pathway", "mediated", "机制", "通路")):
+        return "mechanism"
+    if any(token in low for token in ("defined", "definition", "classified", "定义", "分类")):
+        return "definition"
+    if any(token in low for token in ("result", "found", "showed", "conclude", "发现", "结果", "结论")):
+        return "result"
+    return "background"
+
+
+def build_local_fact_candidates(
+    paragraphs: list[dict[str, Any]],
+    max_candidates: int = MAX_LOCAL_FACT_CANDIDATES,
+) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for para in paragraphs:
+        para_id = str(para.get("para_id", ""))
+        if not para_id:
+            continue
+        text = str(para.get("text", "")).strip()
+        statement = heuristic_statement_from_text(text)
+        if not statement or is_noise_statement(statement):
+            continue
+        role = str(para.get("role", "Body"))
+        score = 0.0
+        words = len(statement.split())
+        score += min(40.0, float(words))
+        score += float(para.get("confidence", 0.5)) * 10.0
+        if role == "Heading":
+            score -= 8.0
+        if role in {"Body", "FigureCaption", "TableCaption"}:
+            score += 8.0
+        if any(ch.isdigit() for ch in statement):
+            score += 6.0
+        if any(token in statement.lower() for token in ("significant", "increase", "decrease", "risk", "associated")):
+            score += 6.0
+
+        quote, quote_truncated, truncation_reason = truncate_quote(statement)
+        evidence = para.get("evidence_pointer", {})
+        if not isinstance(evidence, dict):
+            evidence = {}
+        page_span = para.get("page_span", {})
+        if not isinstance(page_span, dict):
+            page_span = {}
+
+        candidates.append({
+            "candidate_id": f"cand_{para_id}",
+            "para_id": para_id,
+            "category": infer_fact_candidate_category(statement),
+            "statement": statement,
+            "quote": quote,
+            "quote_truncated": quote_truncated,
+            "truncation_reason": truncation_reason,
+            "evidence_pointer": {
+                "page": page_span.get("start", 1),
+                "bbox": evidence.get("bbox_union", [0, 0, 0, 0]),
+                "source_block_ids": evidence.get("source_block_ids", []),
+            },
+            "_score": score,
+        })
+
+    candidates.sort(key=lambda item: float(item.get("_score", 0.0)), reverse=True)
+    trimmed = candidates[:max_candidates]
+    trimmed.sort(key=lambda item: str(item.get("para_id", "")))
+    return trimmed
+
+
+def build_global_facts_prompt(
+    candidates: list[dict[str, Any]],
+    start_idx: int,
+    batch_size: int = FACTS_GLOBAL_BATCH_SIZE,
+) -> tuple[str, list[str]]:
+    batch = candidates[start_idx:start_idx + batch_size]
+    para_ids = [str(item.get("para_id", "")) for item in batch if item.get("para_id")]
+    prompt = (
+        "Refine deterministic local fact candidates into contract-compliant atomic facts. "
+        "Keep evidence pointers grounded to candidate fields, and preserve para_id exactly. "
+        "Please provide analysis in Chinese where appropriate.\n\n"
+        "## Local Candidate Facts\n\n"
+    )
+    for item in batch:
+        prompt += (
+            f"- candidate_id={item.get('candidate_id')} para_id={item.get('para_id')} "
+            f"category_hint={item.get('category')} statement={item.get('statement')} "
+            f"evidence={item.get('evidence_pointer')}\n"
+        )
+
+    prompt += """
+
+Return STRICT JSON ONLY:
+
+[
+  {
+    "fact_id": "<string>",
+    "para_id": "<para_id>",
+    "category": "<category>",
+    "statement": "<concise factual statement in Chinese preferred / 中文优先>",
+    "quote": "<verbatim quote, max 30 words>",
+    "evidence_pointer": {
+      "page": <int>,
+      "bbox": [x0, y0, x1, y1],
+      "source_block_ids": [<block_id>, ...]
+    }
+  }
+]
+
+Categories: result, statistics, comparison, definition, mechanism, limitation, recommendation, background, none
+
+Use only para_id values present in the candidates list.
+
+Return JSON only:"""
+    return prompt, para_ids
+
+
+def fallback_facts_from_candidates(candidates: list[dict[str, Any]], start_idx: int) -> list[Fact]:
+    fallback_facts: list[Fact] = []
+    for offset, candidate in enumerate(candidates):
+        para_id = str(candidate.get("para_id", ""))
+        if not para_id:
+            continue
+        fallback_facts.append(Fact(
+            fact_id=generate_fact_id(para_id, start_idx + offset),
+            para_id=para_id,
+            category=str(candidate.get("category", "background")),
+            statement=str(candidate.get("statement", "")),
+            quote=str(candidate.get("quote", "")),
+            evidence_pointer=candidate.get("evidence_pointer", {}),
+            quote_truncated=bool(candidate.get("quote_truncated", False)),
+            truncation_reason=(
+                str(candidate.get("truncation_reason"))
+                if candidate.get("truncation_reason")
+                else None
+            ),
+        ))
+    return fallback_facts
 
 
 def build_facts_prompt(paragraphs: list[dict[str, Any]], start_idx: int, batch_size: int = 10) -> tuple[str, list[str]]:
@@ -1045,6 +1219,40 @@ def run_reading(
     reading_dir.mkdir(parents=True, exist_ok=True)
     qa_dir = run_dir / "qa"
     qa_dir.mkdir(parents=True, exist_ok=True)
+    llm_model = os.environ.get("SILICONFLOW_READING_MODEL", SILICONFLOW_DEFAULT_MODEL)
+    if not inject_malformed_json:
+        preflight_ok, preflight_diag = run_preflight_check(llm_model)
+        if not preflight_ok:
+            preflight_message = str(preflight_diag.get("message", "Reading preflight failed."))
+            preflight_error_type = str(preflight_diag.get("error_type", "preflight_failure"))
+            append_llm_call_event(qa_dir, LLMCallEvent(
+                stage="reading",
+                step="preflight",
+                model=str(preflight_diag.get("model", llm_model)),
+                endpoint=str(preflight_diag.get("endpoint", SILICONFLOW_ENDPOINT)),
+                success=False,
+                error_type=preflight_error_type,
+                http_status=None,
+                prompt_chars=0,
+                response_chars=0,
+                parse_success=False,
+                timestamp=datetime.now(timezone.utc).isoformat(),
+                response_preview=preflight_message[:300],
+            ))
+            append_fault_events(
+                qa_dir,
+                [
+                    {
+                        "stage": "reading",
+                        "fault": f"preflight-{preflight_error_type}",
+                        "retry_attempts": 0,
+                        "fallback_used": False,
+                        "status": "fail",
+                        "error_type": preflight_error_type,
+                    }
+                ],
+            )
+            raise RuntimeError(preflight_message)
     paragraphs_path = run_dir / "paragraphs" / "paragraphs.jsonl"
     paragraphs = load_paragraphs(paragraphs_path)
     analysis_paragraphs = select_analysis_paragraphs(paragraphs)
@@ -1059,7 +1267,6 @@ def run_reading(
     figure_links_path = run_dir / "figures_tables" / "figure_table_links.json"
     figure_links = load_figure_table_links(figure_links_path)
     fault_events: list[FaultEvent] = []
-    llm_model = os.environ.get("SILICONFLOW_READING_MODEL", SILICONFLOW_DEFAULT_MODEL)
     print(
         f"[reading] start paragraphs={len(paragraphs)} analysis={len(analysis_paragraphs)} "
         f"citations={len(citations)} assets={len(assets)} model={llm_model}",
@@ -1081,9 +1288,10 @@ def run_reading(
         }
     else:
         raw_profile, profile_meta = call_siliconflow(profile_prompt)
-    profile = parse_paper_profile(raw_profile)
+    profile_guard = guard_model_output(raw_profile, parse_paper_profile)
+    profile = profile_guard.parsed
     print(
-        f"[reading] profile parse_success={profile is not None} error={profile_meta.get('error_type', 'unknown')}",
+        f"[reading] profile parse_success={profile_guard.parse_success} error={profile_meta.get('error_type', 'unknown')}",
         flush=True,
     )
     append_llm_call_event(qa_dir, LLMCallEvent(
@@ -1096,13 +1304,21 @@ def run_reading(
         http_status=profile_meta.get("http_status", None),
         prompt_chars=int(profile_meta.get("prompt_chars", len(profile_prompt))),
         response_chars=int(profile_meta.get("response_chars", len(raw_profile))),
-        parse_success=profile is not None,
+        parse_success=profile_guard.parse_success,
         timestamp=datetime.now(timezone.utc).isoformat(),
         response_preview=str(profile_meta.get("response_preview", "")),
     ))
-    if profile is None:
+    if profile_guard.should_fallback or profile is None:
         profile = generate_fallback_profile()
-        fault_events.append(FaultEvent(stage="reading", fault="profile-parse-failure", retry_attempts=0, fallback_used=True, status="degraded"))
+        fault_events.append(
+            FaultEvent(
+                stage="reading",
+                fault=f"profile-{profile_guard.failure_reason.replace('_', '-')}",
+                retry_attempts=0,
+                fallback_used=True,
+                status="degraded",
+            )
+        )
     profile_path = reading_dir / "paper_profile.json"
     with open(profile_path, "w", encoding="utf-8") as f:
         json.dump({
@@ -1128,9 +1344,10 @@ def run_reading(
         }
     else:
         raw_logic, logic_meta = call_siliconflow(logic_prompt)
-    logic_graph = parse_logic_graph(raw_logic)
+    logic_guard = guard_model_output(raw_logic, parse_logic_graph)
+    logic_graph = logic_guard.parsed
     print(
-        f"[reading] logic parse_success={logic_graph is not None} error={logic_meta.get('error_type', 'unknown')}",
+        f"[reading] logic parse_success={logic_guard.parse_success} error={logic_meta.get('error_type', 'unknown')}",
         flush=True,
     )
     append_llm_call_event(qa_dir, LLMCallEvent(
@@ -1143,25 +1360,35 @@ def run_reading(
         http_status=logic_meta.get("http_status", None),
         prompt_chars=int(logic_meta.get("prompt_chars", len(logic_prompt))),
         response_chars=int(logic_meta.get("response_chars", len(raw_logic))),
-        parse_success=logic_graph is not None,
+        parse_success=logic_guard.parse_success,
         timestamp=datetime.now(timezone.utc).isoformat(),
         response_preview=str(logic_meta.get("response_preview", "")),
     ))
-    if logic_graph is None:
+    if logic_guard.should_fallback or logic_graph is None:
         logic_graph = generate_fallback_logic_graph()
-        fault_events.append(FaultEvent(stage="reading", fault="logic-parse-failure", retry_attempts=0, fallback_used=True, status="degraded"))
+        fault_events.append(
+            FaultEvent(
+                stage="reading",
+                fault=f"logic-{logic_guard.failure_reason.replace('_', '-')}",
+                retry_attempts=0,
+                fallback_used=True,
+                status="degraded",
+            )
+        )
     logic_path = reading_dir / "logic_graph.json"
     with open(logic_path, "w", encoding="utf-8") as f:
         json.dump(logic_graph, f, indent=2, ensure_ascii=False)
 
     facts: list[Fact] = []
     facts_path = reading_dir / "facts.jsonl"
-    batch_size = 10
-    total_paragraphs = len(analysis_paragraphs)
-    total_batches = (total_paragraphs + batch_size - 1) // batch_size
-    for start_idx in range(0, total_paragraphs, batch_size):
-        batch_no = start_idx // batch_size + 1
-        facts_prompt, para_ids = build_facts_prompt(analysis_paragraphs, start_idx, batch_size)
+    local_candidates = build_local_fact_candidates(analysis_paragraphs)
+    global_batch_size = FACTS_GLOBAL_BATCH_SIZE
+    total_candidates = len(local_candidates)
+    total_batches = (total_candidates + global_batch_size - 1) // global_batch_size if total_candidates else 0
+    for start_idx in range(0, total_candidates, global_batch_size):
+        batch_no = start_idx // global_batch_size + 1
+        batch_candidates = local_candidates[start_idx:start_idx + global_batch_size]
+        facts_prompt, para_ids = build_global_facts_prompt(local_candidates, start_idx, global_batch_size)
         if inject_malformed_json and start_idx == 0:
             raw_facts = "{ malformed json !!! "
             facts_meta: dict[str, Any] = {
@@ -1176,15 +1403,19 @@ def run_reading(
             }
         else:
             raw_facts, facts_meta = call_siliconflow(facts_prompt)
-        batch_facts = parse_facts(raw_facts, para_ids[0] if para_ids else "")
+        batch_facts_guard = guard_model_output(
+            raw_facts,
+            lambda payload: parse_facts(payload, para_ids[0] if para_ids else ""),
+        )
+        batch_facts = batch_facts_guard.parsed or []
         print(
-            f"[reading] facts batch={batch_no}/{total_batches} parse_success={bool(batch_facts)} "
-            f"error={facts_meta.get('error_type', 'unknown')} para_ids={len(para_ids)}",
+            f"[reading] facts-global batch={batch_no}/{total_batches} parse_success={batch_facts_guard.parse_success} "
+            f"error={facts_meta.get('error_type', 'unknown')} candidates={len(batch_candidates)}",
             flush=True,
         )
         append_llm_call_event(qa_dir, LLMCallEvent(
             stage="reading",
-            step=f"facts_batch_{start_idx:05d}",
+            step=f"facts_global_{start_idx:05d}",
             model=str(facts_meta.get("model", llm_model)),
             endpoint=str(facts_meta.get("endpoint", SILICONFLOW_ENDPOINT)),
             success=bool(facts_meta.get("success", False)),
@@ -1192,35 +1423,27 @@ def run_reading(
             http_status=facts_meta.get("http_status", None),
             prompt_chars=int(facts_meta.get("prompt_chars", len(facts_prompt))),
             response_chars=int(facts_meta.get("response_chars", len(raw_facts))),
-            parse_success=bool(batch_facts),
+            parse_success=batch_facts_guard.parse_success,
             timestamp=datetime.now(timezone.utc).isoformat(),
             response_preview=str(facts_meta.get("response_preview", "")),
         ))
-        if not batch_facts:
-            fault_events.append(FaultEvent(stage="reading", fault="facts-parse-failure", retry_attempts=0, fallback_used=True, status="degraded"))
-        if not batch_facts:
-            for para_id in para_ids:
-                para = next((p for p in paragraphs if p.get("para_id") == para_id), None)
-                if para:
-                    page_span = para.get("page_span", {})
-                    evidence = para.get("evidence_pointer", {})
-                    fallback_fact = Fact(
-                        fact_id=generate_fact_id(para_id, 0),
-                        para_id=para_id,
-                        category="background",
-                        statement=heuristic_statement_from_text(str(para.get("text", ""))) or "此段落无可提取的原子事实 (No extractable atomic facts in this paragraph)",
-                        quote="",
-                        evidence_pointer={
-                            "page": page_span.get("start", 1),
-                            "bbox": evidence.get("bbox_union", [0, 0, 0, 0]),
-                            "source_block_ids": evidence.get("source_block_ids", []),
-                        },
-                    )
-                    if len(fallback_fact.statement.split()) >= 6:
-                        batch_facts.append(fallback_fact)
+        if batch_facts_guard.should_fallback or not batch_facts:
+            fault_events.append(
+                FaultEvent(
+                    stage="reading",
+                    fault=f"facts-{batch_facts_guard.failure_reason.replace('_', '-')}",
+                    retry_attempts=0,
+                    fallback_used=True,
+                    status="degraded",
+                )
+            )
+            batch_facts.extend(fallback_facts_from_candidates(batch_candidates, start_idx))
         facts.extend(batch_facts)
     if not facts:
-        facts = generate_fallback_facts(analysis_paragraphs)
+        if local_candidates:
+            facts = fallback_facts_from_candidates(local_candidates, 0)
+        if not facts:
+            facts = generate_fallback_facts(analysis_paragraphs)
     with open(facts_path, "w", encoding="utf-8") as f:
         for fact in facts:
             record: dict[str, Any] = {
@@ -1251,9 +1474,10 @@ def run_reading(
         }
     else:
         raw_themes, themes_meta = call_siliconflow(themes_prompt)
-    themes = parse_themes(raw_themes)
+    themes_guard = guard_model_output(raw_themes, parse_themes)
+    themes = themes_guard.parsed
     print(
-        f"[reading] themes parse_success={themes is not None} error={themes_meta.get('error_type', 'unknown')}",
+        f"[reading] themes parse_success={themes_guard.parse_success} error={themes_meta.get('error_type', 'unknown')}",
         flush=True,
     )
     append_llm_call_event(qa_dir, LLMCallEvent(
@@ -1266,13 +1490,21 @@ def run_reading(
         http_status=themes_meta.get("http_status", None),
         prompt_chars=int(themes_meta.get("prompt_chars", len(themes_prompt))),
         response_chars=int(themes_meta.get("response_chars", len(raw_themes))),
-        parse_success=themes is not None,
+        parse_success=themes_guard.parse_success,
         timestamp=datetime.now(timezone.utc).isoformat(),
         response_preview=str(themes_meta.get("response_preview", "")),
     ))
-    if themes is None:
+    if themes_guard.should_fallback or themes is None:
         themes = generate_fallback_themes(facts)
-        fault_events.append(FaultEvent(stage="reading", fault="themes-parse-failure", retry_attempts=0, fallback_used=True, status="degraded"))
+        fault_events.append(
+            FaultEvent(
+                stage="reading",
+                fault=f"themes-{themes_guard.failure_reason.replace('_', '-')}",
+                retry_attempts=0,
+                fallback_used=True,
+                status="degraded",
+            )
+        )
     themes_path = reading_dir / "themes.json"
     with open(themes_path, "w", encoding="utf-8") as f:
         json.dump(themes, f, indent=2, ensure_ascii=False)
@@ -1292,9 +1524,10 @@ def run_reading(
         }
     else:
         raw_synthesis, synthesis_meta = call_siliconflow(synthesis_prompt)
-    synthesis = parse_synthesis(raw_synthesis)
+    synthesis_guard = guard_model_output(raw_synthesis, parse_synthesis)
+    synthesis = synthesis_guard.parsed
     print(
-        f"[reading] synthesis parse_success={synthesis is not None} error={synthesis_meta.get('error_type', 'unknown')}",
+        f"[reading] synthesis parse_success={synthesis_guard.parse_success} error={synthesis_meta.get('error_type', 'unknown')}",
         flush=True,
     )
     append_llm_call_event(qa_dir, LLMCallEvent(
@@ -1307,13 +1540,21 @@ def run_reading(
         http_status=synthesis_meta.get("http_status", None),
         prompt_chars=int(synthesis_meta.get("prompt_chars", len(synthesis_prompt))),
         response_chars=int(synthesis_meta.get("response_chars", len(raw_synthesis))),
-        parse_success=synthesis is not None,
+        parse_success=synthesis_guard.parse_success,
         timestamp=datetime.now(timezone.utc).isoformat(),
         response_preview=str(synthesis_meta.get("response_preview", "")),
     ))
-    if synthesis is None:
+    if synthesis_guard.should_fallback or synthesis is None:
         synthesis = generate_fallback_synthesis(facts, assets)
-        fault_events.append(FaultEvent(stage="reading", fault="synthesis-parse-failure", retry_attempts=0, fallback_used=True, status="degraded"))
+        fault_events.append(
+            FaultEvent(
+                stage="reading",
+                fault=f"synthesis-{synthesis_guard.failure_reason.replace('_', '-')}",
+                retry_attempts=0,
+                fallback_used=True,
+                status="degraded",
+            )
+        )
     fact_ids_set = {f.fact_id for f in facts}
     valid_lines = []
     for line in synthesis.get("key_evidence_lines", []):
@@ -1358,18 +1599,7 @@ def run_reading(
     )
 
     if fault_events:
-        fp = qa_dir / "fault_injection.json"
-        existing: list[dict[str, Any]] = []
-        if fp.exists():
-            try:
-                with open(fp, "r", encoding="utf-8") as f:
-                    d = json.load(f)
-                    existing = d if isinstance(d, list) else []
-            except (json.JSONDecodeError, IOError):
-                pass
-        all_events = existing + [asdict(e) for e in fault_events]
-        with open(fp, "w", encoding="utf-8") as f:
-            json.dump(all_events, f, indent=2, ensure_ascii=False)
+        append_fault_events(qa_dir, [asdict(e) for e in fault_events])
 
     return (
         len(facts),

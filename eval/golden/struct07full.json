@@ -1,0 +1,40 @@
+{
+  "doc_id": "struct07full",
+  "reading_order_pairs": [
+    {
+      "left_para_id": "para_5ba14ab11a60",
+      "right_para_id": "para_91c0071c1236",
+      "expected_order": "left_before_right"
+    },
+    {
+      "left_para_id": "para_253adac098f9",
+      "right_para_id": "para_d91e69fa8291",
+      "expected_order": "left_before_right"
+    }
+  ],
+  "multi_column_pages": [
+    2
+  ],
+  "interleave_labels": [
+    {
+      "page": 2,
+      "has_interleave": false
+    }
+  ],
+  "citation_truth": [
+    {
+      "marker_id": "anchor_2dcee540279c",
+      "expected_ref_key": "doi:10.1038/s41572-024-00492-3"
+    }
+  ],
+  "figure_caption_truth": [
+    {
+      "figure_id": "fig_001",
+      "expected_caption_id": "para_51d8924ae6e1"
+    },
+    {
+      "figure_id": "fig_002",
+      "expected_caption_id": "para_1e7ae3ba921b"
+    }
+  ]
+}

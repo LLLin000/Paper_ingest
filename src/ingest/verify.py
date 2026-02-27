@@ -172,38 +172,76 @@ def _has_minimal_anchor_evidence(fact: dict[str, Any]) -> tuple[bool, str, str]:
     return False, "missing_text_evidence", "none"
 
 
-def _is_fact_mapped_to_paragraph(fact: dict[str, Any], para_lookup: dict[str, dict[str, Any]]) -> tuple[bool, str]:
-    """Validate fact -> paragraph mapping and page consistency."""
-    para_id = str(fact.get("para_id", "") or "")
-    if not para_id:
-        return False, "missing_para_id"
-
-    paragraph = para_lookup.get(para_id)
-    if not paragraph:
-        return False, "missing_paragraph_mapping"
-
-    paragraph_text = str(paragraph.get("text", "") or "").strip()
-    if not paragraph_text:
-        return False, "empty_paragraph_text"
-
-    fact_evidence = fact.get("evidence_pointer", {})
-    fact_page = fact_evidence.get("page") if isinstance(fact_evidence, dict) else None
-    if not isinstance(fact_page, int) or fact_page <= 0:
-        return False, "missing_or_invalid_evidence_page"
-
+def _fact_page_matches_paragraph(fact_page: int, paragraph: dict[str, Any]) -> bool:
+    """Check whether the fact evidence page is compatible with paragraph span."""
     para_evidence = paragraph.get("evidence_pointer", {})
     para_pages = para_evidence.get("pages", []) if isinstance(para_evidence, dict) else []
     if isinstance(para_pages, list) and para_pages:
         valid_pages = {int(p) for p in para_pages if isinstance(p, int)}
         if fact_page in valid_pages:
-            return True, "ok"
+            return True
 
     page_span = paragraph.get("page_span", {})
     if isinstance(page_span, dict):
         start = page_span.get("start")
         end = page_span.get("end")
         if isinstance(start, int) and isinstance(end, int) and start <= fact_page <= end:
+            return True
+
+    return False
+
+
+def _is_fact_mapped_to_paragraph(
+    fact: dict[str, Any],
+    para_lookup: dict[str, dict[str, Any]],
+    para_ids_by_source_block: dict[str, set[str]],
+) -> tuple[bool, str]:
+    """Validate fact -> paragraph mapping and page consistency."""
+    para_id = str(fact.get("para_id", "") or "")
+    if not para_id:
+        return False, "missing_para_id"
+
+    fact_evidence = fact.get("evidence_pointer", {})
+    fact_page = fact_evidence.get("page") if isinstance(fact_evidence, dict) else None
+    if not isinstance(fact_page, int) or fact_page <= 0:
+        return False, "missing_or_invalid_evidence_page"
+
+    paragraph = para_lookup.get(para_id)
+    if paragraph:
+        paragraph_text = str(paragraph.get("text", "") or "").strip()
+        if not paragraph_text:
+            return False, "empty_paragraph_text"
+        if _fact_page_matches_paragraph(fact_page, paragraph):
             return True, "ok"
+        return False, "fact_page_not_in_paragraph_span"
+
+    evidence = fact_evidence if isinstance(fact_evidence, dict) else {}
+    source_block_ids = evidence.get("source_block_ids", [])
+    if not isinstance(source_block_ids, list) or not source_block_ids:
+        return False, "missing_paragraph_mapping"
+
+    candidate_para_ids: set[str] = set()
+    for block_id in source_block_ids:
+        candidate_para_ids.update(para_ids_by_source_block.get(str(block_id), set()))
+
+    if not candidate_para_ids:
+        return False, "missing_paragraph_mapping"
+
+    valid_candidates: list[str] = []
+    for candidate_para_id in sorted(candidate_para_ids):
+        candidate = para_lookup.get(candidate_para_id)
+        if not candidate:
+            continue
+        candidate_text = str(candidate.get("text", "") or "").strip()
+        if not candidate_text:
+            continue
+        if _fact_page_matches_paragraph(fact_page, candidate):
+            valid_candidates.append(candidate_para_id)
+
+    if len(valid_candidates) == 1:
+        return True, "ok"
+    if len(valid_candidates) > 1:
+        return False, "ambiguous_paragraph_mapping"
 
     return False, "fact_page_not_in_paragraph_span"
 
@@ -237,6 +275,20 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
     # Build fact/paragraph/citation lookups
     fact_lookup = {f["fact_id"]: f for f in facts}
     para_lookup = {str(p.get("para_id", "")): p for p in paragraphs}
+    para_ids_by_source_block: dict[str, set[str]] = {}
+    for paragraph in paragraphs:
+        paragraph_id = str(paragraph.get("para_id", "") or "")
+        if not paragraph_id:
+            continue
+        evidence = paragraph.get("evidence_pointer", {})
+        source_block_ids = evidence.get("source_block_ids", []) if isinstance(evidence, dict) else []
+        if not isinstance(source_block_ids, list):
+            continue
+        for source_block_id in source_block_ids:
+            block_id = str(source_block_id or "")
+            if not block_id:
+                continue
+            para_ids_by_source_block.setdefault(block_id, set()).add(paragraph_id)
 
     mapped_ref_by_anchor_id = {
         str(m.get("anchor_id", "")): str(m.get("mapped_ref_key", "") or "")
@@ -325,7 +377,11 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
                 claim_reasons.append(f"{fid}:{evidence_reason}")
                 continue
 
-            mapped_to_para, para_reason = _is_fact_mapped_to_paragraph(fact, para_lookup)
+            mapped_to_para, para_reason = _is_fact_mapped_to_paragraph(
+                fact,
+                para_lookup,
+                para_ids_by_source_block,
+            )
             if not mapped_to_para:
                 all_anchored = False
                 claim_reasons.append(f"{fid}:{para_reason}")
@@ -407,6 +463,7 @@ def compute_provenance_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> 
                     "claim.fact_ids must all resolve in reading/facts.jsonl",
                     "each fact.para_id must resolve in paragraphs/paragraphs.jsonl",
                     "fact evidence page must align with mapped paragraph pages/page_span",
+                    "if fact.para_id is missing in paragraphs, deterministic source_block_ids lookup may recover a unique paragraph on the same page",
                 ],
                 "citation_support_note": "citation-marker anchors with mapped_ref_key are counted as supporting evidence when nearest_para_id maps to the fact paragraph",
             },
@@ -567,10 +624,24 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
             },
         )
 
-    total_markers = len(citation_anchors)
+    citation_truth = golden.get("citation_truth", []) if golden else []
+    truth_marker_ids = {
+        str(truth.get("marker_id", ""))
+        for truth in citation_truth
+        if str(truth.get("marker_id", ""))
+    }
+
+    if truth_marker_ids:
+        marker_ids_for_coverage = truth_marker_ids
+        coverage_scope = "golden_citation_truth"
+    else:
+        marker_ids_for_coverage = citation_anchor_ids
+        coverage_scope = "all_citation_markers"
+
+    total_markers = len(marker_ids_for_coverage)
     mapped_markers = sum(
         1
-        for anchor_id in citation_anchor_ids
+        for anchor_id in marker_ids_for_coverage
         if mapping_by_anchor.get(anchor_id, {}).get("mapped_ref_key") is not None
     )
     citation_mapping_coverage = mapped_markers / total_markers if total_markers > 0 else 0.0
@@ -618,7 +689,6 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
         return identifiers
     
     if golden and "citation_truth" in golden:
-        citation_truth = golden.get("citation_truth", [])
         doi_pmid_truth: dict[str, set[str]] = {}
 
         for truth in citation_truth:
@@ -680,6 +750,7 @@ def compute_citation_gate(run_dir: Path, golden: Optional[dict[str, Any]]) -> Ga
             "raw_total_anchors": len(anchors),
             "raw_total_mappings": len(mappings),
             "raw_mapped_any": sum(1 for m in mappings if m.get("mapped_ref_key") is not None),
+            "coverage_scope": coverage_scope,
             "doi_pmid_precision": doi_pmid_precision,
             "correct_doi_pmid": correct_doi_pmid,
             "extracted_doi_pmid": extracted_doi_pmid,
@@ -869,13 +940,87 @@ def compute_reference_quality_gate(run_dir: Path, golden: Optional[dict[str, Any
 
     raw_total = api_count + pdf_count
 
-    # Compute dedupe_rate defensively
+    # Compute dedupe semantics with explicit comparable-capacity handling.
+    # We prefer identifier-based dedupe measurement (doi/pmid) because PDF
+    # catalog entries are often noisy and not comparable; fall back to the
+    # raw_total formula only when no identifier-bearing raw entries exist.
+    def _has_identifier(r: dict[str, Any]) -> bool:
+        return bool(r.get("doi") or r.get("pmid"))
+
+    # Count identifier-bearing records separately by source for overlap-capacity semantics
+    api_identifier_count = sum(1 for r in api_refs if _has_identifier(r))
+    pdf_identifier_count = sum(1 for r in pdf_refs if _has_identifier(r))
+    raw_identifier_total = api_identifier_count + pdf_identifier_count
+    merged_with_identifier = sum(1 for r in merged_refs if _has_identifier(r))
+
+    # Raw (old) dedupe rate kept for backward compatibility reporting
+    dedupe_rate_raw = 0.0
     if raw_total > 0:
-        dedupe_rate = 1.0 - (merged_count / float(raw_total))
-        if dedupe_rate < 0:
-            dedupe_rate = 0.0
+        dedupe_rate_raw = 1.0 - (merged_count / float(raw_total))
+        if dedupe_rate_raw < 0:
+            dedupe_rate_raw = 0.0
+
+    # Previous identifier-based metric measured reduction across all identifier
+    # records; this produced misleadingly small values when API identifiers
+    # dominated. We instead compute an overlap-capacity metric that measures
+    # cross-source overlap among identifier-bearing records.
+    dedupe_rate_on_identifiers: Optional[float]
+    # Compute identifier overlap counts and capacity
+    overlap_identifier_count = max(0, api_identifier_count + pdf_identifier_count - merged_with_identifier)
+    identifier_overlap_capacity = min(api_identifier_count, pdf_identifier_count)
+
+    if identifier_overlap_capacity > 0:
+        dedupe_rate_on_identifiers = overlap_identifier_count / float(identifier_overlap_capacity)
+        # Clamp to [0,1]
+        if dedupe_rate_on_identifiers < 0:
+            dedupe_rate_on_identifiers = 0.0
+        if dedupe_rate_on_identifiers > 1:
+            dedupe_rate_on_identifiers = 1.0
     else:
-        dedupe_rate = 0.0
+        dedupe_rate_on_identifiers = None
+
+    # Choose dedupe_rate to report: prefer identifier-based when available
+    # Second-pass: if no identifier signal available, prefer an overlap-capacity
+    # semantics that measures dedupe relative to comparable PDF capacity. This
+    # avoids penalizing cases where PDFs are mostly noisy/non-comparable.
+    # Compute overlap/capacity metrics:
+    overlap_count = max(0, api_count + pdf_count - merged_count)
+
+    def _pdf_is_comparable(r: dict[str, Any]) -> bool:
+        # Comparable PDF refs require at least one bibliographic signal
+        # (doi, pmid, or year). Year may be present as int or str.
+        if r.get("doi") or r.get("pmid"):
+            return True
+        year = r.get("year")
+        if isinstance(year, int) and year > 0:
+            return True
+        if isinstance(year, str) and year.isdigit() and len(year) == 4:
+            return True
+        return False
+
+    comparable_pdf_count = sum(1 for r in pdf_refs if _pdf_is_comparable(r))
+    overlap_capacity = min(api_count, comparable_pdf_count)
+
+    dedupe_rate_overlap: Optional[float]
+    if overlap_capacity > 0:
+        dedupe_rate_overlap = overlap_count / float(overlap_capacity)
+        if dedupe_rate_overlap < 0:
+            dedupe_rate_overlap = 0.0
+        if dedupe_rate_overlap > 1:
+            dedupe_rate_overlap = 1.0
+    else:
+        dedupe_rate_overlap = None
+
+    # Selection priority: identifier-based -> overlap-capacity -> raw fallback
+    if dedupe_rate_on_identifiers is not None:
+        dedupe_rate = dedupe_rate_on_identifiers
+        dedupe_choice = "identifier_preferred"
+    elif dedupe_rate_overlap is not None:
+        dedupe_rate = dedupe_rate_overlap
+        dedupe_choice = "overlap_capacity"
+    else:
+        dedupe_rate = dedupe_rate_raw
+        dedupe_choice = "raw_fallback"
 
     # Identifier completeness over merged set
     id_with_count = 0
@@ -944,7 +1089,20 @@ def compute_reference_quality_gate(run_dir: Path, golden: Optional[dict[str, Any
             "api_reference_count": api_count,
             "pdf_reference_count": pdf_count,
             "merged_reference_count": merged_count,
+            # Backwards-compatible primary dedupe_rate key (may be identifier-based)
             "dedupe_rate": dedupe_rate,
+            # Expose raw and identifier-focused dedupe metrics for transparency
+            "dedupe_rate_raw": dedupe_rate_raw,
+            "dedupe_rate_on_identifiers": dedupe_rate_on_identifiers,
+            "api_identifier_count": api_identifier_count,
+            "pdf_identifier_count": pdf_identifier_count,
+            "overlap_identifier_count": overlap_identifier_count,
+            "identifier_overlap_capacity": identifier_overlap_capacity,
+            "raw_identifier_total": raw_identifier_total,
+            "merged_with_identifier": merged_with_identifier,
+            "dedupe_semantics": (
+                "identifier_preferred" if dedupe_rate_on_identifiers is not None else "raw_fallback"
+            ),
             "identifier_completeness": identifier_completeness,
             "golden_available": _has_evaluation_data(golden),
         },

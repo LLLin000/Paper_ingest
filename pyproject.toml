@@ -35,3 +35,19 @@ include = [
     "/schemas",
     "/prompts",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# conservative norecursedirs to avoid discovering vendor/aux directories
+norecursedirs = [
+    "run",
+    ".venv",
+    "venv",
+    ".git",
+    ".tox",
+    "dist",
+    "build",
+    ".pytest_cache",
+    "layout-parser",
+    "unilm",
+]

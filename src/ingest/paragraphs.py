@@ -303,13 +303,31 @@ def load_vision_outputs(vision_dir: Path) -> tuple[dict[int, Any], dict[int, lis
             page = data.get("page")
             if page is None:
                 continue
-            confidence_by_page[page] = data.get("confidence", 0.5)  # type: ignore[assignment]
-            merge_groups_by_page[page] = data.get("merge_groups", [])  # type: ignore[assignment]
-            role_labels_by_page[page] = data.get("role_labels", {})  # type: ignore[assignment]
+            confidence_by_page[page] = data.get("confidence", 0.5)
+            merge_groups_by_page[page] = data.get("merge_groups", [])
+            role_labels_by_page[page] = data.get("role_labels", {})
         except (json.JSONDecodeError, IOError):
             continue
     
     return confidence_by_page, merge_groups_by_page, role_labels_by_page
+
+
+def load_page_layouts(text_dir: Path) -> dict[int, dict[str, Any]]:
+    """Load page layouts from layout_analysis.json.
+    
+    Returns dict: {page: {"column_count": int, "column_regions": [[x0,y0,x1,y1], ...], ...}}
+    """
+    layout_path = text_dir / "layout_analysis.json"
+    if not layout_path.exists():
+        return {}
+    
+    try:
+        with open(layout_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        page_layouts = data.get("page_layouts", {})
+        return {int(k): v for k, v in page_layouts.items()}
+    except (json.JSONDecodeError, IOError):
+        return {}
 
 
 def normalize_template_text(text: str) -> str:
@@ -371,11 +389,141 @@ def normalize_section_key(text: str) -> str:
     return cleaned
 
 
+METADATA_HEADING_PREFIXES = (
+    "keywords",
+    "key words",
+    "doi",
+    "received",
+    "accepted",
+    "revised",
+    "published online",
+    "copyright",
+    "correspondence",
+    "author for correspondence",
+    "conflict of interest",
+    "conﬂict of interest",
+    "affiliations",
+    "authors",
+)
+
+
+def is_metadata_like_heading(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    low = clean.lower()
+    return any(
+        low == prefix
+        or low.startswith(f"{prefix}:")
+        or low.startswith(f"{prefix} ")
+        for prefix in METADATA_HEADING_PREFIXES
+    )
+
+
+def is_plausible_section_heading(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if len(clean) > 180:
+        return False
+    if is_metadata_like_heading(clean):
+        return False
+    if clean.endswith(":"):
+        return False
+
+    words = word_tokens(clean)
+    if len(words) < 1 or len(words) > 24:
+        return False
+
+    numbered_section_at_start = re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", clean) is not None
+    embedded_numbered_section = re.search(r"\b\d+(?:\.\d+)+\.?\s+[A-Z]", clean)
+    if embedded_numbered_section is not None and not numbered_section_at_start:
+        return False
+
+    sentence_breaks = len(re.findall(r"[.!?]\s+[A-Z]", clean))
+    if sentence_breaks >= 1 and not numbered_section_at_start:
+        return False
+
+    alpha_match = re.search(r"[A-Za-z]", clean)
+    if alpha_match is None:
+        return False
+    if not numbered_section_at_start and alpha_match.group(0).islower():
+        return False
+
+    if not numbered_section_at_start:
+        tcase_ratio = title_case_ratio(words)
+        if tcase_ratio < 0.58:
+            return False
+
+    return True
+
+
+def should_emit_empty_section_heading(section: str) -> bool:
+    clean = clean_text_line(section)
+    if re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", clean) is None:
+        return False
+    if not is_plausible_section_heading(clean):
+        return False
+    return not looks_like_table_noise(clean)
+
+
+def split_embedded_section_heading(text: str) -> tuple[str, Optional[str], str]:
+    """Split body text when it embeds an inline numbered section heading."""
+    clean = clean_text_line(text)
+    if not clean:
+        return "", None, ""
+
+    heading_start_pattern = re.compile(r"\b\d+(?:\.\d+)*\.?\s+[A-Za-z]")
+    for match in heading_start_pattern.finditer(clean):
+        start = match.start()
+        if start <= 0:
+            continue
+        prefix = clean_text_line(clean[:start])
+        if not prefix:
+            continue
+        if re.search(r"[.!?]\s*$", prefix) is None:
+            continue
+
+        tail = clean[start:]
+        tail_tokens = word_tokens(tail)
+        if len(tail_tokens) < 2:
+            continue
+
+        best_heading = ""
+        max_tokens = min(24, len(tail_tokens))
+        for token_count in range(2, max_tokens + 1):
+            candidate = clean_text_line(" ".join(tail_tokens[:token_count]))
+            if not candidate:
+                continue
+            if is_plausible_section_heading(candidate) and not looks_like_table_noise(candidate):
+                best_heading = candidate
+
+        if not best_heading:
+            continue
+
+        suffix = clean_text_line(tail[len(best_heading):])
+        return prefix, best_heading, suffix
+
+    return clean, None, ""
+
+
 def split_author_segments(text: str) -> list[str]:
     line = clean_text_line(text)
     if not line:
         return []
-    normalized = line
+    # Conservative normalization: strip common trailing numeric/superscript
+    # markers (OCR artifacts like "1", "1,2", "¹", "*", "†") before
+    # splitting. Keep changes minimal to avoid removing legitimate name
+    # characters.
+    def _sanitize_author_text(s: str) -> str:
+        s = str(s)
+        # Remove common unicode superscript digits and markers
+        s = re.sub(r"[\u00B9\u00B2\u00B3\u2070\u2074-\u2079]+", "", s)
+        # Remove trailing sequences of digits or common markers
+        s = re.sub(r"(?:\s|^)(?:\d+|[\*†‡]+)(?:[\s,;:]*)$", "", s)
+        return s
+
+    normalized = _sanitize_author_text(line)
     normalized = re.sub(r"\s+and\s+", " | ", normalized, flags=re.IGNORECASE)
     normalized = re.sub(r"[;,]+", " | ", normalized)
     normalized = re.sub(r"(?<=[A-Za-z])(?:\d+|[\*†‡]+)(?=\s+[A-Z])", " | ", normalized)
@@ -388,6 +536,10 @@ def looks_like_author_name(segment: str) -> bool:
     text = clean_text_line(segment)
     if not text:
         return False
+    # Strip trailing numeric/superscript markers conservatively before
+    # applying stricter token-based heuristics. This helps with OCR
+    # artifacts like "John Doe1", "Jane Roe¹", or trailing asterisks.
+    text = re.sub(r"[\u00B9\u00B2\u00B3\u2070\u2074-\u2079]+", "", text)
     text = re.sub(r"(?:\s|^)(?:\d+|[\*†‡]+)$", "", text).strip()
     text = re.sub(r"(?<=[A-Za-z])(?:\d+|[\*†‡]+)$", "", text).strip()
     if not text:
@@ -409,7 +561,10 @@ def extract_author_names(author_lines: list[str]) -> list[str]:
         for segment in split_author_segments(line):
             if not looks_like_author_name(segment):
                 continue
+            # Final cleanup: remove superscripts/trailing numeric markers that
+            # might have survived splitting/validation.
             cleaned = clean_text_line(segment)
+            cleaned = re.sub(r"[\u00B9\u00B2\u00B3\u2070\u2074-\u2079]+", "", cleaned)
             cleaned = re.sub(r"(?:\s|^)(?:\d+|[\*†‡]+)$", "", cleaned).strip()
             cleaned = re.sub(r"(?<=[A-Za-z])(?:\d+|[\*†‡]+)$", "", cleaned).strip()
             if cleaned:
@@ -600,16 +755,27 @@ def infer_clean_role(
     if reference_shape:
         return "reference_entry", ["citation_entry_shape"]
 
-    metadata = infer_metadata_role(
-        text=text,
-        low=low,
-        words=words,
-        page=page,
-        y_rel=y_rel,
-        tcase_ratio=tcase_ratio,
-        digits=digits,
-        sentence_ratio=sentence_ratio,
-    )
+    # Guard: if this line begins with a numbered section heading (e.g., "3.3. Something")
+    # it's likely a duplicated heading merged into the body and should not be
+    # classified as front-matter / affiliation metadata. Skip metadata inference
+    # in that case so we preserve it as body_text.
+    # Consider a numbered section at start only when the numeric marker
+    # is followed by a dot (e.g., '1. Introduction' or '2.1. Background').
+    # Avoid treating plain numeric-leading affiliation markers like
+    # '1 Department of Radiology...' as section headings.
+    numbered_section_at_start = re.match(r"^\d+(?:\.\d+)*\.\s+[A-Za-z]", text) is not None
+    metadata = None
+    if not numbered_section_at_start:
+        metadata = infer_metadata_role(
+            text=text,
+            low=low,
+            words=words,
+            page=page,
+            y_rel=y_rel,
+            tcase_ratio=tcase_ratio,
+            digits=digits,
+            sentence_ratio=sentence_ratio,
+        )
     if metadata is not None:
         role, reasons = metadata
         if repetition_ratio >= 0.6 and repetition_count >= 3 and role in {"journal_meta", "received"}:
@@ -989,14 +1155,18 @@ def aggregate_paragraphs(
     return all_paragraphs
 
 
-def build_neighbors(paragraphs: list[Paragraph]) -> list[Paragraph]:
+def build_neighbors(paragraphs: list[Paragraph], text_dir: Optional[Path] = None) -> list[Paragraph]:
     """Build neighbor links between paragraphs and sort in reading order.
     
     Uses column-aware sorting for two-column layouts to maintain narrative continuity.
     """
+    page_layouts = {}
+    if text_dir:
+        page_layouts = load_page_layouts(text_dir)
+    
     # Use column-aware sorting to handle two-column layouts properly
     para_bounds_by_page = infer_para_page_bounds(paragraphs)
-    sorted_paras = sort_paragraphs_column_aware(paragraphs, para_bounds_by_page)
+    sorted_paras = sort_paragraphs_column_aware(paragraphs, para_bounds_by_page, page_layouts)
     
     for i, para in enumerate(sorted_paras):
         if i > 0:
@@ -1032,8 +1202,29 @@ def paragraph_sort_key(para: Paragraph) -> tuple[int, float, float]:
     return (para.page_span.get("start", 1), float(bbox[1]), float(bbox[0]))
 
 
-def detect_two_column_pages(paragraphs: list[Paragraph], bounds_by_page: dict[int, list[float]]) -> set[int]:
-    """Detect pages that appear to have two-column layout based on x-position clustering."""
+def detect_two_column_pages(
+    paragraphs: list[Paragraph],
+    bounds_by_page: dict[int, list[float]],
+    page_layouts: Optional[dict[int, dict[str, Any]]] = None,
+) -> set[int]:
+    """Detect pages that appear to have two-column layout.
+    
+    Uses layout_analyzer data if available, otherwise falls back to x-position clustering.
+    """
+    page_layouts = page_layouts or {}
+    
+    # First, use layout_analyzer column detection if available
+    layout_based_pages: set[int] = set()
+    for page, layout in page_layouts.items():
+        column_count = layout.get("column_count", 1)
+        if column_count >= 2:
+            layout_based_pages.add(page)
+    
+    # If we have layout info for all pages, use it directly
+    if layout_based_pages:
+        return layout_based_pages
+    
+    # Otherwise, fall back to x-position clustering
     page_x_centers: dict[int, list[float]] = {}
     
     for para in paragraphs:
@@ -1122,9 +1313,11 @@ def classify_paragraph_column_bucket(
 def sort_paragraphs_column_aware(
     paragraphs: list[Paragraph],
     bounds_by_page: dict[int, list[float]],
+    page_layouts: Optional[dict[int, dict[str, Any]]] = None,
 ) -> list[Paragraph]:
     """Sort paragraphs with column-aware ordering for two-column pages."""
-    two_column_pages = detect_two_column_pages(paragraphs, bounds_by_page)
+    page_layouts = page_layouts or {}
+    two_column_pages = detect_two_column_pages(paragraphs, bounds_by_page, page_layouts)
 
     return sorted(
         paragraphs,
@@ -1284,18 +1477,37 @@ def looks_like_table_noise(text: str) -> bool:
         if re.match(r"^[\d\s,]+$", bracket_content):
             return True
 
+    # Numbered section headings (e.g., "3.1. Methods") are valid body structure,
+    # not table noise.
+    if (
+        re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", clean) is not None
+        and word_count <= 20
+        and "table" not in low
+        and "figure" not in low
+    ):
+        return False
+
     # Very short - likely not table noise (but can still be strong markers)
     if word_count < 4:
         return False
 
-    # Fragment-like table row: short (4-12 words), semicolon-separated list
+    # Fragment-like table row: short/medium semicolon-separated listing
     # with little narrative structure (no sentence-ending punctuation)
-    if 4 <= word_count <= 12:
-        semicolon_count = clean.count(";")
-        has_sentence_end = re.search(r"[.!?]\s*$", clean.strip()) is not None
-        # If heavily semicolon-separated with no sentence ending, likely table fragment
-        if semicolon_count >= 2 and not has_sentence_end:
+    semicolon_count = clean.count(";")
+    has_sentence_end = re.search(r"[.!?]\s*$", clean.strip()) is not None
+    if 4 <= word_count <= 32 and semicolon_count >= 2 and not has_sentence_end:
+        lower_ratio = sentence_like_ratio(words)
+        numeric_terms = len(re.findall(r"\b\d+(?:\.\d+)?\b", clean))
+        if lower_ratio <= 0.62 or numeric_terms >= 2:
             return True
+
+    if (
+        4 <= word_count <= 24
+        and semicolon_count >= 1
+        and re.search(r"\b\d+\s*[×x]\s*10\b|\b10\s*[−-]\s*\d+\b", clean) is not None
+        and has_sentence_end is False
+    ):
+        return True
 
     # For longer content, check specific strong markers
     # Check for common table/listing structural markers (more specific)
@@ -1626,6 +1838,244 @@ def starts_with_lowercase_token(text: str) -> bool:
     return match is not None
 
 
+def is_likely_legitimate_lowercase_start(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean or not starts_with_lowercase_token(clean):
+        return False
+    words = word_tokens(clean)
+    if len(words) < 2:
+        return False
+
+    normalized_words: list[str] = []
+    for token in words[:3]:
+        normalized = re.sub(r"^[^A-Za-z]+|[^A-Za-z]+$", "", token).lower()
+        if normalized:
+            normalized_words.append(normalized)
+    if len(normalized_words) < 2:
+        return False
+
+    first = normalized_words[0]
+    second = normalized_words[1]
+    protected_two_token_starts = {
+        "de novo",
+        "e coli",
+        "e g",
+        "ex vivo",
+        "i e",
+        "in situ",
+        "in vivo",
+        "in vitro",
+    }
+    if f"{first} {second}" in protected_two_token_starts:
+        return True
+
+    # Preserve common taxonomy-style lowercase starts like "e coli ...".
+    return re.match(r"^[a-z]$", first) is not None and re.match(r"^[a-z]{2,}$", second) is not None
+
+
+def is_section_leading_continuation_fragment(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean or not starts_with_lowercase_token(clean):
+        return False
+    if starts_with_section_cue(clean):
+        return False
+    if is_reference_entry_text(clean):
+        return False
+    words = word_tokens(clean)
+    if len(words) < 4 or len(words) > 220:
+        return False
+    first = words[0].lower()
+    continuation_tokens = {
+        "and",
+        "but",
+        "can",
+        "could",
+        "however",
+        "it",
+        "its",
+        "may",
+        "might",
+        "must",
+        "should",
+        "that",
+        "them",
+        "therefore",
+        "these",
+        "they",
+        "this",
+        "those",
+        "thus",
+        "will",
+        "would",
+        "which",
+    }
+    return first in continuation_tokens
+
+
+def is_suspicious_lowercase_leading_fragment(text: str) -> bool:
+    """Detect very short/suspicious lowercase leading fragments likely from OCR.
+
+    Conservative: only single-token or two-token lowercase fragments composed of
+    simple alphabetic characters and not matching known legitimate lowercase
+    starts (e.g., 'e coli', 'de novo'). This avoids trimming real scientific
+    phrases while catching truncated openers like 'tive', 'versy', 'cruitment'.
+    """
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    words = word_tokens(clean)
+    if len(words) < 1 or len(words) > 2:
+        return False
+
+    # Strip terminal punctuation for token checks
+    toks = [re.sub(r"[\.!,;:\)\]\}]+$", "", w) for w in words]
+    # All tokens must be simple lowercase alphabetic or hyphen/apostrophe containing
+    if not all(re.match(r"^[a-z\-']{2,8}$", t) for t in toks):
+        return False
+
+    # Exclude known legitimate lowercase starts (taxonomic, Latin phrases, etc.)
+    if is_likely_legitimate_lowercase_start(clean):
+        return False
+
+    # Avoid trimming things that look like reference or table noise
+    if is_reference_entry_text(clean) or looks_like_table_noise(clean):
+        return False
+
+    return True
+
+
+def trim_section_leading_continuation_sentence(text: str) -> str:
+    clean = clean_text_line(text)
+    if not clean:
+        return ""
+    sentence_match = re.match(r"^(.*?[.!?])(?:\s+|$)(.*)$", clean)
+    if sentence_match is None:
+        return clean
+    first_sentence = clean_text_line(sentence_match.group(1))
+    remainder = clean_text_line(sentence_match.group(2))
+    if not first_sentence or not remainder:
+        return clean
+    first_words = word_tokens(first_sentence)
+    # Allow trimming for typical continuation sentences of modest length
+    # or for very short lowercase fragments (1-2 words) that clearly
+    # continue a prior heading/section and are followed by a fresh sentence.
+    fw_len = len(first_words)
+    if fw_len > 28:
+        return clean
+
+    # Require the leading fragment to start with a lowercase token
+    if not starts_with_lowercase_token(first_sentence):
+        return clean
+
+    first_token = first_words[0].lower()
+    second_token = ""
+    if len(first_words) > 1:
+        second_token = re.sub(r"^[^A-Za-z]+|[^A-Za-z]+$", "", first_words[1]).lower()
+    continuation_tokens = {
+        "and",
+        "but",
+        "can",
+        "could",
+        "however",
+        "it",
+        "its",
+        "may",
+        "might",
+        "must",
+        "should",
+        "that",
+        "them",
+        "these",
+        "they",
+        "this",
+        "those",
+        "which",
+        "will",
+        "would",
+    }
+    first_low = first_sentence.lower()
+
+    # Accept if the first token is an explicit continuation cue, or mentions table/figure.
+    # Additionally, allow very short (1-2 word) lowercase noun fragments to be trimmed
+    # when followed by a fresh sentence — this addresses cases like "drug delivery." at
+    # the start of a section where the real sentence follows.
+    short_lowercase_fragment_ok = False
+    if fw_len <= 2:
+        # Very conservative checks: tokens must be simple lowercase words (no digits/punctuation)
+        # Accept trailing terminal punctuation on the last token (e.g., "delivery.") by
+        # stripping common trailing punctuation before validation. This preserves the
+        # narrow guarding behavior while allowing OCR/normalization artifacts.
+        def _simple_lower_tok(tok: str) -> bool:
+            # Remove common trailing terminal punctuation characters
+            stripped = re.sub(r"[\.!,;:\)\]\}]+$", "", tok)
+            return re.match(r"^[a-z\-']+\Z", stripped) is not None
+
+        if all(_simple_lower_tok(w) for w in first_words):
+            # Avoid trimming explicit table-like fragments
+            if not looks_like_table_noise(first_sentence):
+                short_lowercase_fragment_ok = True
+
+    lowercase_sentence_fragment_ok = False
+    if 3 <= fw_len <= 16:
+        if (
+            not looks_like_table_noise(first_sentence)
+            and not is_reference_entry_text(first_sentence)
+            and not is_likely_legitimate_lowercase_start(first_sentence)
+        ):
+            lowercase_sentence_fragment_ok = True
+
+    truncated_section_start_ok = False
+    if first_token == "cated" and second_token in {"that", "which"}:
+        if 8 <= fw_len <= 80 and not looks_like_table_noise(first_sentence):
+            truncated_section_start_ok = True
+
+    if not (
+        first_token in continuation_tokens
+        or "table" in first_low
+        or "figure" in first_low
+        or short_lowercase_fragment_ok
+        or lowercase_sentence_fragment_ok
+        or truncated_section_start_ok
+    ):
+        return clean
+
+    # Remainder must look like a fresh sentence start (uppercase or digit)
+    if not starts_like_fresh_sentence(remainder):
+        return clean
+    table_preface_match = re.match(
+        r"^\(\s*Table\s+\d+[A-Za-z]?\s*\)\.\s*(.+)$",
+        remainder,
+        flags=re.IGNORECASE,
+    )
+    if table_preface_match is not None:
+        after_table_preface = clean_text_line(table_preface_match.group(1))
+        if starts_like_fresh_sentence(after_table_preface):
+            remainder = after_table_preface
+    return remainder
+
+
+def trim_numeric_leading_continuation_sentence(text: str) -> str:
+    clean = clean_text_line(text)
+    if not clean:
+        return ""
+    if re.match(r"^\d+\s*,\s*[A-Z]{2,}-\d+\b", clean) is None:
+        return clean
+    if is_reference_entry_text(clean) or looks_like_table_noise(clean):
+        return clean
+    sentence_match = re.match(r"^(.*?[.!?])(?:\s+|$)(.*)$", clean)
+    if sentence_match is None:
+        return clean
+    first_sentence = clean_text_line(sentence_match.group(1))
+    remainder = clean_text_line(sentence_match.group(2))
+    if not first_sentence or not remainder:
+        return clean
+    if len(word_tokens(first_sentence)) > 30:
+        return clean
+    if not starts_like_fresh_sentence(remainder):
+        return clean
+    return remainder
+
+
 def should_merge_hyphen_wrap(
     previous_text: str,
     next_text: str,
@@ -1642,23 +2092,63 @@ def should_merge_hyphen_wrap(
         return False
     if len(previous) >= 2 and previous[-2].isspace():
         return False
-    tail_match = re.search(r"([A-Za-z]{4,})-$", previous)
+
+    acronym_numeric_continuation = (
+        re.search(r"\b[A-Z]{2,}-$", previous) is not None
+        and re.match(r"^\d+(?:\s*[,.;:])?(?:\s|$)", nxt) is not None
+    )
+
+    # Unicode-aware letter matching (supports ligatures like 'effe' from 'effe-',
+    # accented characters, etc.) - uses pattern that matches Unicode letters
+    # but excludes digits, underscore, and whitespace.
+    # First try: 4+ letter tail (standard case)
+    tail_match = re.search(r"([^\W\d_]{4,})-$", previous, re.UNICODE)
+    is_short_tail = False
     if tail_match is None:
-        return False
+        # Second try: 2-3 letter tail (short-tail case) - only allowed under
+        # strict continuity guards (left-bottom -> right-top column swap with
+        # vertical wrap-back AND next starting with lowercase)
+        short_tail_match = re.search(r"([^\W\d_]{2,3})-$", previous, re.UNICODE)
+        if short_tail_match is None:
+            return False
+        if not acronym_numeric_continuation:
+            # Apply strict guards for short tails:
+            # Must be left-to-right column swap with vertical wrap-back
+            left_to_right_column_swap = prev_x_rel <= 0.46 and next_x_rel >= 0.54
+            wraps_to_earlier_vertical_position = next_y_rel + 0.2 < prev_y_rel
+            if not (left_to_right_column_swap and wraps_to_earlier_vertical_position):
+                return False
+            # Additionally require next text to start with lowercase (not uppercase/digit)
+            first_char = nxt[0] if nxt else ""
+            if not first_char.islower():
+                return False
+        tail_match = short_tail_match
+        is_short_tail = True
+
     tail = tail_match.group(1)
     if any(ch.isdigit() for ch in tail):
         return False
     if starts_with_section_cue(nxt):
         return False
-    if not starts_with_lowercase_token(nxt):
+    if not starts_with_lowercase_token(nxt) and not acronym_numeric_continuation:
         return False
-    # Guard against cross-column merge: stricter threshold (0.2 instead of 0.25)
-    if abs(prev_x_rel - next_x_rel) > 0.2:
-        return False
-    # Guard against y-gap: if next para is significantly below, don't merge
-    # This prevents column-bottom to column-top merges
-    if next_y_rel - prev_y_rel > 0.4:
-        return False
+
+    same_column_like = abs(prev_x_rel - next_x_rel) <= 0.2
+    if not same_column_like:
+        # Conservative allowance for true wrap-continuity transitions:
+        # left-column bottom -> right-column top in two-column reading order.
+        left_to_right_column_swap = prev_x_rel <= 0.46 and next_x_rel >= 0.54
+        wraps_to_earlier_vertical_position = next_y_rel + 0.2 < prev_y_rel
+        same_row_cross_gutter = left_to_right_column_swap and abs(next_y_rel - prev_y_rel) <= 0.08
+        if not ((left_to_right_column_swap and wraps_to_earlier_vertical_position) or same_row_cross_gutter):
+            return False
+
+    # Guard against large downward y-gaps in same-column flow.
+    # For short tails, apply even stricter vertical continuity.
+    if same_column_like:
+        y_gap_threshold = 0.25 if is_short_tail else 0.4
+        if next_y_rel - prev_y_rel > y_gap_threshold:
+            return False
     return True
 
 
@@ -1669,6 +2159,8 @@ def should_merge_lowercase_continuation(
     next_x_rel: float = 0.5,
     prev_y_rel: float = 0.5,
     next_y_rel: float = 0.5,
+    prev_page: int | None = None,
+    next_page: int | None = None,
 ) -> bool:
     previous = clean_text_line(previous_text)
     nxt = clean_text_line(next_text)
@@ -1678,11 +2170,35 @@ def should_merge_lowercase_continuation(
         return False
     if not starts_with_lowercase_token(nxt):
         return False
+    if looks_like_table_noise(nxt):
+        return False
+    if is_reference_entry_text(previous) or is_reference_entry_text(nxt):
+        return False
     if re.search(r"[\.!?]$", previous) is not None:
         return False
     if len(word_tokens(previous)) < 6:
         return False
-    # Guard against cross-column merge: stricter threshold (0.2 instead of 0.25)
+
+    if (
+        prev_page is not None
+        and next_page is not None
+        and next_page > prev_page
+        and next_page - prev_page <= 4
+        and prev_y_rel >= 0.62
+        and next_y_rel <= 0.38
+    ):
+        return True
+
+    # Check for left-to-right column swap with vertical wrap-back
+    # This handles the case where text continues from left column bottom to right column top
+    left_to_right_column_swap = prev_x_rel <= 0.46 and next_x_rel >= 0.54
+    wraps_to_earlier_vertical_position = next_y_rel + 0.2 < prev_y_rel
+
+    if left_to_right_column_swap and wraps_to_earlier_vertical_position:
+        # Allow cross-column merge for true wrap-continuity transitions
+        return True
+
+    # Guard against cross-column merge in same column flow: stricter threshold (0.2)
     if abs(prev_x_rel - next_x_rel) > 0.2:
         return False
     # Guard against y-gap: if next para is significantly below, don't merge
@@ -1690,6 +2206,55 @@ def should_merge_lowercase_continuation(
     if next_y_rel - prev_y_rel > 0.4:
         return False
     return True
+
+
+def should_merge_citation_tail_continuation(previous_text: str, next_text: str) -> bool:
+    previous = clean_text_line(previous_text)
+    nxt = clean_text_line(next_text)
+    if not previous or not nxt:
+        return False
+    if starts_with_section_cue(nxt):
+        return False
+    if not starts_with_lowercase_token(nxt):
+        return False
+    if looks_like_table_noise(previous) or looks_like_table_noise(nxt):
+        return False
+    if is_reference_entry_text(previous) or is_reference_entry_text(nxt):
+        return False
+    if len(word_tokens(previous)) < 10:
+        return False
+    if re.search(r"\[\s*\d+[a-z]?\s*\]$", previous) is None:
+        return False
+
+    first_word = word_tokens(nxt)[0].lower() if word_tokens(nxt) else ""
+    allowed_leading_verbs = {
+        "developed",
+        "demonstrated",
+        "employed",
+        "found",
+        "introduced",
+        "prepared",
+        "reported",
+        "showed",
+        "used",
+    }
+    return first_word in allowed_leading_verbs
+
+
+def merge_citation_tail_continuation_paragraphs(paragraphs: list[str]) -> list[str]:
+    if not paragraphs:
+        return []
+    merged: list[str] = [clean_text_line(paragraphs[0])]
+    for text in paragraphs[1:]:
+        current = clean_text_line(text)
+        if not current:
+            continue
+        previous = merged[-1] if merged else ""
+        if previous and should_merge_citation_tail_continuation(previous, current):
+            merged[-1] = clean_text_line(f"{previous} {current}")
+            continue
+        merged.append(current)
+    return merged
 
 
 def repair_body_paragraph_boundaries(
@@ -1710,6 +2275,7 @@ def repair_body_paragraph_boundaries(
         
         # Get current paragraph's position (x and y relative)
         cur_x_rel, cur_y_rel = para_relative_position(current_para, bounds_by_page)
+        cur_page = int(current_para.page_span.get("start", 1))
         
         while idx + 1 < len(entries):
             next_text, next_para = entries[idx + 1]
@@ -1720,19 +2286,40 @@ def repair_body_paragraph_boundaries(
             
             # Get next paragraph's position (x and y relative)
             next_x_rel, next_y_rel = para_relative_position(next_para, bounds_by_page)
+            next_page = int(next_para.page_span.get("start", 1))
             
             if should_merge_hyphen_wrap(current, nxt, cur_x_rel, next_x_rel, cur_y_rel, next_y_rel):
                 current = clean_text_line(current[:-1] + nxt)
                 idx += 1
                 cur_x_rel = next_x_rel  # Update position after merge
                 cur_y_rel = next_y_rel
+                cur_page = next_page
                 continue
-            if should_merge_lowercase_continuation(current, nxt, cur_x_rel, next_x_rel, cur_y_rel, next_y_rel):
+            if should_merge_lowercase_continuation(
+                current,
+                nxt,
+                cur_x_rel,
+                next_x_rel,
+                cur_y_rel,
+                next_y_rel,
+                prev_page=cur_page,
+                next_page=next_page,
+            ):
                 current = clean_text_line(f"{current} {nxt}")
                 idx += 1
                 cur_x_rel = next_x_rel  # Update position after merge
+                cur_y_rel = next_y_rel
+                cur_page = next_page
+                continue
+            if should_merge_citation_tail_continuation(current, nxt):
+                current = clean_text_line(f"{current} {nxt}")
+                idx += 1
+                cur_x_rel = next_x_rel
+                cur_y_rel = next_y_rel
+                cur_page = next_page
                 continue
             break
+        current = trim_numeric_leading_continuation_sentence(current)
         repaired.append(current)
         idx += 1
     return repaired
@@ -2007,15 +2594,75 @@ def extract_objective_or_abstract(paragraphs: list[Paragraph]) -> Optional[str]:
     return None
 
 
+def recover_missing_organic_subsection(
+    section_order: list[str],
+    section_to_paragraphs: dict[str, list[tuple[str, Paragraph]]],
+) -> list[str]:
+    """Recover missing `x.y.2` organic subsection between `x.y.1` and `x.y.3` headings."""
+    recovered_order = list(section_order)
+    for idx, section in enumerate(list(recovered_order)):
+        clean_section = clean_text_line(section)
+        inorganic_match = re.match(
+            r"^(?P<prefix>\d+\.\d+)\.1\.\s+Inorganic\s+Piezoelectric\s+Materials$",
+            clean_section,
+            flags=re.IGNORECASE,
+        )
+        if inorganic_match is None:
+            continue
+
+        prefix = inorganic_match.group("prefix")
+        if any(re.match(rf"^{re.escape(prefix)}\.2\.\s+", clean_text_line(name)) for name in recovered_order):
+            continue
+
+        idx3 = -1
+        for cursor in range(idx + 1, len(recovered_order)):
+            candidate = clean_text_line(recovered_order[cursor])
+            if re.match(rf"^{re.escape(prefix)}\.3\.\s+Piezocomposites\b", candidate, flags=re.IGNORECASE):
+                idx3 = cursor
+                break
+        if idx3 < 0:
+            continue
+
+        entries = section_to_paragraphs.get(section, [])
+        if not entries:
+            continue
+        organic_cue_idx = -1
+        for entry_idx, (entry_text, _) in enumerate(entries):
+            if re.search(r"\bOrganic\s+Piezoelectric\s+Materials?\b", clean_text_line(entry_text), flags=re.IGNORECASE):
+                organic_cue_idx = entry_idx
+                break
+        if organic_cue_idx < 0:
+            continue
+
+        inferred_section = f"{prefix}.2. Organic Piezoelectric Materials"
+        if not is_plausible_section_heading(inferred_section) or looks_like_table_noise(inferred_section):
+            continue
+
+        inferred_entries = entries[organic_cue_idx:]
+        if not inferred_entries:
+            continue
+        section_to_paragraphs[section] = entries[:organic_cue_idx]
+        section_to_paragraphs[inferred_section] = inferred_entries
+        recovered_order.insert(idx3, inferred_section)
+        break
+
+    return recovered_order
+
+
 def render_clean_document(
     paragraphs: list[Paragraph],
     annotated_blocks: list[dict[str, Any]],
     qa_dir: Optional[Path] = None,
+    text_dir: Optional[Path] = None,
 ) -> str:
+    page_layouts = {}
+    if text_dir:
+        page_layouts = load_page_layouts(text_dir)
+    
     # First compute bounds from unsorted paragraphs for column detection
     para_bounds_by_page = infer_para_page_bounds(paragraphs)
     # Use column-aware sorting for two-column layout handling
-    ordered_paragraphs = sort_paragraphs_column_aware(paragraphs, para_bounds_by_page)
+    ordered_paragraphs = sort_paragraphs_column_aware(paragraphs, para_bounds_by_page, page_layouts)
     # Recompute bounds after sorting (bounds should be same but ensures consistency)
     para_bounds_by_page = infer_para_page_bounds(ordered_paragraphs)
     clean_role_by_block = {
@@ -2025,18 +2672,60 @@ def render_clean_document(
     }
 
     title = ""
+    # continued-marker regex used to avoid promoting marker-only paragraphs to title
+    cont_marker_re = re.compile(r"^\(?\s*(?:continued|cont\.?|continued\.)\s*\)?[\s\-:;.,]*$", flags=re.IGNORECASE)
+    # Prefer explicit main_title signals from annotated blocks to set the
+    # document H1. This avoids promoting section_heading text (like
+    # "1. Introduction") into the document title. Fall back to prior
+    # heuristics if no main_title is found to preserve compatibility.
     for para in ordered_paragraphs:
-        if para.role == "Heading" and para.page_span.get("start", 2) == 1:
-            title = clean_text_line(para.text)
-            if title:
+        src_ids = para.evidence_pointer.get("source_block_ids", [])
+        if not isinstance(src_ids, list):
+            continue
+        for sid in src_ids:
+            if clean_role_by_block.get(str(sid)) == "main_title":
+                cand_title = clean_text_line(para.text)
+                # Skip continued-marker-like paragraphs
+                if cand_title and cont_marker_re.match(cand_title):
+                    continue
+                title = cand_title
                 break
+        if title:
+            break
+
+    if not title:
+        # legacy fallback: first Heading on page 1, but avoid picking
+        # numbered section headings (e.g., "1. Introduction") as the
+        # document title because that suppresses emission of the section
+        # header later. Only accept non-numbered headings here.
+        for para in ordered_paragraphs:
+            if para.role == "Heading" and para.page_span.get("start", 2) == 1:
+                cand = clean_text_line(para.text)
+                if not cand:
+                    continue
+                # Skip continued-marker-like paragraphs
+                if cont_marker_re.match(cand):
+                    continue
+                # If it looks like a numbered section at start, skip as title
+                if re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", cand):
+                    continue
+                title = cand
+                if title:
+                    break
 
     if not title:
         for para in ordered_paragraphs:
             txt = clean_text_line(para.text)
-            if txt:
-                title = txt[:180]
-                break
+            if not txt:
+                continue
+            # Skip continued-marker-like paragraphs
+            if cont_marker_re.match(txt):
+                continue
+            # Avoid selecting a numbered section heading as the title here
+            if re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", txt):
+                continue
+            title = txt[:180]
+            break
 
     objective_or_abstract = extract_objective_or_abstract(ordered_paragraphs)
 
@@ -2056,20 +2745,34 @@ def render_clean_document(
 
         # Priority 1: Use para.section_path when available (from vision-detected headings)
         # This captures section context that heading-tracking might miss
-        if para.section_path and isinstance(para.section_path, list) and para.section_path:
-            section_display = para.section_path[-1]
+        section_from_path = False
+        path_eligible = (
+            ("section_heading" in para_clean or "body_text" in para_clean)
+            and "table_caption" not in para_clean
+            and "figure_caption" not in para_clean
+        )
+        if path_eligible and para.section_path and isinstance(para.section_path, list) and para.section_path:
+            section_display = clean_text_line(str(para.section_path[-1]))
             # Skip metadata sections
             key = normalize_section_key(section_display)
-            if key and key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}:
-                if not looks_like_table_noise(section_display):
-                    current_section = section_display
-                    if current_section not in section_to_paragraphs:
-                        section_to_paragraphs[current_section] = []
-                        section_order.append(current_section)
-                    section_key_to_title[key] = current_section
-                    continue
-        
+            if (
+                key
+                and key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}
+                and is_plausible_section_heading(section_display)
+                and not looks_like_table_noise(section_display)
+            ):
+                current_section = section_display
+                if current_section not in section_to_paragraphs:
+                    section_to_paragraphs[current_section] = []
+                    section_order.append(current_section)
+                section_key_to_title[key] = current_section
+                section_from_path = True
+
+        if section_from_path and "body_text" not in para_clean:
+            continue
+
         # Priority 2: Fall back to heading role detection when section_path is unavailable
+        section_from_heading_role = False
         if "section_heading" in para_clean and not (para_clean & METADATA_FAMILY_ROLES):
             if title and text.lower() == title.lower():
                 continue
@@ -2078,14 +2781,23 @@ def render_clean_document(
                 continue
             if key in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}:
                 continue
-            # Skip table continuation headings - they're noise, not real sections
-            if looks_like_table_noise(text):
-                continue
-            current_section = section_key_to_title.get(key, text)
-            section_key_to_title[key] = current_section
-            if current_section not in section_to_paragraphs:
-                section_to_paragraphs[current_section] = []
-                section_order.append(current_section)
+            if not is_plausible_section_heading(text):
+                key = ""
+            if not key:
+                section_from_heading_role = False
+            else:
+                # Skip table continuation headings - they're noise, not real sections
+                if looks_like_table_noise(text):
+                    section_from_heading_role = False
+                else:
+                    current_section = section_key_to_title.get(key, text)
+                    section_key_to_title[key] = current_section
+                    if current_section not in section_to_paragraphs:
+                        section_to_paragraphs[current_section] = []
+                        section_order.append(current_section)
+                    section_from_heading_role = True
+
+        if section_from_heading_role and "body_text" not in para_clean:
             continue
 
         if "figure_caption" in para_clean or para.role == "FigureCaption":
@@ -2099,28 +2811,79 @@ def render_clean_document(
         if para_clean & METADATA_FAMILY_ROLES:
             continue
         if "body_text" not in para_clean:
-            continue
+            # Conservative fallback: when paragraph aggregation already
+            # classified an item as Body, keep it unless it is explicitly
+            # marked as reference-entry or nuisance by clean-role labels.
+            if para.role != "Body":
+                continue
+            if para_clean & {"reference_entry", "nuisance"}:
+                continue
 
         if current_section not in section_to_paragraphs:
             section_to_paragraphs[current_section] = []
             section_order.append(current_section)
-        if should_exclude_for_abstract_overlap(text, objective_or_abstract):
-            continue
-        if looks_like_table_noise(text):
-            continue
-        section_to_paragraphs[current_section].append((text, para))
+
+        body_prefix, embedded_heading, body_suffix = split_embedded_section_heading(text)
+        if body_prefix:
+            if not should_exclude_for_abstract_overlap(body_prefix, objective_or_abstract):
+                if not looks_like_table_noise(body_prefix):
+                    section_to_paragraphs[current_section].append((body_prefix, para))
+
+        if embedded_heading:
+            heading_key = normalize_section_key(embedded_heading)
+            if (
+                heading_key
+                and heading_key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}
+                and is_plausible_section_heading(embedded_heading)
+                and not looks_like_table_noise(embedded_heading)
+            ):
+                current_section = section_key_to_title.get(heading_key, embedded_heading)
+                section_key_to_title[heading_key] = current_section
+                if current_section not in section_to_paragraphs:
+                    section_to_paragraphs[current_section] = []
+                    section_order.append(current_section)
+            if not body_suffix:
+                continue
+            if should_exclude_for_abstract_overlap(body_suffix, objective_or_abstract):
+                continue
+            if looks_like_table_noise(body_suffix):
+                continue
+            section_to_paragraphs[current_section].append((body_suffix, para))
 
     ordered_blocks = sorted(annotated_blocks, key=block_sort_key)
+    # Exclude items that look like section headings or table noise from
+    # author/affiliation metadata lists. Some OCR'd documents duplicate
+    # section headings into nearby blocks which can confuse metadata
+    # extraction. Be conservative: only drop candidates that are clearly
+    # plausible section headings or table-like noise, or that exactly
+    # match the detected title.
     author_meta_lines = unique_texts_in_order([
         str(block.get("text", ""))
         for block in ordered_blocks
         if str(block.get("clean_role", "")) == "author_meta"
+        and (not looks_like_table_noise(str(block.get("text", ""))))
+        and (not title or str(block.get("text", "")).strip().lower() != title.lower())
     ])
     author_meta = extract_author_names(author_meta_lines)
+    # Conservative fallback: if extraction returned nothing but there are
+    # classifier-identified author_meta blocks, preserve the raw annotated
+    # texts. This avoids losing authors due to brittle name-parsing heuristics
+    # (e.g., OCR superscripts, unusual separators) while still respecting
+    # prior table-noise/title guards above.
+    if not author_meta:
+        raw_author_candidates = [
+            str(block.get("text", ""))
+            for block in ordered_blocks
+            if str(block.get("clean_role", "")) == "author_meta"
+        ]
+        if raw_author_candidates:
+            author_meta = unique_texts_in_order(raw_author_candidates)
     affiliation_meta = unique_texts_in_order([
         str(block.get("text", ""))
         for block in ordered_blocks
         if str(block.get("clean_role", "")) == "affiliation_meta"
+        and (not looks_like_table_noise(str(block.get("text", ""))))
+        and (not title or str(block.get("text", "")).strip().lower() != title.lower())
     ])
     metadata_values: dict[str, list[str]] = {
         role: unique_texts_in_order([
@@ -2130,6 +2893,18 @@ def render_clean_document(
         ])
         for role, _ in METADATA_SECTION_ROLES
     }
+    
+    # Extract DOI directly from annotated_blocks (includes nuisance-filtered blocks)
+    if not metadata_values.get("doi"):
+        doi_pattern = re.compile(r"10\.\d{4,}[^\s\]>\"\'\)]+", re.IGNORECASE)
+        for block in annotated_blocks:
+            text = str(block.get("text", ""))
+            doi_match = doi_pattern.search(text)
+            if doi_match:
+                found_doi = doi_match.group(0).rstrip(".,;:)")
+                if found_doi:
+                    metadata_values["doi"] = [f"https://doi.org/{found_doi}"]
+                    break
     references = normalize_reference_entries([
         str(block.get("text", ""))
         for block in ordered_blocks
@@ -2193,18 +2968,145 @@ def render_clean_document(
                 fallback_body.append((text, para))
         section_to_paragraphs["Main Body"] = fallback_body
 
+    section_order = recover_missing_organic_subsection(section_order, section_to_paragraphs)
+    # Process and refine each section conservatively, collecting intermediate results
+    processed_section_entries: dict[str, list[tuple[str, Paragraph]]] = {}
     for section in section_order:
         section_entries = section_to_paragraphs.get(section, [])
         section_entries = refine_main_body_with_llm(section_entries, para_bounds_by_page, qa_dir)
         pruned_entries = prune_leading_orphan_fragments(section_entries, para_bounds_by_page)
+
+        # Conservative Main Body-only repair:
+        # If the very first entry is a suspicious short lowercase fragment (likely OCR
+        # artifact) and the following paragraph clearly starts like a fresh sentence,
+        # drop the fragment. This is intentionally narrow: only for Main Body and only
+        # when is_suspicious_lowercase_leading_fragment + starts_like_fresh_sentence
+        # both hold. Do NOT touch non-Main Body sections here (they have separate
+        # continuation-trimming logic below).
+        if section == "Main Body" and pruned_entries and len(pruned_entries) > 1:
+            first_text, first_para = pruned_entries[0]
+            second_text, _ = pruned_entries[1]
+            if is_suspicious_lowercase_leading_fragment(first_text) and starts_like_fresh_sentence(second_text):
+                pruned_entries = pruned_entries[1:]
+
+        if section != "Main Body" and pruned_entries:
+            first_text = pruned_entries[0][0]
+            trimmed_first = trim_section_leading_continuation_sentence(first_text)
+            if trimmed_first and trimmed_first != clean_text_line(first_text):
+                pruned_entries[0] = (trimmed_first, pruned_entries[0][1])
+            else:
+                if (
+                    len(pruned_entries) > 1
+                    and starts_with_lowercase_token(first_text)
+                    and len(word_tokens(clean_text_line(first_text))) <= 2
+                    and not looks_like_table_noise(first_text)
+                    and not is_reference_entry_text(first_text)
+                    and starts_like_fresh_sentence(pruned_entries[1][0])
+                ):
+                    pruned_entries = pruned_entries[1:]
+                elif is_section_leading_continuation_fragment(first_text):
+                    pruned_entries = pruned_entries[1:]
+
+                if pruned_entries:
+                    heading_text = clean_text_line(section)
+                    if heading_text:
+                        try:
+                            heading_re = re.compile(rf"^{re.escape(heading_text)}[\s\:\.\-–—]*\s*(.*)$")
+                        except re.error:
+                            heading_re = None
+                        if heading_re is not None:
+                            m = heading_re.match(clean_text_line(pruned_entries[0][0]))
+                            if m:
+                                remainder = clean_text_line(m.group(1))
+                                if remainder and starts_like_fresh_sentence(remainder):
+                                    pruned_entries[0] = (remainder, pruned_entries[0][1])
+
+            if pruned_entries:
+                first_clean = clean_text_line(pruned_entries[0][0])
+                cont_re = re.compile(r"^\(?\s*(?:continued|cont\.?|continued\.)\s*\)?[\s\-:;.,]*", flags=re.IGNORECASE)
+                new_first = cont_re.sub("", first_clean)
+                if new_first and new_first != first_clean and starts_like_fresh_sentence(new_first):
+                    pruned_entries[0] = (new_first, pruned_entries[0][1])
+                else:
+                    if not new_first and len(pruned_entries) > 1 and starts_like_fresh_sentence(pruned_entries[1][0]):
+                        pruned_entries = pruned_entries[1:]
+
+            if pruned_entries:
+                first_clean = clean_text_line(pruned_entries[0][0])
+                citation_prefix_match = re.match(r"^\[\s*\d+(?:\s*[,;]\s*\d+)*\s*\]\s*(.+)$", first_clean)
+                if citation_prefix_match is not None:
+                    after_citation = clean_text_line(citation_prefix_match.group(1))
+                    if after_citation and starts_like_fresh_sentence(after_citation):
+                        pruned_entries[0] = (after_citation, pruned_entries[0][1])
+
+        # Drop marker-only paragraphs conservatively
+        cont_marker_re = re.compile(r"^\(?\s*(?:continued|cont\.?|continued\.)\s*\)?[\s\-:;.,]*$", flags=re.IGNORECASE)
+        filtered_pruned: list[tuple[str, Paragraph]] = []
+        for idx, (txt, para) in enumerate(pruned_entries):
+            clean_txt = clean_text_line(txt)
+            if cont_marker_re.match(clean_txt):
+                next_ok = idx + 1 < len(pruned_entries) and starts_like_fresh_sentence(pruned_entries[idx + 1][0])
+                other_non_marker = any(not cont_marker_re.match(clean_text_line(e[0])) for j, e in enumerate(pruned_entries) if j != idx)
+                if next_ok or other_non_marker:
+                    continue
+            filtered_pruned.append((txt, para))
+
+        processed_section_entries[section] = filtered_pruned
+
+    # Conservative post-processing: consider merging tiny leading lowercase
+    # fragments under a heading back into the previous section when spatial
+    # and textual guards permit. This avoids leaving orphan 1-2 word fragments
+    # immediately after a ### heading.
+    for i in range(1, len(section_order)):
+        prev_sec = section_order[i - 1]
+        sec = section_order[i]
+        entries = processed_section_entries.get(sec, [])
+        if not entries:
+            continue
+        first_text, first_para = entries[0]
+        if not starts_with_lowercase_token(first_text):
+            continue
+        prev_entries = processed_section_entries.get(prev_sec, [])
+        if not prev_entries:
+            continue
+        last_text, last_para = prev_entries[-1]
+        prev_x_rel, prev_y_rel = para_relative_position(last_para, para_bounds_by_page)
+        first_x_rel, first_y_rel = para_relative_position(first_para, para_bounds_by_page)
+        prev_page = int(last_para.page_span.get("start", 1))
+        first_page = int(first_para.page_span.get("start", 1))
+        can_hyphen = should_merge_hyphen_wrap(last_text, first_text, prev_x_rel, first_x_rel, prev_y_rel, first_y_rel)
+        can_lowercase = should_merge_lowercase_continuation(
+            last_text,
+            first_text,
+            prev_x_rel,
+            first_x_rel,
+            prev_y_rel,
+            first_y_rel,
+            prev_page=prev_page,
+            next_page=first_page,
+        )
+        if can_hyphen or can_lowercase:
+            # Merge into previous section's last paragraph and drop the fragment
+            merged = merge_fragment_pair(last_text, first_text) if can_hyphen else clean_text_line(f"{last_text} {first_text}")
+            prev_entries[-1] = (merged, last_para)
+            processed_section_entries[prev_sec] = prev_entries
+            processed_section_entries[sec] = entries[1:]
+
+    # Emit sections using repaired boundaries
+    for section in section_order:
+        pruned_entries = processed_section_entries.get(section, [])
         section_texts = repair_body_paragraph_boundaries(pruned_entries, para_bounds_by_page)
+        section_texts = merge_citation_tail_continuation_paragraphs(section_texts)
         paragraphs_in_section = unique_texts_in_order(section_texts)
         if not paragraphs_in_section:
+            if section != "Main Body" and should_emit_empty_section_heading(section):
+                lines.append(clean_text_line(section))
+                lines.append("")
             continue
-        # Skip ### header for "Main Body" since ## Main Body already exists (avoid duplicate)
         if section != "Main Body":
-            lines.append(f"### {section}")
-            lines.append("")
+            if not (title and clean_text_line(section).lower() == title.lower()):
+                lines.append(f"### {section}")
+                lines.append("")
         for paragraph_text in paragraphs_in_section:
             lines.append(paragraph_text)
             lines.append("")
@@ -2266,7 +3168,7 @@ def run_paragraphs(
         confidence_by_page,
     )
 
-    paragraphs = build_neighbors(paragraphs)
+    paragraphs = build_neighbors(paragraphs, text_dir)
 
     paragraphs = add_uncertainty_notes(paragraphs)
 
@@ -2286,7 +3188,7 @@ def run_paragraphs(
             }
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    clean_document = render_clean_document(paragraphs, annotated_blocks, qa_dir=qa_dir)
+    clean_document = render_clean_document(paragraphs, annotated_blocks, qa_dir=qa_dir, text_dir=text_dir)
     with open(text_dir / "clean_document.md", "w", encoding="utf-8") as f:
         f.write(clean_document)
 

@@ -135,3 +135,127 @@ def test_provenance_failure_reports_unanchored_claim_reasons(tmp_path: Path) -> 
     first = gate.details["unanchored_claims"][0]
     assert first["line_id"] == "line_missing_anchor"
     assert any("missing_paragraph_mapping" in reason for reason in first["missing_anchor_reasons"])
+
+
+def test_provenance_recovers_missing_para_id_via_source_block_mapping(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    _write_json(
+        run_dir / "reading" / "synthesis.json",
+        {
+            "key_evidence_lines": [
+                {
+                    "line_id": "line_1",
+                    "statement": "Recovered by source-block paragraph mapping.",
+                    "fact_ids": ["fact_1"],
+                    "is_strong_claim": False,
+                }
+            ]
+        },
+    )
+    _write_jsonl(
+        run_dir / "reading" / "facts.jsonl",
+        [
+            {
+                "fact_id": "fact_1",
+                "para_id": "para_missing",
+                "category": "background",
+                "statement": "Recovered by source-block paragraph mapping.",
+                "quote": "Recovered by source-block paragraph mapping.",
+                "evidence_pointer": {
+                    "page": 6,
+                    "bbox": [1.0, 2.0, 3.0, 4.0],
+                    "source_block_ids": ["p6_b28"],
+                },
+            }
+        ],
+    )
+    _write_jsonl(
+        run_dir / "paragraphs" / "paragraphs.jsonl",
+        [
+            {
+                "para_id": "para_actual",
+                "text": "Recovered by source-block paragraph mapping.",
+                "page_span": {"start": 6, "end": 6},
+                "evidence_pointer": {
+                    "pages": [6],
+                    "bbox_union": [1.0, 2.0, 3.0, 4.0],
+                    "source_block_ids": ["p6_b28"],
+                },
+            }
+        ],
+    )
+
+    gate = compute_provenance_gate(run_dir, _golden_with_data())
+
+    assert gate.status == GateStatus.PASS
+    assert gate.value == 1.0
+    assert gate.details["anchored_atomic_claims"] == 1
+    assert gate.details["unanchored_claims"] == []
+
+
+def test_provenance_source_block_fallback_fails_on_ambiguous_mapping(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    _write_json(
+        run_dir / "reading" / "synthesis.json",
+        {
+            "key_evidence_lines": [
+                {
+                    "line_id": "line_ambiguous",
+                    "statement": "Ambiguous source-block mapping should not anchor.",
+                    "fact_ids": ["fact_1"],
+                    "is_strong_claim": False,
+                }
+            ]
+        },
+    )
+    _write_jsonl(
+        run_dir / "reading" / "facts.jsonl",
+        [
+            {
+                "fact_id": "fact_1",
+                "para_id": "para_missing",
+                "category": "background",
+                "statement": "Ambiguous source-block mapping should not anchor.",
+                "quote": "Ambiguous source-block mapping should not anchor.",
+                "evidence_pointer": {
+                    "page": 6,
+                    "bbox": [1.0, 2.0, 3.0, 4.0],
+                    "source_block_ids": ["p6_b28"],
+                },
+            }
+        ],
+    )
+    _write_jsonl(
+        run_dir / "paragraphs" / "paragraphs.jsonl",
+        [
+            {
+                "para_id": "para_a",
+                "text": "Candidate A",
+                "page_span": {"start": 6, "end": 6},
+                "evidence_pointer": {
+                    "pages": [6],
+                    "bbox_union": [1.0, 2.0, 3.0, 4.0],
+                    "source_block_ids": ["p6_b28"],
+                },
+            },
+            {
+                "para_id": "para_b",
+                "text": "Candidate B",
+                "page_span": {"start": 6, "end": 6},
+                "evidence_pointer": {
+                    "pages": [6],
+                    "bbox_union": [5.0, 6.0, 7.0, 8.0],
+                    "source_block_ids": ["p6_b28"],
+                },
+            },
+        ],
+    )
+
+    gate = compute_provenance_gate(run_dir, _golden_with_data())
+
+    assert gate.status == GateStatus.FAIL
+    assert gate.details["anchored_atomic_claims"] == 0
+    assert gate.details["unanchored_claims"]
+    first = gate.details["unanchored_claims"][0]
+    assert first["line_id"] == "line_ambiguous"
+    assert any("ambiguous_paragraph_mapping" in reason for reason in first["missing_anchor_reasons"])

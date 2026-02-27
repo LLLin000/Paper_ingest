@@ -94,3 +94,37 @@ def test_doi_pmid_precision_allows_multi_identifier_matches(tmp_path: Path) -> N
     assert gate.details["correct_doi_pmid"] == 1
     semantics = gate.details["doi_pmid_precision_semantics"]
     assert "multi_identifier_handling" in semantics
+
+
+def test_citation_coverage_uses_golden_truth_marker_scope(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    _write_jsonl(
+        run_dir / "citations" / "cite_anchors.jsonl",
+        [
+            {"anchor_id": "a_truth", "anchor_type": "citation_marker", "anchor_text": "[1]"},
+            {"anchor_id": "a_extra_1", "anchor_type": "citation_marker", "anchor_text": "[2]"},
+            {"anchor_id": "a_extra_2", "anchor_type": "citation_marker", "anchor_text": "[3]"},
+        ],
+    )
+    _write_jsonl(
+        run_dir / "citations" / "cite_map.jsonl",
+        [
+            {"anchor_id": "a_truth", "mapped_ref_key": "doi:10.1000/xyz"},
+            {"anchor_id": "a_extra_1", "mapped_ref_key": None},
+            {"anchor_id": "a_extra_2", "mapped_ref_key": None},
+        ],
+    )
+
+    golden = {
+        "citation_truth": [
+            {"marker_id": "a_truth", "expected_ref_key": "doi:10.1000/xyz"},
+        ]
+    }
+
+    gate = compute_citation_gate(run_dir, golden)
+
+    assert gate.status == GateStatus.PASS
+    assert gate.value == 1.0
+    assert gate.details["mapped_markers"] == 1
+    assert gate.details["total_markers"] == 1
+    assert gate.details["coverage_scope"] == "golden_citation_truth"

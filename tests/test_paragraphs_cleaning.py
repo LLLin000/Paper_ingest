@@ -220,7 +220,7 @@ def test_classify_clean_blocks_assigns_semantic_roles_and_role_based_keep_set() 
     assert by_id["p1_ref"]["clean_role"] == "reference_entry"
     assert by_id["p1_fig"]["clean_role"] == "figure_caption"
 
-    assert set(kept_blocks.keys()) == {"p1_title", "p1_heading", "p1_body", "p1_fig"}
+    assert set(kept_blocks.keys()) == {"p1_title", "p1_heading", "p1_body", "p1_fig", "p1_ref"}
 
 
 def test_run_paragraphs_writes_clean_artifacts_and_filters_nuisance(tmp_path: Path) -> None:
@@ -314,7 +314,7 @@ def test_run_paragraphs_writes_clean_artifacts_and_filters_nuisance(tmp_path: Pa
 
     paragraph_count, block_count = run_paragraphs(run_dir)
 
-    assert paragraph_count == 3
+    assert paragraph_count == 4
     assert block_count == 6
 
     blocks_clean_path = text_dir / "blocks_clean.jsonl"
@@ -351,7 +351,7 @@ def test_run_paragraphs_writes_clean_artifacts_and_filters_nuisance(tmp_path: Pa
 
     with open(paragraphs_path, "r", encoding="utf-8") as f:
         paragraphs = [json.loads(line) for line in f if line.strip()]
-    assert len(paragraphs) == 3
+        assert len(paragraphs) == 4
     assert any("Main paragraph text" in str(p.get("text", "")) for p in paragraphs)
 
 
@@ -1381,6 +1381,157 @@ def test_body_boundary_repair_does_not_merge_across_sections(tmp_path: Path) -> 
     assert "arthrographic interpretation" not in results_section
     assert "Signal on MR arthrograph-" in clean_doc
     assert "ic interpretation was aligned" in clean_doc
+
+
+def test_hyphen_wrap_merges_unicode_letter_tail_with_ligature(tmp_path: Path) -> None:
+    """Test that hyphen-wrap merging works with Unicode letters including ligatures.
+    
+    For example: 'effe-' + 'tive' should merge to 'effective' when positions
+    indicate continuity (same column, reasonable vertical gap).
+    """
+    from ingest.paragraphs import should_merge_hyphen_wrap
+    
+    # Standard case: 4+ Unicode letters (e.g., 'effect-' + 'tive')
+    assert should_merge_hyphen_wrap("effect-", "tive results", prev_x_rel=0.3, next_x_rel=0.3, prev_y_rel=0.8, next_y_rel=0.2) is True
+    
+    # Ligature case: 'effe-' (partial) + 'ctive' should merge
+    assert should_merge_hyphen_wrap("effe-", "ctive improvement", prev_x_rel=0.3, next_x_rel=0.3, prev_y_rel=0.8, next_y_rel=0.2) is True
+    
+    assert should_merge_hyphen_wrap("de-", "scription details", prev_x_rel=0.3, next_x_rel=0.65, prev_y_rel=0.8, next_y_rel=0.15) is True
+    
+    # Same column, reasonable gap
+    assert should_merge_hyphen_wrap("consist-", "ent data", prev_x_rel=0.4, next_x_rel=0.4, prev_y_rel=0.7, next_y_rel=0.3) is True
+    
+    # Reject when next doesn't start with lowercase
+    assert should_merge_hyphen_wrap("effect-", "Results", prev_x_rel=0.3, next_x_rel=0.3, prev_y_rel=0.8, next_y_rel=0.2) is False
+    
+    # Reject large vertical gap in same column
+    assert should_merge_hyphen_wrap("effect-", "tive", prev_x_rel=0.3, next_x_rel=0.3, prev_y_rel=0.3, next_y_rel=0.9) is False
+
+
+def test_hyphen_wrap_short_tail_merge_with_strict_continuity(tmp_path: Path) -> None:
+    """Test that short-tail hyphen-wrap (2-3 letters) merges only under strict continuity.
+    
+    Short tails like 're-' should only merge when:
+    1. Left-to-right column swap (left column bottom -> right column top)
+    2. Vertical wrap-back (next starts above where previous ended)
+    3. Next starts with lowercase letter
+    """
+    from ingest.paragraphs import should_merge_hyphen_wrap
+    
+    # Short tail 're-' should merge with 'cruitment' only under strict left->right column swap
+    # prev in left column (x_rel=0.3), next in right column (x_rel=0.65)
+    # prev at bottom (y_rel=0.8), next at top (y_rel=0.15)
+    assert should_merge_hyphen_wrap("re-", "cruitment process", prev_x_rel=0.3, next_x_rel=0.65, prev_y_rel=0.8, next_y_rel=0.15) is True
+    
+    # Short tail 'de-' should merge with 'novo analysis' under strict continuity
+    assert should_merge_hyphen_wrap("de-", "novo synthesis", prev_x_rel=0.25, next_x_rel=0.7, prev_y_rel=0.85, next_y_rel=0.1) is True
+    
+    # Reject: short tail but same column (no swap)
+    assert should_merge_hyphen_wrap("re-", "cruitment", prev_x_rel=0.3, next_x_rel=0.3, prev_y_rel=0.8, next_y_rel=0.2) is False
+    
+    # Reject: short tail with right column but no vertical wrap-back
+    assert should_merge_hyphen_wrap("re-", "cruitment", prev_x_rel=0.3, next_x_rel=0.65, prev_y_rel=0.3, next_y_rel=0.5) is False
+    
+    # Reject: short tail but next starts with uppercase
+    assert should_merge_hyphen_wrap("re-", "Recruitment", prev_x_rel=0.3, next_x_rel=0.65, prev_y_rel=0.8, next_y_rel=0.15) is False
+    
+    # Reject: short tail 're-' but no column swap - fails strict continuity
+    assert should_merge_hyphen_wrap("re-", "search results", prev_x_rel=0.4, next_x_rel=0.4, prev_y_rel=0.7, next_y_rel=0.2) is False
+
+
+def test_hyphen_wrap_acronym_numeric_and_same_row_cross_gutter_cases() -> None:
+    from ingest.paragraphs import should_merge_hyphen_wrap
+
+    assert (
+        should_merge_hyphen_wrap(
+            "upregulation of BMP-",
+            "2, BMP-4, IGF-2 pathways were detected",
+            prev_x_rel=0.72,
+            next_x_rel=0.74,
+            prev_y_rel=0.78,
+            next_y_rel=0.86,
+        )
+        is True
+    )
+
+    assert (
+        should_merge_hyphen_wrap(
+            "there remains some contro-",
+            "versy regarding treatment effects",
+            prev_x_rel=0.30,
+            next_x_rel=0.78,
+            prev_y_rel=0.90,
+            next_y_rel=0.90,
+        )
+        is True
+    )
+
+
+def test_lowercase_continuation_allows_conservative_cross_page_merge() -> None:
+    from ingest.paragraphs import should_merge_lowercase_continuation
+
+    assert (
+        should_merge_lowercase_continuation(
+            "In short, the distinctive material architecture enables robust transport",
+            "physicochemical properties of graphene broaden biomedical use",
+            prev_x_rel=0.78,
+            next_x_rel=0.22,
+            prev_y_rel=0.83,
+            next_y_rel=0.20,
+            prev_page=10,
+            next_page=11,
+        )
+        is True
+    )
+
+    assert (
+        should_merge_lowercase_continuation(
+            "In short, the distinctive material architecture enables robust transport",
+            "row 1 2 3 4 5",
+            prev_x_rel=0.78,
+            next_x_rel=0.22,
+            prev_y_rel=0.83,
+            next_y_rel=0.20,
+            prev_page=10,
+            next_page=11,
+        )
+        is False
+    )
+
+
+def test_trim_numeric_leading_continuation_sentence_preserves_remainder() -> None:
+    from ingest.paragraphs import trim_numeric_leading_continuation_sentence
+
+    text = (
+        "2, BMP-4, IGF-2, and VEGF in osteoblasts. "
+        "Notably, continuous ES has shown stronger osteogenic effects."
+    )
+    trimmed = trim_numeric_leading_continuation_sentence(text)
+    assert trimmed == "Notably, continuous ES has shown stronger osteogenic effects."
+
+
+def test_merge_citation_tail_continuation_is_conservative() -> None:
+    from ingest.paragraphs import merge_citation_tail_continuation_paragraphs, should_merge_citation_tail_continuation
+
+    previous = (
+        "These signals facilitated cell recruitment and promoted cartilage formation. "
+        "Damaraju et al. [ 159c ]"
+    )
+    next_text = "developed a pliable 3D electrospun scaffold with improved piezoelectricity."
+    assert should_merge_citation_tail_continuation(previous, next_text) is True
+
+    reference_like_previous = "1. Damaraju et al. [ 159c ]"
+    assert should_merge_citation_tail_continuation(reference_like_previous, next_text) is False
+
+    paragraphs = [
+        previous,
+        next_text,
+        "These findings support further biomaterial optimization.",
+    ]
+    merged = merge_citation_tail_continuation_paragraphs(paragraphs)
+    assert len(merged) == 2
+    assert merged[0].endswith("developed a pliable 3D electrospun scaffold with improved piezoelectricity.")
 
 
 @pytest.mark.parametrize(
@@ -2655,3 +2806,554 @@ def test_column_aware_sorting_applied_at_paragraphs_stage(tmp_path: Path) -> Non
     # Neighbors should be set correctly
     assert sorted_paras[0].neighbors.get("next_para_id") == sorted_paras[1].para_id
     assert sorted_paras[1].neighbors.get("next_para_id") == sorted_paras[2].para_id
+
+
+def test_section_leading_lowercase_fragment_sentence_is_trimmed_conservatively(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "section_lowercase_fragment_trim"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Lowercase Fragment Trim Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "2.2. Bioelectricity in Bone",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 300.0],
+            "text": "bone lies within the collagen matrix. The piezoelectric response remains stable under loading.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+
+    _ = run_paragraphs(run_dir)
+
+    with open(text_dir / "clean_document.md", "r", encoding="utf-8") as f:
+        clean_doc = f.read()
+
+    section_text = _section_text(clean_doc, "Main Body")
+    assert "### 2.2. Bioelectricity in Bone" in clean_doc
+    assert "bone lies within the collagen matrix." not in section_text
+    assert "The piezoelectric response remains stable under loading." in section_text
+
+
+def test_section_leading_citation_prefix_is_trimmed_when_remainder_is_fresh(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "section_citation_prefix_trim"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Citation Prefix Trim Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h1",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "2.2. Bioelectricity in Bone",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_b1",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 290.0],
+            "text": "[ 30 ] Collagen molecules, possessing a triple helix structure, exhibit self-assembly under stress.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h1": "Heading", "p1_b1": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert "### 2.2. Bioelectricity in Bone" in clean_doc
+    assert "[ 30 ] Collagen molecules" not in clean_doc
+    assert "Collagen molecules, possessing a triple helix structure" in clean_doc
+
+
+def test_section_leading_lowercase_continuation_can_merge_to_previous_section(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "section_lowercase_cross_merge"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    previous_tail = "Conductive channels provide stable signaling support for regenerative interfaces"
+    leading_lowercase = "can be designed so that they directly impact endogenous stem cells near injured sites."
+    retained_second = "Piezoelectric biomaterials are increasingly used for controlled stimulation."
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Cross-Section Merge Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h4",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 520.0, 182.0],
+            "text": "4. Conductive Biomaterials",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_b4",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 270.0],
+            "text": previous_tail,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_h5",
+            "page": 1,
+            "bbox_pt": [80.0, 285.0, 520.0, 317.0],
+            "text": "5. Piezoelectric Biomaterials",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_b5a",
+            "page": 1,
+            "bbox_pt": [80.0, 330.0, 540.0, 395.0],
+            "text": leading_lowercase,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_b5b",
+            "page": 1,
+            "bbox_pt": [80.0, 405.0, 540.0, 470.0],
+            "text": retained_second,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {
+        1: {
+            "p1_title": "Heading",
+            "p1_h4": "Heading",
+            "p1_b4": "Body",
+            "p1_h5": "Heading",
+            "p1_b5a": "Body",
+            "p1_b5b": "Body",
+        }
+    }
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert previous_tail in clean_doc
+
+    section5_match = re.search(
+        r"^### 5\. Piezoelectric Biomaterials\n\n(.*?)(?=^### |^## |\Z)",
+        clean_doc,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    assert section5_match is not None
+    section5_text = section5_match.group(1)
+    assert leading_lowercase not in section5_text
+    assert retained_second in section5_text
+
+
+def test_section_leading_modal_sentence_then_citation_prefix_is_chained(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "section_modal_citation_chain"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    leading_modal = "can be designed so that they directly impact endogenous stem cells near injured sites."
+    citation_body = "[ 30 ] Collagen molecules, possessing a triple helix structure, exhibit self-assembly under stress."
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Modal Citation Chain Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "2.2. Bioelectricity in Bone",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 320.0],
+            "text": f"{leading_modal} {citation_body}",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert leading_modal not in clean_doc
+    assert "[ 30 ] Collagen molecules" not in clean_doc
+    assert "Collagen molecules, possessing a triple helix structure" in clean_doc
+
+
+def test_section_leading_truncated_token_sentence_is_trimmed(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "section_truncated_token_trim"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    truncated_sentence = "cated that the PLLA-MATN3 scaffold effectively enhanced cartilage formation."
+    fresh_sentence = "At present, the simulation of pericellular electrical microenvironments has been preliminarily realized."
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Truncated Token Section-Start Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 280.0, 182.0],
+            "text": "8.3. ECM Formation",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 320.0],
+            "text": f"{truncated_sentence} {fresh_sentence}",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert re.search(r"^### 8\.3\. ECM Formation\n\ncated that", clean_doc, flags=re.MULTILINE) is None
+    assert truncated_sentence not in clean_doc
+    assert fresh_sentence in clean_doc
+
+
+def test_main_body_trim_suspicious_lowercase_fragment_positive(tmp_path: Path) -> None:
+    """Positive: Main Body should drop a suspicious 1-token lowercase opener when followed by a fresh sentence."""
+    run_dir = tmp_path / "run" / "mb_trim_positive"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {"block_id": "p1_frag", "page": 1, "bbox_pt": [320.0, 120.0, 540.0, 150.0], "text": "tive", "is_header_footer_candidate": False},
+        {"block_id": "p1_main", "page": 1, "bbox_pt": [320.0, 200.0, 540.0, 320.0], "text": "The study demonstrates reproducible findings.", "is_header_footer_candidate": False},
+    ]
+    role_labels = {1: {"p1_frag": "Body", "p1_main": "Body"}}
+    _write_jsonl(text_dir / "blocks_norm.jsonl", blocks)
+    _write_vision_outputs(vision_dir, blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+    assert "tive" not in main_body
+    assert "The study demonstrates reproducible findings." in main_body
+
+
+def test_main_body_preserves_legitimate_lowercase_start_negative(tmp_path: Path) -> None:
+    """Negative: Legitimate lowercase starts like 'e coli' should not be dropped."""
+    run_dir = tmp_path / "run" / "mb_trim_negative"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {"block_id": "p1_frag", "page": 1, "bbox_pt": [320.0, 120.0, 540.0, 150.0], "text": "e coli is a gram-negative bacterium.", "is_header_footer_candidate": False},
+        {"block_id": "p1_main", "page": 1, "bbox_pt": [320.0, 200.0, 540.0, 320.0], "text": "This paragraph follows and is independent.", "is_header_footer_candidate": False},
+    ]
+    role_labels = {1: {"p1_frag": "Body", "p1_main": "Body"}}
+    _write_jsonl(text_dir / "blocks_norm.jsonl", blocks)
+    _write_vision_outputs(vision_dir, blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+    assert "e coli is a gram-negative bacterium." in main_body
+    assert "This paragraph follows and is independent." in main_body
+
+
+def test_same_section_hyphen_wrap_merges_left_bottom_to_right_top(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "same_section_hyphen_column_transition"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Same-Section Hyphen Transition Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 280.0, 182.0],
+            "text": "8.3. ECM Formation",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_left_bottom",
+            "page": 1,
+            "bbox_pt": [60.0, 675.0, 280.0, 710.0],
+            "text": "Prior studies in cartilage models indi-",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_right_top",
+            "page": 1,
+            "bbox_pt": [320.0, 90.0, 540.0, 140.0],
+            "text": "cated that aligned electroactivity supports ECM formation.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {
+        1: {
+            "p1_title": "Heading",
+            "p1_h": "Heading",
+            "p1_left_bottom": "Body",
+            "p1_right_top": "Body",
+        }
+    }
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    with open(text_dir / "layout_analysis.json", "w", encoding="utf-8") as f:
+        json.dump({"page_layouts": {"1": {"column_count": 2}}}, f, ensure_ascii=False)
+
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert "Prior studies in cartilage models indi-" not in clean_doc
+    assert re.search(r"^### 8\.3\. ECM Formation\n\ncated that", clean_doc, flags=re.MULTILINE) is None
+    assert "Prior studies in cartilage models indicated that aligned electroactivity supports ECM formation." in clean_doc
+
+
+def test_orphan_section_heading_is_demoted_to_body_text(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "orphan_heading_demoted"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Orphan Heading Demotion Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h_orphan",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "6. Discussion",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h_orphan": "Heading"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert "### 6. Discussion" not in clean_doc
+    assert re.search(r"^6\. Discussion$", clean_doc, flags=re.MULTILINE) is not None
+
+
+def test_orphan_section_heading_text_is_preserved_not_dropped(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "orphan_heading_text_preserved"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    first_heading = "4. Methods"
+    second_heading = "5. Future Work"
+    body_text = "The protocol used controlled stimulation and calibrated measurements."
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Heading Retention Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h1",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": first_heading,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 280.0],
+            "text": body_text,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_h2",
+            "page": 1,
+            "bbox_pt": [80.0, 300.0, 340.0, 332.0],
+            "text": second_heading,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+    ]
+    role_labels = {
+        1: {
+            "p1_title": "Heading",
+            "p1_h1": "Heading",
+            "p1_body": "Body",
+            "p1_h2": "Heading",
+        }
+    }
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert "### 5. Future Work" not in clean_doc
+    assert clean_doc.count(second_heading) == 1
+    assert clean_doc.find(second_heading) > clean_doc.find(body_text)
+
+
+def test_section_heading_with_real_body_is_kept_as_heading(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "heading_with_real_body"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Legitimate Heading Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "3. Results",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 285.0],
+            "text": "Electrical cues increased migration and matrix deposition across all groups.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    assert "### 3. Results" in clean_doc
+    assert "Electrical cues increased migration and matrix deposition across all groups." in clean_doc

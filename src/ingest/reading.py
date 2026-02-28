@@ -26,6 +26,10 @@ from .qa_telemetry import append_fault_events, append_jsonl_event
 
 SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 SILICONFLOW_DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct"
+
+# Feature flag for Wave B narrative-only facts (default OFF)
+READING_ENABLE_NARRATIVE_ONLY_FACTS = os.environ.get("READING_ENABLE_NARRATIVE_ONLY_FACTS", "0") in ("1", "true", "True")
+
 REQUIRED_API_KEY_ENV_NAMES = ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN")
 
 

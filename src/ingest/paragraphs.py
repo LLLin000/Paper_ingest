@@ -30,6 +30,12 @@ from typing import Any, Optional, Tuple
 from .qa_telemetry import append_jsonl_event
 
 
+# Feature flags for Wave B upgrades (default OFF)
+# Set environment variable to 1/true to enable
+CLEANDOC_ENABLE_LAYOUT_ZONING = os.environ.get("CLEANDOC_ENABLE_LAYOUT_ZONING", "0") in ("1", "true", "True")
+CLEANDOC_ENABLE_COLUMN_ORDER_V2 = os.environ.get("CLEANDOC_ENABLE_COLUMN_ORDER_V2", "0") in ("1", "true", "True")
+
+
 KEEP_FOR_PARAGRAPH_ROLES = frozenset({
     "main_title",
     "section_heading",

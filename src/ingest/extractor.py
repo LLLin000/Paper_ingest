@@ -413,6 +413,17 @@ def run_extractor(
             for block in all_norm_blocks:
                 f.write(json.dumps(asdict(block), ensure_ascii=False) + "\n")
 
+        from .layout_analyzer import run_layout_analysis
+        pages_blocks_dict = {
+            page: [asdict(b) for b in per_page_raw_blocks.get(page, [])]
+            for page in per_page_raw_blocks
+        }
+        layout_result = run_layout_analysis(pages_blocks_dict, per_page_dimensions)
+        
+        layout_path = text_dir / "layout_analysis.json"
+        with open(layout_path, "w", encoding="utf-8") as f:
+            json.dump(layout_result, f, ensure_ascii=False, indent=2)
+
         if fault_events:
             append_fault_events(qa_dir, [asdict(e) for e in fault_events])
 

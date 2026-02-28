@@ -42,6 +42,48 @@ def _paragraph(i: int) -> dict[str, object]:
     }
 
 
+def _non_narrative_paragraph(i: int) -> dict[str, object]:
+    return {
+        "para_id": f"non_{i:04d}",
+        "page_span": {"start": i // 5 + 1, "end": i // 5 + 1},
+        "role": "FigureCaption",
+        "section_path": ["Figures and Tables"],
+        "text": (
+            f"Figure {i} shows 95% confidence intervals and p<0.01 for treatment group {i}. "
+            "Caption-only diagnostic labels without narrative context."
+        ),
+        "clean_roles": ["figure_caption"],
+        "evidence_pointer": {
+            "page": i // 5 + 1,
+            "bbox_union": [10.0, float(20 + i), 200.0, float(40 + i)],
+            "source_block_ids": [f"f{i // 5 + 1}_b{i}"],
+        },
+        "neighbors": {"prev": None, "next": None},
+        "confidence": 0.95,
+    }
+
+
+def _reference_like_paragraph(i: int) -> dict[str, object]:
+    return {
+        "para_id": f"ref_{i:04d}",
+        "page_span": {"start": i // 5 + 1, "end": i // 5 + 1},
+        "role": "Body",
+        "section_path": ["References"],
+        "text": (
+            "Smith J, Wang K, et al. 2023. Randomized outcome analysis with risk increase 12%. "
+            "Journal of Clinical Trials 11(2): 100-110."
+        ),
+        "clean_roles": ["reference_entry"],
+        "evidence_pointer": {
+            "page": i // 5 + 1,
+            "bbox_union": [10.0, float(20 + i), 200.0, float(40 + i)],
+            "source_block_ids": [f"r{i // 5 + 1}_b{i}"],
+        },
+        "neighbors": {"prev": None, "next": None},
+        "confidence": 0.95,
+    }
+
+
 def test_build_local_fact_candidates_produces_contract_ready_candidates() -> None:
     paragraphs = [_paragraph(i) for i in range(6)]
 
@@ -63,6 +105,59 @@ def test_build_local_fact_candidates_produces_contract_ready_candidates() -> Non
     }
     assert "statement" in first and len(str(first["statement"]).split()) >= 6
     assert "evidence_pointer" in first
+
+
+def test_build_local_fact_candidates_prefers_narrative_body_evidence() -> None:
+    narrative = [_paragraph(i) for i in range(12)]
+    non_narrative = [_non_narrative_paragraph(i) for i in range(6)] + [_reference_like_paragraph(i) for i in range(2)]
+
+    candidates = build_local_fact_candidates(narrative + non_narrative, max_candidates=20)
+
+    assert candidates
+    narrative_count = sum(1 for item in candidates if bool(item.get("_is_narrative", False)))
+    non_narrative_count = len(candidates) - narrative_count
+    ratio = non_narrative_count / float(len(candidates))
+
+    assert narrative_count >= 12
+    assert ratio <= 0.2
+
+
+def test_build_local_fact_candidates_fallback_when_narrative_is_sparse() -> None:
+    narrative = [_paragraph(i) for i in range(3)]
+    non_narrative = [_non_narrative_paragraph(i) for i in range(7)]
+
+    candidates = build_local_fact_candidates(narrative + non_narrative, max_candidates=8)
+
+    assert len(candidates) == 8
+    narrative_count = sum(1 for item in candidates if bool(item.get("_is_narrative", False)))
+    assert narrative_count == 3
+
+
+def test_struct07_style_non_narrative_contamination_ratio_is_capped() -> None:
+    narrative = [_paragraph(i) for i in range(18)]
+    non_narrative = [_non_narrative_paragraph(i) for i in range(24)] + [_reference_like_paragraph(i) for i in range(10)]
+
+    candidates = build_local_fact_candidates(narrative + non_narrative, max_candidates=20)
+
+    assert len(candidates) == 20
+    narrative_count = sum(1 for item in candidates if bool(item.get("_is_narrative", False)))
+    contamination_ratio = (len(candidates) - narrative_count) / float(len(candidates))
+
+    assert narrative_count >= 16
+    assert contamination_ratio <= 0.2
+
+
+def test_chen2024_style_sparse_narrative_fallback_still_emits_candidates() -> None:
+    narrative = [_paragraph(i) for i in range(2)]
+    non_narrative = [_non_narrative_paragraph(i) for i in range(12)] + [_reference_like_paragraph(i) for i in range(5)]
+
+    candidates = build_local_fact_candidates(narrative + non_narrative, max_candidates=8)
+
+    assert len(candidates) == 8
+    narrative_count = sum(1 for item in candidates if bool(item.get("_is_narrative", False)))
+    assert narrative_count == 2
+    assert any(str(item.get("para_id", "")).startswith("non_") for item in candidates)
+    assert all(str(item.get("statement", "")).strip() for item in candidates)
 
 
 def test_run_reading_uses_fewer_global_facts_calls_than_legacy_batch_loop(

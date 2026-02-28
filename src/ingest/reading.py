@@ -84,6 +84,19 @@ READING_STRATEGIES = frozenset({
 
 FACTS_GLOBAL_BATCH_SIZE = 80
 MAX_LOCAL_FACT_CANDIDATES = 160
+NON_NARRATIVE_CLEAN_ROLES = frozenset({"nuisance", "reference_entry", "figure_caption", "table_caption"})
+NARRATIVE_COMPATIBLE_CLEAN_ROLES = frozenset({"body_text", "section_heading", "main_title"})
+NARRATIVE_EXCLUDED_SECTIONS = frozenset({
+    "authors",
+    "affiliations",
+    "document metadata",
+    "references",
+    "figures and tables",
+})
+TARGET_NON_NARRATIVE_RATIO = 0.2
+SUMMARY_FULL_MIN_NARRATIVE_FACTS = 12
+SUMMARY_FULL_MIN_THEMES = 3
+SUMMARY_FULL_MIN_NARRATIVE_EVIDENCE_RATIO = 0.8
 
 
 @dataclass
@@ -191,6 +204,71 @@ def load_figure_table_links(links_path: Path) -> dict[str, Any]:
             return json.load(f)
     except json.JSONDecodeError:
         return {"by_section": {}, "by_fact": {}, "by_synthesis_slot": {}}
+
+
+def load_clean_role_by_block(blocks_path: Path) -> dict[str, str]:
+    clean_role_by_block: dict[str, str] = {}
+    if not blocks_path.exists():
+        return clean_role_by_block
+    with open(blocks_path, "r", encoding="utf-8") as f:
+        for line in f:
+            row = line.strip()
+            if not row:
+                continue
+            try:
+                payload = json.loads(row)
+            except json.JSONDecodeError:
+                continue
+            block_id = str(payload.get("block_id", "")).strip()
+            clean_role = str(payload.get("clean_role", "")).strip()
+            if block_id and clean_role:
+                clean_role_by_block[block_id] = clean_role
+    return clean_role_by_block
+
+
+def normalize_section_label(section: str) -> str:
+    normalized = re.sub(r"\s+", " ", str(section).strip().lower())
+    normalized = re.sub(r"[^a-z0-9\s]", "", normalized)
+    return normalized.strip()
+
+
+def resolve_paragraph_clean_roles(para: dict[str, Any], clean_role_by_block: dict[str, str]) -> set[str]:
+    raw_roles = para.get("clean_roles")
+    if isinstance(raw_roles, list):
+        roles = {str(role).strip() for role in raw_roles if str(role).strip()}
+        if roles:
+            return roles
+
+    evidence = para.get("evidence_pointer", {})
+    source_ids = evidence.get("source_block_ids", []) if isinstance(evidence, dict) else []
+    if not isinstance(source_ids, list):
+        return set()
+
+    roles: set[str] = set()
+    for source_id in source_ids:
+        clean_role = clean_role_by_block.get(str(source_id), "")
+        if clean_role:
+            roles.add(clean_role)
+    return roles
+
+
+def is_narrative_paragraph_candidate(para: dict[str, Any], clean_role_by_block: dict[str, str]) -> bool:
+    role = str(para.get("role", "Body"))
+    if role != "Body":
+        return False
+
+    section_path = para.get("section_path")
+    if isinstance(section_path, list):
+        normalized_path = [normalize_section_label(str(item)) for item in section_path if str(item).strip()]
+        if any(section in NARRATIVE_EXCLUDED_SECTIONS for section in normalized_path):
+            return False
+
+    clean_roles = resolve_paragraph_clean_roles(para, clean_role_by_block)
+    if clean_roles & NON_NARRATIVE_CLEAN_ROLES:
+        return False
+    if clean_roles:
+        return bool(clean_roles & NARRATIVE_COMPATIBLE_CLEAN_ROLES)
+    return True
 
 
 def load_cite_anchors(cite_anchors_path: Path) -> list[dict[str, Any]]:
@@ -817,7 +895,11 @@ def infer_fact_candidate_category(text: str) -> str:
 def build_local_fact_candidates(
     paragraphs: list[dict[str, Any]],
     max_candidates: int = MAX_LOCAL_FACT_CANDIDATES,
+    clean_role_by_block: Optional[dict[str, str]] = None,
 ) -> list[dict[str, Any]]:
+    if clean_role_by_block is None:
+        clean_role_by_block = {}
+
     candidates: list[dict[str, Any]] = []
     for para in paragraphs:
         para_id = str(para.get("para_id", ""))
@@ -834,12 +916,20 @@ def build_local_fact_candidates(
         score += float(para.get("confidence", 0.5)) * 10.0
         if role == "Heading":
             score -= 8.0
-        if role in {"Body", "FigureCaption", "TableCaption"}:
+        if role == "Body":
             score += 8.0
+        if role in {"FigureCaption", "TableCaption"}:
+            score -= 10.0
         if any(ch.isdigit() for ch in statement):
             score += 6.0
         if any(token in statement.lower() for token in ("significant", "increase", "decrease", "risk", "associated")):
             score += 6.0
+
+        is_narrative = is_narrative_paragraph_candidate(para, clean_role_by_block)
+        if is_narrative:
+            score += 18.0
+        else:
+            score -= 22.0
 
         quote, quote_truncated, truncation_reason = truncate_quote(statement)
         evidence = para.get("evidence_pointer", {})
@@ -863,10 +953,24 @@ def build_local_fact_candidates(
                 "source_block_ids": evidence.get("source_block_ids", []),
             },
             "_score": score,
+            "_is_narrative": is_narrative,
         })
 
     candidates.sort(key=lambda item: float(item.get("_score", 0.0)), reverse=True)
-    trimmed = candidates[:max_candidates]
+    narrative_candidates = [item for item in candidates if bool(item.get("_is_narrative", False))]
+    non_narrative_candidates = [item for item in candidates if not bool(item.get("_is_narrative", False))]
+
+    trimmed = narrative_candidates[:max_candidates]
+    if len(trimmed) >= 8:
+        remaining = max_candidates - len(trimmed)
+        max_non_narrative = max(1, int(len(trimmed) * (TARGET_NON_NARRATIVE_RATIO / (1.0 - TARGET_NON_NARRATIVE_RATIO))))
+        if remaining > 0 and non_narrative_candidates:
+            trimmed.extend(non_narrative_candidates[:min(remaining, max_non_narrative)])
+    else:
+        remaining = max_candidates - len(trimmed)
+        if remaining > 0:
+            trimmed.extend(non_narrative_candidates[:remaining])
+
     trimmed.sort(key=lambda item: str(item.get("para_id", "")))
     return trimmed
 
@@ -1208,6 +1312,129 @@ def generate_fallback_synthesis(facts: list[Fact], assets: list[dict[str, Any]])
     }
 
 
+def load_clean_document_metrics(qa_dir: Path) -> dict[str, Any]:
+    metrics_path = qa_dir / "clean_document_metrics.json"
+    if not metrics_path.exists():
+        return {}
+    try:
+        with open(metrics_path, "r", encoding="utf-8") as f:
+            loaded = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return loaded if isinstance(loaded, dict) else {}
+
+
+def _coerce_bool(value: Any) -> Optional[bool]:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return bool(value)
+    if isinstance(value, str):
+        lowered = value.strip().lower()
+        if lowered in {"true", "1", "yes"}:
+            return True
+        if lowered in {"false", "0", "no"}:
+            return False
+    return None
+
+
+def build_summary_status(
+    doc_id: str,
+    facts: list[Fact],
+    themes: dict[str, Any],
+    synthesis: dict[str, Any],
+    paragraphs: list[dict[str, Any]],
+    clean_role_by_block: dict[str, str],
+    clean_document_metrics: dict[str, Any],
+) -> dict[str, Any]:
+    para_lookup = {
+        str(para.get("para_id", "")): para
+        for para in paragraphs
+        if str(para.get("para_id", ""))
+    }
+
+    narrative_fact_ids: set[str] = set()
+    for fact in facts:
+        para = para_lookup.get(str(fact.para_id))
+        if para and is_narrative_paragraph_candidate(para, clean_role_by_block):
+            narrative_fact_ids.add(str(fact.fact_id))
+
+    narrative_fact_count = len(narrative_fact_ids)
+    themes_list = themes.get("themes", []) if isinstance(themes, dict) else []
+    themes_count = len(themes_list) if isinstance(themes_list, list) else 0
+
+    key_lines = synthesis.get("key_evidence_lines", []) if isinstance(synthesis, dict) else []
+    key_lines = key_lines if isinstance(key_lines, list) else []
+    executive_summary = str(synthesis.get("executive_summary", "")).strip() if isinstance(synthesis, dict) else ""
+    synthesis_present = bool(executive_summary) and any(
+        isinstance(line, dict) and str(line.get("statement", "")).strip()
+        for line in key_lines
+    )
+
+    fact_ids_set = {str(fact.fact_id) for fact in facts}
+    evidence_denominator = 0
+    evidence_numerator = 0
+    for line in key_lines:
+        if not isinstance(line, dict):
+            continue
+        raw_fact_ids = line.get("fact_ids", [])
+        if not isinstance(raw_fact_ids, list):
+            continue
+        resolved_fact_ids = [str(fid) for fid in raw_fact_ids if str(fid) in fact_ids_set]
+        if not resolved_fact_ids:
+            continue
+        evidence_denominator += 1
+        if all(fid in narrative_fact_ids for fid in resolved_fact_ids):
+            evidence_numerator += 1
+
+    narrative_evidence_ratio = (
+        evidence_numerator / float(evidence_denominator)
+        if evidence_denominator > 0
+        else 0.0
+    )
+
+    reason_codes: list[str] = []
+    if not facts:
+        reason_codes.append("missing_facts")
+    if themes_count == 0:
+        reason_codes.append("missing_themes")
+    if not synthesis_present:
+        reason_codes.append("missing_synthesis")
+    if narrative_fact_count < SUMMARY_FULL_MIN_NARRATIVE_FACTS:
+        reason_codes.append("insufficient_narrative_facts")
+    if themes_count < SUMMARY_FULL_MIN_THEMES:
+        reason_codes.append("insufficient_themes")
+    if evidence_denominator == 0:
+        reason_codes.append("missing_key_evidence_fact_links")
+    if narrative_evidence_ratio < SUMMARY_FULL_MIN_NARRATIVE_EVIDENCE_RATIO:
+        reason_codes.append("low_narrative_coverage")
+
+    ordering_confidence_low_val = _coerce_bool(clean_document_metrics.get("ordering_confidence_low"))
+    section_boundary_unstable_val = _coerce_bool(clean_document_metrics.get("section_boundary_unstable"))
+    if ordering_confidence_low_val is None or section_boundary_unstable_val is None:
+        reason_codes.append("missing_clean_document_metrics")
+    else:
+        if ordering_confidence_low_val:
+            reason_codes.append("ordering_confidence_low")
+        if section_boundary_unstable_val:
+            reason_codes.append("section_boundary_unstable")
+
+    status = "full" if not reason_codes else "degraded"
+    ordered_unique_reason_codes = list(dict.fromkeys(reason_codes))
+    return {
+        "doc_id": doc_id,
+        "status": status,
+        "reason_codes": ordered_unique_reason_codes,
+        "metrics": {
+            "narrative_fact_count": narrative_fact_count,
+            "themes_count": themes_count,
+            "synthesis_present": synthesis_present,
+            "narrative_evidence_ratio": round(narrative_evidence_ratio, 6),
+        },
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+    }
+
+
 def run_reading(
     run_dir: Path,
     manifest: Optional[Manifest] = None,
@@ -1266,6 +1493,8 @@ def run_reading(
     assets = load_figure_table_index(figure_index_path)
     figure_links_path = run_dir / "figures_tables" / "figure_table_links.json"
     figure_links = load_figure_table_links(figure_links_path)
+    blocks_clean_path = run_dir / "text" / "blocks_clean.jsonl"
+    clean_role_by_block = load_clean_role_by_block(blocks_clean_path)
     fault_events: list[FaultEvent] = []
     print(
         f"[reading] start paragraphs={len(paragraphs)} analysis={len(analysis_paragraphs)} "
@@ -1381,7 +1610,10 @@ def run_reading(
 
     facts: list[Fact] = []
     facts_path = reading_dir / "facts.jsonl"
-    local_candidates = build_local_fact_candidates(analysis_paragraphs)
+    local_candidates = build_local_fact_candidates(
+        analysis_paragraphs,
+        clean_role_by_block=clean_role_by_block,
+    )
     global_batch_size = FACTS_GLOBAL_BATCH_SIZE
     total_candidates = len(local_candidates)
     total_batches = (total_candidates + global_batch_size - 1) // global_batch_size if total_candidates else 0
@@ -1580,6 +1812,19 @@ def run_reading(
     with open(synthesis_path, "w", encoding="utf-8") as f:
         json.dump(synthesis, f, indent=2, ensure_ascii=False)
 
+    summary_status = build_summary_status(
+        doc_id=manifest.doc_id,
+        facts=facts,
+        themes=themes,
+        synthesis=synthesis,
+        paragraphs=paragraphs,
+        clean_role_by_block=clean_role_by_block,
+        clean_document_metrics=load_clean_document_metrics(qa_dir),
+    )
+    summary_status_path = qa_dir / "summary_status.json"
+    with open(summary_status_path, "w", encoding="utf-8") as f:
+        json.dump(summary_status, f, indent=2, ensure_ascii=False)
+
     evidence_graph = build_evidence_graph(
         analysis_paragraphs,
         facts,
@@ -1594,7 +1839,7 @@ def run_reading(
     print(
         f"[reading] done facts={len(facts)} themes={len(themes.get('themes', []))} "
         f"lines={len(synthesis.get('key_evidence_lines', []))} slots={len(synthesis.get('figure_table_slots', []))} "
-        f"fallbacks={len(fault_events)}",
+        f"fallbacks={len(fault_events)} summary_status={summary_status.get('status', 'degraded')}",
         flush=True,
     )
 

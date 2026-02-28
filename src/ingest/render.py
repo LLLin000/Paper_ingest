@@ -21,6 +21,50 @@ REVIEW_TYPES = frozenset({"review", "meta_analysis"})
 ORIGINAL_RESEARCH_TYPES = frozenset({"original_research", "case_report", "methodology"})
 
 
+def load_summary_status(run_dir: Path, doc_id: str) -> dict[str, Any]:
+    qa_dir = run_dir / "qa"
+    summary_status_path = qa_dir / "summary_status.json"
+    reason_codes: list[str] = []
+
+    if summary_status_path.exists():
+        data = load_json_file(summary_status_path)
+        if isinstance(data, dict):
+            status = str(data.get("status", "")).strip().lower()
+            if status in {"full", "degraded"}:
+                if not isinstance(data.get("reason_codes"), list):
+                    data["reason_codes"] = []
+                if not isinstance(data.get("metrics"), dict):
+                    data["metrics"] = {}
+                data.setdefault("doc_id", doc_id)
+                data.setdefault("generated_at", "")
+                return data
+            reason_codes.append("invalid_summary_status")
+        else:
+            reason_codes.append("invalid_summary_status")
+    else:
+        reason_codes.append("missing_summary_status")
+
+    if not (run_dir / "reading" / "facts.jsonl").exists():
+        reason_codes.append("missing_facts")
+    if not (run_dir / "reading" / "themes.json").exists():
+        reason_codes.append("missing_themes")
+    if not (run_dir / "reading" / "synthesis.json").exists():
+        reason_codes.append("missing_synthesis")
+
+    return {
+        "doc_id": doc_id,
+        "status": "degraded",
+        "reason_codes": list(dict.fromkeys(reason_codes)),
+        "metrics": {
+            "narrative_fact_count": 0,
+            "themes_count": 0,
+            "synthesis_present": False,
+            "narrative_evidence_ratio": 0.0,
+        },
+        "generated_at": "",
+    }
+
+
 def resolve_api_key() -> str:
     for key_name in ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN"):
         value = os.environ.get(key_name, "").strip()
@@ -122,7 +166,13 @@ def load_cite_map(run_dir: Path) -> list[dict[str, Any]]:
 
 
 def load_reference_catalog(run_dir: Path) -> list[dict[str, Any]]:
-    """Load reference catalog from citations/reference_catalog.jsonl."""
+    merged_path = run_dir / "refs" / "references_merged.jsonl"
+    if merged_path.exists():
+        return load_jsonl(merged_path)
+    return load_jsonl(run_dir / "citations" / "reference_catalog.jsonl")
+
+
+def load_pdf_reference_catalog(run_dir: Path) -> list[dict[str, Any]]:
     return load_jsonl(run_dir / "citations" / "reference_catalog.jsonl")
 
 
@@ -182,15 +232,75 @@ def format_reference_entry(ref: dict[str, Any]) -> str:
     return ". ".join(parts)
 
 
-def build_citations_section(cite_map: list[dict[str, Any]], reference_catalog: list[dict[str, Any]]) -> str:
+def build_citations_section(cite_map: list[dict[str, Any]], reference_catalog: list[dict[str, Any]], run_dir: Path | None = None) -> str:
     if not reference_catalog:
         return "## 引用文献 (Citations)\n\n未能提取参考文献目录。\n"
     
     ref_lookup: dict[str, dict[str, Any]] = {}
+    doi_to_key: dict[str, str] = {}
+    pmid_to_key: dict[str, str] = {}
+    bib_to_doi: dict[str, str] = {}
+    
+    if run_dir:
+        import re
+        def normalize_title(s):
+            if not s:
+                return ''
+            s = s.lower()
+            s = re.sub(r'[^\w\s]', '', s)
+            s = re.sub(r'\s+', ' ', s).strip()
+            return s[:50]
+        
+        title_to_doi: dict[str, str] = {}
+        author_year_to_doi: dict[str, str] = {}
+        for ref in reference_catalog:
+            title = normalize_title(ref.get("title", ""))
+            doi_value = str(ref.get("doi", "") or "").strip()
+            if title and doi_value:
+                title_to_doi[title] = doi_value
+            authors = ref.get("authors", [])
+            year = ref.get("year")
+            if authors and year and doi_value:
+                first_author_surname = authors[0].lower().split()[-1] if authors[0] else ""
+                if first_author_surname:
+                    key = f"{first_author_surname}_{year}"
+                    if key not in author_year_to_doi:
+                        author_year_to_doi[key] = doi_value
+        
+        pdf_catalog = load_pdf_reference_catalog(run_dir)
+        for ref in pdf_catalog:
+            ref_key = ref.get("ref_key")
+            if ref_key and ref_key.startswith("bib:"):
+                raw = ref.get("raw_text", "")
+                raw_norm = normalize_title(raw[:100])
+                if raw_norm in title_to_doi:
+                    bib_to_doi[ref_key] = title_to_doi[raw_norm]
+                else:
+                    # Try author+year match from bib key
+                    match = re.match(r"bib:([a-z]+)_(\d{4})_", ref_key)
+                    if match:
+                        author = match.group(1)
+                        year = match.group(2)
+                        auth_key = f"{author}_{year}"
+                        if auth_key in author_year_to_doi:
+                            bib_to_doi[ref_key] = author_year_to_doi[auth_key]
+    
     for ref in reference_catalog:
         ref_key = ref.get("ref_key")
+        if not ref_key:
+            if ref.get("doi"):
+                ref_key = f"doi:{ref.get('doi')}"
+            elif ref.get("pmid"):
+                ref_key = f"pmid:{ref.get('pmid')}"
+            elif ref.get("title"):
+                ref_key = f"title:{hash(ref.get('title')) % 1000000:06x}"
         if ref_key:
             ref_lookup[ref_key] = ref
+            doi_value = str(ref.get("doi", "") or "").strip()
+            if doi_value:
+                doi_to_key[doi_value.lower()] = ref_key
+            if ref.get("pmid"):
+                pmid_to_key[str(ref.get("pmid"))] = ref_key
     
     if not ref_lookup:
         return "## 引用文献 (Citations)\n\n未能提取参考文献目录。\n"
@@ -199,7 +309,18 @@ def build_citations_section(cite_map: list[dict[str, Any]], reference_catalog: l
     for cm in cite_map:
         ref_key = cm.get("mapped_ref_key")
         if ref_key:
-            mapped_refs.add(ref_key)
+            if ref_key in ref_lookup:
+                mapped_refs.add(ref_key)
+            elif ref_key.startswith("pmid:"):
+                pmid = ref_key[5:]
+                if pmid in pmid_to_key:
+                    mapped_refs.add(pmid_to_key[pmid])
+            elif ref_key.startswith("bib:"):
+                doi = bib_to_doi.get(ref_key)
+                if doi:
+                    doi_key = f"doi:{doi}"
+                    if doi_key in ref_lookup:
+                        mapped_refs.add(doi_key)
     
     def sort_key(ref_key: str) -> tuple[int, int, str]:
         ref = ref_lookup.get(ref_key, {})
@@ -720,6 +841,105 @@ def render_generic_fallback(
     return lines
 
 
+def render_degraded_summary(
+    profile: dict[str, Any],
+    synthesis: dict[str, Any],
+    facts: list[dict[str, Any]],
+    paragraphs: list[dict[str, Any]],
+    summary_status: dict[str, Any],
+) -> list[str]:
+    lines: list[str] = []
+    fact_lookup = build_facts_lookup(facts)
+    reason_codes = [str(item) for item in summary_status.get("reason_codes", []) if str(item)]
+
+    lines.append("## 摘要质量状态 (Summary Quality Status)\n")
+    lines.append("- 状态: degraded")
+    if reason_codes:
+        lines.append(f"- 原因代码: {', '.join(reason_codes)}")
+    metrics = summary_status.get("metrics", {}) if isinstance(summary_status.get("metrics", {}), dict) else {}
+    lines.append(
+        "- 指标: narrative_facts={0}, themes={1}, synthesis_present={2}, narrative_evidence_ratio={3}".format(
+            metrics.get("narrative_fact_count", 0),
+            metrics.get("themes_count", 0),
+            metrics.get("synthesis_present", False),
+            metrics.get("narrative_evidence_ratio", 0.0),
+        )
+    )
+    lines.append("")
+
+    lines.append("## 降级摘要 (Degraded Summary)\n")
+    executive_summary = normalize_statement_for_reader(str(synthesis.get("executive_summary", "")), max_len=600)
+    if executive_summary:
+        lines.append(executive_summary)
+    else:
+        candidate_facts = [
+            fact for fact in facts
+            if str(fact.get("statement", "")).strip()
+        ]
+        if not candidate_facts:
+            para_emitted = 0
+            for para in paragraphs:
+                if str(para.get("role", "")) != "Body":
+                    continue
+                text = normalize_statement_for_reader(str(para.get("text", "")), max_len=200)
+                if text and len(text.split()) >= 8:
+                    lines.append(f"- {text}")
+                    para_emitted += 1
+                    if para_emitted >= 4:
+                        break
+        else:
+            preferred = [
+                fact for fact in candidate_facts
+                if str(fact.get("category", "")) in {"result", "statistics", "comparison"}
+            ]
+            chosen = preferred[:4] if preferred else candidate_facts[:4]
+            for fact in chosen:
+                statement = normalize_statement_for_reader(str(fact.get("statement", "")), max_len=200)
+                fact_id = str(fact.get("fact_id", ""))
+                fact_link = format_fact_link(fact_id, fact_lookup) if fact_id else ""
+                lines.append(f"- {statement} {fact_link}".strip())
+    lines.append("")
+
+    lines.append("## 可用证据要点 (Available Evidence)\n")
+    key_lines = synthesis.get("key_evidence_lines", []) if isinstance(synthesis.get("key_evidence_lines", []), list) else []
+    emitted = 0
+    for line in key_lines:
+        if not isinstance(line, dict):
+            continue
+        statement = normalize_statement_for_reader(str(line.get("statement", "")), max_len=220)
+        if not statement:
+            continue
+        fact_ids = [str(fid) for fid in line.get("fact_ids", [])[:2]]
+        links = " ".join(format_fact_link(fid, fact_lookup) for fid in fact_ids if fid)
+        lines.append(f"- {statement} {links}".strip())
+        emitted += 1
+        if emitted >= 6:
+            break
+
+    if emitted == 0:
+        for fact in facts[:6]:
+            statement = normalize_statement_for_reader(str(fact.get("statement", "")), max_len=220)
+            if not statement:
+                continue
+            fact_id = str(fact.get("fact_id", ""))
+            fact_link = format_fact_link(fact_id, fact_lookup) if fact_id else ""
+            lines.append(f"- {statement} {fact_link}".strip())
+            emitted += 1
+            if emitted >= 6:
+                break
+    if emitted == 0:
+        lines.append("- 无可用结构化证据，建议回看原文段落与附录中的原始工件。")
+    lines.append("")
+
+    contribution = str(profile.get("claimed_contribution", "")).strip()
+    if contribution:
+        lines.append("## 备注 (Notes)\n")
+        lines.append(f"- 作者声称贡献: {normalize_statement_for_reader(contribution, max_len=260)}")
+        lines.append("")
+
+    return lines
+
+
 def build_appendix(
     profile: dict[str, Any],
     logic_graph: dict[str, Any],
@@ -837,6 +1057,7 @@ def run_render(
     cite_map = load_cite_map(run_dir)
     reference_catalog = load_reference_catalog(run_dir)
     figure_index = load_figure_table_index(run_dir)
+    summary_status = load_summary_status(run_dir, manifest.doc_id)
     
     paper_type = profile.get("paper_type", "unknown")
     
@@ -846,6 +1067,7 @@ def run_render(
     lines.append(f"type: {paper_type}")
     lines.append(f"doc_id: {manifest.doc_id}")
     lines.append(f"source_pdf_hash: {manifest.input_pdf_sha256[:16]}...")
+    lines.append(f"summary_status: {summary_status.get('status', 'degraded')}")
     lines.append("---")
     lines.append("")
     
@@ -867,7 +1089,15 @@ def run_render(
         lines.append(f"**{research_problem}**\n")
         lines.append("")
     
-    if paper_type in REVIEW_TYPES:
+    if str(summary_status.get("status", "degraded")) == "degraded":
+        content_lines = render_degraded_summary(
+            profile=profile,
+            synthesis=synthesis,
+            facts=facts,
+            paragraphs=paragraphs,
+            summary_status=summary_status,
+        )
+    elif paper_type in REVIEW_TYPES:
         content_lines = render_review_meta_analysis(
             profile, synthesis, themes, facts, paragraphs, figure_index
         )
@@ -882,7 +1112,7 @@ def run_render(
     
     lines.extend(content_lines)
     
-    citations_section = build_citations_section(cite_map, reference_catalog)
+    citations_section = build_citations_section(cite_map, reference_catalog, run_dir)
     lines.append(citations_section)
     lines.append("")
     

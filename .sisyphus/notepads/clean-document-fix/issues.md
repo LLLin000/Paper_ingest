@@ -143,3 +143,28 @@
   - orphan heading is demoted (no `###` remains)
   - demoted heading text is preserved and appears in output order
   - legitimate heading with body remains a heading
+
+---
+
+2026-02-27T12:10:00Z - Conservative section artifact-line filtering in clean_document
+
+- Root cause: obvious layout artifacts were still emitted in section body text when they appeared as standalone lines, especially isolated page numbers (for example `5`) and publisher banner lines beginning with `Check for updates`.
+
+- Change: added a narrow helper in `render_clean_document` emission path that strips only:
+  - lines matching strict page-number-only regex `^\d{1,3}$`
+  - lines matching strict banner prefix regex `^check\s+for\s+updates\b` (case-insensitive)
+  The helper is applied only to emitted section paragraphs; no broad keyword filtering was added.
+
+- Safety posture: deterministic, conservative, and no-content-loss oriented.
+  - No changes to heading demotion behavior.
+  - No changes to verify/citations logic.
+  - Legitimate narrative lines are preserved.
+
+- Test coverage added in `tests/test_paragraphs_cleaning.py`:
+  - `test_clean_document_drops_page_number_only_line_in_section_body`
+  - `test_clean_document_drops_check_for_updates_banner_line_in_section_body`
+  - `test_clean_document_keeps_legitimate_content_line_in_section_body`
+
+- Verification:
+  - Focused: `pytest tests/test_paragraphs_cleaning.py -k "drops_page_number_only_line or drops_check_for_updates_banner_line or keeps_legitimate_content_line_in_section_body"` -> 3 passed
+  - Full suite: `pytest` -> 146 passed

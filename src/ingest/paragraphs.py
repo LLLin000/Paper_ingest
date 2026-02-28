@@ -15,6 +15,7 @@ Output schema per paragraphs/paragraphs.jsonl:
 """
 
 import hashlib
+import http.client
 import json
 import os
 import re
@@ -243,6 +244,9 @@ def call_siliconflow_for_paragraphs(prompt: str, config: ParagraphLLMRefineConfi
     except urllib.error.URLError:
         meta["error_type"] = "network_error"
         return "{}", meta
+    except http.client.RemoteDisconnected:
+        meta["error_type"] = "network_error"
+        return "{}", meta
     except TimeoutError:
         meta["error_type"] = "timeout"
         return "{}", meta
@@ -465,6 +469,113 @@ def should_emit_empty_section_heading(section: str) -> bool:
     if not is_plausible_section_heading(clean):
         return False
     return not looks_like_table_noise(clean)
+
+
+PAGE_NUMBER_ONLY_LINE_RE = re.compile(r"^\d{1,3}$")
+CHECK_FOR_UPDATES_BANNER_RE = re.compile(r"^check\s+for\s+updates\b", flags=re.IGNORECASE)
+INLINE_HYPHEN_WRAP_RE = re.compile(r"\b[^\W\d_]+-\s+[^\W\d_]+\b", flags=re.UNICODE)
+INLINE_SOFT_HYPHEN_WRAP_RE = re.compile(r"\b([^\W\d_]{2,})\u00ad\s+([^\W\d_]{2,})\b", flags=re.UNICODE)
+INLINE_HARD_HYPHEN_WRAP_RE = re.compile(r"\b([^\W\d_]{3,})-\s+([^\W\d_]{2,})\b", flags=re.UNICODE)
+
+AFFILIATION_KEYWORDS = (
+    "department",
+    "university",
+    "hospital",
+    "institute",
+    "medical center",
+    "faculty",
+    "school of",
+    "address",
+    "correspondence",
+)
+
+
+def strip_clean_document_artifact_lines(text: str) -> str:
+    """Drop narrow known layout-artifact lines from a paragraph block."""
+    clean = str(text)
+    if not clean:
+        return ""
+    kept_lines: list[str] = []
+    for raw_line in clean.splitlines():
+        line = clean_text_line(raw_line)
+        if not line:
+            continue
+        if PAGE_NUMBER_ONLY_LINE_RE.match(line):
+            continue
+        if CHECK_FOR_UPDATES_BANNER_RE.match(line):
+            continue
+        kept_lines.append(line)
+    return clean_text_line(" ".join(kept_lines))
+
+
+def suppression_rule_for_main_body_line(text: str) -> Optional[str]:
+    normalized = clean_text_line(text)
+    if not normalized:
+        return None
+    if PAGE_NUMBER_ONLY_LINE_RE.match(normalized) is not None:
+        return "page_number_only"
+    if CHECK_FOR_UPDATES_BANNER_RE.match(normalized) is not None:
+        return "check_for_updates_banner"
+    if is_affiliation_address_line(normalized):
+        return "affiliation_address_line"
+    return None
+
+
+def is_affiliation_address_line(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    low = clean.lower()
+    has_keyword = any(keyword in low for keyword in AFFILIATION_KEYWORDS)
+    if not has_keyword:
+        return False
+    starts_with_marker = re.match(r"^\d+[\s\).,-]", clean) is not None
+    has_email = "@" in clean
+    has_postal_code = re.search(r"\b\d{5}(?:-\d{4})?\b", clean) is not None
+    comma_density = clean.count(",") >= 2
+    return starts_with_marker or has_email or has_postal_code or comma_density
+
+
+def suppress_non_narrative_main_body_entries(
+    entries: list[tuple[str, Paragraph]],
+    doc_id: str,
+) -> tuple[list[tuple[str, Paragraph]], list[dict[str, Any]]]:
+    filtered_entries: list[tuple[str, Paragraph]] = []
+    suppressions: list[dict[str, Any]] = []
+    observed_at = datetime.now(timezone.utc).isoformat()
+
+    for para_text, para in entries:
+        kept_lines: list[str] = []
+        for raw_line in str(para_text).splitlines():
+            original_text = str(raw_line).strip()
+            normalized_text = clean_text_line(raw_line)
+            if not normalized_text:
+                continue
+            rule_id = suppression_rule_for_main_body_line(normalized_text)
+            if rule_id is None:
+                kept_lines.append(normalized_text)
+                continue
+
+            source_block_ids = para.evidence_pointer.get("source_block_ids", [])
+            if not isinstance(source_block_ids, list):
+                source_block_ids = []
+            suppressions.append(
+                {
+                    "doc_id": doc_id,
+                    "para_id": para.para_id if para.para_id else None,
+                    "source_block_ids": [str(block_id) for block_id in source_block_ids],
+                    "rule_id": rule_id,
+                    "original_text": original_text,
+                    "normalized_text": normalized_text,
+                    "observed_at": observed_at,
+                }
+            )
+
+        merged = clean_text_line(" ".join(kept_lines))
+        if merged:
+            filtered_entries.append((merged, para))
+
+    return filtered_entries, suppressions
 
 
 def split_embedded_section_heading(text: str) -> tuple[str, Optional[str], str]:
@@ -1334,6 +1445,31 @@ def block_sort_key(block: dict[str, Any]) -> tuple[int, float, float]:
 
 def clean_text_line(text: str) -> str:
     return " ".join(str(text).replace("\u00ad", "").split()).strip()
+
+
+def normalize_inline_hyphen_wrap_artifacts(text: str) -> str:
+    """Normalize conservative inline wrap artifacts without aggressive merging."""
+    if not text:
+        return ""
+    normalized = str(text)
+
+    def _soft_wrap_repl(match: re.Match[str]) -> str:
+        left = match.group(1)
+        right = match.group(2)
+        if not right or not right[0].islower():
+            return f"{left} {right}"
+        return f"{left}{right}"
+
+    def _hard_wrap_repl(match: re.Match[str]) -> str:
+        left = match.group(1)
+        right = match.group(2)
+        if not right or not right[0].islower():
+            return f"{left}- {right}"
+        return f"{left}-{right}"
+
+    normalized = INLINE_SOFT_HYPHEN_WRAP_RE.sub(_soft_wrap_repl, normalized)
+    normalized = INLINE_HARD_HYPHEN_WRAP_RE.sub(_hard_wrap_repl, normalized)
+    return clean_text_line(normalized)
 
 
 def unique_texts_in_order(values: list[str]) -> list[str]:
@@ -2652,9 +2788,10 @@ def recover_missing_organic_subsection(
 def render_clean_document(
     paragraphs: list[Paragraph],
     annotated_blocks: list[dict[str, Any]],
+    doc_id: str,
     qa_dir: Optional[Path] = None,
     text_dir: Optional[Path] = None,
-) -> str:
+) -> tuple[str, list[dict[str, Any]]]:
     page_layouts = {}
     if text_dir:
         page_layouts = load_page_layouts(text_dir)
@@ -2969,6 +3106,7 @@ def render_clean_document(
         section_to_paragraphs["Main Body"] = fallback_body
 
     section_order = recover_missing_organic_subsection(section_order, section_to_paragraphs)
+    suppression_events: list[dict[str, Any]] = []
     # Process and refine each section conservatively, collecting intermediate results
     processed_section_entries: dict[str, list[tuple[str, Paragraph]]] = {}
     for section in section_order:
@@ -3051,6 +3189,13 @@ def render_clean_document(
                     continue
             filtered_pruned.append((txt, para))
 
+        if filtered_pruned:
+            filtered_pruned, section_suppressions = suppress_non_narrative_main_body_entries(
+                filtered_pruned,
+                doc_id=doc_id,
+            )
+            suppression_events.extend(section_suppressions)
+
         processed_section_entries[section] = filtered_pruned
 
     # Conservative post-processing: consider merging tiny leading lowercase
@@ -3098,6 +3243,12 @@ def render_clean_document(
         section_texts = repair_body_paragraph_boundaries(pruned_entries, para_bounds_by_page)
         section_texts = merge_citation_tail_continuation_paragraphs(section_texts)
         paragraphs_in_section = unique_texts_in_order(section_texts)
+        filtered_paragraphs: list[str] = []
+        for paragraph_text in paragraphs_in_section:
+            cleaned_paragraph_text = normalize_inline_hyphen_wrap_artifacts(paragraph_text)
+            if cleaned_paragraph_text:
+                filtered_paragraphs.append(cleaned_paragraph_text)
+        paragraphs_in_section = unique_texts_in_order(filtered_paragraphs)
         if not paragraphs_in_section:
             if section != "Main Body" and should_emit_empty_section_heading(section):
                 lines.append(clean_text_line(section))
@@ -3137,7 +3288,144 @@ def render_clean_document(
             lines.append(f"- {item}")
         lines.append("")
 
-    return "\n".join(lines).strip() + "\n"
+    return "\n".join(lines).strip() + "\n", suppression_events
+
+
+def extract_markdown_section(markdown: str, section_title: str) -> str:
+    pattern = rf"^## {re.escape(section_title)}\n(.*?)(?=^## |\Z)"
+    match = re.search(pattern, markdown, flags=re.MULTILINE | re.DOTALL)
+    if match is None:
+        return ""
+    return str(match.group(1))
+
+
+def parse_main_body_structure(clean_document: str) -> tuple[list[str], list[tuple[str, list[str]]]]:
+    main_body_raw = extract_markdown_section(clean_document, "Main Body")
+    if not main_body_raw:
+        return [], []
+
+    main_body_lines = [line.strip() for line in main_body_raw.splitlines() if line.strip()]
+    sections: list[tuple[str, list[str]]] = []
+    current_heading = "Main Body"
+    current_lines: list[str] = []
+    saw_explicit_heading = False
+
+    for line in main_body_lines:
+        if line.startswith("### "):
+            if saw_explicit_heading:
+                sections.append((current_heading, current_lines))
+            current_heading = clean_text_line(line[4:])
+            current_lines = []
+            saw_explicit_heading = True
+            continue
+        current_lines.append(line)
+
+    if saw_explicit_heading:
+        sections.append((current_heading, current_lines))
+
+    return main_body_lines, sections
+
+
+def compute_column_crossovers_per_1000_tokens(
+    paragraphs: list[Paragraph],
+    clean_role_by_block: dict[str, str],
+) -> float:
+    if not paragraphs:
+        return 0.0
+
+    bounds_by_page = infer_para_page_bounds(paragraphs)
+    token_total = 0
+    column_crossovers = 0
+    previous: Optional[tuple[int, float, float]] = None
+
+    for para in paragraphs:
+        if para.role != "Body":
+            continue
+        para_clean = paragraph_clean_roles(para, clean_role_by_block)
+        if para_clean & METADATA_FAMILY_ROLES:
+            continue
+        if para_clean & {"figure_caption", "table_caption", "reference_entry", "nuisance"}:
+            continue
+
+        text = clean_text_line(para.text)
+        if not text:
+            continue
+
+        x0, _, x1, _ = para_bbox_union(para)
+        page = int(para.page_span.get("start", 1))
+        bounds = bounds_by_page.get(page, [0.0, 0.0, max(x1, 1.0), 1.0])
+        page_width = max(1e-6, float(bounds[2]) - float(bounds[0]))
+        width_rel = (x1 - x0) / page_width
+        if width_rel >= 0.72:
+            continue
+
+        x_rel, _ = para_relative_position(para, bounds_by_page)
+        tokens = len(word_tokens(text))
+        token_total += tokens
+
+        if previous is not None and previous[0] == page:
+            previous_x_rel = previous[1]
+            crossed_column = (previous_x_rel < 0.5 <= x_rel) or (previous_x_rel >= 0.5 > x_rel)
+            if crossed_column:
+                column_crossovers += 1
+
+        previous = (page, x_rel, width_rel)
+
+    if token_total <= 0:
+        return 0.0
+    return (column_crossovers * 1000.0) / float(token_total)
+
+
+def compute_clean_document_metrics(
+    clean_document: str,
+    paragraphs: list[Paragraph],
+    annotated_blocks: list[dict[str, Any]],
+    doc_id: str,
+) -> dict[str, Any]:
+    main_body_lines, main_body_sections = parse_main_body_structure(clean_document)
+    heading_body_detach_count = sum(1 for _, lines in main_body_sections if not lines)
+    explicit_headings = [heading for heading, _ in main_body_sections if heading]
+    normalized_headings = [normalize_section_key(heading) for heading in explicit_headings if normalize_section_key(heading)]
+
+    duplicate_count = max(0, len(normalized_headings) - len(set(normalized_headings)))
+    duplicate_ratio = (duplicate_count / float(len(normalized_headings))) if normalized_headings else 0.0
+
+    clean_role_by_block = {
+        str(block.get("block_id", "")): str(block.get("clean_role", ""))
+        for block in annotated_blocks
+        if str(block.get("block_id", ""))
+    }
+    column_crossovers_per_1000_tokens = compute_column_crossovers_per_1000_tokens(paragraphs, clean_role_by_block)
+    references_like_blocks_exist = any(
+        str(block.get("clean_role", "")) == "reference_entry"
+        or is_reference_entry_text(str(block.get("text", "")))
+        for block in annotated_blocks
+    )
+    references_boundary_detected = "## References" in clean_document
+
+    hyphen_wrap_count = len(INLINE_HYPHEN_WRAP_RE.findall("\n".join(main_body_lines)))
+    affiliation_leak_count = sum(1 for line in main_body_lines if is_affiliation_address_line(line))
+    standalone_page_number_count = sum(1 for line in main_body_lines if PAGE_NUMBER_ONLY_LINE_RE.match(line) is not None)
+    check_for_updates_count = sum(1 for line in main_body_lines if CHECK_FOR_UPDATES_BANNER_RE.match(line) is not None)
+
+    section_boundary_unstable = (
+        len(main_body_sections) == 0
+        or (not references_boundary_detected and references_like_blocks_exist)
+        or duplicate_ratio > 0.2
+    )
+    ordering_confidence_low = column_crossovers_per_1000_tokens > 8.0 or heading_body_detach_count > 3
+
+    return {
+        "doc_id": doc_id,
+        "orphan_heading_count": heading_body_detach_count,
+        "standalone_page_number_count": standalone_page_number_count,
+        "check_for_updates_count": check_for_updates_count,
+        "affiliation_leak_count": affiliation_leak_count,
+        "ordering_confidence_low": ordering_confidence_low,
+        "section_boundary_unstable": section_boundary_unstable,
+        "hyphen_wrap_count": hyphen_wrap_count,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+    }
 
 
 def run_paragraphs(
@@ -3188,8 +3476,26 @@ def run_paragraphs(
             }
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    clean_document = render_clean_document(paragraphs, annotated_blocks, qa_dir=qa_dir, text_dir=text_dir)
+    clean_document, suppression_events = render_clean_document(
+        paragraphs,
+        annotated_blocks,
+        doc_id=run_dir.name,
+        qa_dir=qa_dir,
+        text_dir=text_dir,
+    )
     with open(text_dir / "clean_document.md", "w", encoding="utf-8") as f:
         f.write(clean_document)
+
+    write_jsonl(qa_dir / "clean_document_suppressions.jsonl", suppression_events)
+
+    metrics = compute_clean_document_metrics(
+        clean_document=clean_document,
+        paragraphs=paragraphs,
+        annotated_blocks=annotated_blocks,
+        doc_id=run_dir.name,
+    )
+    with open(qa_dir / "clean_document_metrics.json", "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+        f.write("\n")
 
     return len(paragraphs), len(blocks)

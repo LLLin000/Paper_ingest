@@ -37,6 +37,7 @@ import pymupdf
 from PIL import Image, ImageDraw, ImageFont
 
 from .manifest import Manifest
+from .layout_analyzer import run_figure_table_verification
 
 
 # Caption patterns
@@ -803,6 +804,38 @@ def load_render_config(run_dir: Path) -> dict[str, Any]:
     return manifest.get("render_config", {"dpi": 150, "scale": 2.0})
 
 
+def load_verified_figure_table_candidates(run_dir: Path) -> dict[str, dict[str, Any]]:
+    """Load verified figure/table candidates from layout analysis.
+    
+    Returns a dict mapping block_id to verification result.
+    Only returns candidates that were verified as actual figures or tables.
+    """
+    layout_path = run_dir / "text" / "layout_analysis.json"
+    if not layout_path.exists():
+        return {}
+    
+    verification = run_figure_table_verification(run_dir, layout_path)
+    if not verification.get("verified", False):
+        return {}
+    
+    results = verification.get("results", [])
+    verified_by_block_id: dict[str, dict[str, Any]] = {}
+    
+    for r in results:
+        verified_type = r.get("verified_type", "")
+        if verified_type in ("figure", "table"):
+            block_id = r.get("block_id", "")
+            if block_id:
+                verified_by_block_id[block_id] = {
+                    "type": verified_type,
+                    "confidence": r.get("confidence", 0.5),
+                    "caption_match": r.get("caption_match", False),
+                    "visual_confirmed": r.get("visual_confirmed", False),
+                }
+    
+    return verified_by_block_id
+
+
 from typing import Any, Optional, Sequence
 
 
@@ -958,6 +991,8 @@ def run_figures_tables(
     
     # Find caption paragraphs
     caption_paras = find_caption_paragraphs(paragraphs)
+    
+    verified_candidates = load_verified_figure_table_candidates(run_dir)
 
     # Load vision role labels to strengthen caption/header-footer decisions.
     blocks_by_page = load_blocks_norm(run_dir / "text" / "blocks_norm.jsonl")
@@ -1038,16 +1073,25 @@ def run_figures_tables(
             
             # Determine asset type from caption
             asset_type = "figure"
+            verification_boost = 0.0
             if caption_para:
                 text = caption_para.get("text", "")
+                para_id = caption_para.get("para_id", "")
                 if is_table_caption(text)[0]:
                     asset_type = "table"
+                if para_id and para_id.startswith("viscap_"):
+                    parts = para_id.split("_")
+                    if len(parts) >= 3:
+                        block_id = "_".join(parts[-2:])
+                        vc = verified_candidates.get(block_id, {})
+                        if vc:
+                            if vc.get("type") in ("figure", "table"):
+                                asset_type = vc["type"]
+                            verification_boost = vc.get("confidence", 0.0) * 0.2
             else:
-                # Use heuristics based on image dimensions
                 width = img_info.get("width", 0)
                 height = img_info.get("height", 0)
                 if height > 0 and width / height < 2:
-                    # Taller images are more likely figures
                     asset_type = "figure"
                 else:
                     asset_type = "table"
@@ -1116,9 +1160,9 @@ def run_figures_tables(
                 caption_id=caption_id,
                 source_para_id=caption_id,
                 image_path=image_path_str,
-                text_content=None,  # No OCR in baseline
-                summary_content=None,  # No LLM summary in baseline
-                confidence=0.6 if caption_para else 0.4,
+                text_content=None,
+                summary_content=None,
+                confidence=min(1.0, (0.6 if caption_para else 0.4) + verification_boost),
             )
             assets.append(asset)
     

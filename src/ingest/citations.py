@@ -50,7 +50,9 @@ PMID_PATTERN = re.compile(r"\b(PMID[:\s]*)?(\d{7,9})\b", re.IGNORECASE)
 INLINE_BRACKET_PATTERN = re.compile(r"\[(\d{1,3}(?:\s*[-,;]\s*\d{1,3})*)\]")
 INLINE_PAREN_PATTERN = re.compile(r"\((\d{1,3}(?:\s*[-,;]\s*\d{1,3})*)\)")
 REF_MARKER_PATTERN = re.compile(r"^\s*(?:\[(\d{1,3})\]|(\d{1,3})[\.)])")
-REF_SEGMENT_MARKER_PATTERN = re.compile(r"(?:^|\s)(?:\[(\d{1,3})\]|(\d{1,3})[\.)])\s+")
+REF_SEGMENT_MARKER_PATTERN = re.compile(r"(?:\[(\d{1,3})\]|(?:^|\s)(\d{1,3})[\.)])")
+SUB_REF_PATTERN = re.compile(r"(?:^|[\s;])([a-z]\)\s*)")
+INLINE_CITATION_PATTERN = re.compile(r"\[(\d{1,3}(?:\s*[-,;]\s*\d{1,3})*)\]")
 API_REFERENCE_FIELDS = (
     "title",
     "authors",
@@ -469,6 +471,27 @@ def build_reference_entries(reference_paras: dict[str, dict[str, Any]]) -> tuple
         key=lambda x: (x[1].get("page_span", {}).get("start", 0), x[0]),
     )
 
+    def split_by_sub_refs(text: str, marker_val: int, para_id: str, page: int):
+        sub_matches = list(SUB_REF_PATTERN.finditer(text))
+        if len(sub_matches) >= 2:
+            sub_entries = []
+            for i, match in enumerate(sub_matches):
+                sub_start = match.end()
+                sub_end = sub_matches[i + 1].start() if i + 1 < len(sub_matches) else len(text)
+                sub_text = text[sub_start:sub_end].strip().rstrip(';')
+                if sub_text:
+                    sub_key = normalize_reference_key(sub_text)
+                    sub_entry = ReferenceEntry(
+                        para_id=para_id,
+                        page=page,
+                        marker=marker_val,
+                        ref_key=sub_key,
+                        text=sub_text,
+                    )
+                    sub_entries.append(sub_entry)
+            return sub_entries
+        return None
+
     for para_id, para in ordered:
         text = str(para.get("text", "")).strip()
         if not text:
@@ -487,17 +510,28 @@ def build_reference_entries(reference_paras: dict[str, dict[str, Any]]) -> tuple
                 seg_text = text[seg_start:seg_end].strip()
                 if not seg_text:
                     continue
-                seg_key = normalize_reference_key(seg_text)
-                entry = ReferenceEntry(
-                    para_id=para_id,
-                    page=page,
-                    marker=marker_val,
-                    ref_key=seg_key,
-                    text=seg_text,
-                )
-                entries.append(entry)
-                if seg_key and marker_val not in marker_to_key:
-                    marker_to_key[marker_val] = seg_key
+                
+                sub_entries = split_by_sub_refs(seg_text, marker_val, para_id, page)
+                if sub_entries:
+                    for sub_entry in sub_entries:
+                        entries.append(sub_entry)
+                        if marker_val not in marker_to_key and sub_entry.ref_key:
+                            # sub_entry.ref_key is Optional[str] by typing, but guarded by truthiness
+                            # above; cast to str to satisfy static checks.
+                            marker_to_key[marker_val] = str(sub_entry.ref_key)
+                else:
+                    seg_key = normalize_reference_key(seg_text)
+                    entry = ReferenceEntry(
+                        para_id=para_id,
+                        page=page,
+                        marker=marker_val,
+                        ref_key=seg_key,
+                        text=seg_text,
+                    )
+                    entries.append(entry)
+                    if marker_val not in marker_to_key and seg_key:
+                        # seg_key may be Optional[str]; ensure we only insert str values
+                        marker_to_key[marker_val] = str(seg_key)
             continue
 
         marker = None
@@ -506,6 +540,19 @@ def build_reference_entries(reference_paras: dict[str, dict[str, Any]]) -> tuple
             marker_str = marker_match.group(1) or marker_match.group(2)
             if marker_str and marker_str.isdigit():
                 marker = int(marker_str)
+
+        if marker is not None and marker_match is not None:
+            # marker_match is present when marker is not None, but guard explicitly
+            # to satisfy static type checks before calling marker_match.end().
+            text_after_marker = text[marker_match.end():].strip()
+            sub_entries = split_by_sub_refs(text_after_marker, marker, para_id, page)
+            if sub_entries:
+                for sub_entry in sub_entries:
+                    entries.append(sub_entry)
+                    if marker not in marker_to_key and sub_entry.ref_key:
+                        # sub_entry.ref_key guarded by truthiness above; cast to str
+                        marker_to_key[marker] = str(sub_entry.ref_key)
+                continue
 
         ref_key = normalize_reference_key(text)
         entry = ReferenceEntry(
@@ -518,7 +565,8 @@ def build_reference_entries(reference_paras: dict[str, dict[str, Any]]) -> tuple
         entries.append(entry)
 
         if marker is not None and ref_key and marker not in marker_to_key:
-            marker_to_key[marker] = ref_key
+            # ref_key is Optional[str] but guarded by truthiness; cast to str
+            marker_to_key[marker] = str(ref_key)
 
     return entries, marker_to_key
 
@@ -595,9 +643,17 @@ def normalize_reference_key(text: str) -> Optional[str]:
         return ref_result[0]
 
     text_clean = re.sub(r"^\s*(?:\[\d+\]|\d+[\.)])\s*", "", text).strip()
+    if not text_clean:
+        text_clean = text.strip()
+    
     text_lower = text_clean.lower()
-    author_match = re.match(r'^([a-z]+)', text_lower)
-    year_match = re.search(r'(\d{4})', text_clean)
+    # Skip leading "a)" or similar markers
+    text_lower = re.sub(r'^[a-z]\)\s*', '', text_lower)
+    
+    year_match = re.search(r'\b(19|20)\d{2}\b', text_clean)
+    author_match = re.search(r'(?:^|[,\s])([a-z][a-z-]+)(?:\s*,|\s+[A-Z]\.)', text_lower)
+    if not author_match:
+        author_match = re.match(r'^([a-z][a-z-]+)', text_lower)
     
     if author_match and year_match:
         author = author_match.group(1)
@@ -605,7 +661,8 @@ def normalize_reference_key(text: str) -> Optional[str]:
         title_hash = hashlib.md5(text_clean.encode()).hexdigest()[:8]
         return f"bib:{author}_{year}_{title_hash}"
     
-    return None
+    title_hash = hashlib.md5(text_clean.encode()).hexdigest()[:8]
+    return f"bib:ref_{title_hash}"
 
 
 def map_citation_to_reference(
@@ -631,15 +688,35 @@ def map_citation_to_reference(
     
     # Strategy 1: Regex extraction from anchor text (DOI/PMID)
     if anchor_text:
-        ref_key = normalize_reference_key(anchor_text)
-        if ref_key:
-            conf = 0.92 if ref_key.startswith(("doi:", "pmid:")) else 0.62
+        # Prefer explicit DOI/PMID found in the anchor text
+        ext = extract_reference_key(anchor_text)
+        if ext:
             return CiteMap(
                 anchor_id=anchor_id,
-                mapped_ref_key=ref_key,
+                mapped_ref_key=ext[0],
                 strategy_used=STRATEGY_REGEX,
-                confidence=conf,
+                confidence=ext[2],
             )
+
+        # If the anchor_text is just a bracketed numeric marker like "[1]" or "(1)"
+        # we should not treat it as an inline bibliographic string. Let marker-based
+        # mapping handle it further down (so we can map to the reference paragraph
+        # and then prefer merged DOI records). Detect simple marker patterns and
+        # skip the generic normalize_reference_key path in that case.
+        if re.fullmatch(r"[\[\(]?\d+(?:\s*[-,;]\s*\d+)*[\]\)]?", anchor_text.strip()):
+            # fall-through to marker-based / internal mapping
+            pass
+        else:
+            # Fallback: try to normalize free-form inline anchor text to a key
+            ref_key = normalize_reference_key(anchor_text)
+            if ref_key:
+                conf = 0.92 if ref_key.startswith(("doi:", "pmid:")) else 0.62
+                return CiteMap(
+                    anchor_id=anchor_id,
+                    mapped_ref_key=ref_key,
+                    strategy_used=STRATEGY_REGEX,
+                    confidence=conf,
+                )
 
     # Strategy 2: Marker-based reference mapping ([12], [3-5])
     marker_text = anchor_text.strip() if anchor_text else ""
@@ -655,6 +732,15 @@ def map_citation_to_reference(
                     strategy_used=STRATEGY_INTERNAL_DEST,
                     confidence=0.86,
                 )
+        for marker in marker_values:
+            for entry in reference_entries:
+                if entry.marker == marker:
+                    return CiteMap(
+                        anchor_id=anchor_id,
+                        mapped_ref_key=entry.ref_key,
+                        strategy_used=STRATEGY_INTERNAL_DEST,
+                        confidence=0.82,
+                    )
         return CiteMap(
             anchor_id=anchor_id,
             mapped_ref_key=None,
@@ -1085,6 +1171,7 @@ def run_citations(
 
     # If a merged refs artifact already exists on disk (from earlier stage/run), prefer it
     merged_refs_lookup: dict[str, dict[str, Any]] = {}
+    author_year_to_doi: dict[str, str] = {}
     existing_merged = _load_jsonl(merged_path)
     use_disk_merged = False
     if existing_merged:
@@ -1097,6 +1184,16 @@ def run_citations(
             title_norm = _normalized_title_key(r.get("title") or r.get("raw_text") or "")
             year = r.get("year") or ""
             merged_refs_lookup[f"title:{title_norm}|year:{year}"] = r
+            # Also build author+year index for matching PDF references
+            authors = r.get("authors", [])
+            if authors and year:
+                first_author_surname = authors[0].lower().split()[-1] if authors[0] else ""
+                if first_author_surname:
+                    key = f"author:{first_author_surname}|year:{year}"
+                    if key not in author_year_to_doi:
+                        doi_val = r.get("doi")
+                        if isinstance(doi_val, str) and doi_val.strip():
+                            author_year_to_doi[key] = doi_val
     else:
         for k in order:
             rec = merged_map[k]
@@ -1107,6 +1204,16 @@ def run_citations(
             title_norm = _normalized_title_key(rec.get("title") or rec.get("raw_text") or "")
             year = rec.get("year") or ""
             merged_refs_lookup[f"title:{title_norm}|year:{year}"] = rec
+            # Also build author+year index
+            authors = rec.get("authors", [])
+            if authors and year:
+                first_author_surname = authors[0].lower().split()[-1] if authors[0] else ""
+                if first_author_surname:
+                    key = f"author:{first_author_surname}|year:{year}"
+                    if key not in author_year_to_doi:
+                        doi_val = rec.get("doi")
+                        if isinstance(doi_val, str) and doi_val.strip():
+                            author_year_to_doi[key] = doi_val
 
     # Map citations preferring merged references when possible
     cite_maps: list[CiteMap] = []
@@ -1142,7 +1249,6 @@ def run_citations(
 
             # 3) If candidate mapped_key refers to a PDF key, try to find a merged match by title+year
             if mapped_key:
-                # locate the reference entry for this ref_key
                 match_entry = None
                 for entry in reference_entries:
                     if entry.ref_key == mapped_key:
@@ -1150,14 +1256,12 @@ def run_citations(
                         break
                 if match_entry:
                     meta = parse_reference_metadata(match_entry.text)
-                    # remove year tokens from title before normalizing to improve matching
                     raw_title = meta.get("title") or meta.get("raw_text") or ""
                     title_no_year = re.sub(r"\b(19|20)\d{2}\b", "", raw_title)
                     title_norm = _normalized_title_key(title_no_year)
                     year = meta.get("year") or ""
                     lookup_key = f"title:{title_norm}|year:{year}"
                     if lookup_key in merged_refs_lookup:
-                        # map to merged key (prefer DOI/PMID if available)
                         merged_rec = merged_refs_lookup[lookup_key]
                         new_key = None
                         if merged_rec.get("doi"):
@@ -1169,6 +1273,64 @@ def run_citations(
                         new_conf = max(candidate.confidence, float(merged_rec.get("confidence") or 0.0))
                         chosen = CiteMap(anchor_id=anchor.anchor_id, mapped_ref_key=new_key, strategy_used=candidate.strategy_used, confidence=round(new_conf, 3))
                         cite_maps.append(chosen)
+                        continue
+
+                    # Try author+year matching as fallback
+                    if year and author_year_to_doi:
+                        raw_stripped = re.sub(r'^[a-z]\)\s*', '', raw_title.lower())
+                        first_author_match = re.search(r'(?:^|[,\s])([a-z][a-z-]+)(?:\s*,|\s+[A-Z]\.)', raw_stripped)
+                        if not first_author_match:
+                            first_author_match = re.match(r'^([a-z][a-z-]+)', raw_stripped)
+                        if first_author_match:
+                            first_author_surname = first_author_match.group(1).lower()
+                            auth_key = f"author:{first_author_surname}|year:{year}"
+                            if auth_key in author_year_to_doi:
+                                doi = author_year_to_doi[auth_key]
+                                new_key = f"doi:{doi}"
+                                chosen = CiteMap(anchor_id=anchor.anchor_id, mapped_ref_key=new_key, strategy_used="author_year_match", confidence=0.75)
+                                cite_maps.append(chosen)
+                                continue
+
+            # 4) If anchor is an inline numeric marker (e.g. "[1]") try to resolve via
+            # the PDF marker -> reference entry mapping and then prefer a merged DOI
+            # when title+year matches are present on disk. This conservatively prefers
+            # merged API-backed records without changing other mapping heuristics.
+            if anchor.anchor_text and re.fullmatch(r"[\[\(]?\d+(?:\s*[-,;]\s*\d+)*[\]\)]?", anchor.anchor_text.strip()):
+                marker_payload = anchor.anchor_text.strip("[]() ")
+                marker_values = expand_marker_text(marker_payload) if marker_payload else []
+                if marker_values:
+                    found = False
+                    for mv in marker_values:
+                        pdf_key = marker_to_key.get(mv)
+                        if not pdf_key:
+                            continue
+                        match_entry = None
+                        for entry in reference_entries:
+                            if entry.ref_key == pdf_key:
+                                match_entry = entry
+                                break
+                        if not match_entry:
+                            continue
+                        meta = parse_reference_metadata(match_entry.text)
+                        title_no_year = re.sub(r"\b(19|20)\d{2}\b", "", meta.get("title") or meta.get("raw_text") or "")
+                        title_norm = _normalized_title_key(title_no_year)
+                        year = meta.get("year") or ""
+                        lookup_key = f"title:{title_norm}|year:{year}"
+                        if lookup_key in merged_refs_lookup:
+                            merged_rec = merged_refs_lookup[lookup_key]
+                            new_key = None
+                            if merged_rec.get("doi"):
+                                new_key = f"doi:{merged_rec.get('doi')}"
+                            elif merged_rec.get("pmid"):
+                                new_key = f"pmid:{merged_rec.get('pmid')}"
+                            else:
+                                new_key = lookup_key
+                            new_conf = max(0.85, float(merged_rec.get("confidence") or 0.0))
+                            chosen = CiteMap(anchor_id=anchor.anchor_id, mapped_ref_key=new_key, strategy_used=STRATEGY_INTERNAL_DEST, confidence=round(new_conf, 3))
+                            cite_maps.append(chosen)
+                            found = True
+                            break
+                    if found:
                         continue
 
         # Default: keep candidate

@@ -20,7 +20,7 @@ from .figures_tables import run_figures_tables
 from .reading import run_reading
 from .render import run_render
 from .verify import verify as run_verify
-from .orchestration import execute_levelized_dag
+from .orchestration import execute_levelized_dag, DEFAULT_MAX_WORKERS
 
 app = typer.Typer(
     name="ingest_pdf",
@@ -82,6 +82,11 @@ def run(
         help="[Testing] Inject missing font stats in extractor.",
         hidden=True,
     ),
+    max_workers: int = typer.Option(
+        DEFAULT_MAX_WORKERS,
+        "--max-workers",
+        help="Maximum parallel workers for pipeline stages.",
+    ),
 ) -> None:
     typer.echo(f"PDF Ingest CLI v0.1.0")
     typer.echo(f"Stage: {stage.value}")
@@ -131,7 +136,7 @@ def run(
         return _run_render(manifest)
     
     if stage == Stage.FULL:
-        return _run_full(manifest, inject_vision_malformed_json, inject_reading_malformed_json, inject_missing_font_stats)
+        return _run_full(manifest, inject_vision_malformed_json, inject_reading_malformed_json, inject_missing_font_stats, max_workers)
     
     if stage == Stage.VERIFY:
         return _run_verify(manifest.doc_id)
@@ -308,10 +313,11 @@ def _run_full(
     inject_vision_malformed_json: bool,
     inject_reading_malformed_json: bool,
     inject_missing_font_stats: bool,
+    max_workers: int = DEFAULT_MAX_WORKERS,
 ) -> None:
     """Run full pipeline with DAG-like orchestration and fixed output order."""
     typer.echo("=" * 50)
-    typer.echo("Running FULL pipeline")
+    typer.echo(f"Running FULL pipeline (max_workers={max_workers})")
     typer.echo("=" * 50)
     
     run_dir = RUN_ROOT / manifest.doc_id
@@ -354,7 +360,7 @@ def _run_full(
         ),
     }
 
-    results = execute_levelized_dag(stage_jobs)
+    results = execute_levelized_dag(stage_jobs, max_workers=max_workers)
 
     typer.echo("\n[1/8] Extractor stage...")
     total_pages, total_blocks = results["extractor"]

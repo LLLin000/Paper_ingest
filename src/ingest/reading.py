@@ -15,6 +15,7 @@ import os
 import re
 import urllib.request
 import urllib.error
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -87,6 +88,7 @@ READING_STRATEGIES = frozenset({
 })
 
 FACTS_GLOBAL_BATCH_SIZE = 80
+MAX_PARALLEL_LLM_CALLS = int(os.environ.get("READING_MAX_PARALLEL_LLM_CALLS", "4"))
 MAX_LOCAL_FACT_CANDIDATES = 160
 NON_NARRATIVE_CLEAN_ROLES = frozenset({"nuisance", "reference_entry", "figure_caption", "table_caption"})
 NARRATIVE_COMPATIBLE_CLEAN_ROLES = frozenset({"body_text", "section_heading", "main_title"})
@@ -1621,60 +1623,141 @@ def run_reading(
     global_batch_size = FACTS_GLOBAL_BATCH_SIZE
     total_candidates = len(local_candidates)
     total_batches = (total_candidates + global_batch_size - 1) // global_batch_size if total_candidates else 0
-    for start_idx in range(0, total_candidates, global_batch_size):
-        batch_no = start_idx // global_batch_size + 1
-        batch_candidates = local_candidates[start_idx:start_idx + global_batch_size]
-        facts_prompt, para_ids = build_global_facts_prompt(local_candidates, start_idx, global_batch_size)
-        if inject_malformed_json and start_idx == 0:
-            raw_facts = "{ malformed json !!! "
-            facts_meta: dict[str, Any] = {
-                "model": llm_model,
-                "endpoint": SILICONFLOW_ENDPOINT,
-                "success": False,
-                "error_type": "injected_malformed_json",
-                "http_status": None,
-                "prompt_chars": len(facts_prompt),
-                "response_chars": len(raw_facts),
-                "response_preview": raw_facts[:300],
-            }
-        else:
-            raw_facts, facts_meta = call_siliconflow(facts_prompt)
-        batch_facts_guard = guard_model_output(
-            raw_facts,
-            lambda payload: parse_facts(payload, para_ids[0] if para_ids else ""),
-        )
-        batch_facts = batch_facts_guard.parsed or []
-        print(
-            f"[reading] facts-global batch={batch_no}/{total_batches} parse_success={batch_facts_guard.parse_success} "
-            f"error={facts_meta.get('error_type', 'unknown')} candidates={len(batch_candidates)}",
-            flush=True,
-        )
-        append_llm_call_event(qa_dir, LLMCallEvent(
-            stage="reading",
-            step=f"facts_global_{start_idx:05d}",
-            model=str(facts_meta.get("model", llm_model)),
-            endpoint=str(facts_meta.get("endpoint", SILICONFLOW_ENDPOINT)),
-            success=bool(facts_meta.get("success", False)),
-            error_type=str(facts_meta.get("error_type", "unknown")),
-            http_status=facts_meta.get("http_status", None),
-            prompt_chars=int(facts_meta.get("prompt_chars", len(facts_prompt))),
-            response_chars=int(facts_meta.get("response_chars", len(raw_facts))),
-            parse_success=batch_facts_guard.parse_success,
-            timestamp=datetime.now(timezone.utc).isoformat(),
-            response_preview=str(facts_meta.get("response_preview", "")),
-        ))
-        if batch_facts_guard.should_fallback or not batch_facts:
-            fault_events.append(
-                FaultEvent(
-                    stage="reading",
-                    fault=f"facts-{batch_facts_guard.failure_reason.replace('_', '-')}",
-                    retry_attempts=0,
-                    fallback_used=True,
-                    status="degraded",
-                )
+    
+    if total_batches > 1 and MAX_PARALLEL_LLM_CALLS > 1:
+        batch_results: dict[int, list[Fact]] = {}
+        
+        def process_batch(start_idx: int) -> tuple[int, list[Fact], dict[str, Any], bool, list[FaultEvent]]:
+            batch_no = start_idx // global_batch_size + 1
+            batch_candidates = local_candidates[start_idx:start_idx + global_batch_size]
+            facts_prompt, para_ids = build_global_facts_prompt(local_candidates, start_idx, global_batch_size)
+            
+            if inject_malformed_json and start_idx == 0:
+                raw_facts = "{ malformed json !!! "
+                facts_meta: dict[str, Any] = {
+                    "model": llm_model,
+                    "endpoint": SILICONFLOW_ENDPOINT,
+                    "success": False,
+                    "error_type": "injected_malformed_json",
+                    "http_status": None,
+                    "prompt_chars": len(facts_prompt),
+                    "response_chars": len(raw_facts),
+                    "response_preview": raw_facts[:300],
+                }
+            else:
+                raw_facts, facts_meta = call_siliconflow(facts_prompt)
+            
+            batch_facts_guard = guard_model_output(
+                raw_facts,
+                lambda payload: parse_facts(payload, para_ids[0] if para_ids else ""),
             )
-            batch_facts.extend(fallback_facts_from_candidates(batch_candidates, start_idx))
-        facts.extend(batch_facts)
+            batch_facts = batch_facts_guard.parsed or []
+            
+            local_faults: list[FaultEvent] = []
+            if batch_facts_guard.should_fallback or not batch_facts:
+                local_faults.append(
+                    FaultEvent(
+                        stage="reading",
+                        fault=f"facts-{batch_facts_guard.failure_reason.replace('_', '-')}",
+                        retry_attempts=0,
+                        fallback_used=True,
+                        status="degraded",
+                    )
+                )
+                batch_facts = list(batch_facts) + fallback_facts_from_candidates(batch_candidates, start_idx)
+            
+            return start_idx, batch_facts, facts_meta, batch_facts_guard.parse_success, local_faults
+        
+        start_indices = list(range(0, total_candidates, global_batch_size))
+        max_workers = min(MAX_PARALLEL_LLM_CALLS, len(start_indices))
+        
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(process_batch, idx): idx for idx in start_indices}
+            
+            for fut in as_completed(futures):
+                start_idx, batch_facts, facts_meta, parse_success, local_faults = fut.result()
+                batch_no = start_idx // global_batch_size + 1
+                batch_results[start_idx] = batch_facts
+                fault_events.extend(local_faults)
+                
+                print(
+                    f"[reading] facts-global batch={batch_no}/{total_batches} parse_success={parse_success} "
+                    f"error={facts_meta.get('error_type', 'unknown')} candidates={len(local_candidates[start_idx:start_idx + global_batch_size])}",
+                    flush=True,
+                )
+                
+                append_llm_call_event(qa_dir, LLMCallEvent(
+                    stage="reading",
+                    step=f"facts_global_{start_idx:05d}",
+                    model=str(facts_meta.get("model", llm_model)),
+                    endpoint=str(facts_meta.get("endpoint", SILICONFLOW_ENDPOINT)),
+                    success=bool(facts_meta.get("success", False)),
+                    error_type=str(facts_meta.get("error_type", "unknown")),
+                    http_status=facts_meta.get("http_status", None),
+                    prompt_chars=int(facts_meta.get("prompt_chars", 0)),
+                    response_chars=int(facts_meta.get("response_chars", 0)),
+                    parse_success=parse_success,
+                    timestamp=datetime.now(timezone.utc).isoformat(),
+                    response_preview=str(facts_meta.get("response_preview", "")),
+                ))
+        
+        for start_idx in start_indices:
+            facts.extend(batch_results.get(start_idx, []))
+    else:
+        for start_idx in range(0, total_candidates, global_batch_size):
+            batch_no = start_idx // global_batch_size + 1
+            batch_candidates = local_candidates[start_idx:start_idx + global_batch_size]
+            facts_prompt, para_ids = build_global_facts_prompt(local_candidates, start_idx, global_batch_size)
+            if inject_malformed_json and start_idx == 0:
+                raw_facts = "{ malformed json !!! "
+                facts_meta: dict[str, Any] = {
+                    "model": llm_model,
+                    "endpoint": SILICONFLOW_ENDPOINT,
+                    "success": False,
+                    "error_type": "injected_malformed_json",
+                    "http_status": None,
+                    "prompt_chars": len(facts_prompt),
+                    "response_chars": len(raw_facts),
+                    "response_preview": raw_facts[:300],
+                }
+            else:
+                raw_facts, facts_meta = call_siliconflow(facts_prompt)
+            batch_facts_guard = guard_model_output(
+                raw_facts,
+                lambda payload: parse_facts(payload, para_ids[0] if para_ids else ""),
+            )
+            batch_facts = batch_facts_guard.parsed or []
+            print(
+                f"[reading] facts-global batch={batch_no}/{total_batches} parse_success={batch_facts_guard.parse_success} "
+                f"error={facts_meta.get('error_type', 'unknown')} candidates={len(batch_candidates)}",
+                flush=True,
+            )
+            append_llm_call_event(qa_dir, LLMCallEvent(
+                stage="reading",
+                step=f"facts_global_{start_idx:05d}",
+                model=str(facts_meta.get("model", llm_model)),
+                endpoint=str(facts_meta.get("endpoint", SILICONFLOW_ENDPOINT)),
+                success=bool(facts_meta.get("success", False)),
+                error_type=str(facts_meta.get("error_type", "unknown")),
+                http_status=facts_meta.get("http_status", None),
+                prompt_chars=int(facts_meta.get("prompt_chars", len(facts_prompt))),
+                response_chars=int(facts_meta.get("response_chars", len(raw_facts))),
+                parse_success=batch_facts_guard.parse_success,
+                timestamp=datetime.now(timezone.utc).isoformat(),
+                response_preview=str(facts_meta.get("response_preview", "")),
+            ))
+            if batch_facts_guard.should_fallback or not batch_facts:
+                fault_events.append(
+                    FaultEvent(
+                        stage="reading",
+                        fault=f"facts-{batch_facts_guard.failure_reason.replace('_', '-')}",
+                        retry_attempts=0,
+                        fallback_used=True,
+                        status="degraded",
+                    )
+                )
+                batch_facts.extend(fallback_facts_from_candidates(batch_candidates, start_idx))
+            facts.extend(batch_facts)
     if not facts:
         if local_candidates:
             facts = fallback_facts_from_candidates(local_candidates, 0)

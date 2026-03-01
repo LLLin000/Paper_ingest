@@ -1607,8 +1607,10 @@ def looks_like_table_noise(text: str) -> bool:
         return True
 
     # Advantages Disadvantages column header pair (very strong table indicator)
+    # Only filter if content is short (likely a table header/row), not long paragraphs
     if "advantages" in low and "disadvantages" in low:
-        return True
+        if len(clean) < 100:
+            return True
 
     # Citation-only bracket line (reference numbers only in brackets) - check early
     # Pattern: [ number ], [ num, num, ... ], possibly with spaces

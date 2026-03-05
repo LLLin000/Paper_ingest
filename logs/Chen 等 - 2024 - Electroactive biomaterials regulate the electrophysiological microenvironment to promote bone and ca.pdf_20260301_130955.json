@@ -1,0 +1,154 @@
+[
+  {
+    "total_page_number": 42
+  },
+  {
+    "total_token": 70430
+  },
+  {
+    "toc_content": null,
+    "toc_page_list": [],
+    "page_index_given_in_toc": "no"
+  },
+  {
+    "message": "len(group_texts): 5"
+  },
+  {
+    "message": "generate_toc: [{'structure': '1', 'title': 'REVIEW Electroactive Biomaterials Regulate the Electrophysiological Microenvironment to Promote Bone and Cartilage Tissue Regeneration', 'physical_index': '<physical_index_1>'}, {'structure': '1.1', 'title': 'Introduction', 'physical_index': '<physical_index_1>'}, {'structure': '2', 'title': 'Electrical Properties of Bone and Articular Cartilage Tissue', 'physical_index': '<physical_index_2>'}, {'structure': '2.1', 'title': 'Endogenous and Exogenous Electric Fields', 'physical_index': '<physical_index_2>'}, {'structure': '2.2', 'title': 'Bioelectricity in Bone', 'physical_index': '<physical_index_3>'}, {'structure': '2.3', 'title': 'Bioelectricity in Articular Cartilage', 'physical_index': '<physical_index_4>'}, {'structure': '3', 'title': 'Cell Fate Modulated by Electrical Stimulation', 'physical_index': '<physical_index_5>'}, {'structure': '3.1', 'title': 'ESEnhances Cell Proliferation and Metabolic Activity', 'physical_index': '<physical_index_5>'}, {'structure': '3.2', 'title': 'ESInduces Cell Condensation and Oriented Alignment', 'physical_index': '<physical_index_6>'}, {'structure': '3.3', 'title': 'ESPromotes Cell Migration', 'physical_index': '<physical_index_6>'}, {'structure': '3.4', 'title': 'ESEnhances Cell Adhesion', 'physical_index': '<physical_index_7>'}, {'structure': '3.5', 'title': 'ESModulates the Secretion of Growth Factors', 'physical_index': '<physical_index_7>'}, {'structure': '3.6', 'title': 'ESModulates the Extracellular Microenvironment', 'physical_index': '<physical_index_8>'}, {'structure': '4', 'title': 'Conductive Biomaterials Designed for Bone and Articular Cartilage', 'physical_index': '<physical_index_9>'}, {'structure': '4.1', 'title': 'Carbon-Based Nanomaterials', 'physical_index': '<physical_index_10>'}, {'structure': '4.2', 'title': 'Conductive Polymers', 'physical_index': '<physical_index_11>'}, {'structure': '4.3', 'title': 'Metallic Conductive Materials', 'physical_index': '<physical_index_12>'}, {'structure': '5', 'title': 'Piezoelectric Biomaterials Designed for Bone and Articular Cartilage', 'physical_index': '<physical_index_13>'}, {'structure': '5.1', 'title': 'Piezopotential in Piezoelectric Biomaterials', 'physical_index': '<physical_index_13>'}, {'structure': '5.2', 'title': 'Pathways for Generating Piezopotential in Piezoelectric Biomaterials', 'physical_index': '<physical_index_14>'}, {'structure': '5.3', 'title': 'Construction and Characteristics of Piezoelectric Biomaterials', 'physical_index': '<physical_index_15>'}, {'structure': '5.3.1', 'title': 'Inorganic Piezoelectric Materials', 'physical_index': '<physical_index_15>'}, {'structure': '5.3.2', 'title': 'Organic Piezoelectric Materials', 'physical_index': '<physical_index_17>'}, {'structure': '5.3.3', 'title': 'Piezocomposites', 'physical_index': '<physical_index_18>'}, {'structure': '6', 'title': 'Electrically Responsive Biomaterials', 'physical_index': '<physical_index_19>'}, {'structure': '7', 'title': 'Application of Electroactive Biomaterials in Bone Tissue Regeneration', 'physical_index': '<physical_index_20>'}, {'structure': '7.1', 'title': 'Osteogenic Differentiation', 'physical_index': '<physical_index_20>'}, {'structure': '7.2', 'title': 'Vascularization', 'physical_index': '<physical_index_22>'}, {'structure': '7.3', 'title': 'Inhibition of Osteoclasts', 'physical_index': '<physical_index_23>'}, {'structure': '7.4', 'title': 'Immunomodulation', 'physical_index': '<physical_index_24>'}, {'structure': '7.5', 'title': 'Anti-Bacteria', 'physical_index': '<physical_index_25>'}, {'structure': '8', 'title': 'Application of Electroactive Biomaterials in Cartilage Regeneration', 'physical_index': '<physical_index_26>'}, {'structure': '8.1', 'title': 'Chondrogenic Differentiation', 'physical_index': '<physical_index_27>'}, {'structure': '8.2', 'title': 'Chondrocyte Proliferation', 'physical_index': '<physical_index_28>'}, {'structure': '8.3', 'title': 'ECM Formation', 'physical_index': '<physical_index_30>'}, {'structure': '9', 'title': 'Conclusions and Outlook', 'physical_index': '<physical_index_32>'}, {'structure': '8.4', 'title': 'Anti-Inflammatory', 'physical_index': '<physical_index_34>'}, {'structure': '8.5', 'title': 'Immunomodulation', 'physical_index': '<physical_index_35>'}, {'structure': '8.6', 'title': 'Anti-Bacteria', 'physical_index': '<physical_index_36>'}, {'structure': '8.7', 'title': 'Promotion of Angiogenesis', 'physical_index': '<physical_index_37>'}, {'structure': '8.8', 'title': 'Enhancement of Tissue Integration', 'physical_index': '<physical_index_38>'}, {'structure': '8.9', 'title': 'Enhancement of Tissue Integration', 'physical_index': '<physical_index_38>'}, {'structure': '9', 'title': 'Conclusions and Outlook', 'physical_index': '<physical_index_39>'}, {'structure': '9.1', 'title': 'Author Contributions', 'physical_index': '<physical_index_40>'}, {'structure': '9.2', 'title': 'Conflicts of Interest', 'physical_index': '<physical_index_41>'}, {'structure': '9.3', 'title': 'Acknowledgements', 'physical_index': '<physical_index_42>'}]"
+  },
+  {
+    "message": "convert_physical_index_to_int: [{'structure': '1', 'title': 'REVIEW Electroactive Biomaterials Regulate the Electrophysiological Microenvironment to Promote Bone and Cartilage Tissue Regeneration', 'physical_index': 1}, {'structure': '1.1', 'title': 'Introduction', 'physical_index': 1}, {'structure': '2', 'title': 'Electrical Properties of Bone and Articular Cartilage Tissue', 'physical_index': 2}, {'structure': '2.1', 'title': 'Endogenous and Exogenous Electric Fields', 'physical_index': 2}, {'structure': '2.2', 'title': 'Bioelectricity in Bone', 'physical_index': 3}, {'structure': '2.3', 'title': 'Bioelectricity in Articular Cartilage', 'physical_index': 4}, {'structure': '3', 'title': 'Cell Fate Modulated by Electrical Stimulation', 'physical_index': 5}, {'structure': '3.1', 'title': 'ESEnhances Cell Proliferation and Metabolic Activity', 'physical_index': 5}, {'structure': '3.2', 'title': 'ESInduces Cell Condensation and Oriented Alignment', 'physical_index': 6}, {'structure': '3.3', 'title': 'ESPromotes Cell Migration', 'physical_index': 6}, {'structure': '3.4', 'title': 'ESEnhances Cell Adhesion', 'physical_index': 7}, {'structure': '3.5', 'title': 'ESModulates the Secretion of Growth Factors', 'physical_index': 7}, {'structure': '3.6', 'title': 'ESModulates the Extracellular Microenvironment', 'physical_index': 8}, {'structure': '4', 'title': 'Conductive Biomaterials Designed for Bone and Articular Cartilage', 'physical_index': 9}, {'structure': '4.1', 'title': 'Carbon-Based Nanomaterials', 'physical_index': 10}, {'structure': '4.2', 'title': 'Conductive Polymers', 'physical_index': 11}, {'structure': '4.3', 'title': 'Metallic Conductive Materials', 'physical_index': 12}, {'structure': '5', 'title': 'Piezoelectric Biomaterials Designed for Bone and Articular Cartilage', 'physical_index': 13}, {'structure': '5.1', 'title': 'Piezopotential in Piezoelectric Biomaterials', 'physical_index': 13}, {'structure': '5.2', 'title': 'Pathways for Generating Piezopotential in Piezoelectric Biomaterials', 'physical_index': 14}, {'structure': '5.3', 'title': 'Construction and Characteristics of Piezoelectric Biomaterials', 'physical_index': 15}, {'structure': '5.3.1', 'title': 'Inorganic Piezoelectric Materials', 'physical_index': 15}, {'structure': '5.3.2', 'title': 'Organic Piezoelectric Materials', 'physical_index': 17}, {'structure': '5.3.3', 'title': 'Piezocomposites', 'physical_index': 18}, {'structure': '6', 'title': 'Electrically Responsive Biomaterials', 'physical_index': 19}, {'structure': '7', 'title': 'Application of Electroactive Biomaterials in Bone Tissue Regeneration', 'physical_index': 20}, {'structure': '7.1', 'title': 'Osteogenic Differentiation', 'physical_index': 20}, {'structure': '7.2', 'title': 'Vascularization', 'physical_index': 22}, {'structure': '7.3', 'title': 'Inhibition of Osteoclasts', 'physical_index': 23}, {'structure': '7.4', 'title': 'Immunomodulation', 'physical_index': 24}, {'structure': '7.5', 'title': 'Anti-Bacteria', 'physical_index': 25}, {'structure': '8', 'title': 'Application of Electroactive Biomaterials in Cartilage Regeneration', 'physical_index': 26}, {'structure': '8.1', 'title': 'Chondrogenic Differentiation', 'physical_index': 27}, {'structure': '8.2', 'title': 'Chondrocyte Proliferation', 'physical_index': 28}, {'structure': '8.3', 'title': 'ECM Formation', 'physical_index': 30}, {'structure': '9', 'title': 'Conclusions and Outlook', 'physical_index': 32}, {'structure': '8.4', 'title': 'Anti-Inflammatory', 'physical_index': 34}, {'structure': '8.5', 'title': 'Immunomodulation', 'physical_index': 35}, {'structure': '8.6', 'title': 'Anti-Bacteria', 'physical_index': 36}, {'structure': '8.7', 'title': 'Promotion of Angiogenesis', 'physical_index': 37}, {'structure': '8.8', 'title': 'Enhancement of Tissue Integration', 'physical_index': 38}, {'structure': '8.9', 'title': 'Enhancement of Tissue Integration', 'physical_index': 38}, {'structure': '9', 'title': 'Conclusions and Outlook', 'physical_index': 39}, {'structure': '9.1', 'title': 'Author Contributions', 'physical_index': 40}, {'structure': '9.2', 'title': 'Conflicts of Interest', 'physical_index': 41}, {'structure': '9.3', 'title': 'Acknowledgements', 'physical_index': 42}]"
+  },
+  {
+    "mode": "process_toc_with_page_numbers",
+    "accuracy": 0.5652173913043478,
+    "incorrect_results": [
+      {
+        "list_index": 6,
+        "answer": "no",
+        "title": "Cell Fate Modulated by Electrical Stimulation",
+        "page_number": 5
+      },
+      {
+        "list_index": 7,
+        "answer": "no",
+        "title": "ESEnhances Cell Proliferation and Metabolic Activity",
+        "page_number": 5
+      },
+      {
+        "list_index": 8,
+        "answer": "no",
+        "title": "ESInduces Cell Condensation and Oriented Alignment",
+        "page_number": 6
+      },
+      {
+        "list_index": 9,
+        "answer": "no",
+        "title": "ESPromotes Cell Migration",
+        "page_number": 6
+      },
+      {
+        "list_index": 10,
+        "answer": "no",
+        "title": "ESEnhances Cell Adhesion",
+        "page_number": 7
+      },
+      {
+        "list_index": 11,
+        "answer": "no",
+        "title": "ESModulates the Secretion of Growth Factors",
+        "page_number": 7
+      },
+      {
+        "list_index": 12,
+        "answer": "no",
+        "title": "ESModulates the Extracellular Microenvironment",
+        "page_number": 8
+      },
+      {
+        "list_index": 22,
+        "answer": "no",
+        "title": "Organic Piezoelectric Materials",
+        "page_number": 17
+      },
+      {
+        "list_index": 23,
+        "answer": "no",
+        "title": "Piezocomposites",
+        "page_number": 18
+      },
+      {
+        "list_index": 31,
+        "answer": "no",
+        "title": "Application of Electroactive Biomaterials in Cartilage Regeneration",
+        "page_number": 26
+      },
+      {
+        "list_index": 36,
+        "answer": "no",
+        "title": "Anti-Inflammatory",
+        "page_number": 34
+      },
+      {
+        "list_index": 37,
+        "answer": "no",
+        "title": "Immunomodulation",
+        "page_number": 35
+      },
+      {
+        "list_index": 38,
+        "answer": "no",
+        "title": "Anti-Bacteria",
+        "page_number": 36
+      },
+      {
+        "list_index": 39,
+        "answer": "no",
+        "title": "Promotion of Angiogenesis",
+        "page_number": 37
+      },
+      {
+        "list_index": 40,
+        "answer": "no",
+        "title": "Enhancement of Tissue Integration",
+        "page_number": 38
+      },
+      {
+        "list_index": 41,
+        "answer": "no",
+        "title": "Enhancement of Tissue Integration",
+        "page_number": 38
+      },
+      {
+        "list_index": 42,
+        "answer": "no",
+        "title": "Conclusions and Outlook",
+        "page_number": 39
+      },
+      {
+        "list_index": 43,
+        "answer": "no",
+        "title": "Author Contributions",
+        "page_number": 40
+      },
+      {
+        "list_index": 44,
+        "answer": "no",
+        "title": "Conflicts of Interest",
+        "page_number": 41
+      },
+      {
+        "list_index": 45,
+        "answer": "no",
+        "title": "Acknowledgements",
+        "page_number": 42
+      }
+    ]
+  },
+  {
+    "message": "incorrect_results_and_range_logs: [{'list_index': 6, 'title': 'Cell Fate Modulated by Electrical Stimulation', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 7, 'title': 'ESEnhances Cell Proliferation and Metabolic Activity', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 8, 'title': 'ESInduces Cell Condensation and Oriented Alignment', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 9, 'title': 'ESPromotes Cell Migration', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 10, 'title': 'ESEnhances Cell Adhesion', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 11, 'title': 'ESModulates the Secretion of Growth Factors', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 12, 'title': 'ESModulates the Extracellular Microenvironment', 'prev_correct': 4, 'next_correct': 9}, {'list_index': 22, 'title': 'Organic Piezoelectric Materials', 'prev_correct': 15, 'next_correct': 19}, {'list_index': 23, 'title': 'Piezocomposites', 'prev_correct': 15, 'next_correct': 19}, {'list_index': 31, 'title': 'Application of Electroactive Biomaterials in Cartilage Regeneration', 'prev_correct': 25, 'next_correct': 27}, {'list_index': 36, 'title': 'Anti-Inflammatory', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 37, 'title': 'Immunomodulation', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 38, 'title': 'Anti-Bacteria', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 39, 'title': 'Promotion of Angiogenesis', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 40, 'title': 'Enhancement of Tissue Integration', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 41, 'title': 'Enhancement of Tissue Integration', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 42, 'title': 'Conclusions and Outlook', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 43, 'title': 'Author Contributions', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 44, 'title': 'Conflicts of Interest', 'prev_correct': 32, 'next_correct': 42}, {'list_index': 45, 'title': 'Acknowledgements', 'prev_correct': 32, 'next_correct': 42}]"
+  },
+  {
+    "message": "invalid_results: [{'list_index': 8, 'title': 'Cell Fate Modulated by Electrical Stimulation', 'physical_index': 5}, {'list_index': 8, 'title': 'ESEnhances Cell Proliferation and Metabolic Activity', 'physical_index': 5}, {'list_index': 18, 'title': 'Piezocomposites', 'physical_index': 18}, {'list_index': 26, 'title': 'Application of Electroactive Biomaterials in Cartilage Regeneration', 'physical_index': 26}]"
+  }
+]

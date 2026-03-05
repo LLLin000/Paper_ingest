@@ -1781,22 +1781,8 @@ def should_exclude_for_abstract_overlap(body_text: str, abstract_text: Optional[
     
     low_body = clean_body.lower()
     
-    # Direct detection: abstract-like summary fragments
-    # These are typically concluding sentences from abstract that leaked into Main Body
-    abstract_fragment_markers = [
-        "is emphasized", "is proposed", "is reviewed", "is summarized",
-        "we review", "we summarize", "we propose", "we present",
-        "this review", "this article", "this paper",
-        "future development", "challenges are", "perspectives are",
-        "in conclusion", "to conclude", "overall,", "in summary",
-    ]
-    for marker in abstract_fragment_markers:
-        if marker in low_body:
-            # Short summary-like text on page 1 is likely abstract fragment
-            if len(clean_body) < 300:  # Abstract fragments are typically short
-                return True
-    
-    # Original overlap detection logic
+    # Original overlap detection logic - trust the paragraph classification
+    # If para was classified as Body, keep it unless there's strong abstract overlap
     if not abstract_text:
         return False
     

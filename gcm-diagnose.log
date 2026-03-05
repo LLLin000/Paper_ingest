@@ -1,0 +1,290 @@
+﻿Diagnose log at 2026-03-05T10:19:56Z
+
+AppPath: D:\programs\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: D:\programs\Git\mingw64\bin\
+Version: 2.6.1+786ab03440ddc82e807a97c0e540f5247e44cec6
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26200)
+Reading environment variables... OK
+ Variables:
+HOMEPATH=\Users\Lin
+GIT_PAGER=more.com
+COMPUTERNAME=LAPTOP-A5DB6766
+DriverData=C:\Windows\System32\Drivers\DriverData
+GIT_TRACE2_PARENT_SID=2ee8536f-8c32-4194-aa02-e6a33b3a825b
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+ZSH_TMUX_AUTOSTART=false
+OneDrive=C:\Users\Lin\OneDrive
+CODEX_THREAD_ID=019cbc69-9462-7dc0-bc42-39e7ab3c3f57
+SHIM_MCCOMPAT=0x810000001
+GIT_CONFIG_KEY_0=safe.directory
+NVIDIAWHITELISTED=0x01
+CODEX_SHELL=1
+VIRTUAL_ENV_DISABLE_PROMPT=1
+LC_CTYPE=C.UTF-8
+USERDOMAIN=LAPTOP-A5DB6766
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL
+POSH_SHELL=pwsh
+SystemDrive=C:
+GIT_EXEC_PATH=D:/programs/Git/mingw64/libexec/git-core
+TEMP=C:\Users\Lin\AppData\Local\Temp
+LOCALAPPDATA=C:\Users\Lin\AppData\Local
+MSYSTEM=MINGW64
+TERM=xterm-256color
+USERDOMAIN_ROAMINGPROFILE=LAPTOP-A5DB6766
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 197 Stepping 2, GenuineIntel
+POSH_THEMES_PATH=C:\Users\Lin\AppData\Local\Programs\oh-my-posh\themes\
+RTOOLS44_HOME=C:\rtools44
+JAVA_HOME=C:\Program Files\Zulu\zulu-21\
+LESS=
+ProgramFiles(x86)=C:\Program Files (x86)
+PROCESSOR_REVISION=c502
+Path=C:\Users\Lin\.codex\tmp\arg0\codex-arg0lsZBAq;C:\Program Files\Zulu\zulu-24\bin\;C:\Program Files\R\R-4.4.1\bin\x64;C:\Program Files\R\R-4.4.1\bin;C:\Program Files\nodejs\;D:\programs\Python\Scripts\;D:\programs\Python\;C:\rtools44\mingw64\bin;C:\rtools44\usr\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0\bin\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0\bin;D:\L\Weasis-plugin\apache-maven-3.9.6\bin;C:\Users\Lin\AppData\Roaming\npm;C:\Users\Lin\AppData\Roaming\npm\node_modules;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\ProgramData\chocolatey\bin;D:\programs\Git\cmd;D:\programs\Git;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.3.0\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0\bin;C:\Program Files\dotnet\;C:\Program Files\GitHub CLI\;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Tailscale\;C:\Users\Lin\scoop\shims;C:\Users\Lin\AppData\Local\Programs\oh-my-posh\bin\;C:\Users\Lin\miniconda3;C:\Users\Lin\miniconda3\Library\mingw-w64\bin;C:\Users\Lin\miniconda3\Library\usr\bin;C:\Users\Lin\miniconda3\Library\bin;C:\Users\Lin\miniconda3\Scripts;C:\Program Files\Microsoft\jdk-17.0.17.10-hotspot\bin;C:\Program Files\R\R-4.5.2\bin;C:\Users\Lin\AppData\Local\Microsoft\WindowsApps;D:\programs\Microsoft VS Code\bin;C;C:\Users\Lin\AppData\Local\Programs\Ollama;D:\programs\Antigravity\bin;C:\Users\Lin\.bun\bin;D:\programs\Powertoys\DSCModules\;C:\Users\Lin\AppData\Local\PowerToys\DSCModules\;C:\Users\Lin\AppData\Local\OpenAI\Codex\bin;C:\Program Files\WindowsApps\OpenAI.Codex_26.304.1528.0_x64__2p2nqsd0c76g0\app\resources
+GIT_CONFIG_VALUE_0=D:\L\AI\Paper_ingest
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Home China
+PROCESSOR_LEVEL=6
+NUMBER_OF_PROCESSORS=16
+TMPDIR=C:\Users\Lin\AppData\Local\Temp
+GIT_CONFIG_COUNT=1
+ZES_ENABLE_SYSMAN=1
+POSH_INSTALLER=ws
+PUBLIC=C:\Users\Public
+ZSH_TMUX_AUTOSTARTED=true
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+TMP=C:\Users\Lin\AppData\Local\Temp
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_20380_TMCJQJECBXXSRIWZ
+ProgramFiles=C:\Program Files (x86)
+CODEX_SANDBOX_NETWORK_DISABLED=1
+PLINK_PROTOCOL=ssh
+COLORTERM=truecolor
+POSH_SESSION_ID=2655cc1c-92b6-459b-9461-50844a617293
+PATH=D:/programs/Git/mingw64/libexec/git-core;D:\programs\Git\mingw64\bin;D:\programs\Git\usr\bin;C:\Users\Lin\bin;C:\Program Files\PowerShell\7;C:\Users\Lin\.codex\tmp\arg0\codex-arg0lsZBAq;C:\Program Files\Zulu\zulu-24\bin\;C:\Program Files\R\R-4.4.1\bin\x64;C:\Program Files\R\R-4.4.1\bin;C:\Program Files\nodejs\;D:\programs\Python\Scripts\;D:\programs\Python\;C:\rtools44\mingw64\bin;C:\rtools44\usr\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0\bin\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0\bin;D:\L\Weasis-plugin\apache-maven-3.9.6\bin;C:\Users\Lin\AppData\Roaming\npm;C:\Users\Lin\AppData\Roaming\npm\node_modules;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\ProgramData\chocolatey\bin;D:\programs\Git\cmd;D:\programs\Git;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.3.0\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0\bin;C:\Program Files\dotnet\;C:\Program Files\GitHub CLI\;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Tailscale\;C:\Users\Lin\scoop\shims;C:\Users\Lin\AppData\Local\Programs\oh-my-posh\bin\;C:\Users\Lin\miniconda3;C:\Users\Lin\miniconda3\Library\mingw-w64\bin;C:\Users\Lin\miniconda3\Library\usr\bin;C:\Users\Lin\miniconda3\Library\bin;C:\Users\Lin\miniconda3\Scripts;C:\Program Files\Microsoft\jdk-17.0.17.10-hotspot\bin;C:\Program Files\R\R-4.5.2\bin;C:\Users\Lin\AppData\Local\Microsoft\WindowsApps;D:\programs\Microsoft VS Code\bin;C;C:\Users\Lin\AppData\Local\Programs\Ollama;D:\programs\Antigravity\bin;C:\Users\Lin\.bun\bin;D:\programs\Powertoys\DSCModules\;C:\Users\Lin\AppData\Local\PowerToys\DSCModules\;C:\Users\Lin\AppData\Local\OpenAI\Codex\bin;C:\Program Files\WindowsApps\OpenAI.Codex_26.304.1528.0_x64__2p2nqsd0c76g0\app\resources
+ChocolateyInstall=C:\ProgramData\chocolatey
+CONDA_PROMPT_MODIFIER=False
+SHELL=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ProgramW6432=C:\Program Files
+POWERLINE_COMMAND=oh-my-posh
+CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0
+HOME=C:\Users\Lin
+CODEX_INTERNAL_ORIGINATOR_OVERRIDE=Codex Desktop
+CommonProgramW6432=C:\Program Files\Common Files
+DISABLE_AUTO_UPDATE=true
+LOGONSERVER=\\LAPTOP-A5DB6766
+POSH_SHELL_VERSION=5.1.26100.7705
+SystemRoot=C:\Windows
+ProgramData=C:\ProgramData
+PYENV_VIRTUALENV_DISABLE_PROMPT=1
+CUDA_PATH_V13_0=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0
+APPDATA=C:\Users\Lin\AppData\Roaming
+HOMEDRIVE=C:
+RUST_LOG=warn
+PSModulePath=C:\Users\Lin\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\program files\powershell\7\Modules;C:\Users\Lin\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+USERNAME=Lin
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_ARCHITECTURE=x86
+USERPROFILE=C:\Users\Lin
+OS=Windows_NT
+ComSpec=C:\Windows\system32\cmd.exe
+ChocolateyLastPathUpdate=134074870162979055
+PAGER=more.com
+windir=C:\Windows
+OLLAMA_MODELS=
+ALLUSERSPROFILE=C:\ProgramData
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\Lin\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\Lin\AppData\Local\Temp\ba7b45fc9711c2d1cd1c7508'... OK
+Reading from temporary file 'C:\Users\Lin\AppData\Local\Temp\ba7b45fc9711c2d1cd1c7508'... OK
+Deleting temporary file 'C:\Users\Lin\AppData\Local\Temp\ba7b45fc9711c2d1cd1c7508'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\CodexSandboxOffline
+UserDataDirectoryPath: C:\Users\CodexSandboxOffline\.gcm
+GetCurrentDirectory(): D:\L\AI\Paper_ingest
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: False
+Exception:
+System.Net.Http.HttpRequestException: 发送请求时出错。 ---> System.Net.WebException: 基础连接已经关闭: 接收时发生错误。 ---> System.ComponentModel.Win32Exception: 安全包中没有可用的凭证
+   在 System.Net.SSPIWrapper.AcquireCredentialsHandle(SSPIInterface SecModule, String package, CredentialUse intent, SecureCredential2 scc)
+   在 System.Net.Security.SecureChannel.AcquireCredentialsHandle(CredentialUse credUsage, SecureCredential2& secureCredential)
+   在 System.Net.Security.SecureChannel.AcquireCredentialsHandle(CredentialUse credUsage, X509Certificate2 selectedCert, Flags flags)
+   在 System.Net.Security.SecureChannel.AcquireClientCredentials(Byte[]& thumbPrint)
+   在 System.Net.Security.SecureChannel.GenerateToken(Byte[] input, Int32 offset, Int32 count, Byte[]& output)
+   在 System.Net.Security.SecureChannel.NextMessage(Byte[] incoming, Int32 offset, Int32 count)
+   在 System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest, Boolean renegotiation)
+   在 System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest, Boolean renegotiation)
+   在 System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   在 System.Net.TlsStream.CallProcessAuthentication(Object state)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Net.TlsStream.ProcessAuthentication(LazyAsyncResult result)
+   在 System.Net.TlsStream.BeginWrite(Byte[] buffer, Int32 offset, Int32 size, AsyncCallback asyncCallback, Object asyncState)
+   在 System.Net.TlsStream.UnsafeBeginWrite(Byte[] buffer, Int32 offset, Int32 size, AsyncCallback asyncCallback, Object asyncState)
+   在 System.Net.PooledStream.UnsafeBeginWrite(Byte[] buffer, Int32 offset, Int32 size, AsyncCallback callback, Object state)
+   在 System.Net.ConnectStream.WriteHeaders(Boolean async)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   在 System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitCredentialManager.Diagnostics.NetworkingDiagnostic.<RunInternalAsync>d__4.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitCredentialManager.Diagnostics.Diagnostic.<RunAsync>d__6.MoveNext()
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com...
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.51.2.windows.1'
+Locating current repository...Git repository at 'D:/L/AI/Paper_ingest/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:D:/programs/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:D:/programs/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:D:/programs/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:D:/programs/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:D:/programs/Git/etc/gitconfig	filter.lfs.required=true
+file:D:/programs/Git/etc/gitconfig	http.sslbackend=schannel
+file:D:/programs/Git/etc/gitconfig	core.autocrlf=true
+file:D:/programs/Git/etc/gitconfig	core.fscache=true
+file:D:/programs/Git/etc/gitconfig	core.symlinks=false
+file:D:/programs/Git/etc/gitconfig	pull.rebase=false
+file:D:/programs/Git/etc/gitconfig	credential.helper=manager
+file:D:/programs/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:D:/programs/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/Lin/.gitconfig	http.proxy=http://127.0.0.1:7897
+file:C:/Users/Lin/.gitconfig	https.proxy=https://127.0.0.1:7897
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	user.email=ci@example.com
+file:.git/config	user.name=CI Bot
+file:.git/config	remote.origin.url=https://github.com/LLLin000/Paper_ingest.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.feat/mineru-local-integration.remote=origin
+file:.git/config	branch.feat/mineru-local-integration.merge=refs/heads/feat/mineru-local-integration
+command line:	safe.directory=D:\L\AI\Paper_ingest
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: False
+Exception:
+System.UnauthorizedAccessException: 对路径“C:\Users\Lin\AppData\Local\.IdentityService”的访问被拒绝。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   在 System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   在 System.IO.Directory.CreateDirectory(String path)
+   在 Microsoft.Identity.Client.Extensions.Msal.CrossPlatLock..ctor(String lockfilePath, Int32 lockFileRetryDelay, Int32 lockFileRetryCount)
+   在 Microsoft.Identity.Client.Extensions.Msal.MsalCacheHelper.CreateCrossPlatLock(StorageCreationProperties storageCreationProperties)
+   在 Microsoft.Identity.Client.Extensions.Msal.MsalCacheHelper.<CreateAsync>d__23.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitCredentialManager.Diagnostics.MicrosoftAuthenticationDiagnostic.<RunInternalAsync>d__1.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitCredentialManager.Diagnostics.Diagnostic.<RunAsync>d__6.MoveNext()
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\Lin\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\Lin\AppData\Local\.IdentityService\msal.cache
+Creating cache helper...
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: False
+Exception:
+System.Net.Http.HttpRequestException: 发送请求时出错。 ---> System.Net.WebException: 基础连接已经关闭: 接收时发生错误。 ---> System.ComponentModel.Win32Exception: 安全包中没有可用的凭证
+   在 System.Net.SSPIWrapper.AcquireCredentialsHandle(SSPIInterface SecModule, String package, CredentialUse intent, SecureCredential2 scc)
+   在 System.Net.Security.SecureChannel.AcquireCredentialsHandle(CredentialUse credUsage, SecureCredential2& secureCredential)
+   在 System.Net.Security.SecureChannel.AcquireCredentialsHandle(CredentialUse credUsage, X509Certificate2 selectedCert, Flags flags)
+   在 System.Net.Security.SecureChannel.AcquireClientCredentials(Byte[]& thumbPrint)
+   在 System.Net.Security.SecureChannel.GenerateToken(Byte[] input, Int32 offset, Int32 count, Byte[]& output)
+   在 System.Net.Security.SecureChannel.NextMessage(Byte[] incoming, Int32 offset, Int32 count)
+   在 System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest, Boolean renegotiation)
+   在 System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest, Boolean renegotiation)
+   在 System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   在 System.Net.TlsStream.CallProcessAuthentication(Object state)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Net.TlsStream.ProcessAuthentication(LazyAsyncResult result)
+   在 System.Net.TlsStream.BeginWrite(Byte[] buffer, Int32 offset, Int32 size, AsyncCallback asyncCallback, Object asyncState)
+   在 System.Net.TlsStream.UnsafeBeginWrite(Byte[] buffer, Int32 offset, Int32 size, AsyncCallback asyncCallback, Object asyncState)
+   在 System.Net.PooledStream.UnsafeBeginWrite(Byte[] buffer, Int32 offset, Int32 size, AsyncCallback callback, Object state)
+   在 System.Net.ConnectStream.WriteHeaders(Boolean async)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   在 System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitHub.GitHubRestApi.<GetMetaInfoAsync>d__5.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitHub.Diagnostics.GitHubApiDiagnostic.<RunInternalAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 GitCredentialManager.Diagnostics.Diagnostic.<RunAsync>d__6.MoveNext()
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint...

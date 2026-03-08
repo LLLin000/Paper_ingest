@@ -134,6 +134,65 @@ def extract_font_stats(span: dict[str, Any]) -> FontStats:
     return stats
 
 
+def _span_bbox(span: dict[str, Any]) -> Optional[list[float]]:
+    bbox = span.get("bbox")
+    if isinstance(bbox, (tuple, list)) and len(bbox) >= 4:
+        return [
+            float(bbox[0]),
+            float(bbox[1]),
+            float(bbox[2]),
+            float(bbox[3]),
+        ]
+    return None
+
+
+def _is_word_char(ch: str) -> bool:
+    if not ch:
+        return False
+    return ch.isalnum() or ch in {"_", "%"}
+
+
+def compose_line_text_from_spans(spans: list[dict[str, Any]]) -> str:
+    parts: list[str] = []
+    prev_bbox: Optional[list[float]] = None
+    prev_tail = ""
+
+    for span in spans:
+        if not isinstance(span, dict):
+            continue
+        text = span.get("text", "")
+        if not isinstance(text, str) or text == "":
+            continue
+
+        normalized = text.replace("\r", " ").replace("\n", " ")
+        curr_bbox = _span_bbox(span)
+
+        if parts:
+            left = prev_tail[-1] if prev_tail else ""
+            stripped = normalized.lstrip()
+            right = stripped[0] if stripped else ""
+            has_leading_space = normalized[:1].isspace()
+            if not has_leading_space and left and right and _is_word_char(left) and _is_word_char(right):
+                if prev_bbox is not None and curr_bbox is not None:
+                    gap = float(curr_bbox[0]) - float(prev_bbox[2])
+                    curr_height = max(1.0, float(curr_bbox[3]) - float(curr_bbox[1]))
+                    if gap > max(0.7, curr_height * 0.08):
+                        parts.append(" ")
+                else:
+                    parts.append(" ")
+
+        parts.append(normalized)
+        stripped_tail = normalized.rstrip()
+        if stripped_tail:
+            prev_tail = stripped_tail
+        if curr_bbox is not None:
+            prev_bbox = curr_bbox
+
+    text = "".join(parts)
+    text = re.sub(r"[ \t]+", " ", text).strip()
+    return text
+
+
 def extract_blocks_from_page(
     page: pymupdf.Page,
     page_num: int,
@@ -177,18 +236,21 @@ def extract_blocks_from_page(
             if not isinstance(spans, list):
                 continue
 
-            span_texts: list[str] = []
             line_sizes: list[float] = []
             line_fonts: list[str] = []
             line_has_bold = False
             line_has_italic = False
+            span_entries: list[dict[str, Any]] = []
 
             for span in spans:
                 if not isinstance(span, dict):
                     continue
                 text = span.get("text", "")
-                if isinstance(text, str) and text.strip():
-                    span_texts.append(text.strip())
+                if not isinstance(text, str) or text == "":
+                    continue
+
+                span_entries.append(span)
+                if text.strip():
                     size = span.get("size", 0.0)
                     if isinstance(size, (int, float)):
                         line_sizes.append(float(size))
@@ -201,7 +263,7 @@ def extract_blocks_from_page(
                         if "italic" in font_lower or "oblique" in font_lower:
                             line_has_italic = True
 
-            line_text = " ".join(span_texts).strip()
+            line_text = compose_line_text_from_spans(span_entries)
             if line_text:
                 parsed_lines.append({
                     "text": line_text,
@@ -412,6 +474,17 @@ def run_extractor(
         with open(norm_path, "w", encoding="utf-8") as f:
             for block in all_norm_blocks:
                 f.write(json.dumps(asdict(block), ensure_ascii=False) + "\n")
+
+        from .layout_analyzer import run_layout_analysis
+        pages_blocks_dict = {
+            page: [asdict(b) for b in per_page_raw_blocks.get(page, [])]
+            for page in per_page_raw_blocks
+        }
+        layout_result = run_layout_analysis(pages_blocks_dict, per_page_dimensions)
+        
+        layout_path = text_dir / "layout_analysis.json"
+        with open(layout_path, "w", encoding="utf-8") as f:
+            json.dump(layout_result, f, ensure_ascii=False, indent=2)
 
         if fault_events:
             append_fault_events(qa_dir, [asdict(e) for e in fault_events])

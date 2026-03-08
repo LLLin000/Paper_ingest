@@ -37,6 +37,7 @@ import pymupdf
 from PIL import Image, ImageDraw, ImageFont
 
 from .manifest import Manifest
+from .layout_analyzer import run_figure_table_verification
 
 
 # Caption patterns
@@ -47,6 +48,14 @@ FIG_CAPTION_RE = re.compile(
 TABLE_CAPTION_RE = re.compile(
     r"^(?:Table)\s*(\d+[a-zA-Z]?)[\s\.\-:]*(.*)",
     re.IGNORECASE
+)
+FIG_CAPTION_INLINE_RE = re.compile(
+    r"(?:^|[\s\.;:,])(?:Figure|Fig\.?)\s*(\d+[a-zA-Z]?)\s*[\|:\-]\s*(.+)",
+    re.IGNORECASE,
+)
+TABLE_CAPTION_INLINE_RE = re.compile(
+    r"(?:^|[\s\.;:,])(?:Table)\s*(\d+[a-zA-Z]?)\s*[\|:\-]\s*(.+)",
+    re.IGNORECASE,
 )
 
 # Role label constants
@@ -358,12 +367,10 @@ def constrain_bbox_by_caption_context(
             y0 = max(y0, cy0 - int(page_img_h * 0.28))
         y0 = max(0, y0)
     else:
-        # Tables generally start near/under caption; avoid huge unrelated header capture.
+        # Tables often have narrow captions but wide content; do not clamp width to caption span.
         y0 = max(y0, max(0, cy1 + 2))
-        caption_w = max(1, cx1 - cx0)
-        if caption_w < int(page_img_w * 0.75):
-            x0 = max(x0, max(0, cx0 - 40))
-            x1 = min(x1, min(page_img_w, cx1 + 40))
+        x0 = max(0, min(x0, cx0 - int(page_img_w * 0.18)))
+        x1 = min(page_img_w, max(x1, cx1 + int(page_img_w * 0.18)))
 
     x0 = max(0, x0)
     y0 = max(0, y0)
@@ -543,25 +550,380 @@ def auto_trim_bbox_by_density(
         return bbox
 
 
+def table_block_likelihood_score(text: str) -> float:
+    clean = _clean_line(text)
+    if not clean:
+        return 0.0
+
+    words = re.findall(r"[A-Za-z0-9]+(?:[\-/][A-Za-z0-9]+)?", clean)
+    word_count = len(words)
+    if word_count == 0:
+        return 0.0
+
+    low = clean.lower()
+    sentence_like_end = re.search(r"[.!?]\s*$", clean) is not None
+    numeric_count = len(re.findall(r"\b\d+(?:\.\d+)?\b", clean))
+    semicolons = clean.count(";")
+
+    descriptor_hits = sum(
+        1
+        for marker in (
+            "high",
+            "low",
+            "poor",
+            "limited",
+            "excellent",
+            "good",
+            "mechanical",
+            "biocompatibility",
+            "conductivity",
+            "surface area",
+            "resistance",
+            "stability",
+        )
+        if marker in low
+    )
+    header_hits = sum(
+        1
+        for marker in (
+            "advantages",
+            "disadvantages",
+            "applications",
+            "references",
+            "coefficient",
+            "type",
+        )
+        if marker in low
+    )
+
+    score = 0.0
+    if semicolons >= 1 and word_count <= 80:
+        score += 1.6
+    if numeric_count >= 1 and descriptor_hits >= 1:
+        score += 1.2
+    if re.search(r"\bd\d{1,2}\s*=", low) is not None:
+        score += 1.2
+    if header_hits >= 2 and word_count <= 24 and not sentence_like_end:
+        score += 1.0
+    if "table" in low and "continued" in low:
+        score += 0.8
+
+    if sentence_like_end and semicolons == 0 and word_count >= 24:
+        score -= 1.5
+
+    return score
+
+
+def _is_table_watermark_block(text: str) -> bool:
+    low = _clean_line(text).lower()
+    if not low:
+        return True
+    if "downloaded from" in low:
+        return True
+    if "adv. funct. mater." in low:
+        return True
+    if re.search(r"\(\d+\s+of\s+\d+\)", low):
+        return True
+    if "www." in low and any(token in low for token in ("wiley", "afm-journal", "advancedsciencenews")):
+        return True
+    return False
+
+
+def _cluster_table_candidate_blocks(
+    seed_index: int,
+    candidates: list[dict[str, Any]],
+    max_vertical_gap: float,
+) -> tuple[set[int], list[float]]:
+    used: set[int] = {seed_index}
+    bx0, by0, bx1, by1 = candidates[seed_index]["bbox"]
+    ux0, uy0, ux1, uy1 = bx0, by0, bx1, by1
+
+    changed = True
+    while changed:
+        changed = False
+        for idx, candidate in enumerate(candidates):
+            if idx in used:
+                continue
+            cbx0, cby0, cbx1, cby1 = candidate["bbox"]
+            if cby0 > uy1 + max_vertical_gap:
+                continue
+            if cby1 < uy0 - 12.0:
+                continue
+            if cbx1 < ux0 - 120.0 or cbx0 > ux1 + 120.0:
+                continue
+            used.add(idx)
+            ux0 = min(ux0, cbx0)
+            uy0 = min(uy0, cby0)
+            ux1 = max(ux1, cbx1)
+            uy1 = max(uy1, cby1)
+            changed = True
+
+    return used, [ux0, uy0, ux1, uy1]
+
+
+def propose_table_bbox_from_blocks(
+    caption_para: dict[str, Any],
+    blocks_on_page: list[dict[str, Any]],
+    page_width: float,
+    page_height: float,
+) -> Optional[list[float]]:
+    if not caption_para or not blocks_on_page:
+        return None
+
+    caption_bbox = caption_para.get("evidence_pointer", {}).get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(caption_bbox, list) or len(caption_bbox) < 4:
+        return None
+
+    try:
+        cx0 = float(caption_bbox[0])
+        cy0 = float(caption_bbox[1])
+        cx1 = float(caption_bbox[2])
+        cy1 = float(caption_bbox[3])
+    except (TypeError, ValueError):
+        return None
+
+    candidates: list[dict[str, Any]] = []
+    for block in blocks_on_page:
+        bbox_pt = block.get("bbox_pt", [0, 0, 0, 0])
+        if not isinstance(bbox_pt, list) or len(bbox_pt) < 4:
+            continue
+        try:
+            bx0 = float(bbox_pt[0])
+            by0 = float(bbox_pt[1])
+            bx1 = float(bbox_pt[2])
+            by1 = float(bbox_pt[3])
+        except (TypeError, ValueError):
+            continue
+        if bx1 <= bx0 or by1 <= by0:
+            continue
+
+        bw = bx1 - bx0
+        bh = by1 - by0
+        if bw < max(12.0, page_width * 0.03) and bh > page_height * 0.4:
+            continue
+        if bx0 > page_width * 0.93 and bw < page_width * 0.06:
+            continue
+        if by1 <= cy0 - 12:
+            continue
+        if by0 >= page_height * 0.97:
+            continue
+
+        block_text = _clean_line(str(block.get("text", "") or ""))
+        if _is_table_watermark_block(block_text):
+            continue
+
+        low_text = block_text.lower()
+        score = table_block_likelihood_score(block_text)
+        word_count = len(re.findall(r"[A-Za-z0-9]+(?:[\-/][A-Za-z0-9]+)?", block_text))
+        sentence_like_end = re.search(r"[.!?]\s*$", block_text) is not None
+        numeric_count = len(re.findall(r"\b\d+(?:\.\d+)?\b", block_text))
+        descriptor_hits = sum(
+            1
+            for marker in (
+                "high",
+                "low",
+                "poor",
+                "limited",
+                "excellent",
+                "good",
+                "mechanical",
+                "surface area",
+                "conductivity",
+            )
+            if marker in low_text
+        )
+        row_pattern = (
+            (";" in block_text and word_count <= 64)
+            or re.search(r"\bd\d{1,2}\s*=", low_text) is not None
+            or (any(marker in low_text for marker in ("advantages", "disadvantages", "applications", "references", "type", "coefficient")) and word_count <= 24 and not sentence_like_end)
+            or (numeric_count >= 1 and descriptor_hits >= 2 and word_count <= 28 and not sentence_like_end)
+        )
+
+        if score >= 1.0 and (row_pattern or score >= 1.6):
+            candidates.append(
+                {
+                    "bbox": [bx0, by0, bx1, by1],
+                    "text": block_text,
+                    "score": score,
+                }
+            )
+
+    if len(candidates) < 2:
+        return None
+
+    seed_upper_bound = cy1 + max(120.0, page_height * 0.24)
+    seed_indices = [
+        idx
+        for idx, candidate in enumerate(candidates)
+        if candidate["bbox"][0] < page_width * 0.94
+        and candidate["bbox"][1] <= seed_upper_bound
+        and candidate["bbox"][3] >= cy1 - 4.0
+    ]
+    if not seed_indices:
+        seed_indices = [
+            idx
+            for idx, candidate in enumerate(candidates)
+            if candidate["bbox"][0] < page_width * 0.94 and candidate["bbox"][3] >= cy1 - 4.0
+        ]
+    if not seed_indices:
+        return None
+
+    seed_index = min(
+        seed_indices,
+        key=lambda idx: (abs(candidates[idx]["bbox"][1] - cy1), -candidates[idx]["score"]),
+    )
+
+    used, union_bbox = _cluster_table_candidate_blocks(seed_index, candidates, max_vertical_gap=26.0)
+    ux0, uy0, ux1, uy1 = union_bbox
+
+    # Continue downward using left-anchored rows to recover split table bodies
+    # while avoiding right-column narrative blocks.
+    expanded = True
+    while expanded:
+        expanded = False
+        for idx, candidate in sorted(enumerate(candidates), key=lambda item: item[1]["bbox"][1]):
+            if idx in used:
+                continue
+            bx0, by0, bx1, by1 = candidate["bbox"]
+            if by0 < uy0 - 12.0:
+                continue
+            gap = by0 - uy1
+            if gap < 0.0 or gap > 96.0:
+                continue
+            if bx0 > ux0 + page_width * 0.20:
+                continue
+            if bx1 < ux0 + page_width * 0.25:
+                continue
+            used.add(idx)
+            ux0 = min(ux0, bx0)
+            uy0 = min(uy0, by0)
+            ux1 = max(ux1, bx1)
+            uy1 = max(uy1, by1)
+            expanded = True
+
+    cluster_candidates = [candidates[idx] for idx in sorted(used)]
+
+    if len(cluster_candidates) < 2:
+        return None
+    if (ux1 - ux0) < page_width * 0.35 and len(cluster_candidates) < 4:
+        return None
+    if min(candidate["bbox"][1] for candidate in cluster_candidates) > cy1 + max(90.0, page_height * 0.15):
+        return None
+
+    for block in blocks_on_page:
+        bbox_pt = block.get("bbox_pt", [0, 0, 0, 0])
+        if not isinstance(bbox_pt, list) or len(bbox_pt) < 4:
+            continue
+        try:
+            bx0 = float(bbox_pt[0])
+            by0 = float(bbox_pt[1])
+            bx1 = float(bbox_pt[2])
+            by1 = float(bbox_pt[3])
+        except (TypeError, ValueError):
+            continue
+        if bx1 <= bx0 or by1 <= by0:
+            continue
+        if by0 > uy1 + 14.0 or by1 < uy0 - 10.0:
+            continue
+        if bx1 < ux0 - 80.0 or bx0 > ux1 + 80.0:
+            continue
+
+        block_text = _clean_line(str(block.get("text", "") or ""))
+        if _is_table_watermark_block(block_text):
+            continue
+
+        low_text = block_text.lower()
+        score = table_block_likelihood_score(block_text)
+        word_count = len(re.findall(r"[A-Za-z0-9]+(?:[\-/][A-Za-z0-9]+)?", block_text))
+        sentence_like_end = re.search(r"[.!?]\s*$", block_text) is not None
+        numeric_count = len(re.findall(r"\b\d+(?:\.\d+)?\b", block_text))
+        descriptor_hits = sum(
+            1
+            for marker in ("high", "low", "poor", "limited", "excellent", "good", "mechanical", "surface area", "conductivity")
+            if marker in low_text
+        )
+        row_pattern = (
+            (";" in block_text and word_count <= 64)
+            or re.search(r"\bd\d{1,2}\s*=", low_text) is not None
+            or (any(marker in low_text for marker in ("advantages", "disadvantages", "applications", "references", "type", "coefficient")) and word_count <= 24 and not sentence_like_end)
+            or (numeric_count >= 1 and descriptor_hits >= 2 and word_count <= 28 and not sentence_like_end)
+        )
+        if score >= 0.85 and row_pattern:
+            ux0 = min(ux0, bx0)
+            uy0 = min(uy0, by0)
+            ux1 = max(ux1, bx1)
+            uy1 = max(uy1, by1)
+
+    x0 = max(0.0, min(ux0 - 80.0, cx0 - 24.0))
+    y0 = max(cy1 + 1.0, uy0 - 6.0)
+    x1 = min(page_width, ux1 + 12.0)
+    y1 = min(page_height, uy1 + 10.0)
+
+    if x1 - x0 < 120.0 or y1 - y0 < 80.0:
+        return None
+    return [x0, y0, x1, y1]
+
 def is_figure_caption(text: str) -> tuple[bool, Optional[str], Optional[str]]:
     """Check if text is a figure caption. Returns (is_caption, figure_num, remainder)."""
-    match = FIG_CAPTION_RE.match(text.strip())
+    normalized = " ".join(str(text).split()).strip()
+    match = FIG_CAPTION_RE.match(normalized)
     if match:
         fig_num = match.group(1)
         remainder = match.group(2).strip() if match.group(2) else ""
+        return True, fig_num, remainder
+    inline_match = FIG_CAPTION_INLINE_RE.search(normalized)
+    if inline_match:
+        fig_num = inline_match.group(1)
+        remainder = inline_match.group(2).strip() if inline_match.group(2) else ""
         return True, fig_num, remainder
     return False, None, None
 
 
 def is_table_caption(text: str) -> tuple[bool, Optional[str], Optional[str]]:
     """Check if text is a table caption. Returns (is_caption, table_num, remainder)."""
-    match = TABLE_CAPTION_RE.match(text.strip())
+    normalized = " ".join(str(text).split()).strip()
+    match = TABLE_CAPTION_RE.match(normalized)
     if match:
         table_num = match.group(1)
         remainder = match.group(2).strip() if match.group(2) else ""
         return True, table_num, remainder
+    inline_match = TABLE_CAPTION_INLINE_RE.search(normalized)
+    if inline_match:
+        table_num = inline_match.group(1)
+        remainder = inline_match.group(2).strip() if inline_match.group(2) else ""
+        return True, table_num, remainder
     return False, None, None
 
+
+def _normalize_caption_remainder(remainder: str) -> str:
+    clean = " ".join(str(remainder).split()).strip()
+    if not clean:
+        return ""
+    clean = re.sub(r"^[\|:\-–—\.;,\s]+", "", clean)
+    clean = re.sub(r"\s*\|\s*\|+\s*", " | ", clean)
+    clean = clean.strip(" |")
+    return clean
+
+
+def canonicalize_caption_text(text: Optional[str], asset_type: str) -> Optional[str]:
+    raw = " ".join(str(text or "").split()).strip()
+    if not raw:
+        return None
+    if asset_type == "figure":
+        is_cap, num, remainder = is_figure_caption(raw)
+        if is_cap:
+            remainder_clean = _normalize_caption_remainder(remainder or "")
+            if remainder_clean:
+                return f"Fig. {num} | {remainder_clean}"
+            return f"Fig. {num}"
+    if asset_type == "table":
+        is_cap, num, remainder = is_table_caption(raw)
+        if is_cap:
+            remainder_clean = _normalize_caption_remainder(remainder or "")
+            if remainder_clean:
+                return f"Table {num} | {remainder_clean}"
+            return f"Table {num}"
+    return raw
 
 def caption_num_to_index(num_text: Optional[str]) -> Optional[int]:
     if not num_text:
@@ -581,22 +943,580 @@ def find_caption_paragraphs(paragraphs: list[dict[str, Any]]) -> list[dict[str, 
     captions = []
     for para in paragraphs:
         text = para.get("text", "")
-        
+
         # Check for Figure/Table captions
-        is_fig, fig_num, fig_remainder = is_figure_caption(text)
-        is_tbl, tbl_num, tbl_remainder = is_table_caption(text)
-        
+        is_fig, _, _ = is_figure_caption(text)
+        is_tbl, _, _ = is_table_caption(text)
+
         if is_fig or is_tbl:
             captions.append(para)
             continue
-        
+
         # Also check if role is explicitly set
         role = para.get("role", "")
         if role in (ROLE_FIGURE_CAPTION, ROLE_TABLE_CAPTION):
             captions.append(para)
-    
+
     return captions
 
+
+def _asset_preference_key(asset: FigureTableAsset) -> tuple[int, int, int, float]:
+    return (
+        1 if asset.caption_id else 0,
+        1 if asset.caption_text else 0,
+        1 if asset.image_path else 0,
+        float(asset.confidence),
+    )
+
+
+def deduplicate_assets(assets: list[FigureTableAsset]) -> list[FigureTableAsset]:
+    """Remove duplicate assets while preferring entries with stronger caption linkage."""
+    if not assets:
+        return []
+
+    by_asset_id: dict[str, FigureTableAsset] = {}
+    ordered_ids: list[str] = []
+    for asset in assets:
+        existing = by_asset_id.get(asset.asset_id)
+        if existing is None:
+            by_asset_id[asset.asset_id] = asset
+            ordered_ids.append(asset.asset_id)
+            continue
+        if _asset_preference_key(asset) >= _asset_preference_key(existing):
+            by_asset_id[asset.asset_id] = asset
+
+    collapsed = [by_asset_id[asset_id] for asset_id in ordered_ids if asset_id in by_asset_id]
+
+    deduped: list[FigureTableAsset] = []
+    by_semantic_key: dict[tuple[str, int, str], FigureTableAsset] = {}
+    semantic_order: list[tuple[str, int, str]] = []
+    for asset in collapsed:
+        caption_norm = (
+            str(asset.caption_id).strip().lower()
+            if asset.caption_id
+            else (asset.caption_text or "")[:160].strip().lower()
+        )
+        key = (asset.asset_type, int(asset.page), caption_norm)
+        existing = by_semantic_key.get(key)
+        if existing is None:
+            by_semantic_key[key] = asset
+            semantic_order.append(key)
+            continue
+        if _asset_preference_key(asset) > _asset_preference_key(existing):
+            by_semantic_key[key] = asset
+
+    for key in semantic_order:
+        kept = by_semantic_key.get(key)
+        if kept is not None:
+            deduped.append(kept)
+    return deduped
+
+
+def _clean_line(text: str) -> str:
+    return " ".join(str(text).split()).strip()
+
+
+def _is_table_caption_summary_noise(text: str) -> bool:
+    low = _clean_line(text).lower()
+    if not low:
+        return True
+    if re.fullmatch(r"table\s+\d+[a-z]?\s*(?:\|\s*)*(?:\(?continued\)?\.?\s*)?", low):
+        return True
+    token_count = len(re.findall(r"[a-z]+", low))
+    if re.match(r"^table\s+\d+[a-z]?\b", low) and "continued" in low and token_count <= 6:
+        return True
+    return False
+
+
+def _table_caption_summaries(assets: list[FigureTableAsset], max_items: int = 2) -> list[str]:
+    captions: list[str] = []
+    seen: set[str] = set()
+    for asset in assets:
+        if asset.asset_type != "table":
+            continue
+        caption = canonicalize_caption_text(asset.caption_text, "table")
+        if not caption:
+            caption = asset.asset_id.replace("_", " ").upper()
+        normalized = _clean_line(caption)
+        if not normalized:
+            continue
+        if _is_table_caption_summary_noise(normalized):
+            continue
+        key = normalized.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        captions.append(normalized)
+        if len(captions) >= max_items:
+            break
+    return captions
+
+def _build_table_placeholder_text(assets: list[FigureTableAsset]) -> str:
+    summaries = _table_caption_summaries(assets)
+    if summaries:
+        joined = "; ".join(summaries)
+        return (
+            "[TABLE_PLACEHOLDER] Table-like content omitted from Main Body. "
+            f"See processed tables: {joined} (## Figures and Tables)."
+        )
+    return (
+        "[TABLE_PLACEHOLDER] Table-like content omitted from Main Body. "
+        "See processed table assets in ## Figures and Tables."
+    )
+
+
+def _is_table_artifact_paragraph(text: str) -> bool:
+    clean = _clean_line(text)
+    if not clean:
+        return False
+    words = re.findall(r"[A-Za-z0-9]+(?:[''’\-/][A-Za-z0-9]+)?", clean)
+    word_count = len(words)
+    if word_count == 0:
+        return False
+
+    if re.fullmatch(r"\[\s*\d+(?:\s*[,;]\s*\d+)*\s*\]", clean):
+        return True
+
+    semicolon_heavy = (
+        clean.count(";") >= 1
+        and word_count <= 34
+        and re.search(r"[.!?]$", clean) is None
+    )
+
+    short_item = (
+        word_count <= 6
+        and re.match(
+            r"^[A-Z][A-Za-z0-9\-]*(?:\s+[A-Za-z][A-Za-z0-9\-]*){0,5}(?:\s*\([^)]+\))?$",
+            clean,
+        )
+        is not None
+    )
+
+    dense_numeric = (
+        len(re.findall(r"\b\d+(?:\.\d+)?\b", clean)) >= 3
+        and word_count <= 24
+    )
+
+    headerish = (
+        word_count <= 10
+        and sum(1 for token in words if token[:1].isupper()) >= max(2, int(word_count * 0.6))
+        and "." not in clean
+        and ";" not in clean
+    )
+
+    citation_fragment = (
+        "[" in clean
+        and "]" in clean
+        and word_count <= 18
+        and re.search(r"[.!?]$", clean) is None
+    )
+
+    return semicolon_heavy or short_item or dense_numeric or headerish or citation_fragment
+
+
+def _looks_like_mixed_table_prefix(text: str) -> bool:
+    clean = _clean_line(text)
+    if not clean:
+        return False
+    words = re.findall(r"[A-Za-z0-9]+(?:[''’\-/][A-Za-z0-9]+)?", clean)
+    word_count = len(words)
+    if word_count < 8:
+        return False
+
+    low = clean.lower()
+    descriptor_hits = sum(
+        1
+        for marker in (
+            "high",
+            "low",
+            "poor",
+            "limited",
+            "excellent",
+            "good",
+            "mechanical",
+            "surface area",
+            "biodegradability",
+            "conductivity",
+            "properties",
+            "applications",
+            "references",
+        )
+        if marker in low
+    )
+    has_number = re.search(r"\b\d+(?:\.\d+)?\b", clean) is not None
+    has_table_token = (
+        re.search(r"\bd\d{1,2}\s*=", low) is not None
+        or re.search(r"\b\d+(?:\.\d+)?\s*[×x]\s*10\b", clean) is not None
+        or any(
+            token in low
+            for token in (
+                "aunps",
+                "agnps",
+                "mxene",
+                "pvdf",
+                "phb",
+                "piezoelectric biomaterials type",
+            )
+        )
+    )
+    return descriptor_hits >= 2 and has_number and has_table_token and ";" in clean
+
+
+
+def _is_table_row_fragment_near_placeholder(text: str) -> bool:
+    clean = _clean_line(text)
+    if not clean:
+        return False
+    if re.search(r"[.!?]\s*$", clean) is not None:
+        return False
+
+    words = re.findall(r"[A-Za-z0-9]+(?:[\-/][A-Za-z0-9]+)?", clean)
+    word_count = len(words)
+    if word_count < 8 or word_count > 140:
+        return False
+
+    low = clean.lower()
+    descriptor_hits = sum(
+        1
+        for marker in (
+            "high",
+            "low",
+            "poor",
+            "limited",
+            "excellent",
+            "good",
+            "mechanical",
+            "surface area",
+            "biodegradability",
+            "conductivity",
+            "properties",
+            "applications",
+            "references",
+            "resistance",
+            "stability",
+        )
+        if marker in low
+    )
+    if descriptor_hits < 2:
+        return False
+
+    has_number = re.search(r"\b\d+(?:\.\d+)?\b", clean) is not None
+    if not has_number:
+        return False
+
+    has_table_token = (
+        re.search(r"\bd\d{1,2}\s*=", low) is not None
+        or re.search(r"\b\d+(?:\.\d+)?\s*[×x]\s*10\b", clean) is not None
+        or any(token in low for token in ("aunps", "agnps", "mxene", "pvdf", "phb"))
+    )
+    uppercase_short = sum(1 for token in words if token[:1].isupper() and len(token) <= 12)
+    return has_table_token or clean.count(";") >= 1 or uppercase_short >= 3
+
+def _trim_mixed_table_prefix(paragraph_text: str) -> str:
+    clean = _clean_line(paragraph_text)
+    if not _looks_like_mixed_table_prefix(clean):
+        return clean
+
+    low = clean.lower()
+    marker = re.search(
+        r"\b(notably|with the ongoing|following the successful|however|in addition|in summary|overall|studies have|research has|it has been|these findings)\b",
+        low,
+    )
+    if marker is None or marker.start() < 30:
+        return clean
+
+    trimmed = clean[marker.start() :].lstrip(" ,;:-")
+    if len(trimmed) < 30:
+        return clean
+    return trimmed
+
+
+def _trim_mixed_table_prefixes_in_main_body(clean_document: str) -> str:
+    lines = clean_document.splitlines()
+    main_start = -1
+    main_end = len(lines)
+    for idx, line in enumerate(lines):
+        if line.strip() == "## Main Body":
+            main_start = idx
+            continue
+        if main_start >= 0 and idx > main_start and line.startswith("## "):
+            main_end = idx
+            break
+    if main_start < 0:
+        return clean_document
+
+    paragraphs: list[tuple[int, int, str, bool]] = []
+    cursor = main_start + 1
+    while cursor < main_end:
+        if not lines[cursor].strip():
+            cursor += 1
+            continue
+        if lines[cursor].lstrip().startswith("### "):
+            paragraphs.append((cursor, cursor, lines[cursor].strip(), True))
+            cursor += 1
+            continue
+
+        start_line = cursor
+        chunk_lines: list[str] = []
+        while cursor < main_end and lines[cursor].strip() and not lines[cursor].lstrip().startswith("### "):
+            chunk_lines.append(lines[cursor].strip())
+            cursor += 1
+        end_line = cursor - 1
+        paragraph_text = _clean_line(" ".join(chunk_lines))
+        if paragraph_text:
+            paragraphs.append((start_line, end_line, paragraph_text, False))
+
+    updates: list[tuple[int, int, str]] = []
+    for idx, (start_line, end_line, paragraph_text, is_heading) in enumerate(paragraphs):
+        if is_heading:
+            continue
+        if "[TABLE_PLACEHOLDER]" in paragraph_text:
+            continue
+
+        near_placeholder = False
+        for back in (1, 2):
+            prev_idx = idx - back
+            if prev_idx < 0:
+                break
+            if "[TABLE_PLACEHOLDER]" in paragraphs[prev_idx][2]:
+                near_placeholder = True
+                break
+        if not near_placeholder:
+            continue
+
+        trimmed = _trim_mixed_table_prefix(paragraph_text)
+        if trimmed != paragraph_text:
+            updates.append((start_line, end_line, trimmed))
+            continue
+
+        if _is_table_row_fragment_near_placeholder(paragraph_text):
+            updates.append((start_line, end_line, ""))
+
+    if not updates:
+        return clean_document
+
+    for start_line, end_line, trimmed in sorted(updates, key=lambda item: item[0], reverse=True):
+        if trimmed:
+            lines[start_line : end_line + 1] = [trimmed]
+        else:
+            lines[start_line : end_line + 1] = []
+
+    return "\n".join(lines).rstrip() + "\n"
+
+def suppress_table_artifacts_in_clean_document(
+    clean_document: str,
+    assets: list[FigureTableAsset],
+) -> tuple[str, int]:
+    if not clean_document:
+        return clean_document, 0
+    table_assets = [asset for asset in assets if asset.asset_type == "table"]
+    if not table_assets:
+        return clean_document, 0
+
+    lines = clean_document.splitlines()
+    main_start = -1
+    main_end = len(lines)
+    for idx, line in enumerate(lines):
+        if line.strip() == "## Main Body":
+            main_start = idx
+            continue
+        if main_start >= 0 and idx > main_start and line.startswith("## "):
+            main_end = idx
+            break
+    if main_start < 0:
+        return clean_document, 0
+
+    def _word_count(text: str) -> int:
+        return len(re.findall(r"[A-Za-z0-9]+(?:[''’\-/][A-Za-z0-9]+)?", _clean_line(text)))
+
+    def _has_table_signal(text: str) -> bool:
+        clean = _clean_line(text)
+        return (";" in clean) or (re.search(r"\b\d+(?:\.\d+)?\b", clean) is not None)
+
+    def _is_bridge_paragraph(text: str) -> bool:
+        clean = _clean_line(text)
+        if not clean or re.search(r"[.!?]$", clean) is not None:
+            return False
+        word_count = _word_count(clean)
+        if word_count <= 6:
+            return True
+        return ("[" in clean and "]" in clean and word_count <= 12)
+
+    paragraphs: list[tuple[int, int, str]] = []
+    cursor = main_start + 1
+    while cursor < main_end:
+        if not lines[cursor].strip():
+            cursor += 1
+            continue
+        if lines[cursor].lstrip().startswith("### "):
+            cursor += 1
+            continue
+        start_line = cursor
+        chunk_lines: list[str] = []
+        while cursor < main_end and lines[cursor].strip() and not lines[cursor].lstrip().startswith("### "):
+            chunk_lines.append(lines[cursor].strip())
+            cursor += 1
+        end_line = cursor - 1
+        paragraph_text = _clean_line(" ".join(chunk_lines))
+        if paragraph_text:
+            paragraphs.append((start_line, end_line, paragraph_text))
+
+    artifact_indices = [
+        idx for idx, (_, _, paragraph_text) in enumerate(paragraphs)
+        if _is_table_artifact_paragraph(paragraph_text)
+    ]
+    if not artifact_indices:
+        return clean_document, 0
+
+    runs: list[list[int]] = []
+    current_run: list[int] = []
+    for idx in artifact_indices:
+        if not current_run or idx == current_run[-1] + 1:
+            current_run.append(idx)
+            continue
+        runs.append(current_run)
+        current_run = [idx]
+    if current_run:
+        runs.append(current_run)
+
+    primary_run_indices: list[int] = []
+    for run_idx, run in enumerate(runs):
+        has_table_signals = any(_has_table_signal(paragraphs[run_item_idx][2]) for run_item_idx in run)
+        if not has_table_signals:
+            continue
+        if len(run) >= 2:
+            primary_run_indices.append(run_idx)
+            continue
+        if _word_count(paragraphs[run[0]][2]) <= 14:
+            primary_run_indices.append(run_idx)
+
+    if not primary_run_indices:
+        return clean_document, 0
+
+    selected_run_indices = set(primary_run_indices)
+    for run_idx in primary_run_indices:
+        prev_idx = run_idx - 1
+        while prev_idx >= 0:
+            gap = runs[prev_idx + 1][0] - runs[prev_idx][-1] - 1
+            if gap > 1 or len(runs[prev_idx]) < 2:
+                break
+            selected_run_indices.add(prev_idx)
+            prev_idx -= 1
+
+        next_idx = run_idx + 1
+        while next_idx < len(runs):
+            gap = runs[next_idx][0] - runs[next_idx - 1][-1] - 1
+            if gap > 1 or len(runs[next_idx]) < 2:
+                break
+            selected_run_indices.add(next_idx)
+            next_idx += 1
+
+    selected_spans = sorted((runs[idx][0], runs[idx][-1]) for idx in selected_run_indices)
+
+    merged_spans: list[tuple[int, int]] = []
+    for span_start, span_end in selected_spans:
+        if not merged_spans:
+            merged_spans.append((span_start, span_end))
+            continue
+        prev_start, prev_end = merged_spans[-1]
+        gap = span_start - prev_end - 1
+        if gap <= 0:
+            merged_spans[-1] = (prev_start, max(prev_end, span_end))
+            continue
+        if gap <= 2:
+            bridge_ok = all(
+                _is_bridge_paragraph(paragraphs[bridge_idx][2])
+                for bridge_idx in range(prev_end + 1, span_start)
+            )
+            if bridge_ok:
+                merged_spans[-1] = (prev_start, span_end)
+                continue
+        merged_spans.append((span_start, span_end))
+
+    if not merged_spans:
+        return clean_document, 0
+
+    max_regions = max(1, len(table_assets))
+    if len(merged_spans) > max_regions:
+        capped_spans = merged_spans[:]
+        while len(capped_spans) > max_regions:
+            best_gap = 10**9
+            best_idx = -1
+            for idx in range(len(capped_spans) - 1):
+                gap = capped_spans[idx + 1][0] - capped_spans[idx][1] - 1
+                if gap < best_gap:
+                    best_gap = gap
+                    best_idx = idx
+            if best_idx < 0 or best_gap > 6:
+                break
+            left_start, left_end = capped_spans[best_idx]
+            right_start, right_end = capped_spans[best_idx + 1]
+            capped_spans[best_idx:best_idx + 2] = [(left_start, right_end)]
+
+        if len(capped_spans) > max_regions:
+            ranked = sorted(
+                (
+                    span_end - span_start + 1,
+                    idx,
+                    (span_start, span_end),
+                )
+                for idx, (span_start, span_end) in enumerate(capped_spans)
+            )
+            keep_indices = {idx for _, idx, _ in ranked[-max_regions:]}
+            capped_spans = [span for idx, span in enumerate(capped_spans) if idx in keep_indices]
+            capped_spans.sort(key=lambda span: span[0])
+
+        merged_spans = capped_spans
+
+    placeholder = _build_table_placeholder_text(table_assets)
+    rewritten: list[str] = []
+    line_cursor = 0
+    for run_start_idx, run_end_idx in merged_spans:
+        start_line = paragraphs[run_start_idx][0]
+        end_line = paragraphs[run_end_idx][1]
+        rewritten.extend(lines[line_cursor:start_line])
+
+        residual_paragraphs: list[str] = []
+        for para_idx in range(run_start_idx, run_end_idx + 1):
+            paragraph_text = paragraphs[para_idx][2]
+            trimmed = _trim_mixed_table_prefix(paragraph_text)
+            if trimmed != paragraph_text:
+                residual_paragraphs.append(trimmed)
+
+        if rewritten and rewritten[-1].strip():
+            rewritten.append("")
+        rewritten.append(placeholder)
+        rewritten.append("")
+        for residual in residual_paragraphs:
+            rewritten.append(residual)
+            rewritten.append("")
+
+        line_cursor = end_line + 1
+
+    rewritten.extend(lines[line_cursor:])
+    new_doc = "\n".join(rewritten).rstrip() + "\n"
+    new_doc = _trim_mixed_table_prefixes_in_main_body(new_doc)
+    return new_doc, len(merged_spans)
+
+
+def rewrite_clean_document_after_asset_detection(run_dir: Path, assets: list[FigureTableAsset]) -> int:
+    clean_path = run_dir / "text" / "clean_document.md"
+    if not clean_path.exists():
+        return 0
+    try:
+        original = clean_path.read_text(encoding="utf-8")
+    except OSError:
+        return 0
+
+    rewritten, replaced_regions = suppress_table_artifacts_in_clean_document(original, assets)
+    if replaced_regions <= 0 or rewritten == original:
+        return 0
+
+    try:
+        clean_path.write_text(rewritten, encoding="utf-8")
+    except OSError:
+        return 0
+    return replaced_regions
 
 def extract_images_from_pdf(pdf_path: Path) -> dict[int, list[dict[str, Any]]]:
     """Extract image metadata from PDF pages.
@@ -803,6 +1723,38 @@ def load_render_config(run_dir: Path) -> dict[str, Any]:
     return manifest.get("render_config", {"dpi": 150, "scale": 2.0})
 
 
+def load_verified_figure_table_candidates(run_dir: Path) -> dict[str, dict[str, Any]]:
+    """Load verified figure/table candidates from layout analysis.
+    
+    Returns a dict mapping block_id to verification result.
+    Only returns candidates that were verified as actual figures or tables.
+    """
+    layout_path = run_dir / "text" / "layout_analysis.json"
+    if not layout_path.exists():
+        return {}
+    
+    verification = run_figure_table_verification(run_dir, layout_path)
+    if not verification.get("verified", False):
+        return {}
+    
+    results = verification.get("results", [])
+    verified_by_block_id: dict[str, dict[str, Any]] = {}
+    
+    for r in results:
+        verified_type = r.get("verified_type", "")
+        if verified_type in ("figure", "table"):
+            block_id = r.get("block_id", "")
+            if block_id:
+                verified_by_block_id[block_id] = {
+                    "type": verified_type,
+                    "confidence": r.get("confidence", 0.5),
+                    "caption_match": r.get("caption_match", False),
+                    "visual_confirmed": r.get("visual_confirmed", False),
+                }
+    
+    return verified_by_block_id
+
+
 from typing import Any, Optional, Sequence
 
 
@@ -958,6 +1910,8 @@ def run_figures_tables(
     
     # Find caption paragraphs
     caption_paras = find_caption_paragraphs(paragraphs)
+    
+    verified_candidates = load_verified_figure_table_candidates(run_dir)
 
     # Load vision role labels to strengthen caption/header-footer decisions.
     blocks_by_page = load_blocks_norm(run_dir / "text" / "blocks_norm.jsonl")
@@ -1038,20 +1992,42 @@ def run_figures_tables(
             
             # Determine asset type from caption
             asset_type = "figure"
+            verification_boost = 0.0
             if caption_para:
                 text = caption_para.get("text", "")
+                para_id = caption_para.get("para_id", "")
                 if is_table_caption(text)[0]:
                     asset_type = "table"
+                if para_id and para_id.startswith("viscap_"):
+                    parts = para_id.split("_")
+                    if len(parts) >= 3:
+                        block_id = "_".join(parts[-2:])
+                        vc = verified_candidates.get(block_id, {})
+                        if vc:
+                            if vc.get("type") in ("figure", "table"):
+                                asset_type = vc["type"]
+                            verification_boost = vc.get("confidence", 0.0) * 0.2
             else:
-                # Use heuristics based on image dimensions
                 width = img_info.get("width", 0)
                 height = img_info.get("height", 0)
                 if height > 0 and width / height < 2:
-                    # Taller images are more likely figures
                     asset_type = "figure"
                 else:
                     asset_type = "table"
             
+            if asset_type == "table":
+                table_hint_bbox_pt: Optional[list[float]] = None
+                if caption_para is not None:
+                    table_hint_bbox_pt = propose_table_bbox_from_blocks(
+                        caption_para,
+                        blocks_by_page.get(page_num, []),
+                        page_width,
+                        page_height,
+                    )
+                if table_hint_bbox_pt is None:
+                    continue
+                bbox_pt = table_hint_bbox_pt
+
             # Generate asset ID
             caption_index: Optional[int] = None
             if caption_para:
@@ -1083,7 +2059,7 @@ def run_figures_tables(
             caption_text = None
             caption_id = None
             if caption_para:
-                caption_text = caption_para.get("text", "")
+                caption_text = canonicalize_caption_text(caption_para.get("text", ""), asset_type)
                 caption_id = caption_para.get("para_id")
             
             # Crop image
@@ -1116,9 +2092,9 @@ def run_figures_tables(
                 caption_id=caption_id,
                 source_para_id=caption_id,
                 image_path=image_path_str,
-                text_content=None,  # No OCR in baseline
-                summary_content=None,  # No LLM summary in baseline
-                confidence=0.6 if caption_para else 0.4,
+                text_content=None,
+                summary_content=None,
+                confidence=min(1.0, (0.6 if caption_para else 0.4) + verification_boost),
             )
             assets.append(asset)
     
@@ -1169,15 +2145,32 @@ def run_figures_tables(
         image_path = assets_dir / f"{asset_id}.png"
 
         page_width, page_height = page_dims.get(int(page), (612.0, 792.0))
-        est_bbox_pt = estimate_bbox_from_caption(
-            caption_para, paragraphs, page_width, page_height, is_fig, prefer_above=True
-        )
-        if est_bbox_pt:
-            crop_bbox = pt_to_px_bbox(est_bbox_pt, dpi, scale)
-        else:
-            crop_bbox = [int(c) for c in caption_bbox_px]
 
-        vision_bbox = propose_bbox_with_vision(page_image_path, text, asset_type)
+        table_bbox_pt: Optional[list[float]] = None
+        if asset_type == "table":
+            table_bbox_pt = propose_table_bbox_from_blocks(
+                caption_para,
+                blocks_by_page.get(page, []),
+                page_width,
+                page_height,
+            )
+
+        canonical_caption = canonicalize_caption_text(text, asset_type)
+        if asset_type == "table" and table_bbox_pt is None and _is_table_caption_summary_noise(canonical_caption):
+            continue
+
+        if table_bbox_pt is not None:
+            crop_bbox = pt_to_px_bbox(table_bbox_pt, dpi, scale)
+        else:
+            est_bbox_pt = estimate_bbox_from_caption(
+                caption_para, paragraphs, page_width, page_height, is_fig, prefer_above=True
+            )
+            if est_bbox_pt:
+                crop_bbox = pt_to_px_bbox(est_bbox_pt, dpi, scale)
+            else:
+                crop_bbox = [int(c) for c in caption_bbox_px]
+
+        vision_bbox = None if table_bbox_pt is not None else propose_bbox_with_vision(page_image_path, text, asset_type)
         if vision_bbox is not None:
             try:
                 with Image.open(page_image_path) as page_img:
@@ -1211,13 +2204,14 @@ def run_figures_tables(
         else:
             try:
                 with Image.open(page_image_path) as page_img:
-                    crop_bbox = constrain_bbox_by_caption_context(
-                        crop_bbox,
-                        caption_bbox_px,
-                        page_img.width,
-                        page_img.height,
-                        asset_type,
-                    )
+                    if not (asset_type == "table" and table_bbox_pt is not None):
+                        crop_bbox = constrain_bbox_by_caption_context(
+                            crop_bbox,
+                            caption_bbox_px,
+                            page_img.width,
+                            page_img.height,
+                            asset_type,
+                        )
                     if asset_type == "figure":
                         role_labels = vision_by_page.get(page, {}).get("role_labels", {}) if isinstance(vision_by_page.get(page, {}), dict) else {}
                         if not isinstance(role_labels, dict):
@@ -1234,7 +2228,8 @@ def run_figures_tables(
             except OSError:
                 pass
 
-        crop_bbox = auto_trim_bbox_by_density(page_image_path, crop_bbox, asset_type)
+        if not (asset_type == "table" and table_bbox_pt is not None):
+            crop_bbox = auto_trim_bbox_by_density(page_image_path, crop_bbox, asset_type)
 
         image_path_str = None
         if crop_image_from_page(page_image_path, crop_bbox, image_path):
@@ -1269,7 +2264,7 @@ def run_figures_tables(
             asset_type=asset_type,
             page=page,
             bbox_px=crop_bbox,
-            caption_text=text,
+            caption_text=canonical_caption,
             caption_id=caption_id or None,
             source_para_id=caption_id or None,
             image_path=image_path_str,
@@ -1279,17 +2274,7 @@ def run_figures_tables(
         )
         assets.append(asset)
     
-    # Deduplicate assets by caption identity / page.
-    dedup_assets: list[FigureTableAsset] = []
-    seen_keys: set[tuple[str, int, str]] = set()
-    for a in assets:
-        caption_norm = (a.caption_id or (a.caption_text or "")[:120]).strip().lower()
-        key = (a.asset_type, int(a.page), caption_norm)
-        if key in seen_keys:
-            continue
-        seen_keys.add(key)
-        dedup_assets.append(a)
-    assets = dedup_assets
+    assets = deduplicate_assets(assets)
 
     # Build section mapping from paragraphs
     section_assets: dict[str, list[str]] = {}
@@ -1342,5 +2327,29 @@ def run_figures_tables(
             "by_fact": links.by_fact,
             "by_synthesis_slot": links.by_synthesis_slot,
         }, f, indent=2)
+
+    rewrite_clean_document_after_asset_detection(run_dir, assets)
     
     return len(assets), images_cropped
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,6 +15,7 @@ Output schema per paragraphs/paragraphs.jsonl:
 """
 
 import hashlib
+import http.client
 import json
 import os
 import re
@@ -27,6 +28,12 @@ from pathlib import Path
 from typing import Any, Optional, Tuple
 
 from .qa_telemetry import append_jsonl_event
+
+
+# Feature flags for Wave B upgrades (default OFF)
+# Set environment variable to 1/true to enable
+CLEANDOC_ENABLE_LAYOUT_ZONING = os.environ.get("CLEANDOC_ENABLE_LAYOUT_ZONING", "0") in ("1", "true", "True")
+CLEANDOC_ENABLE_COLUMN_ORDER_V2 = os.environ.get("CLEANDOC_ENABLE_COLUMN_ORDER_V2", "0") in ("1", "true", "True")
 
 
 KEEP_FOR_PARAGRAPH_ROLES = frozenset({
@@ -243,6 +250,9 @@ def call_siliconflow_for_paragraphs(prompt: str, config: ParagraphLLMRefineConfi
     except urllib.error.URLError:
         meta["error_type"] = "network_error"
         return "{}", meta
+    except http.client.RemoteDisconnected:
+        meta["error_type"] = "network_error"
+        return "{}", meta
     except TimeoutError:
         meta["error_type"] = "timeout"
         return "{}", meta
@@ -389,6 +399,49 @@ def normalize_section_key(text: str) -> str:
     return cleaned
 
 
+COMMON_UNNUMBERED_SECTION_HEADINGS = {
+    "abstract",
+    "background",
+    "clinical study",
+    "conclusion",
+    "conclusions",
+    "discussion",
+    "introduction",
+    "materials and methods",
+    "methods",
+    "patients and methods",
+    "results",
+}
+
+EMBEDDED_HEADING_LEAD_STOPWORDS = {
+    "a",
+    "an",
+    "among",
+    "based",
+    "by",
+    "here",
+    "however",
+    "in",
+    "moreover",
+    "next",
+    "our",
+    "the",
+    "there",
+    "these",
+    "this",
+    "to",
+    "we",
+}
+
+EMBEDDED_HEADING_BODY_START_RE = re.compile(
+    r"^(?:"
+    r"to|we|our|this|these|in|here|there|based|among|by|however|moreover|"
+    r"furthermore|meanwhile|therefore|next|then|the|a|an"
+    r")\b",
+    flags=re.IGNORECASE,
+)
+
+
 METADATA_HEADING_PREFIXES = (
     "keywords",
     "key words",
@@ -420,6 +473,51 @@ def is_metadata_like_heading(text: str) -> bool:
     )
 
 
+def is_common_unnumbered_section_heading(text: str) -> bool:
+    return normalize_section_key(text) in COMMON_UNNUMBERED_SECTION_HEADINGS
+
+
+def is_plausible_sentence_case_section_heading(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if len(clean) > 180 or clean.endswith((".", ":", ";", "!", "?")):
+        return False
+    if re.match(r"^\d{1,3}(?:\s+|\.\s*)(?=[A-Za-z])", clean) is not None:
+        return False
+    if is_metadata_like_heading(clean) or looks_like_table_noise(clean):
+        return False
+    if re.search(r"[.!?;:]", clean) is not None:
+        return False
+
+    words = word_tokens(clean)
+    if len(words) < 3 or len(words) > 24:
+        return False
+    if digit_token_count(words) > 4:
+        return False
+
+    alpha_match = re.search(r"[A-Za-z]", clean)
+    if alpha_match is None or not alpha_match.group(0).isupper():
+        return False
+
+    first_word = re.sub(r"^[^A-Za-z]+|[^A-Za-z-]+$", "", words[0]).lower()
+    if not first_word or first_word in EMBEDDED_HEADING_LEAD_STOPWORDS:
+        return False
+
+    lower = clean.lower()
+    if re.match(r"^(fig|figure|table|supplementary)\b", lower) is not None:
+        return False
+    if any(token in lower for token in ("department", "university", "hospital", "institute", "medical center")):
+        return False
+
+    connective_hits = sum(
+        1
+        for token in words[1:]
+        if token.lower() in {"of", "for", "with", "in", "on", "between", "among", "under", "during", "via", "by", "based"}
+    )
+    return connective_hits >= 1
+
+
 def is_plausible_section_heading(text: str) -> bool:
     clean = clean_text_line(text)
     if not clean:
@@ -428,7 +526,15 @@ def is_plausible_section_heading(text: str) -> bool:
         return False
     if is_metadata_like_heading(clean):
         return False
-    if clean.endswith(":"):
+    if clean.endswith((".", ":", ";", "!", "?")):
+        return False
+    low = clean.lower()
+    if re.match(r"^\d{1,3}\s+(department|division|faculty|institute|hospital|school|university)\b", low) is not None:
+        return False
+    if (
+        re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", clean) is None
+        and re.match(r"^\d{1,3}(?:\s+|\.\s*)(?=[A-Za-z])", clean) is not None
+    ):
         return False
 
     words = word_tokens(clean)
@@ -452,7 +558,10 @@ def is_plausible_section_heading(text: str) -> bool:
 
     if not numbered_section_at_start:
         tcase_ratio = title_case_ratio(words)
-        if tcase_ratio < 0.58:
+        if tcase_ratio < 0.58 and not (
+            is_common_unnumbered_section_heading(clean)
+            or is_plausible_sentence_case_section_heading(clean)
+        ):
             return False
 
     return True
@@ -460,49 +569,426 @@ def is_plausible_section_heading(text: str) -> bool:
 
 def should_emit_empty_section_heading(section: str) -> bool:
     clean = clean_text_line(section)
-    if re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", clean) is None:
+    if (
+        re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", clean) is None
+        and not is_common_unnumbered_section_heading(clean)
+    ):
         return False
     if not is_plausible_section_heading(clean):
         return False
     return not looks_like_table_noise(clean)
 
 
+def has_descendant_numbered_section(section: str, section_order: list[str]) -> bool:
+    clean = clean_text_line(section)
+    match = re.match(r"^(\d+(?:\.\d+)*)\.?\s+[A-Za-z]", clean)
+    if match is None:
+        return False
+    prefix = f"{match.group(1)}."
+    for candidate in section_order:
+        if candidate == section:
+            continue
+        cand_match = re.match(r"^(\d+(?:\.\d+)*)\.?\s+[A-Za-z]", clean_text_line(candidate))
+        if cand_match is None:
+            continue
+        if cand_match.group(1).startswith(prefix):
+            return True
+    return False
+
+
+def compute_narrow_fragment_page_counts(
+    paragraphs: list[Paragraph],
+    bounds_by_page: dict[int, list[float]],
+) -> dict[int, int]:
+    counts: dict[int, int] = {}
+    for para in paragraphs:
+        if para.role != "Body" or para.section_path:
+            continue
+        clean = clean_text_line(para.text)
+        if len(word_tokens(clean)) < 8:
+            continue
+        bbox_obj = para.evidence_pointer.get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+        if not isinstance(bbox_obj, list) or len(bbox_obj) < 4:
+            continue
+        try:
+            x0 = float(bbox_obj[0])
+            y0 = float(bbox_obj[1])
+            x1 = float(bbox_obj[2])
+            y1 = float(bbox_obj[3])
+        except (TypeError, ValueError):
+            continue
+        if x1 <= x0 or y1 <= y0:
+            continue
+
+        page = int(para.page_span.get("start", 1))
+        page_bounds = bounds_by_page.get(page)
+        if not isinstance(page_bounds, list) or len(page_bounds) < 4:
+            continue
+        try:
+            px0 = float(page_bounds[0])
+            py0 = float(page_bounds[1])
+            px1 = float(page_bounds[2])
+            py1 = float(page_bounds[3])
+        except (TypeError, ValueError):
+            continue
+        page_w = px1 - px0
+        page_h = py1 - py0
+        if page_w <= 1e-6 or page_h <= 1e-6:
+            continue
+
+        width_ratio = (x1 - x0) / page_w
+        height_ratio = (y1 - y0) / page_h
+        if width_ratio >= 0.26 or height_ratio <= 0.10:
+            continue
+        sentence_breaks = len(re.findall(r"[.!?]", clean))
+        if sentence_breaks > 2:
+            continue
+        counts[page] = counts.get(page, 0) + 1
+    return counts
+
+
+def is_narrow_table_fragment_paragraph(
+    para: Paragraph,
+    text: str,
+    bounds_by_page: dict[int, list[float]],
+    narrow_fragment_page_counts: Optional[dict[int, int]] = None,
+) -> bool:
+    """Detect narrow/tall body fragments that are likely leaked table-column OCR."""
+    if para.role != "Body":
+        return False
+    if para.section_path:
+        return False
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if len(word_tokens(clean)) < 8:
+        return False
+
+    bbox_obj = para.evidence_pointer.get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox_obj, list) or len(bbox_obj) < 4:
+        return False
+    try:
+        x0 = float(bbox_obj[0])
+        y0 = float(bbox_obj[1])
+        x1 = float(bbox_obj[2])
+        y1 = float(bbox_obj[3])
+    except (TypeError, ValueError):
+        return False
+    if x1 <= x0 or y1 <= y0:
+        return False
+
+    page = int(para.page_span.get("start", 1))
+    page_bounds = bounds_by_page.get(page)
+    if not isinstance(page_bounds, list) or len(page_bounds) < 4:
+        return False
+    try:
+        px0 = float(page_bounds[0])
+        py0 = float(page_bounds[1])
+        px1 = float(page_bounds[2])
+        py1 = float(page_bounds[3])
+    except (TypeError, ValueError):
+        return False
+    page_w = px1 - px0
+    page_h = py1 - py0
+    if page_w <= 1e-6 or page_h <= 1e-6:
+        return False
+
+    width_ratio = (x1 - x0) / page_w
+    height_ratio = (y1 - y0) / page_h
+    sentence_breaks = len(re.findall(r"[.!?]", clean))
+
+    # Strong narrow-column rule.
+    if width_ratio < 0.16 and height_ratio > 0.15 and sentence_breaks <= 2:
+        return True
+
+    # On pages densely populated with narrow fragments, suppress moderate-width
+    # column leaks as well.
+    page_counts = narrow_fragment_page_counts or {}
+    if (
+        width_ratio < 0.26
+        and height_ratio > 0.10
+        and sentence_breaks <= 2
+        and page_counts.get(page, 0) >= 8
+    ):
+        return True
+
+    return False
+
+
+def is_narrow_figure_fragment_paragraph(
+    para: Paragraph,
+    text: str,
+    bounds_by_page: dict[int, list[float]],
+) -> bool:
+    if para.role != "Body":
+        return False
+    if para.section_path:
+        return False
+
+    clean = clean_text_line(text)
+    if not clean or extract_embedded_caption_text(clean):
+        return False
+
+    bbox_obj = para.evidence_pointer.get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox_obj, list) or len(bbox_obj) < 4:
+        return False
+    try:
+        x0 = float(bbox_obj[0])
+        x1 = float(bbox_obj[2])
+    except (TypeError, ValueError):
+        return False
+    if x1 <= x0:
+        return False
+
+    page = int(para.page_span.get("start", 1))
+    page_bounds = bounds_by_page.get(page)
+    if not isinstance(page_bounds, list) or len(page_bounds) < 4:
+        return False
+    try:
+        px0 = float(page_bounds[0])
+        px1 = float(page_bounds[2])
+    except (TypeError, ValueError):
+        return False
+
+    page_w = px1 - px0
+    if page_w <= 1e-6:
+        return False
+
+    width_ratio = (x1 - x0) / page_w
+    word_count = len(word_tokens(clean))
+    numeric_tokens = len(re.findall(r"\b\d+(?:\.\d+)?\b", clean))
+    has_terminal_sentence = re.search(r"[.!?]\s*$", clean) is not None
+    alpha_tokens = re.findall(r"[A-Za-z][A-Za-z0-9-]*", clean)
+    uppercaseish = sum(
+        1
+        for token in alpha_tokens
+        if token.isupper() or (token[:1].isupper() and len(token) <= 12)
+    )
+    low_confidence = float(getattr(para, "confidence", 0.0) or 0.0) <= 0.6
+
+    if width_ratio <= 0.32 and not has_terminal_sentence:
+        if word_count <= 6 or numeric_tokens >= 1:
+            return True
+        if alpha_tokens and all(len(token) <= 12 for token in alpha_tokens):
+            return True
+
+    if not low_confidence:
+        return False
+
+    if width_ratio <= 0.65 and not has_terminal_sentence:
+        if word_count <= 6:
+            return True
+        if numeric_tokens >= 1:
+            return True
+        if re.search(r"\bvs\.\b", clean, flags=re.IGNORECASE) is not None:
+            return True
+        if alpha_tokens and uppercaseish >= max(2, len(alpha_tokens) // 2):
+            return True
+
+    if width_ratio <= 0.7 and not has_terminal_sentence and word_count <= 22 and alpha_tokens and uppercaseish >= max(3, len(alpha_tokens) // 2):
+        return True
+
+    return False
+
+PAGE_NUMBER_ONLY_LINE_RE = re.compile(r"^\d{1,3}$")
+CHECK_FOR_UPDATES_BANNER_RE = re.compile(r"^check\s+for\s+updates\b", flags=re.IGNORECASE)
+INLINE_HYPHEN_WRAP_RE = re.compile(r"\b[^\W\d_]+-\s+[^\W\d_]+\b", flags=re.UNICODE)
+INLINE_SOFT_HYPHEN_WRAP_RE = re.compile(r"\b([^\W\d_]{2,})\u00ad\s+([^\W\d_]{2,})\b", flags=re.UNICODE)
+INLINE_HARD_HYPHEN_WRAP_RE = re.compile(r"\b([^\W\d_]{3,})-\s+([^\W\d_]{2,})\b", flags=re.UNICODE)
+
+AFFILIATION_KEYWORDS = (
+    "department",
+    "university",
+    "hospital",
+    "institute",
+    "medical center",
+    "faculty",
+    "school of",
+    "address",
+    "correspondence",
+)
+
+
+def strip_clean_document_artifact_lines(text: str) -> str:
+    """Drop narrow known layout-artifact lines from a paragraph block."""
+    clean = str(text)
+    if not clean:
+        return ""
+    kept_lines: list[str] = []
+    for raw_line in clean.splitlines():
+        line = clean_text_line(raw_line)
+        if not line:
+            continue
+        if PAGE_NUMBER_ONLY_LINE_RE.match(line):
+            continue
+        if CHECK_FOR_UPDATES_BANNER_RE.match(line):
+            continue
+        kept_lines.append(line)
+    return clean_text_line(" ".join(kept_lines))
+
+
+def suppression_rule_for_main_body_line(text: str) -> Optional[str]:
+    normalized = clean_text_line(text)
+    if not normalized:
+        return None
+    if PAGE_NUMBER_ONLY_LINE_RE.match(normalized) is not None:
+        return "page_number_only"
+    if CHECK_FOR_UPDATES_BANNER_RE.match(normalized) is not None:
+        return "check_for_updates_banner"
+    if is_affiliation_address_line(normalized):
+        return "affiliation_address_line"
+    return None
+
+
+def is_affiliation_address_line(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    low = clean.lower()
+    has_keyword = any(keyword in low for keyword in AFFILIATION_KEYWORDS)
+    if not has_keyword:
+        return False
+    starts_with_marker = re.match(r"^\d+[\s\).,-]", clean) is not None
+    has_email = "@" in clean
+    has_postal_code = re.search(r"\b\d{5}(?:-\d{4})?\b", clean) is not None
+    comma_density = clean.count(",") >= 2
+    return starts_with_marker or has_email or has_postal_code or comma_density
+
+
+def suppress_non_narrative_main_body_entries(
+    entries: list[tuple[str, Paragraph]],
+    doc_id: str,
+) -> tuple[list[tuple[str, Paragraph]], list[dict[str, Any]]]:
+    filtered_entries: list[tuple[str, Paragraph]] = []
+    suppressions: list[dict[str, Any]] = []
+    observed_at = datetime.now(timezone.utc).isoformat()
+
+    for para_text, para in entries:
+        kept_lines: list[str] = []
+        for raw_line in str(para_text).splitlines():
+            original_text = str(raw_line).strip()
+            normalized_text = clean_text_line(raw_line)
+            if not normalized_text:
+                continue
+            rule_id = suppression_rule_for_main_body_line(normalized_text)
+            if rule_id is None:
+                kept_lines.append(normalized_text)
+                continue
+
+            source_block_ids = para.evidence_pointer.get("source_block_ids", [])
+            if not isinstance(source_block_ids, list):
+                source_block_ids = []
+            suppressions.append(
+                {
+                    "doc_id": doc_id,
+                    "para_id": para.para_id if para.para_id else None,
+                    "source_block_ids": [str(block_id) for block_id in source_block_ids],
+                    "rule_id": rule_id,
+                    "original_text": original_text,
+                    "normalized_text": normalized_text,
+                    "observed_at": observed_at,
+                }
+            )
+
+        merged = clean_text_line(" ".join(kept_lines))
+        if merged:
+            filtered_entries.append((merged, para))
+
+    return filtered_entries, suppressions
+
+
+def starts_like_embedded_heading_body(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean or not starts_like_fresh_sentence(clean):
+        return False
+    if EMBEDDED_HEADING_BODY_START_RE.match(clean):
+        return True
+    first_clause = re.split(r"[.!?;:]", clean, maxsplit=1)[0]
+    return re.search(
+        r"\b(?:is|are|was|were|can|could|may|might|demonstrated|showed|revealed|identified|examined|collected|performed|conducted|exhibited|screened|met)\b",
+        first_clause,
+        flags=re.IGNORECASE,
+    ) is not None
+
+
+def starts_like_leading_section_heading_fragment(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if is_common_unnumbered_section_heading(clean):
+        return True
+
+    tokens = word_tokens(clean)
+    max_tokens = min(24, len(tokens))
+    for token_count in range(2, max_tokens + 1):
+        candidate = clean_text_line(" ".join(tokens[:token_count]))
+        if not candidate:
+            continue
+        if is_plausible_section_heading(candidate) or is_plausible_sentence_case_section_heading(candidate):
+            return True
+    return False
+
+
+def extract_leading_section_heading_from_tail(tail: str) -> tuple[Optional[str], str]:
+    clean_tail = clean_text_line(tail)
+    if not clean_tail:
+        return None, ""
+
+    lowered = clean_tail.lower()
+    for section in sorted(COMMON_UNNUMBERED_SECTION_HEADINGS, key=len, reverse=True):
+        if not lowered.startswith(section):
+            continue
+        if len(clean_tail) > len(section) and clean_tail[len(section)].isalnum():
+            continue
+        heading = clean_text_line(clean_tail[:len(section)])
+        suffix = clean_text_line(clean_tail[len(section):])
+        if suffix and (starts_like_embedded_heading_body(suffix) or starts_like_leading_section_heading_fragment(suffix)):
+            return heading, suffix
+
+    tail_tokens = word_tokens(clean_tail)
+    if len(tail_tokens) < 2:
+        return None, ""
+
+    best_heading = ""
+    max_tokens = min(24, len(tail_tokens))
+    for token_count in range(2, max_tokens + 1):
+        candidate = clean_text_line(" ".join(tail_tokens[:token_count]))
+        if not candidate:
+            continue
+        suffix = clean_text_line(clean_tail[len(candidate):])
+        if not suffix or not starts_like_embedded_heading_body(suffix):
+            continue
+        if is_plausible_section_heading(candidate) or is_plausible_sentence_case_section_heading(candidate):
+            best_heading = candidate
+
+    if not best_heading:
+        return None, ""
+    return best_heading, clean_text_line(clean_tail[len(best_heading):])
+
+
 def split_embedded_section_heading(text: str) -> tuple[str, Optional[str], str]:
-    """Split body text when it embeds an inline numbered section heading."""
+    """Split body text when it embeds an inline numbered or unnumbered section heading."""
     clean = clean_text_line(text)
     if not clean:
         return "", None, ""
 
-    heading_start_pattern = re.compile(r"\b\d+(?:\.\d+)*\.?\s+[A-Za-z]")
-    for match in heading_start_pattern.finditer(clean):
-        start = match.start()
-        if start <= 0:
+    start_positions = [0]
+    for match in re.finditer(r"[.!?]\s+", clean):
+        start_positions.append(match.end())
+
+    seen_starts: set[int] = set()
+    for start in start_positions:
+        if start in seen_starts or start < 0 or start >= len(clean):
             continue
+        seen_starts.add(start)
         prefix = clean_text_line(clean[:start])
-        if not prefix:
-            continue
-        if re.search(r"[.!?]\s*$", prefix) is None:
+        if start > 0 and (not prefix or re.search(r"[.!?]\s*$", prefix) is None):
             continue
 
-        tail = clean[start:]
-        tail_tokens = word_tokens(tail)
-        if len(tail_tokens) < 2:
+        heading, suffix = extract_leading_section_heading_from_tail(clean[start:])
+        if not heading:
             continue
-
-        best_heading = ""
-        max_tokens = min(24, len(tail_tokens))
-        for token_count in range(2, max_tokens + 1):
-            candidate = clean_text_line(" ".join(tail_tokens[:token_count]))
-            if not candidate:
-                continue
-            if is_plausible_section_heading(candidate) and not looks_like_table_noise(candidate):
-                best_heading = candidate
-
-        if not best_heading:
-            continue
-
-        suffix = clean_text_line(tail[len(best_heading):])
-        return prefix, best_heading, suffix
+        return prefix, heading, suffix
 
     return clean, None, ""
 
@@ -600,7 +1086,9 @@ def infer_metadata_role(
     word_count = len(words)
     has_email = "@" in text
     has_doi_marker = "doi" in low or "doi.org" in low
-    starts_with_numeric_marker = re.match(r"^\d+[\s\*\)\.]", text) is not None
+    starts_with_numeric_marker = (
+        re.match(r"^\d{1,3}(?:\s+|\*+\s*|\)+\s*|\.\s*)(?=[A-Za-z])", text) is not None
+    )
     contains_affiliation_keyword = any(
         token in low
         for token in (
@@ -724,6 +1212,14 @@ def infer_clean_role(
         return "table_caption", ["vision_role_table_caption"]
     if vision_role == "ReferenceList":
         return "reference_entry", ["vision_role_reference_list"]
+
+    embedded_caption = extract_embedded_caption_text(text)
+    if embedded_caption:
+        caption_low = embedded_caption.lower()
+        if caption_low.startswith("fig") or caption_low.startswith("figure"):
+            return "figure_caption", ["caption_text_prefix"]
+        if caption_low.startswith("table"):
+            return "table_caption", ["caption_text_prefix"]
 
     if (
         page == 1
@@ -1336,6 +1832,31 @@ def clean_text_line(text: str) -> str:
     return " ".join(str(text).replace("\u00ad", "").split()).strip()
 
 
+def normalize_inline_hyphen_wrap_artifacts(text: str) -> str:
+    """Normalize conservative inline wrap artifacts without aggressive merging."""
+    if not text:
+        return ""
+    normalized = str(text)
+
+    def _soft_wrap_repl(match: re.Match[str]) -> str:
+        left = match.group(1)
+        right = match.group(2)
+        if not right or not right[0].islower():
+            return f"{left} {right}"
+        return f"{left}{right}"
+
+    def _hard_wrap_repl(match: re.Match[str]) -> str:
+        left = match.group(1)
+        right = match.group(2)
+        if not right or not right[0].islower():
+            return f"{left}- {right}"
+        return f"{left}-{right}"
+
+    normalized = INLINE_SOFT_HYPHEN_WRAP_RE.sub(_soft_wrap_repl, normalized)
+    normalized = INLINE_HARD_HYPHEN_WRAP_RE.sub(_hard_wrap_repl, normalized)
+    return clean_text_line(normalized)
+
+
 def unique_texts_in_order(values: list[str]) -> list[str]:
     seen: set[str] = set()
     result: list[str] = []
@@ -1362,6 +1883,41 @@ def is_informative_caption(text: str) -> bool:
     return len(alpha_words) >= 3
 
 
+def has_caption_label_prefix(text: str) -> bool:
+    clean = clean_text_line(text)
+    low = clean.lower()
+    if re.match(r"^fig(?:ure)?\s*\.?\s*\d+[a-z](?:\)\.?|\.)\s", low) is not None:
+        return False
+    return re.match(r"^(fig(?:ure)?|table)\s*\.?\s*\d+[a-z]?\b", low) is not None
+
+
+def extract_embedded_caption_text(text: str) -> Optional[str]:
+    clean = clean_text_line(text)
+    if not clean:
+        return None
+    if has_caption_label_prefix(clean) and should_keep_caption_entry(clean):
+        return clean
+
+    match = re.search(r"\b(fig(?:ure)?|table)\s*\.?\s*\d+[a-z]?\b", clean, flags=re.IGNORECASE)
+    if match is None or match.start() <= 0:
+        return None
+
+    prefix = clean[:match.start()].strip()
+    prefix_words = word_tokens(prefix)
+    prefix_alpha_words = [word for word in prefix_words if any(ch.isalpha() for ch in word)]
+    if len(prefix_words) >= 7 or len(prefix_alpha_words) >= 5:
+        return None
+    if re.search(r"[.!?;:]", prefix) is not None and len(prefix_alpha_words) >= 3:
+        return None
+
+    candidate = clean[match.start():].lstrip(" :;,-")
+    if re.match(r"^fig(?:ure)?\s*\.?\s*\d+[a-z](?:\)\.?|\.)\s", candidate, flags=re.IGNORECASE) is not None:
+        return None
+    if not candidate or not should_keep_caption_entry(candidate):
+        return None
+    return candidate
+
+
 def is_caption_like_entry(text: str) -> bool:
     clean = clean_text_line(text)
     if not is_informative_caption(clean):
@@ -1376,7 +1932,7 @@ def is_caption_like_entry(text: str) -> bool:
         return False
 
     label_like = (
-        re.match(r"^(fig(?:ure)?|table)\s*\.?\s*\d+[a-z]?\b", low) is not None
+        has_caption_label_prefix(clean)
         or re.match(r"^[a-d][,.:\-]\s", low) is not None
         or " fig." in low
         or " figure " in f" {low} "
@@ -1393,6 +1949,153 @@ def is_caption_like_entry(text: str) -> bool:
         return False
     return label_like or (word_count <= 40 and sentence_breaks <= 4)
 
+
+def should_keep_caption_entry(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not is_informative_caption(clean):
+        return False
+    if has_caption_label_prefix(clean):
+        return True
+    return is_caption_like_entry(clean)
+
+
+def is_caption_continuation_paragraph(para: Paragraph, text: str) -> bool:
+    if para.role != "Body":
+        return False
+    if para.section_path:
+        return False
+
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if extract_embedded_caption_text(clean):
+        return False
+
+    try:
+        confidence = float(para.confidence)
+    except (TypeError, ValueError):
+        confidence = 1.0
+    if confidence > 0.6:
+        return False
+
+    low = clean.lower()
+    continuation_markers = (
+        "scale bar",
+        "source data",
+        "representative",
+        "box plot",
+        "interquartile range",
+        "whiskers extend",
+        "the p values",
+        "p values",
+        "corrected chi-square",
+        "kruskal-wallis",
+        "one-way anova",
+        "student's t-test",
+    )
+    return any(marker in low for marker in continuation_markers)
+
+
+def is_lowercase_caption_continuation_paragraph(para: Paragraph, text: str) -> bool:
+    if para.role != "Body":
+        return False
+    if para.section_path:
+        return False
+
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if extract_embedded_caption_text(clean):
+        return False
+
+    try:
+        confidence = float(para.confidence)
+    except (TypeError, ValueError):
+        confidence = 1.0
+    if confidence > 0.6:
+        return False
+
+    stripped = clean.lstrip("([")
+    if not stripped:
+        return False
+    return stripped[:1].islower()
+
+
+def is_close_to_caption_bbox(para: Paragraph, caption_bbox: Optional[list[float]]) -> bool:
+    if not isinstance(caption_bbox, list) or len(caption_bbox) < 4:
+        return False
+    bbox_obj = para.evidence_pointer.get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox_obj, list) or len(bbox_obj) < 4:
+        return False
+    try:
+        current_y0 = float(bbox_obj[1])
+        current_y1 = float(bbox_obj[3])
+        caption_y0 = float(caption_bbox[1])
+        caption_y1 = float(caption_bbox[3])
+    except (TypeError, ValueError):
+        return False
+
+    if current_y1 < caption_y0 - 20.0:
+        return False
+    return current_y0 <= caption_y1 + 80.0
+
+
+def looks_like_figure_chart_noise(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+
+    low = clean.lower()
+    words = word_tokens(clean)
+    word_count = len(words)
+    has_terminal_sentence = re.search(r"[.!?]\s*$", clean) is not None
+    numeric_tokens = len(re.findall(r"\b\d+(?:\.\d+)?\b", clean))
+
+    if extract_embedded_caption_text(clean):
+        return True
+
+    if re.search(r"-log10\s*\(p-?value\)", low) is not None:
+        return True
+
+    if numeric_tokens >= 2 and re.fullmatch(r"[\d\s.+-]+", clean) is not None:
+        return True
+
+    if word_count <= 2 and not has_terminal_sentence:
+        if numeric_tokens >= 1:
+            return True
+        if len(clean) <= 12 and re.match(r"^[A-Za-z][A-Za-z0-9_-]*$", clean) is not None:
+            return True
+
+    if (
+        word_count <= 10
+        and numeric_tokens >= 1
+        and not has_terminal_sentence
+        and re.search(r"\b(or|hr|auc)\b", low) is not None
+    ):
+        return True
+
+    chart_terms = sum(
+        1
+        for token in (
+            "pathway",
+            "pathways",
+            "response",
+            "signaling",
+            "interaction",
+            "contraction",
+            "chemokine",
+            "cytokine",
+            "feature",
+        )
+        if token in low
+    )
+    if word_count <= 24 and not has_terminal_sentence and chart_terms >= 3:
+        return True
+
+    if word_count <= 12 and not has_terminal_sentence and numeric_tokens >= max(2, word_count // 2):
+        return True
+
+    return False
 
 def looks_like_table_noise(text: str) -> bool:
     """Detect table-like or listing-like noise that should be excluded from Main Body.
@@ -1467,6 +2170,11 @@ def looks_like_table_noise(text: str) -> bool:
     # Advantages Disadvantages column header pair (very strong table indicator)
     if "advantages" in low and "disadvantages" in low:
         return True
+    if word_count <= 12 and (
+        ("advantage" in low and "disadvantage" in low)
+        or ("benefit" in low and "limitation" in low)
+    ):
+        return True
 
     # Citation-only bracket line (reference numbers only in brackets) - check early
     # Pattern: [ number ], [ num, num, ... ], possibly with spaces
@@ -1525,15 +2233,29 @@ def looks_like_table_noise(text: str) -> bool:
         )
     )
 
-    # Dense capitalized short terms (typical table headers) - works for longer content
+    sentence_breaks = len(re.findall(r"[.!?]", clean))
+    narrative_ratio = sentence_like_ratio(words)
+
+    # Preserve longer narrative prose and defer table normalization to the
+    # downstream figure/table stage. This avoids dropping valid body text.
+    if (
+        word_count >= 18
+        and sentence_breaks >= 1
+        and narrative_ratio >= 0.55
+        and not has_tabular_markers
+    ):
+        return False
+
+    # Dense capitalized short terms (typical table headers) for short/medium spans.
     capitalized_words = [w for w in words if w and w[0].isupper() and len(w) <= 12]
-    if len(capitalized_words) >= word_count * 0.6 and len(capitalized_words) >= 4:
-        # Likely tabular heading
+    if 5 <= word_count <= 24 and len(capitalized_words) >= word_count * 0.6 and len(capitalized_words) >= 4:
         return True
 
-    # Units column pattern: multiple number + unit pairs
-    unit_pattern_matches = len(re.findall(r"\b\d+\.?\d*\s+(mm|cm|kg|hz|khz|mhz|kv|ma|w|v|degrees?|°)\b", low))
-    if unit_pattern_matches >= 2:
+    # Units column pattern: multiple number + unit pairs in compact rows.
+    unit_pattern_matches = len(
+        re.findall(r"\b\d+\.?\d*\s+(mm|cm|kg|hz|khz|mhz|kv|ma|w|v|degrees?|°)\b", low)
+    )
+    if 4 <= word_count <= 24 and unit_pattern_matches >= 2 and sentence_breaks <= 1:
         return True
 
     # Numeric row pattern: 3+ standalone numbers (table column data)
@@ -1548,11 +2270,11 @@ def looks_like_table_noise(text: str) -> bool:
 
     # Column-like structure: repeated separators with short capitalized items
     # Must have 4+ short items to be considered table-like
-    if word_count >= 5:
+    if 5 <= word_count <= 28:
         short_items = re.findall(r"\b[A-Z][a-z]{1,8}\b", clean)
         if len(short_items) >= 4:
             # Multiple short title-case items - check for separator pattern
-            if re.search(r"[,;]\s+[A-Z][a-z]", clean):
+            if re.search(r"[,;]\s+[A-Z][a-z]", clean) and sentence_breaks == 0:
                 return True
 
     # Numbers-only rows with consistent structure (very strict)
@@ -2559,40 +3281,105 @@ def refine_main_body_with_llm(
 
 def extract_objective_or_abstract(paragraphs: list[Paragraph]) -> Optional[str]:
     """Extract abstract or objective text from early paragraphs for overlap detection."""
-    for para in sorted(paragraphs, key=paragraph_sort_key):
-        if para.role != "Body":
-            continue
+    ordered = sorted(paragraphs, key=paragraph_sort_key)
+    para_by_id = {para.para_id: para for para in ordered}
+    summary_markers = [
+        "is emphasized", "is proposed", "is reviewed", "is summarized",
+        "we review", "we summarize", "we propose", "we present",
+        "this review", "this article", "this paper",
+        "future development", "challenges are", "perspectives are",
+    ]
+    continuation_markers = [
+        "is emphasized",
+        "future development",
+        "challenges are",
+        "are proposed",
+        "is proposed",
+        "perspectives are",
+    ]
+
+    for idx, para in enumerate(ordered):
         if para.page_span.get("start", 99) > 2:
             continue
         text = clean_text_line(para.text)
         if not text:
             continue
         low = text.lower()
-        
-        # Explicit markers
-        if "objective" in low:
-            match = re.search(r"objective\.?\s*(.+?)(?:\bmaterials\b|\bmethods\b|\bbackground\b|$)", text, flags=re.IGNORECASE)
-            if match:
-                return clean_text_line(match.group(0))
-            return text[:800]
-        if "abstract" in low[:80]:
-            return text[:800]
-        
-        # Implicit abstract detection: short summary-like paragraphs on page 1
-        # Abstracts typically: 1) appear first, 2) are summary-style, 3) mention "review", "overview", "emphasized"
-        if para.page_span.get("start", 1) == 1:
-            summary_markers = [
-                "is emphasized", "is proposed", "is reviewed", "is summarized",
-                "we review", "we summarize", "we propose", "we present",
-                "this review", "this article", "this paper",
-                "future development", "challenges are", "perspectives are",
-            ]
-            if any(marker in low for marker in summary_markers):
-                # Likely abstract fragment - return for overlap detection
-                return text[:800]
-    
-    return None
 
+        candidate: Optional[str] = None
+        if para.role == "Body":
+            # Explicit markers
+            if "objective" in low:
+                match = re.search(
+                    r"objective\.?\s*(.+?)(?:\bmaterials\b|\bmethods\b|\bbackground\b|$)",
+                    text,
+                    flags=re.IGNORECASE,
+                )
+                if match:
+                    candidate = clean_text_line(match.group(0))
+                else:
+                    candidate = text
+            elif "abstract" in low[:80]:
+                candidate = text
+            # Implicit abstract detection: short summary-like paragraphs on page 1
+            elif para.page_span.get("start", 1) == 1 and any(marker in low for marker in summary_markers):
+                candidate = text
+
+        if not candidate:
+            continue
+
+        merged = candidate
+
+        # Prefer the explicit paragraph neighbor chain to avoid ordering noise
+        # from multi-column layouts or interleaved section text.
+        follow_candidates: list[Paragraph] = []
+        next_id_obj = para.neighbors.get("next_para_id") if isinstance(para.neighbors, dict) else None
+        if isinstance(next_id_obj, str) and next_id_obj:
+            seen_ids = {para.para_id}
+            current_id = next_id_obj
+            for _ in range(2):
+                if current_id in seen_ids:
+                    break
+                seen_ids.add(current_id)
+                follow_para = para_by_id.get(current_id)
+                if follow_para is None:
+                    break
+                follow_candidates.append(follow_para)
+                next_obj = (
+                    follow_para.neighbors.get("next_para_id")
+                    if isinstance(follow_para.neighbors, dict)
+                    else None
+                )
+                if not isinstance(next_obj, str) or not next_obj:
+                    break
+                current_id = next_obj
+
+        if not follow_candidates:
+            follow_candidates = list(ordered[idx + 1 : idx + 3])
+
+        # Merge immediate heading/body continuation fragments that OCR may mislabel as Heading.
+        for follow in follow_candidates:
+            if follow.page_span.get("start", 99) > 2:
+                break
+            follow_text = clean_text_line(follow.text)
+            if not follow_text:
+                continue
+            follow_low = follow_text.lower()
+            if re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", follow_text):
+                break
+            if follow.role not in {"Body", "Heading"}:
+                break
+            if not starts_with_lowercase_token(follow_text):
+                break
+            if len(word_tokens(follow_text)) > 35:
+                break
+            if not any(marker in follow_low for marker in continuation_markers):
+                break
+            merged = clean_text_line(f"{merged} {follow_text}")
+
+        return merged
+
+    return None
 
 def recover_missing_organic_subsection(
     section_order: list[str],
@@ -2649,12 +3436,95 @@ def recover_missing_organic_subsection(
     return recovered_order
 
 
+def looks_like_placeholder_title(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return True
+    return clean.lower() in {"check for updates"}
+
+
+def extract_doi_url(text: str) -> Optional[str]:
+    match = re.search(r"https?://doi\.org/[^\s>\"'\)]+|10\.\d{4,}[^\s>\"'\)]+", text, flags=re.IGNORECASE)
+    if match is None:
+        return None
+    value = match.group(0).rstrip(".,;:)")
+    if value.lower().startswith("http"):
+        return value
+    return f"https://doi.org/{value}"
+
+
+def normalize_doi_metadata_values(values: list[str]) -> list[str]:
+    normalized: list[str] = []
+    for value in values:
+        doi_url = extract_doi_url(value)
+        candidate = doi_url or clean_text_line(value)
+        if candidate and candidate not in normalized:
+            normalized.append(candidate)
+    return normalized
+
+
+def sanitize_metadata_title_candidate(text: str) -> str:
+    clean = clean_text_line(text)
+    clean = re.sub(r"^(?:article|review)\s+", "", clean, flags=re.IGNORECASE)
+    clean = re.sub(r"^doi[:\s]+", "", clean, flags=re.IGNORECASE)
+    clean = re.sub(r"^https?://doi\.org/[^\s>\"'\)]+\s*", "", clean, flags=re.IGNORECASE)
+    clean = re.sub(r"^10\.\d{4,}[^\s>\"'\)]+\s*", "", clean, flags=re.IGNORECASE)
+    return clean.strip(" -:;,.")
+
+
+def looks_like_document_title_candidate(text: str) -> bool:
+    clean = clean_text_line(text)
+    low = clean.lower()
+    words = word_tokens(clean)
+    if len(words) < 4 or len(words) > 40 or len(clean) < 24:
+        return False
+    if looks_like_placeholder_title(clean):
+        return False
+    if clean.endswith("."):
+        return False
+    if any(low.startswith(prefix) for prefix in ("received", "accepted", "keywords", "submission timeline")):
+        return False
+    if looks_like_table_noise(clean):
+        return False
+    return True
+
+
+def extract_title_from_metadata_blocks(annotated_blocks: list[dict[str, Any]]) -> str:
+    candidates: list[tuple[int, float, float, int, str]] = []
+    for block in annotated_blocks:
+        page = int(block.get("page", 1) or 1)
+        if page != 1 or bool(block.get("is_nuisance", False)):
+            continue
+        clean_role = str(block.get("clean_role", "") or "")
+        raw_text = str(block.get("text", "") or "")
+        candidate = sanitize_metadata_title_candidate(raw_text)
+        if not looks_like_document_title_candidate(candidate):
+            continue
+        font_stats = block.get("font_stats", {})
+        if not isinstance(font_stats, dict):
+            font_stats = {}
+        avg_size = float(font_stats.get("avg_size", 0.0) or 0.0)
+        bbox = block.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])
+        if not isinstance(bbox, list) or len(bbox) < 2:
+            bbox = [0.0, 0.0, 0.0, 0.0]
+        y0 = float(bbox[1])
+        role_priority = 2 if clean_role == "main_title" else (1 if clean_role == "doi" else 0)
+        candidates.append((role_priority, avg_size, -y0, len(candidate), candidate))
+
+    if not candidates:
+        return ""
+
+    candidates.sort(reverse=True)
+    return candidates[0][-1]
+
+
 def render_clean_document(
     paragraphs: list[Paragraph],
     annotated_blocks: list[dict[str, Any]],
+    doc_id: str,
     qa_dir: Optional[Path] = None,
     text_dir: Optional[Path] = None,
-) -> str:
+) -> tuple[str, list[dict[str, Any]]]:
     page_layouts = {}
     if text_dir:
         page_layouts = load_page_layouts(text_dir)
@@ -2665,11 +3535,13 @@ def render_clean_document(
     ordered_paragraphs = sort_paragraphs_column_aware(paragraphs, para_bounds_by_page, page_layouts)
     # Recompute bounds after sorting (bounds should be same but ensures consistency)
     para_bounds_by_page = infer_para_page_bounds(ordered_paragraphs)
+    narrow_fragment_page_counts = compute_narrow_fragment_page_counts(ordered_paragraphs, para_bounds_by_page)
     clean_role_by_block = {
         str(block.get("block_id", "")): str(block.get("clean_role", ""))
         for block in annotated_blocks
         if str(block.get("block_id", ""))
     }
+    ordered_blocks = sorted(annotated_blocks, key=block_sort_key)
 
     title = ""
     # continued-marker regex used to avoid promoting marker-only paragraphs to title
@@ -2727,6 +3599,10 @@ def render_clean_document(
             title = txt[:180]
             break
 
+    metadata_title = extract_title_from_metadata_blocks(ordered_blocks)
+    if metadata_title and (not title or looks_like_placeholder_title(title)):
+        title = metadata_title
+
     objective_or_abstract = extract_objective_or_abstract(ordered_paragraphs)
 
     section_to_paragraphs: dict[str, list[tuple[str, Paragraph]]] = {}
@@ -2736,12 +3612,31 @@ def render_clean_document(
 
     figure_captions: list[str] = []
     table_captions: list[str] = []
+    last_caption_kind: Optional[str] = None
+    last_caption_page: Optional[int] = None
+    last_caption_bbox: Optional[list[float]] = None
+    consumed_para_ids: set[str] = set()
 
     for para in ordered_paragraphs:
         text = clean_text_line(para.text)
         if not text:
             continue
+        page = int(para.page_span.get("start", 1))
+        embedded_caption = extract_embedded_caption_text(text)
         para_clean = paragraph_clean_roles(para, clean_role_by_block)
+        if is_narrow_table_fragment_paragraph(
+            para,
+            text,
+            para_bounds_by_page,
+            narrow_fragment_page_counts=narrow_fragment_page_counts,
+        ):
+            continue
+        if is_narrow_figure_fragment_paragraph(
+            para,
+            text,
+            para_bounds_by_page,
+        ):
+            continue
 
         # Priority 1: Use para.section_path when available (from vision-detected headings)
         # This captures section context that heading-tracking might miss
@@ -2769,6 +3664,9 @@ def render_clean_document(
                 section_from_path = True
 
         if section_from_path and "body_text" not in para_clean:
+            last_caption_kind = None
+            last_caption_page = None
+            last_caption_bbox = None
             continue
 
         # Priority 2: Fall back to heading role detection when section_path is unavailable
@@ -2798,43 +3696,136 @@ def render_clean_document(
                     section_from_heading_role = True
 
         if section_from_heading_role and "body_text" not in para_clean:
+            last_caption_kind = None
+            last_caption_page = None
+            last_caption_bbox = None
+            continue
+
+        if (
+            last_caption_kind
+            and last_caption_page == page
+            and (
+                is_caption_continuation_paragraph(para, text)
+                or (
+                    is_lowercase_caption_continuation_paragraph(para, text)
+                    and is_close_to_caption_bbox(para, last_caption_bbox)
+                )
+            )
+        ):
+            if last_caption_kind == "figure" and figure_captions:
+                figure_captions[-1] = clean_text_line(f"{figure_captions[-1]} {text}")
+            elif last_caption_kind == "table" and table_captions:
+                table_captions[-1] = clean_text_line(f"{table_captions[-1]} {text}")
+            bbox_obj = para.evidence_pointer.get("bbox_union", None)
+            if isinstance(bbox_obj, list) and len(bbox_obj) >= 4:
+                last_caption_bbox = bbox_obj
+            consumed_para_ids.add(para.para_id)
             continue
 
         if "figure_caption" in para_clean or para.role == "FigureCaption":
-            if is_caption_like_entry(text):
-                figure_captions.append(text)
-            continue
+            caption_text = embedded_caption
+            if not caption_text and has_caption_label_prefix(text):
+                caption_text = text
+            if caption_text and should_keep_caption_entry(caption_text):
+                figure_captions.append(caption_text)
+                last_caption_kind = "figure"
+                last_caption_page = page
+                bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                consumed_para_ids.add(para.para_id)
+                continue
+            para_clean.discard("figure_caption")
+            para_clean.add("body_text")
         if "table_caption" in para_clean or para.role == "TableCaption":
-            if is_caption_like_entry(text):
-                table_captions.append(text)
-            continue
+            caption_text = embedded_caption
+            if not caption_text and has_caption_label_prefix(text):
+                caption_text = text
+            if caption_text and should_keep_caption_entry(caption_text):
+                table_captions.append(caption_text)
+                last_caption_kind = "table"
+                last_caption_page = page
+                bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                consumed_para_ids.add(para.para_id)
+                continue
+            para_clean.discard("table_caption")
+            para_clean.add("body_text")
+        if embedded_caption and should_keep_caption_entry(embedded_caption):
+            low = embedded_caption.lower()
+            if low.startswith("fig") or low.startswith("figure"):
+                figure_captions.append(embedded_caption)
+                last_caption_kind = "figure"
+                last_caption_page = page
+                bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                consumed_para_ids.add(para.para_id)
+                continue
+            if low.startswith("table"):
+                table_captions.append(embedded_caption)
+                last_caption_kind = "table"
+                last_caption_page = page
+                bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                consumed_para_ids.add(para.para_id)
+                continue
         if para_clean & METADATA_FAMILY_ROLES:
+            last_caption_kind = None
+            last_caption_page = None
+            last_caption_bbox = None
             continue
         if "body_text" not in para_clean:
             # Conservative fallback: when paragraph aggregation already
             # classified an item as Body, keep it unless it is explicitly
             # marked as reference-entry or nuisance by clean-role labels.
             if para.role != "Body":
+                last_caption_kind = None
+                last_caption_page = None
+                last_caption_bbox = None
                 continue
             if para_clean & {"reference_entry", "nuisance"}:
+                last_caption_kind = None
+                last_caption_page = None
+                last_caption_bbox = None
                 continue
+
+        if looks_like_figure_chart_noise(text):
+            continue
 
         if current_section not in section_to_paragraphs:
             section_to_paragraphs[current_section] = []
             section_order.append(current_section)
 
-        body_prefix, embedded_heading, body_suffix = split_embedded_section_heading(text)
-        if body_prefix:
-            if not should_exclude_for_abstract_overlap(body_prefix, objective_or_abstract):
-                if not looks_like_table_noise(body_prefix):
-                    section_to_paragraphs[current_section].append((body_prefix, para))
+        remaining_text = text
+        split_guard = 0
+        while remaining_text and split_guard < 6:
+            split_guard += 1
+            body_prefix, embedded_heading, body_suffix = split_embedded_section_heading(remaining_text)
+            if not embedded_heading:
+                final_body = body_prefix or remaining_text
+                if not should_exclude_for_abstract_overlap(final_body, objective_or_abstract):
+                    if not looks_like_table_noise(final_body) and not looks_like_figure_chart_noise(final_body):
+                        section_to_paragraphs[current_section].append((final_body, para))
+                        last_caption_kind = None
+                        last_caption_page = None
+                        last_caption_bbox = None
+                break
 
-        if embedded_heading:
+            if body_prefix:
+                if not should_exclude_for_abstract_overlap(body_prefix, objective_or_abstract):
+                    if not looks_like_table_noise(body_prefix) and not looks_like_figure_chart_noise(body_prefix):
+                        section_to_paragraphs[current_section].append((body_prefix, para))
+                        last_caption_kind = None
+                        last_caption_page = None
+                        last_caption_bbox = None
+
             heading_key = normalize_section_key(embedded_heading)
             if (
                 heading_key
                 and heading_key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}
-                and is_plausible_section_heading(embedded_heading)
+                and (
+                    is_plausible_section_heading(embedded_heading)
+                    or is_plausible_sentence_case_section_heading(embedded_heading)
+                )
                 and not looks_like_table_noise(embedded_heading)
             ):
                 current_section = section_key_to_title.get(heading_key, embedded_heading)
@@ -2842,15 +3833,15 @@ def render_clean_document(
                 if current_section not in section_to_paragraphs:
                     section_to_paragraphs[current_section] = []
                     section_order.append(current_section)
-            if not body_suffix:
-                continue
-            if should_exclude_for_abstract_overlap(body_suffix, objective_or_abstract):
-                continue
-            if looks_like_table_noise(body_suffix):
-                continue
-            section_to_paragraphs[current_section].append((body_suffix, para))
 
-    ordered_blocks = sorted(annotated_blocks, key=block_sort_key)
+            if not body_suffix:
+                break
+            if should_exclude_for_abstract_overlap(body_suffix, objective_or_abstract):
+                break
+            if looks_like_table_noise(body_suffix) or looks_like_figure_chart_noise(body_suffix):
+                break
+            remaining_text = body_suffix
+
     # Exclude items that look like section headings or table noise from
     # author/affiliation metadata lists. Some OCR'd documents duplicate
     # section headings into nearby blocks which can confuse metadata
@@ -2893,6 +3884,8 @@ def render_clean_document(
         ])
         for role, _ in METADATA_SECTION_ROLES
     }
+    if metadata_values.get("doi"):
+        metadata_values["doi"] = normalize_doi_metadata_values(metadata_values["doi"])
     
     # Extract DOI directly from annotated_blocks (includes nuisance-filtered blocks)
     if not metadata_values.get("doi"):
@@ -2956,19 +3949,22 @@ def render_clean_document(
         section_order = ["Main Body"]
         fallback_body: list[tuple[str, Paragraph]] = []
         for para in ordered_paragraphs:
+            if para.para_id in consumed_para_ids:
+                continue
             para_clean = paragraph_clean_roles(para, clean_role_by_block)
             if "body_text" not in para_clean or (para_clean & METADATA_FAMILY_ROLES):
                 continue
             text = clean_text_line(para.text)
             if should_exclude_for_abstract_overlap(text, objective_or_abstract):
                 continue
-            if looks_like_table_noise(text):
+            if looks_like_table_noise(text) or looks_like_figure_chart_noise(text):
                 continue
             if text:
                 fallback_body.append((text, para))
         section_to_paragraphs["Main Body"] = fallback_body
 
     section_order = recover_missing_organic_subsection(section_order, section_to_paragraphs)
+    suppression_events: list[dict[str, Any]] = []
     # Process and refine each section conservatively, collecting intermediate results
     processed_section_entries: dict[str, list[tuple[str, Paragraph]]] = {}
     for section in section_order:
@@ -3051,6 +4047,13 @@ def render_clean_document(
                     continue
             filtered_pruned.append((txt, para))
 
+        if filtered_pruned:
+            filtered_pruned, section_suppressions = suppress_non_narrative_main_body_entries(
+                filtered_pruned,
+                doc_id=doc_id,
+            )
+            suppression_events.extend(section_suppressions)
+
         processed_section_entries[section] = filtered_pruned
 
     # Conservative post-processing: consider merging tiny leading lowercase
@@ -3098,8 +4101,25 @@ def render_clean_document(
         section_texts = repair_body_paragraph_boundaries(pruned_entries, para_bounds_by_page)
         section_texts = merge_citation_tail_continuation_paragraphs(section_texts)
         paragraphs_in_section = unique_texts_in_order(section_texts)
+        filtered_paragraphs: list[str] = []
+        for paragraph_text in paragraphs_in_section:
+            cleaned_paragraph_text = normalize_inline_hyphen_wrap_artifacts(paragraph_text)
+            if cleaned_paragraph_text:
+                filtered_paragraphs.append(cleaned_paragraph_text)
+        paragraphs_in_section = unique_texts_in_order(filtered_paragraphs)
         if not paragraphs_in_section:
-            if section != "Main Body" and should_emit_empty_section_heading(section):
+            emit_empty_heading = (
+                section != "Main Body"
+                and should_emit_empty_section_heading(section)
+                and (
+                    is_common_unnumbered_section_heading(section)
+                    or has_descendant_numbered_section(section, section_order)
+                )
+            )
+            if emit_empty_heading:
+                lines.append(f"### {clean_text_line(section)}")
+                lines.append("")
+            elif section != "Main Body":
                 lines.append(clean_text_line(section))
                 lines.append("")
             continue
@@ -3111,8 +4131,8 @@ def render_clean_document(
             lines.append(paragraph_text)
             lines.append("")
 
-    figure_captions = [cap for cap in unique_texts_in_order(figure_captions) if is_caption_like_entry(cap)]
-    table_captions = [cap for cap in unique_texts_in_order(table_captions) if is_caption_like_entry(cap)]
+    figure_captions = [cap for cap in unique_texts_in_order(figure_captions) if should_keep_caption_entry(cap)]
+    table_captions = [cap for cap in unique_texts_in_order(table_captions) if should_keep_caption_entry(cap)]
 
     if figure_captions or table_captions:
         lines.append("## Figures and Tables")
@@ -3137,7 +4157,144 @@ def render_clean_document(
             lines.append(f"- {item}")
         lines.append("")
 
-    return "\n".join(lines).strip() + "\n"
+    return "\n".join(lines).strip() + "\n", suppression_events
+
+
+def extract_markdown_section(markdown: str, section_title: str) -> str:
+    pattern = rf"^## {re.escape(section_title)}\n(.*?)(?=^## |\Z)"
+    match = re.search(pattern, markdown, flags=re.MULTILINE | re.DOTALL)
+    if match is None:
+        return ""
+    return str(match.group(1))
+
+
+def parse_main_body_structure(clean_document: str) -> tuple[list[str], list[tuple[str, list[str]]]]:
+    main_body_raw = extract_markdown_section(clean_document, "Main Body")
+    if not main_body_raw:
+        return [], []
+
+    main_body_lines = [line.strip() for line in main_body_raw.splitlines() if line.strip()]
+    sections: list[tuple[str, list[str]]] = []
+    current_heading = "Main Body"
+    current_lines: list[str] = []
+    saw_explicit_heading = False
+
+    for line in main_body_lines:
+        if line.startswith("### "):
+            if saw_explicit_heading:
+                sections.append((current_heading, current_lines))
+            current_heading = clean_text_line(line[4:])
+            current_lines = []
+            saw_explicit_heading = True
+            continue
+        current_lines.append(line)
+
+    if saw_explicit_heading:
+        sections.append((current_heading, current_lines))
+
+    return main_body_lines, sections
+
+
+def compute_column_crossovers_per_1000_tokens(
+    paragraphs: list[Paragraph],
+    clean_role_by_block: dict[str, str],
+) -> float:
+    if not paragraphs:
+        return 0.0
+
+    bounds_by_page = infer_para_page_bounds(paragraphs)
+    token_total = 0
+    column_crossovers = 0
+    previous: Optional[tuple[int, float, float]] = None
+
+    for para in paragraphs:
+        if para.role != "Body":
+            continue
+        para_clean = paragraph_clean_roles(para, clean_role_by_block)
+        if para_clean & METADATA_FAMILY_ROLES:
+            continue
+        if para_clean & {"figure_caption", "table_caption", "reference_entry", "nuisance"}:
+            continue
+
+        text = clean_text_line(para.text)
+        if not text:
+            continue
+
+        x0, _, x1, _ = para_bbox_union(para)
+        page = int(para.page_span.get("start", 1))
+        bounds = bounds_by_page.get(page, [0.0, 0.0, max(x1, 1.0), 1.0])
+        page_width = max(1e-6, float(bounds[2]) - float(bounds[0]))
+        width_rel = (x1 - x0) / page_width
+        if width_rel >= 0.72:
+            continue
+
+        x_rel, _ = para_relative_position(para, bounds_by_page)
+        tokens = len(word_tokens(text))
+        token_total += tokens
+
+        if previous is not None and previous[0] == page:
+            previous_x_rel = previous[1]
+            crossed_column = (previous_x_rel < 0.5 <= x_rel) or (previous_x_rel >= 0.5 > x_rel)
+            if crossed_column:
+                column_crossovers += 1
+
+        previous = (page, x_rel, width_rel)
+
+    if token_total <= 0:
+        return 0.0
+    return (column_crossovers * 1000.0) / float(token_total)
+
+
+def compute_clean_document_metrics(
+    clean_document: str,
+    paragraphs: list[Paragraph],
+    annotated_blocks: list[dict[str, Any]],
+    doc_id: str,
+) -> dict[str, Any]:
+    main_body_lines, main_body_sections = parse_main_body_structure(clean_document)
+    heading_body_detach_count = sum(1 for _, lines in main_body_sections if not lines)
+    explicit_headings = [heading for heading, _ in main_body_sections if heading]
+    normalized_headings = [normalize_section_key(heading) for heading in explicit_headings if normalize_section_key(heading)]
+
+    duplicate_count = max(0, len(normalized_headings) - len(set(normalized_headings)))
+    duplicate_ratio = (duplicate_count / float(len(normalized_headings))) if normalized_headings else 0.0
+
+    clean_role_by_block = {
+        str(block.get("block_id", "")): str(block.get("clean_role", ""))
+        for block in annotated_blocks
+        if str(block.get("block_id", ""))
+    }
+    column_crossovers_per_1000_tokens = compute_column_crossovers_per_1000_tokens(paragraphs, clean_role_by_block)
+    references_like_blocks_exist = any(
+        str(block.get("clean_role", "")) == "reference_entry"
+        or is_reference_entry_text(str(block.get("text", "")))
+        for block in annotated_blocks
+    )
+    references_boundary_detected = "## References" in clean_document
+
+    hyphen_wrap_count = len(INLINE_HYPHEN_WRAP_RE.findall("\n".join(main_body_lines)))
+    affiliation_leak_count = sum(1 for line in main_body_lines if is_affiliation_address_line(line))
+    standalone_page_number_count = sum(1 for line in main_body_lines if PAGE_NUMBER_ONLY_LINE_RE.match(line) is not None)
+    check_for_updates_count = sum(1 for line in main_body_lines if CHECK_FOR_UPDATES_BANNER_RE.match(line) is not None)
+
+    section_boundary_unstable = (
+        len(main_body_sections) == 0
+        or (not references_boundary_detected and references_like_blocks_exist)
+        or duplicate_ratio > 0.2
+    )
+    ordering_confidence_low = column_crossovers_per_1000_tokens > 8.0 or heading_body_detach_count > 3
+
+    return {
+        "doc_id": doc_id,
+        "orphan_heading_count": heading_body_detach_count,
+        "standalone_page_number_count": standalone_page_number_count,
+        "check_for_updates_count": check_for_updates_count,
+        "affiliation_leak_count": affiliation_leak_count,
+        "ordering_confidence_low": ordering_confidence_low,
+        "section_boundary_unstable": section_boundary_unstable,
+        "hyphen_wrap_count": hyphen_wrap_count,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+    }
 
 
 def run_paragraphs(
@@ -3188,8 +4345,27 @@ def run_paragraphs(
             }
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    clean_document = render_clean_document(paragraphs, annotated_blocks, qa_dir=qa_dir, text_dir=text_dir)
+    clean_document, suppression_events = render_clean_document(
+        paragraphs,
+        annotated_blocks,
+        doc_id=run_dir.name,
+        qa_dir=qa_dir,
+        text_dir=text_dir,
+    )
     with open(text_dir / "clean_document.md", "w", encoding="utf-8") as f:
         f.write(clean_document)
 
+    write_jsonl(qa_dir / "clean_document_suppressions.jsonl", suppression_events)
+
+    metrics = compute_clean_document_metrics(
+        clean_document=clean_document,
+        paragraphs=paragraphs,
+        annotated_blocks=annotated_blocks,
+        doc_id=run_dir.name,
+    )
+    with open(qa_dir / "clean_document_metrics.json", "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
     return len(paragraphs), len(blocks)
+

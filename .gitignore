@@ -7,3 +7,13 @@ example_pdf/
 .sisyphus/
 unilm/
 xy-cut/
+simple-docstrum/
+.pytest_*/
+.pytest_cache/
+tmp_*/
+run_pytest_tmp/
+tmpcmdtest/
+.conda312/
+__pycache__/
+*.py[cod]
+

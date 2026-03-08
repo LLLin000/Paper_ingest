@@ -2,7 +2,9 @@ from ingest.citations import (
     CiteAnchor,
     build_paragraph_spatial_index,
     find_nearest_para,
+    map_citation_to_reference,
     should_demote_anchor_to_structural_link,
+    should_demote_non_bibliography_internal_anchor,
 )
 
 
@@ -35,6 +37,36 @@ def test_demote_single_digit_for_external_anchor_when_missing() -> None:
         _anchor("1", link_type="external"),
         marker_to_key={2: "doi:10.1000/x"},
     )
+
+
+def test_named_destination_maps_when_marker_index_missing() -> None:
+    anchor = _anchor("[7]", link_type="internal")
+    setattr(anchor, "dest_name", "adfm202314079-bib-0007")
+
+    mapping = map_citation_to_reference(
+        anchor=anchor,
+        paragraphs={},
+        reference_paras={},
+        reference_entries=[],
+        marker_to_key={},
+    )
+
+    assert mapping.strategy_used == "internal_dest"
+    assert mapping.mapped_ref_key == "bib:dest_0007"
+
+
+def test_non_bibliography_named_destination_is_demoted() -> None:
+    anchor = _anchor("[1]", link_type="internal")
+    setattr(anchor, "dest_name", "adfm202314079-fig-0001")
+
+    assert should_demote_non_bibliography_internal_anchor(anchor) is True
+
+
+def test_bibliography_named_destination_is_not_demoted() -> None:
+    anchor = _anchor("[1]", link_type="internal")
+    setattr(anchor, "dest_name", "adfm202314079-bib-0001")
+
+    assert should_demote_non_bibliography_internal_anchor(anchor) is False
 
 
 def _para(start: int, y0: float, end: int | None = None) -> dict[str, object]:

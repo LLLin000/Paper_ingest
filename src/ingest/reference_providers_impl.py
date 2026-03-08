@@ -153,6 +153,28 @@ def _extract_from_clean_document(clean_document_path: Path) -> dict[str, Any]:
     }
 
 
+def _extract_doi_from_blocks(blocks_dir: Path) -> Optional[str]:
+    """Extract DOI from blocks_norm.jsonl (includes metadata blocks filtered from clean_document)."""
+    blocks_path = blocks_dir / "blocks_norm.jsonl"
+    if not blocks_path.exists():
+        return None
+    
+    try:
+        with open(blocks_path, "r", encoding="utf-8") as f:
+            for line in f:
+                try:
+                    block = json.loads(line)
+                    text = str(block.get("text", ""))
+                    doi_match = DOI_PATTERN.search(text)
+                    if doi_match:
+                        return doi_match.group(1).lower().rstrip(".,;:)")
+                except json.JSONDecodeError:
+                    continue
+    except Exception:
+        pass
+    return None
+
+
 def build_doc_identity(run_dir: Path, manifest_data: dict[str, Any]) -> dict[str, Any]:
     clean_doc = _extract_from_clean_document(run_dir / "text" / "clean_document.md")
     profile = _read_json(run_dir / "reading" / "paper_profile.json")
@@ -166,7 +188,10 @@ def build_doc_identity(run_dir: Path, manifest_data: dict[str, Any]) -> dict[str
         authors = []
     authors = [str(x).strip() for x in authors if str(x).strip()]
 
+    # Try to extract DOI from clean_document first, then from blocks
     doi = clean_doc.get("doi")
+    if not doi:
+        doi = _extract_doi_from_blocks(run_dir / "text")
     arxiv = clean_doc.get("arxiv")
 
     if not title:
@@ -1301,11 +1326,10 @@ def _fetch_crossref(identity: dict[str, Any]) -> tuple[list[NormalizedReference]
 
             # If we have refs, attempt bounded hydration for sparse DOI-only entries.
             if refs:
-                # Allow test-time override via env var CROSSREF_HYDRATE_MAX
                 try:
-                    max_hydrates = int(os.environ.get("CROSSREF_HYDRATE_MAX", "20"))
+                    max_hydrates = int(os.environ.get("CROSSREF_HYDRATE_MAX", "80"))
                 except Exception:
-                    max_hydrates = 20
+                    max_hydrates = 80
                 hydrate_count = 0
                 hydrate_cache: dict[str, tuple[dict[str, Any] | list[Any] | None, str | None]] = {}
 
@@ -1412,6 +1436,8 @@ def _fetch_crossref(identity: dict[str, Any]) -> tuple[list[NormalizedReference]
                     except Exception:
                         continue
 
+                refs, batch_status = _hydrate_refs_via_openalex_batch(refs, max_batch=200)
+
                 return refs, {"provider": "crossref", "status": "ok", "reason": "references", "records": len(refs)}
 
         # Fallback: normalize the work item itself (the paper)
@@ -1433,6 +1459,81 @@ def _fetch_crossref(identity: dict[str, Any]) -> tuple[list[NormalizedReference]
     refs = [_normalize_crossref_item(item, confidence=0.72) for item in items if isinstance(item, dict)]
     refs = [r for r in refs if r.title or r.doi or r.pmid or r.arxiv]
     return refs, {"provider": "crossref", "status": "ok", "reason": None, "records": len(refs)}
+
+
+def _hydrate_refs_via_openalex_batch(
+    refs: list[NormalizedReference],
+    max_batch: int = 200,
+) -> tuple[list[NormalizedReference], dict[str, Any]]:
+    dois_to_hydrate = [
+        r for r in refs
+        if r.doi and (not r.title or not r.authors)
+    ][:500]
+    
+    if not dois_to_hydrate:
+        return refs, {"provider": "openalex_batch", "status": "skipped", "reason": "no_hydration_needed", "records": 0}
+    
+    batch_size = 25
+    results: list[dict[str, Any]] = []
+    
+    for i in range(0, len(dois_to_hydrate), batch_size):
+        batch = dois_to_hydrate[i:i + batch_size]
+        doi_list = [r.doi for r in batch if r.doi]
+        
+        if not doi_list:
+            continue
+        
+        pipe_dois = "|".join(doi_list)
+        url = f"https://api.openalex.org/works?filter=doi:{urllib.parse.quote(pipe_dois, safe='')}"
+        
+        payload, error = _request_json(url)
+        if error:
+            continue
+        if not isinstance(payload, dict):
+            continue
+        
+        batch_results = payload.get("results", [])
+        results.extend(batch_results)
+    
+    doi_to_result: dict[str, dict[str, Any]] = {}
+    for item in results:
+        doi = item.get("doi", "")
+        if doi:
+            doi = doi.lower().replace("https://doi.org/", "")
+            doi_to_result[doi] = item
+    
+    hydrated_count = 0
+    for rec in refs:
+        if rec.doi:
+            doi_key = rec.doi.lower()
+            if doi_key in doi_to_result:
+                item = doi_to_result[doi_key]
+                if not rec.title and item.get("title"):
+                    rec.title = item["title"]
+                    hydrated_count += 1
+                if (not rec.authors or len(rec.authors) == 0):
+                    authors = []
+                    authorships = item.get("authorships", [])
+                    if authorships and isinstance(authorships, list):
+                        for a in authorships:
+                            if isinstance(a, dict):
+                                author_info = a.get("author", {})
+                                if isinstance(author_info, dict):
+                                    name = author_info.get("display_name") or ""
+                                    if name:
+                                        authors.append(name)
+                    if authors:
+                        rec.authors = authors
+                        hydrated_count += 1
+                if not rec.year and item.get("publication_year"):
+                    rec.year = item["publication_year"]
+                if not rec.venue:
+                    primary = item.get("primary_location", {})
+                    source = primary.get("source") or {}
+                    if isinstance(source, dict):
+                        rec.venue = source.get("display_name") or ""
+    
+    return refs, {"provider": "openalex_batch", "status": "ok", "reason": None, "records": hydrated_count}
 
 
 def _normalize_semantic_scholar_item(item: dict[str, Any], confidence: float) -> NormalizedReference:
@@ -1693,6 +1794,13 @@ def collect_api_references(doc_identity: dict[str, Any]) -> tuple[list[dict[str,
         if any(not _field_is_filled(getattr(rec, field_name, None)) for field_name in sparse_check_fields)
     )
 
+    has_doi_based_references = False
+    for status in statuses:
+        if status.get("provider") == "crossref" and status.get("reason") == "references":
+            if status.get("records", 0) > 0:
+                has_doi_based_references = True
+                break
+
     backfill_max = 180
     env_max_raw = os.environ.get("REFERENCE_BACKFILL_MAX")
     if env_max_raw is None:
@@ -1704,7 +1812,10 @@ def collect_api_references(doc_identity: dict[str, Any]) -> tuple[list[dict[str,
         except Exception:
             backfill_max = 180
     else:
-        backfill_max = max(180, min(1000, sparse_count + 140))
+        if has_doi_based_references:
+            backfill_max = 0
+        else:
+            backfill_max = max(180, min(1000, sparse_count + 140))
 
     if backfill_max < 0:
         backfill_max = 0

@@ -6,7 +6,7 @@ from typing import Any, cast
 import pytest
 
 import ingest.paragraphs as paragraphs_mod
-from ingest.paragraphs import classify_clean_blocks, run_paragraphs
+from ingest.paragraphs import Paragraph, classify_clean_blocks, run_paragraphs, suppress_non_narrative_main_body_entries
 
 
 def _write_jsonl(path: Path, rows: Any) -> None:
@@ -353,6 +353,209 @@ def test_run_paragraphs_writes_clean_artifacts_and_filters_nuisance(tmp_path: Pa
         paragraphs = [json.loads(line) for line in f if line.strip()]
         assert len(paragraphs) == 4
     assert any("Main paragraph text" in str(p.get("text", "")) for p in paragraphs)
+
+
+def test_main_body_suppressions_emit_trace_artifact_and_zero_target_metrics(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "suppression_trace_doc"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 60.0, 520.0, 120.0],
+            "text": "Suppression Trace Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p3_body",
+            "page": 3,
+            "bbox_pt": [80.0, 220.0, 520.0, 320.0],
+            "text": "Narrative paragraph remains in clean main body.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p3_page_number",
+            "page": 3,
+            "bbox_pt": [82.0, 332.0, 110.0, 348.0],
+            "text": "5",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p3_updates",
+            "page": 3,
+            "bbox_pt": [80.0, 356.0, 320.0, 378.0],
+            "text": "Check for updates",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p3_aff_like",
+            "page": 3,
+            "bbox_pt": [80.0, 392.0, 520.0, 432.0],
+            "text": "1 Department of Radiology, Example University, New York, NY 10016",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {
+        1: {"p1_title": "Heading"},
+        3: {
+            "p3_body": "Body",
+            "p3_page_number": "Body",
+            "p3_updates": "Body",
+            "p3_aff_like": "Body",
+        },
+    }
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+
+    _ = run_paragraphs(run_dir)
+
+    with open(text_dir / "clean_document.md", "r", encoding="utf-8") as f:
+        clean_doc = f.read()
+    main_body = _section_text(clean_doc, "Main Body")
+    assert "Narrative paragraph remains" in main_body
+    assert "Check for updates" not in main_body
+    assert "Department of Radiology" not in main_body
+    assert "\n5\n" not in main_body
+
+    suppressions_path = run_dir / "qa" / "clean_document_suppressions.jsonl"
+    assert suppressions_path.exists()
+    suppression_rows = _read_jsonl(suppressions_path)
+    rule_ids = {str(row.get("rule_id", "")) for row in suppression_rows}
+    assert rule_ids <= {"page_number_only", "check_for_updates_banner", "affiliation_address_line"}
+    for row in suppression_rows:
+        assert row.get("doc_id") == "suppression_trace_doc"
+        assert row.get("para_id") is None or isinstance(row.get("para_id"), str)
+        assert isinstance(row.get("source_block_ids"), list)
+        assert row.get("normalized_text")
+        assert row.get("observed_at")
+
+    with open(run_dir / "qa" / "clean_document_metrics.json", "r", encoding="utf-8") as f:
+        metrics = json.load(f)
+    assert metrics["standalone_page_number_count"] == 0
+    assert metrics["check_for_updates_count"] == 0
+
+
+def test_suppress_non_narrative_main_body_entries_emits_expected_rules() -> None:
+    entries = [
+        (
+            "5",
+            Paragraph(
+                para_id="para_page",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_page"]},
+            ),
+        ),
+        (
+            "Check for updates",
+            Paragraph(
+                para_id="para_updates",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_updates"]},
+            ),
+        ),
+        (
+            "1 Department of Radiology, Example University, New York, NY 10016",
+            Paragraph(
+                para_id="para_aff",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_aff"]},
+            ),
+        ),
+        (
+            "Narrative line that should stay.",
+            Paragraph(
+                para_id="para_body",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_body"]},
+            ),
+        ),
+    ]
+
+    filtered_entries, suppressions = suppress_non_narrative_main_body_entries(entries, doc_id="doc_unit")
+    kept_texts = [text for text, _ in filtered_entries]
+    assert kept_texts == ["Narrative line that should stay."]
+
+    rule_ids = {str(row.get("rule_id", "")) for row in suppressions}
+    assert rule_ids == {"page_number_only", "check_for_updates_banner", "affiliation_address_line"}
+    for row in suppressions:
+        assert row["doc_id"] == "doc_unit"
+        assert isinstance(row["para_id"], str)
+        assert isinstance(row["source_block_ids"], list)
+        assert row["normalized_text"]
+        assert row["observed_at"]
+
+
+def test_chen2024_struct07_suppression_preserves_numbered_narrative_lines() -> None:
+    entries = [
+        (
+            "5",
+            Paragraph(
+                para_id="para_page",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_page"]},
+            ),
+        ),
+        (
+            "Check for updates Rotator cuff tears",
+            Paragraph(
+                para_id="para_banner",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_banner"]},
+            ),
+        ),
+        (
+            "1 Department of Radiology, Example University, New York, NY 10016",
+            Paragraph(
+                para_id="para_aff",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_aff"]},
+            ),
+        ),
+        (
+            "The 5-year follow-up cohort retained 38 patients with stable outcomes.",
+            Paragraph(
+                para_id="para_keep_numeric",
+                page_span={"start": 3, "end": 3},
+                role="Body",
+                text="",
+                evidence_pointer={"source_block_ids": ["b_keep_numeric"]},
+            ),
+        ),
+    ]
+
+    filtered_entries, suppressions = suppress_non_narrative_main_body_entries(entries, doc_id="chen2024_struct07")
+    kept_texts = [text for text, _ in filtered_entries]
+    assert kept_texts == ["The 5-year follow-up cohort retained 38 patients with stable outcomes."]
+
+    suppressed_rules = {str(item.get("rule_id", "")) for item in suppressions}
+    assert suppressed_rules == {"page_number_only", "check_for_updates_banner", "affiliation_address_line"}
+    assert all(item.get("original_text") != kept_texts[0] for item in suppressions)
 
 
 def test_single_column_layout_separates_general_metadata_from_body(tmp_path: Path) -> None:
@@ -967,7 +1170,7 @@ def test_affiliations_and_document_metadata_are_stably_partitioned(tmp_path: Pat
 
     assert "## Document Metadata" in clean_doc
     metadata_block = _section_text(clean_doc, "Document Metadata")
-    assert "DOI: 10.1148/example.12345" in metadata_block
+    assert "https://doi.org/10.1148/example.12345" in metadata_block
     assert "Keywords: tendon, cable, MRI" in metadata_block
     assert "Department of Radiology" not in metadata_block
 
@@ -1039,6 +1242,137 @@ def test_figures_section_rejects_long_body_like_caption_text(tmp_path: Path) -> 
     assert "Fig. 2 - MRI gross anatomic correlation" in figures_section
     assert long_narrative not in figures_section
 
+
+def test_caption_gate_keeps_long_explicit_labeled_caption() -> None:
+    long_labeled_caption = (
+        "Figure 4. Electroactive biomaterials for modulating osteogenesis. "
+        + " ".join(
+            [
+                (
+                    f"Panel {idx} demonstrates osteogenic differentiation and matrix deposition under "
+                    "electrical stimulation with scaffold tuning."
+                )
+                for idx in range(1, 16)
+            ]
+        )
+    )
+    long_narrative = (
+        "There is no consensus in terms of MRI appearance and this paragraph describes methods, "
+        "results, and discussion in a long narrative body style that should not be listed as a caption. "
+        "It continues with additional prose to exceed caption-like structure and readability constraints."
+    )
+
+    assert paragraphs_mod.should_keep_caption_entry(long_labeled_caption)
+    assert not paragraphs_mod.should_keep_caption_entry(long_narrative)
+
+def test_extract_objective_or_abstract_keeps_long_text_without_800_char_cutoff() -> None:
+    long_tail = " ".join([f"signal_{idx}" for idx in range(260)])
+    abstract_text = (
+        "This review discusses endogenous bioelectricity and electroactive biomaterials for tissue regeneration. "
+        + long_tail
+    )
+    para = Paragraph(
+        para_id="abs1",
+        page_span={"start": 1, "end": 1},
+        role="Body",
+        section_path=None,
+        text=abstract_text,
+        evidence_pointer={"pages": [1], "bbox_union": [80.0, 100.0, 520.0, 220.0], "source_block_ids": ["p1_abs"]},
+        neighbors={"prev_para_id": None, "next_para_id": None},
+        confidence=0.9,
+        provenance={"source": "test"},
+    )
+
+    extracted = paragraphs_mod.extract_objective_or_abstract([para])
+
+    assert extracted is not None
+    assert extracted == paragraphs_mod.clean_text_line(abstract_text)
+    assert len(extracted) > 800
+
+def test_extract_objective_or_abstract_appends_heading_like_summary_fragment() -> None:
+    abstract_text = (
+        "This review summarizes electroactive biomaterials and endogenous bioelectricity for tissue regeneration."
+    )
+    continuation = "tissue is emphasized and future development challenges are proposed."
+    paragraphs = [
+        Paragraph(
+            para_id="abs1",
+            page_span={"start": 1, "end": 1},
+            role="Body",
+            section_path=None,
+            text=abstract_text,
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 100.0, 520.0, 180.0], "source_block_ids": ["p1_abs"]},
+            neighbors={"prev_para_id": None, "next_para_id": "frag1"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="frag1",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=None,
+            text=continuation,
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 185.0, 520.0, 220.0], "source_block_ids": ["p1_frag"]},
+            neighbors={"prev_para_id": "abs1", "next_para_id": None},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+    ]
+
+    extracted = paragraphs_mod.extract_objective_or_abstract(paragraphs)
+
+    assert extracted is not None
+    assert continuation in extracted
+
+def test_extract_objective_or_abstract_prefers_neighbor_chain_for_continuation() -> None:
+    abstract_text = (
+        "This review summarizes electroactive biomaterials and endogenous bioelectricity for tissue regeneration."
+    )
+    unrelated_body = (
+        "Bone and cartilage defects remain a major clinical burden and this is the introduction paragraph."
+    )
+    continuation = "tissue is emphasized and future development challenges are proposed."
+    paragraphs = [
+        Paragraph(
+            para_id="abs1",
+            page_span={"start": 1, "end": 1},
+            role="Body",
+            section_path=None,
+            text=abstract_text,
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 100.0, 520.0, 170.0], "source_block_ids": ["p1_abs"]},
+            neighbors={"prev_para_id": None, "next_para_id": "frag1"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="intro1",
+            page_span={"start": 1, "end": 1},
+            role="Body",
+            section_path=["1. Introduction"],
+            text=unrelated_body,
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 180.0, 520.0, 240.0], "source_block_ids": ["p1_intro"]},
+            neighbors={"prev_para_id": None, "next_para_id": None},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="frag1",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=None,
+            text=continuation,
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 245.0, 520.0, 275.0], "source_block_ids": ["p1_frag"]},
+            neighbors={"prev_para_id": "abs1", "next_para_id": None},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+    ]
+
+    extracted = paragraphs_mod.extract_objective_or_abstract(paragraphs)
+
+    assert extracted is not None
+    assert continuation in extracted
+    assert unrelated_body not in extracted
 
 def test_abstract_content_is_not_repeated_in_main_body(tmp_path: Path) -> None:
     run_dir = tmp_path / "run" / "abstract_dedup_gate"
@@ -3357,3 +3691,414 @@ def test_section_heading_with_real_body_is_kept_as_heading(tmp_path: Path) -> No
     clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
     assert "### 3. Results" in clean_doc
     assert "Electrical cues increased migration and matrix deposition across all groups." in clean_doc
+
+
+def test_clean_document_drops_page_number_only_line_in_section_body(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "drop_page_number_line"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Artifact Filtering Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "2. Results",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_page_num",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 120.0, 220.0],
+            "text": "5",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 230.0, 540.0, 310.0],
+            "text": "Cell migration increased significantly under electrical stimulation.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_page_num": "Body", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+    assert re.search(r"(?m)^\s*5\s*$", main_body) is None
+    assert "Cell migration increased significantly under electrical stimulation." in main_body
+
+
+def test_clean_document_drops_check_for_updates_banner_line_in_section_body(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "drop_check_for_updates_line"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Artifact Filtering Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "2. Results",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_banner",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 235.0],
+            "text": "Check for updates in this article",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 240.0, 540.0, 320.0],
+            "text": "Aligned fibers promoted osteogenic differentiation in vitro.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_banner": "Body", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+    assert re.search(r"(?im)^\s*check\s+for\s+updates\b", main_body) is None
+    assert "Aligned fibers promoted osteogenic differentiation in vitro." in main_body
+
+
+def test_clean_document_keeps_legitimate_content_line_in_section_body(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "keep_legitimate_numeric_line"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    legitimate_line = "Participants were screened and 120 met inclusion criteria."
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Artifact Filtering Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 320.0, 182.0],
+            "text": "2. Results",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 195.0, 540.0, 275.0],
+            "text": legitimate_line,
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {1: {"p1_title": "Heading", "p1_h": "Heading", "p1_body": "Body"}}
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+    assert legitimate_line in main_body
+
+
+def test_run_paragraphs_writes_clean_document_metrics_artifact(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "metrics_doc"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Metrics Instrumentation Study",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_h_results",
+            "page": 1,
+            "bbox_pt": [80.0, 150.0, 300.0, 180.0],
+            "text": "2. Results",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [80.0, 190.0, 540.0, 280.0],
+            "text": "The post- operative cohort maintained stable outcomes across follow-up.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_h_orphan",
+            "page": 1,
+            "bbox_pt": [80.0, 320.0, 330.0, 350.0],
+            "text": "5. Future Work",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+        },
+        {
+            "block_id": "p3_aff_like",
+            "page": 3,
+            "bbox_pt": [80.0, 180.0, 540.0, 240.0],
+            "text": "Department of Radiology, Example University, New York, NY 10016",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    role_labels = {
+        1: {
+            "p1_title": "Heading",
+            "p1_h_results": "Heading",
+            "p1_body": "Body",
+            "p1_h_orphan": "Heading",
+        },
+        3: {"p3_aff_like": "Body"},
+    }
+
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(vision_dir, typed_blocks, role_labels)
+    _ = run_paragraphs(run_dir)
+
+    metrics_path = run_dir / "qa" / "clean_document_metrics.json"
+    assert metrics_path.exists()
+
+    metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+    required_keys = {
+        "orphan_heading_count",
+        "standalone_page_number_count",
+        "check_for_updates_count",
+        "affiliation_leak_count",
+        "ordering_confidence_low",
+        "section_boundary_unstable",
+        "hyphen_wrap_count",
+    }
+    assert required_keys.issubset(metrics.keys())
+    assert metrics.get("doc_id") == "metrics_doc"
+    assert isinstance(metrics["orphan_heading_count"], int)
+    assert metrics["orphan_heading_count"] >= 0
+    assert metrics["hyphen_wrap_count"] == 0
+    assert isinstance(metrics["affiliation_leak_count"], int)
+    assert metrics["affiliation_leak_count"] >= 0
+    assert isinstance(metrics["ordering_confidence_low"], bool)
+    assert isinstance(metrics["section_boundary_unstable"], bool)
+
+
+def test_normalize_inline_hyphen_wrap_artifacts_repairs_soft_and_hard_wraps() -> None:
+    from ingest.paragraphs import normalize_inline_hyphen_wrap_artifacts
+
+    assert normalize_inline_hyphen_wrap_artifacts("electro- magnetic response") == "electro-magnetic response"
+    assert normalize_inline_hyphen_wrap_artifacts("micro\u00ad scope imaging") == "microscope imaging"
+
+
+def test_normalize_inline_hyphen_wrap_artifacts_keeps_non_continuation_cases() -> None:
+    from ingest.paragraphs import normalize_inline_hyphen_wrap_artifacts
+
+    assert normalize_inline_hyphen_wrap_artifacts("inter- Related signaling") == "inter- Related signaling"
+    assert normalize_inline_hyphen_wrap_artifacts("COVID- 19 cohort") == "COVID- 19 cohort"
+
+
+
+def test_render_clean_document_emits_markdown_for_empty_numbered_parent_heading() -> None:
+    paragraphs = [
+        Paragraph(
+            para_id="p_title",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=None,
+            text="Demo Paper",
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 60.0, 520.0, 95.0], "source_block_ids": ["b_title"]},
+            neighbors={"prev_para_id": None, "next_para_id": "p_parent"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="p_parent",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=["4. Biological Response to Electric Stimulation"],
+            text="4. Biological Response to Electric Stimulation",
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 120.0, 520.0, 145.0], "source_block_ids": ["b_parent"]},
+            neighbors={"prev_para_id": "p_title", "next_para_id": "p_child"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="p_child",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=["4.1. Electric Stimulation in Tissue Regeneration"],
+            text="4.1. Electric Stimulation in Tissue Regeneration",
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 150.0, 520.0, 175.0], "source_block_ids": ["b_child"]},
+            neighbors={"prev_para_id": "p_parent", "next_para_id": "p_body"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="p_body",
+            page_span={"start": 1, "end": 1},
+            role="Body",
+            section_path=None,
+            text="Electrical stimulation supports osteochondral regeneration with controlled signaling.",
+            evidence_pointer={"pages": [1], "bbox_union": [80.0, 180.0, 520.0, 250.0], "source_block_ids": ["b_body"]},
+            neighbors={"prev_para_id": "p_child", "next_para_id": None},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+    ]
+    annotated_blocks = [
+        {"block_id": "b_title", "clean_role": "main_title"},
+        {"block_id": "b_parent", "clean_role": "section_heading"},
+        {"block_id": "b_child", "clean_role": "section_heading"},
+        {"block_id": "b_body", "clean_role": "body_text"},
+    ]
+
+    clean_doc, _ = paragraphs_mod.render_clean_document(paragraphs, annotated_blocks, doc_id="doc_heading")
+
+    assert "### 4. Biological Response to Electric Stimulation" in clean_doc
+    assert "\n4. Biological Response to Electric Stimulation\n" not in clean_doc
+
+
+def test_render_clean_document_drops_narrow_table_column_fragments() -> None:
+    narrow_fragment = "Movements successfully drived TENG to output electrical signals, stimulating bone formation and regeneration"
+    narrative = "Electroactive biomaterials can improve tissue repair through stable electrical and biochemical signaling."
+
+    paragraphs = [
+        Paragraph(
+            para_id="t_title",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=None,
+            text="Demo Paper",
+            evidence_pointer={"pages": [1], "bbox_union": [50.0, 50.0, 550.0, 90.0], "source_block_ids": ["tb_title"]},
+            neighbors={"prev_para_id": None, "next_para_id": "t_h"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="t_h",
+            page_span={"start": 1, "end": 1},
+            role="Heading",
+            section_path=["3.3. Clinical Translatability of Electrical Biomaterials"],
+            text="3.3. Clinical Translatability of Electrical Biomaterials",
+            evidence_pointer={"pages": [1], "bbox_union": [50.0, 120.0, 550.0, 150.0], "source_block_ids": ["tb_h"]},
+            neighbors={"prev_para_id": "t_title", "next_para_id": "t_body"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="t_body",
+            page_span={"start": 1, "end": 1},
+            role="Body",
+            section_path=None,
+            text=narrative,
+            evidence_pointer={"pages": [1], "bbox_union": [50.0, 170.0, 550.0, 250.0], "source_block_ids": ["tb_body"]},
+            neighbors={"prev_para_id": "t_h", "next_para_id": "t_narrow"},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+        Paragraph(
+            para_id="t_narrow",
+            page_span={"start": 1, "end": 1},
+            role="Body",
+            section_path=None,
+            text=narrow_fragment,
+            evidence_pointer={"pages": [1], "bbox_union": [260.0, 260.0, 300.0, 590.0], "source_block_ids": ["tb_narrow"]},
+            neighbors={"prev_para_id": "t_body", "next_para_id": None},
+            confidence=0.9,
+            provenance={"source": "test"},
+        ),
+    ]
+    annotated_blocks = [
+        {"block_id": "tb_title", "clean_role": "main_title"},
+        {"block_id": "tb_h", "clean_role": "section_heading"},
+        {"block_id": "tb_body", "clean_role": "body_text"},
+        {"block_id": "tb_narrow", "clean_role": "body_text"},
+    ]
+
+    clean_doc, _ = paragraphs_mod.render_clean_document(paragraphs, annotated_blocks, doc_id="doc_narrow")
+    main_body = _section_text(clean_doc, "Main Body")
+
+    assert narrative in main_body
+    assert narrow_fragment not in main_body
+
+
+
+def test_table_noise_filter_keeps_long_unit_rich_narrative_paragraph_direct() -> None:
+    from ingest.paragraphs import looks_like_table_noise
+
+    text = (
+        "Cell behaviors can be significantly influenced by the duration and strength of electric field "
+        "induced stimulation. For example, stimulation at 3000 Hz and 1.5 mA for 6 h significantly "
+        "enhanced BMP2 and VEGF expression, while exposure at 100 Hz preserved chondrogenic "
+        "markers in vitro."
+    )
+
+    assert not looks_like_table_noise(text)
+
+
+def test_table_noise_filter_keeps_long_narrative_with_titlecase_terms_direct() -> None:
+    from ingest.paragraphs import looks_like_table_noise
+
+    text = (
+        "Electroactive biomaterials contribute to regeneration. For example, Wu and colleagues "
+        "utilized ECM and PPy, Liu designed GO and BP, Li reported CNT effects, and Wang observed "
+        "VEGF upregulation in vivo."
+    )
+
+    assert not looks_like_table_noise(text)

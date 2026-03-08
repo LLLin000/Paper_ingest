@@ -17,7 +17,7 @@ import urllib.error
 import time
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
@@ -26,6 +26,7 @@ from PIL import Image
 
 from .contract_guard import guard_model_output, safe_json_value
 from .manifest import Manifest, load_manifest
+from .paragraphs import clean_text_line, split_embedded_section_heading
 from .qa_telemetry import append_fault_events, append_jsonl_event
 
 
@@ -120,6 +121,8 @@ class VisionOutput:
     confidence: float
     fallback_used: bool
     source: str = "model"
+    embedded_headings: list[dict[str, Any]] = field(default_factory=list)
+    embedded_heading_reviewed_block_ids: list[str] = field(default_factory=list)
 
 
 @dataclass

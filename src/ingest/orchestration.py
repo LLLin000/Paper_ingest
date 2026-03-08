@@ -1,7 +1,12 @@
 """DAG-like orchestration helpers for full pipeline execution."""
 
+import os
 from concurrent.futures import Future, ThreadPoolExecutor
 from typing import Any, Callable
+
+# Default parallelism settings
+DEFAULT_MAX_WORKERS = int(os.environ.get("PIPELINE_MAX_WORKERS", "4"))
+MAX_LLM_PARALLEL_CALLS = int(os.environ.get("PIPELINE_MAX_LLM_CALLS", "4"))
 
 StageJob = Callable[[], Any]
 
@@ -31,7 +36,7 @@ FULL_PIPELINE_LEVELS: tuple[tuple[str, ...], ...] = (
 def execute_levelized_dag(
     jobs: dict[str, StageJob],
     levels: tuple[tuple[str, ...], ...] = FULL_PIPELINE_LEVELS,
-    max_workers: int = 2,
+    max_workers: int = DEFAULT_MAX_WORKERS,
 ) -> dict[str, Any]:
     """Execute levelized DAG jobs with deterministic result ordering."""
     results: dict[str, Any] = {}

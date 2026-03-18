@@ -87,6 +87,8 @@ AUTHOR_TOKEN_RE = re.compile(r"^(?:[A-Z][a-zA-Z'`-]+|[A-Z]\.)$")
 SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 SILICONFLOW_DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct"
 REQUIRED_API_KEY_ENV_NAMES = ("SILICONFLOW_API_KEY", "SF_API_KEY", "SILICONFLOW_TOKEN")
+DOI_LINE_RE = re.compile(r"^(?:https?://doi\.org/\S+|10\.\d{4,}\S*)$", flags=re.IGNORECASE)
+FRONT_MATTER_LABEL_RE = re.compile(r"^(?:article|review)$", flags=re.IGNORECASE)
 
 
 @dataclass
@@ -142,8 +144,7 @@ def parse_env_int(name: str, default: int, minimum: int, maximum: int) -> int:
 
 
 def load_paragraph_llm_refine_config() -> ParagraphLLMRefineConfig:
-    api_key_exists = bool(resolve_api_key())
-    enabled = parse_env_bool(os.environ.get("PARAGRAPHS_LLM_REFINE", ""), default=api_key_exists)
+    enabled = parse_env_bool(os.environ.get("PARAGRAPHS_LLM_REFINE", ""), default=False)
     endpoint = os.environ.get("SILICONFLOW_ENDPOINT", SILICONFLOW_ENDPOINT).strip() or SILICONFLOW_ENDPOINT
     model = (
         os.environ.get("SILICONFLOW_PARAGRAPHS_MODEL", "").strip()
@@ -298,13 +299,63 @@ def load_blocks(blocks_path: Path) -> dict[str, dict[str, Any]]:
     return blocks
 
 
-def load_vision_outputs(vision_dir: Path) -> tuple[dict[int, Any], dict[int, list[dict[str, Any]]], dict[int, dict[str, str]]]:
+def load_block_line_records(text_dir: Path) -> dict[str, list[dict[str, Any]]]:
+    records: dict[str, list[dict[str, Any]]] = {}
+    lines_path = text_dir / "block_lines.jsonl"
+    if not lines_path.exists():
+        return records
+    with open(lines_path, "r", encoding="utf-8") as f:
+        for raw_line in f:
+            raw_line = raw_line.strip()
+            if not raw_line:
+                continue
+            try:
+                record = json.loads(raw_line)
+            except json.JSONDecodeError:
+                continue
+            if not isinstance(record, dict):
+                continue
+            block_id = str(record.get("block_id", "")).strip()
+            lines = record.get("lines", [])
+            if not block_id or not isinstance(lines, list):
+                continue
+            valid_lines = [line for line in lines if isinstance(line, dict)]
+            if valid_lines:
+                records[block_id] = valid_lines
+    return records
+
+
+def load_vision_outputs(
+    vision_dir: Path,
+    dpi: int = 150,
+    scale: float = 2.0,
+) -> tuple[
+    dict[int, Any],
+    dict[int, list[dict[str, Any]]],
+    dict[int, dict[str, str]],
+    dict[int, dict[str, list[str]]],
+    dict[int, set[str]],
+    dict[int, list[dict[str, Any]]],
+    dict[int, dict[str, dict[str, Any]]],
+]:
     confidence_by_page: dict[int, Any] = {}
     merge_groups_by_page: dict[int, list[dict[str, Any]]] = {}
     role_labels_by_page: dict[int, dict[str, str]] = {}
+    embedded_heading_hints_by_page: dict[int, dict[str, list[str]]] = {}
+    reviewed_block_ids_by_page: dict[int, set[str]] = {}
+    region_roles_by_page: dict[int, list[dict[str, Any]]] = {}
+    mixed_group_reviews_by_page: dict[int, dict[str, dict[str, Any]]] = {}
     
     if not vision_dir.exists():
-        return confidence_by_page, merge_groups_by_page, role_labels_by_page
+        return (
+            confidence_by_page,
+            merge_groups_by_page,
+            role_labels_by_page,
+            embedded_heading_hints_by_page,
+            reviewed_block_ids_by_page,
+            region_roles_by_page,
+            mixed_group_reviews_by_page,
+        )
     
     for vf in sorted(vision_dir.glob("p*_out.json")):
         try:
@@ -316,28 +367,164 @@ def load_vision_outputs(vision_dir: Path) -> tuple[dict[int, Any], dict[int, lis
             confidence_by_page[page] = data.get("confidence", 0.5)
             merge_groups_by_page[page] = data.get("merge_groups", [])
             role_labels_by_page[page] = data.get("role_labels", {})
+            embedded_heading_hints: dict[str, list[str]] = {}
+            for item in data.get("embedded_headings", []):
+                if not isinstance(item, dict):
+                    continue
+                block_id = str(item.get("block_id", "")).strip()
+                heading_text = clean_text_line(str(item.get("heading_text", "")))
+                if not block_id or not heading_text:
+                    continue
+                embedded_heading_hints.setdefault(block_id, []).append(heading_text)
+            embedded_heading_hints_by_page[page] = {
+                block_id: unique_texts_in_order(values)
+                for block_id, values in embedded_heading_hints.items()
+                if values
+            }
+            reviewed_block_ids_by_page[page] = {
+                str(block_id).strip()
+                for block_id in data.get("embedded_heading_reviewed_block_ids", [])
+                if str(block_id).strip()
+            }
+            mixed_reviews: dict[str, dict[str, Any]] = {}
+            for item in data.get("mixed_group_reviews", []):
+                if not isinstance(item, dict):
+                    continue
+                block_id = str(item.get("block_id", "")).strip()
+                decision = str(item.get("decision", "")).strip()
+                if not block_id or not decision:
+                    continue
+                mixed_reviews[block_id] = {
+                    "block_id": block_id,
+                    "decision": decision,
+                    "caption_kind": str(item.get("caption_kind", "") or "").strip(),
+                    "confidence": float(item.get("confidence", 0.0) or 0.0),
+                }
+            mixed_group_reviews_by_page[page] = mixed_reviews
         except (json.JSONDecodeError, IOError):
             continue
+
+    zoom = dpi / 72.0 * scale
+    if zoom <= 0:
+        zoom = 1.0
+    for vf in sorted(vision_dir.glob("p*_regions.json")):
+        try:
+            with open(vf, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            page = int(data.get("page", 0) or 0)
+            if page <= 0:
+                continue
+            page_regions = region_roles_by_page.setdefault(page, [])
+            for key, role in (
+                ("header_footer_regions", "HeaderFooter"),
+                ("caption_regions", "CaptionRegion"),
+                ("figure_regions", "Sidebar"),
+                ("table_regions", "Sidebar"),
+            ):
+                regions = data.get(key, [])
+                if not isinstance(regions, list):
+                    continue
+                for region in regions:
+                    if not isinstance(region, dict):
+                        continue
+                    bbox_px = region.get("bbox_px", [])
+                    if not isinstance(bbox_px, list) or len(bbox_px) < 4:
+                        continue
+                    bbox_pt = [float(v) / zoom for v in bbox_px[:4]]
+                    page_regions.append({
+                        "role": role,
+                        "bbox_pt": bbox_pt,
+                    })
+        except (json.JSONDecodeError, IOError, ValueError, TypeError):
+            continue
     
-    return confidence_by_page, merge_groups_by_page, role_labels_by_page
+    return (
+        confidence_by_page,
+        merge_groups_by_page,
+        role_labels_by_page,
+        embedded_heading_hints_by_page,
+        reviewed_block_ids_by_page,
+        region_roles_by_page,
+        mixed_group_reviews_by_page,
+    )
 
 
 def load_page_layouts(text_dir: Path) -> dict[int, dict[str, Any]]:
     """Load page layouts from layout_analysis.json.
-    
+
     Returns dict: {page: {"column_count": int, "column_regions": [[x0,y0,x1,y1], ...], ...}}
     """
+    page_layouts, _, _ = load_layout_analysis(text_dir)
+    return page_layouts
+
+
+def load_layout_analysis(
+    text_dir: Path,
+) -> tuple[dict[int, dict[str, Any]], dict[str, Any], dict[int, list[list[str]]]]:
+    """Load layout analyzer sidecar artifacts used by downstream paragraph logic."""
     layout_path = text_dir / "layout_analysis.json"
     if not layout_path.exists():
-        return {}
-    
+        return {}, {}, {}
+
     try:
         with open(layout_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         page_layouts = data.get("page_layouts", {})
-        return {int(k): v for k, v in page_layouts.items()}
+        paragraph_regrouping_hints = data.get("paragraph_regrouping_hints", {})
+        document_profile = data.get("document_profile", {})
+        return (
+            {int(k): v for k, v in page_layouts.items()},
+            {
+                str(key): value
+                for key, value in document_profile.items()
+            }
+            if isinstance(document_profile, dict)
+            else {},
+            {
+                int(k): [
+                    [str(block_id).strip() for block_id in group if str(block_id).strip()]
+                    for group in groups
+                    if isinstance(group, list)
+                ]
+                for k, groups in paragraph_regrouping_hints.items()
+                if isinstance(groups, list)
+            },
+        )
     except (json.JSONDecodeError, IOError):
-        return {}
+        return {}, {}, {}
+
+
+def merge_groups_with_regrouping_hints(
+    merge_groups: list[dict[str, Any]],
+    regrouping_hints: list[list[str]],
+) -> list[dict[str, Any]]:
+    """Add layout-derived paragraph regrouping hints without overriding explicit vision groups."""
+    merged_groups = list(merge_groups)
+    explicitly_grouped: set[str] = set()
+    for group in merge_groups:
+        for block_id in group.get("block_ids", []):
+            block_id_str = str(block_id).strip()
+            if block_id_str:
+                explicitly_grouped.add(block_id_str)
+
+    hint_idx = 0
+    for hinted_group in regrouping_hints:
+        hinted_block_ids = [str(block_id).strip() for block_id in hinted_group if str(block_id).strip()]
+        hinted_block_ids = list(dict.fromkeys(hinted_block_ids))
+        if len(hinted_block_ids) < 2:
+            continue
+        if any(block_id in explicitly_grouped for block_id in hinted_block_ids):
+            continue
+        merged_groups.append(
+            {
+                "group_id": f"layout_rg_{hint_idx}",
+                "block_ids": hinted_block_ids,
+                "source": "layout_regrouping_hint",
+            }
+        )
+        explicitly_grouped.update(hinted_block_ids)
+        hint_idx += 1
+    return merged_groups
 
 
 def normalize_template_text(text: str) -> str:
@@ -433,6 +620,17 @@ EMBEDDED_HEADING_LEAD_STOPWORDS = {
     "we",
 }
 
+EMBEDDED_HEADING_DISCOURSE_PREFIXES = {
+    "for instance",
+    "for example",
+    "briefly",
+    "however",
+    "therefore",
+    "moreover",
+    "in summary",
+    "in conclusion",
+}
+
 EMBEDDED_HEADING_BODY_START_RE = re.compile(
     r"^(?:"
     r"to|we|our|this|these|in|here|there|based|among|by|however|moreover|"
@@ -516,6 +714,161 @@ def is_plausible_sentence_case_section_heading(text: str) -> bool:
         if token.lower() in {"of", "for", "with", "in", "on", "between", "among", "under", "during", "via", "by", "based"}
     )
     return connective_hits >= 1
+
+
+SHORT_LINE_HEADING_LEAD_STOPWORDS = EMBEDDED_HEADING_LEAD_STOPWORDS | {
+    "a",
+    "an",
+    "the",
+    "after",
+    "before",
+    "during",
+    "while",
+    "when",
+    "whereas",
+    "however",
+    "therefore",
+    "thus",
+    "because",
+    "although",
+    "since",
+    "through",
+}
+
+SHORT_LINE_HEADING_VERBS = {
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "being",
+    "been",
+    "can",
+    "could",
+    "may",
+    "might",
+    "should",
+    "would",
+    "identified",
+    "showed",
+    "revealed",
+    "demonstrated",
+    "examined",
+    "collected",
+    "performed",
+    "conducted",
+    "compared",
+    "indicated",
+    "suggested",
+    "provided",
+    "promoted",
+    "facilitated",
+    "used",
+    "named",
+    "had",
+    "have",
+    "has",
+}
+
+SHORT_LINE_HEADING_HINT_TOKENS = {
+    "analysis",
+    "animals",
+    "assay",
+    "cartilage",
+    "classification",
+    "clustering",
+    "culture",
+    "data",
+    "defects",
+    "design",
+    "dna",
+    "expression",
+    "features",
+    "healing",
+    "histology",
+    "loading",
+    "materials",
+    "methods",
+    "migration",
+    "osteogenesis",
+    "patients",
+    "proliferation",
+    "quantification",
+    "repair",
+    "rna",
+    "sample",
+    "samples",
+    "scaffold",
+    "sequence",
+    "sequencing",
+    "staining",
+    "statistics",
+    "study",
+    "subtypes",
+    "surgery",
+    "treatment",
+}
+
+
+def is_plausible_short_line_heading(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if len(clean) > 64 or clean.endswith((".", ":", ";", "!", "?", ",")):
+        return False
+    if is_metadata_like_heading(clean) or looks_like_table_noise(clean):
+        return False
+    if re.match(r"^(fig|figure|table|supplementary)\b", clean, flags=re.IGNORECASE) is not None:
+        return False
+    if re.search(r"[;:!?]", clean) is not None:
+        return False
+
+    words = word_tokens(clean)
+    if len(words) < 2 or len(words) > 4:
+        return False
+    if digit_token_count(words) > 2:
+        return False
+
+    alpha_match = re.search(r"[A-Za-z]", clean)
+    if alpha_match is None or not alpha_match.group(0).isupper():
+        return False
+
+    normalized_words = [re.sub(r"^[^A-Za-z]+|[^A-Za-z-]+$", "", word).lower() for word in words]
+    normalized_words = [word for word in normalized_words if word]
+    if not normalized_words:
+        return False
+
+    if normalized_words[0] in SHORT_LINE_HEADING_LEAD_STOPWORDS:
+        return False
+    if any(word in SHORT_LINE_HEADING_VERBS for word in normalized_words):
+        return False
+
+    token_hint_hits = sum(1 for word in normalized_words if word in SHORT_LINE_HEADING_HINT_TOKENS)
+    uppercase_like_tokens = sum(
+        1
+        for word in words
+        if re.search(r"[A-Za-z]", word) is not None and (word.isupper() or word[:1].isupper())
+    )
+    connector_hits = sum(1 for word in normalized_words if word in {"of", "for", "in", "on", "with", "by", "via", "and"})
+
+    if token_hint_hits >= 1:
+        return True
+    if uppercase_like_tokens >= max(1, len(words) - connector_hits):
+        return True
+
+    return False
+
+
+def is_supported_section_heading_shape(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    return (
+        is_common_unnumbered_section_heading(clean)
+        or is_plausible_section_heading(clean)
+        or is_plausible_sentence_case_section_heading(clean)
+        or is_plausible_short_line_heading(clean)
+    )
 
 
 def is_plausible_section_heading(text: str) -> bool:
@@ -929,6 +1282,37 @@ def starts_like_leading_section_heading_fragment(text: str) -> bool:
     return False
 
 
+def is_valid_embedded_heading_candidate(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean or not is_supported_section_heading_shape(clean):
+        return False
+    if "," in clean:
+        return False
+    lowered = clean.lower()
+    if any(lowered.startswith(prefix) for prefix in EMBEDDED_HEADING_DISCOURSE_PREFIXES):
+        return False
+    return True
+
+
+def should_reject_embedded_heading_candidate(candidate: str, suffix: str) -> bool:
+    clean_candidate = clean_text_line(candidate)
+    clean_suffix = clean_text_line(suffix)
+    if not clean_candidate or not clean_suffix:
+        return False
+    if is_common_unnumbered_section_heading(clean_candidate):
+        return False
+    if re.match(r"^\d+(?:\.\d+)*\.?\s+", clean_candidate) is not None:
+        return False
+    words = word_tokens(clean_candidate)
+    if len(words) > 2:
+        return False
+    return re.match(
+        r"^[A-Z]\s+(?:is|are|was|were|describes|reports|covers|summarizes|shows|demonstrates|reveals)\b",
+        clean_suffix,
+        flags=re.IGNORECASE,
+    ) is not None
+
+
 def extract_leading_section_heading_from_tail(tail: str) -> tuple[Optional[str], str]:
     clean_tail = clean_text_line(tail)
     if not clean_tail:
@@ -958,7 +1342,9 @@ def extract_leading_section_heading_from_tail(tail: str) -> tuple[Optional[str],
         suffix = clean_text_line(clean_tail[len(candidate):])
         if not suffix or not starts_like_embedded_heading_body(suffix):
             continue
-        if is_plausible_section_heading(candidate) or is_plausible_sentence_case_section_heading(candidate):
+        if should_reject_embedded_heading_candidate(candidate, suffix):
+            continue
+        if is_valid_embedded_heading_candidate(candidate):
             best_heading = candidate
 
     if not best_heading:
@@ -991,6 +1377,82 @@ def split_embedded_section_heading(text: str) -> tuple[str, Optional[str], str]:
         return prefix, heading, suffix
 
     return clean, None, ""
+
+
+def collect_source_lines_for_paragraph(
+    para: Paragraph,
+    block_lines_by_block: dict[str, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    source_line_spans = para.evidence_pointer.get("source_line_spans", [])
+    if not isinstance(source_line_spans, list) or not source_line_spans:
+        source_block_ids = para.evidence_pointer.get("source_block_ids", [])
+        if not isinstance(source_block_ids, list) or not source_block_ids:
+            return []
+        collected_lines: list[dict[str, Any]] = []
+        for block_id in source_block_ids:
+            block_key = str(block_id).strip()
+            if not block_key:
+                continue
+            collected_lines.extend(block_lines_by_block.get(block_key, []))
+        return [line for line in collected_lines if _clean_line_text(line.get("text", ""))]
+
+    collected_lines: list[dict[str, Any]] = []
+    for span in source_line_spans:
+        if not isinstance(span, dict):
+            continue
+        block_id = str(span.get("block_id", "")).strip()
+        if not block_id:
+            continue
+        block_lines = block_lines_by_block.get(block_id, [])
+        if not block_lines:
+            continue
+        start = int(span.get("start", 0))
+        end = int(span.get("end", start))
+        if end < start:
+            start, end = end, start
+        collected_lines.extend(block_lines[start : end + 1])
+
+    return [line for line in collected_lines if _clean_line_text(line.get("text", ""))]
+
+
+def embedded_heading_has_line_signal(
+    para: Paragraph,
+    embedded_heading: str,
+    block_lines_by_block: dict[str, list[dict[str, Any]]],
+) -> bool:
+    if not block_lines_by_block:
+        return True
+
+    source_lines = collect_source_lines_for_paragraph(para, block_lines_by_block)
+    if len(source_lines) < 2:
+        return True
+
+    heading_norm = clean_text_line(embedded_heading)
+    if not heading_norm:
+        return False
+
+    max_start = len(source_lines) - 2
+    for start_idx in range(1, max_start + 1):
+        candidate_lines = source_lines[start_idx:]
+        candidate_block = {"text": _compose_text_from_line_records(candidate_lines)}
+        prefix_len = detect_heading_prefix_line_count(candidate_block, "Body", candidate_lines)
+        if prefix_len is None or prefix_len <= 0:
+            continue
+        candidate_heading = clean_text_line(_compose_text_from_line_records(candidate_lines[:prefix_len]))
+        if candidate_heading == heading_norm:
+            return True
+
+    return False
+
+
+def should_accept_embedded_heading_split(
+    para: Paragraph,
+    embedded_heading: str,
+    block_lines_by_block: dict[str, list[dict[str, Any]]],
+) -> bool:
+    if not is_valid_embedded_heading_candidate(embedded_heading):
+        return False
+    return embedded_heading_has_line_signal(para, embedded_heading, block_lines_by_block)
 
 
 def split_author_segments(text: str) -> list[str]:
@@ -1064,12 +1526,18 @@ def extract_author_names(author_lines: list[str]) -> list[str]:
 def paragraph_clean_roles(para: Paragraph, clean_role_by_block: dict[str, str]) -> set[str]:
     source_ids = para.evidence_pointer.get("source_block_ids", [])
     if not isinstance(source_ids, list):
-        return set()
+        source_ids = []
     roles: set[str] = set()
     for source_id in source_ids:
         role = clean_role_by_block.get(str(source_id), "")
         if role:
             roles.add(role)
+    if para.role == "Heading":
+        if "main_title" not in roles:
+            roles.discard("body_text")
+            roles.add("section_heading")
+    elif para.role == "Body":
+        roles.add("body_text")
     return roles
 
 
@@ -1180,6 +1648,49 @@ def infer_metadata_role(
     return None
 
 
+def matches_document_heading_profile(
+    avg_size: float,
+    is_bold: bool,
+    dominant_font: str,
+    word_count: int,
+    tcase_ratio: float,
+    digits: int,
+    text: str,
+    document_profile: Optional[dict[str, Any]],
+) -> bool:
+    if not isinstance(document_profile, dict):
+        return False
+    heading_profile = document_profile.get("heading_font_profile", {})
+    body_profile = document_profile.get("body_font_profile", {})
+    if not isinstance(heading_profile, dict) or not isinstance(body_profile, dict):
+        return False
+
+    heading_size = float(heading_profile.get("avg_size", 0.0) or 0.0)
+    body_size = float(body_profile.get("avg_size", 0.0) or 0.0)
+    heading_bold_ratio = float(heading_profile.get("is_bold_ratio", 0.0) or 0.0)
+    heading_font = str(heading_profile.get("dominant_font", "") or "").strip()
+
+    if heading_size <= 0.0 or body_size <= 0.0:
+        return False
+    if heading_size < body_size + 1.0:
+        return False
+    if avg_size < max(heading_size - 0.6, body_size + 0.9):
+        return False
+    if word_count <= 0 or word_count > 16 or digits > 2:
+        return False
+    if text.endswith((".", ";", ":")):
+        return False
+    if not (tcase_ratio >= 0.5 or word_count <= 3):
+        return False
+    if heading_font and dominant_font and dominant_font != heading_font:
+        return False
+    if heading_bold_ratio >= 0.75 and heading_font and dominant_font == heading_font:
+        return True
+    if heading_bold_ratio >= 0.75 and is_bold:
+        return True
+    return heading_font and dominant_font == heading_font
+
+
 def infer_clean_role(
     block: dict[str, Any],
     vision_role: str,
@@ -1188,6 +1699,7 @@ def infer_clean_role(
     repetition_ratio: float,
     repetition_count: int,
     is_nuisance: bool,
+    document_profile: Optional[dict[str, Any]] = None,
 ) -> tuple[str, list[str]]:
     if is_nuisance:
         return "nuisance", ["nuisance_filter"]
@@ -1204,6 +1716,7 @@ def infer_clean_role(
         font_stats = {}
     avg_size = float(font_stats.get("avg_size", 0.0) or 0.0)
     is_bold = bool(font_stats.get("is_bold", False))
+    dominant_font = str(font_stats.get("dominant_font", "") or "").strip()
     heading_candidate = bool(block.get("is_heading_candidate", False))
 
     if vision_role == "FigureCaption":
@@ -1212,6 +1725,8 @@ def infer_clean_role(
         return "table_caption", ["vision_role_table_caption"]
     if vision_role == "ReferenceList":
         return "reference_entry", ["vision_role_reference_list"]
+    if vision_role == "Sidebar":
+        return "nuisance", ["vision_role_sidebar"]
 
     embedded_caption = extract_embedded_caption_text(text)
     if embedded_caption:
@@ -1220,6 +1735,8 @@ def infer_clean_role(
             return "figure_caption", ["caption_text_prefix"]
         if caption_low.startswith("table"):
             return "table_caption", ["caption_text_prefix"]
+    if looks_like_compact_graphic_label_text(text):
+        return "nuisance", ["compact_graphic_label_text"]
 
     if (
         page == 1
@@ -1235,6 +1752,17 @@ def infer_clean_role(
         and not text.endswith((".", ";", ":"))
         and digits <= 2
     )
+    if matches_document_heading_profile(
+        avg_size=avg_size,
+        is_bold=is_bold,
+        dominant_font=dominant_font,
+        word_count=word_count,
+        tcase_ratio=tcase_ratio,
+        digits=digits,
+        text=text,
+        document_profile=document_profile,
+    ):
+        return "section_heading", ["document_heading_profile"]
     if vision_role == "Heading" or (heading_candidate and looks_heading_shape):
         return "section_heading", ["heading_signal"]
 
@@ -1288,9 +1816,86 @@ def paragraph_role_for_block(block: dict[str, Any], fallback_role: str) -> str:
     return fallback_role
 
 
+def _point_in_bbox_pt(x: float, y: float, bbox: list[float]) -> bool:
+    if len(bbox) < 4:
+        return False
+    return float(bbox[0]) <= x <= float(bbox[2]) and float(bbox[1]) <= y <= float(bbox[3])
+
+
+def _bbox_overlap_area_pt(left: list[float], right: list[float]) -> float:
+    if len(left) < 4 or len(right) < 4:
+        return 0.0
+    x0 = max(float(left[0]), float(right[0]))
+    y0 = max(float(left[1]), float(right[1]))
+    x1 = min(float(left[2]), float(right[2]))
+    y1 = min(float(left[3]), float(right[3]))
+    if x1 <= x0 or y1 <= y0:
+        return 0.0
+    return (x1 - x0) * (y1 - y0)
+
+
+def infer_vision_role_from_regions(block: dict[str, Any], page_region_roles: list[dict[str, Any]]) -> str:
+    bbox = block.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox, list) or len(bbox) < 4:
+        return ""
+    bbox_pt = [float(v) for v in bbox[:4]]
+    x0, y0, x1, y1 = bbox_pt
+    cx = (x0 + x1) / 2.0
+    cy = (y0 + y1) / 2.0
+    best_role = ""
+    best_score = 0.0
+    text = clean_text_line(str(block.get("text", "")))
+    low = text.lower()
+
+    for region in page_region_roles:
+        if not isinstance(region, dict):
+            continue
+        role = str(region.get("role", "") or "")
+        region_bbox = region.get("bbox_pt", [])
+        if not isinstance(region_bbox, list) or len(region_bbox) < 4:
+            continue
+        region_bbox_pt = [float(v) for v in region_bbox[:4]]
+        overlap_area = _bbox_overlap_area_pt(bbox_pt, region_bbox_pt)
+        region_hit = overlap_area > 0.0 or _point_in_bbox_pt(cx, cy, region_bbox_pt)
+        if not region_hit:
+            continue
+        score = overlap_area
+        if _point_in_bbox_pt(cx, cy, region_bbox_pt):
+            score += 1e6
+        resolved_role = role
+        if role == "CaptionRegion":
+            resolved_role = "TableCaption" if low.startswith("table") else "FigureCaption"
+        if score > best_score:
+            best_score = score
+            best_role = resolved_role
+    return best_role
+
+
+def block_intersects_profile_band(block: dict[str, Any], band_bbox: list[float]) -> bool:
+    bbox = block.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox, list) or len(bbox) < 4 or len(band_bbox) < 4:
+        return False
+    x0, y0, x1, y1 = (float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3]))
+    band_x0, band_y0, band_x1, band_y1 = (
+        float(band_bbox[0]),
+        float(band_bbox[1]),
+        float(band_bbox[2]),
+        float(band_bbox[3]),
+    )
+    overlap_y0 = max(y0, band_y0)
+    overlap_y1 = min(y1, band_y1)
+    if overlap_y1 <= overlap_y0:
+        return False
+    cx = (x0 + x1) / 2.0
+    cy = (y0 + y1) / 2.0
+    return (band_x0 <= cx <= band_x1 and band_y0 <= cy <= band_y1) or (overlap_y1 - overlap_y0) >= 4.0
+
+
 def classify_clean_blocks(
     blocks: dict[str, dict[str, Any]],
     role_labels_by_page: dict[int, dict[str, str]],
+    region_roles_by_page: Optional[dict[int, list[dict[str, Any]]]] = None,
+    document_profile: Optional[dict[str, Any]] = None,
 ) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
     template_pages: dict[str, set[int]] = defaultdict(set)
     template_counts: dict[str, int] = defaultdict(int)
@@ -1303,6 +1908,15 @@ def classify_clean_blocks(
     repetition_page_threshold = 2 if doc_page_count <= 3 else 3
     repetition_ratio_threshold = 0.7 if doc_page_count <= 2 else (0.55 if doc_page_count <= 4 else 0.4)
     nuisance_score_threshold = 3.8 if doc_page_count <= 2 else 4.1
+    header_band = []
+    footer_band = []
+    if isinstance(document_profile, dict):
+        raw_header_band = document_profile.get("header_band_pt", [])
+        raw_footer_band = document_profile.get("footer_band_pt", [])
+        if isinstance(raw_header_band, list) and len(raw_header_band) >= 4:
+            header_band = [float(v) for v in raw_header_band[:4]]
+        if isinstance(raw_footer_band, list) and len(raw_footer_band) >= 4:
+            footer_band = [float(v) for v in raw_footer_band[:4]]
 
     for block in blocks.values():
         text = str(block.get("text", ""))
@@ -1347,7 +1961,26 @@ def classify_clean_blocks(
         y_rel = (y_center - float(bounds[1])) / page_height
         x_rel = (x_center - float(bounds[0])) / page_width
 
-        role = role_labels_by_page.get(page, {}).get(block_id, "Body")
+        role = role_labels_by_page.get(page, {}).get(block_id, "")
+        region_role = ""
+        if region_roles_by_page is not None:
+            region_role = infer_vision_role_from_regions(block, region_roles_by_page.get(page, []))
+        if role in {"", "Body"} and region_role in {"FigureCaption", "TableCaption"}:
+            role = region_role
+        elif role in {"", "Body"} and region_role == "Sidebar" and (
+            looks_like_figure_chart_noise(str(block.get("text", "")))
+            or looks_like_compact_graphic_label_text(str(block.get("text", "")))
+            or len(word_tokens(str(block.get("text", "")))) <= 4
+        ):
+            role = "Sidebar"
+        elif not role and region_role:
+            role = region_role
+        if not role and header_band and block_intersects_profile_band(block, header_band):
+            role = "HeaderFooter"
+        elif not role and footer_band and block_intersects_profile_band(block, footer_band):
+            role = "HeaderFooter"
+        if not role:
+            role = "Body"
         template = normalize_template_text(str(block.get("text", "")))
         template_page_count = len(template_pages.get(template, set()))
         template_count = int(template_counts.get(template, 0))
@@ -1363,6 +1996,10 @@ def classify_clean_blocks(
         if strong_vision_nuisance:
             reasons.append("vision_role_header_footer")
             score += 4.5
+            if header_band and block_intersects_profile_band(block, header_band):
+                reasons.append("document_profile_header_band")
+            elif footer_band and block_intersects_profile_band(block, footer_band):
+                reasons.append("document_profile_footer_band")
 
         if bool(block.get("is_header_footer_candidate", False)):
             reasons.append("extractor_header_footer_candidate")
@@ -1431,6 +2068,7 @@ def classify_clean_blocks(
             repetition_ratio=repetition_ratio,
             repetition_count=template_count,
             is_nuisance=is_nuisance,
+            document_profile=document_profile,
         )
 
         block_copy["vision_role"] = role
@@ -1468,6 +2106,632 @@ def union_bbox(bboxes: list[list[float]]) -> list[float]:
     return [min(xs), min(ys), max(xs), max(ys)]
 
 
+def _clean_line_text(text: Any) -> str:
+    return " ".join(str(text).split()).strip()
+
+
+def _compose_text_from_line_records(lines: list[dict[str, Any]]) -> str:
+    return " ".join(
+        text
+        for text in (_clean_line_text(line.get("text", "")) for line in lines)
+        if text
+    ).strip()
+
+
+def _line_font_stats(line: dict[str, Any]) -> dict[str, Any]:
+    font_stats = line.get("font_stats", {})
+    if isinstance(font_stats, dict):
+        return font_stats
+    return {}
+
+
+def _line_avg_size(line: dict[str, Any]) -> float:
+    font_stats = _line_font_stats(line)
+    value = font_stats.get("avg_size", line.get("avg_size", 0.0))
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        try:
+            return float(value)
+        except ValueError:
+            return 0.0
+    return 0.0
+
+
+def _line_is_bold(line: dict[str, Any]) -> bool:
+    font_stats = _line_font_stats(line)
+    value = font_stats.get("is_bold", line.get("is_bold", False))
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.lower() in {"1", "true", "yes"}
+    return bool(value)
+
+
+def _line_bbox(line: dict[str, Any]) -> list[float]:
+    bbox = line.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])
+    if isinstance(bbox, list) and len(bbox) >= 4:
+        return [float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3])]
+    return [0.0, 0.0, 0.0, 0.0]
+
+
+def _line_dominant_font(line: dict[str, Any]) -> str:
+    font_stats = _line_font_stats(line)
+    value = font_stats.get("dominant_font", line.get("dominant_font", ""))
+    return str(value).strip()
+
+
+def _line_text_looks_like_front_matter_label(text: str) -> bool:
+    return FRONT_MATTER_LABEL_RE.match(_clean_line_text(text)) is not None
+
+
+def _line_text_looks_like_doi(text: str) -> bool:
+    clean = _clean_line_text(text)
+    if not clean:
+        return False
+    return DOI_LINE_RE.match(clean) is not None
+
+
+def _looks_like_page1_author_name_block(lines: list[dict[str, Any]]) -> bool:
+    if len(lines) < 2:
+        return False
+    first_text = _clean_line_text(lines[0].get("text", ""))
+    second_text = _clean_line_text(lines[1].get("text", ""))
+    if not first_text or not second_text:
+        return False
+    if _line_text_looks_like_front_matter_label(first_text) or _line_text_looks_like_doi(first_text):
+        return False
+    first_words = first_text.split()
+    if not (2 <= len(first_words) <= 4):
+        return False
+    if any(any(ch.isdigit() for ch in word) for word in first_words):
+        return False
+    if any(not word[:1].isupper() for word in first_words):
+        return False
+    digit_count = sum(1 for ch in second_text if ch.isdigit())
+    comma_count = second_text.count(",")
+    return digit_count >= 4 and comma_count >= 2
+
+
+def _looks_like_compact_graphic_label_cluster(block: dict[str, Any], lines: list[dict[str, Any]]) -> bool:
+    if len(lines) < 2 or len(lines) > 4:
+        return False
+    bbox = block.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox, list) or len(bbox) < 4:
+        return False
+    width_pt = max(0.0, float(bbox[2]) - float(bbox[0]))
+    if width_pt > 260.0:
+        return False
+    cleaned_texts = [_clean_line_text(line.get("text", "")) for line in lines]
+    cleaned_texts = [text for text in cleaned_texts if text]
+    if not cleaned_texts:
+        return False
+    joined = clean_text_line(" ".join(cleaned_texts))
+    if len(joined) > 72:
+        return False
+    words = re.findall(r"[A-Za-z]+(?:[-'][A-Za-z]+)?|\d+(?:\.\d+)?", joined)
+    if not words or len(words) > 9:
+        return False
+    if any(token in joined.lower() for token in ("figure ", "fig. ", "table ")):
+        return False
+    same_font = len({_line_dominant_font(line) for line in lines if _line_dominant_font(line)}) <= 1
+    short_tokens = sum(1 for word in words if len(word) <= 4)
+    uppercase_tokens = sum(1 for word in words if word.isupper() and len(word) >= 2)
+    has_graphic_marker = any(token in joined.lower() for token in ("p-value", "log10", "log2", "fold change"))
+    return same_font and short_tokens >= max(2, len(words) // 2) and (uppercase_tokens >= 1 or has_graphic_marker)
+
+
+def looks_like_compact_graphic_label_text(text: str) -> bool:
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if len(clean) > 72:
+        return False
+    words = re.findall(r"[A-Za-z]+(?:[-'][A-Za-z]+)?|\d+(?:\.\d+)?", clean)
+    if not words or len(words) > 9:
+        return False
+    short_tokens = sum(1 for word in words if len(word) <= 4)
+    uppercase_tokens = sum(1 for word in words if word.isupper() and len(word) >= 2)
+    has_graphic_marker = any(token in clean.lower() for token in ("p-value", "log10", "log2", "fold change"))
+    lowercase_tokens = sum(1 for word in words if word[:1].islower())
+    if not has_graphic_marker and lowercase_tokens > max(1, len(words) // 3):
+        return False
+    return short_tokens >= max(2, len(words) // 2) and (uppercase_tokens >= 1 or has_graphic_marker)
+
+
+def detect_heading_prefix_line_count(
+    block: dict[str, Any],
+    role_label: str,
+    block_lines: list[dict[str, Any]],
+) -> Optional[int]:
+    if role_label not in {"Heading", "Body"}:
+        return None
+
+    cleaned_lines = [line for line in block_lines if _clean_line_text(line.get("text", ""))]
+    if len(cleaned_lines) < 2:
+        return None
+    if _looks_like_compact_graphic_label_cluster(block, cleaned_lines):
+        return None
+
+    first_line_text = _clean_line_text(cleaned_lines[0].get("text", ""))
+    remaining_text = _compose_text_from_line_records(cleaned_lines[1:])
+    first_line_size = _line_avg_size(cleaned_lines[0])
+    trailing_sizes = [_line_avg_size(line) for line in cleaned_lines[1:] if _line_avg_size(line) > 0]
+    trailing_avg = sum(trailing_sizes) / len(trailing_sizes) if trailing_sizes else 0.0
+    short_heading_prefix = (
+        first_line_text
+        and remaining_text
+        and (
+            is_common_unnumbered_section_heading(first_line_text)
+            or normalize_section_key(first_line_text) == "references"
+            or is_plausible_section_heading(first_line_text)
+            or is_plausible_sentence_case_section_heading(first_line_text)
+            or (
+                len(word_tokens(first_line_text)) <= 4
+                and title_case_ratio(word_tokens(first_line_text)) >= 0.5
+                and not first_line_text.endswith((".", ",", ";", ":"))
+            )
+        )
+        and len(first_line_text.split()) <= 6
+        and len(first_line_text) <= 48
+        and (
+            starts_like_embedded_heading_body(remaining_text)
+            or starts_like_fresh_sentence(remaining_text)
+            or is_reference_entry_text(remaining_text)
+        )
+        and (
+            trailing_avg <= 0
+            or first_line_size <= 0
+            or first_line_size >= trailing_avg * 1.05
+        )
+    )
+
+    block_text = _clean_line_text(block.get("text", ""))
+    if len(block_text) < 80 and not short_heading_prefix:
+        return None
+
+    if (
+        short_heading_prefix
+        or (
+            first_line_text
+            and remaining_text
+            and is_common_unnumbered_section_heading(first_line_text)
+            and len(remaining_text.split()) >= 6
+        )
+    ):
+        return 1
+
+    max_prefix = min(3, len(cleaned_lines) - 1)
+    for prefix_len in range(max_prefix, 0, -1):
+        heading_lines = cleaned_lines[:prefix_len]
+        body_lines = cleaned_lines[prefix_len:]
+        heading_text = _compose_text_from_line_records(heading_lines)
+        body_text = _compose_text_from_line_records(body_lines)
+        if not heading_text or not body_text:
+            continue
+        if len(heading_text) > 260:
+            continue
+
+        heading_sizes = [_line_avg_size(line) for line in heading_lines if _line_avg_size(line) > 0]
+        body_sizes = [_line_avg_size(line) for line in body_lines if _line_avg_size(line) > 0]
+        heading_avg = sum(heading_sizes) / len(heading_sizes) if heading_sizes else 0.0
+        body_avg = sum(body_sizes) / len(body_sizes) if body_sizes else 0.0
+        heading_is_bold = any(_line_is_bold(line) for line in heading_lines)
+        body_has_plain = any(not _line_is_bold(line) for line in body_lines)
+        heading_words = len(heading_text.split())
+        body_words = len(body_text.split())
+        heading_fonts = {_line_dominant_font(line) for line in heading_lines if _line_dominant_font(line)}
+        body_fonts = {_line_dominant_font(line) for line in body_lines if _line_dominant_font(line)}
+        heading_shape = is_supported_section_heading_shape(heading_text)
+        body_starts_like_body = starts_like_embedded_heading_body(body_text) or starts_like_fresh_sentence(body_text)
+        first_heading_text = _clean_line_text(heading_lines[0].get("text", ""))
+        extra_heading_lines = heading_lines[1:]
+        extra_heading_text = _compose_text_from_line_records(extra_heading_lines)
+
+        if heading_words == 0 or body_words < 6:
+            continue
+        if prefix_len == 1 and heading_words > 12:
+            continue
+
+        if prefix_len > 1:
+            if any(starts_like_embedded_heading_body(_clean_line_text(line.get("text", ""))) for line in extra_heading_lines):
+                continue
+            if any(re.match(r"^\d+[\.)]?$", _clean_line_text(line.get("text", ""))) is not None for line in extra_heading_lines):
+                continue
+
+        clearly_larger = body_avg > 0 and heading_avg >= body_avg * 1.12
+        mildly_larger_bold = body_avg > 0 and heading_avg >= body_avg * 1.06 and heading_is_bold
+        subtly_larger = body_avg > 0 and heading_avg >= body_avg * 1.04
+        font_transition = (
+            subtly_larger
+            and bool(heading_fonts)
+            and bool(body_fonts)
+            and heading_fonts.isdisjoint(body_fonts)
+        )
+        compact_heading = heading_words <= 24 and len(heading_text) <= 220
+        parent_subheading_pattern = (
+            prefix_len > 1
+            and first_heading_text
+            and extra_heading_text
+            and (
+                is_common_unnumbered_section_heading(first_heading_text)
+                or re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", first_heading_text) is not None
+            )
+            and (
+                is_plausible_section_heading(extra_heading_text)
+                or is_plausible_sentence_case_section_heading(extra_heading_text)
+            )
+            and not starts_like_embedded_heading_body(extra_heading_text)
+        )
+        if prefix_len > 1 and heading_sizes:
+            first_heading_size = heading_sizes[0]
+            trailing_heading_sizes = heading_sizes[1:]
+            if trailing_heading_sizes:
+                trailing_heading_avg = sum(trailing_heading_sizes) / len(trailing_heading_sizes)
+                if trailing_heading_avg < first_heading_size * 0.9 and not parent_subheading_pattern:
+                    continue
+
+        if compact_heading and body_has_plain and (clearly_larger or mildly_larger_bold):
+            return prefix_len
+        if compact_heading and heading_shape and body_starts_like_body and (subtly_larger or font_transition):
+            return prefix_len
+
+    return None
+
+
+def split_heading_prefix_lines(heading_lines: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+    if len(heading_lines) < 2:
+        return [heading_lines] if heading_lines else []
+
+    first_text = _clean_line_text(heading_lines[0].get("text", ""))
+    rest_text = _compose_text_from_line_records(heading_lines[1:])
+    first_words = len(first_text.split())
+    rest_words = len(rest_text.split())
+    first_size = _line_avg_size(heading_lines[0])
+    rest_sizes = [_line_avg_size(line) for line in heading_lines[1:] if _line_avg_size(line) > 0]
+    rest_avg = sum(rest_sizes) / len(rest_sizes) if rest_sizes else 0.0
+    first_is_parent_heading = (
+        is_common_unnumbered_section_heading(first_text)
+        or re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z]", first_text) is not None
+    )
+    rest_is_heading = (
+        is_plausible_section_heading(rest_text)
+        or is_plausible_sentence_case_section_heading(rest_text)
+    )
+
+    if (
+        first_text
+        and rest_text
+        and first_words <= 4
+        and len(first_text) <= 32
+        and rest_words >= 5
+        and first_is_parent_heading
+        and rest_is_heading
+        and not starts_like_embedded_heading_body(rest_text)
+        and (rest_avg <= 0 or first_size >= rest_avg * 1.08)
+    ):
+        return [[heading_lines[0]], heading_lines[1:]]
+
+    return [heading_lines]
+
+
+def _build_split_block(
+    parent_block_id: str,
+    block: dict[str, Any],
+    lines: list[dict[str, Any]],
+    split_index: int,
+    role_label: str,
+    line_start: int,
+    line_end: int,
+) -> dict[str, Any]:
+    line_bboxes = [_line_bbox(line) for line in lines]
+    line_sizes = [_line_avg_size(line) for line in lines if _line_avg_size(line) > 0]
+    dominant_fonts = [
+        _line_dominant_font(line)
+        for line in lines
+        if _line_dominant_font(line)
+    ]
+    font_stats = dict(block.get("font_stats", {}))
+    font_stats.update(
+        {
+            "avg_size": sum(line_sizes) / len(line_sizes) if line_sizes else font_stats.get("avg_size", 0.0),
+            "is_bold": any(_line_is_bold(line) for line in lines),
+            "dominant_font": dominant_fonts[0] if dominant_fonts else font_stats.get("dominant_font", ""),
+        }
+    )
+    new_block = dict(block)
+    new_block["block_id"] = f"{parent_block_id}__ls{split_index}"
+    new_block["text"] = _compose_text_from_line_records(lines)
+    new_block["bbox_pt"] = union_bbox(line_bboxes)
+    new_block["font_stats"] = font_stats
+    new_block["parent_block_id"] = parent_block_id
+    new_block["root_block_id"] = str(block.get("root_block_id", block.get("parent_block_id", parent_block_id))).strip() or parent_block_id
+    new_block["source_line_span"] = {"start": line_start, "end": line_end}
+    new_block["split_from_line_metadata"] = True
+    new_block["split_role_label"] = role_label
+    if role_label == "Heading":
+        new_block["clean_role"] = "section_heading"
+    else:
+        new_block["clean_role"] = "body_text"
+    return new_block
+
+
+def _build_hint_split_block(
+    parent_block_id: str,
+    block: dict[str, Any],
+    text: str,
+    split_index: int,
+    role_label: str,
+) -> dict[str, Any]:
+    new_block = dict(block)
+    new_block["block_id"] = f"{parent_block_id}__vh{split_index}"
+    new_block["parent_block_id"] = parent_block_id
+    new_block["root_block_id"] = str(block.get("root_block_id", block.get("parent_block_id", parent_block_id))).strip() or parent_block_id
+    new_block["text"] = clean_text_line(text)
+    font_stats = new_block.get("font_stats")
+    if not isinstance(font_stats, dict):
+        font_stats = {}
+    new_font_stats = dict(font_stats)
+    new_font_stats["is_bold"] = role_label == "Heading" or bool(font_stats.get("is_bold", False))
+    new_block["font_stats"] = new_font_stats
+    if role_label == "Heading":
+        new_block["clean_role"] = "section_heading"
+    else:
+        new_block["clean_role"] = "body_text"
+    return new_block
+
+
+def _build_front_matter_split_block(
+    parent_block_id: str,
+    block: dict[str, Any],
+    lines: list[dict[str, Any]],
+    split_index: int,
+    clean_role: str,
+) -> dict[str, Any]:
+    role_label = "Heading" if clean_role == "main_title" else "HeaderFooter"
+    new_block = _build_split_block(
+        parent_block_id=parent_block_id,
+        block=block,
+        lines=lines,
+        split_index=split_index,
+        role_label="Heading" if clean_role == "main_title" else "Body",
+        line_start=int(lines[0].get("line_index", 0)),
+        line_end=int(lines[-1].get("line_index", 0)),
+    )
+    new_block["block_id"] = f"{parent_block_id}__fm{split_index}"
+    new_block["clean_role"] = clean_role
+    new_block["split_role_label"] = role_label
+    new_block["front_matter_split"] = True
+    return new_block
+
+
+def expand_page1_front_matter_block(
+    parent_block_id: str,
+    block: dict[str, Any],
+    line_records: list[dict[str, Any]],
+) -> list[tuple[dict[str, Any], str]]:
+    page = int(block.get("page", 1) or 1)
+    if page != 1:
+        return []
+    lines = [line for line in line_records if _clean_line_text(line.get("text", ""))]
+    if len(lines) < 3 or _looks_like_page1_author_name_block(lines):
+        return []
+
+    if not _line_text_looks_like_front_matter_label(lines[0].get("text", "")):
+        return []
+    doi_idx = next((idx for idx, line in enumerate(lines[:3]) if _line_text_looks_like_doi(line.get("text", ""))), None)
+    if doi_idx is None or doi_idx >= len(lines) - 1:
+        return []
+
+    title_lines = lines[doi_idx + 1 :]
+    title_text = _compose_text_from_line_records(title_lines)
+    if not looks_like_document_title_candidate(title_text):
+        return []
+
+    split_blocks: list[tuple[dict[str, Any], str]] = [
+        (_build_front_matter_split_block(parent_block_id, block, [lines[0]], 0, "journal_meta"), "HeaderFooter"),
+        (_build_front_matter_split_block(parent_block_id, block, [lines[doi_idx]], 1, "doi"), "HeaderFooter"),
+        (_build_front_matter_split_block(parent_block_id, block, title_lines, 2, "main_title"), "Heading"),
+    ]
+    return split_blocks
+
+
+def expand_block_with_heading_hints(
+    parent_block_id: str,
+    block: dict[str, Any],
+    heading_hints: list[str],
+) -> list[tuple[dict[str, Any], str]]:
+    unique_hints = unique_texts_in_order(heading_hints)
+    if not unique_hints:
+        return [(block, "Heading" if str(block.get("clean_role", "")) == "section_heading" else "Body")]
+
+    segments, matched_any = split_text_by_approved_heading_hints(str(block.get("text", "")), unique_hints)
+    if not matched_any:
+        return [(block, "Heading" if str(block.get("clean_role", "")) == "section_heading" else "Body")]
+
+    expanded_blocks: list[tuple[dict[str, Any], str]] = []
+    split_index = 0
+    for segment_text, segment_kind in segments:
+        clean_segment = clean_text_line(segment_text)
+        if not clean_segment:
+            continue
+        segment_role = "Heading" if segment_kind == "heading" else "Body"
+        expanded_blocks.append(
+            (
+                _build_hint_split_block(
+                    parent_block_id=parent_block_id,
+                    block=block,
+                    text=clean_segment,
+                    split_index=split_index,
+                    role_label=segment_role,
+                ),
+                segment_role,
+            )
+        )
+        split_index += 1
+
+    return expanded_blocks or [(block, "Heading" if str(block.get("clean_role", "")) == "section_heading" else "Body")]
+
+
+def expand_block_with_line_splits(
+    parent_block_id: str,
+    block: dict[str, Any],
+    role_label: str,
+    line_records: list[dict[str, Any]],
+) -> list[tuple[dict[str, Any], str]]:
+    if not line_records:
+        return [(block, role_label)]
+
+    expanded_blocks: list[tuple[dict[str, Any], str]] = []
+    current_block = block
+    current_role = role_label
+    current_lines = list(line_records)
+    current_line_start = 0
+
+    while True:
+        prefix_len = detect_heading_prefix_line_count(current_block, current_role, current_lines)
+        if prefix_len is None:
+            expanded_blocks.append((current_block, current_role))
+            break
+
+        heading_lines = current_lines[:prefix_len]
+        body_lines = current_lines[prefix_len:]
+        if not heading_lines or not body_lines:
+            expanded_blocks.append((current_block, current_role))
+            break
+
+        heading_segments = split_heading_prefix_lines(heading_lines)
+        if not heading_segments:
+            expanded_blocks.append((current_block, current_role))
+            break
+
+        current_parent_block_id = str(current_block.get("block_id", parent_block_id))
+        line_cursor = current_line_start
+        next_split_index = 0
+        for heading_segment in heading_segments:
+            if not heading_segment:
+                continue
+            heading_block = _build_split_block(
+                parent_block_id=current_parent_block_id,
+                block=current_block,
+                lines=heading_segment,
+                split_index=next_split_index,
+                role_label="Heading",
+                line_start=line_cursor,
+                line_end=line_cursor + len(heading_segment) - 1,
+            )
+            expanded_blocks.append((heading_block, "Heading"))
+            line_cursor += len(heading_segment)
+            next_split_index += 1
+
+        body_block = _build_split_block(
+            parent_block_id=current_parent_block_id,
+            block=current_block,
+            lines=body_lines,
+            split_index=next_split_index,
+            role_label="Body",
+            line_start=current_line_start + prefix_len,
+            line_end=current_line_start + len(current_lines) - 1,
+        )
+        next_split_index += 1
+
+        current_block = body_block
+        current_role = "Body"
+        current_lines = body_lines
+        current_line_start += prefix_len
+
+    return expanded_blocks
+
+
+def prepare_blocks_for_aggregation(
+    blocks: dict[str, dict[str, Any]],
+    role_labels_by_page: dict[int, dict[str, str]],
+    block_lines_by_block: Optional[dict[str, list[dict[str, Any]]]] = None,
+    embedded_heading_hints_by_page: Optional[dict[int, dict[str, list[str]]]] = None,
+) -> tuple[dict[str, dict[str, Any]], dict[int, dict[str, str]], dict[str, list[str]]]:
+    block_lines_by_block = block_lines_by_block or {}
+    embedded_heading_hints_by_page = embedded_heading_hints_by_page or {}
+    prepared_blocks: dict[str, dict[str, Any]] = {}
+    prepared_role_labels_by_page: dict[int, dict[str, str]] = {
+        page: dict(labels) for page, labels in role_labels_by_page.items()
+    }
+    expansion_by_block_id: dict[str, list[str]] = {}
+
+    for block_id, block in blocks.items():
+        page = int(block.get("page", 1))
+        page_role_labels = prepared_role_labels_by_page.setdefault(page, {})
+        original_role_label = page_role_labels.get(block_id, "Body")
+        line_records = block_lines_by_block.get(block_id, [])
+        front_matter_splits = expand_page1_front_matter_block(
+            parent_block_id=block_id,
+            block=block,
+            line_records=line_records,
+        )
+        if front_matter_splits:
+            expanded_ids: list[str] = []
+            for expanded_block, expanded_role in front_matter_splits:
+                expanded_block_id = str(expanded_block["block_id"])
+                prepared_blocks[expanded_block_id] = expanded_block
+                page_role_labels[expanded_block_id] = expanded_role
+                expanded_ids.append(expanded_block_id)
+            expansion_by_block_id[block_id] = expanded_ids
+            continue
+        expanded_blocks = expand_block_with_line_splits(
+            parent_block_id=block_id,
+            block=block,
+            role_label=original_role_label,
+            line_records=line_records,
+        )
+        if len(expanded_blocks) == 1 and expanded_blocks[0][0] is block:
+            heading_hints = embedded_heading_hints_by_page.get(page, {}).get(block_id, [])
+            if heading_hints:
+                expanded_blocks = expand_block_with_heading_hints(
+                    parent_block_id=block_id,
+                    block=block,
+                    heading_hints=heading_hints,
+                )
+        if len(expanded_blocks) == 1 and expanded_blocks[0][0] is block:
+            prepared_blocks[block_id] = block
+            expansion_by_block_id[block_id] = [block_id]
+            continue
+
+        expanded_ids: list[str] = []
+        for expanded_block, expanded_role in expanded_blocks:
+            expanded_block_id = str(expanded_block["block_id"])
+            prepared_blocks[expanded_block_id] = expanded_block
+            page_role_labels[expanded_block_id] = expanded_role
+            expanded_ids.append(expanded_block_id)
+        expansion_by_block_id[block_id] = expanded_ids
+
+    return prepared_blocks, prepared_role_labels_by_page, expansion_by_block_id
+
+
+def split_group_block_ids_by_heading(
+    block_ids: list[str],
+    blocks: dict[str, dict[str, Any]],
+    role_labels: dict[str, str],
+) -> list[list[str]]:
+    segments: list[list[str]] = []
+    current: list[str] = []
+
+    for block_id in block_ids:
+        block = blocks.get(block_id)
+        if not block:
+            continue
+        role = paragraph_role_for_block(block, role_labels.get(block_id, "Body"))
+        if role == "Heading":
+            if current:
+                segments.append(current)
+                current = []
+            segments.append([block_id])
+            continue
+        current.append(block_id)
+
+    if current:
+        segments.append(current)
+    return segments
+
+
 def infer_section_heading(block: dict[str, Any], role: str) -> Optional[str]:
     if role != "Heading":
         return None
@@ -1497,6 +2761,7 @@ def build_paragraph_from_group(
     bboxes: list[list[float]] = []
     pages: set[int] = set()
     source_block_ids: list[str] = []
+    source_line_spans: list[dict[str, Any]] = []
     section_path_candidates: list[str] = []
     
     for bid in sorted_block_ids:
@@ -1507,7 +2772,17 @@ def build_paragraph_from_group(
         bbox = block.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])  # type: ignore[assignment]
         bboxes.append(bbox)  # type: ignore[arg-type]
         pages.add(block.get("page", 1))  # type: ignore[arg]
-        source_block_ids.append(bid)
+        source_block_id = str(block.get("root_block_id", block.get("parent_block_id", bid))).strip() or bid
+        source_block_ids.append(source_block_id)
+        line_span = block.get("source_line_span")
+        if isinstance(line_span, dict):
+            source_line_spans.append(
+                {
+                    "block_id": source_block_id,
+                    "start": int(line_span.get("start", 0)),
+                    "end": int(line_span.get("end", 0)),
+                }
+            )
         
         role = paragraph_role_for_block(block, role_labels.get(bid, "Body"))
         heading = infer_section_heading(block, role)
@@ -1536,6 +2811,8 @@ def build_paragraph_from_group(
         "bbox_union": bbox_union,
         "source_block_ids": source_block_ids,
     }
+    if source_line_spans:
+        evidence_pointer["source_line_spans"] = source_line_spans
     
     section_path: Optional[list[str]] = None
     if section_path_candidates:
@@ -1577,11 +2854,21 @@ def build_singleton_paragraph(
     
     para_id = compute_para_id([block_id])
     
+    source_block_id = str(block.get("root_block_id", block.get("parent_block_id", block_id))).strip() or block_id
     evidence_pointer = {
         "pages": [page],
         "bbox_union": bbox,
-        "source_block_ids": [block_id],
+        "source_block_ids": [source_block_id],
     }
+    line_span = block.get("source_line_span")
+    if isinstance(line_span, dict):
+        evidence_pointer["source_line_spans"] = [
+            {
+                "block_id": source_block_id,
+                "start": int(line_span.get("start", 0)),
+                "end": int(line_span.get("end", 0)),
+            }
+        ]
     
     section_path: Optional[list[str]] = None
     if section_path_candidates:
@@ -1611,14 +2898,28 @@ def aggregate_paragraphs(
     merge_groups_by_page: dict[int, list[dict[str, Any]]],
     role_labels_by_page: dict[int, dict[str, str]],
     confidence_by_page: dict[int, Any],
+    block_lines_by_block: Optional[dict[str, list[dict[str, Any]]]] = None,
+    embedded_heading_hints_by_page: Optional[dict[int, dict[str, list[str]]]] = None,
+    paragraph_regrouping_hints_by_page: Optional[dict[int, list[list[str]]]] = None,
 ) -> list[Paragraph]:
+    prepared_blocks, prepared_role_labels_by_page, expansion_by_block_id = prepare_blocks_for_aggregation(
+        blocks,
+        role_labels_by_page,
+        block_lines_by_block=block_lines_by_block,
+        embedded_heading_hints_by_page=embedded_heading_hints_by_page,
+    )
     all_paragraphs: list[Paragraph] = []
-    
+
     grouped_blocks: set[str] = set()
-    
-    for page in sorted(merge_groups_by_page.keys()):
-        merge_groups = merge_groups_by_page.get(page, [])
-        role_labels = role_labels_by_page.get(page, {})
+    regrouping_hints_by_page = paragraph_regrouping_hints_by_page or {}
+
+    pages_to_group = sorted(set(merge_groups_by_page.keys()) | set(regrouping_hints_by_page.keys()))
+    for page in pages_to_group:
+        merge_groups = merge_groups_with_regrouping_hints(
+            merge_groups_by_page.get(page, []),
+            regrouping_hints_by_page.get(page, []),
+        )
+        role_labels = prepared_role_labels_by_page.get(page, {})
         confidence = confidence_by_page.get(page, 0.5)
         
         for group in merge_groups:
@@ -1627,22 +2928,35 @@ def aggregate_paragraphs(
             if not block_ids:
                 continue
 
-            filtered_block_ids = [bid for bid in block_ids if bid in blocks]
+            expanded_block_ids: list[str] = []
+            for block_id in block_ids:
+                expanded_block_ids.extend(expansion_by_block_id.get(block_id, [block_id]))
+
+            filtered_block_ids = [bid for bid in expanded_block_ids if bid in prepared_blocks]
             if not filtered_block_ids:
                 continue
-            
-            para = build_paragraph_from_group(
-                group_id, filtered_block_ids, blocks, role_labels, confidence
-            )
-            all_paragraphs.append(para)
-            grouped_blocks.update(filtered_block_ids)  # type: ignore[arg-type]
+
+            segments = split_group_block_ids_by_heading(filtered_block_ids, prepared_blocks, role_labels)
+            for segment_idx, segment_block_ids in enumerate(segments):
+                if not segment_block_ids:
+                    continue
+                segment_group_id = group_id if len(segments) == 1 else f"{group_id}__seg{segment_idx}"
+                para = build_paragraph_from_group(
+                    segment_group_id,
+                    segment_block_ids,
+                    prepared_blocks,
+                    role_labels,
+                    confidence,
+                )
+                all_paragraphs.append(para)
+                grouped_blocks.update(segment_block_ids)  # type: ignore[arg-type]
     
-    for block_id, block in blocks.items():
+    for block_id, block in prepared_blocks.items():
         if block_id in grouped_blocks:
             continue
         
         page = block.get("page", 1)  # type: ignore[assignment]
-        role_labels = role_labels_by_page.get(page, {})  # type: ignore[index]
+        role_labels = prepared_role_labels_by_page.get(page, {})  # type: ignore[index]
         confidence = confidence_by_page.get(page, 0.5)  # type: ignore[index]
         
         para = build_singleton_paragraph(block_id, block, role_labels, confidence)
@@ -1872,6 +3186,97 @@ def unique_texts_in_order(values: list[str]) -> list[str]:
     return result
 
 
+def collect_embedded_heading_hints_for_paragraph(
+    para: Paragraph,
+    embedded_heading_hints_by_page: dict[int, dict[str, list[str]]],
+    reviewed_block_ids_by_page: dict[int, set[str]],
+) -> tuple[list[str], bool]:
+    page = int(para.page_span.get("start", 1) or 1)
+    source_ids = para.evidence_pointer.get("source_block_ids", [])
+    if not isinstance(source_ids, list):
+        return [], False
+
+    hints_for_page = embedded_heading_hints_by_page.get(page, {})
+    reviewed_ids = reviewed_block_ids_by_page.get(page, set())
+    hints: list[str] = []
+    reviewed = False
+    for source_id in source_ids:
+        block_id = str(source_id).strip()
+        if not block_id:
+            continue
+        if block_id in reviewed_ids:
+            reviewed = True
+        hints.extend(hints_for_page.get(block_id, []))
+    return unique_texts_in_order(hints), reviewed
+
+
+def collect_mixed_group_reviews_for_paragraph(
+    para: Paragraph,
+    mixed_group_reviews_by_page: dict[int, dict[str, dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    page = int(para.page_span.get("start", 1) or 1)
+    source_ids = para.evidence_pointer.get("source_block_ids", [])
+    if not isinstance(source_ids, list):
+        return []
+    reviews_for_page = mixed_group_reviews_by_page.get(page, {})
+    reviews: list[dict[str, Any]] = []
+    for source_id in source_ids:
+        review = reviews_for_page.get(str(source_id).strip())
+        if isinstance(review, dict):
+            reviews.append(review)
+    return reviews
+
+
+def find_heading_hint_offset(text: str, heading_hint: str) -> int:
+    haystack = " ".join(str(text).split()).strip()
+    needle = " ".join(str(heading_hint).split()).strip()
+    if not haystack or not needle:
+        return -1
+
+    start = 0
+    lower_haystack = haystack.lower()
+    lower_needle = needle.lower()
+    while True:
+        idx = lower_haystack.find(lower_needle, start)
+        if idx < 0:
+            return -1
+        before_ok = idx == 0 or not lower_haystack[idx - 1].isalnum()
+        end = idx + len(needle)
+        after_ok = end >= len(haystack) or not lower_haystack[end].isalnum()
+        if before_ok and after_ok:
+            return idx
+        start = idx + 1
+
+
+def split_text_by_approved_heading_hints(
+    text: str,
+    heading_hints: list[str],
+) -> tuple[list[tuple[str, Optional[str]]], bool]:
+    remaining = " ".join(str(text).split()).strip()
+    if not remaining:
+        return [], False
+
+    segments: list[tuple[str, Optional[str]]] = []
+    matched_any = False
+    for heading_hint in heading_hints:
+        hint = " ".join(str(heading_hint).split()).strip()
+        if not hint or not remaining:
+            continue
+        idx = find_heading_hint_offset(remaining, hint)
+        if idx < 0:
+            continue
+        prefix = " ".join(remaining[:idx].split()).strip()
+        if prefix:
+            segments.append((prefix, None))
+        segments.append((hint, "heading"))
+        remaining = " ".join(remaining[idx + len(hint):].split()).strip()
+        matched_any = True
+
+    if remaining:
+        segments.append((remaining, None))
+    return segments, matched_any
+
+
 def is_informative_caption(text: str) -> bool:
     clean = clean_text_line(text)
     if len(clean) < 8:
@@ -1945,6 +3350,20 @@ def is_caption_like_entry(text: str) -> bool:
     )
     if narrative_markers >= 2 and word_count > 35:
         return False
+    if not has_caption_label_prefix(clean) and any(
+        marker in low
+        for marker in (
+            "we analyzed",
+            "we ranked",
+            "we conducted",
+            "we examined",
+            "we collected",
+            "we believed",
+            "we further",
+            "our analysis",
+        )
+    ):
+        return False
     if word_count > 55 and not label_like:
         return False
     return label_like or (word_count <= 40 and sentence_breaks <= 4)
@@ -1957,6 +3376,27 @@ def should_keep_caption_entry(text: str) -> bool:
     if has_caption_label_prefix(clean):
         return True
     return is_caption_like_entry(clean)
+
+
+def has_caption_continuation_markers(text: str) -> bool:
+    low = clean_text_line(text).lower()
+    if not low:
+        return False
+    continuation_markers = (
+        "scale bar",
+        "source data",
+        "representative",
+        "box plot",
+        "interquartile range",
+        "whiskers extend",
+        "the p values",
+        "p values",
+        "corrected chi-square",
+        "kruskal-wallis",
+        "one-way anova",
+        "student's t-test",
+    )
+    return any(marker in low for marker in continuation_markers)
 
 
 def is_caption_continuation_paragraph(para: Paragraph, text: str) -> bool:
@@ -1978,22 +3418,7 @@ def is_caption_continuation_paragraph(para: Paragraph, text: str) -> bool:
     if confidence > 0.6:
         return False
 
-    low = clean.lower()
-    continuation_markers = (
-        "scale bar",
-        "source data",
-        "representative",
-        "box plot",
-        "interquartile range",
-        "whiskers extend",
-        "the p values",
-        "p values",
-        "corrected chi-square",
-        "kruskal-wallis",
-        "one-way anova",
-        "student's t-test",
-    )
-    return any(marker in low for marker in continuation_markers)
+    return has_caption_continuation_markers(clean)
 
 
 def is_lowercase_caption_continuation_paragraph(para: Paragraph, text: str) -> bool:
@@ -2040,10 +3465,135 @@ def is_close_to_caption_bbox(para: Paragraph, caption_bbox: Optional[list[float]
     return current_y0 <= caption_y1 + 80.0
 
 
+def _caption_tail_match_score(para: Paragraph, caption_bbox: Optional[list[float]]) -> Optional[float]:
+    if not isinstance(caption_bbox, list) or len(caption_bbox) < 4:
+        return None
+    bbox_obj = para.evidence_pointer.get("bbox_union", [0.0, 0.0, 0.0, 0.0])
+    if not isinstance(bbox_obj, list) or len(bbox_obj) < 4:
+        return None
+    try:
+        current_x0 = float(bbox_obj[0])
+        current_y0 = float(bbox_obj[1])
+        current_x1 = float(bbox_obj[2])
+        caption_x0 = float(caption_bbox[0])
+        caption_y0 = float(caption_bbox[1])
+        caption_x1 = float(caption_bbox[2])
+        caption_y1 = float(caption_bbox[3])
+    except (TypeError, ValueError):
+        return None
+
+    if current_y0 < caption_y0 - 20.0:
+        return None
+    vertical_gap = max(0.0, current_y0 - caption_y1)
+    if vertical_gap > 120.0:
+        return None
+
+    overlap = max(0.0, min(current_x1, caption_x1) - max(current_x0, caption_x0))
+    min_width = max(1.0, min(current_x1 - current_x0, caption_x1 - caption_x0))
+    horizontal_overlap_ratio = overlap / min_width
+    right_column_continuation = current_x0 >= caption_x1 - 20.0 and vertical_gap <= 120.0
+    if horizontal_overlap_ratio < 0.1 and not right_column_continuation and vertical_gap > 40.0:
+        return None
+
+    return vertical_gap - horizontal_overlap_ratio * 40.0
+
+
+def _find_best_recent_caption_record(
+    para: Paragraph,
+    caption_records_by_page: dict[int, list[dict[str, Any]]],
+) -> Optional[dict[str, Any]]:
+    page = int(para.page_span.get("start", 1) or 1)
+    best_record: Optional[dict[str, Any]] = None
+    best_score: Optional[float] = None
+    for record in caption_records_by_page.get(page, []):
+        if not isinstance(record, dict):
+            continue
+        score = _caption_tail_match_score(para, record.get("bbox"))
+        if score is None:
+            continue
+        if best_score is None or score < best_score:
+            best_score = score
+            best_record = record
+    return best_record
+
+
+def is_stray_caption_tail_body_paragraph(
+    para: Paragraph,
+    text: str,
+    caption_records_by_page: dict[int, list[dict[str, Any]]],
+) -> bool:
+    if para.role != "Body" or para.section_path:
+        return False
+    try:
+        confidence = float(para.confidence)
+    except (TypeError, ValueError):
+        confidence = 1.0
+    if confidence > 0.6:
+        return False
+
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+    if not (is_caption_like_entry(clean) or has_caption_continuation_markers(clean)):
+        return False
+    return _find_best_recent_caption_record(para, caption_records_by_page) is not None
+
+
+def is_caption_role_continuation_paragraph(
+    para: Paragraph,
+    text: str,
+    caption_records_by_page: dict[int, list[dict[str, Any]]],
+) -> bool:
+    if para.role not in {"FigureCaption", "TableCaption"} or para.section_path:
+        return False
+    clean = clean_text_line(text)
+    if not clean or not clean[:1].islower():
+        return False
+    if len(word_tokens(clean)) < 8:
+        return False
+    return _find_best_recent_caption_record(para, caption_records_by_page) is not None
+
+
+def append_to_recent_caption_record(
+    para: Paragraph,
+    text: str,
+    figure_captions: list[str],
+    table_captions: list[str],
+    caption_records_by_page: dict[int, list[dict[str, Any]]],
+) -> bool:
+    record = _find_best_recent_caption_record(para, caption_records_by_page)
+    if record is None:
+        return False
+
+    kind = str(record.get("kind", ""))
+    index = record.get("index")
+    if not isinstance(index, int):
+        return False
+
+    clean = clean_text_line(text)
+    if not clean:
+        return False
+
+    if kind == "figure" and 0 <= index < len(figure_captions):
+        figure_captions[index] = clean_text_line(f"{figure_captions[index]} {clean}")
+    elif kind == "table" and 0 <= index < len(table_captions):
+        table_captions[index] = clean_text_line(f"{table_captions[index]} {clean}")
+    else:
+        return False
+
+    bbox_obj = para.evidence_pointer.get("bbox_union", None)
+    if isinstance(bbox_obj, list) and len(bbox_obj) >= 4:
+        record["bbox"] = bbox_obj
+    return True
+
+
 def looks_like_figure_chart_noise(text: str) -> bool:
     clean = clean_text_line(text)
     if not clean:
         return False
+
+    if looks_like_compact_graphic_label_text(clean):
+        return True
 
     low = clean.lower()
     words = word_tokens(clean)
@@ -3524,7 +5074,19 @@ def render_clean_document(
     doc_id: str,
     qa_dir: Optional[Path] = None,
     text_dir: Optional[Path] = None,
+    embedded_heading_hints_by_page: Optional[dict[int, dict[str, list[str]]]] = None,
+    reviewed_block_ids_by_page: Optional[dict[int, set[str]]] = None,
+    mixed_group_reviews_by_page: Optional[dict[int, dict[str, dict[str, Any]]]] = None,
+    block_lines_by_block: Optional[dict[str, list[dict[str, Any]]]] = None,
 ) -> tuple[str, list[dict[str, Any]]]:
+    if embedded_heading_hints_by_page is None:
+        embedded_heading_hints_by_page = {}
+    if reviewed_block_ids_by_page is None:
+        reviewed_block_ids_by_page = {}
+    if mixed_group_reviews_by_page is None:
+        mixed_group_reviews_by_page = {}
+    if block_lines_by_block is None:
+        block_lines_by_block = {}
     page_layouts = {}
     if text_dir:
         page_layouts = load_page_layouts(text_dir)
@@ -3536,6 +5098,30 @@ def render_clean_document(
     # Recompute bounds after sorting (bounds should be same but ensures consistency)
     para_bounds_by_page = infer_para_page_bounds(ordered_paragraphs)
     narrow_fragment_page_counts = compute_narrow_fragment_page_counts(ordered_paragraphs, para_bounds_by_page)
+    explicit_caption_source_blocks_by_page: dict[int, set[str]] = {}
+    suppressed_para_ids_from_caption_overlap: set[str] = set()
+    for para in ordered_paragraphs:
+        if para.role not in {"FigureCaption", "TableCaption"}:
+            continue
+        source_block_ids = para.evidence_pointer.get("source_block_ids", [])
+        if not isinstance(source_block_ids, list):
+            continue
+        page = int(para.page_span.get("start", 1))
+        page_source_blocks = explicit_caption_source_blocks_by_page.setdefault(page, set())
+        normalized_source_ids = {str(block_id).strip() for block_id in source_block_ids if str(block_id).strip()}
+        page_source_blocks.update(normalized_source_ids)
+    for para in ordered_paragraphs:
+        if para.role in {"FigureCaption", "TableCaption"}:
+            continue
+        source_block_ids = para.evidence_pointer.get("source_block_ids", [])
+        if not isinstance(source_block_ids, list):
+            continue
+        page = int(para.page_span.get("start", 1))
+        explicit_caption_source_blocks = explicit_caption_source_blocks_by_page.get(page, set())
+        if explicit_caption_source_blocks and any(
+            str(block_id).strip() in explicit_caption_source_blocks for block_id in source_block_ids
+        ):
+            suppressed_para_ids_from_caption_overlap.add(para.para_id)
     clean_role_by_block = {
         str(block.get("block_id", "")): str(block.get("clean_role", ""))
         for block in annotated_blocks
@@ -3612,12 +5198,15 @@ def render_clean_document(
 
     figure_captions: list[str] = []
     table_captions: list[str] = []
+    caption_records_by_page: dict[int, list[dict[str, Any]]] = {}
     last_caption_kind: Optional[str] = None
     last_caption_page: Optional[int] = None
     last_caption_bbox: Optional[list[float]] = None
     consumed_para_ids: set[str] = set()
 
     for para in ordered_paragraphs:
+        if para.para_id in suppressed_para_ids_from_caption_overlap:
+            continue
         text = clean_text_line(para.text)
         if not text:
             continue
@@ -3653,7 +5242,7 @@ def render_clean_document(
             if (
                 key
                 and key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}
-                and is_plausible_section_heading(section_display)
+                and is_supported_section_heading_shape(section_display)
                 and not looks_like_table_noise(section_display)
             ):
                 current_section = section_display
@@ -3679,7 +5268,7 @@ def render_clean_document(
                 continue
             if key in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}:
                 continue
-            if not is_plausible_section_heading(text):
+            if not is_supported_section_heading_shape(text):
                 key = ""
             if not key:
                 section_from_heading_role = False
@@ -3726,34 +5315,127 @@ def render_clean_document(
             caption_text = embedded_caption
             if not caption_text and has_caption_label_prefix(text):
                 caption_text = text
-            if caption_text and should_keep_caption_entry(caption_text):
-                figure_captions.append(caption_text)
+            if (
+                not caption_text
+                and para.role == "FigureCaption"
+                and (should_keep_caption_entry(text) or has_caption_continuation_markers(text))
+            ):
+                if last_caption_kind == "figure" and last_caption_page == page and figure_captions:
+                    figure_captions[-1] = clean_text_line(f"{figure_captions[-1]} {text}")
+                else:
+                    figure_captions.append(text)
+                    caption_records_by_page.setdefault(page, []).append(
+                        {
+                            "kind": "figure",
+                            "index": len(figure_captions) - 1,
+                            "bbox": para.evidence_pointer.get("bbox_union", None),
+                        }
+                    )
                 last_caption_kind = "figure"
                 last_caption_page = page
                 bbox_obj = para.evidence_pointer.get("bbox_union", None)
                 last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
                 consumed_para_ids.add(para.para_id)
                 continue
+            if caption_text and should_keep_caption_entry(caption_text):
+                figure_captions.append(caption_text)
+                caption_records_by_page.setdefault(page, []).append(
+                    {
+                        "kind": "figure",
+                        "index": len(figure_captions) - 1,
+                        "bbox": para.evidence_pointer.get("bbox_union", None),
+                    }
+                )
+                last_caption_kind = "figure"
+                last_caption_page = page
+                bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                consumed_para_ids.add(para.para_id)
+                continue
+            if is_caption_role_continuation_paragraph(para, text, caption_records_by_page):
+                if append_to_recent_caption_record(
+                    para,
+                    text,
+                    figure_captions,
+                    table_captions,
+                    caption_records_by_page,
+                ):
+                    last_caption_kind = "figure"
+                    last_caption_page = page
+                    bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                    last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                    consumed_para_ids.add(para.para_id)
+                    continue
             para_clean.discard("figure_caption")
             para_clean.add("body_text")
         if "table_caption" in para_clean or para.role == "TableCaption":
             caption_text = embedded_caption
             if not caption_text and has_caption_label_prefix(text):
                 caption_text = text
-            if caption_text and should_keep_caption_entry(caption_text):
-                table_captions.append(caption_text)
+            if (
+                not caption_text
+                and para.role == "TableCaption"
+                and (should_keep_caption_entry(text) or has_caption_continuation_markers(text))
+            ):
+                if last_caption_kind == "table" and last_caption_page == page and table_captions:
+                    table_captions[-1] = clean_text_line(f"{table_captions[-1]} {text}")
+                else:
+                    table_captions.append(text)
+                    caption_records_by_page.setdefault(page, []).append(
+                        {
+                            "kind": "table",
+                            "index": len(table_captions) - 1,
+                            "bbox": para.evidence_pointer.get("bbox_union", None),
+                        }
+                    )
                 last_caption_kind = "table"
                 last_caption_page = page
                 bbox_obj = para.evidence_pointer.get("bbox_union", None)
                 last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
                 consumed_para_ids.add(para.para_id)
                 continue
+            if caption_text and should_keep_caption_entry(caption_text):
+                table_captions.append(caption_text)
+                caption_records_by_page.setdefault(page, []).append(
+                    {
+                        "kind": "table",
+                        "index": len(table_captions) - 1,
+                        "bbox": para.evidence_pointer.get("bbox_union", None),
+                    }
+                )
+                last_caption_kind = "table"
+                last_caption_page = page
+                bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                consumed_para_ids.add(para.para_id)
+                continue
+            if is_caption_role_continuation_paragraph(para, text, caption_records_by_page):
+                if append_to_recent_caption_record(
+                    para,
+                    text,
+                    figure_captions,
+                    table_captions,
+                    caption_records_by_page,
+                ):
+                    last_caption_kind = "table"
+                    last_caption_page = page
+                    bbox_obj = para.evidence_pointer.get("bbox_union", None)
+                    last_caption_bbox = bbox_obj if isinstance(bbox_obj, list) and len(bbox_obj) >= 4 else None
+                    consumed_para_ids.add(para.para_id)
+                    continue
             para_clean.discard("table_caption")
             para_clean.add("body_text")
         if embedded_caption and should_keep_caption_entry(embedded_caption):
             low = embedded_caption.lower()
             if low.startswith("fig") or low.startswith("figure"):
                 figure_captions.append(embedded_caption)
+                caption_records_by_page.setdefault(page, []).append(
+                    {
+                        "kind": "figure",
+                        "index": len(figure_captions) - 1,
+                        "bbox": para.evidence_pointer.get("bbox_union", None),
+                    }
+                )
                 last_caption_kind = "figure"
                 last_caption_page = page
                 bbox_obj = para.evidence_pointer.get("bbox_union", None)
@@ -3762,6 +5444,13 @@ def render_clean_document(
                 continue
             if low.startswith("table"):
                 table_captions.append(embedded_caption)
+                caption_records_by_page.setdefault(page, []).append(
+                    {
+                        "kind": "table",
+                        "index": len(table_captions) - 1,
+                        "bbox": para.evidence_pointer.get("bbox_union", None),
+                    }
+                )
                 last_caption_kind = "table"
                 last_caption_page = page
                 bbox_obj = para.evidence_pointer.get("bbox_union", None)
@@ -3791,15 +5480,114 @@ def render_clean_document(
         if looks_like_figure_chart_noise(text):
             continue
 
+        mixed_group_reviews = collect_mixed_group_reviews_for_paragraph(para, mixed_group_reviews_by_page)
+        caption_tail_review = next(
+            (
+                review
+                for review in mixed_group_reviews
+                if str(review.get("decision", "")).strip() == "caption_tail"
+            ),
+            None,
+        )
+        if caption_tail_review is not None:
+            caption_kind = str(caption_tail_review.get("caption_kind", "") or "figure").strip() or "figure"
+            appended = append_to_recent_caption_record(
+                para,
+                text,
+                figure_captions,
+                table_captions,
+                caption_records_by_page,
+            )
+            if not appended:
+                if caption_kind == "table":
+                    table_captions.append(text)
+                    caption_records_by_page.setdefault(page, []).append(
+                        {"kind": "table", "index": len(table_captions) - 1, "bbox": para.evidence_pointer.get("bbox_union", None)}
+                    )
+                else:
+                    figure_captions.append(text)
+                    caption_records_by_page.setdefault(page, []).append(
+                        {"kind": "figure", "index": len(figure_captions) - 1, "bbox": para.evidence_pointer.get("bbox_union", None)}
+                    )
+            consumed_para_ids.add(para.para_id)
+            last_caption_kind = None
+            last_caption_page = None
+            last_caption_bbox = None
+            continue
+
+        if is_stray_caption_tail_body_paragraph(para, text, caption_records_by_page):
+            if append_to_recent_caption_record(
+                para,
+                text,
+                figure_captions,
+                table_captions,
+                caption_records_by_page,
+            ):
+                consumed_para_ids.add(para.para_id)
+                last_caption_kind = None
+                last_caption_page = None
+                last_caption_bbox = None
+                continue
+
         if current_section not in section_to_paragraphs:
             section_to_paragraphs[current_section] = []
             section_order.append(current_section)
+
+        heading_hints, reviewed_for_embedded_heading = collect_embedded_heading_hints_for_paragraph(
+            para,
+            embedded_heading_hints_by_page,
+            reviewed_block_ids_by_page,
+        )
+        if heading_hints:
+            guided_segments, matched_any_hint = split_text_by_approved_heading_hints(text, heading_hints)
+            if matched_any_hint:
+                for segment_text, segment_kind in guided_segments:
+                    if not segment_text:
+                        continue
+                    if segment_kind == "heading":
+                        heading_key = normalize_section_key(segment_text)
+                        if (
+                            heading_key
+                            and heading_key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}
+                            and not looks_like_table_noise(segment_text)
+                        ):
+                            current_section = section_key_to_title.get(heading_key, segment_text)
+                            section_key_to_title[heading_key] = current_section
+                            if current_section not in section_to_paragraphs:
+                                section_to_paragraphs[current_section] = []
+                                section_order.append(current_section)
+                        continue
+                    if should_exclude_for_abstract_overlap(segment_text, objective_or_abstract):
+                        continue
+                    if looks_like_table_noise(segment_text) or looks_like_figure_chart_noise(segment_text):
+                        continue
+                    section_to_paragraphs[current_section].append((segment_text, para))
+                    last_caption_kind = None
+                    last_caption_page = None
+                    last_caption_bbox = None
+                continue
+        if reviewed_for_embedded_heading:
+            if not should_exclude_for_abstract_overlap(text, objective_or_abstract):
+                if not looks_like_table_noise(text) and not looks_like_figure_chart_noise(text):
+                    section_to_paragraphs[current_section].append((text, para))
+                    last_caption_kind = None
+                    last_caption_page = None
+                    last_caption_bbox = None
+            continue
 
         remaining_text = text
         split_guard = 0
         while remaining_text and split_guard < 6:
             split_guard += 1
             body_prefix, embedded_heading, body_suffix = split_embedded_section_heading(remaining_text)
+            if embedded_heading and not should_accept_embedded_heading_split(
+                para,
+                embedded_heading,
+                block_lines_by_block,
+            ):
+                body_prefix = remaining_text
+                embedded_heading = None
+                body_suffix = ""
             if not embedded_heading:
                 final_body = body_prefix or remaining_text
                 if not should_exclude_for_abstract_overlap(final_body, objective_or_abstract):
@@ -3823,8 +5611,7 @@ def render_clean_document(
                 heading_key
                 and heading_key not in {"keywords", "doi", "received", "accepted", "affiliations", "authors"}
                 and (
-                    is_plausible_section_heading(embedded_heading)
-                    or is_plausible_sentence_case_section_heading(embedded_heading)
+                    is_supported_section_heading_shape(embedded_heading)
                 )
                 and not looks_like_table_noise(embedded_heading)
             ):
@@ -4053,6 +5840,23 @@ def render_clean_document(
                 doc_id=doc_id,
             )
             suppression_events.extend(section_suppressions)
+        if filtered_pruned and section == "Main Body":
+            deduped_pruned: list[tuple[str, Paragraph]] = []
+            for txt, para in filtered_pruned:
+                if para.role in {"FigureCaption", "TableCaption"}:
+                    deduped_pruned.append((txt, para))
+                    continue
+                source_block_ids = para.evidence_pointer.get("source_block_ids", [])
+                if not isinstance(source_block_ids, list):
+                    source_block_ids = []
+                page = int(para.page_span.get("start", 1))
+                explicit_caption_source_blocks = explicit_caption_source_blocks_by_page.get(page, set())
+                if explicit_caption_source_blocks and any(
+                    str(block_id).strip() in explicit_caption_source_blocks for block_id in source_block_ids
+                ):
+                    continue
+                deduped_pruned.append((txt, para))
+            filtered_pruned = deduped_pruned
 
         processed_section_entries[section] = filtered_pruned
 
@@ -4310,12 +6114,31 @@ def run_paragraphs(
     qa_dir.mkdir(parents=True, exist_ok=True)
 
     blocks = load_blocks(text_dir / "blocks_norm.jsonl")
-    confidence_by_page, merge_groups_by_page, role_labels_by_page = load_vision_outputs(vision_dir)
+    _, document_profile, paragraph_regrouping_hints_by_page = load_layout_analysis(text_dir)
+    block_lines_by_block = load_block_line_records(text_dir)
+    (
+        confidence_by_page,
+        merge_groups_by_page,
+        role_labels_by_page,
+        embedded_heading_hints_by_page,
+        reviewed_block_ids_by_page,
+        region_roles_by_page,
+        mixed_group_reviews_by_page,
+    ) = load_vision_outputs(
+        vision_dir,
+        dpi=int(getattr(getattr(manifest, "render_config", None), "dpi", 150) or 150),
+        scale=float(getattr(getattr(manifest, "render_config", None), "scale", 2.0) or 2.0),
+    )
 
     if not blocks:
         return 0, 0
 
-    cleaned_blocks, annotated_blocks = classify_clean_blocks(blocks, role_labels_by_page)
+    cleaned_blocks, annotated_blocks = classify_clean_blocks(
+        blocks,
+        role_labels_by_page,
+        region_roles_by_page,
+        document_profile=document_profile,
+    )
     write_jsonl(text_dir / "blocks_clean.jsonl", annotated_blocks)
 
     paragraphs = aggregate_paragraphs(
@@ -4323,6 +6146,9 @@ def run_paragraphs(
         merge_groups_by_page,
         role_labels_by_page,
         confidence_by_page,
+        block_lines_by_block=block_lines_by_block,
+        embedded_heading_hints_by_page=embedded_heading_hints_by_page,
+        paragraph_regrouping_hints_by_page=paragraph_regrouping_hints_by_page,
     )
 
     paragraphs = build_neighbors(paragraphs, text_dir)
@@ -4351,6 +6177,10 @@ def run_paragraphs(
         doc_id=run_dir.name,
         qa_dir=qa_dir,
         text_dir=text_dir,
+        embedded_heading_hints_by_page=embedded_heading_hints_by_page,
+        reviewed_block_ids_by_page=reviewed_block_ids_by_page,
+        mixed_group_reviews_by_page=mixed_group_reviews_by_page,
+        block_lines_by_block=block_lines_by_block,
     )
     with open(text_dir / "clean_document.md", "w", encoding="utf-8") as f:
         f.write(clean_document)

@@ -139,7 +139,7 @@ def load_blocks_norm(blocks_path: Path) -> dict[int, list[dict[str, Any]]]:
     return blocks_by_page
 
 
-def load_vision_outputs(vision_dir: Path) -> dict[int, dict[str, Any]]:
+def load_vision_outputs(vision_dir: Path, dpi: int = 150, scale: float = 2.0) -> dict[int, dict[str, Any]]:
     result: dict[int, dict[str, Any]] = {}
     if not vision_dir.exists():
         return result
@@ -152,7 +152,115 @@ def load_vision_outputs(vision_dir: Path) -> dict[int, dict[str, Any]]:
                 result[page] = data
         except (json.JSONDecodeError, OSError, ValueError):
             continue
+    zoom = dpi / 72.0 * scale
+    if zoom <= 0:
+        zoom = 1.0
+    for regions_file in sorted(vision_dir.glob("p*_regions.json")):
+        try:
+            with open(regions_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            page = int(data.get("page", 0) or 0)
+            if page <= 0:
+                continue
+            page_payload = result.setdefault(page, {"page": page})
+            for key in ("figure_regions", "table_regions", "caption_regions", "header_footer_regions"):
+                regions = data.get(key, [])
+                if not isinstance(regions, list):
+                    continue
+                normalized: list[dict[str, Any]] = []
+                for region in regions:
+                    if not isinstance(region, dict):
+                        continue
+                    bbox_px = region.get("bbox_px", [])
+                    if not isinstance(bbox_px, list) or len(bbox_px) < 4:
+                        continue
+                    normalized.append({
+                        **region,
+                        "bbox_pt": [float(v) / zoom for v in bbox_px[:4]],
+                    })
+                page_payload[key] = normalized
+        except (json.JSONDecodeError, OSError, ValueError, TypeError):
+            continue
     return result
+
+
+def _point_in_bbox_pt(x: float, y: float, bbox: list[float]) -> bool:
+    if len(bbox) < 4:
+        return False
+    return float(bbox[0]) <= x <= float(bbox[2]) and float(bbox[1]) <= y <= float(bbox[3])
+
+
+def _bbox_overlap_area_pt(left: list[float], right: list[float]) -> float:
+    if len(left) < 4 or len(right) < 4:
+        return 0.0
+    x0 = max(float(left[0]), float(right[0]))
+    y0 = max(float(left[1]), float(right[1]))
+    x1 = min(float(left[2]), float(right[2]))
+    y1 = min(float(left[3]), float(right[3]))
+    if x1 <= x0 or y1 <= y0:
+        return 0.0
+    return (x1 - x0) * (y1 - y0)
+
+
+def build_vision_region_block_hints(
+    blocks_by_page: dict[int, list[dict[str, Any]]],
+    vision_by_page: dict[int, dict[str, Any]],
+) -> tuple[dict[int, list[dict[str, Any]]], dict[int, list[list[float]]]]:
+    vision_caption_by_page: dict[int, list[dict[str, Any]]] = {}
+    header_footer_bboxes_by_page: dict[int, list[list[float]]] = {}
+    for page, blocks in blocks_by_page.items():
+        vision = vision_by_page.get(page, {})
+        if not isinstance(vision, dict):
+            continue
+        caption_regions = vision.get("caption_regions", [])
+        header_footer_regions = vision.get("header_footer_regions", [])
+        if not isinstance(caption_regions, list):
+            caption_regions = []
+        if not isinstance(header_footer_regions, list):
+            header_footer_regions = []
+
+        for block in blocks:
+            bbox_pt = block.get("bbox_pt", [0.0, 0.0, 0.0, 0.0])
+            if not isinstance(bbox_pt, list) or len(bbox_pt) < 4:
+                continue
+            bbox = [float(v) for v in bbox_pt[:4]]
+            cx = (bbox[0] + bbox[2]) / 2.0
+            cy = (bbox[1] + bbox[3]) / 2.0
+
+            if any(
+                isinstance(region, dict)
+                and isinstance(region.get("bbox_pt"), list)
+                and (
+                    _point_in_bbox_pt(cx, cy, [float(v) for v in region.get("bbox_pt", [])[:4]])
+                    or _bbox_overlap_area_pt(bbox, [float(v) for v in region.get("bbox_pt", [])[:4]]) > 0.0
+                )
+                for region in header_footer_regions
+            ):
+                header_footer_bboxes_by_page.setdefault(page, []).append(bbox)
+
+            text = " ".join(str(block.get("text", "") or "").split()).strip()
+            low = text.lower()
+            if not text or not (low.startswith("fig") or low.startswith("figure") or low.startswith("table")):
+                continue
+
+            if any(
+                isinstance(region, dict)
+                and isinstance(region.get("bbox_pt"), list)
+                and (
+                    _point_in_bbox_pt(cx, cy, [float(v) for v in region.get("bbox_pt", [])[:4]])
+                    or _bbox_overlap_area_pt(bbox, [float(v) for v in region.get("bbox_pt", [])[:4]]) > 0.0
+                )
+                for region in caption_regions
+            ):
+                role = ROLE_TABLE_CAPTION if low.startswith("table") else ROLE_FIGURE_CAPTION
+                vision_caption_by_page.setdefault(page, []).append({
+                    "para_id": f"viscap_region_{page}_{block.get('block_id', '')}",
+                    "text": text,
+                    "role": role,
+                    "page_span": {"start": page, "end": page},
+                    "evidence_pointer": {"bbox_union": bbox},
+                })
+    return vision_caption_by_page, header_footer_bboxes_by_page
 
 
 def resolve_api_key() -> str:
@@ -1915,7 +2023,7 @@ def run_figures_tables(
 
     # Load vision role labels to strengthen caption/header-footer decisions.
     blocks_by_page = load_blocks_norm(run_dir / "text" / "blocks_norm.jsonl")
-    vision_by_page = load_vision_outputs(run_dir / "vision")
+    vision_by_page = load_vision_outputs(run_dir / "vision", dpi=dpi, scale=scale)
     vision_caption_by_page: dict[int, list[dict[str, Any]]] = {}
     header_footer_bboxes_by_page: dict[int, list[list[float]]] = {}
     for page, blocks in blocks_by_page.items():
@@ -1939,6 +2047,11 @@ def run_figures_tables(
                 header_footer_bboxes_by_page.setdefault(page, []).append([
                     float(bbox_pt[0]), float(bbox_pt[1]), float(bbox_pt[2]), float(bbox_pt[3])
                 ])
+    region_caption_hints, region_header_footer_hints = build_vision_region_block_hints(blocks_by_page, vision_by_page)
+    for page, hints in region_caption_hints.items():
+        vision_caption_by_page.setdefault(page, []).extend(hints)
+    for page, bboxes in region_header_footer_hints.items():
+        header_footer_bboxes_by_page.setdefault(page, []).extend(bboxes)
     
     # Extract images from PDF
     pdf_images = extract_images_from_pdf(pdf_path)

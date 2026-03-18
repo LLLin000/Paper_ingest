@@ -64,6 +64,22 @@ class FaultInjectionEvent:
     status: str
 
 
+@dataclass
+class BlockLine:
+    line_index: int
+    text: str
+    bbox_pt: list[float]
+    font_stats: dict[str, Any]
+
+
+@dataclass
+class BlockLineRecord:
+    block_id: str
+    page: int
+    bbox_pt: list[float]
+    lines: list[dict[str, Any]]
+
+
 def should_start_new_paragraph(
     current_chunk: list[dict[str, Any]],
     next_line: dict[str, Any],
@@ -193,20 +209,21 @@ def compose_line_text_from_spans(spans: list[dict[str, Any]]) -> str:
     return text
 
 
-def extract_blocks_from_page(
+def extract_blocks_and_line_records_from_page(
     page: pymupdf.Page,
     page_num: int,
     block_index_offset: int = 0,
-) -> list[RawBlock]:
+) -> tuple[list[RawBlock], list[BlockLineRecord]]:
     blocks = []
+    line_records: list[BlockLineRecord] = []
     text_dict = page.get_text("dict")
     if not isinstance(text_dict, dict):
-        return blocks
+        return blocks, line_records
     
     block_idx = block_index_offset
     page_blocks = text_dict.get("blocks", [])
     if not isinstance(page_blocks, list):
-        return blocks
+        return blocks, line_records
 
     for block in page_blocks:
         if not isinstance(block, dict):
@@ -265,6 +282,16 @@ def extract_blocks_from_page(
 
             line_text = compose_line_text_from_spans(span_entries)
             if line_text:
+                line_font_stats = {
+                    "avg_size": (
+                        sum(float(v) for v in line_sizes) / len(line_sizes)
+                        if line_sizes
+                        else 0.0
+                    ),
+                    "is_bold": line_has_bold,
+                    "is_italic": line_has_italic,
+                    "dominant_font": Counter(line_fonts).most_common(1)[0][0] if line_fonts else "",
+                }
                 parsed_lines.append({
                     "text": line_text,
                     "bbox": line_bbox_list,
@@ -272,6 +299,7 @@ def extract_blocks_from_page(
                     "fonts": line_fonts,
                     "is_bold": line_has_bold,
                     "is_italic": line_has_italic,
+                    "font_stats": line_font_stats,
                 })
 
         if not parsed_lines:
@@ -327,16 +355,53 @@ def extract_blocks_from_page(
                 "dominant_font": Counter(all_fonts).most_common(1)[0][0] if all_fonts else "",
             }
 
+            block_id = f"p{page_num}_b{block_idx}"
             raw_block = RawBlock(
-                block_id=f"p{page_num}_b{block_idx}",
+                block_id=block_id,
                 page=page_num,
                 bbox_pt=bbox_list,
                 text=combined_text,
                 font_stats=font_stats,
             )
             blocks.append(raw_block)
+            line_records.append(
+                BlockLineRecord(
+                    block_id=block_id,
+                    page=page_num,
+                    bbox_pt=bbox_list,
+                    lines=[
+                        asdict(
+                            BlockLine(
+                                line_index=line_idx,
+                                text=str(item.get("text", "")).strip(),
+                                bbox_pt=list(item.get("bbox", [0.0, 0.0, 0.0, 0.0])),
+                                font_stats=dict(item.get("font_stats", {})),
+                            )
+                        )
+                        for line_idx, item in enumerate(chunk)
+                    ],
+                )
+            )
             block_idx += 1
 
+    return blocks, line_records
+
+
+def extract_block_line_records_from_page(
+    page: pymupdf.Page,
+    page_num: int,
+    block_index_offset: int = 0,
+) -> list[dict[str, Any]]:
+    _, line_records = extract_blocks_and_line_records_from_page(page, page_num, block_index_offset)
+    return [asdict(record) for record in line_records]
+
+
+def extract_blocks_from_page(
+    page: pymupdf.Page,
+    page_num: int,
+    block_index_offset: int = 0,
+) -> list[RawBlock]:
+    blocks, _ = extract_blocks_and_line_records_from_page(page, page_num, block_index_offset)
     return blocks
 
 
@@ -427,6 +492,7 @@ def run_extractor(
     try:
         all_raw_blocks: list[RawBlock] = []
         all_norm_blocks: list[NormBlock] = []
+        all_block_line_records: list[BlockLineRecord] = []
         per_page_raw_blocks: dict[int, list[RawBlock]] = {}
         per_page_dimensions: dict[int, tuple[float, float]] = {}
         total_pages = len(doc)
@@ -436,11 +502,12 @@ def run_extractor(
             page_num = page_idx + 1
             png_path = pages_dir / f"p{page_num:03d}.png"
             render_page_to_png(page, png_path, dpi=dpi, scale=scale)
-            blocks = extract_blocks_from_page(page, page_num)
+            blocks, block_line_records = extract_blocks_and_line_records_from_page(page, page_num)
             per_page_raw_blocks[page_num] = blocks
             page_rect = page.rect
             per_page_dimensions[page_num] = (float(page_rect.width), float(page_rect.height))
             all_raw_blocks.extend(blocks)
+            all_block_line_records.extend(block_line_records)
 
         avg_body_size = compute_average_body_size(all_raw_blocks)
 
@@ -475,6 +542,11 @@ def run_extractor(
             for block in all_norm_blocks:
                 f.write(json.dumps(asdict(block), ensure_ascii=False) + "\n")
 
+        block_lines_path = text_dir / "block_lines.jsonl"
+        with open(block_lines_path, "w", encoding="utf-8") as f:
+            for record in all_block_line_records:
+                f.write(json.dumps(asdict(record), ensure_ascii=False) + "\n")
+
         from .layout_analyzer import run_layout_analysis
         pages_blocks_dict = {
             page: [asdict(b) for b in per_page_raw_blocks.get(page, [])]
@@ -485,6 +557,11 @@ def run_extractor(
         layout_path = text_dir / "layout_analysis.json"
         with open(layout_path, "w", encoding="utf-8") as f:
             json.dump(layout_result, f, ensure_ascii=False, indent=2)
+
+        document_layout_profile = layout_result.get("document_profile", {})
+        profile_path = text_dir / "document_layout_profile.json"
+        with open(profile_path, "w", encoding="utf-8") as f:
+            json.dump(document_layout_profile, f, ensure_ascii=False, indent=2)
 
         if fault_events:
             append_fault_events(qa_dir, [asdict(e) for e in fault_events])

@@ -13,6 +13,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Optional
 from collections import Counter
+from statistics import median
 
 
 @dataclass
@@ -62,6 +63,236 @@ def _determine_figure_table_type(text: str) -> str:
         if text_lower.startswith(prefix):
             return "figure"
     return "figure"
+
+
+def _safe_font_stats(block: dict[str, Any]) -> dict[str, Any]:
+    font_stats = block.get("font_stats", {})
+    return font_stats if isinstance(font_stats, dict) else {}
+
+
+def _font_size(block: dict[str, Any]) -> float:
+    font_stats = _safe_font_stats(block)
+    value = font_stats.get("avg_size", 0.0)
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        try:
+            return float(value)
+        except ValueError:
+            return 0.0
+    return 0.0
+
+
+def _font_bold(block: dict[str, Any]) -> bool:
+    value = _safe_font_stats(block).get("is_bold", False)
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.lower() in {"1", "true", "yes"}
+    return bool(value)
+
+
+def _dominant_font(block: dict[str, Any]) -> str:
+    value = _safe_font_stats(block).get("dominant_font", "")
+    return str(value).strip()
+
+
+def _summarize_font_profile(blocks: list[dict[str, Any]]) -> dict[str, Any]:
+    sizes = [_font_size(block) for block in blocks if _font_size(block) > 0]
+    bold_count = sum(1 for block in blocks if _font_bold(block))
+    dominant_fonts = [_dominant_font(block) for block in blocks if _dominant_font(block)]
+    font_mode = Counter(dominant_fonts).most_common(1)[0][0] if dominant_fonts else ""
+    return {
+        "count": len(blocks),
+        "avg_size": round(median(sizes), 3) if sizes else 0.0,
+        "is_bold_ratio": round(bold_count / len(blocks), 3) if blocks else 0.0,
+        "dominant_font": font_mode,
+    }
+
+
+def _bbox(block: dict[str, Any]) -> list[float]:
+    bbox = block.get("bbox_pt", block.get("bbox", [0.0, 0.0, 0.0, 0.0]))
+    if isinstance(bbox, list) and len(bbox) >= 4:
+        return [float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3])]
+    return [0.0, 0.0, 0.0, 0.0]
+
+
+def _block_column_index(
+    block: dict[str, Any],
+    column_regions: list[list[float] | tuple[float, float, float, float]],
+) -> int:
+    bbox = _bbox(block)
+    x_center = (bbox[0] + bbox[2]) / 2
+    for idx, region in enumerate(column_regions):
+        if len(region) < 4:
+            continue
+        x0, _, x1, _ = region[:4]
+        if float(x0) <= x_center <= float(x1):
+            return idx
+    return -1
+
+
+def _horizontal_overlap_ratio(block_a: dict[str, Any], block_b: dict[str, Any]) -> float:
+    a = _bbox(block_a)
+    b = _bbox(block_b)
+    overlap = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
+    width = max(1.0, min(a[2] - a[0], b[2] - b[0]))
+    return overlap / width
+
+
+def _band_intersects(block: dict[str, Any], band: list[float]) -> bool:
+    if not isinstance(band, list) or len(band) < 4:
+        return False
+    if band[2] <= band[0] or band[3] <= band[1]:
+        return False
+    bbox = _bbox(block)
+    return not (bbox[2] <= band[0] or bbox[0] >= band[2] or bbox[3] <= band[1] or bbox[1] >= band[3])
+
+
+def _is_caption_text(text: str) -> bool:
+    clean = str(text).strip()
+    if not clean:
+        return False
+    return any(pattern.match(clean) for pattern in FIGURE_TABLE_PATTERNS)
+
+
+def _is_heading_like_text(text: str) -> bool:
+    clean = str(text).strip()
+    if not clean:
+        return False
+    if _is_caption_text(clean):
+        return False
+    if len(clean) > 180:
+        return False
+    words = clean.split()
+    if len(words) > 24:
+        return False
+    return (
+        re.match(r"^\d+(?:\.\d+)*\.?\s+\S", clean) is not None
+        or clean.lower() in {"abstract", "results", "discussion", "methods", "introduction", "conclusion"}
+    )
+
+
+def find_same_paragraph_block_groups(
+    blocks: list[dict[str, Any]],
+    page_profile: dict[str, Any],
+) -> list[list[str]]:
+    if not blocks:
+        return []
+
+    column_regions = page_profile.get("column_regions", [])
+    body_line_gap_pt = float(page_profile.get("body_line_gap_pt", 6.0) or 6.0)
+    header_band = page_profile.get("header_band_pt", [0.0, 0.0, 0.0, 0.0])
+    footer_band = page_profile.get("footer_band_pt", [0.0, 0.0, 0.0, 0.0])
+    gap_threshold = max(12.0, body_line_gap_pt * 2.5)
+
+    ordered_blocks = sorted(
+        blocks,
+        key=lambda block: (int(block.get("page", 0)), _bbox(block)[1], _bbox(block)[0]),
+    )
+    groups: list[list[str]] = []
+    current_group: list[dict[str, Any]] = []
+
+    def _flush_current_group() -> None:
+        nonlocal current_group
+        if len(current_group) >= 2:
+            groups.append([str(block.get("block_id", "")) for block in current_group if str(block.get("block_id", ""))])
+        current_group = []
+
+    for block in ordered_blocks:
+        text = str(block.get("text", "")).strip()
+        if not text or _is_caption_text(text) or _band_intersects(block, header_band) or _band_intersects(block, footer_band):
+            _flush_current_group()
+            continue
+        if not current_group:
+            current_group = [block]
+            continue
+
+        prev = current_group[-1]
+        prev_bbox = _bbox(prev)
+        curr_bbox = _bbox(block)
+        same_page = int(prev.get("page", 0)) == int(block.get("page", 0))
+        same_column = _block_column_index(prev, column_regions) == _block_column_index(block, column_regions)
+        aligned_left = abs(prev_bbox[0] - curr_bbox[0]) <= 3.0
+        vertical_gap = curr_bbox[1] - prev_bbox[3]
+        similar_font = abs(_font_size(prev) - _font_size(block)) <= 0.6
+        same_font_family = _dominant_font(prev) == _dominant_font(block)
+        overlap_ok = _horizontal_overlap_ratio(prev, block) >= 0.85
+
+        if (
+            same_page
+            and same_column
+            and aligned_left
+            and 0.0 <= vertical_gap <= gap_threshold
+            and similar_font
+            and same_font_family
+            and overlap_ok
+        ):
+            current_group.append(block)
+            continue
+
+        _flush_current_group()
+        current_group = [block]
+
+    _flush_current_group()
+    return groups
+
+
+def build_document_layout_profile(
+    pages_blocks: dict[int, list[dict[str, Any]]],
+    pages_dimensions: dict[int, tuple[float, float]],
+) -> dict[str, Any]:
+    header_candidates: list[list[float]] = []
+    footer_candidates: list[list[float]] = []
+    heading_blocks: list[dict[str, Any]] = []
+    caption_blocks: list[dict[str, Any]] = []
+    body_blocks: list[dict[str, Any]] = []
+    column_votes: list[int] = []
+
+    for page, blocks in pages_blocks.items():
+        page_width, page_height = pages_dimensions.get(page, (612.0, 792.0))
+        if page_width > 0:
+            column_count, _ = detect_column_count_rule_based(blocks, page_width)
+            column_votes.append(column_count)
+        for block in blocks:
+            bbox = block.get("bbox_pt", block.get("bbox", [0.0, 0.0, 0.0, 0.0]))
+            if not isinstance(bbox, list) or len(bbox) < 4:
+                continue
+            text = str(block.get("text", "")).strip()
+            if not text:
+                continue
+            y0 = float(bbox[1])
+            y1 = float(bbox[3])
+            if page_height > 0 and y1 <= page_height * 0.08 and len(text) <= 120:
+                header_candidates.append([float(v) for v in bbox[:4]])
+            if page_height > 0 and y0 >= page_height * 0.92 and len(text) <= 160:
+                footer_candidates.append([float(v) for v in bbox[:4]])
+
+            if _is_caption_text(text):
+                caption_blocks.append(block)
+            elif (_font_bold(block) and len(text) <= 180) or _is_heading_like_text(text):
+                heading_blocks.append(block)
+            else:
+                body_blocks.append(block)
+
+    def _band(candidates: list[list[float]]) -> list[float]:
+        if not candidates:
+            return [0.0, 0.0, 0.0, 0.0]
+        x0 = min(b[0] for b in candidates)
+        y0 = min(b[1] for b in candidates)
+        x1 = max(b[2] for b in candidates)
+        y1 = max(b[3] for b in candidates)
+        return [round(x0, 3), round(y0, 3), round(x1, 3), round(y1, 3)]
+
+    return {
+        "header_band_pt": _band(header_candidates),
+        "footer_band_pt": _band(footer_candidates),
+        "column_count_mode": Counter(column_votes).most_common(1)[0][0] if column_votes else 1,
+        "body_font_profile": _summarize_font_profile(body_blocks),
+        "heading_font_profile": _summarize_font_profile(heading_blocks),
+        "caption_font_profile": _summarize_font_profile(caption_blocks),
+        "body_line_gap_pt": round(max(4.0, _summarize_font_profile(body_blocks).get("avg_size", 8.0) * 0.73), 3),
+    }
 
 
 def detect_column_count_rule_based(blocks: list[dict[str, Any]], page_width: float) -> tuple[int, float]:
@@ -245,6 +476,8 @@ def run_layout_analysis(
     page_layouts: dict[int, LayoutInfo] = {}
     all_classifications: dict[int, list[BlockClassification]] = {}
     all_candidates: list[dict[str, Any]] = []
+    paragraph_regrouping_hints: dict[int, list[list[str]]] = {}
+    document_profile = build_document_layout_profile(pages_blocks, pages_dimensions)
     
     for page, blocks in pages_blocks.items():
         dims = pages_dimensions.get(page, (612.0, 792.0))  # Default letter size
@@ -253,6 +486,13 @@ def run_layout_analysis(
         layout, classifications = analyze_page_layout(blocks, page_width, page_height)
         page_layouts[page] = layout
         all_classifications[page] = classifications
+        page_profile = {
+            "column_regions": [list(region) for region in layout.column_regions],
+            "header_band_pt": document_profile.get("header_band_pt", [0.0, 0.0, 0.0, 0.0]),
+            "footer_band_pt": document_profile.get("footer_band_pt", [0.0, 0.0, 0.0, 0.0]),
+            "body_line_gap_pt": document_profile.get("body_line_gap_pt", 6.0),
+        }
+        paragraph_regrouping_hints[page] = find_same_paragraph_block_groups(blocks, page_profile)
         
         candidates = detect_figure_table_candidates(blocks, classifications)
         all_candidates.extend(candidates)
@@ -261,12 +501,15 @@ def run_layout_analysis(
         "page_layouts": {p: asdict_layout(l) for p, l in page_layouts.items()},
         "block_classifications": {p: [asdict_classification(c) for c in cls_list] for p, cls_list in all_classifications.items()},
         "figure_table_candidates": all_candidates,
+        "document_profile": document_profile,
+        "paragraph_regrouping_hints": paragraph_regrouping_hints,
         "summary": {
             "total_pages": len(page_layouts),
             "single_column_pages": sum(1 for l in page_layouts.values() if l.column_count == 1),
             "two_column_pages": sum(1 for l in page_layouts.values() if l.column_count == 2),
             "three_column_pages": sum(1 for l in page_layouts.values() if l.column_count == 3),
             "figure_table_candidates": len(all_candidates),
+            "paragraph_regrouping_groups": sum(len(groups) for groups in paragraph_regrouping_hints.values()),
         },
     }
 

@@ -131,6 +131,160 @@ def test_classify_clean_blocks_combines_signals() -> None:
     assert set(kept_blocks.keys()) == {"p1_b2"}
 
 
+def test_classify_clean_blocks_uses_document_profile_header_footer_bands() -> None:
+    blocks = {
+        "p1_header": {
+            "block_id": "p1_header",
+            "page": 1,
+            "bbox_pt": [40.0, 8.0, 560.0, 24.0],
+            "text": "Nature Communications | Article",
+            "is_header_footer_candidate": False,
+        },
+        "p1_body": {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [60.0, 120.0, 520.0, 180.0],
+            "text": "This is the actual body paragraph that should remain.",
+            "is_header_footer_candidate": False,
+        },
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(
+        blocks,
+        role_labels_by_page={1: {}},
+        document_profile={
+            "header_band_pt": [0.0, 0.0, 600.0, 30.0],
+            "footer_band_pt": [0.0, 760.0, 600.0, 792.0],
+        },
+    )
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p1_header"]["vision_role"] == "HeaderFooter"
+    assert by_id["p1_header"]["is_nuisance"] is True
+    assert "document_profile_header_band" in by_id["p1_header"]["nuisance_reasons"]
+    assert by_id["p1_body"]["clean_role"] == "body_text"
+    assert set(kept_blocks) == {"p1_body"}
+
+
+def test_classify_clean_blocks_uses_document_heading_font_profile_for_unlabeled_heading() -> None:
+    blocks = {
+        "p2_heading": {
+            "block_id": "p2_heading",
+            "page": 2,
+            "bbox_pt": [55.0, 180.0, 310.0, 205.0],
+            "text": "Results",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+            "font_stats": {
+                "avg_size": 11.4,
+                "is_bold": False,
+                "dominant_font": "JournalSerif-Semibold",
+            },
+        },
+        "p2_body": {
+            "block_id": "p2_body",
+            "page": 2,
+            "bbox_pt": [55.0, 220.0, 320.0, 280.0],
+            "text": "This paragraph continues the study narrative in normal body text.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+            "font_stats": {
+                "avg_size": 8.4,
+                "is_bold": False,
+                "dominant_font": "JournalSerif-Regular",
+            },
+        },
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(
+        blocks,
+        role_labels_by_page={2: {}},
+        document_profile={
+            "heading_font_profile": {
+                "avg_size": 11.6,
+                "is_bold_ratio": 0.9,
+                "dominant_font": "JournalSerif-Semibold",
+            },
+            "body_font_profile": {
+                "avg_size": 8.5,
+                "is_bold_ratio": 0.05,
+                "dominant_font": "JournalSerif-Regular",
+            },
+        },
+    )
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p2_heading"]["clean_role"] == "section_heading"
+    assert "document_heading_profile" in by_id["p2_heading"]["role_reasons"]
+    assert by_id["p2_body"]["clean_role"] == "body_text"
+    assert set(kept_blocks) == {"p2_heading", "p2_body"}
+
+
+def test_classify_clean_blocks_region_caption_overrides_body_role() -> None:
+    blocks = {
+        "p3_b92": {
+            "block_id": "p3_b92",
+            "page": 3,
+            "bbox_pt": [39.68, 661.13, 294.78, 688.11],
+            "text": (
+                "E Unsupervised clustering analysis identified two molecular subtypes of tendinopathy, "
+                "further complemented by gross view under arthroscopy."
+            ),
+            "is_header_footer_candidate": False,
+            "font_stats": {"avg_size": 6.97, "is_bold": False, "dominant_font": "CaptionFont"},
+        }
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(
+        blocks,
+        role_labels_by_page={3: {"p3_b92": "Body"}},
+        region_roles_by_page={
+            3: [
+                {
+                    "role": "FigureCaption",
+                    "bbox_pt": [30.0, 620.0, 320.0, 700.0],
+                }
+            ]
+        },
+    )
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p3_b92"]["vision_role"] == "FigureCaption"
+    assert by_id["p3_b92"]["clean_role"] == "figure_caption"
+    assert set(kept_blocks) == {"p3_b92"}
+
+
+def test_classify_clean_blocks_region_sidebar_overrides_body_for_graphic_label_noise() -> None:
+    blocks = {
+        "p3_b37": {
+            "block_id": "p3_b37",
+            "page": 3,
+            "bbox_pt": [487.78, 253.95, 533.01, 279.32],
+            "text": "Ir Inflammation red tendon",
+            "is_header_footer_candidate": False,
+            "font_stats": {"avg_size": 8.47, "is_bold": True, "dominant_font": "Arial-BoldMT"},
+        }
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(
+        blocks,
+        role_labels_by_page={3: {"p3_b37": "Body"}},
+        region_roles_by_page={
+            3: [
+                {
+                    "role": "Sidebar",
+                    "bbox_pt": [450.0, 220.0, 550.0, 300.0],
+                }
+            ]
+        },
+    )
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p3_b37"]["vision_role"] == "Sidebar"
+    assert by_id["p3_b37"]["clean_role"] == "nuisance"
+    assert set(kept_blocks) == set()
+
+
 def test_classify_clean_blocks_assigns_semantic_roles_and_role_based_keep_set() -> None:
     blocks = {
         "p1_title": {
@@ -221,6 +375,222 @@ def test_classify_clean_blocks_assigns_semantic_roles_and_role_based_keep_set() 
     assert by_id["p1_fig"]["clean_role"] == "figure_caption"
 
     assert set(kept_blocks.keys()) == {"p1_title", "p1_heading", "p1_body", "p1_fig", "p1_ref"}
+
+
+def test_classify_clean_blocks_uses_coarse_region_roles_for_unlabeled_dense_page_blocks() -> None:
+    blocks = {
+        "p4_header": {
+            "block_id": "p4_header",
+            "page": 4,
+            "bbox_pt": [10.0, 8.0, 180.0, 20.0],
+            "text": "Nature Communications",
+            "is_header_footer_candidate": False,
+        },
+        "p4_caption": {
+            "block_id": "p4_caption",
+            "page": 4,
+            "bbox_pt": [30.0, 120.0, 260.0, 150.0],
+            "text": "Fig. 1 | Classification of distinct tendinopathy subtypes.",
+            "is_header_footer_candidate": False,
+        },
+        "p4_micro": {
+            "block_id": "p4_micro",
+            "page": 4,
+            "bbox_pt": [400.0, 200.0, 420.0, 210.0],
+            "text": "0 5 10",
+            "is_header_footer_candidate": False,
+        },
+    }
+    role_labels = {4: {}}
+    region_roles_by_page = {
+        4: [
+            {"role": "HeaderFooter", "bbox_pt": [0.0, 0.0, 250.0, 30.0]},
+            {"role": "FigureCaption", "bbox_pt": [0.0, 100.0, 320.0, 170.0]},
+            {"role": "Sidebar", "bbox_pt": [350.0, 160.0, 500.0, 280.0]},
+        ]
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(blocks, role_labels, region_roles_by_page)
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p4_header"]["vision_role"] == "HeaderFooter"
+    assert by_id["p4_header"]["clean_role"] == "nuisance"
+    assert by_id["p4_caption"]["vision_role"] == "FigureCaption"
+    assert by_id["p4_caption"]["clean_role"] == "figure_caption"
+    assert by_id["p4_micro"]["vision_role"] == "Sidebar"
+    assert by_id["p4_micro"]["clean_role"] == "nuisance"
+    assert set(kept_blocks) == {"p4_caption"}
+
+
+def test_run_paragraphs_uses_caption_regions_to_keep_continuation_out_of_main_body(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "caption_region_continuation"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_cap0",
+            "page": 1,
+            "bbox_pt": [40.0, 100.0, 320.0, 130.0],
+            "text": "Fig. 1 | Classification of distinct tendinopathy subtypes.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_cap1",
+            "page": 1,
+            "bbox_pt": [40.0, 132.0, 360.0, 166.0],
+            "text": "Venn diagram clearly illustrated DEGs that were specifically upregulated.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [40.0, 240.0, 520.0, 290.0],
+            "text": "This paragraph belongs to the main body discussion.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+        },
+    ]
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+
+    out_payload = {
+        "page": 1,
+        "reading_order": ["p1_cap0", "p1_cap1", "p1_body"],
+        "merge_groups": [{"group_id": "mg_1", "block_ids": ["p1_cap0", "p1_cap1"]}],
+        "role_labels": {},
+        "confidence": 0.95,
+        "fallback_used": False,
+    }
+    with open(vision_dir / "p001_out.json", "w", encoding="utf-8") as f:
+        json.dump(out_payload, f, ensure_ascii=False, indent=2)
+
+    zoom = 150 / 72.0 * 2.0
+    caption_region = [int(v * zoom) for v in [30.0, 92.0, 380.0, 176.0]]
+    regions_payload = {
+        "page": 1,
+        "text_regions": [{"region_id": "txt_1", "bbox_px": [0, int(200 * zoom), int(600 * zoom), int(360 * zoom)]}],
+        "caption_regions": [{"region_id": "cap_1", "bbox_px": caption_region}],
+        "figure_regions": [],
+        "table_regions": [],
+        "header_footer_regions": [],
+        "confidence": 0.9,
+    }
+    with open(vision_dir / "p001_regions.json", "w", encoding="utf-8") as f:
+        json.dump(regions_payload, f, ensure_ascii=False, indent=2)
+
+    _ = run_paragraphs(run_dir)
+
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+    figures_tables = _section_text(clean_doc, "Figures and Tables")
+
+    assert "This paragraph belongs to the main body discussion." in main_body
+    assert "Venn diagram clearly illustrated DEGs" not in main_body
+    assert "Classification of distinct tendinopathy subtypes." in figures_tables
+    assert "Venn diagram clearly illustrated DEGs" in figures_tables
+
+
+def test_render_clean_document_keeps_figurecaption_continuations_without_label_prefix() -> None:
+    paragraphs = [
+        Paragraph(
+            para_id="cap_1",
+            page_span={"start": 4, "end": 4},
+            role="FigureCaption",
+            section_path=None,
+            text="Fig. 2 | Association of three distinct rotator cuff tendinopathy subtypes with clinical features.",
+            evidence_pointer={"pages": [4], "bbox_union": [30.0, 100.0, 320.0, 130.0], "source_block_ids": ["p4_b119"]},
+            neighbors={"prev_para_id": None, "next_para_id": "cap_2"},
+            confidence=0.95,
+            provenance={"source": "singleton_block", "strategy": "direct_block", "notes": ""},
+        ),
+        Paragraph(
+            para_id="cap_2",
+            page_span={"start": 4, "end": 4},
+            role="FigureCaption",
+            section_path=None,
+            text="subtypes. F Box plot of veins across the three tendinopathy subtypes.",
+            evidence_pointer={"pages": [4], "bbox_union": [30.0, 132.0, 320.0, 156.0], "source_block_ids": ["p4_b120"]},
+            neighbors={"prev_para_id": "cap_1", "next_para_id": "body_1"},
+            confidence=0.95,
+            provenance={"source": "singleton_block", "strategy": "direct_block", "notes": ""},
+        ),
+        Paragraph(
+            para_id="body_1",
+            page_span={"start": 4, "end": 4},
+            role="Body",
+            section_path=None,
+            text="This paragraph belongs to the main body discussion.",
+            evidence_pointer={"pages": [4], "bbox_union": [30.0, 220.0, 520.0, 280.0], "source_block_ids": ["p4_b130"]},
+            neighbors={"prev_para_id": "cap_2", "next_para_id": None},
+            confidence=0.95,
+            provenance={"source": "singleton_block", "strategy": "direct_block", "notes": ""},
+        ),
+    ]
+
+    clean_doc, _ = paragraphs_mod.render_clean_document(paragraphs, [], doc_id="caption_continuation_no_prefix")
+    main_body = _section_text(clean_doc, "Main Body")
+    figures_tables = _section_text(clean_doc, "Figures and Tables")
+
+    assert "This paragraph belongs to the main body discussion." in main_body
+    assert "subtypes. F Box plot of veins" not in main_body
+    assert "subtypes. F Box plot of veins" in figures_tables
+
+
+def test_render_clean_document_keeps_long_figurecaption_continuation_without_label_prefix() -> None:
+    paragraphs = [
+        Paragraph(
+            para_id="cap_1",
+            page_span={"start": 4, "end": 4},
+            role="FigureCaption",
+            section_path=None,
+            text="Fig. 2 | Association of three distinct rotator cuff tendinopathy subtypes with clinical features.",
+            evidence_pointer={"pages": [4], "bbox_union": [30.0, 100.0, 320.0, 130.0], "source_block_ids": ["p4_b119"]},
+            neighbors={"prev_para_id": None, "next_para_id": "cap_2"},
+            confidence=0.95,
+            provenance={"source": "singleton_block", "strategy": "direct_block", "notes": ""},
+        ),
+        Paragraph(
+            para_id="cap_2",
+            page_span={"start": 4, "end": 4},
+            role="FigureCaption",
+            section_path=None,
+            text=(
+                "tendinopathy subtypes (Hw, n = 35; Iw, n = 12; Ir, n = 16). "
+                "G Representative HE images of diseased tendons from the three distinct tendinopathy subtypes. "
+                "Scale bar: 100 μm. The P values were determined using the Corrected Chi-Square Test. "
+                "Source data are available in the Source Data file."
+            ),
+            evidence_pointer={"pages": [4], "bbox_union": [30.0, 132.0, 360.0, 176.0], "source_block_ids": ["p4_b121"]},
+            neighbors={"prev_para_id": "cap_1", "next_para_id": "body_1"},
+            confidence=0.95,
+            provenance={"source": "singleton_block", "strategy": "direct_block", "notes": ""},
+        ),
+        Paragraph(
+            para_id="body_1",
+            page_span={"start": 4, "end": 4},
+            role="Body",
+            section_path=None,
+            text="This paragraph belongs to the main body discussion.",
+            evidence_pointer={"pages": [4], "bbox_union": [30.0, 220.0, 520.0, 280.0], "source_block_ids": ["p4_b130"]},
+            neighbors={"prev_para_id": "cap_2", "next_para_id": None},
+            confidence=0.95,
+            provenance={"source": "singleton_block", "strategy": "direct_block", "notes": ""},
+        ),
+    ]
+
+    clean_doc, _ = paragraphs_mod.render_clean_document(paragraphs, [], doc_id="caption_continuation_long_no_prefix")
+    main_body = _section_text(clean_doc, "Main Body")
+    figures_tables = _section_text(clean_doc, "Figures and Tables")
+
+    assert "This paragraph belongs to the main body discussion." in main_body
+    assert "Scale bar: 100 μm." not in main_body
+    assert "Source data are available in the Source Data file." not in main_body
+    assert "Scale bar: 100 μm." in figures_tables
 
 
 def test_run_paragraphs_writes_clean_artifacts_and_filters_nuisance(tmp_path: Path) -> None:

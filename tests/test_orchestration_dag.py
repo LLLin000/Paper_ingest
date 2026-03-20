@@ -151,3 +151,5 @@ def test_run_full_emits_deterministic_stage_output_order(
     positions = [output.index(marker) for marker in expected_markers]
     assert positions == sorted(positions)
     assert "Verification PASSED" in output
+    dag_artifact = run_root / "dag_order_test" / "qa" / "pipeline_dag.json"
+    assert dag_artifact.exists()

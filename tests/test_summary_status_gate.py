@@ -105,6 +105,55 @@ def test_build_summary_status_degraded_mode_sets_explicit_missing_reasons() -> N
     assert "low_narrative_coverage" in reason_codes
 
 
+def test_build_summary_status_consumes_structure_quality_flags() -> None:
+    paragraphs = []
+    facts = []
+    for idx in range(12):
+        para_id = f"para_{idx:04d}"
+        paragraphs.append({
+            "para_id": para_id,
+            "role": "Body",
+            "section_path": ["Introduction"],
+            "clean_roles": ["body_text"],
+            "text": f"Body paragraph {idx} with substantive narrative evidence and quantitative findings.",
+            "evidence_pointer": {"source_block_ids": [f"b{idx:04d}"]},
+        })
+        facts.append(
+            Fact(
+                fact_id=f"fact_{idx:04d}",
+                para_id=para_id,
+                category="result",
+                statement=f"Narrative finding {idx} reports statistically significant improvement.",
+                quote="Narrative finding quote",
+                evidence_pointer={"page": 1, "bbox": [0, 0, 1, 1], "source_block_ids": [f"b{idx:04d}"]},
+            )
+        )
+
+    summary_status = build_summary_status(
+        doc_id="doc_structure_flags",
+        facts=facts,
+        themes={"themes": [{"theme_id": "t1"}, {"theme_id": "t2"}, {"theme_id": "t3"}]},
+        synthesis={
+            "executive_summary": "This synthesis summarizes the paper with grounded evidence.",
+            "key_evidence_lines": [
+                {"line_id": "l1", "statement": "Evidence line 1", "fact_ids": ["fact_0000", "fact_0001"]},
+            ],
+        },
+        paragraphs=paragraphs,
+        clean_role_by_block={},
+        clean_document_metrics={
+            "ordering_confidence_low": False,
+            "section_boundary_unstable": False,
+            "reference_region_ambiguous": True,
+            "caption_linking_partial": True,
+        },
+    )
+
+    assert summary_status["status"] == "degraded"
+    assert "reference_region_ambiguous" in summary_status["reason_codes"]
+    assert "caption_linking_partial" in summary_status["reason_codes"]
+
+
 def test_renderer_mode_is_deterministic_from_summary_status(tmp_path: Path) -> None:
     run_dir = tmp_path / "run" / "doc_render"
     manifest = Manifest(

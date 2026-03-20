@@ -29,6 +29,8 @@ from typing import Optional
 from dotenv import load_dotenv
 from pydantic import AliasChoices, BaseModel, Field
 
+from .parser_backend import DEFAULT_PARSER_BACKEND, normalize_parser_backend_name
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -134,6 +136,10 @@ class Manifest(BaseModel):
     pipeline_version: str = Field(
         default="0.1.0",
         description="Pipeline version"
+    )
+    parser_backend: str = Field(
+        default=DEFAULT_PARSER_BACKEND,
+        description="Configured structure parser backend identifier"
     )
 
 
@@ -262,6 +268,7 @@ def create_manifest(
         started_at_utc=datetime.now(timezone.utc).isoformat(),
         toolchain=ToolchainInfo(package_lock_hash=lock_hash),
         llm_config=llm_config,
+        parser_backend=normalize_parser_backend_name(os.environ.get("INGEST_PARSER_BACKEND", DEFAULT_PARSER_BACKEND)),
     )
     
     # Write manifest.json

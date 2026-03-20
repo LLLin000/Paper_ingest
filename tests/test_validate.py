@@ -221,3 +221,45 @@ def test_validate_strict_reports_actionable_path_for_malformed_vision_output(tmp
     assert "p001_out.json" in output
     assert "$.fallback_used" in output
     assert "missing required key" in output
+
+
+def test_validate_strict_reports_actionable_path_for_malformed_structure_quality(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "bad_structure_quality"
+    schemas_dir = tmp_path / "schemas"
+    _create_strict_required_layout(run_dir, doc_id="bad_structure_quality")
+    _ = (run_dir / "obsidian" / "bad_structure_quality.md").write_text("# note\n", encoding="utf-8")
+
+    _write_json(schemas_dir / "manifest.schema.json", {"type": "object", "required": ["doc_id"]})
+    _write_json(run_dir / "manifest.json", {"doc_id": "bad_structure_quality"})
+    _write_json(
+        run_dir / "qa" / "structure_quality.json",
+        {
+            "doc_id": "bad_structure_quality",
+            "ordering_confidence_low": "false",
+            "section_boundary_unstable": False,
+            "reference_region_ambiguous": False,
+            "caption_linking_partial": False,
+        },
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "ingest.validate",
+            "--run",
+            str(run_dir),
+            "--schemas",
+            str(schemas_dir),
+            "--strict",
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 1
+    output = result.stdout + result.stderr
+    assert "structure_quality.json" in output
+    assert "$.ordering_confidence_low" in output
+    assert "expected boolean" in output

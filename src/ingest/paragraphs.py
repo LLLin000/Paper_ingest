@@ -27,7 +27,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional, Tuple
 
+from .parser_backend import DEFAULT_PARSER_BACKEND, resolve_parser_backend
 from .qa_telemetry import append_jsonl_event
+from .structure_quality import build_structure_quality_artifact
 
 
 # Feature flags for Wave B upgrades (default OFF)
@@ -454,17 +456,17 @@ def load_page_layouts(text_dir: Path) -> dict[int, dict[str, Any]]:
 
     Returns dict: {page: {"column_count": int, "column_regions": [[x0,y0,x1,y1], ...], ...}}
     """
-    page_layouts, _, _ = load_layout_analysis(text_dir)
+    page_layouts, _, _, _ = load_layout_analysis(text_dir)
     return page_layouts
 
 
 def load_layout_analysis(
     text_dir: Path,
-) -> tuple[dict[int, dict[str, Any]], dict[str, Any], dict[int, list[list[str]]]]:
+) -> tuple[dict[int, dict[str, Any]], dict[str, Any], dict[int, list[list[str]]], dict[str, dict[str, Any]]]:
     """Load layout analyzer sidecar artifacts used by downstream paragraph logic."""
     layout_path = text_dir / "layout_analysis.json"
     if not layout_path.exists():
-        return {}, {}, {}
+        return {}, {}, {}, {}
 
     try:
         with open(layout_path, "r", encoding="utf-8") as f:
@@ -472,6 +474,22 @@ def load_layout_analysis(
         page_layouts = data.get("page_layouts", {})
         paragraph_regrouping_hints = data.get("paragraph_regrouping_hints", {})
         document_profile = data.get("document_profile", {})
+        raw_block_classifications = data.get("block_classifications", {})
+        block_classifications: dict[str, dict[str, Any]] = {}
+        if isinstance(raw_block_classifications, dict):
+            for rows in raw_block_classifications.values():
+                if not isinstance(rows, list):
+                    continue
+                for row in rows:
+                    if not isinstance(row, dict):
+                        continue
+                    block_id = str(row.get("block_id", "")).strip()
+                    if not block_id:
+                        continue
+                    block_classifications[block_id] = {
+                        str(key): value
+                        for key, value in row.items()
+                    }
         return (
             {int(k): v for k, v in page_layouts.items()},
             {
@@ -489,9 +507,10 @@ def load_layout_analysis(
                 for k, groups in paragraph_regrouping_hints.items()
                 if isinstance(groups, list)
             },
+            block_classifications,
         )
     except (json.JSONDecodeError, IOError):
-        return {}, {}, {}
+        return {}, {}, {}, {}
 
 
 def merge_groups_with_regrouping_hints(
@@ -1691,6 +1710,62 @@ def matches_document_heading_profile(
     return heading_font and dominant_font == heading_font
 
 
+def looks_like_boxed_sidebar_text(
+    text: str,
+    low: str,
+    word_count: int,
+    sentence_ratio: float,
+    avg_size: float,
+    is_bold: bool,
+) -> bool:
+    if not text or word_count <= 0:
+        return False
+
+    has_terminal_sentence = re.search(r"[.!?]\s*$", text.strip()) is not None
+    bullet_markers = text.count("•") + text.count("▪") + text.count("■") + text.count("◦")
+    compact = re.sub(r"\s+", " ", text).strip()
+
+    if (
+        bullet_markers >= 4
+        and word_count <= 72
+        and avg_size <= 8.5
+        and sentence_ratio <= 0.55
+        and not has_terminal_sentence
+    ):
+        return True
+
+    if (
+        "classification" in low
+        and word_count <= 14
+        and avg_size <= 8.5
+        and is_bold
+        and sentence_ratio <= 0.72
+        and not has_terminal_sentence
+    ):
+        return True
+
+    if (
+        re.search(r"\b(?:work compensation|risk factors?|demographics|tear characteristics)\b", low) is not None
+        and word_count <= 6
+        and avg_size <= 8.5
+        and is_bold
+        and not has_terminal_sentence
+    ):
+        return True
+
+    if (
+        "•" in compact
+        and ":" in compact
+        and word_count <= 48
+        and avg_size <= 8.5
+        and sentence_ratio <= 0.5
+        and not has_terminal_sentence
+    ):
+        return True
+
+    return False
+
+
 def infer_clean_role(
     block: dict[str, Any],
     vision_role: str,
@@ -1723,6 +1798,8 @@ def infer_clean_role(
         return "figure_caption", ["vision_role_figure_caption"]
     if vision_role == "TableCaption":
         return "table_caption", ["vision_role_table_caption"]
+    if vision_role in {"TableHeader", "TableData"}:
+        return "nuisance", [f"vision_role_{vision_role.lower()}"]
     if vision_role == "ReferenceList":
         return "reference_entry", ["vision_role_reference_list"]
     if vision_role == "Sidebar":
@@ -1737,6 +1814,15 @@ def infer_clean_role(
             return "table_caption", ["caption_text_prefix"]
     if looks_like_compact_graphic_label_text(text):
         return "nuisance", ["compact_graphic_label_text"]
+    if looks_like_boxed_sidebar_text(
+        text=text,
+        low=low,
+        word_count=word_count,
+        sentence_ratio=sentence_ratio,
+        avg_size=avg_size,
+        is_bold=is_bold,
+    ):
+        return "nuisance", ["boxed_sidebar_profile"]
 
     if (
         page == 1
@@ -1896,6 +1982,7 @@ def classify_clean_blocks(
     role_labels_by_page: dict[int, dict[str, str]],
     region_roles_by_page: Optional[dict[int, list[dict[str, Any]]]] = None,
     document_profile: Optional[dict[str, Any]] = None,
+    layout_block_classifications: Optional[dict[str, dict[str, Any]]] = None,
 ) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
     template_pages: dict[str, set[int]] = defaultdict(set)
     template_counts: dict[str, int] = defaultdict(int)
@@ -1962,11 +2049,19 @@ def classify_clean_blocks(
         x_rel = (x_center - float(bounds[0])) / page_width
 
         role = role_labels_by_page.get(page, {}).get(block_id, "")
+        layout_classification = {}
+        if layout_block_classifications is not None:
+            layout_classification = layout_block_classifications.get(block_id, {})
+        layout_category = str(layout_classification.get("category", "") or "").strip().lower()
         region_role = ""
         if region_roles_by_page is not None:
             region_role = infer_vision_role_from_regions(block, region_roles_by_page.get(page, []))
         if role in {"", "Body"} and region_role in {"FigureCaption", "TableCaption"}:
             role = region_role
+        elif role in {"", "Body"} and layout_category == "sidebar":
+            role = "Sidebar"
+        elif role in {"", "Body"} and layout_category == "header_footer":
+            role = "HeaderFooter"
         elif role in {"", "Body"} and region_role == "Sidebar" and (
             looks_like_figure_chart_noise(str(block.get("text", "")))
             or looks_like_compact_graphic_label_text(str(block.get("text", "")))
@@ -2072,6 +2167,9 @@ def classify_clean_blocks(
         )
 
         block_copy["vision_role"] = role
+        if layout_category:
+            block_copy["layout_category"] = layout_category
+            block_copy["layout_category_reason"] = str(layout_classification.get("reason", "") or "")
         block_copy["is_nuisance"] = is_nuisance
         block_copy["nuisance_score"] = round(score, 3)
         block_copy["nuisance_reasons"] = reasons
@@ -6114,7 +6212,7 @@ def run_paragraphs(
     qa_dir.mkdir(parents=True, exist_ok=True)
 
     blocks = load_blocks(text_dir / "blocks_norm.jsonl")
-    _, document_profile, paragraph_regrouping_hints_by_page = load_layout_analysis(text_dir)
+    _, document_profile, paragraph_regrouping_hints_by_page, layout_block_classifications = load_layout_analysis(text_dir)
     block_lines_by_block = load_block_line_records(text_dir)
     (
         confidence_by_page,
@@ -6138,6 +6236,7 @@ def run_paragraphs(
         role_labels_by_page,
         region_roles_by_page,
         document_profile=document_profile,
+        layout_block_classifications=layout_block_classifications,
     )
     write_jsonl(text_dir / "blocks_clean.jsonl", annotated_blocks)
 
@@ -6195,6 +6294,21 @@ def run_paragraphs(
     )
     with open(qa_dir / "clean_document_metrics.json", "w", encoding="utf-8") as f:
         json.dump(metrics, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    parser_backend_name = DEFAULT_PARSER_BACKEND
+    if manifest is not None:
+        parser_backend_name = resolve_parser_backend(
+            getattr(manifest, "parser_backend", DEFAULT_PARSER_BACKEND)
+        ).name
+    structure_quality = build_structure_quality_artifact(
+        doc_id=run_dir.name,
+        parser_backend=parser_backend_name,
+        vision_dir=vision_dir,
+        clean_document_metrics=metrics,
+    )
+    with open(qa_dir / "structure_quality.json", "w", encoding="utf-8") as f:
+        json.dump(structure_quality, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
     return len(paragraphs), len(blocks)

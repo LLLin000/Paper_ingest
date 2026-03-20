@@ -24,6 +24,7 @@ from typing import Any, Optional
 from .contract_guard import guard_model_output, safe_json_value
 from .manifest import Manifest, load_manifest
 from .qa_telemetry import append_fault_events, append_jsonl_event
+from .structure_quality import load_structure_quality
 
 SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 SILICONFLOW_DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct"
@@ -1318,18 +1319,6 @@ def generate_fallback_synthesis(facts: list[Fact], assets: list[dict[str, Any]])
     }
 
 
-def load_clean_document_metrics(qa_dir: Path) -> dict[str, Any]:
-    metrics_path = qa_dir / "clean_document_metrics.json"
-    if not metrics_path.exists():
-        return {}
-    try:
-        with open(metrics_path, "r", encoding="utf-8") as f:
-            loaded = json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return {}
-    return loaded if isinstance(loaded, dict) else {}
-
-
 def _coerce_bool(value: Any) -> Optional[bool]:
     if isinstance(value, bool):
         return value
@@ -1424,6 +1413,13 @@ def build_summary_status(
             reason_codes.append("ordering_confidence_low")
         if section_boundary_unstable_val:
             reason_codes.append("section_boundary_unstable")
+
+    reference_region_ambiguous_val = _coerce_bool(clean_document_metrics.get("reference_region_ambiguous"))
+    caption_linking_partial_val = _coerce_bool(clean_document_metrics.get("caption_linking_partial"))
+    if reference_region_ambiguous_val:
+        reason_codes.append("reference_region_ambiguous")
+    if caption_linking_partial_val:
+        reason_codes.append("caption_linking_partial")
 
     status = "full" if not reason_codes else "degraded"
     ordered_unique_reason_codes = list(dict.fromkeys(reason_codes))
@@ -1943,7 +1939,7 @@ def run_reading(
         synthesis=synthesis,
         paragraphs=paragraphs,
         clean_role_by_block=clean_role_by_block,
-        clean_document_metrics=load_clean_document_metrics(qa_dir),
+        clean_document_metrics=load_structure_quality(qa_dir),
     )
     summary_status = apply_pipeline_fallback_degradation(
         summary_status,

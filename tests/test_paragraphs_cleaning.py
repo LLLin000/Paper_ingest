@@ -422,6 +422,140 @@ def test_classify_clean_blocks_uses_coarse_region_roles_for_unlabeled_dense_page
     assert set(kept_blocks) == {"p4_caption"}
 
 
+def test_classify_clean_blocks_demotes_table_header_and_data_roles_from_vision() -> None:
+    blocks = {
+        "p12_header": {
+            "block_id": "p12_header",
+            "page": 12,
+            "bbox_pt": [43.68, 558.71, 64.90, 568.37],
+            "text": "Factor",
+            "is_header_footer_candidate": False,
+            "font_stats": {"avg_size": 7.0, "is_bold": True, "dominant_font": "GraphikNaturel-Semibold"},
+        },
+        "p12_data": {
+            "block_id": "p12_data",
+            "page": 12,
+            "bbox_pt": [43.68, 586.99, 87.99, 596.55],
+            "text": "Age >70 years",
+            "is_header_footer_candidate": False,
+            "font_stats": {"avg_size": 7.0, "is_bold": False, "dominant_font": "GraphikNaturel-Regular"},
+        },
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(
+        blocks,
+        role_labels_by_page={12: {"p12_header": "TableHeader", "p12_data": "TableData"}},
+    )
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p12_header"]["clean_role"] == "nuisance"
+    assert by_id["p12_data"]["clean_role"] == "nuisance"
+    assert set(kept_blocks) == set()
+
+
+def test_classify_clean_blocks_drops_boxed_classification_lists_from_main_body() -> None:
+    blocks = {
+        "p4_box_head": {
+            "block_id": "p4_box_head",
+            "page": 4,
+            "bbox_pt": [45.35, 325.14, 243.10, 337.22],
+            "text": "Partial-thickness tears - Ellman classification301",
+            "is_header_footer_candidate": False,
+            "font_stats": {"avg_size": 7.0, "is_bold": True, "dominant_font": "GraphikNaturel-Semibold"},
+        },
+        "p4_box_list": {
+            "block_id": "p4_box_list",
+            "page": 4,
+            "bbox_pt": [48.18, 336.86, 274.10, 380.04],
+            "text": "• • Grade 1: <3 mm (<25% thickness) • • Grade 2: 3-6 mm (25-50% thickness) • • Grade 3: >6 mm (>50% thickness)",
+            "is_header_footer_candidate": False,
+            "font_stats": {"avg_size": 8.0, "is_bold": False, "dominant_font": "GraphikNaturel-Regular"},
+        },
+    }
+
+    kept_blocks, annotated = classify_clean_blocks(
+        blocks,
+        role_labels_by_page={4: {"p4_box_head": "Body", "p4_box_list": "Body"}},
+    )
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+
+    assert by_id["p4_box_head"]["clean_role"] == "nuisance"
+    assert by_id["p4_box_list"]["clean_role"] == "nuisance"
+    assert set(kept_blocks) == set()
+
+
+def test_run_paragraphs_uses_layout_sidebar_classification_to_drop_box_block(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run" / "layout_sidebar_box"
+    text_dir = run_dir / "text"
+    vision_dir = run_dir / "vision"
+    text_dir.mkdir(parents=True, exist_ok=True)
+    vision_dir.mkdir(parents=True, exist_ok=True)
+
+    blocks = [
+        {
+            "block_id": "p1_title",
+            "page": 1,
+            "bbox_pt": [80.0, 70.0, 520.0, 120.0],
+            "text": "Demo Paper",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": True,
+            "font_stats": {"avg_size": 16.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_sidebar_box",
+            "page": 1,
+            "bbox_pt": [36.0, 300.0, 210.0, 360.0],
+            "text": "Work compensation",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+            "font_stats": {"avg_size": 7.0, "is_bold": True},
+        },
+        {
+            "block_id": "p1_body",
+            "page": 1,
+            "bbox_pt": [220.0, 300.0, 540.0, 380.0],
+            "text": "Narrative body text remains in the main body section after cleaning.",
+            "is_header_footer_candidate": False,
+            "is_heading_candidate": False,
+            "font_stats": {"avg_size": 9.0, "is_bold": False},
+        },
+    ]
+    typed_blocks = cast(list[dict[str, object]], blocks)
+    _write_jsonl(text_dir / "blocks_norm.jsonl", typed_blocks)
+    _write_vision_outputs(
+        vision_dir,
+        typed_blocks,
+        {1: {"p1_title": "Heading", "p1_sidebar_box": "Body", "p1_body": "Body"}},
+    )
+    with open(text_dir / "layout_analysis.json", "w", encoding="utf-8") as f:
+        json.dump(
+            {
+                "page_layouts": {"1": {"column_count": 2}},
+                "block_classifications": {
+                    "1": [
+                        {"block_id": "p1_title", "page": 1, "category": "content", "confidence": 0.7, "reason": "default content"},
+                        {"block_id": "p1_sidebar_box", "page": 1, "category": "sidebar", "confidence": 0.8, "reason": "boxed sidebar region"},
+                        {"block_id": "p1_body", "page": 1, "category": "content", "confidence": 0.7, "reason": "default content"},
+                    ]
+                },
+            },
+            f,
+            ensure_ascii=False,
+        )
+
+    _ = run_paragraphs(run_dir)
+
+    annotated = [json.loads(line) for line in (text_dir / "blocks_clean.jsonl").read_text(encoding="utf-8").splitlines()]
+    by_id = {str(row.get("block_id", "")): row for row in annotated}
+    clean_doc = (text_dir / "clean_document.md").read_text(encoding="utf-8")
+    main_body = _section_text(clean_doc, "Main Body")
+
+    assert by_id["p1_sidebar_box"]["vision_role"] == "Sidebar"
+    assert by_id["p1_sidebar_box"]["clean_role"] == "nuisance"
+    assert "Work compensation" not in main_body
+    assert "Narrative body text remains in the main body section after cleaning." in main_body
+
+
 def test_run_paragraphs_uses_caption_regions_to_keep_continuation_out_of_main_body(tmp_path: Path) -> None:
     run_dir = tmp_path / "run" / "caption_region_continuation"
     text_dir = run_dir / "text"

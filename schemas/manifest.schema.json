@@ -89,6 +89,9 @@
     },
     "pipeline_version": {
       "type": "string"
+    },
+    "parser_backend": {
+      "type": "string"
     }
   },
   "additionalProperties": true

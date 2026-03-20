@@ -20,7 +20,7 @@ from .figures_tables import run_figures_tables
 from .reading import run_reading
 from .render import run_render
 from .verify import verify as run_verify
-from .orchestration import execute_levelized_dag, DEFAULT_MAX_WORKERS
+from .orchestration import execute_levelized_dag, DEFAULT_MAX_WORKERS, write_pipeline_dag_artifact
 
 app = typer.Typer(
     name="ingest_pdf",
@@ -321,6 +321,7 @@ def _run_full(
     typer.echo("=" * 50)
     
     run_dir = RUN_ROOT / manifest.doc_id
+    write_pipeline_dag_artifact(run_dir=run_dir, manifest=manifest)
     
     stage_jobs = {
         "extractor": lambda: run_extractor(

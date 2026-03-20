@@ -21,6 +21,8 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Optional
 
+from .structure_quality import load_structure_quality
+
 RUN_ROOT = Path("run")
 EVAL_ROOT = Path("eval/golden")
 
@@ -483,13 +485,23 @@ def compute_reading_order_gate(run_dir: Path, golden: Optional[dict[str, Any]]) 
     vision_out_paths = sorted(run_dir.glob("vision/p*_out.json"))
     
     paragraphs = load_jsonl(paragraphs_path)
+    structure_quality = load_structure_quality(run_dir / "qa")
+    structure_quality_flags = {
+        "ordering_confidence_low": bool(structure_quality.get("ordering_confidence_low", False)),
+        "section_boundary_unstable": bool(structure_quality.get("section_boundary_unstable", False)),
+        "reference_region_ambiguous": bool(structure_quality.get("reference_region_ambiguous", False)),
+        "caption_linking_partial": bool(structure_quality.get("caption_linking_partial", False)),
+    }
     
     if not paragraphs:
         return GateResult(
             name="paragraph_inversion_rate",
             value=0.0,
             status=GateStatus.NOT_EVALUATED,
-            details={"reason": "no paragraphs found"}
+            details={
+                "reason": "no paragraphs found",
+                "structure_quality_flags": structure_quality_flags,
+            }
         )
     
     # If golden available, compute actual inversion rate
@@ -571,7 +583,8 @@ def compute_reading_order_gate(run_dir: Path, golden: Optional[dict[str, Any]]) 
             "cross_column_interleave_rate": cross_column_interleave_rate,
             "pages_with_interleave": pages_with_interleave,
             "pages_with_columns": total_multi_column,
-            "golden_available": _has_evaluation_data(golden)
+            "golden_available": _has_evaluation_data(golden),
+            "structure_quality_flags": structure_quality_flags,
         }
     )
 

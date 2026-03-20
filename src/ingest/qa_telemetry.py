@@ -8,6 +8,19 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
+_UPSTREAM_ARTIFACTS_BY_STAGE: dict[str, list[str]] = {
+    "extractor": ["manifest.json", "input_pdf"],
+    "vision": ["text/blocks_norm.jsonl", "pages/p*.png"],
+    "citations": ["paragraphs/paragraphs.jsonl", "manifest.json"],
+    "reading": [
+        "paragraphs/paragraphs.jsonl",
+        "citations/cite_map.jsonl",
+        "figures_tables/figure_table_index.jsonl",
+        "figures_tables/figure_table_links.json",
+        "qa/structure_quality.json",
+    ],
+}
+
 
 def _iso_now() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -81,6 +94,12 @@ def enrich_event(qa_dir: Path, event: dict[str, Any], source: str) -> dict[str, 
     payload["category"] = category
     payload["root_cause_class"] = root_cause_class
     payload["retryability"] = retryability
+    stage = str(payload.get("stage", "")).strip()
+    payload.setdefault("reason_category", category)
+    payload.setdefault("retryable", retryability == "retryable")
+    degraded_output_used = bool(payload.get("fallback_used", False) or str(payload.get("status", "")).lower() == "degraded")
+    payload.setdefault("degraded_output_used", degraded_output_used)
+    payload.setdefault("upstream_artifacts", _UPSTREAM_ARTIFACTS_BY_STAGE.get(stage, []))
     return payload
 
 

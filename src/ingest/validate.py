@@ -212,6 +212,35 @@ def _strict_additional_artifact_errors(run: Path, doc_id: str) -> list[str]:
             expected_type="array",
         )
 
+    structure_quality_path = run / "qa" / "structure_quality.json"
+    structure_quality_obj = read_if_exists(structure_quality_path)
+    if structure_quality_obj is not None:
+        expect_object_key(structure_quality_obj, artifact_path=structure_quality_path, key="doc_id", expected_type="string")
+        expect_object_key(
+            structure_quality_obj,
+            artifact_path=structure_quality_path,
+            key="ordering_confidence_low",
+            expected_type="boolean",
+        )
+        expect_object_key(
+            structure_quality_obj,
+            artifact_path=structure_quality_path,
+            key="section_boundary_unstable",
+            expected_type="boolean",
+        )
+        expect_object_key(
+            structure_quality_obj,
+            artifact_path=structure_quality_path,
+            key="reference_region_ambiguous",
+            expected_type="boolean",
+        )
+        expect_object_key(
+            structure_quality_obj,
+            artifact_path=structure_quality_path,
+            key="caption_linking_partial",
+            expected_type="boolean",
+        )
+
     profile_path = run / "reading" / "paper_profile.json"
     profile_obj = read_if_exists(profile_path)
     if profile_obj is not None:
